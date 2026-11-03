@@ -1,0 +1,13 @@
+句柄=精确12；适配=12；类型=(int)int
+Lambda首次=12
+Lambda后续=13；隐藏=true
+反射=你好，读者
+代理=你好，读者
+引导=调用点；名称=message；调用类=org.example.jvminternals.ch15.GeneratedLinkage
+阶段=动态调用首次；值=初始目标
+阶段=动态调用后续；值=初始目标
+阶段=动态调用更新；值=更新目标
+引导=常量；名称=message；类型=java.lang.String
+阶段=常量首次；值=已解析值
+阶段=常量后续；值=已解析值
+阶段=正常结束

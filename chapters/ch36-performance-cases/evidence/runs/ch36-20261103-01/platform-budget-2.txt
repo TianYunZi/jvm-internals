@@ -1,0 +1,5 @@
+案例 pid=84059 mode=platform-budget time=2026-11-03T13:40:10.134893Z processors=8
+测量 count=64 wallNs=196296916 p50Ns=109437583 p99Ns=193053333 maxNs=193053333 completed=64
+real 0.25
+user 0.07
+sys 0.02

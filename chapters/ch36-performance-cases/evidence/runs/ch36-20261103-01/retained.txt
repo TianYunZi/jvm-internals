@@ -1,0 +1,3 @@
+案例 pid=84211 mode=retained time=2026-11-03T13:41:05.566135Z processors=8
+资源快照窗口 requestedBytes=8388608 scoped=false
+所有Arena关闭

@@ -1,0 +1,2 @@
+2b4938de8a91d040b0d8200a991c69d42b0d55f3b8f4d34303154a266209e004  artifacts/p04-print/ch09-print.pdf
+2b4938de8a91d040b0d8200a991c69d42b0d55f3b8f4d34303154a266209e004  artifacts/p04-print/ch09-before-focus-fix.pdf

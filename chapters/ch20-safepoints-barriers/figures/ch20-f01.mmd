@@ -1,0 +1,12 @@
+sequenceDiagram
+ participant V as 协调者／虚拟机线程
+ participant A as Java线程A
+ participant B as Java线程B
+ V->>A: 布置请求／轮询
+ V->>B: 布置请求／轮询
+ A-->>V: 到达或状态安全
+ Note over A: 等待其他线程
+ B-->>V: 到达或状态安全
+ Note over V,B: 执行需要全局一致性的操作
+ V->>A: 解除请求／允许恢复
+ V->>B: 解除请求／允许恢复

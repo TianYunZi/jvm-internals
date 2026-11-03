@@ -1,0 +1,2 @@
+84189 11842 /Library/Frameworks/Python.framework/Versions/3.15/Resources/Python.app/Contents/MacOS/Python -m http.server 8769 --bind 127.0.0.1 --directory artifacts/p07-site
+87173 11842 /bin/zsh -c ps -axo pid=,ppid=,command= | rg '[o]rg.example.jvminternals.ch2[5-9]|[p]07-chrome-render-|[p]07-shiki-chrome-|[h]ttp.server 8769' > 执行记录/evidence/p07-20261103/processes-before-cleanup.txt\012cat 执行记录/evidence/p07-20261103/processes-before-cleanup.txt\012find /private/tmp -maxdepth 1 -type d -name 'p07-chrome-render-*' -print

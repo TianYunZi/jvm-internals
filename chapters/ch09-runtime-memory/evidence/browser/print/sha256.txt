@@ -1,0 +1,9 @@
+8539ce355698cb99b55e34e57658521b26f83eea3bc88675a0ff6f0424b66da4  chapters/ch09-runtime-memory/chapter.html
+32dff015405769f20b507d874b43e4bc464522f8e124e0f7d423847006b94379  chapters/ch09-runtime-memory/figures/ch09-f01-areas.svg
+f2d648fdd37c77ba7229af6173d6c07ade9dc13c1eeb1a75f39ea54b92685da9  chapters/ch09-runtime-memory/figures/ch09-f02-budget.svg
+e6243c2a9acf6a23d501a3210206926a054c52f4909afff9df83613f4f7d5337  chapters/ch09-runtime-memory/figures/ch09-f03-failure.svg
+4b5e9ee9740e196f2a7323cd8d851635a145a3ca9051f9fc3f8c0c5cdc71a40e  assets/book.css
+09c1fb2f357a5f9419cababebbaeca1f985d151644459f98a1ff59925b0f74ce  chapters/ch09-runtime-memory/evidence/browser/print/print.pdf
+1fe2a0f759c67707f8612823e8d2e4f3b5d3b834c56d2137dfa7b0ac38bb4c4e  chapters/ch09-runtime-memory/evidence/browser/print/pdfinfo.txt
+5052ae45febc98615197da90c25fe274cb4c3db42efd91b759389106ea12d257  chapters/ch09-runtime-memory/evidence/browser/print/selected-page.png
+842fb24893b80ac61e39ef7d34cf82655f9347b6cd6f48a6e5dbd127418e1c8e  chapters/ch09-runtime-memory/evidence/browser/print/记录.md

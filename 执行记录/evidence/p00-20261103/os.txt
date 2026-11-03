@@ -1,0 +1,4 @@
+ProductName:		macOS
+ProductVersion:		27.2
+BuildVersion:		26B123
+Darwin 27.2.0 arm64

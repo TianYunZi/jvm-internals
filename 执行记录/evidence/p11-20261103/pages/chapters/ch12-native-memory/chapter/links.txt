@@ -1,0 +1,33 @@
+跳到正文	#main
+Java 虚拟机原理图文书	../../index.html
+一字节切片的账单	#problem
+12.1 元空间	#sec-12-1
+12.2 运行时成本	#sec-12-2
+12.3 直接缓冲区	#sec-12-3
+12.4 本地跟踪	#sec-12-4
+12.5 释放与泄漏	#sec-12-5
+本轮证据	#observe
+第三篇回顾	#review
+来源	#sources
+加载器与元数据	../ch08-type-metadata/chapter.html
+进程账本	../ch09-runtime-memory/chapter.html
+分配和构造	../ch11-allocation/chapter.html
+S01	#s01
+S02	#s02
+S03	#s03
+S04	#s04
+S05	#s05
+源阅读页	sources.html
+运行说明	README.html
+本轮记录	evidence/runs/ch12-20261103-02/记录.md
+第10章	../ch10-object-layout/chapter.html#sec-10-5
+第11章	../ch11-allocation/chapter.html#sec-11-3
+第9章	../ch09-runtime-memory/chapter.html#sec-9-3
+路径和符号索引	evidence/索引.md
+ByteBuffer契约	https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/nio/ByteBuffer.html
+JDK25 NMT说明	https://docs.oracle.com/en/java/javase/25/vm/native-memory-tracking.html
+Arena生命期契约	https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/foreign/Arena.html
+Cleaner登记与触发契约	https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/ref/Cleaner.html
+上一章：第11章	../ch11-allocation/chapter.html
+返回全书目录	../../index.html
+下一章：第13章	../ch13-interpreter/chapter.html

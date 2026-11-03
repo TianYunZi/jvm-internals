@@ -1,0 +1,5 @@
+flowchart TD
+ A[线程A：left-to-right<br/>已持有LEFT] -->|等待RIGHT| B[线程B：right-to-left<br/>已持有RIGHT]
+ B -->|等待LEFT| A
+ A -.-> T[四秒等待超时打破环<br/>各自释放已持有锁]
+ B -.-> T

@@ -1,0 +1,240 @@
+Generating single mermaid chart
+
+Error: Failed to launch the browser process:  Code: null
+
+stderr:
+[1103/191836.374224:ERROR:base/power_monitor/thermal_state_observer_mac.mm:122] ThermalStateObserverMac unable to register to power notifications. Result: 9
+[1103/191836.388158:ERROR:net/dns/dns_config_service_posix.cc:139] DNS config watch failed to start.
+[1103/191836.389801:WARNING:net/dns/dns_config_service_posix.cc:198] Failed to read DnsConfig.
+
+TROUBLESHOOTING: https://pptr.dev/troubleshooting
+
+    at ChildProcess.onClose (file:///opt/homebrew/lib/node_modules/@mermaid-js/mermaid-cli/node_modules/@puppeteer/browsers/lib/launch.js:346:24)
+    at ChildProcess.emit (node:events:526:24)
+    at ChildProcess._handle.onexit (node:internal/child_process:323:12)
+
+Generating single mermaid chart
+
+Error: Failed to launch the browser process:  Code: null
+
+stderr:
+[1103/191836.980413:ERROR:base/power_monitor/thermal_state_observer_mac.mm:122] ThermalStateObserverMac unable to register to power notifications. Result: 9
+[1103/191836.981981:ERROR:net/dns/dns_config_service_posix.cc:139] DNS config watch failed to start.
+[1103/191836.982710:WARNING:net/dns/dns_config_service_posix.cc:198] Failed to read DnsConfig.
+
+TROUBLESHOOTING: https://pptr.dev/troubleshooting
+
+    at ChildProcess.onClose (file:///opt/homebrew/lib/node_modules/@mermaid-js/mermaid-cli/node_modules/@puppeteer/browsers/lib/launch.js:346:24)
+    at ChildProcess.emit (node:events:526:24)
+    at ChildProcess._handle.onexit (node:internal/child_process:323:12)
+
+Generating single mermaid chart
+
+Error: Failed to launch the browser process:  Code: null
+
+stderr:
+[1103/191837.626469:ERROR:base/power_monitor/thermal_state_observer_mac.mm:122] ThermalStateObserverMac unable to register to power notifications. Result: 9
+[1103/191837.628433:ERROR:net/dns/dns_config_service_posix.cc:139] DNS config watch failed to start.
+[1103/191837.629000:WARNING:net/dns/dns_config_service_posix.cc:198] Failed to read DnsConfig.
+
+TROUBLESHOOTING: https://pptr.dev/troubleshooting
+
+    at ChildProcess.onClose (file:///opt/homebrew/lib/node_modules/@mermaid-js/mermaid-cli/node_modules/@puppeteer/browsers/lib/launch.js:346:24)
+    at ChildProcess.emit (node:events:526:24)
+    at ChildProcess._handle.onexit (node:internal/child_process:323:12)
+
+Generating single mermaid chart
+
+Error: Failed to launch the browser process:  Code: null
+
+stderr:
+[1103/191838.318638:ERROR:base/power_monitor/thermal_state_observer_mac.mm:122] ThermalStateObserverMac unable to register to power notifications. Result: 9
+[1103/191838.320221:ERROR:net/dns/dns_config_service_posix.cc:139] DNS config watch failed to start.
+[1103/191838.321379:WARNING:net/dns/dns_config_service_posix.cc:198] Failed to read DnsConfig.
+
+TROUBLESHOOTING: https://pptr.dev/troubleshooting
+
+    at ChildProcess.onClose (file:///opt/homebrew/lib/node_modules/@mermaid-js/mermaid-cli/node_modules/@puppeteer/browsers/lib/launch.js:346:24)
+    at ChildProcess.emit (node:events:526:24)
+    at ChildProcess._handle.onexit (node:internal/child_process:323:12)
+
+Generating single mermaid chart
+
+Error: Failed to launch the browser process:  Code: null
+
+stderr:
+[1103/191838.932230:ERROR:base/power_monitor/thermal_state_observer_mac.mm:122] ThermalStateObserverMac unable to register to power notifications. Result: 9
+[1103/191838.933823:ERROR:net/dns/dns_config_service_posix.cc:139] DNS config watch failed to start.
+[1103/191838.934438:WARNING:net/dns/dns_config_service_posix.cc:198] Failed to read DnsConfig.
+
+TROUBLESHOOTING: https://pptr.dev/troubleshooting
+
+    at ChildProcess.onClose (file:///opt/homebrew/lib/node_modules/@mermaid-js/mermaid-cli/node_modules/@puppeteer/browsers/lib/launch.js:346:24)
+    at ChildProcess.emit (node:events:526:24)
+    at ChildProcess._handle.onexit (node:internal/child_process:323:12)
+
+Generating single mermaid chart
+
+Error: Failed to launch the browser process:  Code: null
+
+stderr:
+[1103/191839.527844:ERROR:base/power_monitor/thermal_state_observer_mac.mm:122] ThermalStateObserverMac unable to register to power notifications. Result: 9
+[1103/191839.529675:ERROR:net/dns/dns_config_service_posix.cc:139] DNS config watch failed to start.
+[1103/191839.530188:WARNING:net/dns/dns_config_service_posix.cc:198] Failed to read DnsConfig.
+
+TROUBLESHOOTING: https://pptr.dev/troubleshooting
+
+    at ChildProcess.onClose (file:///opt/homebrew/lib/node_modules/@mermaid-js/mermaid-cli/node_modules/@puppeteer/browsers/lib/launch.js:346:24)
+    at ChildProcess.emit (node:events:526:24)
+    at ChildProcess._handle.onexit (node:internal/child_process:323:12)
+
+Generating single mermaid chart
+
+Error: Failed to launch the browser process:  Code: null
+
+stderr:
+[1103/191840.112268:ERROR:base/power_monitor/thermal_state_observer_mac.mm:122] ThermalStateObserverMac unable to register to power notifications. Result: 9
+[1103/191840.113771:ERROR:net/dns/dns_config_service_posix.cc:139] DNS config watch failed to start.
+[1103/191840.114287:WARNING:net/dns/dns_config_service_posix.cc:198] Failed to read DnsConfig.
+
+TROUBLESHOOTING: https://pptr.dev/troubleshooting
+
+    at ChildProcess.onClose (file:///opt/homebrew/lib/node_modules/@mermaid-js/mermaid-cli/node_modules/@puppeteer/browsers/lib/launch.js:346:24)
+    at ChildProcess.emit (node:events:526:24)
+    at ChildProcess._handle.onexit (node:internal/child_process:323:12)
+
+Generating single mermaid chart
+
+Error: Failed to launch the browser process:  Code: null
+
+stderr:
+[1103/191840.704322:ERROR:base/power_monitor/thermal_state_observer_mac.mm:122] ThermalStateObserverMac unable to register to power notifications. Result: 9
+[1103/191840.705856:ERROR:net/dns/dns_config_service_posix.cc:139] DNS config watch failed to start.
+[1103/191840.706417:WARNING:net/dns/dns_config_service_posix.cc:198] Failed to read DnsConfig.
+
+TROUBLESHOOTING: https://pptr.dev/troubleshooting
+
+    at ChildProcess.onClose (file:///opt/homebrew/lib/node_modules/@mermaid-js/mermaid-cli/node_modules/@puppeteer/browsers/lib/launch.js:346:24)
+    at ChildProcess.emit (node:events:526:24)
+    at ChildProcess._handle.onexit (node:internal/child_process:323:12)
+
+Generating single mermaid chart
+
+Error: Failed to launch the browser process:  Code: null
+
+stderr:
+[1103/191841.291867:ERROR:base/power_monitor/thermal_state_observer_mac.mm:122] ThermalStateObserverMac unable to register to power notifications. Result: 9
+[1103/191841.293362:ERROR:net/dns/dns_config_service_posix.cc:139] DNS config watch failed to start.
+[1103/191841.294009:WARNING:net/dns/dns_config_service_posix.cc:198] Failed to read DnsConfig.
+
+TROUBLESHOOTING: https://pptr.dev/troubleshooting
+
+    at ChildProcess.onClose (file:///opt/homebrew/lib/node_modules/@mermaid-js/mermaid-cli/node_modules/@puppeteer/browsers/lib/launch.js:346:24)
+    at ChildProcess.emit (node:events:526:24)
+    at ChildProcess._handle.onexit (node:internal/child_process:323:12)
+
+Generating single mermaid chart
+
+Error: Failed to launch the browser process:  Code: null
+
+stderr:
+[1103/191841.875336:ERROR:base/power_monitor/thermal_state_observer_mac.mm:122] ThermalStateObserverMac unable to register to power notifications. Result: 9
+[1103/191841.876925:ERROR:net/dns/dns_config_service_posix.cc:139] DNS config watch failed to start.
+[1103/191841.877451:WARNING:net/dns/dns_config_service_posix.cc:198] Failed to read DnsConfig.
+
+TROUBLESHOOTING: https://pptr.dev/troubleshooting
+
+    at ChildProcess.onClose (file:///opt/homebrew/lib/node_modules/@mermaid-js/mermaid-cli/node_modules/@puppeteer/browsers/lib/launch.js:346:24)
+    at ChildProcess.emit (node:events:526:24)
+    at ChildProcess._handle.onexit (node:internal/child_process:323:12)
+
+Generating single mermaid chart
+
+Error: Failed to launch the browser process:  Code: null
+
+stderr:
+[1103/191842.471259:ERROR:base/power_monitor/thermal_state_observer_mac.mm:122] ThermalStateObserverMac unable to register to power notifications. Result: 9
+[1103/191842.472968:ERROR:net/dns/dns_config_service_posix.cc:139] DNS config watch failed to start.
+[1103/191842.473557:WARNING:net/dns/dns_config_service_posix.cc:198] Failed to read DnsConfig.
+
+TROUBLESHOOTING: https://pptr.dev/troubleshooting
+
+    at ChildProcess.onClose (file:///opt/homebrew/lib/node_modules/@mermaid-js/mermaid-cli/node_modules/@puppeteer/browsers/lib/launch.js:346:24)
+    at ChildProcess.emit (node:events:526:24)
+    at ChildProcess._handle.onexit (node:internal/child_process:323:12)
+
+Generating single mermaid chart
+
+Error: Failed to launch the browser process:  Code: null
+
+stderr:
+[1103/191843.107717:ERROR:base/power_monitor/thermal_state_observer_mac.mm:122] ThermalStateObserverMac unable to register to power notifications. Result: 9
+[1103/191843.112758:ERROR:net/dns/dns_config_service_posix.cc:139] DNS config watch failed to start.
+[1103/191843.113882:WARNING:net/dns/dns_config_service_posix.cc:198] Failed to read DnsConfig.
+
+TROUBLESHOOTING: https://pptr.dev/troubleshooting
+
+    at ChildProcess.onClose (file:///opt/homebrew/lib/node_modules/@mermaid-js/mermaid-cli/node_modules/@puppeteer/browsers/lib/launch.js:346:24)
+    at ChildProcess.emit (node:events:526:24)
+    at ChildProcess._handle.onexit (node:internal/child_process:323:12)
+
+Generating single mermaid chart
+
+Error: Failed to launch the browser process:  Code: null
+
+stderr:
+[1103/191843.800749:ERROR:base/power_monitor/thermal_state_observer_mac.mm:122] ThermalStateObserverMac unable to register to power notifications. Result: 9
+[1103/191843.803241:ERROR:net/dns/dns_config_service_posix.cc:139] DNS config watch failed to start.
+[1103/191843.804141:WARNING:net/dns/dns_config_service_posix.cc:198] Failed to read DnsConfig.
+
+TROUBLESHOOTING: https://pptr.dev/troubleshooting
+
+    at ChildProcess.onClose (file:///opt/homebrew/lib/node_modules/@mermaid-js/mermaid-cli/node_modules/@puppeteer/browsers/lib/launch.js:346:24)
+    at ChildProcess.emit (node:events:526:24)
+    at ChildProcess._handle.onexit (node:internal/child_process:323:12)
+
+Generating single mermaid chart
+
+Error: Failed to launch the browser process:  Code: null
+
+stderr:
+[1103/191844.421724:ERROR:base/power_monitor/thermal_state_observer_mac.mm:122] ThermalStateObserverMac unable to register to power notifications. Result: 9
+[1103/191844.423804:ERROR:net/dns/dns_config_service_posix.cc:139] DNS config watch failed to start.
+[1103/191844.425146:WARNING:net/dns/dns_config_service_posix.cc:198] Failed to read DnsConfig.
+
+TROUBLESHOOTING: https://pptr.dev/troubleshooting
+
+    at ChildProcess.onClose (file:///opt/homebrew/lib/node_modules/@mermaid-js/mermaid-cli/node_modules/@puppeteer/browsers/lib/launch.js:346:24)
+    at ChildProcess.emit (node:events:526:24)
+    at ChildProcess._handle.onexit (node:internal/child_process:323:12)
+
+Generating single mermaid chart
+
+Error: Failed to launch the browser process:  Code: null
+
+stderr:
+[1103/191845.037756:ERROR:base/power_monitor/thermal_state_observer_mac.mm:122] ThermalStateObserverMac unable to register to power notifications. Result: 9
+[1103/191845.039228:ERROR:net/dns/dns_config_service_posix.cc:139] DNS config watch failed to start.
+[1103/191845.039795:WARNING:net/dns/dns_config_service_posix.cc:198] Failed to read DnsConfig.
+
+TROUBLESHOOTING: https://pptr.dev/troubleshooting
+
+    at ChildProcess.onClose (file:///opt/homebrew/lib/node_modules/@mermaid-js/mermaid-cli/node_modules/@puppeteer/browsers/lib/launch.js:346:24)
+    at ChildProcess.emit (node:events:526:24)
+    at ChildProcess._handle.onexit (node:internal/child_process:323:12)
+
+Generating single mermaid chart
+
+Error: Failed to launch the browser process:  Code: null
+
+stderr:
+[1103/191845.647346:ERROR:base/power_monitor/thermal_state_observer_mac.mm:122] ThermalStateObserverMac unable to register to power notifications. Result: 9
+[1103/191845.648839:ERROR:net/dns/dns_config_service_posix.cc:139] DNS config watch failed to start.
+[1103/191845.649321:WARNING:net/dns/dns_config_service_posix.cc:198] Failed to read DnsConfig.
+
+TROUBLESHOOTING: https://pptr.dev/troubleshooting
+
+    at ChildProcess.onClose (file:///opt/homebrew/lib/node_modules/@mermaid-js/mermaid-cli/node_modules/@puppeteer/browsers/lib/launch.js:346:24)
+    at ChildProcess.emit (node:events:526:24)
+    at ChildProcess._handle.onexit (node:internal/child_process:323:12)
+

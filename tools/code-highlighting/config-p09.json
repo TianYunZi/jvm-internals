@@ -1,0 +1,33 @@
+{
+  "stage": "p09",
+  "shikiVersion": "4.6.0",
+  "theme": "github-light",
+  "languages": [
+    "java",
+    "bash",
+    "xml",
+    "json",
+    "cpp",
+    "c",
+    "asm"
+  ],
+  "plainTextLanguage": "text",
+  "chapters": [
+    "ch33-observability",
+    "ch34-flight-recorder",
+    "ch35-troubleshooting",
+    "ch36-performance-cases"
+  ],
+  "extraSourceFiles": {
+    "ch36-performance-cases": [
+      {
+        "path": "chapters/ch36-performance-cases/benchmarks/src/main/java/org/example/jvminternals/ch36/WorkBenchmark.java",
+        "language": "java"
+      },
+      {
+        "path": "chapters/ch31-aot-cache/src/main/java/org/example/jvminternals/ch31/CacheJourney.java",
+        "language": "java"
+      }
+    ]
+  }
+}

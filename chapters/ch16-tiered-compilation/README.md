@@ -1,0 +1,46 @@
+# 第16章 即时编译与分层执行：源码与运行
+
+Java开发工具包（Java Development Kit，JDK）25.0.5.0.2、HotSpot、macOS AArch64；工具显式选用下列目录。源码为本章src/main/java，页面阅读副本为[sources.html](sources.html)。
+
+## 示例与授权
+
+CH16-E01 TieredJourney：100／200000／200000次，单线程、64兆二进制字节（mebibyte，MiB）堆，两段10秒观察窗口，正常结束；时间仅用于事件关联。
+
+用户“执行P05”授权普通教学源码与有界机制观察；不包含测试框架、断言、故障耗尽或性能基准。只打印阶段与必要结果，不在热点内打印。所有命令在项目根目录执行；重复采集前使用新的运行目录保存旧证据；编译不自动运行进程。
+
+## 完整命令
+
+```sh
+export JAVA_HOME=/opt/homebrew/Cellar/openjdk@25/25.0.5.0.2/libexec/openjdk.jdk/Contents/Home
+export PATH="$JAVA_HOME/bin:/opt/homebrew/bin:$PATH"
+mvn -B -ntp -pl chapters/ch16-tiered-compilation -am compile
+java -Xms16m -Xmx64m -XX:+StartAttachListener -XX:+UnlockDiagnosticVMOptions -XX:+LogCompilation -XX:LogFile=chapters/ch16-tiered-compilation/evidence/runs/ch16-20261103-02/compilation.xml -XX:+PrintCompilation -XX:+PrintInlining '-XX:CompileCommand=dontinline,org.example.jvminternals.ch16.TieredJourney::hot' -cp chapters/ch16-tiered-compilation/target/classes org.example.jvminternals.ch16.TieredJourney > chapters/ch16-tiered-compilation/evidence/runs/ch16-20261103-02/stdout.txt 2>&1 &
+p05_ch16_pid=$!
+printf '%s\n' "$p05_ch16_pid" > chapters/ch16-tiered-compilation/evidence/runs/ch16-20261103-02/pid.txt
+sleep 1
+jcmd "$p05_ch16_pid" Compiler.queue > chapters/ch16-tiered-compilation/evidence/runs/ch16-20261103-02/queue-initial.txt
+sleep 11
+jcmd "$p05_ch16_pid" Compiler.queue > chapters/ch16-tiered-compilation/evidence/runs/ch16-20261103-02/queue-later.txt
+jcmd "$p05_ch16_pid" Compiler.codecache > chapters/ch16-tiered-compilation/evidence/runs/ch16-20261103-02/codecache.txt
+wait "$p05_ch16_pid"
+```
+
+## 实际观察与边界
+
+首次业务进程正常结束，最终结果-5706621994；hot普通入口第3层→第4层，另有第4层循环入口。初次附加Operation not permitted，稍后目标退出，失败保留。成功接续目录为../ch16-20261103-02，复用本轮编译与输入摘要，显式StartAttachListener；详见该目录记录。
+
+第一轮失败采集不能声称已取得队列；第二轮另记成功证据。没有性能测量。第31章承接跨次画像／缓存，CH18承接On-Stack Replacement（OSR）与失效。
+
+原始文本及退出情况见[evidence/runs/ch16-20261103-01/记录.md](evidence/runs/ch16-20261103-01/记录.md)。观察是具体配置的结果，不提供性能排名或跨平台保证。正式正文、本章配图、源码与相应编号在[正文](chapter.html)对照。
+
+## 配图源与本地导出
+
+软件流程、交互、状态和协作图以figures中的Mermaid源文件维护，帧布局使用可缩放矢量图形（Scalable Vector Graphics，SVG）；逐节分类见TASK.md。当前本机Mermaid命令行接口（Command-Line Interface，CLI）工具为12.2.0。下面在项目根目录只重新导出当前章节图源，不启动教学进程或测试；需要可启动本地离屏渲染器的权限。
+
+```sh
+for p05_diagram in chapters/ch16-tiered-compilation/figures/*.mmd; do
+  mmdc -i "$p05_diagram" -o "${p05_diagram%.mmd}.svg" -c assets/mermaid.json -b '#f7fafc' -I "$(basename "${p05_diagram%.mmd}")" --no-font-embed
+done
+```
+
+图源修订后必须重新导出；正文图片的自然宽度与打印宽度按新viewBox同步，相关尺寸记录见公共P05证据。截图只作验收证据，不替代绘制的图。

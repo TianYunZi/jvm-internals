@@ -1,0 +1,11 @@
+%% CH05-F02：实际字节码的正常控制流和验证帧。
+flowchart TB
+  A["0: iload_0；1: iflt 11<br/>分支后locals=[int,top]，stack=[]"]
+  B["4—6: value加1<br/>7: istore_1；8: goto 14"]
+  C["11: iload_0；12: ineg<br/>13: istore_1"]
+  D["汇合14：locals=[int,int]，stack=[]<br/>14: iload_1；15: iconst_2<br/>16: imul；17: ireturn"]
+  A -->|value大于等于0| B
+  A -->|value小于0| C
+  B -->|出口均符合目标帧| D
+  C -->|出口均符合目标帧| D
+  D --- N["目标14追加int局部类型<br/>若另一边留下引用，则不满足iload_1约束"]

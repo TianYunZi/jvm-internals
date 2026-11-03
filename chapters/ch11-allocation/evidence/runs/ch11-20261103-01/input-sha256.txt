@@ -1,0 +1,7 @@
+a26639e11d9af8373872b003c3a78ba27bf4fa47e24736d6cf4f5ee0e9d336df  chapters/ch11-allocation/src/main/java/org/example/jvminternals/ch11/AllocationJourney.java
+679137927cc6f7d76f7d1ed6e44e9a79fbf211ceed936eb8bdd235c4f741da87  chapters/ch11-allocation/src/main/java/org/example/jvminternals/ch11/StringJourney.java
+a593be04af333842ef118c32abab5908a61f7b363183be216a95c0c3951eac47  chapters/ch11-allocation/pom.xml
+85a1d19188f33cb6af432dddbd7f9daddd98a6f6bb2a1f2fb868508703b3aa57  chapters/ch11-allocation/evidence/runs/ch11-20261103-01/allocation.jfc
+86e2751b555a8e3316ee342b7ddf5c3faad07062bbaf200e219d1fd6705c56d7  chapters/ch11-allocation/target/classes/org/example/jvminternals/ch11/AllocationJourney$Pair.class
+5932d358a5e89932449de31dfec628007d25c4bb688fad21dc608d476e703fd6  chapters/ch11-allocation/target/classes/org/example/jvminternals/ch11/AllocationJourney.class
+a2da05fe684279ba1bbe416563d4615852334a1601d44f109ca0a6e117bc51cd  chapters/ch11-allocation/target/classes/org/example/jvminternals/ch11/StringJourney.class

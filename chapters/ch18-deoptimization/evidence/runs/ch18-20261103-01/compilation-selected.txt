@@ -1,0 +1,239 @@
+<nmethod compile_id='1495' compile_kind='c2n' compiler='' level='0' entry='0x000000011ddc14c0' size='288' address='0x000000011ddc13c8' relocation_offset='498448553480' insts_offset='248' stub_offset='284' method='java.lang.invoke.MethodHandle linkToSpecial (Ljava/lang/Object;Ljava/lang/Object;JLjava/lang/invoke/MemberName;)Ljava/lang/Object;' bytes='0' count='0' iicount='0' stamp='1.219'/>
+1218 1495     n 0       java.lang.invoke.MethodHandle::linkToSpecial(LLJL)L (native)   (static)
+<nmethod compile_id='1496' compile_kind='c2n' compiler='' level='0' entry='0x000000011ddc1640' size='296' address='0x000000011ddc1548' relocation_offset='498448553192' insts_offset='248' method='java.lang.invoke.MethodHandle invokeBasic (J)Ljava/lang/Object;' bytes='0' count='0' iicount='0' stamp='1.219'/>
+1219 1496     n 0       java.lang.invoke.MethodHandle::invokeBasic(J)L (native)   
+<uncommon_trap thread='6403' reason='unstable_if' action='reinterpret' debug_id='0' compile_id='869' compiler='c2' level='4' stamp='1.219'>
+<jvms bci='5' method='java.lang.String getBytes ([BIB)V' bytes='44' count='5376' iicount='5376'/>
+</uncommon_trap>
+<make_not_entrant thread='6403' reason='uncommon trap' compile_id='869' compiler='c2' level='4' stamp='1.219'/>
+1219  869       4       java.lang.String::getBytes (44 bytes)   made not entrant: uncommon trap
+<uncommon_trap thread='6403' reason='class_check' action='maybe_recompile' debug_id='0' compile_id='1488' compiler='c2' level='4' stamp='1.220'>
+<jvms bci='14' method='org.example.jvminternals.ch18.RecoveryJourney evaluate (Lorg/example/jvminternals/ch18/RecoveryJourney$Operation;I)I' bytes='25' count='5376' iicount='5376'/>
+</uncommon_trap>
+<uncommon_trap thread='6403' reason='class_check' action='maybe_recompile' debug_id='0' compile_id='1488' compiler='c2' level='4' count='1' state='class_check' stamp='1.220'>
+<jvms bci='14' method='org.example.jvminternals.ch18.RecoveryJourney evaluate (Lorg/example/jvminternals/ch18/RecoveryJourney$Operation;I)I' bytes='25' count='5376' iicount='5376' class_check_traps='1'/>
+</uncommon_trap>
+<uncommon_trap thread='6403' reason='class_check' action='maybe_recompile' debug_id='0' compile_id='1488' compiler='c2' level='4' count='2' state='class_check' stamp='1.220'>
+<jvms bci='14' method='org.example.jvminternals.ch18.RecoveryJourney evaluate (Lorg/example/jvminternals/ch18/RecoveryJourney$Operation;I)I' bytes='25' count='5376' iicount='5376' class_check_traps='2'/>
+</uncommon_trap>
+<uncommon_trap thread='6403' reason='class_check' action='maybe_recompile' debug_id='0' compile_id='1488' compiler='c2' level='4' count='3' state='class_check' stamp='1.220'>
+<jvms bci='14' method='org.example.jvminternals.ch18.RecoveryJourney evaluate (Lorg/example/jvminternals/ch18/RecoveryJourney$Operation;I)I' bytes='25' count='5376' iicount='5376' class_check_traps='3'/>
+</uncommon_trap>
+<make_not_entrant thread='6403' reason='uncommon trap' compile_id='1488' compiler='c2' level='4' stamp='1.220'/>
+1219 1488       4       org.example.jvminternals.ch18.RecoveryJourney::evaluate (25 bytes)   made not entrant: uncommon trap
+<task_queued compile_id='1497' method='org.example.jvminternals.ch18.RecoveryJourney$Pair &lt;init&gt; (II)V' bytes='15' count='5503' iicount='5503' blocking='1' stamp='1.220' comment='tiered' hot_count='5503'/>
+<writer thread='29699'/>
+1219 1497    b  4       org.example.jvminternals.ch18.RecoveryJourney$Pair::&lt;init&gt; (15 bytes)
+<nmethod compile_id='1497' compiler='c2' level='4' entry='0x000000011ddc17c0' size='400' address='0x000000011ddc16c8' relocation_offset='498506120616' insts_offset='248' stub_offset='376' scopes_data_offset='498506120608' scopes_pcs_offset='498506120576' dependencies_offset='498506120568' oops_offset='392' metadata_offset='498506120640' method='org.example.jvminternals.ch18.RecoveryJourney$Pair &lt;init&gt; (II)V' bytes='15' count='5503' iicount='5503' stamp='1.220'/>
+                              @ 1   java.lang.Object::&lt;init&gt; (1 bytes)   inline (hot)
+<writer thread='6403'/>
+<task_queued compile_id='1498' method='org.example.jvminternals.ch18.RecoveryJourney evaluate (Lorg/example/jvminternals/ch18/RecoveryJourney$Operation;I)I' bytes='25' count='5504' iicount='5504' decompiles='1' class_check_traps='4' blocking='1' stamp='1.220' comment='tiered' hot_count='5504'/>
+<writer thread='29699'/>
+1220 1498    b  4       org.example.jvminternals.ch18.RecoveryJourney::evaluate (25 bytes)
+<nmethod compile_id='1498' compiler='c2' level='4' entry='0x000000011ddc1980' size='848' address='0x000000011ddc1888' relocation_offset='498506102264' insts_offset='248' stub_offset='816' scopes_data_offset='498508442944' scopes_pcs_offset='498508442864' dependencies_offset='498508442808' handler_table_offset='498508442840' nul_chk_table_offset='498508442824' oops_offset='832' metadata_offset='498506102320' method='org.example.jvminternals.ch18.RecoveryJourney evaluate (Lorg/example/jvminternals/ch18/RecoveryJourney$Operation;I)I' bytes='25' count='5504' iicount='5504' decompiles='1' class_check_traps='4' stamp='1.221'/>
+                              @ 8   org.example.jvminternals.ch18.RecoveryJourney$Pair::&lt;init&gt; (15 bytes)   inline (hot)
+                                @ 1   java.lang.Object::&lt;init&gt; (1 bytes)   inline (hot)
+                              @ 14   org.example.jvminternals.ch18.RecoveryJourney$LocalOperation::apply (10 bytes)   inline (hot)   callee changed to  org.example.jvminternals.ch18.RecoveryJourney$PublishingOperation::apply (14 bytes)   inline (hot)   callee changed to  org.example.jvminternals.ch18.RecoveryJourney::evaluate (25 bytes)    \-&gt; TypeProfile (131/5251 counts) = org/example/jvminternals/ch18/RecoveryJourney$PublishingOperation   callee changed to  org.example.jvminternals.ch18.RecoveryJourney::evaluate (25 bytes)    \-&gt; TypeProfile (5120/5251 counts) = org/example/jvminternals/ch18/RecoveryJourney$LocalOperation
+<writer thread='6403'/>
+<task_queued compile_id='1499' compile_kind='osr' method='org.example.jvminternals.ch18.RecoveryJourney main ([Ljava/lang/String;)V' bytes='138' count='1' backedge_count='100352' iicount='1' osr_bci='67' level='3' blocking='1' stamp='1.221' comment='tiered' hot_count='100352'/>
+<writer thread='25091'/>
+1220 1499 %  b  3       org.example.jvminternals.ch18.RecoveryJourney::main @ 67 (138 bytes)
+                              @ 4   org.example.jvminternals.ch18.RecoveryJourney$LocalOperation::&lt;init&gt; (5 bytes)   inline
+<task compile_id='1488' method='org.example.jvminternals.ch18.RecoveryJourney evaluate (Lorg/example/jvminternals/ch18/RecoveryJourney$Operation;I)I' bytes='25' count='5376' iicount='5376' blocking='1' stamp='1.214'>
+<type id='1210' name='int'/>
+<klass id='1387' name='org.example.jvminternals.ch18.RecoveryJourney$Operation' flags='1544'/>
+<klass id='1386' name='org.example.jvminternals.ch18.RecoveryJourney' flags='17'/>
+<method id='1388' holder='1386' name='evaluate' return='1210' arguments='1387 1210' flags='10' bytes='25' compile_id='1485' compiler='c1' level='3' iicount='5376'/>
+<parse method='1388' uses='5376.000000' stamp='1.214'>
+<dependency type='evol_method' x0='1388'/>
+<bc code='183' bci='8'/>
+<type id='1212' name='void'/>
+<klass id='1391' name='org.example.jvminternals.ch18.RecoveryJourney$Pair' flags='24'/>
+<method id='1392' holder='1391' name='&lt;init&gt;' return='1212' arguments='1210 1210' flags='0' bytes='15' iicount='5375'/>
+<call method='1392' count='5119' prof_factor='1.000000' inline='1'/>
+<inline_success reason='inline (hot)'/>
+<parse method='1392' uses='5375.000000' stamp='1.214'>
+<dependency type='evol_method' x0='1392'/>
+<bc code='183' bci='1'/>
+<klass id='1217' name='java.lang.Object' flags='1'/>
+<method id='1394' holder='1217' name='&lt;init&gt;' return='1212' flags='1' bytes='1' compile_id='11' compiler='c2' level='4' iicount='163708'/>
+<call method='1394' count='5120' prof_factor='1.000000' inline='1'/>
+<inline_success reason='inline (hot)'/>
+<parse method='1394' uses='5375.000000' stamp='1.214'>
+<dependency type='evol_method' x0='1394'/>
+<parse_done nodes='88' live='87' memory='14544' stamp='1.214'/>
+</parse>
+<parse_done nodes='108' live='106' memory='17600' stamp='1.214'/>
+</parse>
+<bc code='185' bci='14'/>
+<klass id='1390' name='org.example.jvminternals.ch18.RecoveryJourney$LocalOperation' flags='24'/>
+<method id='1393' holder='1387' name='apply' return='1210' arguments='1391' flags='1025' bytes='0' iicount='1'/>
+<call method='1393' count='5119' prof_factor='1.000000' virtual='1' inline='1' receiver='1390' receiver_count='5119'/>
+<method id='1397' holder='1390' name='apply' return='1210' arguments='1391' flags='1' bytes='10' compile_id='1487' compiler='c2' level='4' iicount='1280'/>
+<call method='1397' count='5119' prof_factor='1.000000' inline='1'/>
+<inline_success reason='inline (hot)'/>
+<predicted_call bci='14' exact='1' klass='1390'/>
+<uncommon_trap bci='14' reason='null_check' action='maybe_recompile' debug_id='0'/>
+<uncommon_trap bci='14' reason='class_check' action='maybe_recompile' debug_id='0' comment='monomorphic vcall checkcast'/>
+<predicted_call bci='14' exact='0' klass='1390'/>
+<parse method='1397' uses='5375.000000' stamp='1.214'>
+<dependency type='evol_method' x0='1397'/>
+<parse_done nodes='165' live='160' memory='26712' stamp='1.214'/>
+</parse>
+<parse_done nodes='169' live='163' memory='27488' stamp='1.214'/>
+</parse>
+<eliminate_allocation type='1391'>
+<jvms bci='0' method='1388'/>
+</eliminate_allocation>
+<regalloc attempts='1' success='1'/>
+<dependency type='evol_method' x0='1388'/>
+<dependency type='evol_method' x0='1392'/>
+<dependency type='evol_method' x0='1394'/>
+<dependency type='evol_method' x0='1397'/>
+<code_cache total_blobs='1953' nmethods='1488' adapters='372' free_code_cache='247719168'/>
+<task_done success='1' nmsize='208' count='5376' inlined_bytes='16' stamp='1.214'/>
+</task>
+<task compile_id='1498' method='org.example.jvminternals.ch18.RecoveryJourney evaluate (Lorg/example/jvminternals/ch18/RecoveryJourney$Operation;I)I' bytes='25' count='5504' iicount='5504' decompiles='1' class_check_traps='4' blocking='1' stamp='1.220'>
+<type id='1210' name='int'/>
+<klass id='1387' name='org.example.jvminternals.ch18.RecoveryJourney$Operation' flags='1544'/>
+<klass id='1386' name='org.example.jvminternals.ch18.RecoveryJourney' flags='17'/>
+<method id='1388' holder='1386' name='evaluate' return='1210' arguments='1387 1210' flags='10' bytes='25' iicount='5504'/>
+<parse method='1388' uses='5504.000000' stamp='1.220'>
+<observe trap='class_check' count='4' total='4'/>
+<dependency type='evol_method' x0='1388'/>
+<bc code='183' bci='8'/>
+<type id='1212' name='void'/>
+<klass id='1392' name='org.example.jvminternals.ch18.RecoveryJourney$Pair' flags='24'/>
+<method id='1393' holder='1392' name='&lt;init&gt;' return='1212' arguments='1210 1210' flags='0' bytes='15' compile_id='1497' compiler='c2' level='4' iicount='5503'/>
+<call method='1393' count='5247' prof_factor='1.000000' inline='1'/>
+<inline_success reason='inline (hot)'/>
+<parse method='1393' uses='5503.000000' stamp='1.220'>
+<dependency type='evol_method' x0='1393'/>
+<bc code='183' bci='1'/>
+<klass id='1217' name='java.lang.Object' flags='1'/>
+<method id='1395' holder='1217' name='&lt;init&gt;' return='1212' flags='1' bytes='1' compile_id='11' compiler='c2' level='4' iicount='164033'/>
+<call method='1395' count='5248' prof_factor='1.000000' inline='1'/>
+<inline_success reason='inline (hot)'/>
+<parse method='1395' uses='5503.000000' stamp='1.220'>
+<dependency type='evol_method' x0='1395'/>
+<parse_done nodes='88' live='87' memory='14544' stamp='1.220'/>
+</parse>
+<parse_done nodes='108' live='106' memory='17600' stamp='1.220'/>
+</parse>
+<bc code='185' bci='14'/>
+<klass id='1390' name='org.example.jvminternals.ch18.RecoveryJourney$LocalOperation' flags='24'/>
+<klass id='1391' name='org.example.jvminternals.ch18.RecoveryJourney$PublishingOperation' flags='24'/>
+<method id='1394' holder='1387' name='apply' return='1210' arguments='1392' flags='1025' bytes='0' iicount='1'/>
+<call method='1394' count='5251' prof_factor='1.000000' virtual='1' inline='1' receiver='1390' receiver_count='5120' receiver2='1391' receiver2_count='131'/>
+<method id='1398' holder='1390' name='apply' return='1210' arguments='1392' flags='1' bytes='10' compile_id='1487' compiler='c2' level='4' iicount='1280'/>
+<call method='1398' count='5251' prof_factor='1.000000' inline='1'/>
+<inline_success reason='inline (hot)'/>
+<method id='1399' holder='1391' name='apply' return='1210' arguments='1392' flags='1' bytes='14' iicount='131'/>
+<call method='1399' count='5251' prof_factor='1.000000' inline='1'/>
+<inline_success reason='inline (hot)'/>
+<predicted_call bci='14' exact='1' klass='1390'/>
+<uncommon_trap bci='14' reason='null_check' action='maybe_recompile' debug_id='0'/>
+<predicted_call bci='14' exact='1' klass='1391'/>
+<uncommon_trap bci='14' reason='bimorphic_or_optimized_type_check' action='maybe_recompile' debug_id='0'/>
+<predicted_call bci='14' exact='0' klass='1391'/>
+<parse method='1399' uses='5507.000000' stamp='1.220'>
+<dependency type='evol_method' x0='1399'/>
+<parse_done nodes='190' live='185' memory='30056' stamp='1.220'/>
+</parse>
+<predicted_call bci='14' exact='0' klass='1390'/>
+<parse method='1398' uses='5507.000000' stamp='1.220'>
+<dependency type='evol_method' x0='1398'/>
+<parse_done nodes='212' live='206' memory='34240' stamp='1.220'/>
+</parse>
+<parse_done nodes='220' live='213' memory='35440' stamp='1.220'/>
+</parse>
+<regalloc attempts='0' success='1'/>
+<dependency type='evol_method' x0='1388'/>
+<dependency type='evol_method' x0='1393'/>
+<dependency type='evol_method' x0='1395'/>
+<dependency type='evol_method' x0='1399'/>
+<dependency type='evol_method' x0='1398'/>
+<code_cache total_blobs='1965' nmethods='1498' adapters='374' free_code_cache='247707968'/>
+<task_done success='1' nmsize='584' count='5504' inlined_bytes='16' stamp='1.221'/>
+</task>
+<task compile_id='1500' compile_kind='osr' method='org.example.jvminternals.ch18.RecoveryJourney main ([Ljava/lang/String;)V' bytes='138' count='1' backedge_count='101376' iicount='1' osr_bci='67' blocking='1' stamp='1.223'>
+<type id='1212' name='void'/>
+<klass id='1387' name='[Ljava.lang.String;' flags='1041'/>
+<klass id='1386' name='org.example.jvminternals.ch18.RecoveryJourney' flags='17'/>
+<method id='1388' holder='1386' name='main' return='1212' arguments='1387' flags='9' bytes='138' compile_id='1490' compiler='c1' level='3' iicount='1'/>
+<uncommon_trap method='1388' bci='105' reason='uninitialized' action='reinterpret' debug_id='0'/>
+<parse method='1388' uses='1.000000' osr_bci='67' stamp='1.224'>
+<dependency type='evol_method' x0='1388'/>
+<uncommon_trap method='1388' bci='105' reason='uninitialized' action='reinterpret' debug_id='0'/>
+<uncommon_trap bci='67' reason='constraint' action='reinterpret' debug_id='0'/>
+<uncommon_trap bci='67' reason='predicate' action='maybe_recompile' debug_id='0'/>
+<task compile_id='1510' compile_kind='osr' method='org.example.jvminternals.ch18.RecoveryJourney longLoop (I)J' bytes='26' count='1' backedge_count='101376' iicount='1' osr_bci='4' blocking='1' stamp='1.231'>
+<type id='1211' name='long'/>
+<type id='1210' name='int'/>
+<klass id='1386' name='org.example.jvminternals.ch18.RecoveryJourney' flags='17'/>
+<method id='1387' holder='1386' name='longLoop' return='1211' arguments='1210' flags='10' bytes='26' compile_id='1509' compiler='c1' level='3' iicount='1'/>
+<parse method='1387' uses='1.000000' osr_bci='4' stamp='1.231'>
+<dependency type='evol_method' x0='1387'/>
+<uncommon_trap bci='4' reason='predicate' action='maybe_recompile' debug_id='0'/>
+<uncommon_trap bci='4' reason='profile_predicate' action='maybe_recompile' debug_id='0'/>
+<uncommon_trap bci='4' reason='auto_vectorization_check' action='maybe_recompile' debug_id='0'/>
+<uncommon_trap bci='4' reason='loop_limit_check' action='maybe_recompile' debug_id='0'/>
+<bc code='162' bci='6'/>
+<branch target_bci='24' taken='0' not_taken='40960' cnt='40960.000000' prob='never'/>
+<uncommon_trap bci='6' reason='unstable_if' action='reinterpret' debug_id='0' comment='taken never'/>
+<parse_done nodes='132' live='127' memory='20584' stamp='1.231'/>
+</parse>
+<loop_tree>
+<loop idx='132' inner_loop='1' >
+</loop>
+</loop_tree>
+<loop_tree>
+<loop idx='172' >
+<loop idx='277' >
+</loop>
+</loop>
+</loop_tree>
+<loop_tree>
+<loop idx='194' >
+<loop idx='185' inner_loop='1' >
+</loop>
+</loop>
+<loop idx='238' inner_loop='1' >
+</loop>
+<loop idx='172' >
+<loop idx='312' inner_loop='1' >
+</loop>
+</loop>
+<loop idx='210' inner_loop='1' >
+</loop>
+</loop_tree>
+<loop_tree>
+<loop idx='194' >
+<loop idx='185' inner_loop='1' >
+</loop>
+</loop>
+<loop idx='238' inner_loop='1' >
+</loop>
+<loop idx='172' >
+<loop idx='359' inner_loop='1' >
+</loop>
+</loop>
+<loop idx='210' inner_loop='1' >
+</loop>
+</loop_tree>
+<loop_tree>
+<loop idx='194' >
+<loop idx='185' inner_loop='1' >
+</loop>
+</loop>
+<loop idx='238' inner_loop='1' >
+</loop>
+<loop idx='172' >
+<loop idx='426' inner_loop='1' >
+</loop>
+</loop>
+<loop idx='210' inner_loop='1' >
+</loop>
+</loop_tree>
+<loop_tree>
+<loop idx='194' >

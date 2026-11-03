@@ -1,0 +1,5 @@
+eaeaa9c6c6da9931d35b4e1ee746e11b78c6172725ec58f16feac22eb0c34e68  chapters/ch02-computer-basics/chapter.html
+41e21132ce84b4ee318d3bf9953128268dd3957b89b8906610cb38b0dea5b774  chapters/ch02-computer-basics/figures/ch02-f01-address-translation.svg
+c010b803d48757cfab3fe3e4b654bb4966a7b9355efa3a9baa4120dcd51fd560  chapters/ch02-computer-basics/figures/ch02-f02-process-threads.svg
+513c1b244b4db22a1aa48b97f664c4d2a1636e0883f85270c84d1b0bb70b90d3  chapters/ch02-computer-basics/figures/ch02-f03-calling-conventions.svg
+7b5303d60fefcb96e4c8a4039d0873476cf8f5d580ffdec8a3e5768b950f5c49  assets/book.css

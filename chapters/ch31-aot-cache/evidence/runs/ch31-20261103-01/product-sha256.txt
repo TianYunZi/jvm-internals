@@ -1,0 +1,4 @@
+d240a3dbade908845178887ec2f3f04efb4f45b6435c94fc57b6ebd59e8f0166  chapters/ch31-aot-cache/target/cache.jar
+004d6113dbc3d94e5344ebcf04f704f8a6ecb48e614b4b6402d39ab4c77af7dc  chapters/ch31-aot-cache/target/cache.aot
+6e661f15f1665c3bb8e748beddf39062107c6e11d64bf12b0d496372f422f004  chapters/ch31-aot-cache/target/simple.aot
+ac3427f8de2bcef13073e56fae0ec1442a7c781e2506bd8c77a1f94552fd35e6  chapters/ch31-aot-cache/target/training.aotconfig

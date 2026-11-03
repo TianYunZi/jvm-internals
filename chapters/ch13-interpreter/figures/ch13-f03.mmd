@@ -1,0 +1,13 @@
+%% P05机制图：依据本章来源索引；本地导出后供离线阅读。
+sequenceDiagram
+  accTitle: 本轮跨方法异常查找与展开
+  participant L as leaf
+  participant M as middle
+  participant A as main
+  Note over L,A: 本轮解释模式；数字为方法内字节码位置
+  L->>L: 显式抛出13／除零24<br/>没有匹配处理器
+  L-->>M: 移除leaf帧；回到调用点1
+  M->>M: catch-all进入19<br/>执行finally，在33重抛
+  M-->>A: 移除middle帧；回到调用点16
+  A->>A: 按类型匹配处理器22<br/>捕获后继续正常执行
+  Note over L,A: 处理器入口清空原操作数栈<br/>异常对象成为唯一栈项；创建时栈不是此刻物理帧快照

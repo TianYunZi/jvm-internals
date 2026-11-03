@@ -1,0 +1,42 @@
+[0.020s][info][verification] Verifying class org.example.jvminternals.ch05.BytecodeCases with new format
+[0.020s][info][verification] Verifying method org.example.jvminternals.ch05.BytecodeCases.widenAndAdd(IJD)J
+[0.020s][info][verification] Verifying method org.example.jvminternals.ch05.BytecodeCases.reuseSlot(I)I
+[0.020s][info][verification] Verifying method org.example.jvminternals.ch05.BytecodeCases.denseSwitch(I)I
+[0.020s][info][verification] Verifying method org.example.jvminternals.ch05.BytecodeCases.sparseSwitch(I)I
+[0.020s][info][verification] Verifying method org.example.jvminternals.ch05.BytecodeCases.synchronizedBlock(I)I
+[0.020s][info][verification] Verifying method org.example.jvminternals.ch05.BytecodeCases.synchronizedMethod(I)I
+[0.020s][info][verification] Verifying method org.example.jvminternals.ch05.BytecodeCases.invoke(Lorg/example/jvminternals/ch05/BytecodeCases$Unary;I)I
+[0.020s][info][verification] Verifying method org.example.jvminternals.ch05.BytecodeCases.<init>()V
+[0.020s][info][verification] Verifying method org.example.jvminternals.ch05.BytecodeCases.<clinit>()V
+[0.020s][info][verification] Verifying method org.example.jvminternals.ch05.BytecodeCases.main([Ljava/lang/String;)V
+[0.021s][info][verification] Verifying method org.example.jvminternals.ch05.BytecodeCases.sum([I)I
+[0.021s][info][verification] Verifying method org.example.jvminternals.ch05.BytecodeCases.branch(I)I
+[0.021s][info][verification] End class verification for: org.example.jvminternals.ch05.BytecodeCases
+[0.054s][info][verification] Verifying class sun.util.resources.cldr.provider.CLDRLocaleDataMetaInfo with new format
+[0.054s][info][verification] Verifying method sun.util.resources.cldr.provider.CLDRLocaleDataMetaInfo.<init>()V
+[0.054s][info][verification] Verifying method sun.util.resources.cldr.provider.CLDRLocaleDataMetaInfo.getType()Lsun/util/locale/provider/LocaleProviderAdapter$Type;
+[0.054s][info][verification] Verifying method sun.util.resources.cldr.provider.CLDRLocaleDataMetaInfo.availableLanguageTags(Ljava/lang/String;)Ljava/lang/String;
+[0.054s][info][verification] End class verification for: sun.util.resources.cldr.provider.CLDRLocaleDataMetaInfo
+[0.059s][info][verification] Verifying class sun.util.resources.provider.LocaleDataProvider with new format
+[0.059s][info][verification] Verifying method sun.util.resources.provider.LocaleDataProvider.<init>()V
+[0.059s][info][verification] Verifying method sun.util.resources.provider.LocaleDataProvider.loadResourceBundle(Ljava/lang/String;)Ljava/util/ResourceBundle;
+[0.059s][info][verification] Verifying method sun.util.resources.provider.LocaleDataProvider.getBundle(Ljava/lang/String;Ljava/util/Locale;)Ljava/util/ResourceBundle;
+[0.059s][info][verification] End class verification for: sun.util.resources.provider.LocaleDataProvider
+[0.059s][info][verification] Verifying class sun.text.resources.cldr.ext.FormatData_zh with new format
+[0.059s][info][verification] Verifying method sun.text.resources.cldr.ext.FormatData_zh.<init>()V
+[0.059s][info][verification] Verifying method sun.text.resources.cldr.ext.FormatData_zh.getContents()[[Ljava/lang/Object;
+[0.060s][info][verification] End class verification for: sun.text.resources.cldr.ext.FormatData_zh
+[0.060s][info][verification] Verifying class sun.text.resources.cldr.ext.FormatData_zh_Hans_SG with new format
+[0.060s][info][verification] Verifying method sun.text.resources.cldr.ext.FormatData_zh_Hans_SG.<init>()V
+[0.060s][info][verification] Verifying method sun.text.resources.cldr.ext.FormatData_zh_Hans_SG.getContents()[[Ljava/lang/Object;
+[0.060s][info][verification] End class verification for: sun.text.resources.cldr.ext.FormatData_zh_Hans_SG
+[0.062s][info][verification] Verifying class org.example.jvminternals.ch05.BytecodeCases$MonitorCell with new format
+[0.062s][info][verification] Verifying method org.example.jvminternals.ch05.BytecodeCases$MonitorCell.<init>()V
+[0.062s][info][verification] Verifying method org.example.jvminternals.ch05.BytecodeCases$MonitorCell.add(I)I
+[0.062s][info][verification] End class verification for: org.example.jvminternals.ch05.BytecodeCases$MonitorCell
+[0.064s][info][verification] Verifying class org.example.jvminternals.ch05.BytecodeCases$Unary with new format
+[0.064s][info][verification] End class verification for: org.example.jvminternals.ch05.BytecodeCases$Unary
+[0.064s][info][verification] Verifying class org.example.jvminternals.ch05.BytecodeCases$Increment with new format
+[0.064s][info][verification] Verifying method org.example.jvminternals.ch05.BytecodeCases$Increment.<init>()V
+[0.064s][info][verification] Verifying method org.example.jvminternals.ch05.BytecodeCases$Increment.apply(I)I
+[0.064s][info][verification] End class verification for: org.example.jvminternals.ch05.BytecodeCases$Increment

@@ -1,0 +1,2 @@
+  PID  PPID  %CPU    RSS      VSZ ELAPSED COMMAND
+15216 11842   0.0  59248 490639248   00:18 /opt/homebrew/Cellar/openjdk@25/25.0.5.0.2/libexec/openjdk.jdk/Contents/Home/bin/java -Xms32m -Xmx128m -XX:NativeMemoryTracking=detail -Xlog:os+thread=info:file=chapters/ch02-computer-basics/evidence/runs/ch02-20261103-02/os-threads.log:uptime,level,tags -cp chapters/ch01-architecture/target/classes org.example.jvminternals.ch01.ProgramJourney chapters/ch01-architecture/src/main/resources/message.txt 60

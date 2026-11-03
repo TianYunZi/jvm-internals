@@ -1,0 +1,716 @@
+CompileCommand: dontinline org/example/jvminternals/ch16/TieredJourney.hot bool dontinline = true
+18    1       3       java.lang.String::hashCode (60 bytes)
+                              @ 17   java.lang.String::isLatin1 (19 bytes)   inline
+                              @ 27   java.lang.StringLatin1::hashCode (9 bytes)   inline
+                                @ 5   jdk.internal.util.ArraysSupport::hashCodeOfUnsigned (55 bytes)   failed to inline: callee is too large
+                              @ 37  java/lang/StringUTF16::hashCode (not loaded)   failed to inline: not inlineable
+18    3     n 0       jdk.internal.misc.Unsafe::getReferenceVolatile (native)   
+18    4       3       java.lang.Object::<init> (1 bytes)
+19    2       3       java.lang.Byte::toUnsignedInt (6 bytes)
+19    5     n 0       jdk.internal.vm.Continuation::enterSpecial (native)   (static)
+19    6     n 0       jdk.internal.vm.Continuation::doYield (native)   (static)
+20    7       3       java.lang.String::coder (15 bytes)
+21    8       3       java.lang.String::isLatin1 (19 bytes)
+22    9       3       jdk.internal.util.Preconditions::checkIndex (18 bytes)
+                              @ 12   jdk.internal.util.Preconditions::outOfBoundsCheckIndex (25 bytes)   failed to inline: callee uses too much stack
+22   10       3       java.lang.String::charAt (25 bytes)
+22   12     n 0       java.lang.Object::hashCode (native)   
+                              @ 1   java.lang.String::isLatin1 (19 bytes)   inline
+22   13     n 0       java.lang.invoke.MethodHandle::linkToStatic(LLLLLLL)L (native)   (static)
+                              @ 12   java.lang.StringLatin1::charAt (15 bytes)   inline
+                                @ 3   java.lang.String::checkIndex (10 bytes)   inline
+                                  @ 5   jdk.internal.util.Preconditions::checkIndex (18 bytes)   intrinsic
+                              @ 21  java/lang/StringUTF16::charAt (not loaded)   failed to inline: not inlineable
+23   11       3       java.lang.String::length (11 bytes)
+                              @ 6   java.lang.String::coder (15 bytes)   inline
+23   15       3       java.util.Objects::requireNonNull (14 bytes)
+23   16     n 0       java.lang.invoke.MethodHandle::linkToStatic(JLL)L (native)   (static)
+                              @ 8   java.lang.NullPointerException::<init> (5 bytes)   failed to inline: don't inline Throwable constructors
+23   17     n 0       java.lang.System::arraycopy (native)   (static)
+23   14       1       java.lang.Enum::ordinal (5 bytes)
+24   18       3       java.lang.Enum::<init> (15 bytes)
+                              @ 1   java.lang.Object::<init> (1 bytes)   inline
+24   19       4       java.lang.Byte::toUnsignedInt (6 bytes)
+24    2       3       java.lang.Byte::toUnsignedInt (6 bytes)   made not entrant: not used
+25   20       1       jdk.internal.classfile.impl.AbstractPoolEntry::index (5 bytes)
+25   21       4       java.lang.Object::<init> (1 bytes)
+25   22       1       java.lang.Class::isPrimitive (5 bytes)
+25   23       1       jdk.internal.classfile.impl.AbstractPoolEntry::width (2 bytes)
+25    4       3       java.lang.Object::<init> (1 bytes)   made not entrant: not used
+25   24       1       jdk.internal.classfile.impl.SplitConstantPool::size (5 bytes)
+25   25     n 0       java.lang.invoke.MethodHandle::invokeBasic(LLLLLL)L (native)   
+26   26     n 0       java.lang.invoke.MethodHandle::linkToSpecial(LJL)V (native)   (static)
+26   27       3       jdk.internal.classfile.impl.SplitConstantPool::map (161 bytes)
+                              @ 26   java.lang.Math::max (11 bytes)   inline
+                              @ 31   jdk.internal.classfile.impl.EntryMap::<init> (86 bytes)   failed to inline: callee is too large
+                              @ 76   java.lang.Object::hashCode (0 bytes)   failed to inline: no static binding
+                              @ 83   java.lang.classfile.constantpool.PoolEntry::index (0 bytes)   failed to inline: no static binding
+                              @ 88   jdk.internal.classfile.impl.EntryMap::put (186 bytes)   failed to inline: callee is too large
+                              @ 94   java.lang.classfile.constantpool.PoolEntry::width (0 bytes)   failed to inline: no static binding
+                              @ 106   java.lang.Math::max (11 bytes)   inline
+                              @ 131   java.lang.Object::hashCode (0 bytes)   failed to inline: no static binding
+                              @ 138   java.lang.classfile.constantpool.PoolEntry::index (0 bytes)   failed to inline: no static binding
+27   31     n 0       java.lang.invoke.MethodHandle::invokeBasic(J)L (native)   
+                              @ 143   jdk.internal.classfile.impl.EntryMap::put (186 bytes)   failed to inline: callee is too large
+                     27   32     n 0       java.lang.invoke.MethodHandle::linkToSpecial(LJL)L (native)   (static)
+         @ 149   java.lang.classfile.constantpool.PoolEntry::width (0 bytes)   failed to inline: no static binding
+28   28       3       jdk.internal.classfile.impl.BufWriterImpl::reserveSpace (22 bytes)
+                              @ 18   jdk.internal.classfile.impl.BufWriterImpl::grow (33 bytes)   inline
+                                @ 26   java.util.Arrays::copyOf (33 bytes)   failed to inline: callee is too large
+28   29       1       jdk.internal.classfile.impl.RawBytecodeHelper::bci (5 bytes)
+28   30       1       jdk.internal.classfile.impl.AbstractPoolEntry::constantPool (5 bytes)
+29   33       1       jdk.internal.util.StrongReferenceKey::get (5 bytes)
+29   34     n 0       jdk.internal.misc.Unsafe::compareAndSetLong (native)   
+29   35       1       java.lang.invoke.MethodType::returnType (5 bytes)
+29   36     n 0       java.lang.invoke.MethodHandle::linkToStatic(LLLLLL)L (native)   (static)
+29   37     n 0       java.lang.invoke.MethodHandle::invokeBasic(LLLLL)L (native)   
+30   38     n 0       java.lang.invoke.MethodHandle::linkToSpecial(LLLLLLL)L (native)   (static)
+30   39       1       java.lang.Class::getClassLoader (5 bytes)
+30   40     n 0       java.lang.Object::clone (native)   
+30   41   !   3       java.lang.ref.ReferenceQueue::poll (44 bytes)
+                              30   45     n 0       jdk.internal.misc.Unsafe::compareAndSetReference (native)   
+@ 9   jdk.internal.vm.ContinuationSupport::pinIfSupported (10 bytes)   inline
+                                @ 0   jdk.internal.vm.ContinuationSupport::isSupported (4 bytes)   inline
+                                @ 6   jdk.internal.vm.Continuation::pin (0 bytes)   failed to inline: native method
+                              @ 20   java.lang.ref.ReferenceQueue::poll031   47     n 0       java.lang.invoke.MethodHandle::linkToStatic(LLL)L (native)   (static)
+ (65 bytes)   failed to inline: callee is too large
+                              @ 38   jdk.internal.vm.ContinuationSupport::unpinIfSupported (10 bytes)   inline
+                              31   48     n 0       java.lang.invoke.MethodHandle::linkToStatic(LLLL)L (native)   (static)
+  @ 0   jdk.internal.vm.ContinuationSupport::isSupported (4 bytes)   inline
+                                @ 6   jdk.internal.vm.Continuation::unpin (0 bytes)   failed to inline: native method
+                              @ 26   jdk.internal.vm.ContinuationSupport::unpinIfSupported (10 bytes)   inline
+                              31   49     n 0       java.lang.invoke.MethodHandle::invokeBasic(LJ)L (native)   
+  @ 0   jdk.internal.vm.ContinuationSupport::isSupported (4 bytes)   inline
+31   51     n 0       java.lang.invoke.MethodHandle::linkToSpecial(LLJL)L (native)   (static)
+                                @ 6   jdk.internal.vm.Continuation::unpin (0 bytes)   failed to inline: native method
+31   52     n 0       java.lang.invoke.MethodHandle::linkToStatic(LLLLL)L (native)   (static)
+32   43       3       java.util.concurrent.ConcurrentHashMap::tabAt (21 bytes)
+                              @ 14   jdk.internal.misc.Unsafe::getReferenceAcquire (7 bytes)   inline
+32   53     n 0       java.lang.invoke.MethodHandle::invokeBasic(LLLL)L (native)   
+                                @ 3   jdk.internal.misc.Unsafe::getReferenceVolatile (0 bytes)   intrinsic
+32   44       3       jdk.internal.misc.Unsafe::getReferenceAcquire (7 bytes)
+                              @ 3   jdk.internal.misc.Unsafe::getReferenceVolatile (0 bytes)   intrinsic
+32   46       3       java.util.concurrent.ConcurrentHashMap::spread (10 bytes)
+32   50       1       java.lang.invoke.MemberName::getDeclaringClass (5 bytes)
+32   42       3       jdk.internal.util.ReferencedKeyMap::removeStaleReferences (30 bytes)
+               !m             @ 4   java.lang.ref.ReferenceQueue::poll (44 bytes)   failed to inline: callee is too large
+进程=45724
+                              @ 20   java.util.Map::remove (0 bytes)   failed to inline: no static binding
+33   54       3       java.lang.Math::min (11 bytes)
+34   55     n 0       java.lang.invoke.MethodHandle::linkToSpecial(LL)V (native)   (static)
+34   56     n 0       java.lang.invoke.MethodHandle::invokeBasic()L (native)   
+34   57       3       java.lang.invoke.MemberName::isInvocable (8 bytes)
+35   59     n 0       java.lang.invoke.MethodHandle::linkToSpecial(LL)L (native)   (static)
+                              @ 4   java.lang.invoke.MemberName::anyFlagSet (15 bytes)   inline
+35   58       3       java.lang.invoke.MemberName::anyFlagSet (15 bytes)
+35   60       1       java.lang.invoke.MethodType::ptypes (5 bytes)
+36   61       3       java.util.Objects::requireNonNull (15 bytes)
+36   62     n 0       java.lang.invoke.MethodHandle::linkToStatic(L)L (native)   (static)
+                              @ 9   java.lang.NullPointerException::<init> (6 bytes)   failed to inline: don't inline Throwable constructors
+36   63       3       jdk.internal.classfile.impl.AbstractPoolEntry::hashString (5 bytes)
+36   64       3       jdk.internal.classfile.impl.SplitConstantPool::entryByIndex (59 bytes)
+                              @ 6   jdk.internal.classfile.impl.SplitConstantPool::size (5 bytes)   inline
+        36   67     n 0       java.lang.invoke.MethodHandle::invokeBasic(L)L (native)   
+                      @ 30   jdk.internal.classfile.impl.ClassReaderImpl::entryByIndex (8 bytes)   inline
+37   68     n 0       java.lang.invoke.MethodHandle::linkToSpecial(LLL)L (native)   (static)
+                                @ 4   jdk.internal.classfile.impl.ClassReaderImpl::entryByIndex (809 bytes)   failed to inline: callee is too large
+                              @ 53   jdk.internal.classfile.impl.SplitConstantPool::unusableCP (27 bytes)   inline
+37   69     n 0       java.lang.Object::getClass (native)   
+                                @ 8   java.lang.StringBuilder::<init> (7 bytes)   inline
+                                  @ 3   java.lang.AbstractStringBuilder::<init> (39 bytes)   failed to inline: callee is too large
+                                @ 13   java.lang.StringBuilder::append (8 bytes)   inline
+                                  @ 2   java.lang.AbstractStringBuilder::append (100 bytes)   failed to inline: callee is too large
+                                @ 17   java.lang.StringBuilder::append (8 bytes)   inline
+                                  @ 2   java.lang.AbstractStringBuilder::append (72 bytes)   failed to inline: callee is too large
+                                @ 20   java.lang.StringBuilder::toString (20 bytes)   inline
+                                  @ 1   java.lang.StringBuilder::length (5 bytes)   inline
+                                    @ 1   java.lang.AbstractStringBuilder::length (5 bytes)   inline
+37   71     n 0       java.lang.invoke.MethodHandle::linkToInterface(LLL)I (native)   (static)
+                                  @ 16   java.lang.String::<init> (98 bytes)   failed to inline: callee is too large
+                                @ 23  java/lang/classfile/constantpool/ConstantPoolException::<init> (not loaded)   failed to inline: not inlineable
+                              @ 13   jdk.internal.classfile.impl.SplitConstantPool::badCP (27 bytes)   inline
+                                @ 8   java.lang.StringBuilder::<init> (7 bytes)   inline
+                                  @ 3   java.lang.AbstractStringBuilder::<init> (39 bytes)   failed to inline: callee is too large
+                                @ 13   java.lang.StringBuilder::append (8 bytes)   inline
+                                  @ 2   java.lang.AbstractStringBuilder::append (100 bytes)   failed to inline: callee is too large
+                                @ 17   java.lang.StringBuilder::append (8 bytes)   inline
+                                  @ 2   java.lang.AbstractStringBuilder::append (72 bytes)   failed to inline: callee is too large
+38   74     n 0       java.lang.invoke.MethodHandle::linkToStatic(LL)L (native)   (static)
+                                @ 20   java.lang.StringBuilder::toString (20 bytes)   inline
+                                  @ 1   java.lang.StringBuilder::length (5 bytes)   inline
+                                    @ 1   java.lang.AbstractStringBuilder::length (5 bytes)   inline
+                                  @ 16   java.lang.String::<init> (98 bytes)   failed to inline: callee is too large
+                                @ 23  java/lang/classfile/constantpool/ConstantPoolException::<init> (not loaded)   failed to inline: not inlineable
+39   66       3       java.lang.StringCoding::countNonZeroAsciiLatin1 (33 bytes)
+39   73       3       java.lang.invoke.MethodType::hashCode (53 bytes)
+                              @ 6   java.lang.Object::hashCode (0 bytes)   failed to inline: native method
+                              @ 40   java.lang.Object::hashCode (0 bytes)   failed to inline: native method
+39   72       3       java.util.concurrent.ConcurrentHashMap::get (162 bytes)
+                              @ 1   java.lang.Object::hashCode (0 bytes)   failed to inline: no static binding
+                              @ 4   java.util.concurrent.ConcurrentHashMap::spread (10 bytes)   inline
+                              @ 34   java.util.concurrent.ConcurrentHashMap::tabAt (21 bytes)   failed to inline: callee uses too much stack
+                              @ 73   java.lang.Object::equals (11 bytes)   failed to inline: no static binding
+                              @ 93   java.util.concurrent.ConcurrentHashMap$Node::find (52 bytes)   failed to inline: no static binding
+                              @ 149   java.lang.Object::equals (11 bytes)   failed to inline: no static binding
+40   70       1       java.lang.invoke.MethodType::form (5 bytes)
+40   65       1       java.lang.String::value (5 bytes)
+40   75       3       java.util.Objects::equals (23 bytes)
+41   77     n 0       java.lang.invoke.MethodHandle::linkToStatic(LLL)I (native)   (static)
+                              @ 11   java.lang.Object::equals (11 bytes)   failed to inline: no static binding
+41   76       3       java.lang.String::equals (56 bytes)
+                              @ 44   java.lang.StringLatin1::equals (36 bytes)   failed to inline: callee is too large
+41   80       3       jdk.internal.util.ArraysSupport::unsignedHashCode (36 bytes)
+                              @ 23   java.lang.Byte::toUnsignedInt (6 bytes)   inline
+41   81     n 0       java.lang.invoke.MethodHandle::linkToSpecial(LLL)V (native)   (static)
+41   78       3       jdk.internal.classfile.impl.AbstractPoolEntry::<init> (20 bytes)
+                              @ 1   java.lang.Object::<init> (1 bytes)   inline
+41   79       1       jdk.internal.constant.ClassOrInterfaceDescImpl::descriptorString (5 bytes)
+41   82       3       jdk.internal.classfile.impl.EntryMap::put (186 bytes)
+                              @ 10   java.lang.IllegalArgumentException::<init> (6 bytes)   failed to inline: don't inline Throwable constructors
+                              @ 69   jdk.internal.classfile.impl.EntryMap::rehash (92 bytes)   failed to inline: callee is too large
+                              @ 152   jdk.internal.classfile.impl.EntryMap::rehash (92 bytes)   failed to inline: callee is too large
+42   83       3       jdk.internal.classfile.impl.AbstractPoolEntry::maybeClone (26 bytes)
+                              @ 2   java.lang.classfile.constantpool.PoolEntry::constantPool (0 bytes)   failed to inline: no static binding
+                              @ 7   java.lang.classfile.constantpool.ConstantPoolBuilder::canWriteDirect (0 bytes)   failed to inline: no static binding
+                              @ 22   jdk.internal.classfile.impl.AbstractPoolEntry::clone (0 bytes)   failed to inline: no static binding
+42   86     n 0       java.lang.invoke.MethodHandle::linkToSpecial(LLL)I (native)   (static)
+42   85       3       java.lang.Class::isArray (13 bytes)
+42   84       3       jdk.internal.classfile.impl.SplitConstantPool::canWriteDirect (24 bytes)
+                              @ 1   java.util.Objects::requireNonNull (14 bytes)   force inline by annotation
+                                @ 8   java.lang.NullPointerException::<init> (5 bytes)   failed to inline: don't inline Throwable constructors
+43   90       3       java.lang.invoke.MethodTypeForm::canonicalize (74 bytes)
+                              @ 10   java.lang.Class::isPrimitive (5 bytes)   inline
+                              @ 45   sun.invoke.util.Wrapper::asPrimitiveType (20 bytes)   inline
+                                @ 1   sun.invoke.util.Wrapper::findWrapperType (102 bytes)   failed to inline: callee is too large
+                                @ 10   sun.invoke.util.Wrapper::primitiveType (5 bytes)   inline
+43   92     n 0       java.lang.Class::isInstance (native)   
+                                @ 14   sun.invoke.util.Wrapper::forceType (72 bytes)   failed to inline: callee is too large
+                              @ 68   sun.invoke.util.Wrapper::asWrapperType (18 bytes)   inline
+                                @ 1   java.lang.Class::isPrimitive (5 bytes)   inline43   93     n 0       java.lang.invoke.MethodHandleNatives::resolve (native)   (static)
+
+                                @ 8   sun.invoke.util.Wrapper::forPrimitiveType (122 bytes)   failed to inline: callee is too large
+                                @ 12   sun.invoke.util.Wrapper::wrapperType (52 bytes)   failed to inline: callee is too large
+43   88       3       java.lang.String::getBytes (44 bytes)
+                              @ 1   java.lang.String::coder (15 bytes)   inline
+                              @ 22   java.lang.System::arraycopy (0 bytes)   intrinsic
+                              @ 40   java.lang.StringLatin1::inflate (10 bytes)   failed to inline: callee uses too much stack
+44   91       3       jdk.internal.classfile.impl.EntryMap::firstToken (50 bytes)
+                              @ 10   java.lang.IllegalArgumentException::<init> (6 bytes)   failed to inline: don't inline Throwable constructors
+                              @ 46   jdk.internal.classfile.impl.EntryMap::nextToken (37 bytes)   failed to inline: callee is too large
+44   87       3       java.lang.String::<init> (15 bytes)
+                              @ 1   java.lang.Object::<init> (1 bytes)   inline
+44   97       3       jdk.internal.util.ReferencedKeyMap::lookupKey (9 bytes)
+                              @ 5   jdk.internal.util.StrongReferenceKey::<init> (10 bytes)   inline
+                                @ 1   java.lang.Object::<init> (1 bytes)   inline
+44   99       3       jdk.internal.util.StrongReferenceKey::hashCode (8 bytes)
+                              @ 1   jdk.internal.util.StrongReferenceKey::get (5 bytes)   inline
+                              @ 4   java.lang.Object::hashCode (0 bytes)   failed to inline: no static binding
+44   89       1       jdk.internal.classfile.impl.BufWriterImpl::size (5 bytes)
+45   98       3       jdk.internal.util.StrongReferenceKey::<init> (10 bytes)
+                              @ 1   java.lang.Object::<init> (1 bytes)   inline
+45   96       3       java.lang.invoke.MethodType::parameterType (7 bytes)
+45   94       1       java.lang.AbstractStringBuilder::length (5 bytes)
+45  100       1       jdk.internal.classfile.impl.AbstractDirectBuilder::constantPool (5 bytes)
+45  103       3       jdk.internal.classfile.impl.RawBytecodeHelper::next (81 bytes)
+                              @ 6   jdk.internal.classfile.impl.RawBytecodeHelper::endBci (8 bytes)   inline
+                              @ 19   jdk.internal.classfile.impl.RawBytecodeHelper::getU1Unchecked (13 bytes)   inline
+                                @ 9   java.lang.Byte::toUnsignedInt (6 bytes)   inline
+                              @ 53   jdk.internal.classfile.impl.RawBytecodeHelper::checkSpecialInstruction (242 bytes)   failed to inline: callee is too large
+45  104       3       jdk.internal.classfile.impl.RawBytecodeHelper::opcode (9 bytes)
+45  106     n 0       java.lang.invoke.MethodHandle::invokeBasic(LLJ)L (native)   
+46  105       3       jdk.internal.classfile.impl.RawBytecodeHelper::getU1Unchecked (13 bytes)
+46  108     n 0       java.lang.invoke.MethodHandle::linkToSpecial(LLLJL)L (native)   (static)
+                              @ 9   java.lang.Byte::toUnsignedInt (6 bytes)   inline
+46  107       3       java.lang.invoke.MethodType::checkSlotCount (33 bytes)
+                              @ 13   java.lang.StringBuilder::<init> (7 bytes)   inline
+                                @ 3   java.lang.AbstractStringBuilder::<init> (39 bytes)   failed to inline: callee is too large
+                              @ 18   java.lang.StringBuilder::append (8 bytes)   inline
+                                @ 2   java.lang.AbstractStringBuilder::append (100 bytes)   failed to inline: callee is too large
+                              @ 22   java.lang.StringBuilder::append (8 bytes)   inline
+                                @ 2   java.lang.AbstractStringBuilder::append (72 bytes)   failed to inline: callee is too large
+                              @ 25   java.lang.StringBuilder::toString (20 bytes)   inline
+                                @ 1   java.lang.StringBuilder::length (5 bytes)   inline
+                                  @ 1   java.lang.AbstractStringBuilder::length (5 bytes)   inline
+                                @ 16   java.lang.String::<init> (98 bytes)   failed to inline: callee is too large
+                              @ 28   java.lang.invoke.MethodHandleStatics::newIllegalArgumentException (9 bytes)   inline
+                                @ 5   java.lang.IllegalArgumentException::<init> (6 bytes)   failed to inline: don't inline Throwable constructors
+47  102       3       jdk.internal.classfile.impl.RawBytecodeHelper::endBci (8 bytes)
+47  101       3       jdk.internal.classfile.impl.SplitConstantPool::utf8Entry阶段=初始少量调用；进程存活毫秒=44
+ (45 bytes)
+                              @ 1   java.lang.String::hashCode (60 bytes)   failed to inline: callee is too large
+                              @ 7   jdk.internal.classfile.impl.AbstractPoolEntry::hashString (5 bytes)   inline
+                              @ 11  阶段=初始观察窗；结果=2493741334；进程存活毫秒=47
+ jdk.internal.classfile.impl.SplitConstantPool::tryFindUtf8 (103 bytes)   failed to inline: callee is too large
+                              @ 31   jdk.internal.classfile.impl.AbstractPoolEntry$Utf8EntryImpl::<init> (49 bytes)   failed to inline: callee is too large
+                              @ 34   jdk.internal.classfile.impl.SplitConstantPool::internalAdd (12 bytes)   inline
+                                @ 3   jdk.internal.classfile.impl.AbstractPoolEntry$Utf8EntryImpl::hashCode (8 bytes)   inline
+                                  @ 1   jdk.internal.classfile.impl.AbstractPoolEntry$Utf8EntryImpl::contentHash (19 bytes)   inline
+                                    @ 11   jdk.internal.classfile.impl.AbstractPoolEntry$Utf8EntryImpl::inflate (73 bytes)   failed to inline: callee is too large
+                                  @ 4   jdk.internal.classfile.impl.AbstractPoolEntry::hashString (5 bytes)   inline
+                                @ 8   jdk.internal.classfile.impl.SplitConstantPool::internalAdd (78 bytes)   failed to inline: callee is too large
+48  110       3       jdk.internal.classfile.impl.SplitConstantPool::internalAdd (12 bytes)
+                              @ 3   java.lang.Object::hashCode (0 bytes)   failed to inline: no static binding
+                              @ 8   jdk.internal.classfile.impl.SplitConstantPool::internalAdd (78 bytes)   failed to inline: callee is too large
+48  111       3       jdk.internal.classfile.impl.SplitConstantPool::internalAdd (78 bytes)
+                              @ 31   java.util.Arrays::copyOf (40 bytes)   failed to inline: callee is too large
+                              @ 53   java.lang.classfile.constantpool.PoolEntry::width (0 bytes)   failed to inline: no static binding
+                              @ 63   jdk.internal.classfile.impl.SplitConstantPool::map (161 bytes)   failed to inline: callee is too large
+                              @ 68   java.lang.classfile.constantpool.PoolEntry::index (0 bytes)   failed to inline: no static binding
+                              @ 73   jdk.internal.classfile.impl.EntryMap::put (186 bytes)   failed to inline: callee is too large
+48  109       1       java.util.ArrayList::size (5 bytes)
+48  112       1       jdk.internal.classfile.impl.AbstractPoolEntry::hashCode (5 bytes)
+48  113       1       jdk.internal.constant.ClassOrInterfaceDescImpl::isClassOrInterface (2 bytes)
+49  114       1       jdk.internal.classfile.impl.AbstractPoolEntry$ClassEntryImpl::tag (3 bytes)
+49   95       1       jdk.internal.util.WeakReferenceKey::hashCode (5 bytes)
+阶段=画像与编译活动开始；进程存活毫秒=10053
+10054  115       3       org.example.jvminternals.ch16.TieredJourney::hot (28 bytes)
+10056  116 %     4       org.example.jvminternals.ch16.TieredJourney::hot @ 4 (28 bytes)
+10058  117       4       org.example.jvminternals.ch16.TieredJourney::hot (28 bytes)
+10058  115       3       org.example.jvminternals.ch16.TieredJourney::hot (28 bytes)   made not entrant: not used
+10061  118 %     3       org.example.jvminternals.ch16.TieredJourney::main @ 70 (142 bytes)
+                              @ 3   java.lang.ProcessHandle::current (4 bytes)   inline
+                                @ 0   java.lang.ProcessHandleImpl::current (4 bytes)   inline
+                              @ 6   java.lang.ProcessHandleImpl::pid (5 bytes)   inline
+                              @ 11   java.lang.invoke.Invokers$Holder::linkToTargetMethod (9 bytes)   force inline by annotation
+                                @ 5   java.lang.invoke.LambdaForm$MH/0x0000010001041400::invoke (27 bytes)   force inline by annotation
+                                  @ 23   java.lang.invoke.DirectMethodHandle$Holder::invokeSpecial (17 bytes)   force inline by annotation
+                                    @ 1   java.lang.invoke.DirectMethodHandle::internalMemberName (8 bytes)   force inline by annotation
+                                    @ 13   java.lang.StringConcatHelper$Concat1::concat (69 bytes)   force inline by annotation
+                                      @ 5   java.lang.StringConcatHelper::stringSize (10 bytes)   inline
+                                        @ 2   jdk.internal.util.DecimalDigits::stringSize (55 bytes)   failed to inline: callee is too large
+                                        @ 6   java.lang.StringConcatHelper::checkOverflow (16 bytes)   force inline by annotation
+                                          @ 12   java.lang.OutOfMemoryError::<init> (6 bytes)   failed to inline: don't inline Throwable constructors
+                                      @ 20   java.lang.String::length (11 bytes)   inline
+                                        @ 6   java.lang.String::coder (15 bytes)   inline
+                                      @ 32   java.lang.StringConcatHelper::newArrayWithSuffix (35 bytes)   force inline by annotation
+                                        @ 2   java.lang.String::length (11 bytes)   inline
+                                          @ 6   java.lang.String::coder (15 bytes)   inline
+                                        @ 8   java.lang.StringConcatHelper::newArray (28 bytes)   force inline by annotation
+                                          @ 10   java.lang.OutOfMemoryError::<init> (6 bytes)   failed to inline: don't inline Throwable constructors
+                                          @ 21   jdk.internal.misc.Unsafe::allocateUninitializedArray (55 bytes)   failed to inline: callee is too large
+                                        @ 30   java.lang.String::getBytes (44 bytes)   failed to inline: callee is too large
+                                      @ 51   java.lang.StringConcatHelper::prepend (55 bytes)   failed to inline: callee is too large
+                                      @ 65   java.lang.String::<init> (15 bytes)   inline
+                                        @ 1   java.lang.Object::<init> (1 bytes)   inline
+               !m             @ 16   java.io.PrintStream::println (44 bytes)   failed to inline: callee is too large
+                              @ 23   org.example.jvminternals.ch16.TieredJourney::mark (21 bytes)   inline
+                                @ 4   java.lang.management.ManagementFactory::getRuntimeMXBean (9 bytes)   inline
+                                  @ 2   java.lang.management.ManagementFactory::getPlatformMXBean (70 bytes)   failed to inline: callee is too large
+                                @ 7   sun.management.RuntimeImpl::getUptime (10 bytes)   inline
+                                  @ 4   sun.management.VMManagementImpl::getUptime (5 bytes)   inline
+                                    @ 1   sun.management.VMManagementImpl::getUptime0 (0 bytes)   failed to inline: native method
+                                @ 12   java.lang.invoke.LambdaForm$MH/0x0000010001042800::linkToTargetMethod (10 bytes)   force inline by annotation
+                                  @ 6   java.lang.invoke.LambdaForm$MH/0x0000010001042400::invoke (30 bytes)   force inline by annotation
+                                    @ 26   java.lang.invoke.DirectMethodHandle$Holder::invokeSpecial (18 bytes)   force inline by annotation
+                                      @ 1   java.lang.invoke.DirectMethodHandle::internalMemberName (8 bytes)   force inline by annotation
+                                      @ 14   java.lang.String$$StringConcat/0x0000010001041c00::concat (82 bytes)   force inline by annotation
+                                        @ 1   java.lang.StringConcatHelper::stringOf (20 bytes)   failed to inline: callee is too large
+                                        @ 12   java.lang.String$$StringConcat/0x0000010001041c00::coder (7 bytes)   force inline by annotation
+                                          @ 2   java.lang.String::coder (15 bytes)   inline
+                                        @ 24   java.lang.String$$StringConcat/0x0000010001041c00::length (10 bytes)   force inline by annotation
+                                          @ 2   java.lang.StringConcatHelper::stringSize (10 bytes)   inline
+                                            @ 2   java.lang.String::length (11 bytes)   inline
+                                              @ 6   java.lang.String::coder (15 bytes)   failed to inline: callee is too large
+                                            @ 6   java.lang.StringConcatHelper::checkOverflow (16 bytes)   force inline by annotation
+                                              @ 12   java.lang.OutOfMemoryError::<init> (6 bytes)   failed to inline: don't inline Throwable constructors
+                                          @ 6   java.lang.StringConcatHelper::stringSize (10 bytes)   inline
+                                            @ 2   jdk.internal.util.DecimalDigits::stringSize (55 bytes)   failed to inline: callee is too large
+                                            @ 6   java.lang.StringConcatHelper::checkOverflow (16 bytes)   force inline by annotation
+                                              @ 12   java.lang.OutOfMemoryError::<init> (6 bytes)   failed to inline: don't inline Throwable constructors
+                                        @ 39   java.lang.String::length (11 bytes)   inline
+                                          @ 6   java.lang.String::coder (15 bytes)   inline
+                                        @ 51   java.lang.StringConcatHelper::newArrayWithSuffix (35 bytes)   force inline by annotation
+                                          @ 2   java.lang.String::length (11 bytes)   inline
+                                            @ 6   java.lang.String::coder (15 bytes)   failed to inline: callee is too large
+                                          @ 8   java.lang.StringConcatHelper::newArray (28 bytes)   force inline by annotation
+                                            @ 10   java.lang.OutOfMemoryError::<init> (6 bytes)   failed to inline: don't inline Throwable constructors
+                                            @ 21   jdk.internal.misc.Unsafe::allocateUninitializedArray (55 bytes)   failed to inline: callee is too large
+                                          @ 20   java.lang.String::getBytes (44 bytes)   failed to inline: callee is too large
+                                          @ 30   java.lang.String::getBytes (44 bytes)   failed to inline: callee is too large
+                                        @ 67   java.lang.String$$StringConcat/0x0000010001041c00::prepend (22 bytes)   force inline by annotation
+                                          @ 8   java.lang.StringConcatHelper::prepend (55 bytes)   failed to inline: callee is too large
+                                          @ 18   java.lang.StringConcatHelper::prepend (62 bytes)   failed to inline: callee is too large
+                                        @ 78   java.lang.String::<init> (15 bytes)   inline
+                                          @ 1   java.lang.Object::<init> (1 bytes)   inline
+               !m               @ 17   java.io.PrintStream::println (44 bytes)   failed to inline: callee is too large
+                              @ 36   org.example.jvminternals.ch16.TieredJourney::hot (28 bytes)   failed to inline: disallowed by CompileCommand
+                              @ 49   java.lang.invoke.Invokers$Holder::linkToTargetMethod (9 bytes)   force inline by annotation
+                                @ 5   java.lang.invoke.LambdaForm$MH/0x0000010001041400::invoke (27 bytes)   force inline by annotation
+                                  @ 23   java.lang.invoke.DirectMethodHandle$Holder::invokeSpecial (17 bytes)   force inline by annotation
+                                    @ 1   java.lang.invoke.DirectMethodHandle::internalMemberName (8 bytes)   force inline by annotation
+                                    @ 13   java.lang.StringConcatHelper$Concat1::concat (69 bytes)   force inline by annotation
+                                      @ 5   java.lang.StringConcatHelper::stringSize (10 bytes)   inline
+                                        @ 2   jdk.internal.util.DecimalDigits::stringSize (55 bytes)   failed to inline: callee is too large
+                                        @ 6   java.lang.StringConcatHelper::checkOverflow (16 bytes)   force inline by annotation
+                                          @ 12   java.lang.OutOfMemoryError::<init> (6 bytes)   failed to inline: don't inline Throwable constructors
+                                      @ 20   java.lang.String::length (11 bytes)   inline
+                                        @ 6   java.lang.String::coder (15 bytes)   inline
+                                      @ 32   java.lang.StringConcatHelper::newArrayWithSuffix (35 bytes)   force inline by annotation
+                                        @ 2   java.lang.String::length (11 bytes)   inline
+                                          @ 6   java.lang.String::coder (15 bytes)   inline
+                                        @ 8   java.lang.StringConcatHelper::newArray (28 bytes)   force inline by annotation
+                                          @ 10   java.lang.OutOfMemoryError::<init> (6 bytes)   failed to inline: don't inline Throwable constructors
+                                          @ 21   jdk.internal.misc.Unsafe::allocateUninitializedArray (55 bytes)   failed to inline: callee is too large
+                                        @ 30   java.lang.String::getBytes (44 bytes)   failed to inline: callee is too large
+                                      @ 51   java.lang.StringConcatHelper::prepend (55 bytes)   failed to inline: callee is too large
+                                      @ 65   java.lang.String::<init> (15 bytes)   inline
+                                        @ 1   java.lang.Object::<init> (1 bytes)   inline
+                              @ 54   org.example.jvminternals.ch16.TieredJourney::mark (21 bytes)   inline
+                                @ 4   java.lang.management.ManagementFactory::getRuntimeMXBean (9 bytes)   inline
+                                  @ 2   java.lang.management.ManagementFactory::getPlatformMXBean (70 bytes)   failed to inline: callee is too large
+                                @ 7   sun.management.RuntimeImpl::getUptime (10 bytes)   inline
+                                  @ 4   sun.management.VMManagementImpl::getUptime (5 bytes)   inline
+                                    @ 1   sun.management.VMManagementImpl::getUptime0 (0 bytes)   failed to inline: native method
+                                @ 12   java.lang.invoke.LambdaForm$MH/0x0000010001042800::linkToTargetMethod (10 bytes)   force inline by annotation
+                                  @ 6   java.lang.invoke.LambdaForm$MH/0x0000010001042400::invoke (30 bytes)   force inline by annotation
+                                    @ 26   java.lang.invoke.DirectMethodHandle$Holder::invokeSpecial (18 bytes)   force inline by annotation
+                                      @ 1   java.lang.invoke.DirectMethodHandle::internalMemberName (8 bytes)   force inline by annotation
+                                      @ 14   java.lang.String$$StringConcat/0x0000010001041c00::concat (82 bytes)   force inline by annotation
+                                        @ 1   java.lang.StringConcatHelper::stringOf (20 bytes)   failed to inline: callee is too large
+                                        @ 12   java.lang.String$$StringConcat/0x0000010001041c00::coder (7 bytes)   force inline by annotation
+                                          @ 2   java.lang.String::coder (15 bytes)   inline
+                                        @ 24   java.lang.String$$StringConcat/0x0000010001041c00::length (10 bytes)   force inline by annotation
+                                          @ 2   java.lang.StringConcatHelper::stringSize (10 bytes)   inline
+                                            @ 2   java.lang.String::length (11 bytes)   inline
+                                              @ 6   java.lang.String::coder (15 bytes)   failed to inline: callee is too large
+                                            @ 6   java.lang.StringConcatHelper::checkOverflow (16 bytes)   force inline by annotation
+                                              @ 12   java.lang.OutOfMemoryError::<init> (6 bytes)   failed to inline: don't inline Throwable constructors
+                                          @ 6   java.lang.StringConcatHelper::stringSize (10 bytes)   inline
+                                            @ 2   jdk.internal.util.DecimalDigits::stringSize (55 bytes)   failed to inline: callee is too large
+                                            @ 6   java.lang.StringConcatHelper::checkOverflow (16 bytes)   force inline by annotation
+                                              @ 12   java.lang.OutOfMemoryError::<init> (6 bytes)   failed to inline: don't inline Throwable constructors
+                                        @ 39   java.lang.String::length (11 bytes)   inline
+                                          @ 6   java.lang.String::coder (15 bytes)   inline
+                                        @ 51   java.lang.StringConcatHelper::newArrayWithSuffix (35 bytes)   force inline by annotation
+                                          @ 2   java.lang.String::length (11 bytes)   inline
+                                            @ 6   java.lang.String::coder (15 bytes)   failed to inline: callee is too large
+                                          @ 8   java.lang.StringConcatHelper::newArray (28 bytes)   force inline by annotation
+                                            @ 10   java.lang.OutOfMemoryError::<init> (6 bytes)   failed to inline: don't inline Throwable constructors
+                                            @ 21   jdk.internal.misc.Unsafe::allocateUninitializedArray (55 bytes)   failed to inline: callee is too large
+                                          @ 20   java.lang.String::getBytes (44 bytes)   failed to inline: callee is too large
+                                          @ 30   java.lang.String::getBytes (44 bytes)   failed to inline: callee is too large
+                                        @ 67   java.lang.String$$StringConcat/0x0000010001041c00::prepend (22 bytes)   force inline by annotation
+                                          @ 8   java.lang.StringConcatHelper::prepend (55 bytes)   failed to inline: callee is too large
+                                          @ 18   java.lang.StringConcatHelper::prepend (62 bytes)   failed to inline: callee is too large
+                                        @ 78   java.lang.String::<init> (15 bytes)   inline
+                                          @ 1   java.lang.Object::<init> (1 bytes)   inline
+               !m               @ 17   java.io.PrintStream::println (44 bytes)   failed to inline: callee is too large
+                              @ 60   java.lang.Thread::sleep (29 bytes)   failed to inline: callee uses too much stack
+                              @ 65   org.example.jvminternals.ch16.TieredJourney::mark (21 bytes)   inline
+                                @ 4   java.lang.management.ManagementFactory::getRuntimeMXBean (9 bytes)   inline
+                                  @ 2   java.lang.management.ManagementFactory::getPlatformMXBean (70 bytes)   failed to inline: callee is too large
+                                @ 7   sun.management.RuntimeImpl::getUptime (10 bytes)   inline
+                                  @ 4   sun.management.VMManagementImpl::getUptime (5 bytes)   inline
+                                    @ 1   sun.management.VMManagementImpl::getUptime0 (0 bytes)   failed to inline: native method
+                                @ 12   java.lang.invoke.LambdaForm$MH/0x0000010001042800::linkToTargetMethod (10 bytes)   force inline by annotation
+                                  @ 6   java.lang.invoke.LambdaForm$MH/0x0000010001042400::invoke (30 bytes)   force inline by annotation
+                                    @ 26   java.lang.invoke.DirectMethodHandle$Holder::invokeSpecial (18 bytes)   force inline by annotation
+                                      @ 1   java.lang.invoke.DirectMethodHandle::internalMemberName (8 bytes)   force inline by annotation
+                                      @ 14   java.lang.String$$StringConcat/0x0000010001041c00::concat (82 bytes)   force inline by annotation
+阶段=重复调用观察窗；结果=-1606440330；进程存活毫秒=10071
+                                        @ 1   java.lang.StringConcatHelper::stringOf (20 bytes)   failed to inline: callee is too large
+                                        @ 12   java.lang.String$$StringConcat/0x0000010001041c00::coder (7 bytes)   force inline by annotation
+                                          @ 2   java.lang.String::coder (15 bytes)   inline
+                                        @ 24   java.lang.String$$StringConcat/0x0000010001041c00::length (10 bytes)   force inline by annotation
+                                          @ 2   java.lang.StringConcatHelper::stringSize (10 bytes)   inline
+                                            @ 2   java.lang.String::length (11 bytes)   inline
+                                              @ 6   java.lang.String::coder (15 bytes)   failed to inline: callee is too large
+                                            @ 6   java.lang.StringConcatHelper::checkOverflow (16 bytes)   force inline by annotation
+                                              @ 12   java.lang.OutOfMemoryError::<init> (6 bytes)   failed to inline: don't inline Throwable constructors
+                                          @ 6   java.lang.StringConcatHelper::stringSize (10 bytes)   inline
+                                            @ 2   jdk.internal.util.DecimalDigits::stringSize (55 bytes)   failed to inline: callee is too large
+                                            @ 6   java.lang.StringConcatHelper::checkOverflow (16 bytes)   force inline by annotation
+                                              @ 12   java.lang.OutOfMemoryError::<init> (6 bytes)   failed to inline: don't inline Throwable constructors
+                                        @ 39   java.lang.String::length (11 bytes)   inline
+                                          @ 6   java.lang.String::coder (15 bytes)   inline
+                                        @ 51   java.lang.StringConcatHelper::newArrayWithSuffix (35 bytes)   force inline by annotation
+                                          @ 2   java.lang.String::length (11 bytes)   inline
+                                            @ 6   java.lang.String::coder (15 bytes)   failed to inline: callee is too large
+                                          @ 8   java.lang.StringConcatHelper::newArray (28 bytes)   force inline by annotation
+                                            @ 10   java.lang.OutOfMemoryError::<init> (6 bytes)   failed to inline: don't inline Throwable constructors
+                                            @ 21   jdk.internal.misc.Unsafe::allocateUninitializedArray (55 bytes)   failed to inline: callee is too large
+                                          @ 20   java.lang.String::getBytes (44 bytes)   failed to inline: callee is too large
+                                          @ 30   java.lang.String::getBytes (44 bytes)   failed to inline: callee is too large
+                                        @ 67   java.lang.String$$StringConcat/0x0000010001041c00::prepend (22 bytes)   force inline by annotation
+                                          @ 8   java.lang.StringConcatHelper::prepend (55 bytes)   failed to inline: callee is too large
+                                          @ 18   java.lang.StringConcatHelper::prepend (62 bytes)   failed to inline: callee is too large
+                                        @ 78   java.lang.String::<init> (15 bytes)   inline
+                                          @ 1   java.lang.Object::<init> (1 bytes)   inline
+               !m               @ 17   java.io.PrintStream::println (44 bytes)   failed to inline: callee is too large
+                              @ 78   org.example.jvminternals.ch16.TieredJourney::hot (28 bytes)   failed to inline: disallowed by CompileCommand
+                              @ 91   java.lang.invoke.Invokers$Holder::linkToTargetMethod (9 bytes)   force inline by annotation
+                                @ 5   java.lang.invoke.LambdaForm$MH/0x0000010001041400::invoke (27 bytes)   force inline by annotation
+                                  @ 23   java.lang.invoke.DirectMethodHandle$Holder::invokeSpecial (17 bytes)   force inline by annotation
+                                    @ 1   java.lang.invoke.DirectMethodHandle::internalMemberName (8 bytes)   force inline by annotation
+                                    @ 13   java.lang.StringConcatHelper$Concat1::concat (69 bytes)   force inline by annotation
+                                      @ 5   java.lang.StringConcatHelper::stringSize (10 bytes)   inline
+                                        @ 2   jdk.internal.util.DecimalDigits::stringSize (55 bytes)   failed to inline: callee is too large
+                                        @ 6   java.lang.StringConcatHelper::checkOverflow (16 bytes)   force inline by annotation
+                                          @ 12   java.lang.OutOfMemoryError::<init> (6 bytes)   failed to inline: don't inline Throwable constructors
+                                      @ 20   java.lang.String::length (11 bytes)   inline
+                                        @ 6   java.lang.String::coder (15 bytes)   inline
+                                      @ 32   java.lang.StringConcatHelper::newArrayWithSuffix (35 bytes)   force inline by annotation
+                                        @ 2   java.lang.String::length (11 bytes)   inline
+                                          @ 6   java.lang.String::coder (15 bytes)   inline
+                                        @ 8   java.lang.StringConcatHelper::newArray (28 bytes)   force inline by annotation
+                                          @ 10   java.lang.OutOfMemoryError::<init> (6 bytes)   failed to inline: don't inline Throwable constructors
+                                          @ 21   jdk.internal.misc.Unsafe::allocateUninitializedArray (55 bytes)   failed to inline: callee is too large
+                                        @ 30   java.lang.String::getBytes (44 bytes)   failed to inline: callee is too large
+                                      @ 51   java.lang.StringConcatHelper::prepend (55 bytes)   failed to inline: callee is too large
+                                      @ 65   java.lang.String::<init> (15 bytes)   inline
+                                        @ 1   java.lang.Object::<init> (1 bytes)   inline
+                              @ 96   org.example.jvminternals.ch16.TieredJourney::mark (21 bytes)   inline
+                                @ 4   java.lang.management.ManagementFactory::getRuntimeMXBean (9 bytes)   inline
+                                  @ 2   java.lang.management.ManagementFactory::getPlatformMXBean (70 bytes)   failed to inline: callee is too large
+                                @ 7   sun.management.RuntimeImpl::getUptime (10 bytes)   inline
+                                  @ 4   sun.management.VMManagementImpl::getUptime (5 bytes)   inline
+                                    @ 1   sun.management.VMManagementImpl::getUptime0 (0 bytes)   failed to inline: native method
+                                @ 12   java.lang.invoke.LambdaForm$MH/0x0000010001042800::linkToTargetMethod (10 bytes)   force inline by annotation
+                                  @ 6   java.lang.invoke.LambdaForm$MH/0x0000010001042400::invoke (30 bytes)   force inline by annotation
+                                    @ 26   java.lang.invoke.DirectMethodHandle$Holder::invokeSpecial (18 bytes)   force inline by annotation
+                                      @ 1   java.lang.invoke.DirectMethodHandle::internalMemberName (8 bytes)   force inline by annotation
+                                      @ 14   java.lang.String$$StringConcat/0x0000010001041c00::concat (82 bytes)   force inline by annotation
+                                        @ 1   java.lang.StringConcatHelper::stringOf (20 bytes)   failed to inline: callee is too large
+                                        @ 12   java.lang.String$$StringConcat/0x0000010001041c00::coder (7 bytes)   force inline by annotation
+                                          @ 2   java.lang.String::coder (15 bytes)   inline
+                                        @ 24   java.lang.String$$StringConcat/0x0000010001041c00::length (10 bytes)   force inline by annotation
+                                          @ 2   java.lang.StringConcatHelper::stringSize (10 bytes)   inline
+                                            @ 2   java.lang.String::length (11 bytes)   inline
+                                              @ 6   java.lang.String::coder (15 bytes)   failed to inline: callee is too large
+                                            @ 6   java.lang.StringConcatHelper::checkOverflow (16 bytes)   force inline by annotation
+                                              @ 12   java.lang.OutOfMemoryError::<init> (6 bytes)   failed to inline: don't inline Throwable constructors
+                                          @ 6   java.lang.StringConcatHelper::stringSize (10 bytes)   inline
+                                            @ 2   jdk.internal.util.DecimalDigits::stringSize (55 bytes)   failed to inline: callee is too large
+                                            @ 6   java.lang.StringConcatHelper::checkOverflow (16 bytes)   force inline by annotation
+                                              @ 12   java.lang.OutOfMemoryError::<init> (6 bytes)   failed to inline: don't inline Throwable constructors
+                                        @ 39   java.lang.String::length (11 bytes)   inline
+                                          @ 6   java.lang.String::coder (15 bytes)   inline
+                                        @ 51   java.lang.StringConcatHelper::newArrayWithSuffix (35 bytes)   force inline by annotation
+                                          @ 2   java.lang.String::length (11 bytes)   inline
+                                            @ 6   java.lang.String::coder (15 bytes)   failed to inline: callee is too large
+                                          @ 8   java.lang.StringConcatHelper::newArray (28 bytes)   force inline by annotation
+                                            @ 10   java.lang.OutOfMemoryError::<init> (6 bytes)   failed to inline: don't inline Throwable constructors
+                                            @ 21   jdk.internal.misc.Unsafe::allocateUninitializedArray (55 bytes)   failed to inline: callee is too large
+                                          @ 20   java.lang.String::getBytes (44 bytes)   failed to inline: callee is too large
+                                          @ 30   java.lang.String::getBytes (44 bytes)   failed to inline: callee is too large
+                                        @ 67   java.lang.String$$StringConcat/0x0000010001041c00::prepend (22 bytes)   force inline by annotation
+                                          @ 8   java.lang.StringConcatHelper::prepend (55 bytes)   failed to inline: callee is too large
+                                          @ 18   java.lang.StringConcatHelper::prepend (62 bytes)   failed to inline: callee is too large
+                                        @ 78   java.lang.String::<init> (15 bytes)   inline
+                                          @ 1   java.lang.Object::<init> (1 bytes)   inline
+               !m               @ 17   java.io.PrintStream::println (44 bytes)   failed to inline: callee is too large
+                              @ 102   java.lang.Thread::sleep (29 bytes)   failed to inline: callee uses too much stack
+                              @ 107   org.example.jvminternals.ch16.TieredJourney::mark (21 bytes)   inline
+                                @ 4   java.lang.management.ManagementFactory::getRuntimeMXBean (9 bytes)   inline
+                                  @ 2   java.lang.management.ManagementFactory::getPlatformMXBean (70 bytes)   failed to inline: callee is too large
+                                @ 7   sun.management.RuntimeImpl::getUptime (10 bytes)   inline
+                                  @ 4   sun.management.VMManagementImpl::getUptime (5 bytes)   inline
+                                    @ 1   sun.management.VMManagementImpl::getUptime0 (0 bytes)   failed to inline: native method
+                                @ 12   java.lang.invoke.LambdaForm$MH/0x0000010001042800::linkToTargetMethod (10 bytes)   force inline by annotation
+                                  @ 6   java.lang.invoke.LambdaForm$MH/0x0000010001042400::invoke (30 bytes)   force inline by annotation
+                                    @ 26   java.lang.invoke.DirectMethodHandle$Holder::invokeSpecial (18 bytes)   force inline by annotation
+                                      @ 1   java.lang.invoke.DirectMethodHandle::internalMemberName (8 bytes)   force inline by annotation
+                                      @ 14   java.lang.String$$StringConcat/0x0000010001041c00::concat (82 bytes)   force inline by annotation
+                                        @ 1   java.lang.StringConcatHelper::stringOf (20 bytes)   failed to inline: callee is too large
+                                        @ 12   java.lang.String$$StringConcat/0x0000010001041c00::coder (7 bytes)   force inline by annotation
+                                          @ 2   java.lang.String::coder (15 bytes)   inline
+                                        @ 24   java.lang.String$$StringConcat/0x0000010001041c00::length (10 bytes)   force inline by annotation
+                                          @ 2   java.lang.StringConcatHelper::stringSize (10 bytes)   inline
+                                            @ 2   java.lang.String::length (11 bytes)   inline
+                                              @ 6   java.lang.String::coder (15 bytes)   failed to inline: callee is too large
+                                            @ 6   java.lang.StringConcatHelper::checkOverflow (16 bytes)   force inline by annotation
+                                              @ 12   java.lang.OutOfMemoryError::<init> (6 bytes)   failed to inline: don't inline Throwable constructors
+                                          @ 6   java.lang.StringConcatHelper::stringSize (10 bytes)   inline
+                                            @ 2   jdk.internal.util.DecimalDigits::stringSize (55 bytes)   failed to inline: callee is too large
+                                            @ 6   java.lang.StringConcatHelper::checkOverflow (16 bytes)   force inline by annotation
+                                              @ 12   java.lang.OutOfMemoryError::<init> (6 bytes)   failed to inline: don't inline Throwable constructors
+                                        @ 39   java.lang.String::length (11 bytes)   inline
+                                          @ 6   java.lang.String::coder (15 bytes)   inline
+                                        @ 51   java.lang.StringConcatHelper::newArrayWithSuffix (35 bytes)   force inline by annotation
+                                          @ 2   java.lang.String::length (11 bytes)   inline
+                                            @ 6   java.lang.String::coder (15 bytes)   failed to inline: callee is too large
+                                          @ 8   java.lang.StringConcatHelper::newArray (28 bytes)   force inline by annotation
+                                            @ 10   java.lang.OutOfMemoryError::<init> (6 bytes)   failed to inline: don't inline Throwable constructors
+                                            @ 21   jdk.internal.misc.Unsafe::allocateUninitializedArray (55 bytes)   failed to inline: callee is too large
+                                          @ 20   java.lang.String::getBytes (44 bytes)   failed to inline: callee is too large
+                                          @ 30   java.lang.String::getBytes (44 bytes)   failed to inline: callee is too large
+                                        @ 67   java.lang.String$$StringConcat/0x0000010001041c00::prepend (22 bytes)   force inline by annotation
+                                          @ 8   java.lang.StringConcatHelper::prepend (55 bytes)   failed to inline: callee is too large
+                                          @ 18   java.lang.StringConcatHelper::prepend (62 bytes)   failed to inline: callee is too large
+                                        @ 78   java.lang.String::<init> (15 bytes)   inline
+                                          @ 1   java.lang.Object::<init> (1 bytes)   inline
+               !m               @ 17   java.io.PrintStream::println (44 bytes)   failed to inline: callee is too large
+                              @ 120   org.example.jvminternals.ch16.TieredJourney::hot (28 bytes)   failed to inline: disallowed by CompileCommand
+                              @ 133  java/lang/invoke/MethodHandle::invokeBasic (not loaded)   failed to inline: not inlineable
+                              @ 138   org.example.jvminternals.ch16.TieredJourney::mark (21 bytes)   inline
+                                @ 4   java.lang.management.ManagementFactory::getRuntimeMXBean (9 bytes)   inline
+                                  @ 2   java.lang.management.ManagementFactory::getPlatformMXBean (70 bytes)   failed to inline: callee is too large
+                                @ 7   sun.management.RuntimeImpl::getUptime (10 bytes)   inline
+                                  @ 4   sun.management.VMManagementImpl::getUptime (5 bytes)   inline
+                                    @ 1   sun.management.VMManagementImpl::getUptime0 (0 bytes)   failed to inline: native method
+                                @ 12   java.lang.invoke.LambdaForm$MH/0x0000010001042800::linkToTargetMethod (10 bytes)   force inline by annotation
+                                  @ 6   java.lang.invoke.LambdaForm$MH/0x0000010001042400::invoke (30 bytes)   force inline by annotation
+                                    @ 26   java.lang.invoke.DirectMethodHandle$Holder::invokeSpecial (18 bytes)   force inline by annotation
+                                      @ 1   java.lang.invoke.DirectMethodHandle::internalMemberName (8 bytes)   force inline by annotation
+                                      @ 14   java.lang.String$$StringConcat/0x0000010001041c00::concat (82 bytes)   force inline by annotation
+                                        @ 1   java.lang.StringConcatHelper::stringOf (20 bytes)   failed to inline: callee is too large
+                                        @ 12   java.lang.String$$StringConcat/0x0000010001041c00::coder (7 bytes)   force inline by annotation
+                                          @ 2   java.lang.String::coder (15 bytes)   inline
+                                        @ 24   java.lang.String$$StringConcat/0x0000010001041c00::length (10 bytes)   force inline by annotation
+                                          @ 2   java.lang.StringConcatHelper::stringSize (10 bytes)   inline
+                                            @ 2   java.lang.String::length (11 bytes)   inline
+                                              @ 6   java.lang.String::coder (15 bytes)   failed to inline: callee is too large
+                                            @ 6   java.lang.StringConcatHelper::checkOverflow (16 bytes)   force inline by annotation
+                                              @ 12   java.lang.OutOfMemoryError::<init> (6 bytes)   failed to inline: don't inline Throwable constructors
+                                          @ 6   java.lang.StringConcatHelper::stringSize (10 bytes)   inline
+                                            @ 2   jdk.internal.util.DecimalDigits::stringSize (55 bytes)   failed to inline: callee is too large
+                                            @ 6   java.lang.StringConcatHelper::checkOverflow (16 bytes)   force inline by annotation
+                                              @ 12   java.lang.OutOfMemoryError::<init> (6 bytes)   failed to inline: don't inline Throwable constructors
+                                        @ 39   java.lang.String::length (11 bytes)   inline
+                                          @ 6   java.lang.String::coder (15 bytes)   inline
+                                        @ 51   java.lang.StringConcatHelper::newArrayWithSuffix (35 bytes)   force inline by annotation
+                                          @ 2   java.lang.String::length (11 bytes)   inline
+                                            @ 6   java.lang.String::coder (15 bytes)   failed to inline: callee is too large
+                                          @ 8   java.lang.StringConcatHelper::newArray (28 bytes)   force inline by annotation
+                                            @ 10   java.lang.OutOfMemoryError::<init> (6 bytes)   failed to inline: don't inline Throwable constructors
+                                            @ 21   jdk.internal.misc.Unsafe::allocateUninitializedArray (55 bytes)   failed to inline: callee is too large
+                                          @ 20   java.lang.String::getBytes (44 bytes)   failed to inline: callee is too large
+                                          @ 30   java.lang.String::getBytes (44 bytes)   failed to inline: callee is too large
+                                        @ 67   java.lang.String$$StringConcat/0x0000010001041c00::prepend (22 bytes)   force inline by annotation
+                                          @ 8   java.lang.StringConcatHelper::prepend (55 bytes)   failed to inline: callee is too large
+                                          @ 18   java.lang.StringConcatHelper::prepend (62 bytes)   failed to inline: callee is too large
+                                        @ 78   java.lang.String::<init> (15 bytes)   inline
+                                          @ 1   java.lang.Object::<init> (1 bytes)   inline
+               !m               @ 17   java.io.PrintStream::println (44 bytes)   failed to inline: callee is too large
+10087  120       3       java.lang.StringLatin1::equals (36 bytes)
+10087  119       3       java.lang.invoke.MethodType::parameterCount (6 bytes)
+阶段=后续固定调用开始；进程存活毫秒=20076
+20076  121 %     3       org.example.jvminternals.ch16.TieredJourney::main @ 112 (142 bytes)
+                              @ 3   java.lang.ProcessHandle::current (4 bytes)   inline
+                                @ 0   java.lang.ProcessHandleImpl::current (4 bytes)   inline
+                              @ 6   java.lang.ProcessHandleImpl::pid (5 bytes)   inline
+                              @ 11   java.lang.invoke.Invokers$Holder::linkToTargetMethod (9 bytes)   force inline by annotation
+                                @ 5   java.lang.invoke.LambdaForm$MH/0x0000010001041400::invoke (27 bytes)   force inline by annotation
+                                  @ 23   java.lang.invoke.DirectMethodHandle$Holder::invokeSpecial (17 bytes)   force inline by annotation
+                                    @ 1   java.lang.invoke.DirectMethodHandle::internalMemberName (8 bytes)   force inline by annotation
+                                    @ 13   java.lang.StringConcatHelper$Concat1::concat (69 bytes)   force inline by annotation
+                                      @ 5   java.lang.StringConcatHelper::stringSize (10 bytes)   inline
+                                        @ 2   jdk.internal.util.DecimalDigits::stringSize (55 bytes)   failed to inline: callee is too large
+                                        @ 6   java.lang.StringConcatHelper::checkOverflow (16 bytes)   force inline by annotation
+                                          @ 12   java.lang.OutOfMemoryError::<init> (6 bytes)   failed to inline: don't inline Throwable constructors
+                                      @ 20   java.lang.String::length (11 bytes)   inline
+                                        @ 6   java.lang.String::coder (15 bytes)   inline
+                                      @ 32   java.lang.StringConcatHelper::newArrayWithSuffix (35 bytes)   force inline by annotation
+                                        @ 2   java.lang.String::length (11 bytes)   inline
+                                          @ 6   java.lang.String::coder (15 bytes)   inline
+                                        @ 8   java.lang.StringConcatHelper::newArray (28 bytes)   force inline by annotation
+                                          @ 10   java.lang.OutOfMemoryError::<init> (6 bytes)   failed to inline: don't inline Throwable constructors
+                                          @ 21   jdk.internal.misc.Unsafe::allocateUninitializedArray (55 bytes)   failed to inline: callee is too large
+                                        @ 30   java.lang.String::getBytes (44 bytes)   failed to inline: callee is too large
+                                      @ 51   java.lang.StringConcatHelper::prepend (55 bytes)   failed to inline: callee is too large
+                                      @ 65   java.lang.String::<init> (15 bytes)   inline
+                                        @ 1   java.lang.Object::<init> (1 bytes)   inline
+               !m             @ 16   java.io.PrintStream::println (44 bytes)   failed to inline: callee is too large
+                              @ 23   org.example.jvminternals.ch16.TieredJourney::mark (21 bytes)   inline
+                                @ 4   java.lang.management.ManagementFactory::getRuntimeMXBean (9 bytes)   inline
+                                  @ 2   java.lang.management.ManagementFactory::getPlatformMXBean (70 bytes)   failed to inline: callee is too large
+                                @ 7   sun.management.RuntimeImpl::getUptime (10 bytes)   inline
+                                  @ 4   sun.management.VMManagementImpl::getUptime (5 bytes)   inline
+                                    @ 1   sun.management.VMManagementImpl::getUptime0 (0 bytes)   failed to inline: native method
+                                @ 12   java.lang.invoke.LambdaForm$MH/0x0000010001042800::linkToTargetMethod (10 bytes)   force inline by annotation
+                                  @ 6   java.lang.invoke.LambdaForm$MH/0x0000010001042400::invoke (30 bytes)   force inline by annotation
+                                    @ 26   java.lang.invoke.DirectMethodHandle$Holder::invokeSpecial (18 bytes)   force inline by annotation
+                                      @ 1   java.lang.invoke.DirectMethodHandle::internalMemberName (8 bytes)   force inline by annotation
+                                      @ 14   java.lang.String$$StringConcat/0x0000010001041c00::concat (82 bytes)   force inline by annotation
+                                        @ 1   java.lang.StringConcatHelper::stringOf (20 bytes)   failed to inline: callee is too large
+                                        @ 12   java.lang.String$$StringConcat/0x0000010001041c00::coder (7 bytes)   force inline by annotation
+                                          @ 2   java.lang.String::coder (15 bytes)   inline
+                                        @ 24   java.lang.String$$StringConcat/0x0000010001041c00::length (10 bytes)   force inline by annotation
+                                          @ 2   java.lang.StringConcatHelper::stringSize (10 bytes)   inline
+                                            @ 2   java.lang.String::length (11 bytes)   inline
+                                              @ 6   java.lang.String::coder (15 bytes)   failed to inline: callee is too large
+                                            @ 6   java.lang.StringConcatHelper::checkOverflow (16 bytes)   force inline by annotation
+                                              @ 12   java.lang.OutOfMemoryError::<init> (6 bytes)   failed to inline: don't inline Throwable constructors
+                                          @ 6   java.lang.StringConcatHelper::stringSize (10 bytes)   inline
+                                            @ 2   jdk.internal.util.DecimalDigits::stringSize (55 bytes)   failed to inline: callee is too large
+                                            @ 6   java.lang.StringConcatHelper::checkOverflow (16 bytes)   force inline by annotation
+                                              @ 12   java.lang.OutOfMemoryError::<init> (6 bytes)   failed to inline: don't inline Throwable constructors
+                                        @ 39   java.lang.String::length (11 bytes)   inline
+                                          @ 6   java.lang.String::coder (15 bytes)   inline
+                                        @ 51   java.lang.StringConcatHelper::newArrayWithSuffix (35 bytes)   force inline by annotation
+                                          @ 2   java.lang.String::length (11 bytes)   inline
+                                            @ 6   java.lang.String::coder (15 bytes)   failed to inline: callee is too large
+                                          @ 8   java.lang.StringConcatHelper::newArray (28 bytes)   force inline by annotation
+                                            @ 10   java.lang.OutOfMemoryError::<init> (6 bytes)   failed to inline: don't inline Throwable constructors
+                                            @ 21   jdk.internal.misc.Unsafe::allocateUninitializedArray (55 bytes)   failed to inline: callee is too large
+                                          @ 20   java.lang.String::getBytes (44 bytes)   failed to inline: callee is too large
+                                          @ 30   java.lang.String::getBytes (44 bytes)   failed to inline: callee is too large
+                                        @ 67   java.lang.String$$StringConcat/0x0000010001041c00::prepend (22 bytes)   force inline by annotation
+                                          @ 8   java.lang.StringConcatHelper::prepend (55 bytes)   failed to inline: callee is too large
+                                          @ 18   java.lang.StringConcatHelper::prepend (62 bytes)   failed to inline: callee is too large
+                                        @ 78   java.lang.String::<init> (15 bytes)   inline
+                                          @ 1   java.lang.Object::<init> (1 bytes)   inline
+               !m               @ 17   java.io.PrintStream::println (44 bytes)   failed to inline: callee is too large
+                              @ 36   org.example.jvminternals.ch16.TieredJourney::hot (28 bytes)   failed to inline: disallowed by CompileCommand
+                              @ 49   java.lang.invoke.Invokers$Holder::linkToTargetMethod (9 bytes)   force inline by annotation
+                                @ 5   java.lang.invoke.LambdaForm$MH/0x0000010001041400::invoke (27 bytes)   force inline by annotation
+                                  @ 23   java.lang.invoke.DirectMethodHandle$Holder::invokeSpecial (17 bytes)   force inline by annotation
+                                    @ 1   java.lang.invoke.DirectMethodHandle::internalMemberName (8 bytes)   force inline by annotation
+                                    @ 13   java.lang.StringConcatHelper$Concat1::concat (69 bytes)   force inline by annotation
+                                      @ 5   java.lang.StringConcatHelper::stringSize (10 bytes)   inline
+                                        @ 2   jdk.internal.util.DecimalDigits::stringSize (55 bytes)   failed to inline: callee is too large
+                                        @ 6   java.lang.StringConcatHelper::checkOverflow (16 bytes)   force inline by annotation
+                                          @ 12   java.lang.OutOfMemoryError::<init> (6 bytes)   failed to inline: don't inline Throwable constructors
+                                      @ 20   java.lang.String::length (11 bytes)   inline
+                                        @ 6   java.lang.String::coder (15 bytes)   inline
+                                      @ 32   java.lang.StringConcatHelper::newArrayWithSuffix (35 bytes)   force inline by annotation
+                                        @ 2   java.lang.String::length (11 bytes)   inline
+                                          @ 6   java.lang.String::coder (15 bytes)   inline
+                                        @ 8   java.lang.StringConcatHelper::newArray (28 bytes)   force inline by annotation
+                                          @ 10   java.lang.OutOfMemoryError::<init> (6 bytes)   failed to inline: don't inline Throwable constructors
+                                          @ 21   jdk.internal.misc.Unsafe::allocateUninitializedArray (55 bytes)   failed to inline: callee is too large
+                                        @ 30   java.lang.String::getBytes (44 bytes)   failed to inline: callee is too large
+                                      @ 51   java.lang.StringConcatHelper::prepend (55 bytes)   failed to inline: callee is too large
+                                      @ 65   java.lang.String::<init> (15 bytes)   inline
+                                        @ 1   java.lang.Object::<init> (1 bytes)   inline
+                              @ 54   org.example.jvminternals.ch16.TieredJourney::mark (21 bytes)   inline
+                                @ 4   java.lang.management.ManagementFactory::getRuntimeMXBean (9 bytes)   inline
+                                  @ 2   java.lang.management.ManagementFactory::getPlatformMXBean (70 bytes)   failed to inline: callee is too large
+                                @ 7   sun.management.RuntimeImpl::getUptime (10 bytes)   inline
+                                  @ 4   sun.management.VMManagementImpl::getUptime (5 bytes)   inline
+                                    @ 1   sun.management.VMManagementImpl::getUptime0 (0 bytes)   failed to inline: native method
+                                @ 12   java.lang.invoke.LambdaForm$MH/0x0000010001042800::linkToTargetMethod (10 bytes)   force inline by annotation
+                                  @ 6   java.lang.invoke.LambdaForm$MH/0x0000010001042400::invoke (30 bytes)   force inline by annotation
+                                    @ 26   java.lang.invoke.DirectMethodHandle$Holder::invokeSpecial (18 bytes)   force inline by annotation
+                                      @ 1   java.lang.invoke.DirectMethodHandle::internalMemberName (8 bytes)   force inline by annotation
+                                      @ 14   java.lang.String$$StringConcat/0x0000010001041c00::concat (82 bytes)   force inline by annotation
+                                        @ 1   java.lang.StringConcatHelper::stringOf (20 bytes)   failed to inline: callee is too large
+                                        @ 12   java.lang.String$$StringConcat/0x0000010001041c00::coder (7 bytes)   force inline by annotation
+                                          @ 2   java.lang.String::coder (15 bytes)   inline
+                                        @ 24   java.lang.String$$StringConcat/0x0000010001041c00::length (10 bytes)   force inline by annotation
+                                          @ 2   java.lang.StringConcatHelper::stringSize (10 bytes)   inline
+                                            @ 2   java.lang.String::length (11 bytes)   inline
+                                              @ 6   java.lang.String::coder (15 bytes)   failed to inline: callee is too large
+                                            @ 6   java.lang.StringConcatHelper::checkOverflow (16 bytes)   force inline by annotation
+                                              @ 12   java.lang.OutOfMemoryError::<init> (6 bytes)   failed to inline: don't inline Throwable constructors
+                                          @ 6   java.lang.StringConcatHelper::stringSize (10 bytes)   inline
+                                            @ 2   jdk.internal.util.DecimalDigits::stringSize (55 bytes)   failed to inline: callee is too large
+                                            @ 6   java.lang.StringConcatHelper::checkOverflow (16 bytes)   force inline by annotation
+                                              @ 12   java.lang.OutOfMemoryError::<init> (6 bytes)   failed to inline: don't inline Throwable constructors
+                                        @ 39   java.lang.String::length (11 bytes)   inline
+                                          @ 6   java.lang.String::coder (15 bytes)   inline
+                                        @ 51   java.lang.StringConcatHelper::newArrayWithSuffix (35 bytes)   force inline by annotation
+                                          @ 2   java.lang.String::length (11 bytes)   inline
+                                            @ 6   java.lang.String::coder (15 bytes)   failed to inline: callee is too large
+                                          @ 8   java.lang.StringConcatHelper::newArray (28 bytes)   force inline by annotation
+                                            @ 10   java.lang.OutOfMemoryError::<init> (6 bytes)   failed to inline: don't inline Throwable constructors
+                                            @ 21   jdk.internal.misc.Unsafe::allocateUninitializedArray (55 bytes)   failed to inline: callee is too large
+                                          @ 20   java.lang.String::getBytes (44 bytes)   failed to inline: callee is too large
+                                          @ 30   java.lang.String::getBytes (44 bytes)   failed to inline: callee is too large
+                                        @ 67   java.lang.String$$StringConcat/0x0000010001041c00::prepend (22 bytes)   force inline by annotation
+                                          @ 8   java.lang.StringConcatHelper::prepend (55 bytes)   failed to inline: callee is too large
+                                          @ 18   java.lang.StringConcatHelper::prepend (62 bytes)   failed to inline: callee is too large
+阶段=正常结束；结果=-5706621994；进程存活毫秒=20092
+                                        @ 78   java.lang.String::<init> (15 bytes)   inline
+                                          @ 1   java.lang.Object::<init> (1 bytes)   inline
+               !m               @ 17  println (44 bytes)   failed to inline: callee is too large

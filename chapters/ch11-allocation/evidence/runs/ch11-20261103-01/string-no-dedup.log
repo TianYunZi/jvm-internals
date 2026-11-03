@@ -1,0 +1,3 @@
+[0.005s][info][gc] Using G1
+[0.051s][info][gc] GC(0) Pause Full (System.gc()) 3M->1M(32M) 2.499ms
+[0.567s][info][gc] GC(1) Pause Full (System.gc()) 2M->1M(32M) 2.977ms

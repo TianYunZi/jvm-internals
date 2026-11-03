@@ -1,0 +1,636 @@
+
+FILE src/hotspot/share/prims/jni.cpp
+SYMBOLS jni_NewGlobalRef、jni_NewWeakGlobalRef、jni_GetPrimitiveArrayCritical、jni_AttachCurrentThread
+669: JNI_ENTRY(jobject, jni_NewGlobalRef(JNIEnv *env, jobject ref))
+670:   HOTSPOT_JNI_NEWGLOBALREF_ENTRY(env, ref);
+671: 
+672:   Handle ref_handle(thread, JNIHandles::resolve(ref));
+673:   jobject ret = JNIHandles::make_global(ref_handle, AllocFailStrategy::RETURN_NULL);
+674: 
+675:   HOTSPOT_JNI_NEWGLOBALREF_RETURN(ret);
+676:   return ret;
+677: JNI_END
+678: 
+679: // Must be JNI_ENTRY (with HandleMark)
+680: JNI_ENTRY_NO_PRESERVE(void, jni_DeleteGlobalRef(JNIEnv *env, jobject ref))
+681:   HOTSPOT_JNI_DELETEGLOBALREF_ENTRY(env, ref);
+682: 
+683:   JNIHandles::destroy_global(ref);
+684: 
+685:   HOTSPOT_JNI_DELETEGLOBALREF_RETURN();
+686: JNI_END
+687: 
+688: JNI_ENTRY_NO_PRESERVE(void, jni_DeleteLocalRef(JNIEnv *env, jobject obj))
+689:   HOTSPOT_JNI_DELETELOCALREF_ENTRY(env, obj);
+690: 
+691:   JNIHandles::destroy_local(obj);
+692: 
+693:   HOTSPOT_JNI_DELETELOCALREF_RETURN();
+694: JNI_END
+695: 
+2804: JNI_ENTRY(void*, jni_GetPrimitiveArrayCritical(JNIEnv *env, jarray array, jboolean *isCopy))
+2805:  HOTSPOT_JNI_GETPRIMITIVEARRAYCRITICAL_ENTRY(env, array, (uintptr_t *) isCopy);
+2806:   Handle a(thread, JNIHandles::resolve_non_null(array));
+2807:   assert(a->is_typeArray(), "just checking");
+2808: 
+2809:   // Pin object
+2810:   Universe::heap()->pin_object(thread, a());
+2811: 
+2812:   BasicType type = TypeArrayKlass::cast(a->klass())->element_type();
+2813:   void* ret = arrayOop(a())->base(type);
+2814:   if (isCopy != nullptr) {
+2815:     *isCopy = JNI_FALSE;
+2816:   }
+2817:  HOTSPOT_JNI_GETPRIMITIVEARRAYCRITICAL_RETURN(ret);
+2818:   return ret;
+2819: JNI_END
+2820: 
+2821: 
+2822: JNI_ENTRY(void, jni_ReleasePrimitiveArrayCritical(JNIEnv *env, jarray array, void *carray, jint mode))
+2823:   HOTSPOT_JNI_RELEASEPRIMITIVEARRAYCRITICAL_ENTRY(env, array, carray, mode);
+2824:   // Unpin object
+2825:   Universe::heap()->unpin_object(thread, JNIHandles::resolve_non_null(array));
+2826: HOTSPOT_JNI_RELEASEPRIMITIVEARRAYCRITICAL_RETURN();
+2827: JNI_END
+2828: 
+2829: 
+2830: JNI_ENTRY(const jchar*, jni_GetStringCritical(JNIEnv *env, jstring string, jboolean *isCopy))
+2882: JNI_ENTRY(jweak, jni_NewWeakGlobalRef(JNIEnv *env, jobject ref))
+2883:   HOTSPOT_JNI_NEWWEAKGLOBALREF_ENTRY(env, ref);
+2884:   Handle ref_handle(thread, JNIHandles::resolve(ref));
+2885:   jweak ret = JNIHandles::make_weak_global(ref_handle, AllocFailStrategy::RETURN_NULL);
+2886:   if (ret == nullptr && ref_handle.not_null()) {
+2887:     THROW_OOP_(Universe::out_of_memory_error_c_heap(), nullptr);
+2888:   }
+2889:   HOTSPOT_JNI_NEWWEAKGLOBALREF_RETURN(ret);
+2890:   return ret;
+2891: JNI_END
+2892: 
+2893: // Must be JNI_ENTRY (with HandleMark)
+2894: JNI_ENTRY(void, jni_DeleteWeakGlobalRef(JNIEnv *env, jweak ref))
+2895:   HOTSPOT_JNI_DELETEWEAKGLOBALREF_ENTRY(env, ref);
+2896:   JNIHandles::destroy_weak_global(ref);
+2897:   HOTSPOT_JNI_DELETEWEAKGLOBALREF_RETURN();
+2898: JNI_END
+2899: 
+2900: 
+2901: JNI_ENTRY_NO_PRESERVE(jboolean, jni_ExceptionCheck(JNIEnv *env))
+2902:  HOTSPOT_JNI_EXCEPTIONCHECK_ENTRY(env);
+2903:   jni_check_async_exceptions(thread);
+2904:   jboolean ret = (thread->has_pending_exception()) ? JNI_TRUE : JNI_FALSE;
+2905:  HOTSPOT_JNI_EXCEPTIONCHECK_RETURN(ret);
+2906:   return ret;
+2907: JNI_END
+2908: 
+2909: 
+2910: // Initialization state for three routines below relating to
+3884: jint JNICALL jni_AttachCurrentThread(JavaVM *vm, void **penv, void *_args) {
+3885:   HOTSPOT_JNI_ATTACHCURRENTTHREAD_ENTRY(vm, penv, _args);
+3886:   if (vm_created == NOT_CREATED) {
+3887:     // Not sure how we could possibly get here.
+3888:     HOTSPOT_JNI_ATTACHCURRENTTHREAD_RETURN((uint32_t) JNI_ERR);
+3889:     return JNI_ERR;
+3890:   }
+3891: 
+3892:   jint ret = attach_current_thread(vm, penv, _args, false);
+3893:   HOTSPOT_JNI_ATTACHCURRENTTHREAD_RETURN(ret);
+3894:   return ret;
+3895: }
+3896: 
+3897: 
+3898: jint JNICALL jni_DetachCurrentThread(JavaVM *vm)  {
+3899:   HOTSPOT_JNI_DETACHCURRENTTHREAD_ENTRY(vm);
+3900:   if (vm_created == NOT_CREATED) {
+3901:     // Not sure how we could possibly get here.
+3902:     HOTSPOT_JNI_DETACHCURRENTTHREAD_RETURN(JNI_ERR);
+3903:     return JNI_ERR;
+3904:   }
+3905: 
+3906:   Thread* current = Thread::current_or_null();
+3907: 
+3908:   // If the thread has already been detached the operation is a no-op
+3909:   if (current == nullptr) {
+3910:     HOTSPOT_JNI_DETACHCURRENTTHREAD_RETURN(JNI_OK);
+3911:     return JNI_OK;
+3912:   }
+3913: 
+3914:   // If executing from an atexit hook we may be in the VMThread.
+3915:   if (!current->is_Java_thread()) {
+3916:     HOTSPOT_JNI_DETACHCURRENTTHREAD_RETURN((uint32_t) JNI_ERR);
+3917:     return JNI_ERR;
+3918:   }
+3919: 
+3920:   VM_Exit::block_if_vm_exited();
+3921: 
+3922:   JavaThread* thread = JavaThread::cast(current);
+3923:   if (thread->has_last_Java_frame()) {
+3924:     HOTSPOT_JNI_DETACHCURRENTTHREAD_RETURN((uint32_t) JNI_ERR);
+3925:     // Can't detach a thread that's running java, that can't work.
+3926:     return JNI_ERR;
+3927:   }
+3928: 
+3929:   // We are going to VM, change W^X state to the expected one.
+3930:   MACOS_AARCH64_ONLY(thread->enable_wx(WXWrite));
+3931: 
+3932:   // Safepoint support. Have to do call-back to safepoint code, if in the
+3933:   // middle of a safepoint operation
+3934:   ThreadStateTransition::transition_from_native(thread, _thread_in_vm);
+3935: 
+3936:   // XXX: Note that JavaThread::exit() call below removes the guards on the
+3937:   // stack pages set up via enable_stack_{red,yellow}_zone() calls
+3938:   // above in jni_AttachCurrentThread. Unfortunately, while the setting
+3939:   // of the guards is visible in jni_AttachCurrentThread above,
+3940:   // the removal of the guards is buried below in JavaThread::exit()
+3941:   // here. The abstraction should be more symmetrically either exposed
+3942:   // or hidden (e.g. it could probably be hidden in the same
+3943:   // (platform-dependent) methods where we do alternate stack
+3944:   // maintenance work?)
+3945:   thread->exit(false, JavaThread::jni_detach);
+3946:   thread->unregister_thread_stack_with_NMT();
+
+FILE src/hotspot/share/runtime/jniHandles.cpp
+SYMBOLS make_global、make_weak_global、destroy_global、destroy_weak_global
+90:     assert(oopDesc::is_oop(obj()), "not an oop");
+91:     oop* ptr = global_handles()->allocate();
+92:     // Return null on allocation failure.
+93:     if (ptr != nullptr) {
+94:       assert(NativeAccess<AS_NO_KEEPALIVE>::oop_load(ptr) == oop(nullptr), "invariant");
+95:       NativeAccess<>::oop_store(ptr, obj());
+96:       char* tptr = reinterpret_cast<char*>(ptr) + TypeTag::global;
+97:       res = reinterpret_cast<jobject>(tptr);
+98:     } else {
+99:       report_handle_allocation_failure(alloc_failmode, "global");
+100:     }
+101:   }
+102: 
+103:   return res;
+104: }
+105: 
+106: jweak JNIHandles::make_weak_global(Handle obj, AllocFailType alloc_failmode) {
+107:   assert(!Universe::heap()->is_stw_gc_active(), "can't extend the root set during GC pause");
+108:   assert(!current_thread_in_native(), "must not be in native");
+109:   jweak res = nullptr;
+110:   if (!obj.is_null()) {
+111:     // ignore null handles
+112:     assert(oopDesc::is_oop(obj()), "not an oop");
+113:     oop* ptr = weak_global_handles()->allocate();
+114:     // Return nullptr on allocation failure.
+115:     if (ptr != nullptr) {
+116:       assert(NativeAccess<AS_NO_KEEPALIVE>::oop_load(ptr) == oop(nullptr), "invariant");
+117:       NativeAccess<ON_PHANTOM_OOP_REF>::oop_store(ptr, obj());
+118:       char* tptr = reinterpret_cast<char*>(ptr) + TypeTag::weak_global;
+119:       res = reinterpret_cast<jweak>(tptr);
+120:     } else {
+121:       report_handle_allocation_failure(alloc_failmode, "weak global");
+122:     }
+123:   }
+124:   return res;
+125: }
+126: 
+127: // Resolve some erroneous cases to null, rather than treating them as
+128: // possibly unchecked errors.  In particular, deleted handles are
+129: // treated as null (though a deleted and later reallocated handle
+130: // isn't detected).
+131: oop JNIHandles::resolve_external_guard(jobject handle) {
+132:   oop result = nullptr;
+133:   if (handle != nullptr) {
+134:     result = resolve_impl<DECORATORS_NONE, true /* external_guard */>(handle);
+135:   }
+136:   return result;
+137: }
+138: 
+139: bool JNIHandles::is_weak_global_cleared(jweak handle) {
+140:   assert(handle != nullptr, "precondition");
+141:   oop* oop_ptr = weak_global_ptr(handle);
+142:   oop value = NativeAccess<ON_PHANTOM_OOP_REF | AS_NO_KEEPALIVE>::oop_load(oop_ptr);
+143:   return value == nullptr;
+144: }
+145: 
+146: void JNIHandles::destroy_global(jobject handle) {
+147:   if (handle != nullptr) {
+148:     oop* oop_ptr = global_ptr(handle);
+149:     NativeAccess<>::oop_store(oop_ptr, (oop)nullptr);
+150:     global_handles()->release(oop_ptr);
+
+FILE src/hotspot/share/runtime/interfaceSupport.inline.hpp
+SYMBOLS ThreadStateTransition、ThreadInVMfromNative
+95:   // around at arbitrary points.
+96:   static inline void transition_from_native(JavaThread *thread, JavaThreadState to, bool check_asyncs = true) {
+97:     assert(thread->thread_state() == _thread_in_native, "coming from wrong thread state");
+98:     assert(to == _thread_in_vm || to == _thread_in_Java, "invalid transition");
+99:     assert(!thread->has_last_Java_frame() || thread->frame_anchor()->walkable(), "Unwalkable stack in native transition");
+100: 
+101:     if (!UseSystemMemoryBarrier) {
+102:       thread->set_thread_state_fence(_thread_in_vm);
+103:     } else {
+104:       thread->set_thread_state(_thread_in_vm);
+105:     }
+106:     SafepointMechanism::process_if_requested_with_exit_check(thread, to != _thread_in_Java ? false : check_asyncs);
+107:     thread->set_thread_state(to);
+108:   }
+109: 
+110:   static inline void transition_from_vm(JavaThread *thread, JavaThreadState to, bool check_asyncs = true) {
+111:     assert(thread->thread_state() == _thread_in_vm, "coming from wrong thread state");
+112:     if (to == _thread_in_Java) {
+113:       SafepointMechanism::process_if_requested_with_exit_check(thread, check_asyncs);
+114:       thread->set_thread_state(to);
+115:     } else {
+116:       assert(to == _thread_in_native || to == _thread_blocked, "invalid transition");
+117:       // Check NoSafepointVerifier. This also clears unhandled oops if CheckUnhandledOops is used.
+118:       thread->check_possible_safepoint();
+119: 
+120:       // Once we are in native/blocked vm expects stack to be walkable
+121:       thread->frame_anchor()->make_walkable();
+122:       OrderAccess::storestore(); // Keep thread_state change and make_walkable() separate.
+123:       thread->set_thread_state(to);
+124:     }
+125:   }
+126: };
+127: 
+128: class ThreadInVMfromJava : public ThreadStateTransition {
+129:   bool _check_asyncs;
+130:  public:
+131:   ThreadInVMfromJava(JavaThread* thread, bool check_asyncs = true) : ThreadStateTransition(thread), _check_asyncs(check_asyncs) {
+132:     transition_from_java(thread, _thread_in_vm);
+133:   }
+134:   ~ThreadInVMfromJava()  {
+135:     if (_thread->stack_overflow_state()->stack_yellow_reserved_zone_disabled()) {
+136:       _thread->stack_overflow_state()->enable_stack_yellow_reserved_zone();
+137:     }
+138:     // We prevent asynchronous exceptions from being installed on return to Java in situations
+139:     // where we can't tolerate them. See bugs: 4324348, 4854693, 4998314, 5040492, 5050705.
+140:     transition_from_vm(_thread, _thread_in_Java, _check_asyncs);
+141:   }
+142: };
+143: 
+144: 
+145: class ThreadInVMfromUnknown {
+146:   JavaThread* _thread;
+147:  public:
+148:   ThreadInVMfromUnknown() : _thread(nullptr) {
+149:     Thread* t = Thread::current();
+150:     if (t->is_Java_thread()) {
+151:       JavaThread* t2 = JavaThread::cast(t);
+152:       if (t2->thread_state() == _thread_in_native) {
+153:         _thread = t2;
+154:         ThreadStateTransition::transition_from_native(t2, _thread_in_vm);
+155:         // Used to have a HandleMarkCleaner but that is dangerous as
+156:         // it could free a handle in our (indirect, nested) caller.
+157:         // We expect any handles will be short lived and figure we
+158:         // don't need an actual HandleMark.
+159:       }
+160:     }
+161:   }
+162:   ~ThreadInVMfromUnknown()  {
+163:     if (_thread) {
+164:       ThreadStateTransition::transition_from_vm(_thread, _thread_in_native);
+165:     }
+166:   }
+167: };
+168: 
+169: 
+170: class ThreadInVMfromNative : public ThreadStateTransition {
+171:   ResetNoHandleMark __rnhm;
+172:  public:
+173:   ThreadInVMfromNative(JavaThread* thread) : ThreadStateTransition(thread) {
+174:     transition_from_native(thread, _thread_in_vm);
+175:   }
+176:   ~ThreadInVMfromNative() {
+177:     // We cannot assert !_thread->owns_locks() since we have valid cases where
+178:     // we call known native code using this wrapper holding locks.
+179:     transition_from_vm(_thread, _thread_in_native);
+180:   }
+215: 
+216:     if (SafepointMechanism::should_process(_thread, _allow_suspend)) {
+217:       _pr(_thread);
+218:       SafepointMechanism::process_if_requested(_thread, _allow_suspend, false /* check_async_exception */);
+219:     }
+220:   }
+221: };
+222: 
+223: class ThreadBlockInVM  : public ThreadBlockInVMPreprocess<> {
+224:  public:
+225:   ThreadBlockInVM(JavaThread* thread, bool allow_suspend = false)
+226:     : ThreadBlockInVMPreprocess(thread, emptyOp, allow_suspend) {}
+227:  private:
+228:   static void emptyOp(JavaThread* current) {}
+229: };
+230: 
+231: 
+232: // Debug class instantiated in JRT_ENTRY macro.
+233: // Can be used to verify properties on enter/exit of the VM.
+234: 
+235: #ifdef ASSERT
+236: class VMEntryWrapper {
+237:  public:
+238:   VMEntryWrapper();
+239:   ~VMEntryWrapper();
+240: };
+241: 
+242: 
+243: class VMNativeEntryWrapper {
+244:  public:
+245:   VMNativeEntryWrapper();
+246:   ~VMNativeEntryWrapper();
+247: };
+248: 
+249: #endif // ASSERT
+250: 
+251: // LEAF routines do not lock, GC or throw exceptions
+252: 
+253: // On macos/aarch64 we need to maintain the W^X state of the thread.  So we
+254: // take WXWrite on the enter to VM from the "outside" world, so the rest of JVM
+255: // code can assume writing (but not executing) codecache is always possible
+256: // without preliminary actions.
+257: // JavaThread state should be changed only after taking WXWrite. The state
+258: // change may trigger a safepoint, that would need WXWrite to do bookkeeping
+259: // in the codecache.
+260: 
+261: #define VM_LEAF_BASE(result_type, header)                            \
+262:   DEBUG_ONLY(NoHandleMark __hm;)                                     \
+263:   os::verify_stack_alignment();                                      \
+264:   /* begin of body */
+265: 
+266: #define VM_ENTRY_BASE_FROM_LEAF(result_type, header, thread)         \
+267:   DEBUG_ONLY(ResetNoHandleMark __rnhm;)                              \
+268:   HandleMarkCleaner __hm(thread);                                    \
+269:   JavaThread* THREAD = thread; /* For exception macros. */           \
+270:   os::verify_stack_alignment();                                      \
+
+FILE src/hotspot/share/gc/g1/g1CollectedHeap.inline.hpp
+SYMBOLS G1CollectedHeap::pin_object、unpin_object
+266: inline void G1CollectedHeap::pin_object(JavaThread* thread, oop obj) {
+267:   assert(obj != nullptr, "obj must not be null");
+268:   assert(!is_stw_gc_active(), "must not pin objects during a GC pause");
+269:   assert(obj->is_typeArray(), "must be typeArray");
+270: 
+271:   uint obj_region_idx = heap_region_containing(obj)->hrm_index();
+272:   G1ThreadLocalData::pin_count_cache(thread).inc_count(obj_region_idx);
+273: }
+274: 
+275: inline void G1CollectedHeap::unpin_object(JavaThread* thread, oop obj) {
+276:   assert(obj != nullptr, "obj must not be null");
+277:   assert(!is_stw_gc_active(), "must not unpin objects during a GC pause");
+278: 
+279:   uint obj_region_idx = heap_region_containing(obj)->hrm_index();
+280:   G1ThreadLocalData::pin_count_cache(thread).dec_count(obj_region_idx);
+281: }
+282: 
+283: inline bool G1CollectedHeap::is_obj_dead(const oop obj) const {
+
+FILE src/hotspot/share/gc/z/zCollectedHeap.cpp
+SYMBOLS ZCollectedHeap::pin_object、unpin_object
+275: void ZCollectedHeap::pin_object(JavaThread* thread, oop obj) {
+276:   ZJNICritical::enter(thread);
+277: }
+278: 
+279: void ZCollectedHeap::unpin_object(JavaThread* thread, oop obj) {
+280:   ZJNICritical::exit(thread);
+281: }
+282: 
+
+FILE src/hotspot/share/gc/shenandoah/shenandoahHeap.cpp
+SYMBOLS ShenandoahHeap::pin_object、unpin_object
+2435: void ShenandoahHeap::pin_object(JavaThread* thr, oop o) {
+2436:   heap_region_containing(o)->record_pin();
+2437: }
+2438: 
+2439: void ShenandoahHeap::unpin_object(JavaThread* thr, oop o) {
+2440:   ShenandoahHeapRegion* r = heap_region_containing(o);
+2441:   assert(r != nullptr, "Sanity");
+2442:   assert(r->pin_count() > 0, "Region %zu should have non-zero pins", r->index());
+2443:   r->record_unpin();
+2444: }
+2445: 
+2446: void ShenandoahHeap::sync_pinned_region_status() {
+
+FILE src/java.base/share/classes/jdk/internal/foreign/MemorySessionImpl.java
+SYMBOLS checkValidStateRaw、close
+185:      */
+186:     public boolean isAlive() {
+187:         return state >= OPEN;
+188:     }
+189: 
+190:     /**
+191:      * This is a faster version of {@link #checkValidState()}, which is called upon memory access, and which
+192:      * relies on invariants associated with the memory session implementations (volatile access
+193:      * to the closed state bit is replaced with plain access). This method should be monomorphic,
+194:      * to avoid virtual calls in the memory access hot path. This method is not intended as general purpose method
+195:      * and should only be used in the memory access handle hot path; for liveness checks triggered by other API methods,
+196:      * please use {@link #checkValidState()}.
+197:      */
+198:     @ForceInline
+199:     public void checkValidStateRaw() {
+200:         if (owner != null && owner != Thread.currentThread()) {
+201:             throw WRONG_THREAD;
+202:         }
+203:         if (state < OPEN) {
+204:             throw ALREADY_CLOSED;
+205:         }
+206:     }
+207: 
+208:     /**
+209:      * Checks that this session is still alive (see {@link #isAlive()}).
+210:      * @throws IllegalStateException if this session is already closed or if this is
+211:      * a confined session and this method is called outside the owner thread.
+212:      */
+213:     public void checkValidState() {
+214:         try {
+215:             checkValidStateRaw();
+216:         } catch (ScopedMemoryAccess.ScopedAccessError error) {
+217:             throw error.newRuntimeException();
+218:         }
+235:      * Closes this session, executing any cleanup action (where provided).
+236:      * @throws IllegalStateException if this session is already closed or if this is
+237:      * a confined session and this method is called outside the owner thread.
+238:      */
+239:     public void close() {
+240:         justClose();
+241:         resourceList.cleanup();
+242:     }
+243: 
+244:     abstract void justClose();
+245: 
+246:     /**
+
+FILE src/java.base/share/classes/jdk/internal/foreign/AbstractMemorySegmentImpl.java
+SYMBOLS checkAccess、checkBounds
+350:             throw new IllegalArgumentException("Attempt to write a read-only segment");
+351:         }
+352:     }
+353: 
+354:     @ForceInline
+355:     public void checkAccess(long offset, long length, boolean readOnly) {
+356:         checkReadOnly(readOnly);
+357:         checkBounds(offset, length);
+358:     }
+359: 
+360:     @ForceInline
+361:     public final void checkEnclosingLayout(long offset, MemoryLayout enclosing, boolean readOnly) {
+362:         checkAccess(offset, enclosing.byteSize(), readOnly);
+363:         if (!isAlignedForElement(offset, enclosing)) {
+364:             throw new IllegalArgumentException(String.format(
+365:                     "Target offset %d is incompatible with alignment constraint %d (of %s) for segment %s"
+366:                     , offset, enclosing.byteAlignment(), enclosing, this));
+367:         }
+368:     }
+369: 
+370:     public abstract long unsafeGetOffset();
+371: 
+372:     public abstract Object unsafeGetBase();
+373: 
+374:     // Helper methods
+375: 
+395:             throw new IllegalStateException(String.format("Segment is too large to wrap as %s. Size: %d", typeName, length));
+396:         }
+397:         return (int)arraySize;
+398:     }
+399: 
+400:     @ForceInline
+401:     void checkBounds(long offset, long length) {
+402:         if (length > 0) {
+403:             Preconditions.checkIndex(offset, this.length - length + 1, this);
+404:         } else if (length < 0 || offset < 0 ||
+405:                 offset > this.length - length) {
+406:             throw outOfBoundException(offset, length);
+407:         }
+408:     }
+409: 
+410:     @Override
+411:     public RuntimeException apply(String s, List<Number> numbers) {
+412:         long offset = numbers.get(0).longValue();
+413:         long length = byteSize() - numbers.get(1).longValue() + 1;
+414:         return outOfBoundException(offset, length);
+415:     }
+416: 
+417:     @Override
+418:     public MemorySessionImpl scope() {
+419:         return scope;
+420:     }
+421: 
+422:     @Override
+423:     public boolean isAccessibleBy(Thread thread) {
+424:         return sessionImpl().isAccessibleBy(thread);
+425:     }
+426: 
+
+FILE src/java.base/share/classes/jdk/internal/foreign/ConfinedSession.java
+SYMBOLS acquire0、justClose
+35:  * A confined session, which features an owner thread. The liveness check features an additional
+36:  * confinement check - that is, calling any operation on this session from a thread other than the
+37:  * owner thread will result in an exception. Because of this restriction, checking the liveness bit
+38:  * can be performed in plain mode.
+39:  */
+40: final class ConfinedSession extends MemorySessionImpl {
+41: 
+42:     private int asyncReleaseCount = 0;
+43: 
+44:     static final VarHandle ASYNC_RELEASE_COUNT= MhUtil.findVarHandle(MethodHandles.lookup(), "asyncReleaseCount", int.class);
+45: 
+46:     public ConfinedSession(Thread owner) {
+47:         super(owner, new ConfinedResourceList());
+48:     }
+49: 
+50:     @Override
+51:     @ForceInline
+52:     public void acquire0() {
+53:         checkValidState();
+54:         if (acquireCount == MAX_FORKS) {
+55:             throw tooManyAcquires();
+56:         }
+57:         acquireCount++;
+58:     }
+59: 
+60:     @Override
+61:     @ForceInline
+62:     public void release0() {
+63:         if (Thread.currentThread() == owner) {
+64:             acquireCount--;
+65:         } else {
+66:             // It is possible to end up here in two cases: this session was kept alive by some other confined session
+67:             // which is implicitly released (in which case the release call comes from the cleaner thread). Or,
+68:             // this session might be kept alive by a shared session, which means the release call can come from any
+69:             // thread.
+70:             ASYNC_RELEASE_COUNT.getAndAdd(this, 1);
+71:         }
+72:     }
+73: 
+74:     void justClose() {
+75:         checkValidState();
+76:         int asyncCount = (int)ASYNC_RELEASE_COUNT.getVolatile(this);
+77:         int acquire = acquireCount - asyncCount;
+78:         if (acquire == 0) {
+79:             state = CLOSED;
+80:         } else {
+81:             throw alreadyAcquired(acquire);
+82:         }
+83:     }
+84: 
+85:     /**
+86:      * A confined resource list; no races are possible here.
+87:      */
+88:     static final class ConfinedResourceList extends ResourceList {
+
+FILE src/java.base/share/classes/jdk/internal/foreign/abi/AbstractLinker.java
+SYMBOLS downcallHandle、upcallStub
+90:     private final Set<MemoryLayout> CANONICAL_LAYOUTS_CACHE = new HashSet<>(canonicalLayouts().values());
+91: 
+92:     @Override
+93:     @CallerSensitive
+94:     public final MethodHandle downcallHandle(MemorySegment symbol, FunctionDescriptor function, Option... options) {
+95:         Reflection.ensureNativeAccess(Reflection.getCallerClass(), Linker.class, "downcallHandle", false);
+96:         SharedUtils.checkSymbol(symbol);
+97:         return downcallHandle0(function, options).bindTo(symbol);
+98:     }
+99: 
+100:     @Override
+101:     @CallerSensitive
+102:     public final MethodHandle downcallHandle(FunctionDescriptor function, Option... options) {
+103:         Reflection.ensureNativeAccess(Reflection.getCallerClass(), Linker.class, "downcallHandle", false);
+104:         return downcallHandle0(function, options);
+105:     }
+106: 
+107:     private MethodHandle downcallHandle0(FunctionDescriptor function, Option... options) {
+108:         Objects.requireNonNull(function);
+109:         Objects.requireNonNull(options);
+110:         checkLayouts(function);
+111:         function = stripNames(function);
+112:         LinkerOptions optionSet = LinkerOptions.forDowncall(function, options);
+113:         validateVariadicLayouts(function, optionSet);
+114: 
+115:         return DOWNCALL_CACHE.get(new LinkRequest(function, optionSet), linkRequest ->  {
+116:             FunctionDescriptor fd = linkRequest.descriptor();
+117:             MethodType type = fd.toMethodType();
+118:             MethodHandle handle = arrangeDowncall(type, fd, linkRequest.options());
+119:             handle = SharedUtils.maybeCheckCaptureSegment(handle, linkRequest.options());
+120:             handle = SharedUtils.maybeInsertAllocator(fd, handle);
+121:             return handle;
+122:         });
+123:     }
+124: 
+125:     protected abstract MethodHandle arrangeDowncall(MethodType inferredMethodType, FunctionDescriptor function, LinkerOptions options);
+126: 
+127:     @Override
+128:     @CallerSensitive
+129:     public final MemorySegment upcallStub(MethodHandle target, FunctionDescriptor function, Arena arena, Linker.Option... options) {
+130:         Reflection.ensureNativeAccess(Reflection.getCallerClass(), Linker.class, "upcallStub", false);
+131:         Objects.requireNonNull(arena);
+132:         Objects.requireNonNull(target);
+133:         Objects.requireNonNull(function);
+134:         checkLayouts(function);
+135:         SharedUtils.checkExceptions(target);
+136:         function = stripNames(function);
+137:         LinkerOptions optionSet = LinkerOptions.forUpcall(function, options);
+138: 
+139:         MethodType type = function.toMethodType();
+140:         if (!type.equals(target.type())) {
+141:             throw new IllegalArgumentException("Wrong method handle type: " + target.type());
+142:         }
+143: 
+144:         UpcallStubFactory factory = UPCALL_CACHE.get(new LinkRequest(function, optionSet), linkRequest ->
+145:             arrangeUpcall(type, linkRequest.descriptor(), linkRequest.options()));
+146:         return factory.makeStub(target, arena);
+147:     }
+148: 
+149:     protected abstract UpcallStubFactory arrangeUpcall(MethodType targetType, FunctionDescriptor function, LinkerOptions options);
+150: 

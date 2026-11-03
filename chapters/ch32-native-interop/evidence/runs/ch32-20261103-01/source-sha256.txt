@@ -1,0 +1,3 @@
+69b292edfeef115165c4485c695de46ec656992cd18022c77d28816102ae8855  chapters/ch32-native-interop/src/main/java/org/example/jvminternals/ch32/ForeignJourney.java
+1aa371cd40d8d9007388042927eb6dd1eff2b01636031168718190017fc76f2e  chapters/ch32-native-interop/src/main/java/org/example/jvminternals/ch32/NativeJourney.java
+8bf593d68af739570a83bf4c4bc33c3e00651f3dcd52d80c7bdd8ee4531c9af0  chapters/ch32-native-interop/native/interop.c

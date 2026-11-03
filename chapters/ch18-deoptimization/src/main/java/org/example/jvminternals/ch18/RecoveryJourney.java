@@ -1,0 +1,71 @@
+package org.example.jvminternals.ch18;
+
+/** 改变合法接收者输入，关联推测代码、去优化和长循环编译。 */
+public final class RecoveryJourney {
+    private static volatile Pair published;
+
+    private RecoveryJourney() {
+    }
+
+    static final class Pair {
+        final int left;
+        final int right;
+
+        Pair(int left, int right) {
+            this.left = left;
+            this.right = right;
+        }
+    }
+
+    interface Operation {
+        int apply(Pair pair);
+    }
+
+    static final class LocalOperation implements Operation {
+        @Override
+        public int apply(Pair pair) {
+            return pair.left + pair.right;
+        }
+    }
+
+    static final class PublishingOperation implements Operation {
+        @Override
+        public int apply(Pair pair) {
+            // 输入改变后让接收的对象变得可观察，不主动触发异常或进程故障。
+            published = pair;
+            return pair.left - pair.right;
+        }
+    }
+
+    /** 固定调用数与循环上限，所有结果进入最终输出。 */
+    public static void main(String[] args) {
+        Operation first = new LocalOperation();
+        Operation second = new PublishingOperation();
+        long result = 0;
+        System.out.println("阶段=局部接收者；次数=100000");
+        for (int i = 0; i < 100_000; i++) {
+            result += evaluate(first, i);
+        }
+        System.out.println("阶段=更换接收者；结果=" + result);
+        for (int i = 0; i < 50_000; i++) {
+            result += evaluate(second, i);
+        }
+        System.out.println("阶段=长循环开始；发布字段=" + published.left + "," + published.right);
+        result += longLoop(3_000_000);
+        System.out.println("阶段=正常结束；结果=" + result);
+        published = null;
+    }
+
+    private static int evaluate(Operation operation, int value) {
+        Pair pair = new Pair(value, value + 1);
+        return operation.apply(pair) + pair.left;
+    }
+
+    private static long longLoop(int limit) {
+        long result = 0;
+        for (int i = 0; i < limit; i++) {
+            result = result * 31 + i;
+        }
+        return result;
+    }
+}

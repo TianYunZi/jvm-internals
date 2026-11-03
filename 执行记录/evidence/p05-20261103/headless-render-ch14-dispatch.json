@@ -1,0 +1,21 @@
+{
+  "time": "2026-11-03T09:10:45.494Z",
+  "version": "Chrome/156.0.8078.80",
+  "profileMode": "独立临时配置；仅本地书稿",
+  "chapters": [
+    {
+      "folder": "ch14-dispatch",
+      "figureIds": [
+        "fig-14-1",
+        "fig-14-2",
+        "fig-14-3"
+      ],
+      "paper": "A4",
+      "viewports": [
+        "1440×1000",
+        "768×1000",
+        "390×844"
+      ]
+    }
+  ]
+}

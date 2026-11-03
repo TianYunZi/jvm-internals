@@ -1,0 +1,26 @@
+jdk.RetransformClasses {
+  startTime = 21:43:22.916 (2026-11-03)
+  duration = 2.99 ms
+  classCount = 1
+  redefinitionId = 1
+  eventThread = "main" (javaThreadId = 3)
+  stackTrace = [
+    sun.instrument.InstrumentationImpl.retransformClasses0(long, Class[])
+    sun.instrument.InstrumentationImpl.retransformClasses(Class[]) line: 221
+    org.example.jvminternals.ch33.ObservationJourney.main(String[]) line: 18
+  ]
+}
+
+jdk.RedefineClasses {
+  startTime = 21:43:22.920 (2026-11-03)
+  duration = 3.02 ms
+  classCount = 1
+  redefinitionId = 2
+  eventThread = "main" (javaThreadId = 3)
+  stackTrace = [
+    sun.instrument.InstrumentationImpl.redefineClasses0(long, ClassDefinition[])
+    sun.instrument.InstrumentationImpl.redefineClasses(ClassDefinition[]) line: 247
+    org.example.jvminternals.ch33.ObservationJourney.main(String[]) line: 24
+  ]
+}
+

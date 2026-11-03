@@ -1,0 +1,6 @@
+创建：state=NEW pid=81735
+许可：先unpark后park完成，许可最多保留一个
+观察窗口：12秒，允许采集两份转储与系统线程信息
+park退出：proceed=true interrupted=true
+wait返回并已重获锁：released=true
+终止：parker=TERMINATED waiter=TERMINATED

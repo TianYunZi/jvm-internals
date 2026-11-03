@@ -1,0 +1,9 @@
+export JAVA_HOME=/opt/homebrew/Cellar/openjdk@25/25.0.5.0.2/libexec/openjdk.jdk/Contents/Home
+export PATH="$JAVA_HOME/bin:/opt/homebrew/bin:$PATH"
+mvn -B -ntp -pl chapters/ch28-virtual-threads -am compile
+javac -h chapters/ch28-virtual-threads/target -d chapters/ch28-virtual-threads/target/classes chapters/ch28-virtual-threads/src/main/java/org/example/jvminternals/ch28/VirtualJourney.java
+/usr/bin/clang -dynamiclib -I "$JAVA_HOME/include" -I "$JAVA_HOME/include/darwin" -o chapters/ch28-virtual-threads/target/libcarrierjourney.dylib chapters/ch28-virtual-threads/native/carrierjourney.c
+jfr configure --input profile --output chapters/ch28-virtual-threads/target/virtual.jfc 'jdk.VirtualThreadPinned#enabled=true' 'jdk.VirtualThreadPinned#threshold=0ms' 'jdk.VirtualThreadStart#enabled=true' 'jdk.VirtualThreadEnd#enabled=true'
+java -Xmx128m --enable-native-access=ALL-UNNAMED -XX:+StartAttachListener -Djdk.virtualThreadScheduler.parallelism=1 -Djdk.virtualThreadScheduler.maxPoolSize=1 -Djava.library.path=chapters/ch28-virtual-threads/target -XX:StartFlightRecording=settings=chapters/ch28-virtual-threads/target/virtual.jfc,filename=chapters/ch28-virtual-threads/target/monitor.jfr,dumponexit=true -cp chapters/ch28-virtual-threads/target/classes org.example.jvminternals.ch28.VirtualJourney monitor
+java -Xmx128m --enable-native-access=ALL-UNNAMED -XX:+StartAttachListener -Djdk.virtualThreadScheduler.parallelism=1 -Djdk.virtualThreadScheduler.maxPoolSize=1 -Djava.library.path=chapters/ch28-virtual-threads/target -XX:StartFlightRecording=settings=chapters/ch28-virtual-threads/target/virtual.jfc,filename=chapters/ch28-virtual-threads/target/native.jfr,dumponexit=true -cp chapters/ch28-virtual-threads/target/classes org.example.jvminternals.ch28.VirtualJourney native
+jfr print --events jdk.VirtualThreadPinned,jdk.VirtualThreadStart,jdk.VirtualThreadEnd chapters/ch28-virtual-threads/target/native.jfr

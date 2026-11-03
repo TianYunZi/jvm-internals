@@ -1,0 +1,20 @@
+跳到正文	#main
+Java 虚拟机原理图文书	../../index.html
+31.1 提前处理的目标	#sec-31-1
+31.2 训练运行与缓存生成	#sec-31-2
+31.3 25版命令行流程	#sec-31-3
+31.4 画像保存与编译协作	#sec-31-4
+31.5 代表性、适用条件与评估	#sec-31-5
+31.6 与独立本地可执行文件的边界	#sec-31-6
+观察与边界	#observe
+回顾与思考	#review
+来源与实现入口	#sources
+教学源码	sources.html
+运行说明	README.html
+证据索引	evidence/索引.md
+运行记录	evidence/runs/ch31-20261103-01/记录.md
+25版java命令的AOT缓存章节	https://docs.oracle.com/en/java/javase/25/docs/specs/man/java.html#ahead-of-time-cache
+25版迁移说明	https://docs.oracle.com/en/java/javase/25/migrate/significant-changes-jdk-25.html
+上一章：第30章	../ch30-startup-sharing/chapter.html
+下一章：第32章	../ch32-native-interop/chapter.html
+返回全书目录	../../index.html#part-7

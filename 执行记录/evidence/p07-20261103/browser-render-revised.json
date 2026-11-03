@@ -1,0 +1,26 @@
+{
+  "time": "2026-11-03T11:36:58.665Z",
+  "version": "Chrome/156.0.8078.80",
+  "origin": "http://127.0.0.1:8769",
+  "profileMode": "独立临时配置；仅访问本机书稿",
+  "chapters": [
+    {
+      "folder": "ch28-virtual-threads",
+      "paper": "A4",
+      "viewports": [
+        "1440×1000",
+        "768×1000",
+        "390×844"
+      ]
+    },
+    {
+      "folder": "ch29-scoped-concurrency",
+      "paper": "A4",
+      "viewports": [
+        "1440×1000",
+        "768×1000",
+        "390×844"
+      ]
+    }
+  ]
+}

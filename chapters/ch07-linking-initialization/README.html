@@ -1,0 +1,57 @@
+<!doctype html><html lang="zh-CN"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="shiki-version" content="4.6.0"><title>第7章运行说明</title><link rel="stylesheet" href="../../assets/book.css"></head><body><main class="home" id="main"><h1>第7章运行说明</h1><p><a href="chapter.html">返回正文</a></p><p>Java 开发工具包（Java Development Kit，JDK）25.0.5.0.2、Maven 3.10.0、macOS AArch64。命令均在项目根目录执行；本机工具路径按公共基线明确给出。正式正文为 <a href="chapter.html">chapter.html</a>，源码阅读副本为 <a href="sources.html">sources.html</a>。</p>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+<th>示例</th>
+<th>性质、入口及对应节</th>
+<th>输入、上限与结束</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>CH07-E01</td>
+<td>正常教学，InitializationJourney；7.2—7.4</td>
+<td>无输入，一个主线程，阶段日志、递归与反射、字段与虚方法结果后退出</td>
+</tr>
+<tr>
+<td>CH07-E02</td>
+<td>并发观察，InitializationRace；7.4</td>
+<td>0—30 秒参数，默认 0；两个工作线程，初始化等待上限为窗口+5 秒；finally 释放门闩、有界 join 与必要中断</td>
+</tr>
+<tr>
+<td>CH07-E03</td>
+<td>已授权故障，InitializationFailure；7.1、7.4</td>
+<td>固定两次读取同一 Broken，限定错误捕获与三层原因，随后退出</td>
+</tr>
+<tr>
+<td>CH07-E04</td>
+<td>已授权二进制故障，variants/binary；7.5</td>
+<td>同一客户端，五组独立短进程；四种错误未捕获，退出 1 是证据</td>
+</tr>
+</tbody></table>
+</div><p>普通聚合只编译三份主源，不运行程序。每次 Java 进程堆为 32—128 MiB，无网络、无压力输入或测试断言。E02 可先用参数 0 普通运行；需要外部观察时用 25，看到 observe.pid 后，在第二个终端执行 jcmd Thread.print -l。主进程窗口自动结束，不依赖工具附加才释放。若需提前停止，对该进程按 Ctrl-C；不要寻找或终止其他 Java 进程。</p>
+<h2>主编译与三组执行</h2>
+<pre data-shiki-version="4.6.0" class="shiki github-light" style="background-color:#fff;color:#24292e" tabindex="0"><code data-code-id="code-001" data-code-language="bash"><span class="line"><span style="color:#24292E">task_jdk</span><span style="color:#D73A49">=</span><span style="color:#032F62">/opt/homebrew/Cellar/openjdk@25/25.0.5.0.2/libexec/openjdk.jdk/Contents/Home</span></span>
+<span class="line"><span style="color:#24292E">JAVA_HOME</span><span style="color:#D73A49">=</span><span style="color:#032F62">"</span><span style="color:#24292E">$task_jdk</span><span style="color:#032F62">"</span><span style="color:#6F42C1"> mvn</span><span style="color:#005CC5"> -B</span><span style="color:#005CC5"> -ntp</span><span style="color:#005CC5"> -pl</span><span style="color:#032F62"> chapters/ch07-linking-initialization</span><span style="color:#005CC5"> -am</span><span style="color:#032F62"> compile</span></span>
+<span class="line"><span style="color:#6F42C1">"</span><span style="color:#24292E">$task_jdk</span><span style="color:#6F42C1">/bin/java"</span><span style="color:#005CC5"> -Xms32m</span><span style="color:#005CC5"> -Xmx128m</span><span style="color:#005CC5"> -Xlog:class+load=info,class+init=debug:file=chapters/ch07-linking-initialization/evidence/runs/ch07-20261103-01/journey-class.log</span><span style="color:#005CC5"> -cp</span><span style="color:#032F62"> chapters/ch07-linking-initialization/target/classes</span><span style="color:#032F62"> org.example.jvminternals.ch07.InitializationJourney</span></span>
+<span class="line"><span style="color:#6F42C1">"</span><span style="color:#24292E">$task_jdk</span><span style="color:#6F42C1">/bin/java"</span><span style="color:#005CC5"> -Xms32m</span><span style="color:#005CC5"> -Xmx128m</span><span style="color:#005CC5"> -Xlog:class+load=info,class+init=debug:file=chapters/ch07-linking-initialization/evidence/runs/ch07-20261103-01/failure-class.log</span><span style="color:#005CC5"> -cp</span><span style="color:#032F62"> chapters/ch07-linking-initialization/target/classes</span><span style="color:#032F62"> org.example.jvminternals.ch07.InitializationFailure</span></span>
+<span class="line"><span style="color:#6F42C1">"</span><span style="color:#24292E">$task_jdk</span><span style="color:#6F42C1">/bin/java"</span><span style="color:#005CC5"> -Xms32m</span><span style="color:#005CC5"> -Xmx128m</span><span style="color:#005CC5"> -Xlog:class+init=debug:file=chapters/ch07-linking-initialization/evidence/runs/ch07-20261103-01/race-class.log</span><span style="color:#005CC5"> -cp</span><span style="color:#032F62"> chapters/ch07-linking-initialization/target/classes</span><span style="color:#032F62"> org.example.jvminternals.ch07.InitializationRace</span><span style="color:#005CC5"> 25</span></span>
+<span class="line"></span></code></pre><p>E02 本轮进程号 21261；它只是历史身份，不可直接用于新运行。实际窗口内执行 <code class="shiki-inline" data-shiki-version="4.6.0" data-code-id="code-002" data-code-language="text"><span>"$task_jdk/bin/jcmd" 21261 Thread.print -l</span></code> 并保存快照。沙箱内启动会限制附加所需本机套接字，本轮启动与只读附加都在批准的本机权限下进行，没有改系统配置。</p>
+<h2>隔离库的编译与执行</h2>
+<p>同名 Api 分别输出，客户端只针对 v1 编译一次。按顺序运行下列五条命令，每条是新进程；缺类组故意不放库目录，不创建“空库”夹具。</p>
+<pre data-shiki-version="4.6.0" class="shiki github-light" style="background-color:#fff;color:#24292e" tabindex="0"><code data-code-id="code-003" data-code-language="bash"><span class="line"><span style="color:#24292E">task_jdk</span><span style="color:#D73A49">=</span><span style="color:#032F62">/opt/homebrew/Cellar/openjdk@25/25.0.5.0.2/libexec/openjdk.jdk/Contents/Home</span></span>
+<span class="line"><span style="color:#D73A49">for</span><span style="color:#24292E"> variant </span><span style="color:#D73A49">in</span><span style="color:#032F62"> v1</span><span style="color:#032F62"> missing-method</span><span style="color:#032F62"> private-method</span><span style="color:#032F62"> instance-method</span><span style="color:#24292E">; </span><span style="color:#D73A49">do</span></span>
+<span class="line"><span style="color:#6F42C1">  "</span><span style="color:#24292E">$task_jdk</span><span style="color:#6F42C1">/bin/javac"</span><span style="color:#005CC5"> --release</span><span style="color:#005CC5"> 25</span><span style="color:#005CC5"> -g</span><span style="color:#005CC5"> -parameters</span><span style="color:#005CC5"> -d</span><span style="color:#032F62"> "chapters/ch07-linking-initialization/target/binary/</span><span style="color:#24292E">$variant</span><span style="color:#032F62">"</span><span style="color:#032F62"> "chapters/ch07-linking-initialization/variants/binary/</span><span style="color:#24292E">$variant</span><span style="color:#032F62">/org/example/jvminternals/ch07/library/Api.java"</span></span>
+<span class="line"><span style="color:#D73A49">done</span></span>
+<span class="line"><span style="color:#6F42C1">"</span><span style="color:#24292E">$task_jdk</span><span style="color:#6F42C1">/bin/javac"</span><span style="color:#005CC5"> --release</span><span style="color:#005CC5"> 25</span><span style="color:#005CC5"> -g</span><span style="color:#005CC5"> -parameters</span><span style="color:#005CC5"> -cp</span><span style="color:#032F62"> chapters/ch07-linking-initialization/target/binary/v1</span><span style="color:#005CC5"> -d</span><span style="color:#032F62"> chapters/ch07-linking-initialization/target/binary/client</span><span style="color:#032F62"> chapters/ch07-linking-initialization/variants/binary/client/org/example/jvminternals/ch07/client/BinaryClient.java</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#6F42C1">"</span><span style="color:#24292E">$task_jdk</span><span style="color:#6F42C1">/bin/java"</span><span style="color:#005CC5"> -Xms32m</span><span style="color:#005CC5"> -Xmx128m</span><span style="color:#005CC5"> -cp</span><span style="color:#032F62"> chapters/ch07-linking-initialization/target/binary/client:chapters/ch07-linking-initialization/target/binary/v1</span><span style="color:#032F62"> org.example.jvminternals.ch07.client.BinaryClient</span></span>
+<span class="line"><span style="color:#6F42C1">"</span><span style="color:#24292E">$task_jdk</span><span style="color:#6F42C1">/bin/java"</span><span style="color:#005CC5"> -Xms32m</span><span style="color:#005CC5"> -Xmx128m</span><span style="color:#005CC5"> -cp</span><span style="color:#032F62"> chapters/ch07-linking-initialization/target/binary/client</span><span style="color:#032F62"> org.example.jvminternals.ch07.client.BinaryClient</span></span>
+<span class="line"><span style="color:#6F42C1">"</span><span style="color:#24292E">$task_jdk</span><span style="color:#6F42C1">/bin/java"</span><span style="color:#005CC5"> -Xms32m</span><span style="color:#005CC5"> -Xmx128m</span><span style="color:#005CC5"> -cp</span><span style="color:#032F62"> chapters/ch07-linking-initialization/target/binary/client:chapters/ch07-linking-initialization/target/binary/missing-method</span><span style="color:#032F62"> org.example.jvminternals.ch07.client.BinaryClient</span></span>
+<span class="line"><span style="color:#6F42C1">"</span><span style="color:#24292E">$task_jdk</span><span style="color:#6F42C1">/bin/java"</span><span style="color:#005CC5"> -Xms32m</span><span style="color:#005CC5"> -Xmx128m</span><span style="color:#005CC5"> -cp</span><span style="color:#032F62"> chapters/ch07-linking-initialization/target/binary/client:chapters/ch07-linking-initialization/target/binary/private-method</span><span style="color:#032F62"> org.example.jvminternals.ch07.client.BinaryClient</span></span>
+<span class="line"><span style="color:#6F42C1">"</span><span style="color:#24292E">$task_jdk</span><span style="color:#6F42C1">/bin/java"</span><span style="color:#005CC5"> -Xms32m</span><span style="color:#005CC5"> -Xmx128m</span><span style="color:#005CC5"> -cp</span><span style="color:#032F62"> chapters/ch07-linking-initialization/target/binary/client:chapters/ch07-linking-initialization/target/binary/instance-method</span><span style="color:#032F62"> org.example.jvminternals.ch07.client.BinaryClient</span><span style="color:#24292E"> </span></span>
+<span class="line"></span></code></pre><p>这些是用户明确授权的故障教学输入，不用于自动通过／失败判断，不要把四条非零退出改成断言。库方法和客户端未加入默认类路径。</p>
+<h2>反汇编与实际记录</h2>
+<pre data-shiki-version="4.6.0" class="shiki github-light" style="background-color:#fff;color:#24292e" tabindex="0"><code data-code-id="code-004" data-code-language="bash"><span class="line"><span style="color:#6F42C1">"</span><span style="color:#24292E">$task_jdk</span><span style="color:#6F42C1">/bin/javap"</span><span style="color:#005CC5"> -v</span><span style="color:#005CC5"> -p</span><span style="color:#005CC5"> -c</span><span style="color:#005CC5"> -classpath</span><span style="color:#032F62"> chapters/ch07-linking-initialization/target/classes</span><span style="color:#032F62"> org.example.jvminternals.ch07.InitializationJourney</span><span style="color:#032F62"> 'org.example.jvminternals.ch07.InitializationJourney$Values'</span><span style="color:#032F62"> 'org.example.jvminternals.ch07.InitializationJourney$Recursive'</span><span style="color:#032F62"> 'org.example.jvminternals.ch07.InitializationJourney$Child'</span></span>
+<span class="line"><span style="color:#6F42C1">"</span><span style="color:#24292E">$task_jdk</span><span style="color:#6F42C1">/bin/javap"</span><span style="color:#005CC5"> -v</span><span style="color:#005CC5"> -p</span><span style="color:#005CC5"> -c</span><span style="color:#005CC5"> -classpath</span><span style="color:#032F62"> chapters/ch07-linking-initialization/target/binary/client</span><span style="color:#032F62"> org.example.jvminternals.ch07.client.BinaryClient</span></span>
+<span class="line"></span></code></pre><p>本轮命令重定向、时间、退出及摘要见 <a href="evidence/runs/ch07-20261103-01/%E8%AE%B0%E5%BD%95.md">ch07-20261103-01</a>。原始类加载／初始化日志保留在该目录。预期关注常量没有 getstatic、非恒定值触发、相关父类型、递归默认值及同类失败状态；实际结果按记录读取，不以源码排列猜测线程打印顺序。</p>
+</main></body></html>

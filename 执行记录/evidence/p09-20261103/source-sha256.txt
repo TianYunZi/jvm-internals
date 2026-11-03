@@ -1,0 +1,8 @@
+3f71e520ec4a1375c037b037c4bcb40d92eecc52d1a3876a24181e560fdba268  chapters/ch33-observability/src/main/java/org/example/jvminternals/ch33/ObservedValue.java
+53a0cba776d8bf75143999235df03ff739d89b8a6524589e549b71ef0d6d7836  chapters/ch33-observability/src/main/java/org/example/jvminternals/ch33/ObservationAgent.java
+da602209925584f8d7d16494d77022fad484df3cd81b78244a1138a43156606d  chapters/ch33-observability/src/main/java/org/example/jvminternals/ch33/ObservationJourney.java
+dc34ed8943d82fff88fa8b39027100e18ff7d67958d1ebd85ba8e4c7ddabbe6a  chapters/ch35-troubleshooting/src/main/java/org/example/jvminternals/ch35/BoundedSymptoms.java
+cc488d8be3f21e72580cb7400f08e5afc295df4fe80a104a763da996d958874f  chapters/ch34-flight-recorder/src/main/java/org/example/jvminternals/ch34/LatencyJourney.java
+6e77e5f6f99edfd95f4348b74fd1dd45f07cf2947cd130b6ba66c4f73ba34683  chapters/ch31-aot-cache/src/main/java/org/example/jvminternals/ch31/CacheJourney.java
+f906d29197f6c10bcdcbd90ccbc502ed8c2b816a11091977128ec5159fb1c9d8  chapters/ch36-performance-cases/benchmarks/src/main/java/org/example/jvminternals/ch36/WorkBenchmark.java
+4f0ef99354e3258d7b2e3ec3d5b50637a264c5f8563f284a846ba3742a7500b9  chapters/ch36-performance-cases/src/main/java/org/example/jvminternals/ch36/CaseWorkload.java

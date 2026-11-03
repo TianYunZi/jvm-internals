@@ -1,0 +1,1374 @@
+CompileCommand: dontinline org/example/jvminternals/ch17/OptimizationJourney.folded bool dontinline = true
+CompileCommand: dontinline org/example/jvminternals/ch17/OptimizationJourney.local bool dontinline = true
+CompileCommand: dontinline org/example/jvminternals/ch17/OptimizationJourney.escaped bool dontinline = true
+CompileCommand: dontinline org/example/jvminternals/ch17/OptimizationJourney.locked bool dontinline = true
+CompileCommand: dontinline org/example/jvminternals/ch17/OptimizationJourney.transform bool dontinline = true
+CompileCommand: print org/example/jvminternals/ch17/OptimizationJourney.* bool print = true
+18    1    b  3       java.lang.Object::<init> (1 bytes)
+19    2    b  3       java.lang.Byte::toUnsignedInt (6 bytes)
+19    3    b  3       java.lang.String::hashCode (60 bytes)
+                              @ 17   java.lang.String::isLatin1 (19 bytes)   inline
+                              @ 27   java.lang.StringLatin1::hashCode (9 bytes)   inline
+                                @ 5   jdk.internal.util.ArraysSupport::hashCodeOfUnsigned (55 bytes)   failed to inline: callee is too large
+                              @ 37  java/lang/StringUTF16::hashCode (not loaded)   failed to inline: not inlineable
+20    4     n 0       jdk.internal.misc.Unsafe::getReferenceVolatile (native)   
+20    5     n 0       jdk.internal.vm.Continuation::enterSpecial (native)   (static)
+20    6     n 0       jdk.internal.vm.Continuation::doYield (native)   (static)
+21    7    b  3       java.lang.String::coder (15 bytes)
+阶段=优化候选开始；次数=50000
+22    8    b  3       jdk.internal.util.Preconditions::checkIndex (18 bytes)
+                              @ 12   jdk.internal.util.Preconditions::outOfBoundsCheckIndex (25 bytes)   failed to inline: callee uses too much stack
+22    9    b  3       java.lang.String::charAt (25 bytes)
+                              @ 1   java.lang.String::isLatin1 (19 bytes)   inline
+                              @ 12   java.lang.StringLatin1::charAt (15 bytes)   inline
+                                @ 3   java.lang.String::checkIndex (10 bytes)   inline
+                                  @ 5   jdk.internal.util.Preconditions::checkIndex (18 bytes)   intrinsic
+                              @ 21   java.lang.StringUTF16::charAt (11 bytes)   inline
+                                @ 2   java.lang.StringUTF16::checkIndex (9 bytes)   inline
+                                  @ 2   java.lang.StringUTF16::length (5 bytes)   inline
+                                  @ 5   java.lang.String::checkIndex (10 bytes)   inline
+                                    @ 5   jdk.internal.util.Preconditions::checkIndex (18 bytes)   intrinsic
+                                @ 7   java.lang.StringUTF16::getChar (60 bytes)   intrinsic
+23   10    b  3       java.lang.String::length (11 bytes)
+                              @ 6   java.lang.String::coder (15 bytes)   inline
+24   11    b  3       org.example.jvminternals.ch17.OptimizationJourney$Pair::<init> (15 bytes)
+                              @ 1   java.lang.Object::<init> (1 bytes)   inline
+24   12    b  3       org.example.jvminternals.ch17.OptimizationJourney::transform (23 bytes)
+
+============================= C1-compiled nmethod ==============================
+----------------------------------- Assembly -----------------------------------
+[0.025s][warning][os] Loading hsdis library failed
+
+Compiled method (c1) 25   12       3       org.example.jvminternals.ch17.OptimizationJourney::transform (23 bytes)
+ total in heap  [0x0000000115a99c08,0x0000000115a99ed8] = 720
+ main code      [0x0000000115a99d00,0x0000000115a99eb0] = 432
+ stub code      [0x0000000115a99eb0,0x0000000115a99ed0] = 32
+ oops           [0x0000000115a99ed0,0x0000000115a99ed8] = 8
+ mutable data [0x0000007b89400a50,0x0000007b89400aa0] = 80
+ relocation     [0x0000007b89400a50,0x0000007b89400a90] = 64
+ metadata       [0x0000007b89400a90,0x0000007b89400aa0] = 16
+ immutable data [0x0000007b894063e0,0x0000007b894064b0] = 208
+ dependencies   [0x0000007b894063e0,0x0000007b894063e8] = 8
+ nul chk table  [0x0000007b894063e8,0x0000007b89406400] = 24
+ scopes pcs     [0x0000007b89406400,0x0000007b89406480] = 128
+ scopes data    [0x0000007b89406480,0x0000007b894064b0] = 48
+
+[Constant Pool (empty)]
+
+[MachCode]
+[Verified Entry Point]
+  # {method} {0x000000012c400bd0} 'transform' '([I[I)V' in 'org/example/jvminternals/ch17/OptimizationJourney'
+  # parm0:    c_rarg1:c_rarg1 
+                        = '[I'
+  # parm1:    c_rarg2:c_rarg2 
+                        = '[I'
+  #           [sp+0x40]  (sp of caller)
+  0x0000000115a99d00: 1f20 03d5 | e953 40d1 | 3f01 00f9 | ff03 01d1 | fd7b 03a9 | 2801 0018 | 8923 40b9 | 1f01 09eb 
+  0x0000000115a99d20: e000 0054 
+
+  0x0000000115a99d24: ;   {runtime_call Stub::method_entry_barrier}
+  0x0000000115a99d24: 0830 88d2 | 28a0 a3f2 | 2800 c0f2 | 0001 3fd6 | 0200 0014 | 0000 0000 
+
+  0x0000000115a99d3c: ;   {metadata(method data for {method} {0x000000012c400bd0} 'transform' '([I[I)V' in 'org/example/jvminternals/ch17/OptimizationJourney')}
+  0x0000000115a99d3c: 009c 82d2 | 0088 a5f2 | 2000 c0f2 | 0390 40b9 | 6308 0011 | 0390 00b9 | 6324 1f12 | 7f00 0071 
+  0x0000000115a99d5c: 6006 0054 | 0000 a052 | 1f00 0014 | 037c 4093 | 63f4 7ed3 | 6340 0091 | 2368 63b8 | 6304 0011 
+  0x0000000115a99d7c: ; implicit exception: dispatches to 0x0000000115a99e48
+  0x0000000115a99d7c: 440c 40b9 | 1f00 046b | 4206 0054 | 047c 4093 | 84f4 7ed3 | 8440 0091 | 4368 24b8 | 0004 0011 
+  0x0000000115a99d9c: ;   {metadata(method data for {method} {0x000000012c400bd0} 'transform' '([I[I)V' in 'org/example/jvminternals/ch17/OptimizationJourney')}
+  0x0000000115a99d9c: 039c 82d2 | 0388 a5f2 | 2300 c0f2 | 6494 40b9 | 8408 0011 | 6494 00b9 | 8430 1f12 | 9f00 0071 
+  0x0000000115a99dbc: 4005 0054 
+
+  0x0000000115a99dc0: ; ImmutableOopMap {c_rarg1=Oop c_rarg2=Oop }
+                      ;*goto {reexecute=1 rethrow=0 return_oop=0}
+                      ; - (reexecute) org.example.jvminternals.ch17.OptimizationJourney::transform@19 (line 67)
+  0x0000000115a99dc0: 881b 40f9 
+
+  0x0000000115a99dc4: ;   {poll}
+  0x0000000115a99dc4: 1f01 40b9 
+
+  0x0000000115a99dc8: ;   {metadata(method data for {method} {0x000000012c400bd0} 'transform' '([I[I)V' in 'org/example/jvminternals/ch17/OptimizationJourney')}
+  0x0000000115a99dc8: 039c 82d2 | 0388 a5f2 | 2300 c0f2 | 647c 40f9 | 8404 0091 | 647c 00f9 
+
+  0x0000000115a99de0: ; implicit exception: dispatches to 0x0000000115a99e84
+  0x0000000115a99de0: 230c 40b9 | 1f00 036b 
+
+  0x0000000115a99de8: ;   {metadata(method data for {method} {0x000000012c400bd0} 'transform' '([I[I)V' in 'org/example/jvminternals/ch17/OptimizationJourney')}
+  0x0000000115a99de8: 039c 82d2 | 0388 a5f2 | 2300 c0f2 | 081d 80d2 | 091b 80d2 | 04b1 899a | 6568 64f8 | a504 0091 
+  0x0000000115a99e08: 6568 24f8 | ebfa ff54 | fd7b 43a9 | ff03 0191 
+
+  0x0000000115a99e18: ;   {poll_return}
+  0x0000000115a99e18: 8817 40f9 | ff63 28eb | 4803 0054 | c003 5fd6 
+
+  0x0000000115a99e28: ;   {metadata({method} {0x000000012c400bd0} 'transform' '([I[I)V' in 'org/example/jvminternals/ch17/OptimizationJourney')}
+  0x0000000115a99e28: 087a 81d2 | 0888 a5f2 | 2800 c0f2 | e807 00f9 | 0800 8092 | e803 00f9 
+
+  0x0000000115a99e40: ; ImmutableOopMap {c_rarg1=Oop c_rarg2=Oop }
+                      ;*synchronization entry
+                      ; - org.example.jvminternals.ch17.OptimizationJourney::transform@-1 (line 67)
+                      ;   {runtime_call C1 Runtime counter_overflow_blob}
+  0x0000000115a99e40: 1016 d995 | c7ff ff17 
+
+  0x0000000115a99e48: ; ImmutableOopMap {c_rarg1=Oop c_rarg2=Oop }
+                      ;*iastore {reexecute=0 rethrow=0 return_oop=0}
+                      ; - org.example.jvminternals.ch17.OptimizationJourney::transform@15 (line 68)
+                      ;   {runtime_call C1 Runtime throw_null_pointer_exception_blob}
+  0x0000000115a99e48: fe0a d995 | e803 00aa | e903 02aa 
+
+  0x0000000115a99e54: ;   {runtime_call C1 Runtime throw_range_check_failed_blob}
+  0x0000000115a99e54: 1eb8 98d2 | bea1 a3f2 | 3e00 c0f2 
+
+  0x0000000115a99e60: ; ImmutableOopMap {c_rarg1=Oop c_rarg2=Oop }
+                      ;*iastore {reexecute=0 rethrow=0 return_oop=0}
+                      ; - org.example.jvminternals.ch17.OptimizationJourney::transform@15 (line 68)
+  0x0000000115a99e60: c003 3fd6 
+
+  0x0000000115a99e64: ;   {metadata({method} {0x000000012c400bd0} 'transform' '([I[I)V' in 'org/example/jvminternals/ch17/OptimizationJourney')}
+  0x0000000115a99e64: 087a 81d2 | 0888 a5f2 | 2800 c0f2 | e807 00f9 | 6802 80d2 | e803 00f9 
+
+  0x0000000115a99e7c: ; ImmutableOopMap {c_rarg1=Oop c_rarg2=Oop }
+                      ;*goto {reexecute=1 rethrow=0 return_oop=0}
+                      ; - (reexecute) org.example.jvminternals.ch17.OptimizationJourney::transform@19 (line 67)
+                      ;   {runtime_call C1 Runtime counter_overflow_blob}
+  0x0000000115a99e7c: 0116 d995 | d0ff ff17 
+
+  0x0000000115a99e84: ; ImmutableOopMap {c_rarg1=Oop c_rarg2=Oop }
+                      ;*arraylength {reexecute=0 rethrow=0 return_oop=0}
+                      ; - org.example.jvminternals.ch17.OptimizationJourney::transform@4 (line 67)
+                      ;   {runtime_call C1 Runtime throw_null_pointer_exception_blob}
+  0x0000000115a99e84: ef0a d995 
+
+  0x0000000115a99e88: ;   {internal_word}
+  0x0000000115a99e88: 88fc ff10 | 8863 02f9 
+
+  0x0000000115a99e90: ;   {runtime_call SafepointBlob}
+  0x0000000115a99e90: 7ccb d515 | 80b7 42f9 | 9fb7 02f9 | 9fbb 02f9 | fd7b 43a9 | ff03 0191 
+
+  0x0000000115a99ea8: ;   {runtime_call C1 Runtime unwind_exception_blob}
+  0x0000000115a99ea8: 0609 d915 | 0000 0000 
+[Exception Handler]
+  0x0000000115a99eb0: ;   {runtime_call C1 Runtime handle_exception_from_callee_blob}
+  0x0000000115a99eb0: 440f d995 
+
+  0x0000000115a99eb4: ;   {external_word}
+  0x0000000115a99eb4: 00bc 95d2 | 0093 a1f2 | 2000 c0f2 | c1d5 bbd4 
+[Deopt Handler Code]
+  0x0000000115a99ec4: 1e00 0010 
+
+  0x0000000115a99ec8: ;   {runtime_call DeoptimizationBlob}
+  0x0000000115a99ec8: eecb d515 | 0000 0000 
+[/MachCode]
+29   13    b  3       org.example.jvminternals.ch17.OptimizationJourney::folded (10 bytes)
+                              @ 1   org.example.jvminternals.ch17.OptimizationJourney::twice (4 bytes)   inline
+
+============================= C1-compiled nmethod ==============================
+----------------------------------- Assembly -----------------------------------
+
+Compiled method (c1) 29   13       3       org.example.jvminternals.ch17.OptimizationJourney::folded (10 bytes)
+ total in heap  [0x0000000115a99f08,0x0000000115a9a148] = 576
+ main code      [0x0000000115a9a000,0x0000000115a9a120] = 288
+ stub code      [0x0000000115a9a120,0x0000000115a9a140] = 32
+ oops           [0x0000000115a9a140,0x0000000115a9a148] = 8
+ mutable data [0x0000007b8b039200,0x0000007b8b039258] = 88
+ relocation     [0x0000007b8b039200,0x0000007b8b039238] = 56
+ metadata       [0x0000007b8b039238,0x0000007b8b039258] = 32
+ immutable data [0x0000007b8940c4d0,0x0000007b8940c538] = 104
+ dependencies   [0x0000007b8940c4d0,0x0000007b8940c4d8] = 8
+ scopes pcs     [0x0000007b8940c4d8,0x0000007b8940c518] = 64
+ scopes data    [0x0000007b8940c518,0x0000007b8940c538] = 32
+
+[Constant Pool (empty)]
+
+[MachCode]
+[Verified Entry Point]
+  # {method} {0x000000012c400790} 'folded' '(I)I' in 'org/example/jvminternals/ch17/OptimizationJourney'
+  # parm0:    c_rarg1   = int
+  #           [sp+0x50]  (sp of caller)
+  0x0000000115a9a000: 1f20 03d5 | e953 40d1 | 3f01 00f9 | ff43 01d1 | fd7b 04a9 | 2801 0018 | 8923 40b9 | 1f01 09eb 
+  0x0000000115a9a020: e000 0054 
+
+  0x0000000115a9a024: ;   {runtime_call Stub::method_entry_barrier}
+  0x0000000115a9a024: 0830 88d2 | 28a0 a3f2 | 2800 c0f2 | 0001 3fd6 | 0200 0014 | 0000 0000 
+
+  0x0000000115a9a03c: ;   {metadata(method data for {method} {0x000000012c400790} 'folded' '(I)I' in 'org/example/jvminternals/ch17/OptimizationJourney')}
+  0x0000000115a9a03c: 00c5 82d2 | 0088 a5f2 | 2000 c0f2 | 0290 40b9 | 4208 0011 | 0290 00b9 | 4224 1f12 | 5f00 0071 
+  0x0000000115a9a05c: 0003 0054 
+
+  0x0000000115a9a060: ;   {metadata(method data for {method} {0x000000012c400790} 'folded' '(I)I' in 'org/example/jvminternals/ch17/OptimizationJourney')}
+  0x0000000115a9a060: 00c5 82d2 | 0088 a5f2 | 2000 c0f2 | 086c 40f9 | 0805 0091 | 086c 00f9 
+
+  0x0000000115a9a078: ;   {metadata(method data for {method} {0x000000012c400840} 'twice' '(I)I' in 'org/example/jvminternals/ch17/OptimizationJourney')}
+  0x0000000115a9a078: 00ea 82d2 | 0088 a5f2 | 2000 c0f2 | 0290 40b9 | 4208 0011 | 0290 00b9 | 424c 1f12 | 5f00 0071 
+  0x0000000115a9a098: 2002 0054 | 2000 010b | 0060 0011 | fd7b 44a9 | ff43 0191 
+
+  0x0000000115a9a0ac: ;   {poll_return}
+  0x0000000115a9a0ac: 8817 40f9 | ff63 28eb | 4802 0054 | c003 5fd6 
+
+  0x0000000115a9a0bc: ;   {metadata({method} {0x000000012c400790} 'folded' '(I)I' in 'org/example/jvminternals/ch17/OptimizationJourney')}
+  0x0000000115a9a0bc: 08f2 80d2 | 0888 a5f2 | 2800 c0f2 | e807 00f9 | 0800 8092 | e803 00f9 
+
+  0x0000000115a9a0d4: ; ImmutableOopMap {}
+                      ;*synchronization entry
+                      ; - org.example.jvminternals.ch17.OptimizationJourney::folded@-1 (line 39)
+                      ;   {runtime_call C1 Runtime counter_overflow_blob}
+  0x0000000115a9a0d4: 6b15 d995 | e2ff ff17 
+
+  0x0000000115a9a0dc: ;   {metadata({method} {0x000000012c400840} 'twice' '(I)I' in 'org/example/jvminternals/ch17/OptimizationJourney')}
+  0x0000000115a9a0dc: 0808 81d2 | 0888 a5f2 | 2800 c0f2 | e807 00f9 | 0800 8092 | e803 00f9 
+
+  0x0000000115a9a0f4: ; ImmutableOopMap {}
+                      ;*synchronization entry
+                      ; - org.example.jvminternals.ch17.OptimizationJourney::twice@-1 (line 44)
+                      ; - org.example.jvminternals.ch17.OptimizationJourney::folded@1 (line 39)
+                      ;   {runtime_call C1 Runtime counter_overflow_blob}
+  0x0000000115a9a0f4: 6315 d995 | e9ff ff17 
+
+  0x0000000115a9a0fc: ;   {internal_word}
+  0x0000000115a9a0fc: 88fd ff10 | 8863 02f9 
+
+  0x0000000115a9a104: ;   {runtime_call SafepointBlob}
+  0x0000000115a9a104: dfca d515 | 80b7 42f9 | 9fb7 02f9 | 9fbb 02f9 | fd7b 44a9 | ff43 0191 
+
+  0x0000000115a9a11c: ;   {runtime_call C1 Runtime unwind_exception_blob}
+  0x0000000115a9a11c: 6908 d915 
+[Exception Handler]
+  0x0000000115a9a120: ;   {runtime_call C1 Runtime handle_exception_from_callee_blob}
+  0x0000000115a9a120: a80e d995 
+
+  0x0000000115a9a124: ;   {external_word}
+  0x0000000115a9a124: 00bc 95d2 | 0093 a1f2 | 2000 c0f2 | c1d5 bbd4 
+[Deopt Handler Code]
+  0x0000000115a9a134: 1e00 0010 
+
+  0x0000000115a9a138: ;   {runtime_call DeoptimizationBlob}
+  0x0000000115a9a138: 52cb d515 | 0000 0000 
+[/MachCode]
+32   14    b  3       org.example.jvminternals.ch17.OptimizationJourney::local (22 bytes)
+                              @ 8   org.example.jvminternals.ch17.OptimizationJourney$Pair::<init> (15 bytes)   inline
+                                @ 1   java.lang.Object::<init> (1 bytes)   inline
+
+============================= C1-compiled nmethod ==============================
+----------------------------------- Assembly -----------------------------------
+
+Compiled method (c1) 32   14       3       org.example.jvminternals.ch17.OptimizationJourney::local (22 bytes)
+ total in heap  [0x0000000115a9a188,0x0000000115a9a480] = 760
+ main code      [0x0000000115a9a280,0x0000000115a9a458] = 472
+ stub code      [0x0000000115a9a458,0x0000000115a9a478] = 32
+ oops           [0x0000000115a9a478,0x0000000115a9a480] = 8
+ mutable data [0x0000007b8b06cf00,0x0000007b8b06cf80] = 128
+ relocation     [0x0000007b8b06cf00,0x0000007b8b06cf48] = 72
+ metadata       [0x0000007b8b06cf48,0x0000007b8b06cf80] = 56
+ immutable data [0x0000007b8b0bd140,0x0000007b8b0bd1e8] = 168
+ dependencies   [0x0000007b8b0bd140,0x0000007b8b0bd148] = 8
+ scopes pcs     [0x0000007b8b0bd148,0x0000007b8b0bd1a8] = 96
+ scopes data    [0x0000007b8b0bd1a8,0x0000007b8b0bd1e8] = 64
+
+[Constant Pool (empty)]
+
+[MachCode]
+[Verified Entry Point]
+  # {method} {0x000000012c400910} 'local' '(I)I' in 'org/example/jvminternals/ch17/OptimizationJourney'
+  # parm0:    c_rarg1   = int
+  #           [sp+0x70]  (sp of caller)
+  0x0000000115a9a280: 1f20 03d5 | e953 40d1 | 3f01 00f9 | ffc3 01d1 | fd7b 06a9 | 2801 0018 | 8923 40b9 | 1f01 09eb 
+  0x0000000115a9a2a0: e000 0054 
+
+  0x0000000115a9a2a4: ;   {runtime_call Stub::method_entry_barrier}
+  0x0000000115a9a2a4: 0830 88d2 | 28a0 a3f2 | 2800 c0f2 | 0001 3fd6 | 0200 0014 | 0000 0000 
+
+  0x0000000115a9a2bc: ;   {metadata(method data for {method} {0x000000012c400910} 'local' '(I)I' in 'org/example/jvminternals/ch17/OptimizationJourney')}
+  0x0000000115a9a2bc: 0308 83d2 | 0388 a5f2 | 2300 c0f2 | 6090 40b9 | 0008 0011 | 6090 00b9 | 0024 1f12 | 1f00 0071 
+  0x0000000115a9a2dc: 6007 0054 
+
+  0x0000000115a9a2e0: ;   {metadata('org/example/jvminternals/ch17/OptimizationJourney$Pair')}
+  0x0000000115a9a2e0: 0342 80d2 | 8320 a0f2 | 03fc c1f2 | 80e7 40f9 | 0b60 0091 | 88ef 40f9 | 7f01 08eb | 6807 0054 
+  0x0000000115a9a300: 8be7 00f9 | ea03 40b2 | 0a00 00f9 | 6a18 5bd2 | 0a7c 0129 | 0a40 0091 | 5f01 00f9 | bf3a 03d5 
+  0x0000000115a9a320: e203 00aa 
+
+  0x0000000115a9a324: ;   {metadata(method data for {method} {0x000000012c400910} 'local' '(I)I' in 'org/example/jvminternals/ch17/OptimizationJourney')}
+  0x0000000115a9a324: 0308 83d2 | 0388 a5f2 | 2300 c0f2 | 686c 40f9 | 0805 0091 | 686c 00f9 | 2204 0011 
+
+  0x0000000115a9a340: ;   {metadata(method data for {method} {0x000000012c401188} '<init>' '(II)V' in 'org/example/jvminternals/ch17/OptimizationJourney$Pair')}
+  0x0000000115a9a340: 0377 82d2 | 0388 a5f2 | 2300 c0f2 | 6490 40b9 | 8408 0011 | 6490 00b9 | 844c 1f12 | 9f00 0071 
+  0x0000000115a9a360: 8004 0054 | e303 00aa 
+
+  0x0000000115a9a368: ;   {metadata(method data for {method} {0x000000012c401188} '<init>' '(II)V' in 'org/example/jvminternals/ch17/OptimizationJourney$Pair')}
+  0x0000000115a9a368: 0477 82d2 | 0488 a5f2 | 2400 c0f2 | 886c 40f9 | 0805 0091 | 886c 00f9 
+
+  0x0000000115a9a380: ;   {metadata(method data for {method} {0x00000fe0004a2da8} '<init>' '()V' in 'java/lang/Object')}
+  0x0000000115a9a380: 03c8 8cd2 | 0380 a5f2 | 2300 c0f2 | 6490 40b9 | 8408 0011 | 6490 00b9 | 844c 1f12 | 9f00 0071 
+  0x0000000115a9a3a0: 8003 0054 | 0188 0129 | bf3a 03d5 | 4000 010b | fd7b 46a9 | ffc3 0191 
+
+  0x0000000115a9a3b8: ;   {poll_return}
+  0x0000000115a9a3b8: 8817 40f9 | ff63 28eb | 8803 0054 | c003 5fd6 
+
+  0x0000000115a9a3c8: ;   {metadata({method} {0x000000012c400910} 'local' '(I)I' in 'org/example/jvminternals/ch17/OptimizationJourney')}
+  0x0000000115a9a3c8: 0822 81d2 | 0888 a5f2 | 2800 c0f2 | e807 00f9 | 0800 8092 | e803 00f9 
+
+  0x0000000115a9a3e0: ; ImmutableOopMap {}
+                      ;*synchronization entry
+                      ; - org.example.jvminternals.ch17.OptimizationJourney::local@-1 (line 48)
+                      ;   {runtime_call C1 Runtime counter_overflow_blob}
+  0x0000000115a9a3e0: a814 d995 | bfff ff17 
+
+  0x0000000115a9a3e8: ; ImmutableOopMap {}
+                      ;*new {reexecute=0 rethrow=0 return_oop=0}
+                      ; - org.example.jvminternals.ch17.OptimizationJourney::local@0 (line 48)
+                      ;   {runtime_call C1 Runtime fast_new_instance_blob}
+  0x0000000115a9a3e8: e60a d995 | cdff ff17 
+
+  0x0000000115a9a3f0: ;   {metadata({method} {0x000000012c401188} '<init>' '(II)V' in 'org/example/jvminternals/ch17/OptimizationJourney$Pair')}
+  0x0000000115a9a3f0: 0831 82d2 | 0888 a5f2 | 2800 c0f2 | e807 00f9 | 0800 8092 | e803 00f9 
+
+  0x0000000115a9a408: ; ImmutableOopMap {c_rarg0=Oop }
+                      ;*synchronization entry
+                      ; - org.example.jvminternals.ch17.OptimizationJourney$Pair::<init>@-1 (line 14)
+                      ; - org.example.jvminternals.ch17.OptimizationJourney::local@8 (line 48)
+                      ;   {runtime_call C1 Runtime counter_overflow_blob}
+  0x0000000115a9a408: 9e14 d995 | d6ff ff17 
+
+  0x0000000115a9a410: ;   {metadata({method} {0x00000fe0004a2da8} '<init>' '()V' in 'java/lang/Object')}
+  0x0000000115a9a410: 08b5 85d2 | 4809 a0f2 | 08fc c1f2 | e807 00f9 | 0800 8092 | e803 00f9 
+
+  0x0000000115a9a428: ; ImmutableOopMap {c_rarg0=Oop }
+                      ;*synchronization entry
+                      ; - java.lang.Object::<init>@-1 (line 44)
+                      ; - org.example.jvminternals.ch17.OptimizationJourney$Pair::<init>@1 (line 14)
+                      ; - org.example.jvminternals.ch17.OptimizationJourney::local@8 (line 48)
+                      ;   {runtime_call C1 Runtime counter_overflow_blob}
+  0x0000000115a9a428: 9614 d995 | deff ff17 
+
+  0x0000000115a9a430: ;   {internal_word}
+  0x0000000115a9a430: 48fc ff10 | 8863 02f9 
+
+  0x0000000115a9a438: ;   {runtime_call SafepointBlob}
+  0x0000000115a9a438: 12ca d515 | 80b7 42f9 | 9fb7 02f9 | 9fbb 02f9 | fd7b 46a9 | ffc3 0191 
+
+  0x0000000115a9a450: ;   {runtime_call C1 Runtime unwind_exception_blob}
+  0x0000000115a9a450: 9c07 d915 | 0000 0000 
+[Exception Handler]
+  0x0000000115a9a458: ;   {runtime_call C1 Runtime handle_exception_from_callee_blob}
+  0x0000000115a9a458: da0d d995 
+
+  0x0000000115a9a45c: ;   {external_word}
+  0x0000000115a9a45c: 00bc 95d2 | 0093 a1f2 | 2000 c0f2 | c1d5 bbd4 
+[Deopt Handler Code]
+  0x0000000115a9a46c: 1e00 0010 
+
+  0x0000000115a9a470: ;   {runtime_call DeoptimizationBlob}
+  0x0000000115a9a470: 84ca d515 | 0000 0000 
+[/MachCode]
+36   15    b  3       org.example.jvminternals.ch17.OptimizationJourney::escaped (26 bytes)
+                              @ 8   org.example.jvminternals.ch17.OptimizationJourney$Pair::<init> (15 bytes)   inline
+                                @ 1   java.lang.Object::<init> (1 bytes)   inline
+
+============================= C1-compiled nmethod ==============================
+----------------------------------- Assembly -----------------------------------
+
+Compiled method (c1) 36   15       3       org.example.jvminternals.ch17.OptimizationJourney::escaped (26 bytes)
+ total in heap  [0x0000000115a9a488,0x0000000115a9a7e8] = 864
+ main code      [0x0000000115a9a580,0x0000000115a9a7b8] = 568
+ stub code      [0x0000000115a9a7b8,0x0000000115a9a7d8] = 32
+ oops           [0x0000000115a9a7d8,0x0000000115a9a7e8] = 16
+ mutable data [0x0000007b8b091180,0x0000007b8b091208] = 136
+ relocation     [0x0000007b8b091180,0x0000007b8b0911d0] = 80
+ metadata       [0x0000007b8b0911d0,0x0000007b8b091208] = 56
+ immutable data [0x0000007b8b0bd200,0x0000007b8b0bd2a8] = 168
+ dependencies   [0x0000007b8b0bd200,0x0000007b8b0bd208] = 8
+ scopes pcs     [0x0000007b8b0bd208,0x0000007b8b0bd268] = 96
+ scopes data    [0x0000007b8b0bd268,0x0000007b8b0bd2a8] = 64
+
+[Constant Pool (empty)]
+
+[MachCode]
+[Verified Entry Point]
+  # {method} {0x000000012c4009e0} 'escaped' '(I)I' in 'org/example/jvminternals/ch17/OptimizationJourney'
+  # parm0:    c_rarg1   = int
+  #           [sp+0x70]  (sp of caller)
+  0x0000000115a9a580: 1f20 03d5 | e953 40d1 | 3f01 00f9 | ffc3 01d1 | fd7b 06a9 | 2801 0018 | 8923 40b9 | 1f01 09eb 
+  0x0000000115a9a5a0: e000 0054 
+
+  0x0000000115a9a5a4: ;   {runtime_call Stub::method_entry_barrier}
+  0x0000000115a9a5a4: 0830 88d2 | 28a0 a3f2 | 2800 c0f2 | 0001 3fd6 | 0200 0014 | 0000 0000 
+
+  0x0000000115a9a5bc: ;   {metadata(method data for {method} {0x000000012c4009e0} 'escaped' '(I)I' in 'org/example/jvminternals/ch17/OptimizationJourney')}
+  0x0000000115a9a5bc: 032b 83d2 | 0388 a5f2 | 2300 c0f2 | 6090 40b9 | 0008 0011 | 6090 00b9 | 0024 1f12 | 1f00 0071 
+  0x0000000115a9a5dc: 2009 0054 
+
+  0x0000000115a9a5e0: ;   {metadata('org/example/jvminternals/ch17/OptimizationJourney$Pair')}
+  0x0000000115a9a5e0: 0342 80d2 | 8320 a0f2 | 03fc c1f2 | 80e7 40f9 | 0b60 0091 | 88ef 40f9 | 7f01 08eb | 2809 0054 
+  0x0000000115a9a600: 8be7 00f9 | ea03 40b2 | 0a00 00f9 | 6a18 5bd2 | 0a7c 0129 | 0a40 0091 | 5f01 00f9 | bf3a 03d5 
+  0x0000000115a9a620: e203 00aa 
+
+  0x0000000115a9a624: ;   {metadata(method data for {method} {0x000000012c4009e0} 'escaped' '(I)I' in 'org/example/jvminternals/ch17/OptimizationJourney')}
+  0x0000000115a9a624: 032b 83d2 | 0388 a5f2 | 2300 c0f2 | 686c 40f9 | 0805 0091 | 686c 00f9 | 2204 0011 
+
+  0x0000000115a9a640: ;   {metadata(method data for {method} {0x000000012c401188} '<init>' '(II)V' in 'org/example/jvminternals/ch17/OptimizationJourney$Pair')}
+  0x0000000115a9a640: 0377 82d2 | 0388 a5f2 | 2300 c0f2 | 6490 40b9 | 8408 0011 | 6490 00b9 | 844c 1f12 | 9f00 0071 
+  0x0000000115a9a660: 4006 0054 | e303 00aa 
+
+  0x0000000115a9a668: ;   {metadata(method data for {method} {0x000000012c401188} '<init>' '(II)V' in 'org/example/jvminternals/ch17/OptimizationJourney$Pair')}
+  0x0000000115a9a668: 0477 82d2 | 0488 a5f2 | 2400 c0f2 | 886c 40f9 | 0805 0091 | 886c 00f9 
+
+  0x0000000115a9a680: ;   {metadata(method data for {method} {0x00000fe0004a2da8} '<init>' '()V' in 'java/lang/Object')}
+  0x0000000115a9a680: 03c8 8cd2 | 0380 a5f2 | 2300 c0f2 | 6490 40b9 | 8408 0011 | 6490 00b9 | 844c 1f12 | 9f00 0071 
+  0x0000000115a9a6a0: 4005 0054 | 0188 0129 | bf3a 03d5 
+
+  0x0000000115a9a6ac: ;   {oop(a 'java/lang/Class'{0x0000000126717a58} = 'org/example/jvminternals/ch17/OptimizationJourney')}
+  0x0000000115a9a6ac: 034b 8fd2 | 23ce a4f2 | 2300 c0f2 | 8423 4139 | 9f00 0071 | 4105 0054 | bf3b 03d5 | 08fc 43d3 
+  0x0000000115a9a6cc: 6878 00b9 | bf3b 03d5 | 6400 00ca | 84fc 54d3 | 9f00 00f1 | 0105 0054 | 4000 010b | fd7b 46a9 
+  0x0000000115a9a6ec: ffc3 0191 
+
+  0x0000000115a9a6f0: ;   {poll_return}
+  0x0000000115a9a6f0: 8817 40f9 | ff63 28eb | c804 0054 | c003 5fd6 
+
+  0x0000000115a9a700: ;   {metadata({method} {0x000000012c4009e0} 'escaped' '(I)I' in 'org/example/jvminternals/ch17/OptimizationJourney')}
+  0x0000000115a9a700: 083c 81d2 | 0888 a5f2 | 2800 c0f2 | e807 00f9 | 0800 8092 | e803 00f9 
+
+  0x0000000115a9a718: ; ImmutableOopMap {}
+                      ;*synchronization entry
+                      ; - org.example.jvminternals.ch17.OptimizationJourney::escaped@-1 (line 53)
+                      ;   {runtime_call C1 Runtime counter_overflow_blob}
+  0x0000000115a9a718: da13 d995 | b1ff ff17 
+
+  0x0000000115a9a720: ; ImmutableOopMap {}
+                      ;*new {reexecute=0 rethrow=0 return_oop=0}
+                      ; - org.example.jvminternals.ch17.OptimizationJourney::escaped@0 (line 53)
+                      ;   {runtime_call C1 Runtime fast_new_instance_blob}
+  0x0000000115a9a720: 180a d995 | bfff ff17 
+
+  0x0000000115a9a728: ;   {metadata({method} {0x000000012c401188} '<init>' '(II)V' in 'org/example/jvminternals/ch17/OptimizationJourney$Pair')}
+  0x0000000115a9a728: 0831 82d2 | 0888 a5f2 | 2800 c0f2 | e807 00f9 | 0800 8092 | e803 00f9 
+
+  0x0000000115a9a740: ; ImmutableOopMap {c_rarg0=Oop }
+                      ;*synchronization entry
+                      ; - org.example.jvminternals.ch17.OptimizationJourney$Pair::<init>@-1 (line 14)
+                      ; - org.example.jvminternals.ch17.OptimizationJourney::escaped@8 (line 53)
+                      ;   {runtime_call C1 Runtime counter_overflow_blob}
+  0x0000000115a9a740: d013 d995 | c8ff ff17 
+
+  0x0000000115a9a748: ;   {metadata({method} {0x00000fe0004a2da8} '<init>' '()V' in 'java/lang/Object')}
+  0x0000000115a9a748: 08b5 85d2 | 4809 a0f2 | 08fc c1f2 | e807 00f9 | 0800 8092 | e803 00f9 
+
+  0x0000000115a9a760: ; ImmutableOopMap {c_rarg0=Oop }
+                      ;*synchronization entry
+                      ; - java.lang.Object::<init>@-1 (line 44)
+                      ; - org.example.jvminternals.ch17.OptimizationJourney$Pair::<init>@1 (line 14)
+                      ; - org.example.jvminternals.ch17.OptimizationJourney::escaped@8 (line 53)
+                      ;   {runtime_call C1 Runtime counter_overflow_blob}
+  0x0000000115a9a760: c813 d995 | d0ff ff17 | 6478 40b9 | 84f0 7dd3 | a4fa ffb4 | e403 00f9 
+
+  0x0000000115a9a778: ;   {runtime_call g1_pre_barrier_slow}
+  0x0000000115a9a778: a214 d995 | d2ff ff17 | 20fb ffb4 | e303 00f9 
+
+  0x0000000115a9a788: ;   {runtime_call g1_post_barrier_slow}
+  0x0000000115a9a788: fe14 d995 | d6ff ff17 
+
+  0x0000000115a9a790: ;   {internal_word}
+  0x0000000115a9a790: 08fb ff10 | 8863 02f9 
+
+  0x0000000115a9a798: ;   {runtime_call SafepointBlob}
+  0x0000000115a9a798: 3ac9 d515 | 80b7 42f9 | 9fb7 02f9 | 9fbb 02f9 | fd7b 46a9 | ffc3 0191 
+
+  0x0000000115a9a7b0: ;   {runtime_call C1 Runtime unwind_exception_blob}
+  0x0000000115a9a7b0: c406 d915 | 0000 0000 
+[Exception Handler]
+  0x0000000115a9a7b8: ;   {runtime_call C1 Runtime handle_exception_from_callee_blob}
+  0x0000000115a9a7b8: 020d d995 
+
+  0x0000000115a9a7bc: ;   {external_word}
+  0x0000000115a9a7bc: 00bc 95d2 | 0093 a1f2 | 2000 c0f2 | c1d5 bbd4 
+[Deopt Handler Code]
+  0x0000000115a9a7cc: 1e00 0010 
+
+  0x0000000115a9a7d0: ;   {runtime_call DeoptimizationBlob}
+  0x0000000115a9a7d0: acc9 d515 | 0000 0000 
+[/MachCode]
+41   16   !b  3       org.example.jvminternals.ch17.OptimizationJourney::locked (33 bytes)
+                              @ 8   org.example.jvminternals.ch17.OptimizationJourney$Pair::<init> (15 bytes)   inline
+                                @ 1   java.lang.Object::<init> (1 bytes)   inline
+
+============================= C1-compiled nmethod ==============================
+----------------------------------- Assembly -----------------------------------
+
+Compiled method (c1) 41   16   !   3       org.example.jvminternals.ch17.OptimizationJourney::locked (33 bytes)
+ total in heap  [0x0000000115a9a808,0x0000000115a9ac50] = 1096
+ main code      [0x0000000115a9a900,0x0000000115a9ac28] = 808
+ stub code      [0x0000000115a9ac28,0x0000000115a9ac48] = 32
+ oops           [0x0000000115a9ac48,0x0000000115a9ac50] = 8
+ mutable data [0x0000007b8b091220,0x0000007b8b0912a8] = 136
+ relocation     [0x0000007b8b091220,0x0000007b8b091270] = 80
+ metadata       [0x0000007b8b091270,0x0000007b8b0912a8] = 56
+ immutable data [0x0000007b894064c0,0x0000007b89406590] = 208
+ dependencies   [0x0000007b894064c0,0x0000007b894064c8] = 8
+ scopes pcs     [0x0000007b894064c8,0x0000007b89406538] = 112
+ scopes data    [0x0000007b89406538,0x0000007b89406590] = 88
+
+[Constant Pool (empty)]
+
+[MachCode]
+[Verified Entry Point]
+  # {method} {0x000000012c400ad0} 'locked' '(I)I' in 'org/example/jvminternals/ch17/OptimizationJourney'
+  # parm0:    c_rarg1   = int
+  #           [sp+0x80]  (sp of caller)
+  0x0000000115a9a900: 1f20 03d5 | e953 40d1 | 3f01 00f9 | ff03 02d1 | fd7b 07a9 | 2801 0018 | 8923 40b9 | 1f01 09eb 
+  0x0000000115a9a920: e000 0054 
+
+  0x0000000115a9a924: ;   {runtime_call Stub::method_entry_barrier}
+  0x0000000115a9a924: 0830 88d2 | 28a0 a3f2 | 2800 c0f2 | 0001 3fd6 | 0200 0014 | 0000 0000 
+
+  0x0000000115a9a93c: ;   {metadata(method data for {method} {0x000000012c400ad0} 'locked' '(I)I' in 'org/example/jvminternals/ch17/OptimizationJourney')}
+  0x0000000115a9a93c: 034e 83d2 | 0388 a5f2 | 2300 c0f2 | 6090 40b9 | 0008 0011 | 6090 00b9 | 0024 1f12 | 1f00 0071 
+  0x0000000115a9a95c: a010 0054 
+
+  0x0000000115a9a960: ;   {metadata('org/example/jvminternals/ch17/OptimizationJourney$Pair')}
+  0x0000000115a9a960: 0342 80d2 | 8320 a0f2 | 03fc c1f2 | 80e7 40f9 | 0b60 0091 | 88ef 40f9 | 7f01 08eb | a810 0054 
+  0x0000000115a9a980: 8be7 00f9 | ea03 40b2 | 0a00 00f9 | 6a18 5bd2 | 0a7c 0129 | 0a40 0091 | 5f01 00f9 | bf3a 03d5 
+  0x0000000115a9a9a0: e203 00aa | e003 02aa 
+
+  0x0000000115a9a9a8: ;   {metadata(method data for {method} {0x000000012c400ad0} 'locked' '(I)I' in 'org/example/jvminternals/ch17/OptimizationJourney')}
+  0x0000000115a9a9a8: 034e 83d2 | 0388 a5f2 | 2300 c0f2 | 686c 40f9 | 0805 0091 | 686c 00f9 | 2004 0011 
+
+  0x0000000115a9a9c4: ;   {metadata(method data for {method} {0x000000012c401188} '<init>' '(II)V' in 'org/example/jvminternals/ch17/OptimizationJourney$Pair')}
+  0x0000000115a9a9c4: 0377 82d2 | 0388 a5f2 | 2300 c0f2 | 6490 40b9 | 8408 0011 | 6490 00b9 | 844c 1f12 | 9f00 0071 
+  0x0000000115a9a9e4: a00d 0054 | e303 02aa 
+
+  0x0000000115a9a9ec: ;   {metadata(method data for {method} {0x000000012c401188} '<init>' '(II)V' in 'org/example/jvminternals/ch17/OptimizationJourney$Pair')}
+  0x0000000115a9a9ec: 0477 82d2 | 0488 a5f2 | 2400 c0f2 | 886c 40f9 | 0805 0091 | 886c 00f9 
+
+  0x0000000115a9aa04: ;   {metadata(method data for {method} {0x00000fe0004a2da8} '<init>' '()V' in 'java/lang/Object')}
+  0x0000000115a9aa04: 03c8 8cd2 | 0380 a5f2 | 2300 c0f2 | 6490 40b9 | 8408 0011 | 6490 00b9 | 844c 1f12 | 9f00 0071 
+  0x0000000115a9aa24: a00c 0054 | 4180 0129 | bf3a 03d5 | e143 0191 | 2204 00f9 | 4300 40f9 | 802b 47b9 | 1fe0 1d71 
+  0x0000000115a9aa44: aa0c 0054 | 0920 0051 | 896b 69f8 | 5f00 09eb | 2001 0054 | 7f00 7ff2 | e10b 0054 | 6300 40b2 
+  0x0000000115a9aa64: 6900 40d2 | e803 03aa | 497c e8c8 | 1f01 03eb | 210b 0054 | 826b 20f8 | 0020 0011 | 802b 07b9 
+  0x0000000115a9aa84: 4084 4129 | 0100 010b | e043 0191 | 0304 40f9 | 822b 47b9 | 4220 0051 | 896b 62f8 | 7f00 09eb 
+  0x0000000115a9aaa4: 010a 0054 | 822b 07b9 | 4920 0051 | 896b 69f8 | 7f00 09eb | 6001 0054 | 6400 40f9 | c400 0837 
+  0x0000000115a9aac4: 8900 40b2 | e803 04aa | 69fc a8c8 | 1f01 04eb | 8000 0054 | 4220 0011 | 822b 07b9 | 4100 0014 
+  0x0000000115a9aae4: e003 01aa | fd7b 47a9 | ff03 0291 
+
+  0x0000000115a9aaf0: ;   {poll_return}
+  0x0000000115a9aaf0: 8817 40f9 | ff63 28eb | e807 0054 | c003 5fd6 | 80b7 42f9 | 9fb7 02f9 | 9fbb 02f9 | e103 00aa 
+  0x0000000115a9ab10: e043 0191 | 0304 40f9 | 822b 47b9 | 4220 0051 | 896b 62f8 | 7f00 09eb | c106 0054 | 822b 07b9 
+  0x0000000115a9ab30: 4920 0051 | 896b 69f8 | 7f00 09eb | 6001 0054 | 6400 40f9 | c400 0837 | 8900 40b2 | e803 04aa 
+  0x0000000115a9ab50: 69fc a8c8 | 1f01 04eb | 8000 0054 | 4220 0011 | 822b 07b9 | 2700 0014 | e003 01aa | 2c00 0014 
+  0x0000000115a9ab70: ;   {metadata({method} {0x000000012c400ad0} 'locked' '(I)I' in 'org/example/jvminternals/ch17/OptimizationJourney')}
+  0x0000000115a9ab70: 085a 81d2 | 0888 a5f2 | 2800 c0f2 | e807 00f9 | 0800 8092 | e803 00f9 
+
+  0x0000000115a9ab88: ; ImmutableOopMap {}
+                      ;*synchronization entry
+                      ; - org.example.jvminternals.ch17.OptimizationJourney::locked@-1 (line 60)
+                      ;   {runtime_call C1 Runtime counter_overflow_blob}
+  0x0000000115a9ab88: be12 d995 | 75ff ff17 
+
+  0x0000000115a9ab90: ; ImmutableOopMap {}
+                      ;*new {reexecute=0 rethrow=0 return_oop=0}
+                      ; - org.example.jvminternals.ch17.OptimizationJourney::locked@0 (line 60)
+                      ;   {runtime_call C1 Runtime fast_new_instance_blob}
+  0x0000000115a9ab90: fc08 d995 | 83ff ff17 
+
+  0x0000000115a9ab98: ;   {metadata({method} {0x000000012c401188} '<init>' '(II)V' in 'org/example/jvminternals/ch17/OptimizationJourney$Pair')}
+  0x0000000115a9ab98: 0831 82d2 | 0888 a5f2 | 2800 c0f2 | e807 00f9 | 0800 8092 | e803 00f9 
+
+  0x0000000115a9abb0: ; ImmutableOopMap {c_rarg2=Oop }
+                      ;*synchronization entry
+                      ; - org.example.jvminternals.ch17.OptimizationJourney$Pair::<init>@-1 (line 14)
+                      ; - org.example.jvminternals.ch17.OptimizationJourney::locked@8 (line 60)
+                      ;   {runtime_call C1 Runtime counter_overflow_blob}
+  0x0000000115a9abb0: b412 d995 | 8dff ff17 
+
+  0x0000000115a9abb8: ;   {metadata({method} {0x00000fe0004a2da8} '<init>' '()V' in 'java/lang/Object')}
+  0x0000000115a9abb8: 08b5 85d2 | 4809 a0f2 | 08fc c1f2 | e807 00f9 | 0800 8092 | e803 00f9 
+
+  0x0000000115a9abd0: ; ImmutableOopMap {c_rarg2=Oop }
+                      ;*synchronization entry
+                      ; - java.lang.Object::<init>@-1 (line 44)
+                      ; - org.example.jvminternals.ch17.OptimizationJourney$Pair::<init>@1 (line 14)
+                      ; - org.example.jvminternals.ch17.OptimizationJourney::locked@8 (line 60)
+                      ;   {runtime_call C1 Runtime counter_overflow_blob}
+  0x0000000115a9abd0: ac12 d995 | 95ff ff17 | e10b 00a9 
+
+  0x0000000115a9abdc: ; ImmutableOopMap {c_rarg2=Oop [88]=Oop }
+                      ;*monitorenter {reexecute=0 rethrow=0 return_oop=0}
+                      ; - org.example.jvminternals.ch17.OptimizationJourney::locked@15 (line 61)
+                      ;   {runtime_call C1 Runtime monitorenter_nofpu_blob}
+  0x0000000115a9abdc: a90e d995 | a9ff ff17 | e043 0191 | e003 00f9 | def7 ff10 
+
+  0x0000000115a9abf0: ;   {runtime_call C1 Runtime monitorexit_nofpu_blob}
+  0x0000000115a9abf0: 740f d915 
+
+  0x0000000115a9abf4: ;   {internal_word}
+  0x0000000115a9abf4: e8f7 ff10 | 8863 02f9 
+
+  0x0000000115a9abfc: ;   {runtime_call SafepointBlob}
+  0x0000000115a9abfc: 21c8 d515 | e043 0191 | e003 00f9 | 1efb ff10 
+
+  0x0000000115a9ac0c: ;   {runtime_call C1 Runtime monitorexit_nofpu_blob}
+  0x0000000115a9ac0c: 6d0f d915 | 80b7 42f9 | 9fb7 02f9 | 9fbb 02f9 | fd7b 47a9 | ff03 0291 
+
+  0x0000000115a9ac24: ;   {runtime_call C1 Runtime unwind_exception_blob}
+  0x0000000115a9ac24: a705 d915 
+[Exception Handler]
+  0x0000000115a9ac28: ;   {runtime_call C1 Runtime handle_exception_from_callee_blob}
+  0x0000000115a9ac28: e60b d995 
+
+  0x0000000115a9ac2c: ;   {external_word}
+  0x0000000115a9ac2c: 00bc 95d2 | 0093 a1f2 | 2000 c0f2 | c1d5 bbd4 
+[Deopt Handler Code]
+  0x0000000115a9ac3c: 1e00 0010 
+
+  0x0000000115a9ac40: ;   {runtime_call DeoptimizationBlob}
+  0x0000000115a9ac40: 90c8 d515 | 0000 0000 
+[/MachCode]
+47   17    b  3       java.lang.Integer::bitCount (53 bytes)
+47   18 %  b  4       org.example.jvminternals.ch17.OptimizationJourney::transform @ 2 (23 bytes)
+
+============================= C2-compiled nmethod ==============================
+----------------------------------- Assembly -----------------------------------
+
+Compiled method (c2) 50   18 %     4       org.example.jvminternals.ch17.OptimizationJourney::transform @ 2 (23 bytes)
+ total in heap  [0x000000011d564848,0x000000011d564c78] = 1072
+ main code      [0x000000011d564940,0x000000011d564c60] = 800
+ stub code      [0x000000011d564c60,0x000000011d564c70] = 16
+ oops           [0x000000011d564c70,0x000000011d564c78] = 8
+ mutable data [0x0000007b8ac7e8a0,0x0000007b8ac7e8e8] = 72
+ relocation     [0x0000007b8ac7e8a0,0x0000007b8ac7e8d8] = 56
+ metadata       [0x0000007b8ac7e8d8,0x0000007b8ac7e8e8] = 16
+ immutable data [0x0000007b8acf0c00,0x0000007b8acf0cf0] = 240
+ dependencies   [0x0000007b8acf0c00,0x0000007b8acf0c08] = 8
+ nul chk table  [0x0000007b8acf0c08,0x0000007b8acf0c20] = 24
+ scopes pcs     [0x0000007b8acf0c20,0x0000007b8acf0ca0] = 128
+ scopes data    [0x0000007b8acf0ca0,0x0000007b8acf0cf0] = 80
+
+[Constant Pool (empty)]
+
+[MachCode]
+[Verified Entry Point]
+  # {method} {0x000000012c400bd0} 'transform' '([I[I)V' in 'org/example/jvminternals/ch17/OptimizationJourney'
+  0x000000011d564940: 0000 20d4 | 1f20 03d5 | 1f20 03d5 | 1f20 03d5 | 1f20 03d5 | e953 40d1 | 3f01 00f9 | ff43 01d1 
+  0x000000011d564960: fd7b 04a9 | c817 0018 | 8923 40b9 | 1f01 09eb | c116 0054 | 3400 40b9 | 33f4 40a9 | e003 01aa 
+  0x000000011d564980: c900 0010 | 890b 02f9 
+
+  0x000000011d564988: ;   {runtime_call SharedRuntime::OSR_migration_end(long*)}
+  0x000000011d564988: 88cf 99d2 | 888e a1f2 | 2800 c0f2 | 0001 3fd6 
+
+  0x000000011d564998: ;   {post_call_nop}
+  0x000000011d564998: 1f20 03d5 | 1f00 80f2 | 1f00 80f2 | 5d0f 00b4 | ab0b 40b9 
+
+  0x000000011d5649ac: ;   {metadata({type array int})}
+  0x000000011d5649ac: ea02 a0d2 | 0a50 8ef2 | 7f01 0a6b | 4111 0054 | f003 1daa | b30e 00b4 | 6a0a 40b9 
+
+  0x000000011d5649c8: ;   {metadata({type array int})}
+  0x000000011d5649c8: ec02 a0d2 | 0c50 8ef2 | 5f01 0c6b | 6110 0054 
+
+  0x000000011d5649d8: ; implicit exception: dispatches to 0x000000011d564bfc
+  0x000000011d5649d8: 0a0e 40b9 
+
+  0x000000011d5649dc: ; implicit exception: dispatches to 0x000000011d564c1c
+  0x000000011d5649dc: 6c0e 40b9 | 9f02 0a6b | 8a0c 0054 | 8b06 0011 | ee03 132a | 6d7d 4093 | 7f01 0071 | ebb3 8d9a 
+  0x000000011d5649fc: ef6f 1c32 | ed01 0e4b | 7f01 0a6b | 6bb1 8a1a | ae7d 0253 | cd01 0b4b | 4e7d 4093 | ad05 40d3 
+  0x000000011d564a1c: 8f7d 4093 | abc1 2b8b | df01 0feb | cdb1 8f9a | 7f01 0eeb | 6bb1 8e9a | ee03 0b2a | 8b7e 7e93 
+  0x000000011d564a3c: 0f02 0b8b | 9f02 0a6b | c20a 0054 | f111 40b9 | 3d06 0011 | 9f02 0c6b | 620b 0054 | 6b02 0b8b 
+  0x000000011d564a5c: 7d11 00b9 | 9406 0011 | 9f02 0e6b | 8bfe ff54 | eb03 0d2a | 6e3d 0051 | 9f02 0e6b | 0a06 0054 
+  0x000000011d564a7c: 3004 004f | 0fd0 8752 | 6d01 144b | b13d 0051 | df01 146b | f1b3 911a | 08d0 8752 | 3f02 086b 
+  0x000000011d564a9c: f181 911a | 2d02 140b | 1f20 03d5 | 1f20 03d5 | 1f20 03d5 | 917e 7e93 | 0002 118b | 1104 c03d 
+  0x000000011d564abc: 1186 b14e | 7102 118b | 3106 803d | 1108 c03d | 1186 b14e | 310a 803d | 110c c03d | 1186 b14e 
+  0x000000011d564adc: 310e 803d | 1110 c03d | 1186 b14e | 3112 803d | 9442 0011 | 9f02 0d6b | ebfd ff54 
+
+  0x000000011d564af8: ; ImmutableOopMap {r16=Oop r19=Oop }
+                      ;*goto {reexecute=1 rethrow=0 return_oop=0}
+                      ; - (reexecute) org.example.jvminternals.ch17.OptimizationJourney::transform@19 (line 67)
+  0x000000011d564af8: 8d1b 40f9 
+
+  0x000000011d564afc: ;   {poll}
+  0x000000011d564afc: bf01 40b9 | 9f02 0e6b | 0bfc ff54 | 6b0d 0051 | 9f02 0b6b | 4a01 0054 | 8d7e 7e93 | 0e02 0d8b 
+  0x000000011d564b1c: d105 c03d | 1186 b14e | 6d02 0d8b | b105 803d | 9412 0011 | 9f02 0b6b | 0bff ff54 | 9f02 0a6b 
+  0x000000011d564b3c: ca01 0054 | 8b7e 7e93 | 0d02 0b8b | 9f02 0a6b | 8202 0054 | ae11 40b9 | dd05 0011 | 9f02 0c6b 
+  0x000000011d564b5c: 2203 0054 | 6b02 0b8b | 7d11 00b9 | 9406 0011 | 9f02 0a6b | 8bfe ff54 | fd7b 44a9 | ff43 0191 
+  0x000000011d564b7c: ;   {poll_return}
+  0x000000011d564b7c: 8817 40f9 | ff63 28eb | c805 0054 | c003 5fd6 | f003 1faa | 8cff ff17 | f303 1faa | 90ff ff17 
+  0x000000011d564b9c: 6103 8012 | f30b 00f9 | f40f 00b9 | f00f 00f9 | f423 00b9 
+
+  0x000000011d564bb0: ; ImmutableOopMap {[16]=Oop [24]=Oop }
+                      ;*iaload {reexecute=0 rethrow=0 return_oop=0}
+                      ; - org.example.jvminternals.ch17.OptimizationJourney::transform@12 (line 68)
+                      ;   {runtime_call UncommonTrapBlob}
+  0x000000011d564bb0: e4f2 ed97 
+
+  0x000000011d564bb4: ;   {post_call_nop}
+  0x000000011d564bb4: 1f20 03d5 | 9f6d 80f2 | 1f20 80f2 | 6103 8012 | f003 00f9 | f30f 00f9 | f417 00b9 
+
+  0x000000011d564bd0: ; ImmutableOopMap {[0]=Oop [24]=Oop }
+                      ;*iastore {reexecute=0 rethrow=0 return_oop=0}
+                      ; - org.example.jvminternals.ch17.OptimizationJourney::transform@15 (line 68)
+                      ;   {runtime_call UncommonTrapBlob}
+  0x000000011d564bd0: dcf2 ed97 
+
+  0x000000011d564bd4: ;   {post_call_nop}
+  0x000000011d564bd4: 1f20 03d5 | 9f71 80f2 | 1f40 80f2 | 410f 8012 | f303 00f9 | f40b 00b9 
+
+  0x000000011d564bec: ; ImmutableOopMap {rfp=Oop [0]=Oop }
+                      ;*iload_2 {reexecute=0 rethrow=0 return_oop=0}
+                      ; - org.example.jvminternals.ch17.OptimizationJourney::transform@2 (line 67)
+                      ;   {runtime_call UncommonTrapBlob}
+  0x000000011d564bec: d5f2 ed97 
+
+  0x000000011d564bf0: ;   {post_call_nop}
+  0x000000011d564bf0: 1f20 03d5 | 1f75 80f2 | 1f60 80f2 | 2112 8012 | fd03 10aa | f303 00f9 | f40b 00b9 
+
+  0x000000011d564c0c: ; ImmutableOopMap {rfp=Oop [0]=Oop }
+                      ;*iload_2 {reexecute=0 rethrow=0 return_oop=0}
+                      ; - org.example.jvminternals.ch17.OptimizationJourney::transform@2 (line 67)
+                      ;   {runtime_call UncommonTrapBlob}
+  0x000000011d564c0c: cdf2 ed97 
+
+  0x000000011d564c10: ;   {post_call_nop}
+  0x000000011d564c10: 1f20 03d5 | 1f79 80f2 | 1f80 80f2 | 2108 8012 | fd03 10aa | f303 00f9 | f40b 00b9 
+
+  0x000000011d564c2c: ; ImmutableOopMap {rfp=Oop [0]=Oop }
+                      ;*iload_2 {reexecute=0 rethrow=0 return_oop=0}
+                      ; - org.example.jvminternals.ch17.OptimizationJourney::transform@2 (line 67)
+                      ;   {runtime_call UncommonTrapBlob}
+  0x000000011d564c2c: c5f2 ed97 
+
+  0x000000011d564c30: ;   {post_call_nop}
+  0x000000011d564c30: 1f20 03d5 | 1f7d 80f2 | 1fa0 80f2 
+
+  0x000000011d564c3c: ;   {internal_word}
+  0x000000011d564c3c: 08fa ff10 | 8863 02f9 
+
+  0x000000011d564c44: ;   {runtime_call SafepointBlob}
+  0x000000011d564c44: 0fa0 ea17 
+
+  0x000000011d564c48: ;   {runtime_call Stub::method_entry_barrier}
+  0x000000011d564c48: 0830 88d2 | 28a0 a3f2 | 2800 c0f2 | 0001 3fd6 | 47ff ff17 
+
+  0x000000011d564c5c: ;   {entry_guard}
+  0x000000011d564c5c: 0000 0000 
+[Exception Handler]
+  0x000000011d564c60: ;   {runtime_call ExceptionBlob}
+  0x000000011d564c60: 18f3 ed17 
+[Deopt Handler Code]
+  0x000000011d564c64: 1e00 0010 
+
+  0x000000011d564c68: ;   {runtime_call DeoptimizationBlob}
+  0x000000011d564c68: 86a0 ea17 | 0000 0000 
+[/MachCode]
+57   19    b  4       org.example.jvminternals.ch17.OptimizationJourney::transform (23 bytes)
+
+============================= C2-compiled nmethod ==============================
+59   12       3       org.example.jvminternals.ch17.OptimizationJourney::transform (23 bytes)   made not entrant: not used
+----------------------------------- Assembly -----------------------------------
+
+Compiled method (c2) 59   19       4       org.example.jvminternals.ch17.OptimizationJourney::transform (23 bytes)
+ total in heap  [0x000000011d564c88,0x000000011d564fb0] = 808
+ main code      [0x000000011d564d80,0x000000011d564f98] = 536
+ stub code      [0x000000011d564f98,0x000000011d564fa8] = 16
+ oops           [0x000000011d564fa8,0x000000011d564fb0] = 8
+ mutable data [0x0000007b8b0d3750,0x0000007b8b0d3778] = 40
+ relocation     [0x0000007b8b0d3750,0x0000007b8b0d3770] = 32
+ metadata       [0x0000007b8b0d3770,0x0000007b8b0d3778] = 8
+ immutable data [0x0000007b8b0bd2c0,0x0000007b8b0bd368] = 168
+ dependencies   [0x0000007b8b0bd2c0,0x0000007b8b0bd2c8] = 8
+ nul chk table  [0x0000007b8b0bd2c8,0x0000007b8b0bd2e0] = 24
+ scopes pcs     [0x0000007b8b0bd2e0,0x0000007b8b0bd330] = 80
+ scopes data    [0x0000007b8b0bd330,0x0000007b8b0bd368] = 56
+
+[Constant Pool (empty)]
+
+[MachCode]
+[Verified Entry Point]
+  # {method} {0x000000012c400bd0} 'transform' '([I[I)V' in 'org/example/jvminternals/ch17/OptimizationJourney'
+  # parm0:    c_rarg1:c_rarg1 
+                        = '[I'
+  # parm1:    c_rarg2:c_rarg2 
+                        = '[I'
+  #           [sp+0x30]  (sp of caller)
+  0x000000011d564d80: 1f20 03d5 | e953 40d1 | 3f01 00f9 | ffc3 00d1 | fd7b 02a9 | e80f 0018 | 8923 40b9 | 1f01 09eb 
+  0x000000011d564da0: e10e 0054 
+
+  0x000000011d564da4: ; implicit exception: dispatches to 0x000000011d564f5c
+  0x000000011d564da4: 2b0c 40b9 | eb0b 0034 | ec03 022a | ea6f 1c32 | 4c01 0c4b | 8a7d 0253 | 4c05 0051 | f003 1f2a 
+  0x000000011d564dc4: 8a05 40d3 | 6c7d 4093 | 4a05 0091 | 6d05 0051 | bf01 0b6b | 220b 0054 
+
+  0x000000011d564ddc: ; implicit exception: dispatches to 0x000000011d564f3c
+  0x000000011d564ddc: 4e0c 40b9 | 5f01 0ceb | 4ab1 8c9a | 6f3d 0051 | ea03 0a2a | 6e0a 0034 | bf01 0e6b | 220a 0054 
+  0x000000011d564dfc: 0c7e 7e93 | 2d00 0c8b | ad11 40b9 | ae05 0011 | 4c00 0c8b | 8e11 00b9 | 0e06 0011 | df01 0a6b 
+  0x000000011d564e1c: 6a00 0054 | f003 0e2a | f6ff ff17 | df01 0f6b | 6a06 0054 | 0a06 0011 | 3004 004f | 0dd0 8752 
+  0x000000011d564e3c: 1900 0014 | ea03 0e2a | 4e7d 7e93 | 3000 0e8b | 1106 c03d | 1186 b14e | 4e00 0e8b | d105 803d 
+  0x000000011d564e5c: 110a c03d | 1186 b14e | d109 803d | 110e c03d | 1186 b14e | d10d 803d | 1112 c03d | 1186 b14e 
+  0x000000011d564e7c: d111 803d | 4e41 0011 | df01 0c6b | cbfd ff54 
+
+  0x000000011d564e8c: ; ImmutableOopMap {c_rarg1=Oop c_rarg2=Oop }
+                      ;*goto {reexecute=1 rethrow=0 return_oop=0}
+                      ; - (reexecute) org.example.jvminternals.ch17.OptimizationJourney::transform@19 (line 67)
+  0x000000011d564e8c: 8c1b 40f9 
+
+  0x000000011d564e90: ;   {poll}
+  0x000000011d564e90: 9f01 40b9 | df01 0f6b | 6a01 0054 | ea03 0e2a | 6c01 0a4b | 8e3d 0051 | ff01 0a6b | eeb3 8e1a 
+  0x000000011d564eb0: 08d0 8752 | df01 086b | ae81 8e1a | cc01 0a0b | e1ff ff17 | 6c0d 0051 | df01 0c6b | 6a01 0054 
+  0x000000011d564ed0: 4e41 0011 | ca7d 7e93 | 2d00 0a8b | b105 c03d | 1186 b14e | 4a00 0a8b | 5105 803d | ce11 0011 
+  0x000000011d564ef0: df01 0c6b | 0bff ff54 | df01 0b6b | 4a01 0054 | ca7d 7e93 | 2c00 0a8b | 8d11 40b9 | ac05 0011 
+  0x000000011d564f10: 4a00 0a8b | 4c11 00b9 | ce05 0011 | df01 0b6b | 0bff ff54 | fd7b 42a9 | ffc3 0091 
+
+  0x000000011d564f2c: ;   {poll_return}
+  0x000000011d564f2c: 8817 40f9 | ff63 28eb | e801 0054 | c003 5fd6 | fd03 01aa | e203 00f9 | eb0b 00b9 | 2112 8012 
+  0x000000011d564f4c: ; ImmutableOopMap {rfp=Oop [0]=Oop }
+                      ;*if_icmpge {reexecute=1 rethrow=0 return_oop=0}
+                      ; - (reexecute) org.example.jvminternals.ch17.OptimizationJourney::transform@5 (line 67)
+                      ;   {runtime_call UncommonTrapBlob}
+  0x000000011d564f4c: fdf1 ed97 
+
+  0x000000011d564f50: ;   {post_call_nop}
+  0x000000011d564f50: 1f20 03d5 | 1f59 80f2 | 1f20 80f2 | 2101 8012 
+
+  0x000000011d564f60: ; ImmutableOopMap {}
+                      ;*arraylength {reexecute=0 rethrow=0 return_oop=0}
+                      ; - org.example.jvminternals.ch17.OptimizationJourney::transform@4 (line 67)
+                      ;   {runtime_call UncommonTrapBlob}
+  0x000000011d564f60: f8f1 ed97 
+
+  0x000000011d564f64: ;   {post_call_nop}
+  0x000000011d564f64: 1f20 03d5 | 9f5b 80f2 | 1f40 80f2 
+
+  0x000000011d564f70: ;   {internal_word}
+  0x000000011d564f70: e8fd ff10 | 8863 02f9 
+
+  0x000000011d564f78: ;   {runtime_call SafepointBlob}
+  0x000000011d564f78: 429f ea17 
+
+  0x000000011d564f7c: ;   {runtime_call Stub::method_entry_barrier}
+  0x000000011d564f7c: 0830 88d2 | 28a0 a3f2 | 2800 c0f2 | 0001 3fd6 | 86ff ff17 
+
+  0x000000011d564f90: ;   {entry_guard}
+  0x000000011d564f90: 0000 0000 | 0000 0000 
+[Exception Handler]
+  0x000000011d564f98: ;   {runtime_call ExceptionBlob}
+  0x000000011d564f98: 4af2 ed17 
+[Deopt Handler Code]
+  0x000000011d564f9c: 1e00 0010 
+
+  0x000000011d564fa0: ;   {runtime_call DeoptimizationBlob}
+  0x000000011d564fa0: b89f ea17 | 0000 0000 
+[/MachCode]
+63   20    b  4       java.lang.Integer::bitCount (53 bytes)
+64   17       3       java.lang.Integer::bitCount (53 bytes)   made not entrant: not used
+64   21    b  4       org.example.jvminternals.ch17.OptimizationJourney::folded (10 bytes)
+
+============================= C2-compiled nmethod ==============================
+64   13       3       org.example.jvminternals.ch17.OptimizationJourney::folded (10 bytes)   made not entrant: not used
+----------------------------------- Assembly -----------------------------------
+
+Compiled method (c2) 64   21       4       org.example.jvminternals.ch17.OptimizationJourney::folded (10 bytes)
+ total in heap  [0x000000011d565188,0x000000011d5652f8] = 368
+ main code      [0x000000011d565280,0x000000011d5652e0] = 96
+ stub code      [0x000000011d5652e0,0x000000011d5652f0] = 16
+ oops           [0x000000011d5652f0,0x000000011d5652f8] = 8
+ mutable data [0x0000007b8b0d37e0,0x0000007b8b0d3808] = 40
+ relocation     [0x0000007b8b0d37e0,0x0000007b8b0d37f8] = 24
+ metadata       [0x0000007b8b0d37f8,0x0000007b8b0d3808] = 16
+ immutable data [0x0000007b8b0d37b0,0x0000007b8b0d37e0] = 48
+ dependencies   [0x0000007b8b0d37b0,0x0000007b8b0d37b8] = 8
+ scopes pcs     [0x0000007b8b0d37b8,0x0000007b8b0d37d8] = 32
+ scopes data    [0x0000007b8b0d37d8,0x0000007b8b0d37e0] = 8
+
+[Constant Pool (empty)]
+
+[MachCode]
+[Verified Entry Point]
+  # {method} {0x000000012c400790} 'folded' '(I)I' in 'org/example/jvminternals/ch17/OptimizationJourney'
+  # parm0:    c_rarg1   = int
+  #           [sp+0x20]  (sp of caller)
+  0x000000011d565280: 1f20 03d5 | ff83 00d1 | fd7b 01a9 | 8802 0018 | 8923 40b9 | 1f01 09eb | 8101 0054 | 2a00 010b 
+  0x000000011d5652a0: 4061 0011 | fd7b 41a9 | ff83 0091 
+
+  0x000000011d5652ac: ;   {poll_return}
+  0x000000011d5652ac: 8817 40f9 | ff63 28eb | 4800 0054 | c003 5fd6 
+
+  0x000000011d5652bc: ;   {internal_word}
+  0x000000011d5652bc: 88ff ff10 | 8863 02f9 
+
+  0x000000011d5652c4: ;   {runtime_call SafepointBlob}
+  0x000000011d5652c4: 6f9e ea17 
+
+  0x000000011d5652c8: ;   {runtime_call Stub::method_entry_barrier}
+  0x000000011d5652c8: 0830 88d2 | 28a0 a3f2 | 2800 c0f2 | 0001 3fd6 | f1ff ff17 
+
+  0x000000011d5652dc: ;   {entry_guard}
+  0x000000011d5652dc: 0000 0000 
+[Exception Handler]
+  0x000000011d5652e0: ;   {runtime_call ExceptionBlob}
+  0x000000011d5652e0: 78f1 ed17 
+[Deopt Handler Code]
+  0x000000011d5652e4: 1e00 0010 
+
+  0x000000011d5652e8: ;   {runtime_call DeoptimizationBlob}
+  0x000000011d5652e8: e69e ea17 | 0000 0000 
+[/MachCode]
+                              @ 1   org.example.jvminternals.ch17.OptimizationJourney::twice (4 bytes)   inline (hot)
+66   22    b  4       org.example.jvminternals.ch17.OptimizationJourney::local (22 bytes)
+
+============================= C2-compiled nmethod ==============================
+66   14       3       org.example.jvminternals.ch17.OptimizationJourney::local (22 bytes)   made not entrant: not used
+----------------------------------- Assembly -----------------------------------
+
+Compiled method (c2) 66   22       4       org.example.jvminternals.ch17.OptimizationJourney::local (22 bytes)
+ total in heap  [0x000000011d565308,0x000000011d565478] = 368
+ main code      [0x000000011d565400,0x000000011d565460] = 96
+ stub code      [0x000000011d565460,0x000000011d565470] = 16
+ oops           [0x000000011d565470,0x000000011d565478] = 8
+ mutable data [0x0000007b8b0d3840,0x0000007b8b0d3870] = 48
+ relocation     [0x0000007b8b0d3840,0x0000007b8b0d3858] = 24
+ metadata       [0x0000007b8b0d3858,0x0000007b8b0d3870] = 24
+ immutable data [0x0000007b8b0d3810,0x0000007b8b0d3840] = 48
+ dependencies   [0x0000007b8b0d3810,0x0000007b8b0d3818] = 8
+ scopes pcs     [0x0000007b8b0d3818,0x0000007b8b0d3838] = 32
+ scopes data    [0x0000007b8b0d3838,0x0000007b8b0d3840] = 8
+
+[Constant Pool (empty)]
+
+[MachCode]
+[Verified Entry Point]
+  # {method} {0x000000012c400910} 'local' '(I)I' in 'org/example/jvminternals/ch17/OptimizationJourney'
+  # parm0:    c_rarg1   = int
+  #           [sp+0x20]  (sp of caller)
+  0x000000011d565400: 1f20 03d5 | ff83 00d1 | fd7b 01a9 | 8802 0018 | 8923 40b9 | 1f01 09eb | 8101 0054 | 2a00 010b 
+  0x000000011d565420: 4005 0011 | fd7b 41a9 | ff83 0091 
+
+  0x000000011d56542c: ;   {poll_return}
+  0x000000011d56542c: 8817 40f9 | ff63 28eb | 4800 0054 | c003 5fd6 
+
+  0x000000011d56543c: ;   {internal_word}
+  0x000000011d56543c: 88ff ff10 | 8863 02f9 
+
+  0x000000011d565444: ;   {runtime_call SafepointBlob}
+  0x000000011d565444: 0f9e ea17 
+
+  0x000000011d565448: ;   {runtime_call Stub::method_entry_barrier}
+  0x000000011d565448: 0830 88d2 | 28a0 a3f2 | 2800 c0f2 | 0001 3fd6 | f1ff ff17 
+
+  0x000000011d56545c: ;   {entry_guard}
+  0x000000011d56545c: 0000 0000 
+[Exception Handler]
+  0x000000011d565460: ;   {runtime_call ExceptionBlob}
+  0x000000011d565460: 18f1 ed17 
+[Deopt Handler Code]
+  0x000000011d565464: 1e00 0010 
+
+  0x000000011d565468: ;   {runtime_call DeoptimizationBlob}
+  0x000000011d565468: 869e ea17 | 0000 0000 
+[/MachCode]
+                              @ 8   org.example.jvminternals.ch17.OptimizationJourney$Pair::<init> (15 bytes)   inline (hot)
+                                @ 1   java.lang.Object::<init> (1 bytes)   inline (hot)
+67   23    b  4       org.example.jvminternals.ch17.OptimizationJourney::escaped (26 bytes)
+
+============================= C2-compiled nmethod ==============================
+67   15       3       org.example.jvminternals.ch17.OptimizationJourney::escaped (26 bytes)   made not entrant: not used
+----------------------------------- Assembly -----------------------------------
+
+Compiled method (c2) 68   23       4       org.example.jvminternals.ch17.OptimizationJourney::escaped (26 bytes)
+ total in heap  [0x000000011d565488,0x000000011d565768] = 736
+ main code      [0x000000011d565580,0x000000011d565748] = 456
+ stub code      [0x000000011d565748,0x000000011d565758] = 16
+ oops           [0x000000011d565758,0x000000011d565768] = 16
+ mutable data [0x0000007b8ac7e990,0x0000007b8ac7e9d8] = 72
+ relocation     [0x0000007b8ac7e990,0x0000007b8ac7e9b8] = 40
+ metadata       [0x0000007b8ac7e9b8,0x0000007b8ac7e9d8] = 32
+ immutable data [0x0000007b8b039380,0x0000007b8b0393e0] = 96
+ dependencies   [0x0000007b8b039380,0x0000007b8b039388] = 8
+ handler table  [0x0000007b8b039388,0x0000007b8b0393a0] = 24
+ scopes pcs     [0x0000007b8b0393a0,0x0000007b8b0393d0] = 48
+ scopes data    [0x0000007b8b0393d0,0x0000007b8b0393e0] = 16
+
+[Constant Pool (empty)]
+
+[MachCode]
+[Verified Entry Point]
+  # {method} {0x000000012c4009e0} 'escaped' '(I)I' in 'org/example/jvminternals/ch17/OptimizationJourney'
+  # parm0:    c_rarg1   = int
+  #           [sp+0x20]  (sp of caller)
+  0x000000011d565580: 1f20 03d5 | e953 40d1 | 3f01 00f9 | ff83 00d1 | fd7b 01a9 | 680d 0018 | 8923 40b9 | 1f01 09eb 
+  0x000000011d5655a0: 610c 0054 | 80e7 40f9 | 8aef 40f9 | 0b60 0091 | fd03 012a | 7f01 0aeb | e204 0054 | ea03 40b2 
+  0x000000011d5655c0: 8be7 00f9 | 0a00 00f9 
+
+  0x000000011d5655c8: ;   {metadata('org/example/jvminternals/ch17/OptimizationJourney$Pair')}
+  0x000000011d5655c8: 8a20 a0d2 | 0a42 80f2 | 0a08 00b9 | 70c1 80f9 | 1f14 00b9 | ab07 0011 | 1dac 0129 | bf3a 03d5 
+  0x000000011d5655e8: ;   {oop(a 'java/lang/Class'{0x0000000126717a58} = 'org/example/jvminternals/ch17/OptimizationJourney')}
+  0x000000011d5655e8: 0a4b 8fd2 | 2ace a4f2 | 2a00 c0f2 | 4ae1 0191 | 8b23 4139 | 4b04 0035 | 0dfc 43d3 | 4dfd 9f88 
+  0x000000011d565608: 4b01 00ca | 6bfd 54d3 | 2b01 00b4 | 4bfd 49d3 | 0c00 88d2 | 2ccb a0f2 | 2c00 c0f2 | 6b01 0c8b 
+  0x000000011d565628: 6c01 4039 | 9f09 0071 | 0105 0054 | 0ba8 4129 | 6001 0a0b | fd7b 41a9 | ff83 0091 
+
+  0x000000011d565644: ;   {poll_return}
+  0x000000011d565644: 8817 40f9 | ff63 28eb | a806 0054 | c003 5fd6 
+
+  0x000000011d565654: ;   {metadata('org/example/jvminternals/ch17/OptimizationJourney$Pair')}
+  0x000000011d565654: 0142 80d2 | 8120 a0f2 | 01fc c1f2 
+
+  0x000000011d565660: ; ImmutableOopMap {}
+                      ;*new {reexecute=0 rethrow=0 return_oop=1}
+                      ; - org.example.jvminternals.ch17.OptimizationJourney::escaped@0 (line 53)
+                      ;   {runtime_call C2 Runtime new_instance}
+  0x000000011d565660: d802 ee97 
+
+  0x000000011d565664: ;   {post_call_nop}
+  0x000000011d565664: 1f20 03d5 | 9f3b 80f2 | 1f00 80f2 | dbff ff17 | e103 00aa | fd7b 41a9 | ff83 0091 
+
+  0x000000011d565680: ;   {runtime_call C2 Runtime rethrow}
+  0x000000011d565680: e0f6 ed17 | 4d01 40b9 | adf1 7dd3 | adfb ffb4 | 8b1f 40f9 | cb00 00b4 | 6b21 00d1 | 8b1f 00f9 
+  0x000000011d5656a0: 8c23 40f9 | 8d69 2bf8 | d6ff ff17 | e02b bfa9 | e003 0daa | e103 1caa | 0888 81d2 | 2886 a1f2 
+  0x000000011d5656c0: 2800 c0f2 | 0001 3fd6 | e02b c1a8 | cdff ff17 | bf3b 03d5 | 6c01 4039 | ecfa ff34 | 7f01 0039 
+  0x000000011d5656e0: 8c2b 40f9 | cc00 00b4 | 8c21 00d1 | 8c2b 00f9 | 882f 40f9 | 0b69 2cf8 | cfff ff17 | e07f bfa9 
+  0x000000011d565700: e003 0baa | e103 1caa | 088d 81d2 | 2886 a1f2 | 2800 c0f2 | 0001 3fd6 | e07f c1a8 | c6ff ff17 
+  0x000000011d565720: ;   {internal_word}
+  0x000000011d565720: 28f9 ff10 | 8863 02f9 
+
+  0x000000011d565728: ;   {runtime_call SafepointBlob}
+  0x000000011d565728: 569d ea17 
+
+  0x000000011d56572c: ;   {runtime_call Stub::method_entry_barrier}
+  0x000000011d56572c: 0830 88d2 | 28a0 a3f2 | 2800 c0f2 | 0001 3fd6 | 9aff ff17 
+
+  0x000000011d565740: ;   {entry_guard}
+  0x000000011d565740: 0000 0000 | 0000 0000 
+[Exception Handler]
+  0x000000011d565748: ;   {runtime_call ExceptionBlob}
+  0x000000011d565748: 5ef0 ed17 
+[Deopt Handler Code]
+  0x000000011d56574c: 1e00 0010 
+
+  0x000000011d565750: ;   {runtime_call DeoptimizationBlob}
+  0x000000011d565750: cc9d ea17 | 0000 0000 
+[/MachCode]
+                              @ 8   org.example.jvminternals.ch17.OptimizationJourney$Pair::<init> (15 bytes)   inline (hot)
+                                @ 1   java.lang.Object::<init> (1 bytes)   inline (hot)
+71   24   !b  4       org.example.jvminternals.ch17.OptimizationJourney::locked (33 bytes)
+
+============================= C2-compiled nmethod ==============================
+71   16   !   3       org.example.jvminternals.ch17.OptimizationJourney::locked (33 bytes)   made not entrant: not used
+----------------------------------- Assembly -----------------------------------
+
+Compiled method (c2) 71   24   !   4       org.example.jvminternals.ch17.OptimizationJourney::locked (33 bytes)
+ total in heap  [0x000000011d565788,0x000000011d5658f8] = 368
+ main code      [0x000000011d565880,0x000000011d5658e0] = 96
+ stub code      [0x000000011d5658e0,0x000000011d5658f0] = 16
+ oops           [0x000000011d5658f0,0x000000011d5658f8] = 8
+ mutable data [0x0000007b8b0d38a0,0x0000007b8b0d38d0] = 48
+ relocation     [0x0000007b8b0d38a0,0x0000007b8b0d38b8] = 24
+ metadata       [0x0000007b8b0d38b8,0x0000007b8b0d38d0] = 24
+ immutable data [0x0000007b8b0d3870,0x0000007b8b0d38a0] = 48
+ dependencies   [0x0000007b8b0d3870,0x0000007b8b0d3878] = 8
+ scopes pcs     [0x0000007b8b0d3878,0x0000007b8b0d3898] = 32
+ scopes data    [0x0000007b8b0d3898,0x0000007b8b0d38a0] = 8
+
+[Constant Pool (empty)]
+
+[MachCode]
+[Verified Entry Point]
+  # {method} {0x000000012c400ad0} 'locked' '(I)I' in 'org/example/jvminternals/ch17/OptimizationJourney'
+  # parm0:    c_rarg1   = int
+  #           [sp+0x20]  (sp of caller)
+  0x000000011d565880: 1f20 03d5 | ff83 00d1 | fd7b 01a9 | 8802 0018 | 8923 40b9 | 1f01 09eb | 8101 0054 | 2a00 010b 
+  0x000000011d5658a0: 4005 0011 | fd7b 41a9 | ff83 0091 
+
+  0x000000011d5658ac: ;   {poll_return}
+  0x000000011d5658ac: 8817 40f9 | ff63 28eb | 4800 0054 | c003 5fd6 
+
+  0x000000011d5658bc: ;   {internal_word}
+  0x000000011d5658bc: 88ff ff10 | 8863 02f9 
+
+  0x000000011d5658c4: ;   {runtime_call SafepointBlob}
+  0x000000011d5658c4: ef9c ea17 
+
+  0x000000011d5658c8: ;   {runtime_call Stub::method_entry_barrier}
+  0x000000011d5658c8: 0830 88d2 | 28a0 a3f2 | 2800 c0f2 | 0001 3fd6 | f1ff ff17 
+
+  0x000000011d5658dc: ;   {entry_guard}
+  0x000000011d5658dc: 0000 0000 
+[Exception Handler]
+  0x000000011d5658e0: ;   {runtime_call ExceptionBlob}
+  0x000000011d5658e0: f8ef ed17 
+[Deopt Handler Code]
+  0x000000011d5658e4: 1e00 0010 
+
+  0x000000011d5658e8: ;   {runtime_call DeoptimizationBlob}
+  0x000000011d5658e8: 669d ea17 | 0000 0000 
+[/MachCode]
+                              @ 8   org.example.jvminternals.ch17.OptimizationJourney$Pair::<init> (15 bytes)   inline (hot)
+                                @ 1   java.lang.Object::<init> (1 bytes)   inline (hot)
+78   25     n 0       java.lang.System::arraycopy (native)   (static)
+78   26     n 0       java.lang.Object::hashCode (native)   
+78   27     n 0       java.lang.invoke.MethodHandle::linkToStatic(LLLLLL)L (native)   (static)
+79   28    b  1       java.lang.Enum::ordinal (5 bytes)
+79   29     n 0       java.lang.invoke.MethodHandle::invokeBasic(LLLLL)L (native)   
+79   30    b  3       java.util.Objects::requireNonNull (14 bytes)
+                              @ 8   java.lang.NullPointerException::<init> (5 bytes)   failed to inline: don't inline Throwable constructors
+79   31     n 0       java.lang.invoke.MethodHandle::linkToSpecial(LLLLLLL)L (native)   (static)
+79   32    b  1       java.lang.Class::isPrimitive (5 bytes)
+80   33    b  3       java.lang.Enum::<init> (15 bytes)
+                              @ 1   java.lang.Object::<init> (1 bytes)   inline
+80   34    b  4       java.lang.Byte::toUnsignedInt (6 bytes)
+80    2       3       java.lang.Byte::toUnsignedInt (6 bytes)   made not entrant: not used
+81   35    b  1       jdk.internal.classfile.impl.AbstractPoolEntry::index (5 bytes)
+81   36    b  4       java.lang.Object::<init> (1 bytes)
+81    1       3       java.lang.Object::<init> (1 bytes)   made not entrant: not used
+81   37    b  1       jdk.internal.classfile.impl.RawBytecodeHelper::bci (5 bytes)
+82   38    b  1       jdk.internal.classfile.impl.SplitConstantPool::size (5 bytes)
+82   39     n 0       java.lang.invoke.MethodHandle::linkToSpecial(LLL)V (native)   (static)
+82   40     n 0       java.lang.invoke.MethodHandle::linkToSpecial(LJIIL)L (native)   (static)
+82   41    b  3       java.util.concurrent.ConcurrentHashMap::spread (10 bytes)
+82   42    b  3       java.util.concurrent.ConcurrentHashMap::tabAt (21 bytes)
+                              @ 14   jdk.internal.misc.Unsafe::getReferenceAcquire (7 bytes)   inline
+                                @ 3   jdk.internal.misc.Unsafe::getReferenceVolatile (0 bytes)   intrinsic
+82   43    b  1       jdk.internal.classfile.impl.AbstractPoolEntry::width (2 bytes)
+83   44    b  3       java.lang.String::isLatin1 (19 bytes)
+83   45    b  3       jdk.internal.classfile.impl.BufWriterImpl::reserveSpace (22 bytes)
+                              @ 18   jdk.internal.classfile.impl.BufWriterImpl::grow (33 bytes)   inline
+                                @ 26   java.util.Arrays::copyOf (33 bytes)   failed to inline: callee is too large
+83   46     n 0       java.lang.invoke.MethodHandle::invokeBasic(L)L (native)   
+83   47    b  1       jdk.internal.util.StrongReferenceKey::get (5 bytes)
+84   48     n 0       jdk.internal.misc.Unsafe::compareAndSetLong (native)   
+84   49     n 0       java.lang.invoke.MethodHandle::linkToStatic(LLL)L (native)   (static)
+84   50     n 0       java.lang.invoke.MethodHandle::linkToStatic(LLLL)L (native)   (static)
+84   51     n 0       java.lang.Object::clone (native)   
+84   52    b  1       java.lang.invoke.MethodType::returnType (5 bytes)
+84   53     n 0       java.lang.invoke.MethodHandle::invokeBasic(LJII)L (native)   
+84   54     n 0       java.lang.invoke.MethodHandle::linkToSpecial(LLJIIL)L (native)   (static)
+84   55    b  3       jdk.internal.classfile.impl.SplitConstantPool::map (161 bytes)
+                              @ 26   java.lang.Math::max (11 bytes)   inline
+                              @ 31   jdk.internal.classfile.impl.EntryMap::<init> (86 bytes)   failed to inline: callee is too large
+                              @ 76   java.lang.Object::hashCode (0 bytes)   failed to inline: no static binding
+                              @ 83   java.lang.classfile.constantpool.PoolEntry::index (0 bytes)   failed to inline: no static binding
+                              @ 88   jdk.internal.classfile.impl.EntryMap::put (186 bytes)   failed to inline: callee is too large
+                              @ 94   java.lang.classfile.constantpool.PoolEntry::width (0 bytes)   failed to inline: no static binding
+                              @ 106   java.lang.Math::max (11 bytes)   inline
+                              @ 131   java.lang.Object::hashCode (0 bytes)   failed to inline: no static binding
+                              @ 138   java.lang.classfile.constantpool.PoolEntry::index (0 bytes)   failed to inline: no static binding
+                              @ 143   jdk.internal.classfile.impl.EntryMap::put (186 bytes)   failed to inline: callee is too large
+                              @ 149   java.lang.classfile.constantpool.PoolEntry::width (0 bytes)   failed to inline: no static binding
+85   56    b  1       jdk.internal.classfile.impl.AbstractPoolEntry::constantPool (5 bytes)
+86   57    b  3       jdk.internal.classfile.impl.RawBytecodeHelper::getU1Unchecked (13 bytes)
+                              @ 9   java.lang.Byte::toUnsignedInt (6 bytes)   inline
+86   58    b  3       jdk.internal.classfile.impl.RawBytecodeHelper::opcode (9 bytes)
+86   59    b  3       jdk.internal.classfile.impl.RawBytecodeHelper::endBci (8 bytes)
+86   60    b  3       jdk.internal.classfile.impl.RawBytecodeHelper::next (81 bytes)
+                              @ 6   jdk.internal.classfile.impl.RawBytecodeHelper::endBci (8 bytes)   inline
+                              @ 19   jdk.internal.classfile.impl.RawBytecodeHelper::getU1Unchecked (13 bytes)   inline
+                                @ 9   java.lang.Byte::toUnsignedInt (6 bytes)   inline
+                              @ 53   jdk.internal.classfile.impl.RawBytecodeHelper::checkSpecialInstruction (242 bytes)   failed to inline: callee is too large
+87   61    b  3       jdk.internal.classfile.impl.SplitConstantPool::entryByIndex (59 bytes)
+                              @ 6   jdk.internal.classfile.impl.SplitConstantPool::size (5 bytes)   inline
+                              @ 30   jdk.internal.classfile.impl.ClassReaderImpl::entryByIndex (8 bytes)   inline
+                                @ 4   jdk.internal.classfile.impl.ClassReaderImpl::entryByIndex (809 bytes)   failed to inline: callee is too large
+                              @ 53   jdk.internal.classfile.impl.SplitConstantPool::unusableCP (27 bytes)   inline
+                                @ 8   java.lang.StringBuilder::<init> (7 bytes)   inline
+                                  @ 3   java.lang.AbstractStringBuilder::<init> (39 bytes)   failed to inline: callee is too large
+                                @ 13   java.lang.StringBuilder::append (8 bytes)   inline
+                                  @ 2   java.lang.AbstractStringBuilder::append (100 bytes)   failed to inline: callee is too large
+                                @ 17   java.lang.StringBuilder::append (8 bytes)   inline
+                                  @ 2   java.lang.AbstractStringBuilder::append (72 bytes)   failed to inline: callee is too large
+                                @ 20   java.lang.StringBuilder::toString (20 bytes)   inline
+                                  @ 1   java.lang.StringBuilder::length (5 bytes)   inline
+                                    @ 1   java.lang.AbstractStringBuilder::length (5 bytes)   inline
+                                  @ 16   java.lang.String::<init> (98 bytes)   failed to inline: callee is too large
+                                @ 23  java/lang/classfile/constantpool/ConstantPoolException::<init> (not loaded)   failed to inline: not inlineable
+                              @ 13   jdk.internal.classfile.impl.SplitConstantPool::badCP (27 bytes)   inline
+                                @ 8   java.lang.StringBuilder::<init> (7 bytes)   inline
+                                  @ 3   java.lang.AbstractStringBuilder::<init> (39 bytes)   failed to inline: callee is too large
+                                @ 13   java.lang.StringBuilder::append (8 bytes)   inline
+                                  @ 2   java.lang.AbstractStringBuilder::append (100 bytes)   failed to inline: callee is too large
+                                @ 17   java.lang.StringBuilder::append (8 bytes)   inline
+                                  @ 2   java.lang.AbstractStringBuilder::append (72 bytes)   failed to inline: callee is too large
+                                @ 20   java.lang.StringBuilder::toString (20 bytes)   inline
+                                  @ 1   java.lang.StringBuilder::length (5 bytes)   inline
+                                    @ 1   java.lang.AbstractStringBuilder::length (5 bytes)   inline
+                                  @ 16   java.lang.String::<init> (98 bytes)   failed to inline: callee is too large
+                                @ 23  java/lang/classfile/constantpool/ConstantPoolException::<init> (not loaded)   failed to inline: not inlineable
+89   62     n 0       java.lang.invoke.MethodHandle::linkToStatic(LLLLL)L (native)   (static)
+89   63   !b  3       java.lang.ref.ReferenceQueue::poll (44 bytes)
+                              @ 9   jdk.internal.vm.ContinuationSupport::pinIfSupported (10 bytes)   inline
+                                @ 0   jdk.internal.vm.ContinuationSupport::isSupported (4 bytes)   inline
+                                @ 6   jdk.internal.vm.Continuation::pin (0 bytes)   failed to inline: native method
+                              @ 20   java.lang.ref.ReferenceQueue::poll0 (65 bytes)   failed to inline: callee is too large
+                              @ 38   jdk.internal.vm.ContinuationSupport::unpinIfSupported (10 bytes)   inline
+                                @ 0   jdk.internal.vm.ContinuationSupport::isSupported (4 bytes)   inline
+                                @ 6   jdk.internal.vm.Continuation::unpin (0 bytes)   failed to inline: native method
+                              @ 26   jdk.internal.vm.ContinuationSupport::unpinIfSupported (10 bytes)   inline
+                                @ 0   jdk.internal.vm.ContinuationSupport::isSupported (4 bytes)   inline
+                                @ 6   jdk.internal.vm.Continuation::unpin (0 bytes)   failed to inline: native method
+90   64    b  1       java.lang.Class::getClassLoader (5 bytes)
+90   65     n 0       java.lang.invoke.MethodHandle::invokeBasic(LLLL)L (native)   
+90   66    b  3       jdk.internal.util.ArraysSupport::unsignedHashCode (36 bytes)
+                              @ 23   java.lang.Byte::toUnsignedInt (6 bytes)   inline
+90   67    b  3       jdk.internal.classfile.impl.AbstractPoolEntry::hashString (5 bytes)
+91   68    b  3       jdk.internal.classfile.impl.EntryMap::firstToken (50 bytes)
+                              @ 10   java.lang.IllegalArgumentException::<init> (6 bytes)   failed to inline: don't inline Throwable constructors
+                              @ 46   jdk.internal.classfile.impl.EntryMap::nextToken (37 bytes)   failed to inline: callee is too large
+91   69    b  1       java.lang.String::value (5 bytes)
+91   70    b  3       java.lang.StringCoding::countNonZeroAsciiLatin1 (33 bytes)
+91   71     n 0       java.lang.invoke.MethodHandle::invokeBasic(JII)L (native)   
+91   72    b  3       jdk.internal.util.ReferencedKeyMap::removeStaleReferences (30 bytes)
+               !m             @ 4   java.lang.ref.ReferenceQueue::poll (44 bytes)   failed to inline: callee is too large
+                              @ 20   java.util.Map::remove (0 bytes)   failed to inline: no static binding
+92   73    b  3       java.lang.Math::min (11 bytes)
+92   74    b  3       java.lang.invoke.MethodTypeForm::canonicalize (74 bytes)
+                              @ 10   java.lang.Class::isPrimitive (5 bytes)   inline
+                              @ 45   sun.invoke.util.Wrapper::asPrimitiveType (20 bytes)   inline
+                                @ 1   sun.invoke.util.Wrapper::findWrapperType (102 bytes)   failed to inline: callee is too large
+                                @ 10   sun.invoke.util.Wrapper::primitiveType (5 bytes)   inline
+                                @ 14   sun.invoke.util.Wrapper::forceType (72 bytes)   failed to inline: callee is too large
+                              @ 68   sun.invoke.util.Wrapper::asWrapperType (18 bytes)   inline
+                                @ 1   java.lang.Class::isPrimitive (5 bytes)   inline
+                                @ 8   sun.invoke.util.Wrapper::forPrimitiveType (122 bytes)   failed to inline: callee is too large
+                                @ 12   sun.invoke.util.Wrapper::wrapperType (52 bytes)   failed to inline: callee is too large
+93   75     n 0       jdk.internal.misc.Unsafe::compareAndSetReference (native)   
+93   76    b  3       java.lang.String::getBytes (44 bytes)
+                              @ 1   java.lang.String::coder (15 bytes)   inline
+                              @ 22   java.lang.System::arraycopy (0 bytes)   intrinsic
+                              @ 40   java.lang.StringLatin1::inflate (10 bytes)   failed to inline: callee uses too much stack
+93   77    b  3       jdk.internal.classfile.impl.EntryMap::put (186 bytes)
+                              @ 10   java.lang.IllegalArgumentException::<init> (6 bytes)   failed to inline: don't inline Throwable constructors
+                              @ 69   jdk.internal.classfile.impl.EntryMap::rehash (92 bytes)   failed to inline: callee is too large
+                              @ 152   jdk.internal.classfile.impl.EntryMap::rehash (92 bytes)   failed to inline: callee is too large
+94   78    b  1       jdk.internal.constant.PrimitiveClassDescImpl::descriptorString (5 bytes)
+94   79    b  1       jdk.internal.constant.ClassOrInterfaceDescImpl::descriptorString (5 bytes)
+94   80    b  3       jdk.internal.classfile.impl.AbstractPoolEntry::<init> (20 bytes)
+                              @ 1   java.lang.Object::<init> (1 bytes)   inline
+阶段=正常结束；结果=10001532512；数组末项=256；发布值=49999
+------------------------------------------------------------------------
+static org.example.jvminternals.ch17.OptimizationJourney::folded(I)I
+  interpreter_invocation_count:        5376
+  invocation_counter:                  5376
+  backedge_counter:                       0
+  decompile_count:                        0
+  mdo size: 296 bytes
+
+   0 iload_0
+   1 invokestatic 60 <org/example/jvminternals/ch17/OptimizationJourney.twice(I)I> 
+  0    bci: 1    CounterData        count(5120)
+   4 istore_1
+   5 iload_1
+   6 bipush 24
+   8 iadd
+   9 ireturn
+------------------------------------------------------------------------
+static org.example.jvminternals.ch17.OptimizationJourney::escaped(I)I
+  interpreter_invocation_count:        5376
+  invocation_counter:                  5376
+  backedge_counter:                       0
+  decompile_count:                        0
+  mdo size: 280 bytes
+
+   0 new 51 <org/example/jvminternals/ch17/OptimizationJourney$Pair>
+   3 dup
+   4 iload_0
+   5 iload_0
+   6 iconst_1
+   7 iadd
+   8 invokespecial 63 <org/example/jvminternals/ch17/OptimizationJourney$Pair.<init>(II)V> 
+  0    bci: 8    CounterData        count(5120)
+  11 astore_1
+  12 aload_1
+  13 putstatic 46 <org/example/jvminternals/ch17/OptimizationJourney.published:Lorg/example/jvminternals/ch17/OptimizationJourney$Pair;> 
+  16 aload_1
+  17 fast_igetfield 50 <org/example/jvminternals/ch17/OptimizationJourney$Pair.left:I> 
+  20 aload_1
+  21 fast_igetfield 66 <org/example/jvminternals/ch17/OptimizationJourney$Pair.right:I> 
+  24 iadd
+  25 ireturn
+------------------------------------------------------------------------
+static org.example.jvminternals.ch17.OptimizationJourney::locked(I)I
+  interpreter_invocation_count:        5376
+  invocation_counter:                  5376
+  backedge_counter:                       0
+  decompile_count:                        0
+  mdo size: 296 bytes
+
+   0 new 51 <org/example/jvminternals/ch17/OptimizationJourney$Pair>
+   3 dup
+   4 iload_0
+   5 iload_0
+   6 iconst_1
+   7 iadd
+   8 invokespecial 63 <org/example/jvminternals/ch17/OptimizationJourney$Pair.<init>(II)V> 
+  0    bci: 8    CounterData        count(5120)
+  11 astore_1
+  12 aload_1
+  13 dup
+  14 astore_2
+  15 monitorenter
+  16 aload_1
+  17 fast_igetfield 50 <org/example/jvminternals/ch17/OptimizationJourney$Pair.left:I> 
+  20 aload_1
+  21 fast_igetfield 66 <org/example/jvminternals/ch17/OptimizationJourney$Pair.right:I> 
+  24 iadd
+  25 aload_2
+  26 monitorexit
+  27 ireturn
+  28 astore_3
+  29 aload_2
+  30 monitorexit
+  31 aload_3
+  32 athrow
+------------------------------------------------------------------------
+static org.example.jvminternals.ch17.OptimizationJourney::twice(I)I
+  interpreter_invocation_count:        5376
+  invocation_counter:                  5376
+  backedge_counter:                       0
+  decompile_count:                        0
+  mdo size: 240 bytes
+
+   0 iload_0
+   1 iload_0
+   2 iadd
+   3 ireturn
+------------------------------------------------------------------------
+static org.example.jvminternals.ch17.OptimizationJourney::local(I)I
+  interpreter_invocation_count:        5376
+  invocation_counter:                  5376
+  backedge_counter:                       0
+  decompile_count:                        0
+  mdo size: 280 bytes
+
+   0 new 51 <org/example/jvminternals/ch17/OptimizationJourney$Pair>
+   3 dup
+   4 iload_0
+   5 iload_0
+   6 iconst_1
+   7 iadd
+   8 invokespecial 63 <org/example/jvminternals/ch17/OptimizationJourney$Pair.<init>(II)V> 
+  0    bci: 8    CounterData        count(5120)
+  11 astore_1
+  12 aload_1
+  13 fast_igetfield 50 <org/example/jvminternals/ch17/OptimizationJourney$Pair.left:I> 
+  16 aload_1
+  17 fast_igetfield 66 <org/example/jvminternals/ch17/OptimizationJourney$Pair.right:I> 
+  20 iadd
+  21 ireturn
+------------------------------------------------------------------------
+static org.example.jvminternals.ch17.OptimizationJourney::transform([I[I)V
+  interpreter_invocation_count:         260
+  invocation_counter:                   260
+  backedge_counter:                   66561
+  decompile_count:                        0
+  mdo size: 328 bytes
+
+   0 iconst_0
+   1 istore_2
+   2 iload_2
+   3 fast_aload_0
+   4 arraylength
+   5 if_icmpge 22
+  0    bci: 5    BranchData         taken(160) displacement(56)
+                                    not taken(40960)
+   8 aload_1
+   9 iload_2
+  10 fast_aload_0
+  11 iload_2
+  12 iaload
+  13 iconst_1
+  14 iadd
+  15 iastore
+  16 iinc #2 1
+  19 goto 2
+  32   bci: 19   JumpData           taken(40960) displacement(-32)
+  22 return
+------------------------------------------------------------------------
+Total MDO size: 1720 bytes

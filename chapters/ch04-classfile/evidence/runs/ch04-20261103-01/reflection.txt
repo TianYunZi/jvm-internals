@@ -1,0 +1,10 @@
+11月 03, 2026 9:44:58 上午 org.example.jvminternals.ch04.modern.ModernShapes main
+INFO: 开始读取记录类、密封接口与注解元数据
+Point.isRecord=true
+Point.recordComponents=[int x, int y]
+Point.annotations=[@org.example.jvminternals.ch04.modern.ModernShapes.RuntimeTag()]
+Shape.isSealed=true
+Shape.permitted=[class org.example.jvminternals.ch04.modern.ModernShapes$Point]
+Member.nestHost=org.example.jvminternals.ch04.modern.ModernShapes
+11月 03, 2026 9:44:58 上午 org.example.jvminternals.ch04.modern.ModernShapes main
+INFO: 元数据读取结束

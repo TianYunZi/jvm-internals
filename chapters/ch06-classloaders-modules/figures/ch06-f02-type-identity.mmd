@@ -1,0 +1,13 @@
+%% CH06-F02：类型身份依赖定义加载器对象，不依赖名字字符串。
+flowchart TB
+  A["同一份isolated.Plugin.class字节"]
+  L["定义加载器对象left"]
+  R["另一个定义加载器对象right"]
+  LC["Plugin由left定义<br/>echo参数类型也由left定义"]
+  RC["Plugin由right定义<br/>echo参数类型由right定义"]
+  D["relay的父加载器是left<br/>请求返回左边同一Class"]
+  A --> L --> LC
+  A --> R --> RC
+  D --> LC
+  LC --- N["两类之间转换失败<br/>共同父类型或共享接口仍可用于交互<br/>本例未制造加载约束冲突"]
+  RC --- N

@@ -1,0 +1,10 @@
+sequenceDiagram
+ participant A as 应用线程
+ participant Q as 起始快照队列
+ participant M as 标记线程
+ Note over A,M: 快照时根经A到B；标记器尚未扫描A
+ A->>Q: 覆盖A字段前记录旧目标B
+ A->>A: A字段改为新目标C
+ M->>Q: 处理旧引用记录
+ Q-->>M: B仍纳入本轮追踪
+ Note over A,M: B即使随后死亡，也可能本轮保守保留

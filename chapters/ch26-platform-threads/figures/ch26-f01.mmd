@@ -1,0 +1,6 @@
+flowchart TB
+ O[Java Thread对象：身份与状态] --> J[HotSpot JavaThread：执行与运行时数据]
+ J --> N[OSThread与操作系统线程]
+ N --> S[操作系统调度器：运行或等待处理器]
+ I[VMThread／收集器等内部线程] --> N
+ I -. 不必有应用Thread对象 .-> O

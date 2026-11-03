@@ -1,0 +1,6 @@
+6a112f4c29988de35aa5009ca5114111da668859aef7fc6a2ac139c9b7089e9d  chapters/ch02-computer-basics/evidence/browser/desktop-1440.jpg
+162e83250f55daee241f6f74dea0e4879244a13720a9a507d19ea4f4f67d71e4  chapters/ch02-computer-basics/evidence/browser/figure-1.jpg
+246ca33aee37f5ccaf6a7169fc2042426cdaa0f48503899b907febaee3795097  chapters/ch02-computer-basics/evidence/browser/figure-2.jpg
+0f4472ad6946e5852d8019da39358ef50c5c80be5ce07b90d97051c423ecf093  chapters/ch02-computer-basics/evidence/browser/figure-3.jpg
+17664648c7d0fc9ca94f3db4d14f80bb0e7e8997811c31fb3172853a0dd7a8b7  chapters/ch02-computer-basics/evidence/browser/mobile-390.jpg
+db1ff65c4a8a18c2c391bc89a2deda916b1a91ff9f80b0f617ad7e4b3553777b  chapters/ch02-computer-basics/evidence/browser/tablet-768.jpg

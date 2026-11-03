@@ -1,0 +1,6 @@
+渲染章节：ch19-gc-foundations
+本章截图与打印完成：ch19-gc-foundations
+渲染章节：ch20-safepoints-barriers
+本章截图与打印完成：ch20-safepoints-barriers
+渲染章节：ch24-shenandoah
+本章截图与打印完成：ch24-shenandoah

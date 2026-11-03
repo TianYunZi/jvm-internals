@@ -1,0 +1,28 @@
+{
+  "version": "Chrome/156.0.8078.80",
+  "pages": [
+    {
+      "page": "chapters/ch15-dynamic-invocation/chapter.html",
+      "codeIds": [
+        "code-001",
+        "code-002",
+        "code-003",
+        "code-004"
+      ]
+    },
+    {
+      "page": "chapters/ch15-dynamic-invocation/sources.html",
+      "codeIds": [
+        "code-001",
+        "code-002"
+      ]
+    },
+    {
+      "page": "chapters/ch15-dynamic-invocation/README.html",
+      "codeIds": [
+        "code-001",
+        "code-002"
+      ]
+    }
+  ]
+}

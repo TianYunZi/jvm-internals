@@ -1,0 +1,8 @@
+渲染章节：ch33-observability
+本章截图与打印完成：ch33-observability
+渲染章节：ch34-flight-recorder
+本章截图与打印完成：ch34-flight-recorder
+渲染章节：ch35-troubleshooting
+本章截图与打印完成：ch35-troubleshooting
+渲染章节：ch36-performance-cases
+本章截图与打印完成：ch36-performance-cases

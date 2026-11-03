@@ -1,0 +1,1 @@
+715e621a215a7c5d1165274f78434970b682c4333af776cf9b0b1535d2bd29f7  chapters/ch25-memory-model/src/main/java/org/example/jvminternals/ch25/PublicationJourney.java

@@ -1,0 +1,171 @@
+[0.005s][info][aot] trying to map chapters/ch36-performance-cases/target/startup.aot
+[0.005s][info][aot] Opened AOT cache chapters/ch36-performance-cases/target/startup.aot.
+[0.005s][info][aot] The AOT cache was created with UseCompressedOops = 1, UseCompressedClassPointers = 1, UseCompactObjectHeaders = 0
+[0.005s][info][aot] Core region alignment: 16384
+[0.005s][info][aot] ArchiveRelocationMode: 1
+[0.005s][info][aot] ArchiveRelocationMode == 1: always map archive(s) at an alternative address
+[0.005s][info][aot] Try to map archive(s) at an alternative address
+[0.005s][info][aot] Reserved archive_space_rs [0x00001f0000000000 - 0x00001f0001000000] (16777216) bytes (includes protection zone)
+[0.005s][info][aot] Reserved class_space_rs   [0x00001f0001000000 - 0x00001f0041000000] (1073741824) bytes
+[0.005s][info][aot] Mapped static  region #0 at base 0x00001f0000004000 top 0x00001f00003e0000 (ReadWrite)
+[0.005s][info][aot] Mapped static  region #1 at base 0x00001f00003e0000 top 0x00001f0000a84000 (ReadOnly)
+[0.005s][info][aot] Mapped static  region #2 at base 0x0000000104428000 top 0x0000000104450000 (Bitmap)
+[0.007s][info][aot] archived module property jdk.module.main: (null)
+[0.007s][info][aot] archived module property jdk.module.addexports: (null)
+[0.007s][info][aot] archived module property jdk.module.addmods: (null)
+[0.007s][info][aot] archived module property jdk.module.enable.native.access: (null)
+[0.007s][info][aot] archived module property jdk.module.addopens: (null)
+[0.007s][info][aot] archived module property jdk.module.addreads: (null)
+[0.007s][info][aot] optimized module handling: enabled
+[0.007s][info][aot] full module graph: enabled
+[0.007s][info][aot] CDS archive was created with max heap size = 64M, and the following configuration:
+[0.007s][info][aot]     narrow_klass_base at mapping start address, narrow_klass_pointer_bits = 32, narrow_klass_shift = 0
+[0.007s][info][aot]     narrow_oop_mode = 1, narrow_oop_base = 0x0000000000000000, narrow_oop_shift = 3
+[0.007s][info][aot] The current max heap size = 64M, G1HeapRegion::GrainBytes = 1048576
+[0.007s][info][aot]     narrow_klass_base = 0x00001f0000000000, arrow_klass_pointer_bits = 32, narrow_klass_shift = 0
+[0.007s][info][aot]     narrow_oop_mode = 1, narrow_oop_base = 0x0000000000000000, narrow_oop_shift = 3
+[0.007s][info][aot]     heap range = [0x0000000127800000 - 0x000000012b800000]
+[0.007s][info][aot] Preferred address to map heap data (to avoid relocation) is 0x0000000129f00000
+[0.007s][info][aot] Heap data mapped at 0x000000012b700000, size =   866984 bytes
+[0.007s][info][aot] CDS heap data relocation delta = 25165824 bytes
+[0.007s][info][aot] initial optimized module handling: enabled
+[0.007s][info][aot] initial full module graph: enabled
+[0.007s][info][aot] use_full_module_graph = true; java.base = 0x00001f00003d9f68
+[0.007s][info][aot] patching heap embedded pointers: narrowOop 0x253e0000 -> 0x256e0000
+[0.007s][info][aot] heap data relocation quick delta = 0x300000
+[0.007s][info][aot] Unmapping region #2 at base 0x0000000104428000 (Bitmap)
+[0.007s][info][aot] Using AOT-linked classes: true (static archive: has aot-linked classes)
+[0.017s][info][jit,compilation]    1     n 0       java.lang.invoke.MethodHandle::linkToStatic(LLLLL)L (native)   (static)
+[0.017s][info][jit,compilation]    2     n 0       java.lang.invoke.MethodHandle::linkToStatic(LL)I (native)   (static)
+[0.017s][info][jit,compilation]    3     n 0       java.lang.invoke.MethodHandle::linkToSpecial(LL)I (native)   (static)
+[0.017s][info][jit,compilation]    4     n 0       java.lang.invoke.MethodHandle::invokeBasic(LL)L (native)   
+[0.017s][info][jit,compilation]    5     n 0       java.lang.invoke.MethodHandle::linkToSpecial(LLL)L (native)   (static)
+[0.017s][info][jit,compilation]    6     n 0       java.lang.invoke.MethodHandle::linkToStatic(LLL)L (native)   (static)
+[0.017s][info][jit,compilation]    7     n 0       java.lang.invoke.MethodHandle::invokeBasic(LLLL)L (native)   
+[0.017s][info][jit,compilation]    8     n 0       java.lang.invoke.MethodHandle::linkToStatic(LLLL)L (native)   (static)
+[0.017s][info][jit,compilation]    9     n 0       java.lang.invoke.MethodHandle::linkToSpecial(LLLL)L (native)   (static)
+[0.017s][info][jit,compilation]   10     n 0       java.lang.invoke.MethodHandle::linkToStatic(LLLLLL)L (native)   (static)
+[0.017s][info][jit,compilation]   11     n 0       java.lang.invoke.MethodHandle::invokeBasic(I)L (native)   
+[0.017s][info][jit,compilation]   12     n 0       java.lang.invoke.MethodHandle::linkToSpecial(LIL)V (native)   (static)
+[0.017s][info][jit,compilation]   13     n 0       java.lang.invoke.MethodHandle::invokeBasic(LLLLLL)L (native)   
+[0.017s][info][jit,compilation]   14     n 0       java.lang.invoke.MethodHandle::invokeBasic(LLI)L (native)   
+[0.017s][info][jit,compilation]   15     n 0       java.lang.invoke.MethodHandle::linkToSpecial(LLLLLLL)L (native)   (static)
+[0.017s][info][jit,compilation]   16     n 0       java.lang.invoke.MethodHandle::linkToStatic(LLLLLLL)L (native)   (static)
+[0.017s][info][jit,compilation]   17     n 0       java.lang.invoke.MethodHandle::linkToStatic(L)L (native)   (static)
+[0.017s][info][jit,compilation]   18     n 0       java.lang.invoke.MethodHandle::invokeBasic(L)L (native)   
+[0.017s][info][jit,compilation]   19     n 0       java.lang.invoke.MethodHandle::linkToSpecial(LIL)L (native)   (static)
+[0.017s][info][jit,compilation]   20     n 0       java.lang.invoke.MethodHandle::linkToSpecial(LLL)I (native)   (static)
+[0.017s][info][jit,compilation]   21     n 0       java.lang.invoke.MethodHandle::linkToInterface(LLL)I (native)   (static)
+[0.017s][info][jit,compilation]   22     n 0       java.lang.invoke.MethodHandle::linkToVirtual(LLL)I (native)   (static)
+[0.017s][info][jit,compilation]   23     n 0       java.lang.invoke.MethodHandle::linkToStatic(LLL)I (native)   (static)
+[0.017s][info][jit,compilation]   24     n 0       java.lang.invoke.MethodHandle::linkToSpecial(LLLL)V (native)   (static)
+[0.017s][info][jit,compilation]   25     n 0       java.lang.invoke.MethodHandle::invokeBasic()L (native)   
+[0.017s][info][jit,compilation]   26     n 0       java.lang.invoke.MethodHandle::linkToStatic(IIL)I (native)   (static)
+[0.017s][info][jit,compilation]   27     n 0       java.lang.invoke.MethodHandle::invokeBasic(LLLLL)L (native)   
+[0.017s][info][jit,compilation]   28     n 0       java.lang.invoke.MethodHandle::linkToStatic(LL)L (native)   (static)
+[0.017s][info][jit,compilation]   29     n 0       java.lang.invoke.MethodHandle::linkToSpecial(LL)L (native)   (static)
+[0.017s][info][jit,compilation]   30     n 0       java.lang.invoke.MethodHandle::linkToInterface(LL)L (native)   (static)
+[0.017s][info][jit,compilation]   31     n 0       java.lang.invoke.MethodHandle::linkToSpecial(LL)V (native)   (static)
+[0.017s][info][jit,compilation]   32     n 0       java.lang.invoke.MethodHandle::linkToSpecial(LLL)V (native)   (static)
+[0.017s][info][jit,compilation]   33     n 0       jdk.internal.vm.Continuation::enterSpecial (native)   (static)
+[0.017s][info][jit,compilation]   34     n 0       jdk.internal.vm.Continuation::doYield (native)   (static)
+[0.019s][info][jit,compilation]   35       2       java.lang.Object::<init> (1 bytes)
+[0.019s][info][jit,compilation]   36       2       java.lang.String::hashCode (60 bytes)
+[0.019s][info][jit,compilation]   37       2       java.lang.String::coder (15 bytes)
+[0.020s][info][jit,compilation]   38       2       java.lang.String::isLatin1 (19 bytes)
+[0.020s][info][jit,compilation]   39       2       java.lang.Byte::toUnsignedInt (6 bytes)
+[0.020s][info][jit,compilation]   40       2       jdk.internal.util.Preconditions::checkIndex (18 bytes)
+[0.020s][info][jit,compilation]   44       2       java.lang.String::length (11 bytes)
+[0.020s][info][jit,compilation]   43       2       java.lang.String::checkIndex (10 bytes)
+[0.020s][info][jit,compilation]   41       2       java.lang.String::charAt (25 bytes)
+[0.020s][info][jit,compilation]   42       2       java.lang.StringLatin1::charAt (15 bytes)
+[0.022s][info][jit,compilation]   45       2       java.util.concurrent.ConcurrentHashMap::tabAt (21 bytes)
+[0.022s][info][jit,compilation]   47     n 0       jdk.internal.misc.Unsafe::getReferenceVolatile (native)   
+[0.022s][info][jit,compilation]   46       2       jdk.internal.misc.Unsafe::getReferenceAcquire (7 bytes)
+[0.022s][info][jit,compilation]   48       2       java.lang.String::equals (56 bytes)
+[0.022s][info][jit,compilation]   50 %     2       java.lang.StringLatin1::indexOfChar @ 7 (33 bytes)
+[0.022s][info][jit,compilation]   49       2       java.lang.StringLatin1::canEncode (17 bytes)
+[0.022s][info][jit,compilation]   52       2       java.lang.StringLatin1::indexOf (17 bytes)
+[0.022s][info][jit,compilation]   51       2       java.util.concurrent.ConcurrentHashMap::spread (10 bytes)
+[0.024s][info][jit,compilation]   53       2       java.lang.StringLatin1::equals (36 bytes)
+[0.024s][info][jit,compilation]   54 %     2       jdk.internal.util.ArraysSupport::unsignedHashCode @ 8 (36 bytes)
+[0.025s][info][jit,compilation]   55       2       java.util.Objects::requireNonNull (14 bytes)
+[0.025s][info][jit,compilation]   56     n 0       java.lang.Object::getClass (native)   
+[0.025s][info][jit,compilation]   57       2       java.util.HashMap::hash (20 bytes)
+[0.026s][info][jit,compilation]   58       2       java.util.HashMap::putVal (300 bytes)
+[0.026s][info][jit,compilation]   63     n 0       java.lang.System::arraycopy (native)   (static)
+[0.026s][info][jit,compilation]   62       2       java.lang.Math::min (11 bytes)
+[0.026s][info][jit,compilation]   61       2       java.util.HashMap::afterNodeInsertion (1 bytes)
+[0.026s][info][jit,compilation]   66       2       jdk.internal.util.ArraysSupport::unsignedHashCode (36 bytes)
+[0.026s][info][jit,compilation]   65       2       jdk.internal.util.ArraysSupport::hashCodeOfUnsigned (55 bytes)
+[0.026s][info][jit,compilation]   64       2       sun.util.locale.LocaleUtils::isUpper (18 bytes)
+[0.026s][info][jit,compilation]   59       2       java.util.HashMap$Node::<init> (26 bytes)
+[0.026s][info][jit,compilation]   60       2       java.util.HashMap::newNode (13 bytes)
+[0.026s][info][jit,compilation]   67       2       java.util.concurrent.ConcurrentHashMap::get (162 bytes)
+[0.026s][info][jit,compilation]   69       2       jdk.internal.util.ArraysSupport::vectorizedHashCode (158 bytes)
+[0.027s][info][jit,compilation]   68       2       java.util.HashMap::put (13 bytes)
+[0.027s][info][jit,compilation]   71       2       java.util.regex.Pattern$BmpCharPropertyGreedy::match (89 bytes)
+[0.027s][info][jit,compilation]   72       3       java.util.regex.Pattern$$Lambda/0x80000000e::is (9 bytes)
+[0.027s][info][jit,compilation]   84       4       java.lang.String::charAt (25 bytes)
+[0.027s][info][jit,compilation]   90       2       java.util.regex.Pattern$Start::match (90 bytes)
+[0.027s][info][jit,compilation]   89       2       java.util.regex.Matcher::search (154 bytes)
+[0.027s][info][jit,compilation]   83       2       java.lang.String::toString (2 bytes)
+[0.027s][info][jit,compilation]   70       2       java.util.regex.Pattern::lambda$Single$0 (11 bytes)
+[0.027s][info][jit,compilation]   74       2       java.lang.String::<init> (15 bytes)
+[0.027s][info][jit,compilation]   73       2       java.util.Arrays::copyOfRange (82 bytes)
+[0.028s][info][jit,compilation]   41       2       java.lang.String::charAt (25 bytes)   made not entrant: not used
+[0.028s][info][jit,compilation]   92       4       java.util.regex.Pattern$BmpCharPropertyGreedy::match (89 bytes)
+[0.028s][info][jit,compilation]   86       2       java.lang.String::subSequence (7 bytes)
+[0.028s][info][jit,compilation]   85       2       java.util.regex.Matcher::start (9 bytes)
+[0.028s][info][jit,compilation]   87       2       java.util.regex.Matcher::end (9 bytes)
+[0.028s][info][jit,compilation]   88       2       java.util.regex.Matcher::find (69 bytes)
+[0.028s][info][jit,compilation]   91       2       java.util.regex.Pattern$LastNode::match (45 bytes)
+[0.028s][info][jit,compilation]   77       2       jdk.internal.util.Preconditions::checkFromToIndex (24 bytes)
+[0.028s][info][jit,compilation]   78       2       java.lang.String::checkBoundsBeginEnd (11 bytes)
+[0.028s][info][jit,compilation]   80       2       java.lang.StringLatin1::newString (24 bytes)
+[0.028s][info][jit,compilation]   95       2       java.util.ImmutableCollections$SetN::probe (56 bytes)
+[0.028s][info][jit,compilation]   79       2       java.lang.String::substring (58 bytes)
+[0.028s][info][jit,compilation]   81       2       java.util.ArrayList::add (25 bytes)
+[0.028s][info][jit,compilation]   82       2       java.util.ArrayList::add (23 bytes)
+[0.029s][info][jit,compilation]   94       2       java.lang.Math::floorMod (20 bytes)
+[0.029s][info][jit,compilation]   96     n 0       jdk.internal.misc.Unsafe::compareAndSetLong (native)   
+[0.029s][info][jit,compilation]   75       2       java.util.regex.Matcher::checkMatch (19 bytes)
+[0.029s][info][jit,compilation]   76       2       java.util.regex.Matcher::hasMatch (13 bytes)
+[0.029s][info][jit,compilation]   97       2       java.util.concurrent.ConcurrentHashMap$Node::<init> (20 bytes)
+[0.029s][info][jit,compilation]   98     n 0       jdk.internal.misc.Unsafe::compareAndSetReference (native)   
+[0.029s][info][jit,compilation]  101       3       jdk.internal.util.ArraysSupport::hashCodeOfUnsigned (55 bytes)
+[0.030s][info][jit,compilation]   65       2       jdk.internal.util.ArraysSupport::hashCodeOfUnsigned (55 bytes)   made not entrant: not used
+[0.030s][info][jit,compilation]  102       1       java.util.HashMap$Node::getValue (5 bytes)
+[0.030s][info][jit,compilation]   71       2       java.util.regex.Pattern$BmpCharPropertyGreedy::match (89 bytes)   made not entrant: not used
+[0.030s][info][jit,compilation]   93       4       java.util.regex.Pattern$$Lambda/0x80000000e::is (9 bytes)
+[0.030s][info][jit,compilation]  103       2       java.util.concurrent.ConcurrentHashMap::addCount (280 bytes)
+[0.030s][info][jit,compilation]   72       3       java.util.regex.Pattern$$Lambda/0x80000000e::is (9 bytes)   made not entrant: not used
+[0.030s][info][jit,compilation]  100       4       jdk.internal.util.ArraysSupport::unsignedHashCode (36 bytes)
+[0.030s][info][jit,compilation]  108     n 0       java.lang.Object::hashCode (native)   
+[0.030s][info][jit,compilation]  105   !   2       java.lang.ref.ReferenceQueue::poll (44 bytes)
+[0.030s][info][jit,compilation]  107       2       jdk.internal.util.ReferencedKeyMap::removeStaleReferences (30 bytes)
+[0.030s][info][jit,compilation]  106       2       java.util.concurrent.ConcurrentHashMap::casTabAt (20 bytes)
+[0.031s][info][jit,compilation]  109       1       jdk.internal.util.StrongReferenceKey::get (5 bytes)
+[0.031s][info][jit,compilation]  110   !   2       java.util.concurrent.ConcurrentHashMap::putVal (432 bytes)
+[0.031s][info][jit,compilation]   66       2       jdk.internal.util.ArraysSupport::unsignedHashCode (36 bytes)   made not entrant: not used
+[0.031s][info][jit,compilation]  104       4       java.lang.String::length (11 bytes)
+[0.031s][info][jit,compilation]   44       2       java.lang.String::length (11 bytes)   made not entrant: not used
+[0.031s][info][jit,compilation]   99       4       java.lang.String::hashCode (60 bytes)
+[0.032s][info][jit,compilation]  111       3       jdk.internal.util.ArraysSupport::vectorizedHashCode (158 bytes)
+[0.032s][info][jit,compilation]   36       2       java.lang.String::hashCode (60 bytes)   made not entrant: not used
+[0.032s][info][jit,compilation]   69       2       jdk.internal.util.ArraysSupport::vectorizedHashCode (158 bytes)   made not entrant: not used
+[0.032s][info][jit,compilation]  112       3       java.util.HashMap::putVal (300 bytes)
+[0.032s][info][jit,compilation]  115       4       java.util.HashMap::afterNodeInsertion (1 bytes)
+[0.032s][info][jit,compilation]   61       2       java.util.HashMap::afterNodeInsertion (1 bytes)   made not entrant: not used
+[0.032s][info][jit,compilation]   58       2       java.util.HashMap::putVal (300 bytes)   made not entrant: not used
+[0.032s][info][jit,compilation]  114       3       java.util.HashMap::newNode (13 bytes)
+[0.032s][info][jit,compilation]   60       2       java.util.HashMap::newNode (13 bytes)   made not entrant: not used
+[0.032s][info][jit,compilation]  113       3       java.util.HashMap::put (13 bytes)
+[0.033s][info][jit,compilation]   68       2       java.util.HashMap::put (13 bytes)   made not entrant: not used
+[0.033s][info][jit,compilation]  116       2       java.lang.StringUTF16::getChar (60 bytes)
+[0.033s][info][jit,compilation]  117       2       org.example.jvminternals.ch31.CacheJourney::route (8 bytes)
+[0.033s][info][jit,compilation]  118       2       org.example.jvminternals.ch31.CacheJourney$Add::apply (6 bytes)
+[0.033s][info][jit,compilation]  119       4       org.example.jvminternals.ch31.CacheJourney::route (8 bytes)
+[0.033s][info][jit,compilation]  117       2       org.example.jvminternals.ch31.CacheJourney::route (8 bytes)   made not entrant: not used
+[0.034s][info][jit,compilation]  120       4       java.lang.Object::<init> (1 bytes)
+[0.035s][info][jit,compilation]   35       2       java.lang.Object::<init> (1 bytes)   made not entrant: not used

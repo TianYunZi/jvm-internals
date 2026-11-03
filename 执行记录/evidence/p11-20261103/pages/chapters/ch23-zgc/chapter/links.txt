@@ -1,0 +1,20 @@
+跳到正文	#main
+Java 虚拟机原理图文书	../../index.html
+23.1 设计目标与分代结构	#sec-23-1
+23.2 着色指针与屏障分工	#sec-23-2
+23.3 标记、重定位与修复	#sec-23-3
+23.4 代际回收协调	#sec-23-4
+23.5 分配停顿与空间余量	#sec-23-5
+观察与边界	#observe
+来源与回顾	#sources
+源码阅读	sources.html
+运行说明	README.html
+证据索引	evidence/索引.md
+ZGenerationYoung::collect；ZGenerationOld	https://github.com/openjdk/jdk25u/blob/1775ea114f649f0314e4e43eb6c802ff16dfab7c/src/hotspot/share/gc/z/zGeneration.cpp
+zpointer布局与ZPointer相关掩码	https://github.com/openjdk/jdk25u/blob/1775ea114f649f0314e4e43eb6c802ff16dfab7c/src/hotspot/share/gc/z/zAddress.hpp
+load_barrier_on_oop_field_preloaded；store_barrier_on_heap_oop_field	https://github.com/openjdk/jdk25u/blob/1775ea114f649f0314e4e43eb6c802ff16dfab7c/src/hotspot/share/gc/z/zBarrier.inline.hpp
+ZForwarding	https://github.com/openjdk/jdk25u/blob/1775ea114f649f0314e4e43eb6c802ff16dfab7c/src/hotspot/share/gc/z/zForwarding.inline.hpp
+ZGenerational版本废弃／过时表	https://github.com/openjdk/jdk25u/blob/1775ea114f649f0314e4e43eb6c802ff16dfab7c/src/hotspot/share/runtime/arguments.cpp
+上一章	../ch22-g1/chapter.html
+全书目录	../../index.html
+下一章	../ch24-shenandoah/chapter.html

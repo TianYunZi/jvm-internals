@@ -1,0 +1,1 @@
+6edd8e6c1f50fadcd382b9ed7a261e131080e44930e531a9d2fa0a4811a4036d  chapters/ch19-gc-foundations/src/main/java/org/example/jvminternals/ch19/ReferenceJourney.java

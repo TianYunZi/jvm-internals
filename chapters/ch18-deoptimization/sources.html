@@ -1,0 +1,72 @@
+<!doctype html><html lang="zh-CN"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="shiki-version" content="4.6.0"><title>第18章源码阅读</title><link rel="stylesheet" href="../../assets/book.css"></head><body><main class="home" id="main"><h1>第18章源码阅读</h1><p>由正式源文件生成的静态阅读副本。<a href="chapter.html">返回正文</a> · <a href="README.html">运行说明</a></p><h2><code class="shiki-inline" data-shiki-version="4.6.0" data-code-id="code-001" data-code-language="text"><span>src/main/java/org/example/jvminternals/ch18/RecoveryJourney.java</span></code></h2><pre data-shiki-version="4.6.0" class="shiki github-light" style="background-color:#fff;color:#24292e" tabindex="0"><code data-code-id="code-002" data-code-language="java" data-source-file="chapters/ch18-deoptimization/src/main/java/org/example/jvminternals/ch18/RecoveryJourney.java"><span class="line"><span style="color:#D73A49">package</span><span style="color:#24292E"> org.example.jvminternals.ch18;</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#6A737D">/** 改变合法接收者输入，关联推测代码、去优化和长循环编译。 */</span></span>
+<span class="line"><span style="color:#D73A49">public</span><span style="color:#D73A49"> final</span><span style="color:#D73A49"> class</span><span style="color:#6F42C1"> RecoveryJourney</span><span style="color:#24292E"> {</span></span>
+<span class="line"><span style="color:#D73A49">    private</span><span style="color:#D73A49"> static</span><span style="color:#D73A49"> volatile</span><span style="color:#24292E"> Pair published;</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#D73A49">    private</span><span style="color:#6F42C1"> RecoveryJourney</span><span style="color:#24292E">() {</span></span>
+<span class="line"><span style="color:#24292E">    }</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#D73A49">    static</span><span style="color:#D73A49"> final</span><span style="color:#D73A49"> class</span><span style="color:#6F42C1"> Pair</span><span style="color:#24292E"> {</span></span>
+<span class="line"><span style="color:#D73A49">        final</span><span style="color:#D73A49"> int</span><span style="color:#24292E"> left;</span></span>
+<span class="line"><span style="color:#D73A49">        final</span><span style="color:#D73A49"> int</span><span style="color:#24292E"> right;</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#6F42C1">        Pair</span><span style="color:#24292E">(</span><span style="color:#D73A49">int</span><span style="color:#E36209"> left</span><span style="color:#24292E">, </span><span style="color:#D73A49">int</span><span style="color:#E36209"> right</span><span style="color:#24292E">) {</span></span>
+<span class="line"><span style="color:#005CC5">            this</span><span style="color:#24292E">.left </span><span style="color:#D73A49">=</span><span style="color:#24292E"> left;</span></span>
+<span class="line"><span style="color:#005CC5">            this</span><span style="color:#24292E">.right </span><span style="color:#D73A49">=</span><span style="color:#24292E"> right;</span></span>
+<span class="line"><span style="color:#24292E">        }</span></span>
+<span class="line"><span style="color:#24292E">    }</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#D73A49">    interface</span><span style="color:#6F42C1"> Operation</span><span style="color:#24292E"> {</span></span>
+<span class="line"><span style="color:#D73A49">        int</span><span style="color:#6F42C1"> apply</span><span style="color:#24292E">(Pair </span><span style="color:#E36209">pair</span><span style="color:#24292E">);</span></span>
+<span class="line"><span style="color:#24292E">    }</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#D73A49">    static</span><span style="color:#D73A49"> final</span><span style="color:#D73A49"> class</span><span style="color:#6F42C1"> LocalOperation</span><span style="color:#D73A49"> implements</span><span style="color:#6F42C1"> Operation</span><span style="color:#24292E"> {</span></span>
+<span class="line"><span style="color:#24292E">        @</span><span style="color:#D73A49">Override</span></span>
+<span class="line"><span style="color:#D73A49">        public</span><span style="color:#D73A49"> int</span><span style="color:#6F42C1"> apply</span><span style="color:#24292E">(Pair </span><span style="color:#E36209">pair</span><span style="color:#24292E">) {</span></span>
+<span class="line"><span style="color:#D73A49">            return</span><span style="color:#24292E"> pair.left </span><span style="color:#D73A49">+</span><span style="color:#24292E"> pair.right;</span></span>
+<span class="line"><span style="color:#24292E">        }</span></span>
+<span class="line"><span style="color:#24292E">    }</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#D73A49">    static</span><span style="color:#D73A49"> final</span><span style="color:#D73A49"> class</span><span style="color:#6F42C1"> PublishingOperation</span><span style="color:#D73A49"> implements</span><span style="color:#6F42C1"> Operation</span><span style="color:#24292E"> {</span></span>
+<span class="line"><span style="color:#24292E">        @</span><span style="color:#D73A49">Override</span></span>
+<span class="line"><span style="color:#D73A49">        public</span><span style="color:#D73A49"> int</span><span style="color:#6F42C1"> apply</span><span style="color:#24292E">(Pair </span><span style="color:#E36209">pair</span><span style="color:#24292E">) {</span></span>
+<span class="line"><span style="color:#6A737D">            // 输入改变后让接收的对象变得可观察，不主动触发异常或进程故障。</span></span>
+<span class="line"><span style="color:#24292E">            published </span><span style="color:#D73A49">=</span><span style="color:#24292E"> pair;</span></span>
+<span class="line"><span style="color:#D73A49">            return</span><span style="color:#24292E"> pair.left </span><span style="color:#D73A49">-</span><span style="color:#24292E"> pair.right;</span></span>
+<span class="line"><span style="color:#24292E">        }</span></span>
+<span class="line"><span style="color:#24292E">    }</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#6A737D">    /** 固定调用数与循环上限，所有结果进入最终输出。 */</span></span>
+<span class="line"><span style="color:#D73A49">    public</span><span style="color:#D73A49"> static</span><span style="color:#D73A49"> void</span><span style="color:#6F42C1"> main</span><span style="color:#24292E">(</span><span style="color:#D73A49">String</span><span style="color:#24292E">[] </span><span style="color:#E36209">args</span><span style="color:#24292E">) {</span></span>
+<span class="line"><span style="color:#24292E">        Operation first </span><span style="color:#D73A49">=</span><span style="color:#D73A49"> new</span><span style="color:#6F42C1"> LocalOperation</span><span style="color:#24292E">();</span></span>
+<span class="line"><span style="color:#24292E">        Operation second </span><span style="color:#D73A49">=</span><span style="color:#D73A49"> new</span><span style="color:#6F42C1"> PublishingOperation</span><span style="color:#24292E">();</span></span>
+<span class="line"><span style="color:#D73A49">        long</span><span style="color:#24292E"> result </span><span style="color:#D73A49">=</span><span style="color:#005CC5"> 0</span><span style="color:#24292E">;</span></span>
+<span class="line"><span style="color:#24292E">        System.out.</span><span style="color:#6F42C1">println</span><span style="color:#24292E">(</span><span style="color:#032F62">"阶段=局部接收者；次数=100000"</span><span style="color:#24292E">);</span></span>
+<span class="line"><span style="color:#D73A49">        for</span><span style="color:#24292E"> (</span><span style="color:#D73A49">int</span><span style="color:#24292E"> i </span><span style="color:#D73A49">=</span><span style="color:#005CC5"> 0</span><span style="color:#24292E">; i </span><span style="color:#D73A49">&#x3C;</span><span style="color:#005CC5"> 100_000</span><span style="color:#24292E">; i</span><span style="color:#D73A49">++</span><span style="color:#24292E">) {</span></span>
+<span class="line"><span style="color:#24292E">            result </span><span style="color:#D73A49">+=</span><span style="color:#6F42C1"> evaluate</span><span style="color:#24292E">(first, i);</span></span>
+<span class="line"><span style="color:#24292E">        }</span></span>
+<span class="line"><span style="color:#24292E">        System.out.</span><span style="color:#6F42C1">println</span><span style="color:#24292E">(</span><span style="color:#032F62">"阶段=更换接收者；结果="</span><span style="color:#D73A49"> +</span><span style="color:#24292E"> result);</span></span>
+<span class="line"><span style="color:#D73A49">        for</span><span style="color:#24292E"> (</span><span style="color:#D73A49">int</span><span style="color:#24292E"> i </span><span style="color:#D73A49">=</span><span style="color:#005CC5"> 0</span><span style="color:#24292E">; i </span><span style="color:#D73A49">&#x3C;</span><span style="color:#005CC5"> 50_000</span><span style="color:#24292E">; i</span><span style="color:#D73A49">++</span><span style="color:#24292E">) {</span></span>
+<span class="line"><span style="color:#24292E">            result </span><span style="color:#D73A49">+=</span><span style="color:#6F42C1"> evaluate</span><span style="color:#24292E">(second, i);</span></span>
+<span class="line"><span style="color:#24292E">        }</span></span>
+<span class="line"><span style="color:#24292E">        System.out.</span><span style="color:#6F42C1">println</span><span style="color:#24292E">(</span><span style="color:#032F62">"阶段=长循环开始；发布字段="</span><span style="color:#D73A49"> +</span><span style="color:#24292E"> published.left </span><span style="color:#D73A49">+</span><span style="color:#032F62"> ","</span><span style="color:#D73A49"> +</span><span style="color:#24292E"> published.right);</span></span>
+<span class="line"><span style="color:#24292E">        result </span><span style="color:#D73A49">+=</span><span style="color:#6F42C1"> longLoop</span><span style="color:#24292E">(</span><span style="color:#005CC5">3_000_000</span><span style="color:#24292E">);</span></span>
+<span class="line"><span style="color:#24292E">        System.out.</span><span style="color:#6F42C1">println</span><span style="color:#24292E">(</span><span style="color:#032F62">"阶段=正常结束；结果="</span><span style="color:#D73A49"> +</span><span style="color:#24292E"> result);</span></span>
+<span class="line"><span style="color:#24292E">        published </span><span style="color:#D73A49">=</span><span style="color:#005CC5"> null</span><span style="color:#24292E">;</span></span>
+<span class="line"><span style="color:#24292E">    }</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#D73A49">    private</span><span style="color:#D73A49"> static</span><span style="color:#D73A49"> int</span><span style="color:#6F42C1"> evaluate</span><span style="color:#24292E">(Operation </span><span style="color:#E36209">operation</span><span style="color:#24292E">, </span><span style="color:#D73A49">int</span><span style="color:#E36209"> value</span><span style="color:#24292E">) {</span></span>
+<span class="line"><span style="color:#24292E">        Pair pair </span><span style="color:#D73A49">=</span><span style="color:#D73A49"> new</span><span style="color:#6F42C1"> Pair</span><span style="color:#24292E">(value, value </span><span style="color:#D73A49">+</span><span style="color:#005CC5"> 1</span><span style="color:#24292E">);</span></span>
+<span class="line"><span style="color:#D73A49">        return</span><span style="color:#24292E"> operation.</span><span style="color:#6F42C1">apply</span><span style="color:#24292E">(pair) </span><span style="color:#D73A49">+</span><span style="color:#24292E"> pair.left;</span></span>
+<span class="line"><span style="color:#24292E">    }</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#D73A49">    private</span><span style="color:#D73A49"> static</span><span style="color:#D73A49"> long</span><span style="color:#6F42C1"> longLoop</span><span style="color:#24292E">(</span><span style="color:#D73A49">int</span><span style="color:#E36209"> limit</span><span style="color:#24292E">) {</span></span>
+<span class="line"><span style="color:#D73A49">        long</span><span style="color:#24292E"> result </span><span style="color:#D73A49">=</span><span style="color:#005CC5"> 0</span><span style="color:#24292E">;</span></span>
+<span class="line"><span style="color:#D73A49">        for</span><span style="color:#24292E"> (</span><span style="color:#D73A49">int</span><span style="color:#24292E"> i </span><span style="color:#D73A49">=</span><span style="color:#005CC5"> 0</span><span style="color:#24292E">; i </span><span style="color:#D73A49">&#x3C;</span><span style="color:#24292E"> limit; i</span><span style="color:#D73A49">++</span><span style="color:#24292E">) {</span></span>
+<span class="line"><span style="color:#24292E">            result </span><span style="color:#D73A49">=</span><span style="color:#24292E"> result </span><span style="color:#D73A49">*</span><span style="color:#005CC5"> 31</span><span style="color:#D73A49"> +</span><span style="color:#24292E"> i;</span></span>
+<span class="line"><span style="color:#24292E">        }</span></span>
+<span class="line"><span style="color:#D73A49">        return</span><span style="color:#24292E"> result;</span></span>
+<span class="line"><span style="color:#24292E">    }</span></span>
+<span class="line"><span style="color:#24292E">}</span></span>
+<span class="line"></span></code></pre></main></body></html>

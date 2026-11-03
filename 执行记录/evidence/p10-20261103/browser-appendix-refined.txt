@@ -1,0 +1,4 @@
+出版：appendices/a-terms/appendix.html
+出版：appendices/c-commands/appendix.html
+出版：appendices/d-source-map/appendix.html
+出版：appendices/f-environments/appendix.html

@@ -1,0 +1,20 @@
+跳到正文	#main
+Java 虚拟机原理图文书	../../index.html
+30.1 启动器与运行时初始化	#sec-30-1
+30.2 类加载与入口选择	#sec-30-2
+30.3 类数据共享的基础机制	#sec-30-3
+30.4 应用归档与兼容条件	#sec-30-4
+30.5 正常退出与异常终止	#sec-30-5
+观察与边界	#observe
+回顾与思考	#review
+来源与实现入口	#sources
+教学源码	sources.html
+运行说明	README.html
+证据索引	evidence/索引.md
+运行记录	evidence/runs/ch30-20261103-01/记录.md
+25版java命令	https://docs.oracle.com/en/java/javase/25/docs/specs/man/java.html
+语言规范12.1.4	https://docs.oracle.com/javase/specs/jls/se25/html/jls-12.html#jls-12.1.4
+Runtime契约	https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Runtime.html
+上一章：第29章	../ch29-scoped-concurrency/chapter.html
+下一章：第31章	../ch31-aot-cache/chapter.html
+返回全书目录	../../index.html#part-7

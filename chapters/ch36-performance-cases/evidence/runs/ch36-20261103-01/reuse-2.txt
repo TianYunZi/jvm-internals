@@ -1,0 +1,5 @@
+案例 pid=84053 mode=reuse time=2026-11-03T13:40:09.687375Z processors=8
+测量 count=40000 wallNs=2558792 p50Ns=42 p99Ns=84 maxNs=5500 threadAllocatedBytes=320016
+real 0.08
+user 0.08
+sys 0.02

@@ -1,0 +1,9 @@
+代理启动 retransform=true redefine=true
+变换回调 phase=load inputBytes=414 replacement=load
+目标 pid=81563 time=2026-11-03T13:33:05.499293Z value=load
+变换回调 phase=existing inputBytes=414 replacement=retransform
+重转换 value=retransform
+变换回调 phase=existing inputBytes=414 replacement=redefine
+重定义 value=redefine
+诊断窗口开始
+诊断窗口结束

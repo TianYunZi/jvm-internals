@@ -1,0 +1,9 @@
+11月 03, 2026 12:07:01 下午 org.example.jvminternals.ch07.InitializationRace main
+INFO: 开始有界并发初始化观察
+11月 03, 2026 12:07:01 下午 org.example.jvminternals.ch07.InitializationRace$Lazy initialize
+INFO: 初始化所有者进入，等待观察窗口结束
+observe.pid=21261 seconds=25
+contender.value=73
+owner.value=73
+11月 03, 2026 12:07:26 下午 org.example.jvminternals.ch07.InitializationRace main
+INFO: 有界并发初始化观察结束

@@ -1,0 +1,7 @@
+tools/code-highlighting/config-p06.json:3:  "shikiVersion": "4.6.0",
+tools/code-highlighting/render.mjs:51:  return highlighter.codeToHtml(code,{lang,theme:config.theme})
+tools/code-highlighting/render.mjs:52:    .replace('<pre ',`<pre data-shiki-version="${config.shikiVersion}" `)
+tools/code-highlighting/render.mjs:58:  const tokens=highlighter.codeToHtml(code,{lang,theme:config.theme,structure:'inline'});
+tools/code-highlighting/render.mjs:59:  return `<code class="shiki-inline" data-shiki-version="${config.shikiVersion}" data-code-id="${id}" data-code-language="${lang}">${tokens}</code>`;
+tools/code-highlighting/render.mjs:110:  return `<!doctype html><html lang="zh-CN"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="shiki-version" content="${config.shikiVersion}"><title>第${n}章${label}</title><link rel="stylesheet" href="../../assets/book.css"></head><body><main class="home" id="main"><h1>第${n}章${label}</h1>${content}</main></body></html>`;
+tools/code-highlighting/render.mjs:135:  await writeFile(join(reportDir,'shiki-generation.json'),JSON.stringify({version:config.shikiVersion,theme:config.theme,languages:config.languages,plainTextLanguage:config.plainTextLanguage,records},null,2)+'\n');

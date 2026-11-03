@@ -1,0 +1,220 @@
+<!doctype html>
+<html lang="zh-CN"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<title>第 4 章 · 教学源码阅读页</title><link rel="stylesheet" href="../../assets/book.css"></head><body>
+<a class="skip-link" href="#sources">跳到教学源码</a>
+<header class="book-header"><a href="chapter.html">返回第 4 章：类文件结构与信息表达</a></header>
+<main class="home" id="sources"><h1>第 4 章 · 教学源码</h1>
+<p>四组示例的完整代码。正式源文件位于本章 <code class="shiki-inline" data-shiki-version="4.6.0" data-code-id="code-005" data-code-language="text"><span>src/main/java/</span></code>，本页由这些文件生成，便于浏览器直接阅读；编译与运行方法见 <a href="README.html">运行说明</a>。</p>
+<nav aria-label="示例导航"><p>
+<a href="#ch04-e01">CH04-E01</a> · <a href="#ch04-e02">CH04-E02</a> · <a href="#ch04-e03">CH04-E03</a> · <a href="#ch04-e04">CH04-E04</a>
+</p></nav>
+<section id="ch04-e01"><h2>CH04-E01 · 泛型、成员与异常处理</h2><p>源文件：<code class="shiki-inline" data-shiki-version="4.6.0" data-code-id="code-006" data-code-language="text"><span>src/main/java/org/example/jvminternals/ch04/structure/ClassfileSubject.java</span></code></p><pre data-shiki-version="4.6.0" class="shiki github-light" style="background-color:#fff;color:#24292e" tabindex="0"><code data-code-id="code-001" data-code-language="java"><span class="line"><span style="color:#D73A49">package</span><span style="color:#24292E"> org.example.jvminternals.ch04.structure;</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#6A737D">/**</span></span>
+<span class="line"><span style="color:#6A737D"> * CH04-E01：供反汇编阅读的泛型类；不承担校验或故障复现职责。</span></span>
+<span class="line"><span style="color:#6A737D"> * 泛型上界令字段描述符与泛型签名呈现不同的信息。</span></span>
+<span class="line"><span style="color:#6A737D"> *</span></span>
+<span class="line"><span style="color:#6A737D"> * </span><span style="color:#D73A49">@param</span><span style="color:#E36209"> &#x3C;T></span><span style="color:#6A737D"> 数值类型</span></span>
+<span class="line"><span style="color:#6A737D"> */</span></span>
+<span class="line"><span style="color:#D73A49">public</span><span style="color:#D73A49"> final</span><span style="color:#D73A49"> class</span><span style="color:#6F42C1"> ClassfileSubject</span><span style="color:#24292E">&#x3C;</span><span style="color:#D73A49">T</span><span style="color:#D73A49"> extends</span><span style="color:#D73A49"> Number</span><span style="color:#24292E">> {</span></span>
+<span class="line"><span style="color:#D73A49">    public</span><span style="color:#D73A49"> static</span><span style="color:#D73A49"> final</span><span style="color:#24292E"> String LABEL </span><span style="color:#D73A49">=</span><span style="color:#032F62"> "classfile"</span><span style="color:#24292E">;</span></span>
+<span class="line"><span style="color:#D73A49">    private</span><span style="color:#D73A49"> final</span><span style="color:#24292E"> T value;</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#6A737D">    /** 保存数值，供泛型字段与访问方法的结构观察使用。 */</span></span>
+<span class="line"><span style="color:#D73A49">    public</span><span style="color:#6F42C1"> ClassfileSubject</span><span style="color:#24292E">(T </span><span style="color:#E36209">value</span><span style="color:#24292E">) {</span></span>
+<span class="line"><span style="color:#005CC5">        this</span><span style="color:#24292E">.value </span><span style="color:#D73A49">=</span><span style="color:#24292E"> value;</span></span>
+<span class="line"><span style="color:#24292E">    }</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#6A737D">    /** 返回数值；描述符中的擦除类型为 Number。 */</span></span>
+<span class="line"><span style="color:#D73A49">    public</span><span style="color:#24292E"> T </span><span style="color:#6F42C1">value</span><span style="color:#24292E">() {</span></span>
+<span class="line"><span style="color:#D73A49">        return</span><span style="color:#24292E"> value;</span></span>
+<span class="line"><span style="color:#24292E">    }</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#6A737D">    /**</span></span>
+<span class="line"><span style="color:#6A737D">     * 把输入转为整数，空输入或非整数输入采用字段值。</span></span>
+<span class="line"><span style="color:#6A737D">     * 分支和异常处理用于展示 Code、异常表及栈映射之间的关系。</span></span>
+<span class="line"><span style="color:#6A737D">     */</span></span>
+<span class="line"><span style="color:#D73A49">    public</span><span style="color:#D73A49"> int</span><span style="color:#6F42C1"> parseOrDefault</span><span style="color:#24292E">(String </span><span style="color:#E36209">input</span><span style="color:#24292E">) {</span></span>
+<span class="line"><span style="color:#D73A49">        if</span><span style="color:#24292E"> (input </span><span style="color:#D73A49">==</span><span style="color:#005CC5"> null</span><span style="color:#24292E">) {</span></span>
+<span class="line"><span style="color:#D73A49">            return</span><span style="color:#24292E"> value.</span><span style="color:#6F42C1">intValue</span><span style="color:#24292E">();</span></span>
+<span class="line"><span style="color:#24292E">        }</span></span>
+<span class="line"><span style="color:#D73A49">        try</span><span style="color:#24292E"> {</span></span>
+<span class="line"><span style="color:#D73A49">            return</span><span style="color:#24292E"> Integer.</span><span style="color:#6F42C1">parseInt</span><span style="color:#24292E">(input);</span></span>
+<span class="line"><span style="color:#24292E">        } </span><span style="color:#D73A49">catch</span><span style="color:#24292E"> (NumberFormatException </span><span style="color:#E36209">exception</span><span style="color:#24292E">) {</span></span>
+<span class="line"><span style="color:#6A737D">            // 输入不符合整数格式属于本方法的正常回退契约。</span></span>
+<span class="line"><span style="color:#D73A49">            return</span><span style="color:#24292E"> value.</span><span style="color:#6F42C1">intValue</span><span style="color:#24292E">();</span></span>
+<span class="line"><span style="color:#24292E">        }</span></span>
+<span class="line"><span style="color:#24292E">    }</span></span>
+<span class="line"><span style="color:#24292E">}</span></span>
+<span class="line"></span></code></pre></section>
+<section id="ch04-e02"><h2>CH04-E02 · 现代声明与反射</h2><p>源文件：<code class="shiki-inline" data-shiki-version="4.6.0" data-code-id="code-007" data-code-language="text"><span>src/main/java/org/example/jvminternals/ch04/modern/ModernShapes.java</span></code></p><pre data-shiki-version="4.6.0" class="shiki github-light" style="background-color:#fff;color:#24292e" tabindex="0"><code data-code-id="code-002" data-code-language="java"><span class="line"><span style="color:#D73A49">package</span><span style="color:#24292E"> org.example.jvminternals.ch04.modern;</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#D73A49">import</span><span style="color:#24292E"> java.lang.annotation.Retention;</span></span>
+<span class="line"><span style="color:#D73A49">import</span><span style="color:#24292E"> java.lang.annotation.RetentionPolicy;</span></span>
+<span class="line"><span style="color:#D73A49">import</span><span style="color:#24292E"> java.lang.annotation.Target;</span></span>
+<span class="line"><span style="color:#D73A49">import</span><span style="color:#24292E"> java.lang.annotation.ElementType;</span></span>
+<span class="line"><span style="color:#D73A49">import</span><span style="color:#24292E"> java.util.Arrays;</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#6A737D">/** CH04-E02：将现代类声明、嵌套关系与反射可见信息放在同一组产物中观察。 */</span></span>
+<span class="line"><span style="color:#D73A49">public</span><span style="color:#D73A49"> final</span><span style="color:#D73A49"> class</span><span style="color:#6F42C1"> ModernShapes</span><span style="color:#24292E"> {</span></span>
+<span class="line"><span style="color:#D73A49">    private</span><span style="color:#D73A49"> static</span><span style="color:#D73A49"> final</span><span style="color:#24292E"> System.Logger LOGGER </span><span style="color:#D73A49">=</span><span style="color:#24292E"> System.</span><span style="color:#6F42C1">getLogger</span><span style="color:#24292E">(ModernShapes.class.</span><span style="color:#6F42C1">getName</span><span style="color:#24292E">());</span></span>
+<span class="line"><span style="color:#D73A49">    private</span><span style="color:#D73A49"> final</span><span style="color:#D73A49"> int</span><span style="color:#24292E"> offset;</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#6A737D">    /** 创建外部实例；非静态成员类会保留对该实例的引用。 */</span></span>
+<span class="line"><span style="color:#D73A49">    public</span><span style="color:#6F42C1"> ModernShapes</span><span style="color:#24292E">(</span><span style="color:#D73A49">int</span><span style="color:#E36209"> offset</span><span style="color:#24292E">) {</span></span>
+<span class="line"><span style="color:#005CC5">        this</span><span style="color:#24292E">.offset </span><span style="color:#D73A49">=</span><span style="color:#24292E"> offset;</span></span>
+<span class="line"><span style="color:#24292E">    }</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#6A737D">    /** 运行期保留的类型注解，供反射读取。 */</span></span>
+<span class="line"><span style="color:#24292E">    @</span><span style="color:#D73A49">Retention</span><span style="color:#24292E">(RetentionPolicy.RUNTIME)</span></span>
+<span class="line"><span style="color:#24292E">    @</span><span style="color:#D73A49">Target</span><span style="color:#24292E">(ElementType.TYPE)</span></span>
+<span class="line"><span style="color:#D73A49">    public</span><span style="color:#24292E"> @</span><span style="color:#D73A49">interface</span><span style="color:#D73A49"> RuntimeTag</span><span style="color:#24292E"> {</span></span>
+<span class="line"><span style="color:#24292E">    }</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#6A737D">    /** 只保留在类文件中的类型注解，普通运行期注解查询不可见。 */</span></span>
+<span class="line"><span style="color:#24292E">    @</span><span style="color:#D73A49">Retention</span><span style="color:#24292E">(RetentionPolicy.CLASS)</span></span>
+<span class="line"><span style="color:#24292E">    @</span><span style="color:#D73A49">Target</span><span style="color:#24292E">(ElementType.TYPE)</span></span>
+<span class="line"><span style="color:#D73A49">    public</span><span style="color:#24292E"> @</span><span style="color:#D73A49">interface</span><span style="color:#D73A49"> ClassTag</span><span style="color:#24292E"> {</span></span>
+<span class="line"><span style="color:#24292E">    }</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#6A737D">    /** 密封接口的允许实现集合写入 PermittedSubclasses 属性。 */</span></span>
+<span class="line"><span style="color:#D73A49">    public</span><span style="color:#D73A49"> sealed</span><span style="color:#D73A49"> interface</span><span style="color:#6F42C1"> Shape</span><span style="color:#D73A49"> permits</span><span style="color:#6F42C1"> Point</span><span style="color:#24292E"> {</span></span>
+<span class="line"><span style="color:#24292E">    }</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#6A737D">    /** 记录组件由 Record 属性描述，访问器等仍以普通方法表示。 */</span></span>
+<span class="line"><span style="color:#24292E">    @</span><span style="color:#D73A49">RuntimeTag</span></span>
+<span class="line"><span style="color:#24292E">    @</span><span style="color:#D73A49">ClassTag</span></span>
+<span class="line"><span style="color:#D73A49">    public</span><span style="color:#D73A49"> record</span><span style="color:#6F42C1"> Point</span><span style="color:#24292E">(</span><span style="color:#D73A49">int</span><span style="color:#24292E"> x, </span><span style="color:#D73A49">int</span><span style="color:#24292E"> y) </span><span style="color:#D73A49">implements</span><span style="color:#6F42C1"> Shape</span><span style="color:#24292E"> {</span></span>
+<span class="line"><span style="color:#24292E">    }</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#6A737D">    /** 非静态成员类访问外部私有字段，用于解释内部类和巢成员的不同职责。 */</span></span>
+<span class="line"><span style="color:#D73A49">    public</span><span style="color:#D73A49"> final</span><span style="color:#D73A49"> class</span><span style="color:#6F42C1"> Member</span><span style="color:#24292E"> {</span></span>
+<span class="line"><span style="color:#6A737D">        /** 返回外部实例字段；它与巢主关系及外部实例引用分别有关。 */</span></span>
+<span class="line"><span style="color:#D73A49">        public</span><span style="color:#D73A49"> int</span><span style="color:#6F42C1"> offset</span><span style="color:#24292E">() {</span></span>
+<span class="line"><span style="color:#D73A49">            return</span><span style="color:#24292E"> ModernShapes.this.offset;</span></span>
+<span class="line"><span style="color:#24292E">        }</span></span>
+<span class="line"><span style="color:#24292E">    }</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#6A737D">    /** 输出反射元数据；不比较预期值、不包含断言。 */</span></span>
+<span class="line"><span style="color:#D73A49">    public</span><span style="color:#D73A49"> static</span><span style="color:#D73A49"> void</span><span style="color:#6F42C1"> main</span><span style="color:#24292E">(</span><span style="color:#D73A49">String</span><span style="color:#24292E">[] </span><span style="color:#E36209">args</span><span style="color:#24292E">) {</span></span>
+<span class="line"><span style="color:#24292E">        LOGGER.</span><span style="color:#6F42C1">log</span><span style="color:#24292E">(System.Logger.Level.INFO, </span><span style="color:#032F62">"开始读取记录类、密封接口与注解元数据"</span><span style="color:#24292E">);</span></span>
+<span class="line"><span style="color:#24292E">        System.out.</span><span style="color:#6F42C1">println</span><span style="color:#24292E">(</span><span style="color:#032F62">"Point.isRecord="</span><span style="color:#D73A49"> +</span><span style="color:#24292E"> Point.class.</span><span style="color:#6F42C1">isRecord</span><span style="color:#24292E">());</span></span>
+<span class="line"><span style="color:#24292E">        System.out.</span><span style="color:#6F42C1">println</span><span style="color:#24292E">(</span><span style="color:#032F62">"Point.recordComponents="</span><span style="color:#D73A49"> +</span><span style="color:#24292E"> Arrays.</span><span style="color:#6F42C1">toString</span><span style="color:#24292E">(Point.class.</span><span style="color:#6F42C1">getRecordComponents</span><span style="color:#24292E">()));</span></span>
+<span class="line"><span style="color:#24292E">        System.out.</span><span style="color:#6F42C1">println</span><span style="color:#24292E">(</span><span style="color:#032F62">"Point.annotations="</span><span style="color:#D73A49"> +</span><span style="color:#24292E"> Arrays.</span><span style="color:#6F42C1">toString</span><span style="color:#24292E">(Point.class.</span><span style="color:#6F42C1">getDeclaredAnnotations</span><span style="color:#24292E">()));</span></span>
+<span class="line"><span style="color:#24292E">        System.out.</span><span style="color:#6F42C1">println</span><span style="color:#24292E">(</span><span style="color:#032F62">"Shape.isSealed="</span><span style="color:#D73A49"> +</span><span style="color:#24292E"> Shape.class.</span><span style="color:#6F42C1">isSealed</span><span style="color:#24292E">());</span></span>
+<span class="line"><span style="color:#24292E">        System.out.</span><span style="color:#6F42C1">println</span><span style="color:#24292E">(</span><span style="color:#032F62">"Shape.permitted="</span><span style="color:#D73A49"> +</span><span style="color:#24292E"> Arrays.</span><span style="color:#6F42C1">toString</span><span style="color:#24292E">(Shape.class.</span><span style="color:#6F42C1">getPermittedSubclasses</span><span style="color:#24292E">()));</span></span>
+<span class="line"><span style="color:#24292E">        System.out.</span><span style="color:#6F42C1">println</span><span style="color:#24292E">(</span><span style="color:#032F62">"Member.nestHost="</span><span style="color:#D73A49"> +</span><span style="color:#24292E"> Member.class.</span><span style="color:#6F42C1">getNestHost</span><span style="color:#24292E">().</span><span style="color:#6F42C1">getName</span><span style="color:#24292E">());</span></span>
+<span class="line"><span style="color:#24292E">        LOGGER.</span><span style="color:#6F42C1">log</span><span style="color:#24292E">(System.Logger.Level.INFO, </span><span style="color:#032F62">"元数据读取结束"</span><span style="color:#24292E">);</span></span>
+<span class="line"><span style="color:#24292E">    }</span></span>
+<span class="line"><span style="color:#24292E">}</span></span>
+<span class="line"></span></code></pre></section>
+<section id="ch04-e03"><h2>CH04-E03 · 类文件模型读取</h2><p>源文件：<code class="shiki-inline" data-shiki-version="4.6.0" data-code-id="code-008" data-code-language="text"><span>src/main/java/org/example/jvminternals/ch04/model/ClassfileExplorer.java</span></code></p><pre data-shiki-version="4.6.0" class="shiki github-light" style="background-color:#fff;color:#24292e" tabindex="0"><code data-code-id="code-003" data-code-language="java"><span class="line"><span style="color:#D73A49">package</span><span style="color:#24292E"> org.example.jvminternals.ch04.model;</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#D73A49">import</span><span style="color:#24292E"> java.io.IOException;</span></span>
+<span class="line"><span style="color:#D73A49">import</span><span style="color:#24292E"> java.lang.classfile.ClassFile;</span></span>
+<span class="line"><span style="color:#D73A49">import</span><span style="color:#24292E"> java.lang.classfile.ClassModel;</span></span>
+<span class="line"><span style="color:#D73A49">import</span><span style="color:#24292E"> java.nio.file.Path;</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#6A737D">/** CH04-E03：读取指定类文件，按字段、方法和属性层级输出不可变模型。 */</span></span>
+<span class="line"><span style="color:#D73A49">public</span><span style="color:#D73A49"> final</span><span style="color:#D73A49"> class</span><span style="color:#6F42C1"> ClassfileExplorer</span><span style="color:#24292E"> {</span></span>
+<span class="line"><span style="color:#D73A49">    private</span><span style="color:#D73A49"> static</span><span style="color:#D73A49"> final</span><span style="color:#24292E"> System.Logger LOGGER </span><span style="color:#D73A49">=</span><span style="color:#24292E"> System.</span><span style="color:#6F42C1">getLogger</span><span style="color:#24292E">(ClassfileExplorer.class.</span><span style="color:#6F42C1">getName</span><span style="color:#24292E">());</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#D73A49">    private</span><span style="color:#6F42C1"> ClassfileExplorer</span><span style="color:#24292E">() {</span></span>
+<span class="line"><span style="color:#24292E">    }</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#6A737D">    /**</span></span>
+<span class="line"><span style="color:#6A737D">     * 接收一个本地类文件路径；输入错误由进程入口传播并显示原因。</span></span>
+<span class="line"><span style="color:#6A737D">     * 只访问模型，不定义类、不运行目标方法，也不调用校验器。</span></span>
+<span class="line"><span style="color:#6A737D">     */</span></span>
+<span class="line"><span style="color:#D73A49">    public</span><span style="color:#D73A49"> static</span><span style="color:#D73A49"> void</span><span style="color:#6F42C1"> main</span><span style="color:#24292E">(</span><span style="color:#D73A49">String</span><span style="color:#24292E">[] </span><span style="color:#E36209">args</span><span style="color:#24292E">) </span><span style="color:#D73A49">throws</span><span style="color:#24292E"> IOException {</span></span>
+<span class="line"><span style="color:#D73A49">        if</span><span style="color:#24292E"> (args.length </span><span style="color:#D73A49">!=</span><span style="color:#005CC5"> 1</span><span style="color:#24292E">) {</span></span>
+<span class="line"><span style="color:#D73A49">            throw</span><span style="color:#D73A49"> new</span><span style="color:#6F42C1"> IllegalArgumentException</span><span style="color:#24292E">(</span><span style="color:#032F62">"用法：ClassfileExplorer &#x3C;类文件路径>"</span><span style="color:#24292E">);</span></span>
+<span class="line"><span style="color:#24292E">        }</span></span>
+<span class="line"><span style="color:#24292E">        LOGGER.</span><span style="color:#6F42C1">log</span><span style="color:#24292E">(System.Logger.Level.INFO, </span><span style="color:#032F62">"开始读取类文件模型"</span><span style="color:#24292E">);</span></span>
+<span class="line"><span style="color:#24292E">        ClassModel model </span><span style="color:#D73A49">=</span><span style="color:#24292E"> ClassFile.</span><span style="color:#6F42C1">of</span><span style="color:#24292E">().</span><span style="color:#6F42C1">parse</span><span style="color:#24292E">(Path.</span><span style="color:#6F42C1">of</span><span style="color:#24292E">(args[</span><span style="color:#005CC5">0</span><span style="color:#24292E">]));</span></span>
+<span class="line"><span style="color:#24292E">        System.out.</span><span style="color:#6F42C1">printf</span><span style="color:#24292E">(</span><span style="color:#032F62">"class=%s version=%d.%d%n"</span><span style="color:#24292E">, model.</span><span style="color:#6F42C1">thisClass</span><span style="color:#24292E">().</span><span style="color:#6F42C1">asInternalName</span><span style="color:#24292E">(),</span></span>
+<span class="line"><span style="color:#24292E">                model.</span><span style="color:#6F42C1">majorVersion</span><span style="color:#24292E">(), model.</span><span style="color:#6F42C1">minorVersion</span><span style="color:#24292E">());</span></span>
+<span class="line"><span style="color:#D73A49">        for</span><span style="color:#24292E"> (</span><span style="color:#D73A49">var</span><span style="color:#24292E"> field </span><span style="color:#D73A49">:</span><span style="color:#24292E"> model.</span><span style="color:#6F42C1">fields</span><span style="color:#24292E">()) {</span></span>
+<span class="line"><span style="color:#24292E">            System.out.</span><span style="color:#6F42C1">printf</span><span style="color:#24292E">(</span><span style="color:#032F62">"field=%s descriptor=%s%n"</span><span style="color:#24292E">, field.</span><span style="color:#6F42C1">fieldName</span><span style="color:#24292E">().</span><span style="color:#6F42C1">stringValue</span><span style="color:#24292E">(),</span></span>
+<span class="line"><span style="color:#24292E">                    field.</span><span style="color:#6F42C1">fieldType</span><span style="color:#24292E">().</span><span style="color:#6F42C1">stringValue</span><span style="color:#24292E">());</span></span>
+<span class="line"><span style="color:#24292E">        }</span></span>
+<span class="line"><span style="color:#D73A49">        for</span><span style="color:#24292E"> (</span><span style="color:#D73A49">var</span><span style="color:#24292E"> method </span><span style="color:#D73A49">:</span><span style="color:#24292E"> model.</span><span style="color:#6F42C1">methods</span><span style="color:#24292E">()) {</span></span>
+<span class="line"><span style="color:#24292E">            System.out.</span><span style="color:#6F42C1">printf</span><span style="color:#24292E">(</span><span style="color:#032F62">"method=%s descriptor=%s%n"</span><span style="color:#24292E">, method.</span><span style="color:#6F42C1">methodName</span><span style="color:#24292E">().</span><span style="color:#6F42C1">stringValue</span><span style="color:#24292E">(),</span></span>
+<span class="line"><span style="color:#24292E">                    method.</span><span style="color:#6F42C1">methodType</span><span style="color:#24292E">().</span><span style="color:#6F42C1">stringValue</span><span style="color:#24292E">());</span></span>
+<span class="line"><span style="color:#24292E">            method.</span><span style="color:#6F42C1">code</span><span style="color:#24292E">().</span><span style="color:#6F42C1">ifPresent</span><span style="color:#24292E">(code </span><span style="color:#D73A49">-></span><span style="color:#24292E"> {</span></span>
+<span class="line"><span style="color:#D73A49">                for</span><span style="color:#24292E"> (</span><span style="color:#D73A49">var</span><span style="color:#24292E"> element </span><span style="color:#D73A49">:</span><span style="color:#24292E"> code) {</span></span>
+<span class="line"><span style="color:#24292E">                    System.out.</span><span style="color:#6F42C1">printf</span><span style="color:#24292E">(</span><span style="color:#032F62">"  code-element=%s%n"</span><span style="color:#24292E">, element);</span></span>
+<span class="line"><span style="color:#24292E">                }</span></span>
+<span class="line"><span style="color:#24292E">            });</span></span>
+<span class="line"><span style="color:#24292E">        }</span></span>
+<span class="line"><span style="color:#D73A49">        for</span><span style="color:#24292E"> (</span><span style="color:#D73A49">var</span><span style="color:#24292E"> attribute </span><span style="color:#D73A49">:</span><span style="color:#24292E"> model.</span><span style="color:#6F42C1">attributes</span><span style="color:#24292E">()) {</span></span>
+<span class="line"><span style="color:#24292E">            System.out.</span><span style="color:#6F42C1">println</span><span style="color:#24292E">(</span><span style="color:#032F62">"class-attribute="</span><span style="color:#D73A49"> +</span><span style="color:#24292E"> attribute.</span><span style="color:#6F42C1">attributeName</span><span style="color:#24292E">().</span><span style="color:#6F42C1">stringValue</span><span style="color:#24292E">());</span></span>
+<span class="line"><span style="color:#24292E">        }</span></span>
+<span class="line"><span style="color:#24292E">        LOGGER.</span><span style="color:#6F42C1">log</span><span style="color:#24292E">(System.Logger.Level.INFO, </span><span style="color:#032F62">"类文件模型读取结束"</span><span style="color:#24292E">);</span></span>
+<span class="line"><span style="color:#24292E">    }</span></span>
+<span class="line"><span style="color:#24292E">}</span></span>
+<span class="line"></span></code></pre></section>
+<section id="ch04-e04"><h2>CH04-E04 · 生成与变换</h2><p>源文件：<code class="shiki-inline" data-shiki-version="4.6.0" data-code-id="code-009" data-code-language="text"><span>src/main/java/org/example/jvminternals/ch04/transform/ClassfileWorkshop.java</span></code></p><pre data-shiki-version="4.6.0" class="shiki github-light" style="background-color:#fff;color:#24292e" tabindex="0"><code data-code-id="code-004" data-code-language="java"><span class="line"><span style="color:#D73A49">package</span><span style="color:#24292E"> org.example.jvminternals.ch04.transform;</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#D73A49">import</span><span style="color:#24292E"> java.io.IOException;</span></span>
+<span class="line"><span style="color:#D73A49">import</span><span style="color:#24292E"> java.lang.classfile.ClassFile;</span></span>
+<span class="line"><span style="color:#D73A49">import</span><span style="color:#24292E"> java.lang.classfile.ClassTransform;</span></span>
+<span class="line"><span style="color:#D73A49">import</span><span style="color:#24292E"> java.lang.classfile.Label;</span></span>
+<span class="line"><span style="color:#D73A49">import</span><span style="color:#24292E"> java.lang.classfile.instruction.ConstantInstruction;</span></span>
+<span class="line"><span style="color:#D73A49">import</span><span style="color:#24292E"> java.lang.constant.ClassDesc;</span></span>
+<span class="line"><span style="color:#D73A49">import</span><span style="color:#24292E"> java.lang.constant.ConstantDescs;</span></span>
+<span class="line"><span style="color:#D73A49">import</span><span style="color:#24292E"> java.lang.constant.MethodTypeDesc;</span></span>
+<span class="line"><span style="color:#D73A49">import</span><span style="color:#24292E"> java.nio.file.Files;</span></span>
+<span class="line"><span style="color:#D73A49">import</span><span style="color:#24292E"> java.nio.file.Path;</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#6A737D">/** CH04-E04：生成带分支的方法，再用元素流变换替换两个整数常量。 */</span></span>
+<span class="line"><span style="color:#D73A49">public</span><span style="color:#D73A49"> final</span><span style="color:#D73A49"> class</span><span style="color:#6F42C1"> ClassfileWorkshop</span><span style="color:#24292E"> {</span></span>
+<span class="line"><span style="color:#D73A49">    private</span><span style="color:#D73A49"> static</span><span style="color:#D73A49"> final</span><span style="color:#24292E"> System.Logger LOGGER </span><span style="color:#D73A49">=</span><span style="color:#24292E"> System.</span><span style="color:#6F42C1">getLogger</span><span style="color:#24292E">(ClassfileWorkshop.class.</span><span style="color:#6F42C1">getName</span><span style="color:#24292E">());</span></span>
+<span class="line"><span style="color:#D73A49">    private</span><span style="color:#D73A49"> static</span><span style="color:#D73A49"> final</span><span style="color:#24292E"> String CLASS_NAME </span><span style="color:#D73A49">=</span><span style="color:#032F62"> "GeneratedNumber.class"</span><span style="color:#24292E">;</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#D73A49">    private</span><span style="color:#6F42C1"> ClassfileWorkshop</span><span style="color:#24292E">() {</span></span>
+<span class="line"><span style="color:#24292E">    }</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#6A737D">    /**</span></span>
+<span class="line"><span style="color:#6A737D">     * 将原始和变换后的产物写入不同子目录；已有文件不覆盖。</span></span>
+<span class="line"><span style="color:#6A737D">     * 程序只生成产物供工具阅读，不加载产物或判断其业务正确性。</span></span>
+<span class="line"><span style="color:#6A737D">     */</span></span>
+<span class="line"><span style="color:#D73A49">    public</span><span style="color:#D73A49"> static</span><span style="color:#D73A49"> void</span><span style="color:#6F42C1"> main</span><span style="color:#24292E">(</span><span style="color:#D73A49">String</span><span style="color:#24292E">[] </span><span style="color:#E36209">args</span><span style="color:#24292E">) </span><span style="color:#D73A49">throws</span><span style="color:#24292E"> IOException {</span></span>
+<span class="line"><span style="color:#D73A49">        if</span><span style="color:#24292E"> (args.length </span><span style="color:#D73A49">!=</span><span style="color:#005CC5"> 1</span><span style="color:#24292E">) {</span></span>
+<span class="line"><span style="color:#D73A49">            throw</span><span style="color:#D73A49"> new</span><span style="color:#6F42C1"> IllegalArgumentException</span><span style="color:#24292E">(</span><span style="color:#032F62">"用法：ClassfileWorkshop &#x3C;新的输出目录>"</span><span style="color:#24292E">);</span></span>
+<span class="line"><span style="color:#24292E">        }</span></span>
+<span class="line"><span style="color:#24292E">        Path output </span><span style="color:#D73A49">=</span><span style="color:#24292E"> Path.</span><span style="color:#6F42C1">of</span><span style="color:#24292E">(args[</span><span style="color:#005CC5">0</span><span style="color:#24292E">]);</span></span>
+<span class="line"><span style="color:#24292E">        Files.</span><span style="color:#6F42C1">createDirectory</span><span style="color:#24292E">(output);</span></span>
+<span class="line"><span style="color:#24292E">        Path originalDirectory </span><span style="color:#D73A49">=</span><span style="color:#24292E"> Files.</span><span style="color:#6F42C1">createDirectory</span><span style="color:#24292E">(output.</span><span style="color:#6F42C1">resolve</span><span style="color:#24292E">(</span><span style="color:#032F62">"original"</span><span style="color:#24292E">));</span></span>
+<span class="line"><span style="color:#24292E">        Path transformedDirectory </span><span style="color:#D73A49">=</span><span style="color:#24292E"> Files.</span><span style="color:#6F42C1">createDirectory</span><span style="color:#24292E">(output.</span><span style="color:#6F42C1">resolve</span><span style="color:#24292E">(</span><span style="color:#032F62">"transformed"</span><span style="color:#24292E">));</span></span>
+<span class="line"><span style="color:#6A737D">        // 有分支时显式生成栈映射；不要靠手改指令偏移复制旧帧。</span></span>
+<span class="line"><span style="color:#24292E">        ClassFile classFile </span><span style="color:#D73A49">=</span><span style="color:#24292E"> ClassFile.</span><span style="color:#6F42C1">of</span><span style="color:#24292E">(ClassFile.StackMapsOption.GENERATE_STACK_MAPS);</span></span>
+<span class="line"><span style="color:#24292E">        LOGGER.</span><span style="color:#6F42C1">log</span><span style="color:#24292E">(System.Logger.Level.INFO, </span><span style="color:#032F62">"开始生成具有两个返回分支的类文件"</span><span style="color:#24292E">);</span></span>
+<span class="line"><span style="color:#D73A49">        byte</span><span style="color:#24292E">[] original </span><span style="color:#D73A49">=</span><span style="color:#24292E"> classFile.</span><span style="color:#6F42C1">build</span><span style="color:#24292E">(</span></span>
+<span class="line"><span style="color:#24292E">                ClassDesc.</span><span style="color:#6F42C1">of</span><span style="color:#24292E">(</span><span style="color:#032F62">"org.example.jvminternals.ch04.generated.GeneratedNumber"</span><span style="color:#24292E">),</span></span>
+<span class="line"><span style="color:#24292E">                builder </span><span style="color:#D73A49">-></span><span style="color:#24292E"> builder.</span><span style="color:#6F42C1">withFlags</span><span style="color:#24292E">(ClassFile.ACC_PUBLIC </span><span style="color:#D73A49">|</span><span style="color:#24292E"> ClassFile.ACC_FINAL)</span></span>
+<span class="line"><span style="color:#24292E">                        .</span><span style="color:#6F42C1">withMethodBody</span><span style="color:#24292E">(</span><span style="color:#032F62">"value"</span><span style="color:#24292E">, MethodTypeDesc.</span><span style="color:#6F42C1">of</span><span style="color:#24292E">(ConstantDescs.CD_int, ConstantDescs.CD_boolean),</span></span>
+<span class="line"><span style="color:#24292E">                                ClassFile.ACC_PUBLIC </span><span style="color:#D73A49">|</span><span style="color:#24292E"> ClassFile.ACC_STATIC, code </span><span style="color:#D73A49">-></span><span style="color:#24292E"> {</span></span>
+<span class="line"><span style="color:#24292E">                                    Label negative </span><span style="color:#D73A49">=</span><span style="color:#24292E"> code.</span><span style="color:#6F42C1">newLabel</span><span style="color:#24292E">();</span></span>
+<span class="line"><span style="color:#24292E">                                    code.</span><span style="color:#6F42C1">iload</span><span style="color:#24292E">(</span><span style="color:#005CC5">0</span><span style="color:#24292E">).</span><span style="color:#6F42C1">ifeq</span><span style="color:#24292E">(negative).</span><span style="color:#6F42C1">bipush</span><span style="color:#24292E">(</span><span style="color:#005CC5">7</span><span style="color:#24292E">).</span><span style="color:#6F42C1">ireturn</span><span style="color:#24292E">()</span></span>
+<span class="line"><span style="color:#24292E">                                            .</span><span style="color:#6F42C1">labelBinding</span><span style="color:#24292E">(negative).</span><span style="color:#6F42C1">bipush</span><span style="color:#24292E">(</span><span style="color:#D73A49">-</span><span style="color:#005CC5">7</span><span style="color:#24292E">).</span><span style="color:#6F42C1">ireturn</span><span style="color:#24292E">();</span></span>
+<span class="line"><span style="color:#24292E">                                }));</span></span>
+<span class="line"><span style="color:#24292E">        Files.</span><span style="color:#6F42C1">write</span><span style="color:#24292E">(originalDirectory.</span><span style="color:#6F42C1">resolve</span><span style="color:#24292E">(CLASS_NAME), original);</span></span>
+<span class="line"><span style="color:#D73A49">        byte</span><span style="color:#24292E">[] transformed </span><span style="color:#D73A49">=</span><span style="color:#24292E"> classFile.</span><span style="color:#6F42C1">transformClass</span><span style="color:#24292E">(classFile.</span><span style="color:#6F42C1">parse</span><span style="color:#24292E">(original),</span></span>
+<span class="line"><span style="color:#24292E">                ClassTransform.</span><span style="color:#6F42C1">transformingMethodBodies</span><span style="color:#24292E">((builder, element) </span><span style="color:#D73A49">-></span><span style="color:#24292E"> {</span></span>
+<span class="line"><span style="color:#D73A49">                    if</span><span style="color:#24292E"> (element </span><span style="color:#D73A49">instanceof</span><span style="color:#24292E"> ConstantInstruction constant</span></span>
+<span class="line"><span style="color:#D73A49">                            &#x26;&#x26;</span><span style="color:#24292E"> constant.</span><span style="color:#6F42C1">constantValue</span><span style="color:#24292E">() </span><span style="color:#D73A49">instanceof</span><span style="color:#24292E"> Integer value) {</span></span>
+<span class="line"><span style="color:#6A737D">                        // 本例生成的方法只包含这两个整数；其他元素原样转交。</span></span>
+<span class="line"><span style="color:#24292E">                        builder.</span><span style="color:#6F42C1">bipush</span><span style="color:#24292E">(value </span><span style="color:#D73A49">></span><span style="color:#005CC5"> 0</span><span style="color:#D73A49"> ?</span><span style="color:#005CC5"> 9</span><span style="color:#D73A49"> :</span><span style="color:#D73A49"> -</span><span style="color:#005CC5">9</span><span style="color:#24292E">);</span></span>
+<span class="line"><span style="color:#24292E">                    } </span><span style="color:#D73A49">else</span><span style="color:#24292E"> {</span></span>
+<span class="line"><span style="color:#24292E">                        builder.</span><span style="color:#6F42C1">with</span><span style="color:#24292E">(element);</span></span>
+<span class="line"><span style="color:#24292E">                    }</span></span>
+<span class="line"><span style="color:#24292E">                }));</span></span>
+<span class="line"><span style="color:#24292E">        Files.</span><span style="color:#6F42C1">write</span><span style="color:#24292E">(transformedDirectory.</span><span style="color:#6F42C1">resolve</span><span style="color:#24292E">(CLASS_NAME), transformed);</span></span>
+<span class="line"><span style="color:#24292E">        System.out.</span><span style="color:#6F42C1">printf</span><span style="color:#24292E">(</span><span style="color:#032F62">"original=%s bytes=%d%n"</span><span style="color:#24292E">, originalDirectory.</span><span style="color:#6F42C1">resolve</span><span style="color:#24292E">(CLASS_NAME), original.length);</span></span>
+<span class="line"><span style="color:#24292E">        System.out.</span><span style="color:#6F42C1">printf</span><span style="color:#24292E">(</span><span style="color:#032F62">"transformed=%s bytes=%d%n"</span><span style="color:#24292E">, transformedDirectory.</span><span style="color:#6F42C1">resolve</span><span style="color:#24292E">(CLASS_NAME), transformed.length);</span></span>
+<span class="line"><span style="color:#24292E">        LOGGER.</span><span style="color:#6F42C1">log</span><span style="color:#24292E">(System.Logger.Level.INFO, </span><span style="color:#032F62">"生成与变换结束，产物未加载执行"</span><span style="color:#24292E">);</span></span>
+<span class="line"><span style="color:#24292E">    }</span></span>
+<span class="line"><span style="color:#24292E">}</span></span>
+<span class="line"></span></code></pre></section>
+<nav class="chapter-nav" aria-label="阅读导航"><a href="chapter.html">返回正文</a><a href="../../index.html">返回全书目录</a></nav></main></body></html>

@@ -1,0 +1,567 @@
+{
+  "browser": "Chrome/156.0.8078.80",
+  "origin": "http://127.0.0.1:8773",
+  "cache": "disabled",
+  "pages": [
+    {
+      "path": "appendices/a-terms/appendix.html",
+      "revised": false,
+      "screenshot": "desktop.png"
+    },
+    {
+      "path": "appendices/b-bytecode/appendix.html",
+      "revised": false,
+      "screenshot": "desktop.png"
+    },
+    {
+      "path": "appendices/c-commands/appendix.html",
+      "revised": false,
+      "screenshot": "desktop.png"
+    },
+    {
+      "path": "appendices/d-source-map/appendix.html",
+      "revised": false,
+      "screenshot": "desktop.png"
+    },
+    {
+      "path": "appendices/e-history/appendix.html",
+      "revised": false,
+      "screenshot": "desktop.png"
+    },
+    {
+      "path": "appendices/f-environments/appendix.html",
+      "revised": false,
+      "screenshot": "desktop.png"
+    },
+    {
+      "path": "chapters/ch01-architecture/README.html",
+      "revised": false,
+      "screenshot": "desktop.png"
+    },
+    {
+      "path": "chapters/ch01-architecture/chapter.html",
+      "revised": true,
+      "screenshot": "desktop.png"
+    },
+    {
+      "path": "chapters/ch01-architecture/sources.html",
+      "revised": false,
+      "screenshot": "desktop.png"
+    },
+    {
+      "path": "chapters/ch02-computer-basics/README.html",
+      "revised": false,
+      "screenshot": "desktop.png"
+    },
+    {
+      "path": "chapters/ch02-computer-basics/chapter.html",
+      "revised": true,
+      "screenshot": "desktop.png"
+    },
+    {
+      "path": "chapters/ch03-source-environment/README.html",
+      "revised": false,
+      "screenshot": "desktop.png"
+    },
+    {
+      "path": "chapters/ch03-source-environment/chapter.html",
+      "revised": true,
+      "screenshot": "desktop.png"
+    },
+    {
+      "path": "chapters/ch04-classfile/README.html",
+      "revised": false,
+      "screenshot": "desktop.png"
+    },
+    {
+      "path": "chapters/ch04-classfile/chapter.html",
+      "revised": false,
+      "screenshot": "desktop.png"
+    },
+    {
+      "path": "chapters/ch04-classfile/sources.html",
+      "revised": false,
+      "screenshot": "desktop.png"
+    },
+    {
+      "path": "chapters/ch05-bytecode-verification/README.html",
+      "revised": false,
+      "screenshot": "desktop.png"
+    },
+    {
+      "path": "chapters/ch05-bytecode-verification/chapter.html",
+      "revised": true,
+      "screenshot": "desktop.png"
+    },
+    {
+      "path": "chapters/ch05-bytecode-verification/sources.html",
+      "revised": false,
+      "screenshot": "desktop.png"
+    },
+    {
+      "path": "chapters/ch06-classloaders-modules/README.html",
+      "revised": false,
+      "screenshot": "desktop.png"
+    },
+    {
+      "path": "chapters/ch06-classloaders-modules/chapter.html",
+      "revised": true,
+      "screenshot": "desktop.png"
+    },
+    {
+      "path": "chapters/ch06-classloaders-modules/sources.html",
+      "revised": false,
+      "screenshot": "desktop.png"
+    },
+    {
+      "path": "chapters/ch07-linking-initialization/README.html",
+      "revised": false,
+      "screenshot": "desktop.png"
+    },
+    {
+      "path": "chapters/ch07-linking-initialization/chapter.html",
+      "revised": true,
+      "screenshot": "desktop.png"
+    },
+    {
+      "path": "chapters/ch07-linking-initialization/sources.html",
+      "revised": false,
+      "screenshot": "desktop.png"
+    },
+    {
+      "path": "chapters/ch08-type-metadata/README.html",
+      "revised": false,
+      "screenshot": "desktop.png"
+    },
+    {
+      "path": "chapters/ch08-type-metadata/chapter.html",
+      "revised": true,
+      "screenshot": "desktop.png"
+    },
+    {
+      "path": "chapters/ch08-type-metadata/sources.html",
+      "revised": false,
+      "screenshot": "desktop.png"
+    },
+    {
+      "path": "chapters/ch09-runtime-memory/README.html",
+      "revised": false,
+      "screenshot": "desktop.png"
+    },
+    {
+      "path": "chapters/ch09-runtime-memory/chapter.html",
+      "revised": true,
+      "screenshot": "desktop.png"
+    },
+    {
+      "path": "chapters/ch10-object-layout/README.html",
+      "revised": false,
+      "screenshot": "desktop.png"
+    },
+    {
+      "path": "chapters/ch10-object-layout/chapter.html",
+      "revised": false,
+      "screenshot": "desktop.png"
+    },
+    {
+      "path": "chapters/ch10-object-layout/sources.html",
+      "revised": false,
+      "screenshot": "desktop.png"
+    },
+    {
+      "path": "chapters/ch11-allocation/README.html",
+      "revised": false,
+      "screenshot": "desktop.png"
+    },
+    {
+      "path": "chapters/ch11-allocation/chapter.html",
+      "revised": true,
+      "screenshot": "desktop.png"
+    },
+    {
+      "path": "chapters/ch11-allocation/sources.html",
+      "revised": false,
+      "screenshot": "desktop.png"
+    },
+    {
+      "path": "chapters/ch12-native-memory/README.html",
+      "revised": false,
+      "screenshot": "desktop.png"
+    },
+    {
+      "path": "chapters/ch12-native-memory/chapter.html",
+      "revised": true,
+      "screenshot": "desktop.png"
+    },
+    {
+      "path": "chapters/ch12-native-memory/sources.html",
+      "revised": false,
+      "screenshot": "desktop.png"
+    },
+    {
+      "path": "chapters/ch13-interpreter/README.html",
+      "revised": false,
+      "screenshot": "desktop.png"
+    },
+    {
+      "path": "chapters/ch13-interpreter/chapter.html",
+      "revised": false,
+      "screenshot": "desktop.png"
+    },
+    {
+      "path": "chapters/ch13-interpreter/sources.html",
+      "revised": false,
+      "screenshot": "desktop.png"
+    },
+    {
+      "path": "chapters/ch14-dispatch/README.html",
+      "revised": false,
+      "screenshot": "desktop.png"
+    },
+    {
+      "path": "chapters/ch14-dispatch/chapter.html",
+      "revised": false,
+      "screenshot": "desktop.png"
+    },
+    {
+      "path": "chapters/ch14-dispatch/sources.html",
+      "revised": false,
+      "screenshot": "desktop.png"
+    },
+    {
+      "path": "chapters/ch15-dynamic-invocation/README.html",
+      "revised": false,
+      "screenshot": "desktop.png"
+    },
+    {
+      "path": "chapters/ch15-dynamic-invocation/chapter.html",
+      "revised": false,
+      "screenshot": "desktop.png"
+    },
+    {
+      "path": "chapters/ch15-dynamic-invocation/sources.html",
+      "revised": false,
+      "screenshot": "desktop.png"
+    },
+    {
+      "path": "chapters/ch16-tiered-compilation/README.html",
+      "revised": false,
+      "screenshot": "desktop.png"
+    },
+    {
+      "path": "chapters/ch16-tiered-compilation/chapter.html",
+      "revised": false,
+      "screenshot": "desktop.png"
+    },
+    {
+      "path": "chapters/ch16-tiered-compilation/sources.html",
+      "revised": false,
+      "screenshot": "desktop.png"
+    },
+    {
+      "path": "chapters/ch17-compiler-optimizations/README.html",
+      "revised": false,
+      "screenshot": "desktop.png"
+    },
+    {
+      "path": "chapters/ch17-compiler-optimizations/chapter.html",
+      "revised": false,
+      "screenshot": "desktop.png"
+    },
+    {
+      "path": "chapters/ch17-compiler-optimizations/sources.html",
+      "revised": false,
+      "screenshot": "desktop.png"
+    },
+    {
+      "path": "chapters/ch18-deoptimization/README.html",
+      "revised": false,
+      "screenshot": "desktop.png"
+    },
+    {
+      "path": "chapters/ch18-deoptimization/chapter.html",
+      "revised": false,
+      "screenshot": "desktop.png"
+    },
+    {
+      "path": "chapters/ch18-deoptimization/sources.html",
+      "revised": false,
+      "screenshot": "desktop.png"
+    },
+    {
+      "path": "chapters/ch19-gc-foundations/README.html",
+      "revised": false,
+      "screenshot": "desktop.png"
+    },
+    {
+      "path": "chapters/ch19-gc-foundations/chapter.html",
+      "revised": false,
+      "screenshot": "desktop.png"
+    },
+    {
+      "path": "chapters/ch19-gc-foundations/sources.html",
+      "revised": false,
+      "screenshot": "desktop.png"
+    },
+    {
+      "path": "chapters/ch20-safepoints-barriers/README.html",
+      "revised": false,
+      "screenshot": "desktop.png"
+    },
+    {
+      "path": "chapters/ch20-safepoints-barriers/chapter.html",
+      "revised": false,
+      "screenshot": "desktop.png"
+    },
+    {
+      "path": "chapters/ch20-safepoints-barriers/sources.html",
+      "revised": false,
+      "screenshot": "desktop.png"
+    },
+    {
+      "path": "chapters/ch21-basic-collectors/README.html",
+      "revised": false,
+      "screenshot": "desktop.png"
+    },
+    {
+      "path": "chapters/ch21-basic-collectors/chapter.html",
+      "revised": false,
+      "screenshot": "desktop.png"
+    },
+    {
+      "path": "chapters/ch21-basic-collectors/sources.html",
+      "revised": false,
+      "screenshot": "desktop.png"
+    },
+    {
+      "path": "chapters/ch22-g1/README.html",
+      "revised": false,
+      "screenshot": "desktop.png"
+    },
+    {
+      "path": "chapters/ch22-g1/chapter.html",
+      "revised": false,
+      "screenshot": "desktop.png"
+    },
+    {
+      "path": "chapters/ch22-g1/sources.html",
+      "revised": false,
+      "screenshot": "desktop.png"
+    },
+    {
+      "path": "chapters/ch23-zgc/README.html",
+      "revised": false,
+      "screenshot": "desktop.png"
+    },
+    {
+      "path": "chapters/ch23-zgc/chapter.html",
+      "revised": false,
+      "screenshot": "desktop.png"
+    },
+    {
+      "path": "chapters/ch23-zgc/sources.html",
+      "revised": false,
+      "screenshot": "desktop.png"
+    },
+    {
+      "path": "chapters/ch24-shenandoah/README.html",
+      "revised": false,
+      "screenshot": "desktop.png"
+    },
+    {
+      "path": "chapters/ch24-shenandoah/chapter.html",
+      "revised": false,
+      "screenshot": "desktop.png"
+    },
+    {
+      "path": "chapters/ch24-shenandoah/sources.html",
+      "revised": false,
+      "screenshot": "desktop.png"
+    },
+    {
+      "path": "chapters/ch25-memory-model/README.html",
+      "revised": false,
+      "screenshot": "desktop.png"
+    },
+    {
+      "path": "chapters/ch25-memory-model/chapter.html",
+      "revised": false,
+      "screenshot": "desktop.png"
+    },
+    {
+      "path": "chapters/ch25-memory-model/sources.html",
+      "revised": false,
+      "screenshot": "desktop.png"
+    },
+    {
+      "path": "chapters/ch26-platform-threads/README.html",
+      "revised": false,
+      "screenshot": "desktop.png"
+    },
+    {
+      "path": "chapters/ch26-platform-threads/chapter.html",
+      "revised": false,
+      "screenshot": "desktop.png"
+    },
+    {
+      "path": "chapters/ch26-platform-threads/sources.html",
+      "revised": false,
+      "screenshot": "desktop.png"
+    },
+    {
+      "path": "chapters/ch27-monitors/README.html",
+      "revised": false,
+      "screenshot": "desktop.png"
+    },
+    {
+      "path": "chapters/ch27-monitors/chapter.html",
+      "revised": false,
+      "screenshot": "desktop.png"
+    },
+    {
+      "path": "chapters/ch27-monitors/sources.html",
+      "revised": false,
+      "screenshot": "desktop.png"
+    },
+    {
+      "path": "chapters/ch28-virtual-threads/README.html",
+      "revised": false,
+      "screenshot": "desktop.png"
+    },
+    {
+      "path": "chapters/ch28-virtual-threads/chapter.html",
+      "revised": false,
+      "screenshot": "desktop.png"
+    },
+    {
+      "path": "chapters/ch28-virtual-threads/sources.html",
+      "revised": false,
+      "screenshot": "desktop.png"
+    },
+    {
+      "path": "chapters/ch29-scoped-concurrency/README.html",
+      "revised": false,
+      "screenshot": "desktop.png"
+    },
+    {
+      "path": "chapters/ch29-scoped-concurrency/chapter.html",
+      "revised": false,
+      "screenshot": "desktop.png"
+    },
+    {
+      "path": "chapters/ch29-scoped-concurrency/sources.html",
+      "revised": false,
+      "screenshot": "desktop.png"
+    },
+    {
+      "path": "chapters/ch30-startup-sharing/README.html",
+      "revised": false,
+      "screenshot": "desktop.png"
+    },
+    {
+      "path": "chapters/ch30-startup-sharing/chapter.html",
+      "revised": false,
+      "screenshot": "desktop.png"
+    },
+    {
+      "path": "chapters/ch30-startup-sharing/sources.html",
+      "revised": false,
+      "screenshot": "desktop.png"
+    },
+    {
+      "path": "chapters/ch31-aot-cache/README.html",
+      "revised": false,
+      "screenshot": "desktop.png"
+    },
+    {
+      "path": "chapters/ch31-aot-cache/chapter.html",
+      "revised": false,
+      "screenshot": "desktop.png"
+    },
+    {
+      "path": "chapters/ch31-aot-cache/sources.html",
+      "revised": false,
+      "screenshot": "desktop.png"
+    },
+    {
+      "path": "chapters/ch32-native-interop/README.html",
+      "revised": false,
+      "screenshot": "desktop.png"
+    },
+    {
+      "path": "chapters/ch32-native-interop/chapter.html",
+      "revised": false,
+      "screenshot": "desktop.png"
+    },
+    {
+      "path": "chapters/ch32-native-interop/sources.html",
+      "revised": false,
+      "screenshot": "desktop.png"
+    },
+    {
+      "path": "chapters/ch33-observability/README.html",
+      "revised": false,
+      "screenshot": "desktop.png"
+    },
+    {
+      "path": "chapters/ch33-observability/chapter.html",
+      "revised": false,
+      "screenshot": "desktop.png"
+    },
+    {
+      "path": "chapters/ch33-observability/sources.html",
+      "revised": false,
+      "screenshot": "desktop.png"
+    },
+    {
+      "path": "chapters/ch34-flight-recorder/README.html",
+      "revised": false,
+      "screenshot": "desktop.png"
+    },
+    {
+      "path": "chapters/ch34-flight-recorder/chapter.html",
+      "revised": false,
+      "screenshot": "desktop.png"
+    },
+    {
+      "path": "chapters/ch34-flight-recorder/sources.html",
+      "revised": false,
+      "screenshot": "desktop.png"
+    },
+    {
+      "path": "chapters/ch35-troubleshooting/README.html",
+      "revised": false,
+      "screenshot": "desktop.png"
+    },
+    {
+      "path": "chapters/ch35-troubleshooting/chapter.html",
+      "revised": false,
+      "screenshot": "desktop.png"
+    },
+    {
+      "path": "chapters/ch35-troubleshooting/sources.html",
+      "revised": false,
+      "screenshot": "desktop.png"
+    },
+    {
+      "path": "chapters/ch36-performance-cases/README.html",
+      "revised": false,
+      "screenshot": "desktop.png"
+    },
+    {
+      "path": "chapters/ch36-performance-cases/chapter.html",
+      "revised": false,
+      "screenshot": "desktop.png"
+    },
+    {
+      "path": "chapters/ch36-performance-cases/sources.html",
+      "revised": false,
+      "screenshot": "desktop.png"
+    },
+    {
+      "path": "index.html",
+      "revised": false,
+      "screenshot": "desktop.png"
+    }
+  ]
+}

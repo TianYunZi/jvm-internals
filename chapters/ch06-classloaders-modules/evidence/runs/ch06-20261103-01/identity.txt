@@ -1,0 +1,19 @@
+11月 03, 2026 11:42:52 上午 org.example.jvminternals.ch06.LoaderJourney main
+INFO: 开始读取加载器身份并定义两份同名类型
+Object.loader=bootstrap(null)
+Driver.loader=platform
+Driver.module=java.sql
+application.loader=app
+object.resource=jrt:/java.base/java/lang/Object.class
+application.resource=file:/Users/xiejinxin/Developer/Java/jvm-internals/chapters/ch06-classloaders-modules/target/classes/notes.txt
+same.binaryName=true
+same.type=false
+left.echo.parameter.loader=left
+right.echo.parameter.loader=right
+left.echo.result.loader=left
+cross.cast=ClassCastException: Cannot cast org.example.jvminternals.ch06.isolated.Plugin to org.example.jvminternals.ch06.isolated.Plugin
+request.loader=relay
+request.result.definer=left
+relay.same.as.left=true
+11月 03, 2026 11:42:52 上午 org.example.jvminternals.ch06.LoaderJourney main
+INFO: 加载器身份观察结束

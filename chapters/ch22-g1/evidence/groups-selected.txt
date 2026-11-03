@@ -1,0 +1,46 @@
+283:void G1CollectionSetCandidates::set_candidates_from_marking(G1CollectionSetCandidateInfo* candidate_infos,
+284-                                                            uint num_infos) {
+285-  if (num_infos == 0) {
+286-    log_debug(gc, ergo, cset) ("No regions selected from marking.");
+287-    return;
+288-  }
+289-
+290-  assert(_from_marking_groups.length() == 0, "must be empty at the start of a cycle");
+291-  verify();
+292-
+293-  G1Policy* p = G1CollectedHeap::heap()->policy();
+294-  // During each Mixed GC, we must collect at least G1Policy::calc_min_old_cset_length regions to meet
+295-  // the G1MixedGCCountTarget. For the first collection in a Mixed GC cycle, we can add all regions
+296-  // required to meet this threshold to the same remset group. We are certain these will be collected in
+297-  // the same MixedGC.
+298-  uint group_limit = p->calc_min_old_cset_length(num_infos);
+299-
+300-  uint num_added_to_group = 0;
+301-
+302-  G1CSetCandidateGroup::reset_next_group_id();
+303-  G1CSetCandidateGroup* current = nullptr;
+304-
+305-  current = new G1CSetCandidateGroup();
+306-
+307-  for (uint i = 0; i < num_infos; i++) {
+308-    G1HeapRegion* r = candidate_infos[i]._r;
+309-    assert(!contains(r), "must not contain region %u", r->hrm_index());
+310-    _contains_map[r->hrm_index()] = CandidateOrigin::Marking;
+311-
+312-    if (num_added_to_group == group_limit) {
+313-      if (group_limit != G1OldCSetGroupSize) {
+314-        group_limit = G1OldCSetGroupSize;
+315-      }
+316-
+317-      _from_marking_groups.append(current);
+318-
+319-      current = new G1CSetCandidateGroup();
+320-      num_added_to_group = 0;
+321-    }
+322-    current->add(candidate_infos[i]);
+323-    num_added_to_group++;
+324-  }
+325-
+326-  _from_marking_groups.append(current);
+327-
+328-  assert(_from_marking_groups.num_regions() == num_infos, "Must be!");

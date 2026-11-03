@@ -1,0 +1,2 @@
+fa880140df1097ebef6d18742eca2232c798f97c52d0f2e14a0eac25eb6eea44  chapters/ch17-compiler-optimizations/src/main/java/org/example/jvminternals/ch17/OptimizationJourney.java
+11b91aa4da90d52fb44fcce9c91b86d62f75239852d380a65471211ce42b9415  chapters/ch17-compiler-optimizations/target/classes/org/example/jvminternals/ch17/OptimizationJourney.class

@@ -1,0 +1,11 @@
+%% CH12-F01：资源归属和分层回收，关系边不全为Java强引用。
+flowchart TB
+  A["实例、镜像、定义加载器持有关系<br/>普通类关联定义加载器生命期"]
+  B["ClassLoaderData关联<br/>ClassLoaderMetaspace<br/>压缩类空间与其他元数据各有职责"]
+  C["MetaspaceArena按小块分配<br/>从共享管理器取得Metachunk<br/>类文件大小、BlockSz、ChunkSz不同"]
+  D["卸载后arena析构<br/>返还所属块，扣减使用计数"]
+  E["ChunkManager登记与合并空闲块<br/>先支持内部复用，不必立刻取消提交"]
+  F["purge处理可回收整提交粒度<br/>VirtualSpaceNode取消提交"]
+  A --> B --> C
+  C -->|卸载满足条件后| D --> E -->|具备可回收范围时| F
+  F --- N["操作系统驻留变化另行观察<br/>类型不等于独占一整块"]

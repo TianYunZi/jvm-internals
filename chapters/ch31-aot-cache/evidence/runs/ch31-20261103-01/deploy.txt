@@ -1,0 +1,8 @@
+CH31 入口 mode=add uptimeMs=64
+CH31 就绪 uptimeMs=72
+CH31 请求流结束 result=1800390000
+CH31 结束 uptimeMs=73
+real 0.08
+user 0.05
+sys 0.03
+exit=0

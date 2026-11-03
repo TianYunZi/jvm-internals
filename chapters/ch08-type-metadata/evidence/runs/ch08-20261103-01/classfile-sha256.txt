@@ -1,0 +1,8 @@
+af2c85d4c62597e6f194dc09154236248cf086ad81948b6ec86ed87287c4113e  chapters/ch08-type-metadata/target/classes/org/example/jvminternals/ch08/TypeJourney$Item.class
+c60c169525a2b9709099abd57ddfe86a7ae93c8b96593ea90418117875f8551e  chapters/ch08-type-metadata/target/classes/org/example/jvminternals/ch08/HiddenJourney.class
+1bb0308c5977fcef5c3f112f2ac8f67357699887673ca57e612dd92c378aab9b  chapters/ch08-type-metadata/target/classes/org/example/jvminternals/ch08/TypeJourney.class
+5f7d810841757037ecfd1a4a0b493b45b47c359ca4f4e66a05a2af8a71e8569b  chapters/ch08-type-metadata/target/classes/org/example/jvminternals/ch08/UnloadingJourney.class
+6808ea5d97660eb2f55e61de59535b12699ca64fb7c4e21c742a42d0e18deb7b  chapters/ch08-type-metadata/target/classes/org/example/jvminternals/ch08/TypeJourney$Base.class
+a4351806d0fdeecc6adef2f8fe9d778596fa4be3e12b7ed49384e780822c33a0  chapters/ch08-type-metadata/target/classes/org/example/jvminternals/ch08/TypeJourney$Named.class
+a76dea82d2993022dae6dede36f1270ccfb081d2875f5092e89fba51c617614e  chapters/ch08-type-metadata/target/disposable/org/example/jvminternals/ch08/disposable/Disposable.class
+c7b268851f10cb6f7c0647fd0b61f0300d53fe4bfabec5540d03505f16f05bf3  chapters/ch08-type-metadata/evidence/runs/ch08-20261103-01/HiddenValue.class

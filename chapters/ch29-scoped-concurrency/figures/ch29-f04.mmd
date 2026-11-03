@@ -1,0 +1,12 @@
+sequenceDiagram
+ participant F as fast
+ participant S as 任务作用域
+ participant L as slow
+ participant O as 拥有者
+ F->>S: 异常完成
+ S->>L: 取消：发出中断
+ S-->>O: join可带失败结果返回
+ L->>L: 响应中断，finally结束
+ O->>S: close等待所有子线程终止
+ S-->>O: close完成
+ Note over F,O: join与slow退出无固定先后；close等待实际终止

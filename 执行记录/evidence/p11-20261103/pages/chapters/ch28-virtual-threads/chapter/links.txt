@@ -1,0 +1,22 @@
+跳到正文	#main
+Java 虚拟机原理图文书	../../index.html
+28.1 线程、载体与调度器	#sec-28-1
+28.2 延续与栈块	#sec-28-2
+28.3 挂载、卸载与阻塞适配	#sec-28-3
+28.4 与其他子系统协作	#sec-28-4
+28.5 25版中的固定问题	#sec-28-5
+观察与边界	#observe
+回顾与思考	#review
+来源	#sources
+源码阅读	sources.html
+运行说明	README.html
+证据索引	evidence/索引.md
+JDK25虚拟线程指南	https://docs.oracle.com/en/java/javase/25/core/virtual-threads.html
+VirtualThread实现	https://github.com/openjdk/jdk25u/blob/1775ea114f649f0314e4e43eb6c802ff16dfab7c/src/java.base/share/classes/java/lang/VirtualThread.java
+延续冻结与恢复	https://github.com/openjdk/jdk25u/blob/1775ea114f649f0314e4e43eb6c802ff16dfab7c/src/hotspot/share/runtime/continuationFreezeThaw.cpp
+栈块表示	https://github.com/openjdk/jdk25u/blob/1775ea114f649f0314e4e43eb6c802ff16dfab7c/src/hotspot/share/oops/stackChunkOop.hpp
+Continuation实现	https://github.com/openjdk/jdk25u/blob/1775ea114f649f0314e4e43eb6c802ff16dfab7c/src/java.base/share/classes/jdk/internal/vm/Continuation.java
+来源索引	evidence/索引.md
+上一章	../ch27-monitors/chapter.html
+第六篇目录	../../index.html#part-6
+下一章	../ch29-scoped-concurrency/chapter.html

@@ -1,0 +1,13 @@
+WARNING: A restricted method in java.lang.System has been called
+WARNING: java.lang.System::load has been called by org.example.jvminternals.ch32.NativeJourney in an unnamed module (file:/Users/xiejinxin/Developer/Java/jvm-internals/chapters/ch32-native-interop/target/classes/)
+WARNING: Use --enable-native-access=ALL-UNNAMED to avoid a warning for callers in this module
+WARNING: Restricted methods will be blocked in a future release unless native access is enabled
+
+CH32 本地库已加载
+CH32 跨调用引用已建立=true
+CH32 临界区已释放 isCopy=false
+CH32 临界区求和=10
+CH32 原生线程回调：ch32-attached virtual=false
+CH32 附加线程返回状态=0
+CH32 全局及弱全局引用已释放
+exit=0

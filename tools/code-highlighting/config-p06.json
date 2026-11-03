@@ -1,0 +1,9 @@
+{
+  "stage": "p06",
+  "shikiVersion": "4.6.0",
+  "theme": "github-light",
+  "languages": ["java", "bash", "xml", "json", "cpp", "asm"],
+  "plainTextLanguage": "text",
+  "chapters": ["ch19-gc-foundations", "ch20-safepoints-barriers", "ch21-basic-collectors", "ch22-g1", "ch23-zgc", "ch24-shenandoah"],
+  "sourceFolders": {"ch24-shenandoah": "ch23-zgc"}
+}

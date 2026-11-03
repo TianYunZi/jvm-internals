@@ -1,0 +1,30 @@
+跳到正文	#chapter
+Java 虚拟机原理 / 第一篇	../../index.html
+证据从哪里来	#question
+3.1 源码组织	#sec-3-1
+3.2 版本与构建	#sec-3-2
+3.3 参数条件	#sec-3-3
+3.4 工具与统一日志	#sec-3-4
+3.5 两条阅读路线	#sec-3-5
+回顾与思考	#review
+来源与记录	#sources
+S03	#s03
+S01	#s01
+S03	#s03
+S04	#s04
+S02	#s02
+S05	#s05
+运行说明	README.html
+CH03-O01	evidence/runs/ch03-20261103-01/记录.md
+公共基线	../../执行记录/基线与约定.md
+JDK 25 java 命令文档	https://docs.oracle.com/en/java/javase/25/docs/specs/man/java.html
+jcmd 文档	https://docs.oracle.com/en/java/javase/25/docs/specs/man/jcmd.html
+证据索引	evidence/索引.md
+三断点及栈	evidence/runs/ch03-20261103-01/lldb.txt
+普通解释配置	evidence/runs/ch03-20261103-01/program.txt
+普通参数表	evidence/runs/ch03-20261103-01/default-flags.txt
+解锁参数表	evidence/runs/ch03-20261103-01/unlocked-flags.txt
+日志帮助	evidence/runs/ch03-20261103-01/log-help.txt
+上一章：第 2 章	../ch02-computer-basics/chapter.html
+返回全书目录	../../index.html
+下一章：第 4 章	../ch04-classfile/chapter.html

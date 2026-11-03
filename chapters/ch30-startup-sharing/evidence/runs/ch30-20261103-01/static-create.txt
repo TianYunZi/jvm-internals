@@ -1,0 +1,2 @@
+[0.238s][warning][cds] Skipping jdk/internal/event/Event: JFR event class
+exit=0

@@ -1,0 +1,50 @@
+jdk.VirtualThreadStart {
+  startTime = 19:17:24.882 (2026-11-03)
+  javaThreadId = 31
+  eventThread = "virtual-blocker" (javaThreadId = 31, virtual)
+  stackTrace = [
+    java.lang.VirtualThread.run(Runnable) line: 455
+    jdk.internal.vm.Continuation.enterSpecial(Continuation, boolean, boolean)
+    ...
+  ]
+}
+
+jdk.VirtualThreadPinned {
+  startTime = 19:17:24.883 (2026-11-03)
+  duration = 4.00 s
+  blockingOperation = "LockSupport.park"
+  pinnedReason = "Native or VM frame on stack"
+  carrierThread = "ForkJoinPool-1-worker-1" (javaThreadId = 32)
+  eventThread = "virtual-blocker" (javaThreadId = 31, virtual)
+  stackTrace = [
+    java.lang.VirtualThread.parkOnCarrierThread(boolean, long) line: 833
+    java.lang.VirtualThread.parkNanos(long) line: 801
+    java.lang.VirtualThread.sleepNanos(long) line: 983
+    java.lang.Thread.sleepNanos(long) line: 507
+    java.lang.Thread.sleep(long) line: 540
+  ]
+}
+
+jdk.VirtualThreadEnd {
+  startTime = 19:17:28.884 (2026-11-03)
+  javaThreadId = 31
+  eventThread = "virtual-blocker" (javaThreadId = 31, virtual)
+}
+
+jdk.VirtualThreadStart {
+  startTime = 19:17:28.884 (2026-11-03)
+  javaThreadId = 33
+  eventThread = "virtual-probe" (javaThreadId = 33, virtual)
+  stackTrace = [
+    java.lang.VirtualThread.run(Runnable) line: 455
+    jdk.internal.vm.Continuation.enterSpecial(Continuation, boolean, boolean)
+    ...
+  ]
+}
+
+jdk.VirtualThreadEnd {
+  startTime = 19:17:28.884 (2026-11-03)
+  javaThreadId = 33
+  eventThread = "virtual-probe" (javaThreadId = 33, virtual)
+}
+

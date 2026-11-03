@@ -1,0 +1,7 @@
+出版：appendices/a-terms/appendix.html
+出版：appendices/b-bytecode/appendix.html
+出版：appendices/d-source-map/appendix.html
+出版：chapters/ch06-classloaders-modules/chapter.html
+出版：chapters/ch06-classloaders-modules/sources.html
+出版：chapters/ch04-classfile/sources.html
+出版：chapters/ch03-source-environment/README.html

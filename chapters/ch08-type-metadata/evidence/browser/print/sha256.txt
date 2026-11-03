@@ -1,0 +1,7 @@
+2c0d916788bd48f73157887eda79aa87b49df02eacfe70140c1adeb1f8fe0bc7  chapters/ch08-type-metadata/chapter.html
+7b5303d60fefcb96e4c8a4039d0873476cf8f5d580ffdec8a3e5768b950f5c49  assets/book.css
+7edb94ce168bbd71f8a33835aa59e9db45ac379a0fcdb7ef7bbc24721fbd0e2b  chapters/ch08-type-metadata/figures/ch08-f01-metadata-objects.svg
+652bcab10ec72d453c42720611c7eac9f7f67c6d85462669dccf4dc1be2e32ce  chapters/ch08-type-metadata/figures/ch08-f02-symbol-mapping.svg
+e26edaeb4341f5eec129d7d78d21ce845c141c9f415126136a1b37f92b186d02  chapters/ch08-type-metadata/figures/ch08-f03-loader-lifetime.svg
+3672bf978f4997a3061f4a4df49b0423b04f0ae1308eb02761c455d71f2a1b8f  chapters/ch08-type-metadata/evidence/browser/print/chrome-print.pdf
+a3004004742966646caa938323e68d5e93470d5a03ca25fae8fb5f5d5d39c8f6  chapters/ch08-type-metadata/evidence/browser/print/page-6.png

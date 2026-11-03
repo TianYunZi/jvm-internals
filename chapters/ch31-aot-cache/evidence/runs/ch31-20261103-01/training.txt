@@ -1,0 +1,9 @@
+CH31 入口 mode=add uptimeMs=81
+CH31 就绪 uptimeMs=99
+CH31 请求流结束 result=1800390000
+CH31 结束 uptimeMs=101
+ AOTConfiguration recorded: chapters/ch31-aot-cache/target/training.aotconfig
+real 0.73
+user 0.57
+sys 0.27
+exit=0

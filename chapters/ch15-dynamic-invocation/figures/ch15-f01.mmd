@@ -1,0 +1,18 @@
+%% P05机制图：依据本章来源索引；本地导出后供离线阅读。
+sequenceDiagram
+  accTitle: 动态调用与动态常量的链接
+  participant G as GeneratedLinkage
+  participant R as 解析运行时
+  participant B as 引导方法
+  Note over G,B: 两个独立入口，共用类文件BootstrapMethods格式
+  G->>R: 首次invokedynamic<br/>message:()String
+  R->>B: Lookup、名称<br/>MethodType及静态参数
+  B-->>R: 类型相符的<br/>MutableCallSite
+  R-->>G: 安装调用结构<br/>执行初始目标
+  G->>R: 后续调用：复用当前目标
+  Note over G,R: setTarget后syncAll<br/>目标类型保持一致<br/>后续调用返回更新目标
+  G->>R: 首次ldc动态常量 message:String
+  R->>B: Lookup、名称<br/>Class及静态参数
+  B-->>R: 返回已解析值
+  R-->>G: 安装解析值；后续ldc复用
+  Note over G,B: 本轮单线程只见一次引导输出<br/>并发竞争解析不保证引导方法只执行一次

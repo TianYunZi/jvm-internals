@@ -1,0 +1,567 @@
+[0.065s][info ][aot        ] Writing AOTCache file: chapters/ch31-aot-cache/target/cache.aot
+[0.210s][debug][aot,heap   ] Found java mirror 0x000000012886f188 org.example.jvminternals.ch31.CacheJourney$Operation; scratch mirror = 0x000000012886f188
+[0.210s][debug][aot,heap   ] Archived heap object 0x000000012886f188 : java.lang.Class org.example.jvminternals.ch31.CacheJourney$Operation
+[0.210s][debug][aot,heap   ] Found java mirror 0x0000000128877370 org.example.jvminternals.ch31.CacheJourney$Add; scratch mirror = 0x0000000128877370
+[0.210s][debug][aot,heap   ] Archived heap object 0x0000000128877370 : java.lang.Class org.example.jvminternals.ch31.CacheJourney$Add
+[0.253s][debug][aot,heap   ] Found java mirror 0x000000012887bf00 jdk.management.HotSpotAOTCacheMXBean; scratch mirror = 0x000000012887bf00
+[0.253s][debug][aot,heap   ] Archived heap object 0x000000012887bf00 : java.lang.Class jdk.management.HotSpotAOTCacheMXBean
+[0.265s][debug][aot,heap   ] Found java mirror 0x000000012886ef40 org.example.jvminternals.ch31.CacheJourney; scratch mirror = 0x000000012886ef40
+[0.265s][debug][aot,heap   ] Archived heap object 0x000000012886ef40 : java.lang.Class org.example.jvminternals.ch31.CacheJourney
+[0.337s][info ][aot,link   ] app org.example.jvminternals.ch31.CacheJourney 0x3800002ffbe0
+[0.337s][info ][aot,link   ] app org.example.jvminternals.ch31.CacheJourney$Operation 0x3800003000e0
+[0.337s][info ][aot,link   ] app org.example.jvminternals.ch31.CacheJourney$Add 0x3800002ffeb0
+[0.337s][info ][aot,link   ] boot2 jdk.management.HotSpotAOTCacheMXBean 0x3800003331f8
+[0.429s][info ][aot,resolve] Archiving CP entries for org/example/jvminternals/ch31/CacheJourney
+[0.430s][info ][aot,resolve] Archiving CP entries for org/example/jvminternals/ch31/CacheJourney$Add
+[0.430s][info ][aot,resolve] Archiving CP entries for org/example/jvminternals/ch31/CacheJourney$Operation
+[0.430s][info ][aot,resolve] Archiving CP entries for jdk/management/HotSpotAOTCacheMXBean
+[0.440s][debug][aot,class  ] klasses[  952] = 0x00000008002e7bc0 app   org.example.jvminternals.ch31.CacheJourney aot-linked
+[0.441s][debug][aot,class  ] klasses[ 1059] = 0x00000008002e7e90 app   org.example.jvminternals.ch31.CacheJourney$Add aot-linked
+[0.441s][debug][aot,class  ] klasses[ 1060] = 0x00000008002e80c0 app   org.example.jvminternals.ch31.CacheJourney$Operation interface aot-linked
+[0.441s][debug][aot,class  ] klasses[ 1103] = 0x0000000800316280 boot  jdk.management.HotSpotAOTCacheMXBean interface aot-linked
+[0.458s][info ][aot,hashtables] Shared training data dictionary table stats -------- base: 0x0000380000000000
+[0.477s][debug][aot           ] MethodTrainingData  :        0          0   0.0 |      272      26112   0.6 |      272      26112   0.2
+[0.477s][debug][aot           ] CompileTrainingData :        0          0   0.0 |      215      17200   0.4 |      215      17200   0.2
+[0.477s][info ][aot           ] MethodTrainingData                =    272 (   26112 bytes)
+[0.498s][debug][aot,map       ] 0x0000000800129e40: @@ MethodTrainingData 96
+[0.498s][debug][aot,map       ] 0x000000080012a0b8: @@ MethodTrainingData 96
+[0.498s][debug][aot,map       ] 0x000000080012a818: @@ MethodTrainingData 96
+[0.498s][debug][aot,map       ] 0x000000080012abb8: @@ MethodTrainingData 96
+[0.498s][debug][aot,map       ] 0x000000080012aee8: @@ MethodTrainingData 96
+[0.498s][debug][aot,map       ] 0x000000080012b7d0: @@ MethodTrainingData 96
+[0.498s][debug][aot,map       ] 0x000000080012bc98: @@ MethodTrainingData 96
+[0.498s][debug][aot,map       ] 0x000000080012c1f0: @@ MethodTrainingData 96
+[0.498s][debug][aot,map       ] 0x000000080012c410: @@ MethodTrainingData 96
+[0.502s][debug][aot,map       ] 0x0000000800142b48: @@ MethodTrainingData 96
+[0.502s][debug][aot,map       ] 0x00000008001451b0: @@ MethodTrainingData 96
+[0.502s][debug][aot,map       ] 0x0000000800145ee8: @@ MethodTrainingData 96
+[0.502s][debug][aot,map       ] 0x0000000800147b38: @@ MethodTrainingData 96
+[0.503s][debug][aot,map       ] 0x000000080014cd20: @@ MethodTrainingData 96
+[0.505s][debug][aot,map       ] 0x000000080015a218: @@ MethodTrainingData 96
+[0.505s][debug][aot,map       ] 0x000000080015a760: @@ MethodTrainingData 96
+[0.506s][debug][aot,map       ] 0x000000080015fd10: @@ MethodTrainingData 96
+[0.506s][debug][aot,map       ] 0x000000080015ff80: @@ MethodTrainingData 96
+[0.506s][debug][aot,map       ] 0x000000080015ffe0: @@ CompileTrainingData 80
+[0.506s][debug][aot,map       ] 0x0000000800161680: @@ MethodTrainingData 96
+[0.506s][debug][aot,map       ] 0x0000000800161ba8: @@ MethodTrainingData 96
+[0.506s][debug][aot,map       ] 0x0000000800162120: @@ MethodTrainingData 96
+[0.508s][debug][aot,map       ] 0x000000080016e430: @@ MethodTrainingData 96
+[0.508s][debug][aot,map       ] 0x000000080016e778: @@ MethodTrainingData 96
+[0.508s][debug][aot,map       ] 0x000000080016e9f0: @@ MethodTrainingData 96
+[0.508s][debug][aot,map       ] 0x0000000800170138: @@ MethodTrainingData 96
+[0.511s][debug][aot,map       ] 0x0000000800184c48: @@ MethodTrainingData 96
+[0.511s][debug][aot,map       ] 0x0000000800184eb0: @@ MethodTrainingData 96
+[0.511s][debug][aot,map       ] 0x0000000800188048: @@ MethodTrainingData 96
+[0.512s][debug][aot,map       ] 0x000000080018a498: @@ MethodTrainingData 96
+[0.513s][debug][aot,map       ] 0x000000080018f8e8: @@ MethodTrainingData 96
+[0.513s][debug][aot,map       ] 0x000000080018fad0: @@ MethodTrainingData 96
+[0.518s][debug][aot,map       ] 0x00000008001aee78: @@ MethodTrainingData 96
+[0.519s][debug][aot,map       ] 0x00000008001af428: @@ MethodTrainingData 96
+[0.519s][debug][aot,map       ] 0x00000008001aff28: @@ MethodTrainingData 96
+[0.519s][debug][aot,map       ] 0x00000008001b03c8: @@ MethodTrainingData 96
+[0.519s][debug][aot,map       ] 0x00000008001b0e98: @@ MethodTrainingData 96
+[0.519s][debug][aot,map       ] 0x00000008001b10d0: @@ MethodTrainingData 96
+[0.519s][debug][aot,map       ] 0x00000008001b15b8: @@ MethodTrainingData 96
+[0.527s][debug][aot,map       ] 0x00000008001e80f0: @@ MethodTrainingData 96
+[0.527s][debug][aot,map       ] 0x00000008001e8490: @@ MethodTrainingData 96
+[0.527s][debug][aot,map       ] 0x00000008001e8588: @@ MethodTrainingData 96
+[0.527s][debug][aot,map       ] 0x00000008001e86d8: @@ MethodTrainingData 96
+[0.527s][debug][aot,map       ] 0x00000008001e9e30: @@ MethodTrainingData 96
+[0.530s][debug][aot,map       ] 0x00000008001fea58: @@ MethodTrainingData 96
+[0.533s][debug][aot,map       ] 0x0000000800210a98: @@ MethodTrainingData 96
+[0.533s][debug][aot,map       ] 0x0000000800210b90: @@ MethodTrainingData 96
+[0.533s][debug][aot,map       ] 0x0000000800210c88: @@ MethodTrainingData 96
+[0.533s][debug][aot,map       ] 0x0000000800215080: @@ MethodTrainingData 96
+[0.533s][debug][aot,map       ] 0x0000000800215280: @@ MethodTrainingData 96
+[0.533s][debug][aot,map       ] 0x0000000800215410: @@ MethodTrainingData 96
+[0.534s][debug][aot,map       ] 0x000000080021dfd0: @@ MethodTrainingData 96
+[0.534s][debug][aot,map       ] 0x000000080021e328: @@ MethodTrainingData 96
+[0.535s][debug][aot,map       ] 0x0000000800221958: @@ MethodTrainingData 96
+[0.536s][debug][aot,map       ] 0x000000080022d470: @@ Method            88 void jdk.internal.util.ReferencedKeySet.prepareForAOTCache()
+[0.538s][debug][aot,map       ] 0x000000080023b060: @@ MethodTrainingData 96
+[0.546s][debug][aot,map       ] 0x00000008002494f8: @@ MethodTrainingData 96
+[0.556s][debug][aot,map       ] 0x00000008002986c0: @@ MethodTrainingData 96
+[0.557s][debug][aot,map       ] 0x000000080029cd28: @@ MethodTrainingData 96
+[0.557s][debug][aot,map       ] 0x000000080029cdb8: @@ CompileTrainingData 80
+[0.557s][debug][aot,map       ] 0x000000080029d000: @@ MethodTrainingData 96
+[0.557s][debug][aot,map       ] 0x000000080029d0f8: @@ MethodTrainingData 96
+[0.559s][debug][aot,map       ] 0x00000008002ac3e0: @@ MethodTrainingData 96
+[0.559s][debug][aot,map       ] 0x00000008002ac4d8: @@ MethodTrainingData 96
+[0.559s][debug][aot,map       ] 0x00000008002ac680: @@ MethodTrainingData 96
+[0.559s][debug][aot,map       ] 0x00000008002ac7d0: @@ MethodTrainingData 96
+[0.560s][debug][aot,map       ] 0x00000008002ad890: @@ MethodTrainingData 96
+[0.560s][debug][aot,map       ] 0x00000008002ada90: @@ MethodTrainingData 96
+[0.560s][debug][aot,map       ] 0x00000008002adaf0: @@ CompileTrainingData 80
+[0.560s][debug][aot,map       ] 0x00000008002ae840: @@ MethodTrainingData 96
+[0.560s][debug][aot,map       ] 0x00000008002ae8a0: @@ CompileTrainingData 80
+[0.560s][debug][aot,map       ] 0x00000008002af568: @@ MethodTrainingData 96
+[0.560s][debug][aot,map       ] 0x00000008002af7c8: @@ MethodTrainingData 96
+[0.560s][debug][aot,map       ] 0x00000008002b0b38: @@ MethodTrainingData 96
+[0.560s][debug][aot,map       ] 0x00000008002b0bc8: @@ CompileTrainingData 80
+[0.561s][debug][aot,map       ] 0x00000008002b6fe0: @@ MethodTrainingData 96
+[0.561s][debug][aot,map       ] 0x00000008002b7468: @@ MethodTrainingData 96
+[0.561s][debug][aot,map       ] 0x00000008002b7b98: @@ MethodTrainingData 96
+[0.561s][debug][aot,map       ] 0x00000008002b8768: @@ MethodTrainingData 96
+[0.561s][debug][aot,map       ] 0x00000008002b8a98: @@ MethodTrainingData 96
+[0.561s][debug][aot,map       ] 0x00000008002b8d70: @@ MethodTrainingData 96
+[0.561s][debug][aot,map       ] 0x00000008002b9a30: @@ MethodTrainingData 96
+[0.561s][debug][aot,map       ] 0x00000008002b9ca8: @@ MethodTrainingData 96
+[0.561s][debug][aot,map       ] 0x00000008002ba6a8: @@ MethodTrainingData 96
+[0.562s][debug][aot,map       ] 0x00000008002bf4e0: @@ MethodTrainingData 96
+[0.562s][debug][aot,map       ] 0x00000008002bf670: @@ MethodTrainingData 96
+[0.565s][debug][aot,map       ] 0x00000008002d8970: @@ MethodTrainingData 96
+[0.565s][debug][aot,map       ] 0x00000008002da520: @@ MethodTrainingData 96
+[0.565s][debug][aot,map       ] 0x00000008002dece0: @@ MethodTrainingData 96
+[0.566s][debug][aot,map       ] 0x00000008002e7bc0: @@ Class             528 org.example.jvminternals.ch31.CacheJourney
+[0.566s][debug][aot,map       ] 0x00000008002e7dd0: @@ ConstantPoolCache 64 org.example.jvminternals.ch31.CacheJourney
+[0.566s][debug][aot,map       ] 0x00000008002e7e90: @@ Class             552 org.example.jvminternals.ch31.CacheJourney$Add
+[0.566s][debug][aot,map       ] 0x00000008002e80c0: @@ Class             520 org.example.jvminternals.ch31.CacheJourney$Operation
+[0.566s][debug][aot,map       ] 0x00000008002e82c8: @@ Method            88 long org.example.jvminternals.ch31.CacheJourney$Add.apply(long)
+[0.566s][debug][aot,map       ] 0x00000008002e8538: @@ Method            88 void org.example.jvminternals.ch31.CacheJourney.<init>()
+[0.566s][debug][aot,map       ] 0x00000008002e8590: @@ Method            88 void org.example.jvminternals.ch31.CacheJourney.main(java.lang.String[])
+[0.566s][debug][aot,map       ] 0x00000008002e85e8: @@ Method            88 void org.example.jvminternals.ch31.CacheJourney.mark(java.lang.String)
+[0.566s][debug][aot,map       ] 0x00000008002e8640: @@ Method            88 long org.example.jvminternals.ch31.CacheJourney.route(org.example.jvminternals.ch31.CacheJourney$Operation, long)
+[0.572s][debug][aot,map       ] 0x0000000800316280: @@ Class             520 jdk.management.HotSpotAOTCacheMXBean
+[0.572s][debug][aot,map       ] 0x0000000800316488: @@ ConstantPoolCache 64 jdk.management.HotSpotAOTCacheMXBean
+[0.572s][debug][aot,map       ] 0x00000008003164c8: @@ Method            88 boolean jdk.management.HotSpotAOTCacheMXBean.endRecording()
+[0.576s][debug][aot,map       ] 0x0000000800336950: @@ MethodTrainingData 96
+[0.576s][debug][aot,map       ] 0x0000000800336bd8: @@ CompileTrainingData 80
+[0.576s][debug][aot,map       ] 0x0000000800336c28: @@ MethodTrainingData 96
+[0.576s][debug][aot,map       ] 0x0000000800336c88: @@ CompileTrainingData 80
+[0.576s][debug][aot,map       ] 0x0000000800336d48: @@ CompileTrainingData 80
+[0.576s][debug][aot,map       ] 0x0000000800336e58: @@ MethodTrainingData 96
+[0.577s][debug][aot,map       ] 0x0000000800337020: @@ CompileTrainingData 80
+[0.577s][debug][aot,map       ] 0x0000000800337070: @@ MethodTrainingData 96
+[0.577s][debug][aot,map       ] 0x0000000800337110: @@ CompileTrainingData 80
+[0.577s][debug][aot,map       ] 0x0000000800337160: @@ MethodTrainingData 96
+[0.577s][debug][aot,map       ] 0x0000000800337638: @@ CompileTrainingData 80
+[0.577s][debug][aot,map       ] 0x0000000800337688: @@ MethodTrainingData 96
+[0.577s][debug][aot,map       ] 0x0000000800337d70: @@ CompileTrainingData 80
+[0.577s][debug][aot,map       ] 0x0000000800337e20: @@ MethodTrainingData 96
+[0.577s][debug][aot,map       ] 0x00000008003385b0: @@ CompileTrainingData 80
+[0.577s][debug][aot,map       ] 0x0000000800338600: @@ MethodTrainingData 96
+[0.577s][debug][aot,map       ] 0x0000000800338808: @@ CompileTrainingData 80
+[0.577s][debug][aot,map       ] 0x0000000800338858: @@ MethodTrainingData 96
+[0.577s][debug][aot,map       ] 0x0000000800338a80: @@ CompileTrainingData 80
+[0.577s][debug][aot,map       ] 0x0000000800338ad0: @@ MethodTrainingData 96
+[0.577s][debug][aot,map       ] 0x0000000800338ba0: @@ CompileTrainingData 80
+[0.577s][debug][aot,map       ] 0x0000000800338c20: @@ MethodTrainingData 96
+[0.577s][debug][aot,map       ] 0x0000000800338f40: @@ MethodTrainingData 96
+[0.577s][debug][aot,map       ] 0x0000000800338fd0: @@ CompileTrainingData 80
+[0.577s][debug][aot,map       ] 0x0000000800339208: @@ CompileTrainingData 80
+[0.577s][debug][aot,map       ] 0x00000008003392e8: @@ MethodTrainingData 96
+[0.577s][debug][aot,map       ] 0x0000000800339560: @@ CompileTrainingData 80
+[0.577s][debug][aot,map       ] 0x00000008003395e0: @@ MethodTrainingData 96
+[0.577s][debug][aot,map       ] 0x0000000800339958: @@ CompileTrainingData 80
+[0.577s][debug][aot,map       ] 0x0000000800339a68: @@ MethodTrainingData 96
+[0.577s][debug][aot,map       ] 0x0000000800339dc8: @@ CompileTrainingData 80
+[0.577s][debug][aot,map       ] 0x0000000800339e18: @@ MethodTrainingData 96
+[0.577s][debug][aot,map       ] 0x0000000800339f70: @@ CompileTrainingData 80
+[0.577s][debug][aot,map       ] 0x0000000800339fc0: @@ MethodTrainingData 96
+[0.577s][debug][aot,map       ] 0x000000080033a238: @@ CompileTrainingData 80
+[0.577s][debug][aot,map       ] 0x000000080033a288: @@ MethodTrainingData 96
+[0.577s][debug][aot,map       ] 0x000000080033a530: @@ MethodTrainingData 96
+[0.577s][debug][aot,map       ] 0x000000080033a938: @@ MethodTrainingData 96
+[0.577s][debug][aot,map       ] 0x000000080033a9c8: @@ CompileTrainingData 80
+[0.577s][debug][aot,map       ] 0x000000080033ac18: @@ MethodTrainingData 96
+[0.577s][debug][aot,map       ] 0x000000080033ae10: @@ CompileTrainingData 80
+[0.577s][debug][aot,map       ] 0x000000080033ae60: @@ MethodTrainingData 96
+[0.577s][debug][aot,map       ] 0x000000080033aec0: @@ CompileTrainingData 80
+[0.577s][debug][aot,map       ] 0x000000080033af50: @@ MethodTrainingData 96
+[0.577s][debug][aot,map       ] 0x000000080033afe0: @@ CompileTrainingData 80
+[0.577s][debug][aot,map       ] 0x000000080033b030: @@ MethodTrainingData 96
+[0.577s][debug][aot,map       ] 0x000000080033b090: @@ CompileTrainingData 80
+[0.577s][debug][aot,map       ] 0x000000080033b0e0: @@ CompileTrainingData 80
+[0.577s][debug][aot,map       ] 0x000000080033b130: @@ MethodTrainingData 96
+[0.577s][debug][aot,map       ] 0x000000080033b190: @@ CompileTrainingData 80
+[0.577s][debug][aot,map       ] 0x000000080033b1e0: @@ MethodTrainingData 96
+[0.577s][debug][aot,map       ] 0x000000080033b2b0: @@ CompileTrainingData 80
+[0.577s][debug][aot,map       ] 0x000000080033b3f0: @@ MethodTrainingData 96
+[0.577s][debug][aot,map       ] 0x000000080033b668: @@ MethodTrainingData 96
+[0.577s][debug][aot,map       ] 0x000000080033b790: @@ CompileTrainingData 80
+[0.577s][debug][aot,map       ] 0x000000080033b850: @@ MethodTrainingData 96
+[0.577s][debug][aot,map       ] 0x000000080033bb60: @@ CompileTrainingData 80
+[0.577s][debug][aot,map       ] 0x000000080033bbb0: @@ MethodTrainingData 96
+[0.577s][debug][aot,map       ] 0x000000080033bc10: @@ CompileTrainingData 80
+[0.577s][debug][aot,map       ] 0x000000080033bc60: @@ MethodTrainingData 96
+[0.577s][debug][aot,map       ] 0x000000080033bcc0: @@ CompileTrainingData 80
+[0.577s][debug][aot,map       ] 0x000000080033bd10: @@ CompileTrainingData 80
+[0.577s][debug][aot,map       ] 0x000000080033bd60: @@ MethodTrainingData 96
+[0.577s][debug][aot,map       ] 0x000000080033bdc0: @@ CompileTrainingData 80
+[0.577s][debug][aot,map       ] 0x000000080033be10: @@ MethodTrainingData 96
+[0.577s][debug][aot,map       ] 0x000000080033be70: @@ CompileTrainingData 80
+[0.577s][debug][aot,map       ] 0x000000080033bec0: @@ MethodTrainingData 96
+[0.577s][debug][aot,map       ] 0x000000080033bf60: @@ MethodTrainingData 96
+[0.577s][debug][aot,map       ] 0x000000080033c030: @@ MethodTrainingData 96
+[0.577s][debug][aot,map       ] 0x000000080033c400: @@ CompileTrainingData 80
+[0.577s][debug][aot,map       ] 0x000000080033c450: @@ MethodTrainingData 96
+[0.577s][debug][aot,map       ] 0x000000080033c4b0: @@ CompileTrainingData 80
+[0.577s][debug][aot,map       ] 0x000000080033c500: @@ MethodTrainingData 96
+[0.577s][debug][aot,map       ] 0x000000080033c560: @@ CompileTrainingData 80
+[0.577s][debug][aot,map       ] 0x000000080033c5f0: @@ MethodTrainingData 96
+[0.577s][debug][aot,map       ] 0x000000080033c818: @@ MethodTrainingData 96
+[0.577s][debug][aot,map       ] 0x000000080033c8a8: @@ CompileTrainingData 80
+[0.577s][debug][aot,map       ] 0x000000080033caf0: @@ MethodTrainingData 96
+[0.577s][debug][aot,map       ] 0x000000080033cd48: @@ CompileTrainingData 80
+[0.577s][debug][aot,map       ] 0x000000080033cd98: @@ MethodTrainingData 96
+[0.577s][debug][aot,map       ] 0x000000080033cdf8: @@ CompileTrainingData 80
+[0.577s][debug][aot,map       ] 0x000000080033ce48: @@ MethodTrainingData 96
+[0.577s][debug][aot,map       ] 0x000000080033cea8: @@ CompileTrainingData 80
+[0.577s][debug][aot,map       ] 0x000000080033cef8: @@ MethodTrainingData 96
+[0.577s][debug][aot,map       ] 0x000000080033cf58: @@ CompileTrainingData 80
+[0.577s][debug][aot,map       ] 0x000000080033cfa8: @@ CompileTrainingData 80
+[0.577s][debug][aot,map       ] 0x000000080033cff8: @@ MethodTrainingData 96
+[0.577s][debug][aot,map       ] 0x000000080033d058: @@ CompileTrainingData 80
+[0.577s][debug][aot,map       ] 0x000000080033d0e8: @@ MethodTrainingData 96
+[0.577s][debug][aot,map       ] 0x000000080033d428: @@ CompileTrainingData 80
+[0.577s][debug][aot,map       ] 0x000000080033d478: @@ MethodTrainingData 96
+[0.577s][debug][aot,map       ] 0x000000080033d4d8: @@ CompileTrainingData 80
+[0.577s][debug][aot,map       ] 0x000000080033d528: @@ MethodTrainingData 96
+[0.577s][debug][aot,map       ] 0x000000080033d5f8: @@ CompileTrainingData 80
+[0.577s][debug][aot,map       ] 0x000000080033d648: @@ MethodTrainingData 96
+[0.577s][debug][aot,map       ] 0x000000080033d700: @@ CompileTrainingData 80
+[0.577s][debug][aot,map       ] 0x000000080033d908: @@ CompileTrainingData 80
+[0.577s][debug][aot,map       ] 0x000000080033d988: @@ MethodTrainingData 96
+[0.577s][debug][aot,map       ] 0x000000080033d9e8: @@ CompileTrainingData 80
+[0.577s][debug][aot,map       ] 0x000000080033dc90: @@ CompileTrainingData 80
+[0.577s][debug][aot,map       ] 0x000000080033dd10: @@ MethodTrainingData 96
+[0.577s][debug][aot,map       ] 0x000000080033e2e0: @@ CompileTrainingData 80
+[0.577s][debug][aot,map       ] 0x000000080033e330: @@ MethodTrainingData 96
+[0.577s][debug][aot,map       ] 0x000000080033e5e8: @@ MethodTrainingData 96
+[0.577s][debug][aot,map       ] 0x000000080033e808: @@ CompileTrainingData 80
+[0.577s][debug][aot,map       ] 0x000000080033e898: @@ MethodTrainingData 96
+[0.577s][debug][aot,map       ] 0x000000080033eb70: @@ MethodTrainingData 96
+[0.577s][debug][aot,map       ] 0x000000080033ec00: @@ CompileTrainingData 80
+[0.577s][debug][aot,map       ] 0x000000080033ec50: @@ CompileTrainingData 80
+[0.577s][debug][aot,map       ] 0x000000080033eca0: @@ MethodTrainingData 96
+[0.577s][debug][aot,map       ] 0x000000080033ed40: @@ MethodTrainingData 96
+[0.577s][debug][aot,map       ] 0x000000080033f050: @@ CompileTrainingData 80
+[0.577s][debug][aot,map       ] 0x000000080033f0a0: @@ CompileTrainingData 80
+[0.577s][debug][aot,map       ] 0x000000080033f130: @@ MethodTrainingData 96
+[0.577s][debug][aot,map       ] 0x000000080033f230: @@ MethodTrainingData 96
+[0.577s][debug][aot,map       ] 0x000000080033f290: @@ CompileTrainingData 80
+[0.577s][debug][aot,map       ] 0x000000080033f490: @@ MethodTrainingData 96
+[0.577s][debug][aot,map       ] 0x000000080033f4f0: @@ CompileTrainingData 80
+[0.577s][debug][aot,map       ] 0x000000080033f540: @@ CompileTrainingData 80
+[0.577s][debug][aot,map       ] 0x000000080033f5c0: @@ MethodTrainingData 96
+[0.577s][debug][aot,map       ] 0x000000080033f678: @@ CompileTrainingData 80
+[0.577s][debug][aot,map       ] 0x000000080033f6c8: @@ CompileTrainingData 80
+[0.578s][debug][aot,map       ] 0x000000080033f8b8: @@ MethodTrainingData 96
+[0.578s][debug][aot,map       ] 0x000000080033f970: @@ CompileTrainingData 80
+[0.578s][debug][aot,map       ] 0x000000080033fb30: @@ MethodTrainingData 96
+[0.578s][debug][aot,map       ] 0x000000080033ff38: @@ MethodTrainingData 96
+[0.578s][debug][aot,map       ] 0x0000000800340168: @@ CompileTrainingData 80
+[0.578s][debug][aot,map       ] 0x00000008003401f8: @@ MethodTrainingData 96
+[0.578s][debug][aot,map       ] 0x00000008003406a0: @@ CompileTrainingData 80
+[0.578s][debug][aot,map       ] 0x0000000800340730: @@ MethodTrainingData 96
+[0.578s][debug][aot,map       ] 0x00000008003407c0: @@ CompileTrainingData 80
+[0.578s][debug][aot,map       ] 0x0000000800340a30: @@ MethodTrainingData 96
+[0.578s][debug][aot,map       ] 0x0000000800340d58: @@ CompileTrainingData 80
+[0.578s][debug][aot,map       ] 0x0000000800340da8: @@ CompileTrainingData 80
+[0.578s][debug][aot,map       ] 0x0000000800340e38: @@ MethodTrainingData 96
+[0.578s][debug][aot,map       ] 0x0000000800341058: @@ CompileTrainingData 80
+[0.578s][debug][aot,map       ] 0x00000008003410e8: @@ MethodTrainingData 96
+[0.578s][debug][aot,map       ] 0x00000008003411e0: @@ CompileTrainingData 80
+[0.578s][debug][aot,map       ] 0x00000008003412a0: @@ MethodTrainingData 96
+[0.578s][debug][aot,map       ] 0x00000008003414a8: @@ CompileTrainingData 80
+[0.578s][debug][aot,map       ] 0x0000000800341538: @@ MethodTrainingData 96
+[0.578s][debug][aot,map       ] 0x0000000800341598: @@ CompileTrainingData 80
+[0.578s][debug][aot,map       ] 0x0000000800341760: @@ CompileTrainingData 80
+[0.578s][debug][aot,map       ] 0x0000000800341810: @@ MethodTrainingData 96
+[0.578s][debug][aot,map       ] 0x0000000800341ae0: @@ MethodTrainingData 96
+[0.578s][debug][aot,map       ] 0x0000000800341d68: @@ CompileTrainingData 80
+[0.578s][debug][aot,map       ] 0x0000000800341e28: @@ MethodTrainingData 96
+[0.578s][debug][aot,map       ] 0x0000000800341ff0: @@ MethodTrainingData 96
+[0.578s][debug][aot,map       ] 0x0000000800342050: @@ CompileTrainingData 80
+[0.578s][debug][aot,map       ] 0x00000008003420a0: @@ CompileTrainingData 80
+[0.578s][debug][aot,map       ] 0x00000008003420f0: @@ MethodTrainingData 96
+[0.578s][debug][aot,map       ] 0x00000008003421a8: @@ CompileTrainingData 80
+[0.578s][debug][aot,map       ] 0x00000008003421f8: @@ CompileTrainingData 80
+[0.578s][debug][aot,map       ] 0x0000000800342550: @@ MethodTrainingData 96
+[0.578s][debug][aot,map       ] 0x00000008003425f0: @@ MethodTrainingData 96
+[0.578s][debug][aot,map       ] 0x0000000800342890: @@ MethodTrainingData 96
+[0.578s][debug][aot,map       ] 0x00000008003428f0: @@ CompileTrainingData 80
+[0.578s][debug][aot,map       ] 0x0000000800342ae0: @@ MethodTrainingData 96
+[0.578s][debug][aot,map       ] 0x0000000800342bd8: @@ CompileTrainingData 80
+[0.578s][debug][aot,map       ] 0x0000000800342c68: @@ MethodTrainingData 96
+[0.578s][debug][aot,map       ] 0x0000000800342e88: @@ CompileTrainingData 80
+[0.578s][debug][aot,map       ] 0x0000000800342f08: @@ MethodTrainingData 96
+[0.578s][debug][aot,map       ] 0x0000000800342f98: @@ CompileTrainingData 80
+[0.578s][debug][aot,map       ] 0x0000000800342fe8: @@ CompileTrainingData 80
+[0.578s][debug][aot,map       ] 0x0000000800343038: @@ MethodTrainingData 96
+[0.578s][debug][aot,map       ] 0x00000008003430d8: @@ MethodTrainingData 96
+[0.578s][debug][aot,map       ] 0x0000000800343168: @@ CompileTrainingData 80
+[0.578s][debug][aot,map       ] 0x00000008003431b8: @@ CompileTrainingData 80
+[0.578s][debug][aot,map       ] 0x0000000800343208: @@ CompileTrainingData 80
+[0.578s][debug][aot,map       ] 0x0000000800343258: @@ CompileTrainingData 80
+[0.578s][debug][aot,map       ] 0x00000008003432a8: @@ MethodTrainingData 96
+[0.578s][debug][aot,map       ] 0x0000000800343308: @@ CompileTrainingData 80
+[0.578s][debug][aot,map       ] 0x0000000800343358: @@ CompileTrainingData 80
+[0.578s][debug][aot,map       ] 0x00000008003433a8: @@ MethodTrainingData 96
+[0.578s][debug][aot,map       ] 0x0000000800343408: @@ CompileTrainingData 80
+[0.578s][debug][aot,map       ] 0x0000000800343458: @@ MethodTrainingData 96
+[0.578s][debug][aot,map       ] 0x00000008003434b8: @@ CompileTrainingData 80
+[0.578s][debug][aot,map       ] 0x0000000800343508: @@ CompileTrainingData 80
+[0.578s][debug][aot,map       ] 0x0000000800343558: @@ MethodTrainingData 96
+[0.578s][debug][aot,map       ] 0x00000008003435b8: @@ CompileTrainingData 80
+[0.578s][debug][aot,map       ] 0x0000000800343608: @@ MethodTrainingData 96
+[0.578s][debug][aot,map       ] 0x0000000800343668: @@ CompileTrainingData 80
+[0.578s][debug][aot,map       ] 0x00000008003436f8: @@ MethodTrainingData 96
+[0.578s][debug][aot,map       ] 0x0000000800343b30: @@ CompileTrainingData 80
+[0.578s][debug][aot,map       ] 0x0000000800343b80: @@ MethodTrainingData 96
+[0.578s][debug][aot,map       ] 0x0000000800343be0: @@ CompileTrainingData 80
+[0.578s][debug][aot,map       ] 0x0000000800343c30: @@ CompileTrainingData 80
+[0.578s][debug][aot,map       ] 0x0000000800343c80: @@ CompileTrainingData 80
+[0.578s][debug][aot,map       ] 0x0000000800343d40: @@ CompileTrainingData 80
+[0.578s][debug][aot,map       ] 0x0000000800343dc0: @@ MethodTrainingData 96
+[0.578s][debug][aot,map       ] 0x0000000800343fd0: @@ CompileTrainingData 80
+[0.578s][debug][aot,map       ] 0x0000000800344050: @@ CompileTrainingData 80
+[0.578s][debug][aot,map       ] 0x00000008003440a0: @@ MethodTrainingData 96
+[0.578s][debug][aot,map       ] 0x00000008003442d0: @@ MethodTrainingData 96
+[0.578s][debug][aot,map       ] 0x0000000800344578: @@ MethodTrainingData 96
+[0.578s][debug][aot,map       ] 0x0000000800344648: @@ CompileTrainingData 80
+[0.578s][debug][aot,map       ] 0x0000000800344698: @@ CompileTrainingData 80
+[0.578s][debug][aot,map       ] 0x0000000800344718: @@ MethodTrainingData 96
+[0.578s][debug][aot,map       ] 0x0000000800344aa8: @@ MethodTrainingData 96
+[0.578s][debug][aot,map       ] 0x0000000800344ba0: @@ CompileTrainingData 80
+[0.578s][debug][aot,map       ] 0x0000000800344c30: @@ MethodTrainingData 96
+[0.578s][debug][aot,map       ] 0x0000000800344e60: @@ CompileTrainingData 80
+[0.578s][debug][aot,map       ] 0x0000000800344ef0: @@ MethodTrainingData 96
+[0.578s][debug][aot,map       ] 0x0000000800344f80: @@ CompileTrainingData 80
+[0.578s][debug][aot,map       ] 0x0000000800345040: @@ CompileTrainingData 80
+[0.578s][debug][aot,map       ] 0x00000008003450c0: @@ CompileTrainingData 80
+[0.578s][debug][aot,map       ] 0x0000000800345110: @@ MethodTrainingData 96
+[0.578s][debug][aot,map       ] 0x0000000800345278: @@ MethodTrainingData 96
+[0.578s][debug][aot,map       ] 0x00000008003452d8: @@ CompileTrainingData 80
+[0.578s][debug][aot,map       ] 0x00000008003454c0: @@ MethodTrainingData 96
+[0.578s][debug][aot,map       ] 0x0000000800345520: @@ CompileTrainingData 80
+[0.578s][debug][aot,map       ] 0x00000008003455b0: @@ MethodTrainingData 96
+[0.578s][debug][aot,map       ] 0x0000000800345680: @@ MethodTrainingData 96
+[0.578s][debug][aot,map       ] 0x00000008003456e0: @@ CompileTrainingData 80
+[0.578s][debug][aot,map       ] 0x0000000800345908: @@ MethodTrainingData 96
+[0.578s][debug][aot,map       ] 0x00000008003459a8: @@ MethodTrainingData 96
+[0.578s][debug][aot,map       ] 0x0000000800345c08: @@ MethodTrainingData 96
+[0.578s][debug][aot,map       ] 0x0000000800345e08: @@ CompileTrainingData 80
+[0.578s][debug][aot,map       ] 0x0000000800345e98: @@ MethodTrainingData 96
+[0.578s][debug][aot,map       ] 0x0000000800345f90: @@ CompileTrainingData 80
+[0.578s][debug][aot,map       ] 0x0000000800346050: @@ CompileTrainingData 80
+[0.578s][debug][aot,map       ] 0x0000000800346100: @@ MethodTrainingData 96
+[0.578s][debug][aot,map       ] 0x00000008003463a0: @@ MethodTrainingData 96
+[0.578s][debug][aot,map       ] 0x00000008003465d8: @@ MethodTrainingData 96
+[0.578s][debug][aot,map       ] 0x00000008003468b8: @@ CompileTrainingData 80
+[0.578s][debug][aot,map       ] 0x0000000800346978: @@ CompileTrainingData 80
+[0.578s][debug][aot,map       ] 0x00000008003469f8: @@ CompileTrainingData 80
+[0.578s][debug][aot,map       ] 0x0000000800346a48: @@ CompileTrainingData 80
+[0.578s][debug][aot,map       ] 0x0000000800346a98: @@ MethodTrainingData 96
+[0.578s][debug][aot,map       ] 0x0000000800346d38: @@ MethodTrainingData 96
+[0.578s][debug][aot,map       ] 0x0000000800346d98: @@ CompileTrainingData 80
+[0.579s][debug][aot,map       ] 0x0000000800347200: @@ MethodTrainingData 96
+[0.579s][debug][aot,map       ] 0x0000000800347478: @@ CompileTrainingData 80
+[0.579s][debug][aot,map       ] 0x00000008003474f8: @@ MethodTrainingData 96
+[0.579s][debug][aot,map       ] 0x00000008003475f0: @@ MethodTrainingData 96
+[0.579s][debug][aot,map       ] 0x0000000800347650: @@ CompileTrainingData 80
+[0.579s][debug][aot,map       ] 0x0000000800347928: @@ MethodTrainingData 96
+[0.579s][debug][aot,map       ] 0x0000000800347ba0: @@ MethodTrainingData 96
+[0.579s][debug][aot,map       ] 0x0000000800347ec8: @@ MethodTrainingData 96
+[0.579s][debug][aot,map       ] 0x0000000800348140: @@ MethodTrainingData 96
+[0.579s][debug][aot,map       ] 0x00000008003481a0: @@ CompileTrainingData 80
+[0.579s][debug][aot,map       ] 0x0000000800348358: @@ CompileTrainingData 80
+[0.579s][debug][aot,map       ] 0x00000008003483d8: @@ MethodTrainingData 96
+[0.579s][debug][aot,map       ] 0x0000000800348438: @@ CompileTrainingData 80
+[0.579s][debug][aot,map       ] 0x0000000800348620: @@ CompileTrainingData 80
+[0.579s][debug][aot,map       ] 0x0000000800348670: @@ MethodTrainingData 96
+[0.579s][debug][aot,map       ] 0x0000000800348818: @@ MethodTrainingData 96
+[0.579s][debug][aot,map       ] 0x0000000800348a48: @@ CompileTrainingData 80
+[0.579s][debug][aot,map       ] 0x0000000800348ad8: @@ MethodTrainingData 96
+[0.579s][debug][aot,map       ] 0x0000000800348b38: @@ CompileTrainingData 80
+[0.579s][debug][aot,map       ] 0x0000000800348d40: @@ MethodTrainingData 96
+[0.579s][debug][aot,map       ] 0x0000000800348de0: @@ MethodTrainingData 96
+[0.579s][debug][aot,map       ] 0x0000000800349030: @@ CompileTrainingData 80
+[0.579s][debug][aot,map       ] 0x0000000800349080: @@ CompileTrainingData 80
+[0.579s][debug][aot,map       ] 0x00000008003490d0: @@ CompileTrainingData 80
+[0.579s][debug][aot,map       ] 0x0000000800349120: @@ CompileTrainingData 80
+[0.579s][debug][aot,map       ] 0x0000000800349170: @@ MethodTrainingData 96
+[0.579s][debug][aot,map       ] 0x0000000800349358: @@ MethodTrainingData 96
+[0.579s][debug][aot,map       ] 0x0000000800349450: @@ CompileTrainingData 80
+[0.579s][debug][aot,map       ] 0x00000008003494a0: @@ CompileTrainingData 80
+[0.579s][debug][aot,map       ] 0x00000008003496d0: @@ MethodTrainingData 96
+[0.579s][debug][aot,map       ] 0x00000008003499a0: @@ MethodTrainingData 96
+[0.579s][debug][aot,map       ] 0x0000000800349a98: @@ CompileTrainingData 80
+[0.579s][debug][aot,map       ] 0x0000000800349b58: @@ MethodTrainingData 96
+[0.579s][debug][aot,map       ] 0x0000000800349d78: @@ CompileTrainingData 80
+[0.579s][debug][aot,map       ] 0x0000000800349e08: @@ MethodTrainingData 96
+[0.579s][debug][aot,map       ] 0x0000000800349ea8: @@ MethodTrainingData 96
+[0.579s][debug][aot,map       ] 0x000000080034a090: @@ CompileTrainingData 80
+[0.579s][debug][aot,map       ] 0x000000080034a0e0: @@ CompileTrainingData 80
+[0.579s][debug][aot,map       ] 0x000000080034a170: @@ MethodTrainingData 96
+[0.579s][debug][aot,map       ] 0x000000080034a268: @@ CompileTrainingData 80
+[0.579s][debug][aot,map       ] 0x000000080034a2f8: @@ MethodTrainingData 96
+[0.579s][debug][aot,map       ] 0x000000080034a398: @@ MethodTrainingData 96
+[0.579s][debug][aot,map       ] 0x000000080034a588: @@ CompileTrainingData 80
+[0.579s][debug][aot,map       ] 0x000000080034a618: @@ MethodTrainingData 96
+[0.579s][debug][aot,map       ] 0x000000080034a710: @@ CompileTrainingData 80
+[0.579s][debug][aot,map       ] 0x000000080034a7a0: @@ MethodTrainingData 96
+[0.579s][debug][aot,map       ] 0x000000080034a9e8: @@ CompileTrainingData 80
+[0.579s][debug][aot,map       ] 0x000000080034aaa8: @@ MethodTrainingData 96
+[0.579s][debug][aot,map       ] 0x000000080034ab48: @@ MethodTrainingData 96
+[0.579s][debug][aot,map       ] 0x000000080034ac18: @@ CompileTrainingData 80
+[0.579s][debug][aot,map       ] 0x000000080034acc8: @@ MethodTrainingData 96
+[0.579s][debug][aot,map       ] 0x000000080034ad28: @@ CompileTrainingData 80
+[0.579s][debug][aot,map       ] 0x000000080034af00: @@ MethodTrainingData 96
+[0.579s][debug][aot,map       ] 0x000000080034af90: @@ CompileTrainingData 80
+[0.579s][debug][aot,map       ] 0x000000080034b050: @@ CompileTrainingData 80
+[0.579s][debug][aot,map       ] 0x000000080034b0d0: @@ MethodTrainingData 96
+[0.579s][debug][aot,map       ] 0x000000080034b130: @@ CompileTrainingData 80
+[0.579s][debug][aot,map       ] 0x000000080034b180: @@ MethodTrainingData 96
+[0.579s][debug][aot,map       ] 0x000000080034b3a8: @@ MethodTrainingData 96
+[0.579s][debug][aot,map       ] 0x000000080034b6d0: @@ CompileTrainingData 80
+[0.579s][debug][aot,map       ] 0x000000080034b790: @@ MethodTrainingData 96
+[0.579s][debug][aot,map       ] 0x000000080034ba08: @@ CompileTrainingData 80
+[0.579s][debug][aot,map       ] 0x000000080034ba98: @@ MethodTrainingData 96
+[0.579s][debug][aot,map       ] 0x000000080034bbc0: @@ CompileTrainingData 80
+[0.579s][debug][aot,map       ] 0x000000080034bc80: @@ MethodTrainingData 96
+[0.579s][debug][aot,map       ] 0x000000080034bd20: @@ MethodTrainingData 96
+[0.579s][debug][aot,map       ] 0x000000080034bd80: @@ CompileTrainingData 80
+[0.579s][debug][aot,map       ] 0x000000080034bff0: @@ MethodTrainingData 96
+[0.579s][debug][aot,map       ] 0x000000080034c090: @@ MethodTrainingData 96
+[0.579s][debug][aot,map       ] 0x000000080034c370: @@ CompileTrainingData 80
+[0.579s][debug][aot,map       ] 0x000000080034c400: @@ MethodTrainingData 96
+[0.579s][debug][aot,map       ] 0x000000080034c460: @@ CompileTrainingData 80
+[0.579s][debug][aot,map       ] 0x000000080034c638: @@ MethodTrainingData 96
+[0.579s][debug][aot,map       ] 0x000000080034c8e8: @@ CompileTrainingData 80
+[0.579s][debug][aot,map       ] 0x000000080034c978: @@ MethodTrainingData 96
+[0.579s][debug][aot,map       ] 0x000000080034d020: @@ CompileTrainingData 80
+[0.579s][debug][aot,map       ] 0x000000080034d0b0: @@ MethodTrainingData 96
+[0.579s][debug][aot,map       ] 0x000000080034d110: @@ CompileTrainingData 80
+[0.579s][debug][aot,map       ] 0x000000080034d300: @@ MethodTrainingData 96
+[0.579s][debug][aot,map       ] 0x000000080034d5a0: @@ MethodTrainingData 96
+[0.579s][debug][aot,map       ] 0x000000080034d828: @@ MethodTrainingData 96
+[0.579s][debug][aot,map       ] 0x000000080034d8b8: @@ CompileTrainingData 80
+[0.579s][debug][aot,map       ] 0x000000080034d948: @@ MethodTrainingData 96
+[0.579s][debug][aot,map       ] 0x000000080034d9a8: @@ Method            88 long org.example.jvminternals.ch31.CacheJourney$Operation.apply(long)
+[0.579s][debug][aot,map       ] 0x000000080034da00: @@ ConstantPoolCache 64 org.example.jvminternals.ch31.CacheJourney$Operation
+[0.579s][debug][aot,map       ] 0x000000080034da80: @@ MethodTrainingData 96
+[0.579s][debug][aot,map       ] 0x000000080034db20: @@ MethodTrainingData 96
+[0.579s][debug][aot,map       ] 0x000000080034dc18: @@ CompileTrainingData 80
+[0.579s][debug][aot,map       ] 0x000000080034dca8: @@ MethodTrainingData 96
+[0.579s][debug][aot,map       ] 0x000000080034df10: @@ MethodTrainingData 96
+[0.579s][debug][aot,map       ] 0x000000080034dfa0: @@ CompileTrainingData 80
+[0.579s][debug][aot,map       ] 0x000000080034e060: @@ CompileTrainingData 80
+[0.579s][debug][aot,map       ] 0x000000080034e0b0: @@ MethodTrainingData 96
+[0.579s][debug][aot,map       ] 0x000000080034e1a8: @@ CompileTrainingData 80
+[0.579s][debug][aot,map       ] 0x000000080034e238: @@ MethodTrainingData 96
+[0.579s][debug][aot,map       ] 0x000000080034e4f8: @@ CompileTrainingData 80
+[0.579s][debug][aot,map       ] 0x000000080034e588: @@ MethodTrainingData 96
+[0.579s][debug][aot,map       ] 0x000000080034e808: @@ MethodTrainingData 96
+[0.579s][debug][aot,map       ] 0x000000080034e868: @@ CompileTrainingData 80
+[0.579s][debug][aot,map       ] 0x000000080034ea30: @@ MethodTrainingData 96
+[0.579s][debug][aot,map       ] 0x000000080034eb68: @@ MethodTrainingData 96
+[0.579s][debug][aot,map       ] 0x000000080034edb0: @@ CompileTrainingData 80
+[0.580s][debug][aot,map       ] 0x000000080034ee40: @@ MethodTrainingData 96
+[0.580s][debug][aot,map       ] 0x000000080034efd8: @@ MethodTrainingData 96
+[0.580s][debug][aot,map       ] 0x000000080034f2b8: @@ MethodTrainingData 96
+[0.580s][debug][aot,map       ] 0x000000080034f318: @@ CompileTrainingData 80
+[0.580s][debug][aot,map       ] 0x000000080034f500: @@ MethodTrainingData 96
+[0.580s][debug][aot,map       ] 0x000000080034f868: @@ MethodTrainingData 96
+[0.580s][debug][aot,map       ] 0x000000080034fa50: @@ MethodTrainingData 96
+[0.580s][debug][aot,map       ] 0x000000080034fcc8: @@ CompileTrainingData 80
+[0.580s][debug][aot,map       ] 0x000000080034fd58: @@ MethodTrainingData 96
+[0.580s][debug][aot,map       ] 0x000000080034fdb8: @@ CompileTrainingData 80
+[0.580s][debug][aot,map       ] 0x000000080034fe08: @@ CompileTrainingData 80
+[0.580s][debug][aot,map       ] 0x000000080034ff90: @@ MethodTrainingData 96
+[0.580s][debug][aot,map       ] 0x000000080034fff0: @@ CompileTrainingData 80
+[0.580s][debug][aot,map       ] 0x0000000800350080: @@ MethodTrainingData 96
+[0.580s][debug][aot,map       ] 0x0000000800350368: @@ MethodTrainingData 96
+[0.580s][debug][aot,map       ] 0x00000008003505f8: @@ CompileTrainingData 80
+[0.580s][debug][aot,map       ] 0x0000000800350688: @@ MethodTrainingData 96
+[0.580s][debug][aot,map       ] 0x00000008003508c8: @@ CompileTrainingData 80
+[0.580s][debug][aot,map       ] 0x0000000800350918: @@ CompileTrainingData 80
+[0.580s][debug][aot,map       ] 0x0000000800350a08: @@ CompileTrainingData 80
+[0.580s][debug][aot,map       ] 0x0000000800350a58: @@ MethodTrainingData 96
+[0.580s][debug][aot,map       ] 0x0000000800350c40: @@ MethodTrainingData 96
+[0.580s][debug][aot,map       ] 0x0000000800350e28: @@ MethodTrainingData 96
+[0.580s][debug][aot,map       ] 0x00000008003510f0: @@ MethodTrainingData 96
+[0.580s][debug][aot,map       ] 0x0000000800351220: @@ MethodTrainingData 96
+[0.580s][debug][aot,map       ] 0x00000008003512c0: @@ MethodTrainingData 96
+[0.580s][debug][aot,map       ] 0x0000000800351c10: @@ CompileTrainingData 80
+[0.580s][debug][aot,map       ] 0x0000000800351ca0: @@ MethodTrainingData 96
+[0.580s][debug][aot,map       ] 0x0000000800351d00: @@ CompileTrainingData 80
+[0.580s][debug][aot,map       ] 0x0000000800351d90: @@ MethodTrainingData 96
+[0.580s][debug][aot,map       ] 0x0000000800352b70: @@ CompileTrainingData 80
+[0.580s][debug][aot,map       ] 0x0000000800352bc0: @@ CompileTrainingData 80
+[0.580s][debug][aot,map       ] 0x0000000800352c10: @@ CompileTrainingData 80
+[0.580s][debug][aot,map       ] 0x00000008003533d8: @@ CompileTrainingData 80
+[0.580s][debug][aot,map       ] 0x0000000800353468: @@ CompileTrainingData 80
+[0.580s][debug][aot,map       ] 0x00000008003534b8: @@ CompileTrainingData 80
+[0.580s][debug][aot,map       ] 0x0000000800353688: @@ CompileTrainingData 80
+[0.580s][debug][aot,map       ] 0x00000008003536d8: @@ CompileTrainingData 80
+[0.580s][debug][aot,map       ] 0x0000000800353728: @@ CompileTrainingData 80
+[0.580s][debug][aot,map       ] 0x0000000800353778: @@ CompileTrainingData 80
+[0.580s][debug][aot,map       ] 0x00000008003537c8: @@ CompileTrainingData 80
+[0.580s][debug][aot,map       ] 0x0000000800355748: @@ CompileTrainingData 80
+[0.580s][debug][aot,map       ] 0x0000000800355798: @@ CompileTrainingData 80
+[0.580s][debug][aot,map       ] 0x00000008003557e8: @@ CompileTrainingData 80
+[0.580s][debug][aot,map       ] 0x0000000800355838: @@ CompileTrainingData 80
+[0.580s][debug][aot,map       ] 0x0000000800355c08: @@ CompileTrainingData 80
+[0.580s][debug][aot,map       ] 0x0000000800355c58: @@ CompileTrainingData 80
+[0.580s][debug][aot,map       ] 0x0000000800355ca8: @@ CompileTrainingData 80
+[0.580s][debug][aot,map       ] 0x0000000800355e40: @@ CompileTrainingData 80
+[0.580s][debug][aot,map       ] 0x0000000800355e90: @@ MethodTrainingData 96
+[0.580s][debug][aot,map       ] 0x0000000800355fb0: @@ CompileTrainingData 80
+[0.580s][debug][aot,map       ] 0x0000000800356000: @@ CompileTrainingData 80
+[0.580s][debug][aot,map       ] 0x0000000800356050: @@ CompileTrainingData 80
+[0.580s][debug][aot,map       ] 0x00000008003560a0: @@ CompileTrainingData 80
+[0.580s][debug][aot,map       ] 0x00000008003560f0: @@ CompileTrainingData 80
+[0.580s][debug][aot,map       ] 0x0000000800356140: @@ CompileTrainingData 80
+[0.580s][debug][aot,map       ] 0x0000000800356190: @@ CompileTrainingData 80
+[0.580s][debug][aot,map       ] 0x00000008003561e0: @@ CompileTrainingData 80
+[0.580s][debug][aot,map       ] 0x0000000800356230: @@ CompileTrainingData 80
+[0.580s][debug][aot,map       ] 0x0000000800356280: @@ CompileTrainingData 80
+[0.580s][debug][aot,map       ] 0x00000008003562d0: @@ CompileTrainingData 80
+[0.580s][debug][aot,map       ] 0x0000000800356320: @@ CompileTrainingData 80
+[0.580s][debug][aot,map       ] 0x0000000800356370: @@ CompileTrainingData 80
+[0.580s][debug][aot,map       ] 0x00000008003563c0: @@ CompileTrainingData 80
+[0.580s][debug][aot,map       ] 0x0000000800356410: @@ CompileTrainingData 80
+[0.580s][debug][aot,map       ] 0x0000000800356460: @@ CompileTrainingData 80
+[0.580s][debug][aot,map       ] 0x00000008003564b0: @@ CompileTrainingData 80
+[0.580s][debug][aot,map       ] 0x0000000800356500: @@ CompileTrainingData 80
+[0.581s][debug][aot,map       ] 0x000000080035aba8: @@ Method            88 void org.example.jvminternals.ch31.CacheJourney$Add.<init>()
+[0.581s][debug][aot,map       ] 0x000000080035ac28: @@ ConstantPoolCache 64 org.example.jvminternals.ch31.CacheJourney$Add
+[0.585s][debug][aot,map       ] 0x00000008003715d0: @@ Method            88 void jdk.internal.util.ReferencedKeyMap.prepareForAOTCache()
+[0.633s][debug][aot,map       ] 0x0000000800422cc0: @@ Symbol            24 prepareForAOTCache
+[0.703s][debug][aot,map       ] 0x00000008004e8168: @@ Symbol            48 org/example/jvminternals/ch31/CacheJourney
+[0.715s][debug][aot,map       ] 0x00000008005061d8: @@ Symbol            64 org/example/jvminternals/ch31/CacheJourney$Multiply
+[0.715s][debug][aot,map       ] 0x0000000800506218: @@ Symbol            56 org/example/jvminternals/ch31/CacheJourney$Add
+[0.715s][debug][aot,map       ] 0x0000000800506270: @@ Symbol            64 (Lorg/example/jvminternals/ch31/CacheJourney$Operation;J)J
+[0.715s][debug][aot,map       ] 0x00000008005062e8: @@ Symbol            64 org/example/jvminternals/ch31/CacheJourney$Operation
+[0.715s][debug][aot,map       ] 0x00000008005063f8: @@ Symbol            56 Lorg/example/jvminternals/ch31/CacheJourney;
+[0.715s][debug][aot,map       ] 0x0000000800506440: @@ Symbol            64 Lorg/example/jvminternals/ch31/CacheJourney$Operation;
+[0.715s][debug][aot,map       ] 0x0000000800506490: @@ Symbol            24 CacheJourney.java
+[0.720s][debug][aot,map       ] 0x0000000800518268: @@ Symbol            48 jdk/management/HotSpotAOTCacheMXBean
+[0.720s][debug][aot,map       ] 0x0000000800518298: @@ Symbol            48 jdk.management:type=HotSpotAOTCache
+[0.720s][debug][aot,map       ] 0x00000008005182c8: @@ Symbol            48 Ljdk/management/HotSpotAOTCacheMXBean;
+[0.720s][debug][aot,map       ] 0x00000008005182f8: @@ Symbol            56 com/sun/management/internal/HotSpotAOTCacheImpl
+[0.720s][debug][aot,map       ] 0x0000000800518330: @@ Symbol            88 Ljava/util/Set<Ljava/lang/Class<+Ljdk/management/HotSpotAOTCacheMXBean;>;>;
+[0.720s][debug][aot,map       ] 0x00000008005183c8: @@ Symbol            88 ()Ljava/util/Set<Ljava/lang/Class<+Ljdk/management/HotSpotAOTCacheMXBean;>;>;
+[0.720s][debug][aot,map       ] 0x0000000800518420: @@ Symbol            88 ()Ljava/util/Map<Ljava/lang/String;Ljdk/management/HotSpotAOTCacheMXBean;>;
+[0.720s][debug][aot,map       ] 0x0000000800518478: @@ Symbol            128 Ljava/lang/Object;Lsun/management/spi/PlatformMBeanProvider$PlatformComponent<Ljdk/management/HotSpotAOTCacheMXBean;>;
+[0.720s][debug][aot,map       ] 0x0000000800518510: @@ Symbol            32 HotSpotAOTCacheMXBean.java
+[0.746s][debug][aot,map       ] 0x000000080055b058: @@ Symbol            56 Lorg/example/jvminternals/ch31/CacheJourney$Add;
+[0.828s][debug][aot,map       ] 0x0000000800796ce0: @@ ConstMethod       88 void jdk.internal.util.ReferencedKeySet.prepareForAOTCache()
+[0.856s][debug][aot,map       ] 0x00000008008af500: @@ ConstantPool      1072 org.example.jvminternals.ch31.CacheJourney
+[0.856s][debug][aot,map       ] 0x00000008008af940: @@ ConstantPool      328 org.example.jvminternals.ch31.CacheJourney$Add
+[0.856s][debug][aot,map       ] 0x00000008008b1218: @@ ConstMethod       80 void org.example.jvminternals.ch31.CacheJourney.<init>()
+[0.856s][debug][aot,map       ] 0x00000008008b1268: @@ ConstMethod       256 void org.example.jvminternals.ch31.CacheJourney.main(java.lang.String[])
+[0.856s][debug][aot,map       ] 0x00000008008b1368: @@ ConstMethod       120 void org.example.jvminternals.ch31.CacheJourney.mark(java.lang.String)
+[0.856s][debug][aot,map       ] 0x00000008008b13e0: @@ ConstMethod       104 long org.example.jvminternals.ch31.CacheJourney.route(org.example.jvminternals.ch31.CacheJourney$Operation, long)
+[0.862s][debug][aot,map       ] 0x00000008008fd600: @@ ConstantPool      168 jdk.management.HotSpotAOTCacheMXBean
+[0.862s][debug][aot,map       ] 0x00000008008fd6b8: @@ ConstMethod       56 boolean jdk.management.HotSpotAOTCacheMXBean.endRecording()
+[0.867s][debug][aot,map       ] 0x0000000800956438: @@ ConstMethod       64 long org.example.jvminternals.ch31.CacheJourney$Operation.apply(long)
+[0.867s][debug][aot,map       ] 0x0000000800956478: @@ ConstantPool      208 org.example.jvminternals.ch31.CacheJourney$Operation
+[0.869s][debug][aot,map       ] 0x0000000800963dc8: @@ ConstMethod       104 long org.example.jvminternals.ch31.CacheJourney$Add.apply(long)
+[0.869s][debug][aot,map       ] 0x0000000800963e40: @@ ConstMethod       80 void org.example.jvminternals.ch31.CacheJourney$Add.<init>()
+[0.873s][debug][aot,map       ] 0x0000000800984988: @@ ConstMethod       208 void jdk.internal.util.ReferencedKeyMap.prepareForAOTCache()
+[0.945s][info ][aot,map       ] 0x000000012c773190: @@ Object (0x258ee632) java.lang.Class Lorg/example/jvminternals/ch31/CacheJourney$Operation;
+[0.945s][info ][aot,map       ] 0x000000012c773208: @@ Object (0x258ee641) java.lang.Class Lorg/example/jvminternals/ch31/CacheJourney$Add;
+[0.948s][info ][aot,map       ] 0x000000012c7866f0: @@ Object (0x258f0cde) java.lang.Class Ljdk/management/HotSpotAOTCacheMXBean;
+[0.949s][info ][aot,map       ] 0x000000012c78ba70: @@ Object (0x258f174e) java.lang.Class Lorg/example/jvminternals/ch31/CacheJourney;

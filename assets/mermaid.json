@@ -1,0 +1,34 @@
+{
+  "theme": "base",
+  "fontFamily": "-apple-system, BlinkMacSystemFont, PingFang SC, Noto Sans CJK SC, sans-serif",
+  "fontSize": 16,
+  "themeVariables": {
+    "primaryColor": "#e3eef7",
+    "primaryTextColor": "#19324a",
+    "primaryBorderColor": "#537c9e",
+    "lineColor": "#385b7d",
+    "secondaryColor": "#f7fafc",
+    "tertiaryColor": "#f2ede4",
+    "fontSize": "16px"
+  },
+  "flowchart": {
+    "htmlLabels": false,
+    "curve": "linear",
+    "nodeSpacing": 32,
+    "rankSpacing": 32,
+    "padding": 12,
+    "wrappingWidth": 320
+  },
+  "sequence": {
+    "useMaxWidth": true,
+    "wrap": true,
+    "actorMargin": 45,
+    "messageMargin": 25,
+    "noteMargin": 12,
+    "messageFontSize": 16,
+    "noteFontSize": 16,
+    "actorFontSize": 16
+  },
+  "look": "classic",
+  "htmlLabels": false
+}

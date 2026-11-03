@@ -1,0 +1,19 @@
+%% P05机制图：依据本章来源索引；本地导出后供离线阅读。
+stateDiagram-v2
+  accTitle: 编译调用点缓存的简化状态
+  state "clean<br/>未绑定目标" as Clean
+  state "单态缓存<br/>接收者类与入口" as Mono
+  state "通用分派<br/>表分派桩等" as Generic
+  state "代码清理<br/>重新链接" as Cleanup
+  [*] --> Clean
+  Clean --> Mono: 初次绑定且符合推测类
+  Mono --> Mono: 接收者命中
+  Mono --> Generic: 未命中且成功建立通用桩
+  Mono --> Cleanup: 目标失效等清理条件
+  Generic --> Cleanup: 生命周期清理
+  Cleanup --> Clean: 重置入口
+  note right of Generic
+    状态不等于画像计数
+    内联可无独立缓存
+    以锁定版本为准
+  end note

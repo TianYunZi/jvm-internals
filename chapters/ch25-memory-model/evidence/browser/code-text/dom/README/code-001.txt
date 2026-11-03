@@ -1,0 +1,5 @@
+export JAVA_HOME=/opt/homebrew/Cellar/openjdk@25/25.0.5.0.2/libexec/openjdk.jdk/Contents/Home
+export PATH="$JAVA_HOME/bin:/opt/homebrew/bin:$PATH"
+mvn -B -ntp -pl chapters/ch25-memory-model -am compile
+java -Xmx128m -cp chapters/ch25-memory-model/target/classes org.example.jvminternals.ch25.PublicationJourney
+javap -c -p -classpath chapters/ch25-memory-model/target/classes org.example.jvminternals.ch25.PublicationJourney

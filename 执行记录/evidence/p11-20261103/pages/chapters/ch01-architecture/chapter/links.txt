@@ -1,0 +1,30 @@
+跳到正文	#chapter
+Java 虚拟机原理 / 第一篇	../../index.html
+从贯穿程序出发	#question
+1.1 从源码到机器指令	#sec-1-1
+1.2 运行环境的分工	#sec-1-2
+1.3 子系统协作	#sec-1-3
+1.4 规范与可移植性	#sec-1-4
+1.5 启动到退出	#sec-1-5
+回顾与思考	#review
+来源与证据	#sources
+ProgramJourney	sources.html#ch01-e01
+S01 §2.1、§2.11	#s01
+S03	#s03
+S04	#s04
+S01 §2.13	#s01
+S02 §5.2、§5.7	#s02
+S05	#s05
+S06	#s06
+运行说明	README.html
+本次记录	evidence/runs/ch01-20261103-01/记录.md
+Java SE 25 虚拟机规范第 2 章	https://docs.oracle.com/javase/specs/jvms/se25/html/jvms-2.html
+虚拟机规范第 5 章	https://docs.oracle.com/javase/specs/jvms/se25/html/jvms-5.html
+证据索引	evidence/索引.md
+JDK 25 Thread 文档	https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Thread.html
+语言规范 §17.4.5	https://docs.oracle.com/javase/specs/jls/se25/html/jls-17.html#jls-17.4.5
+阶段输出	evidence/runs/ch01-20261103-01/program.txt
+类加载记录	evidence/runs/ch01-20261103-01/class-load.log
+反汇编	evidence/runs/ch01-20261103-01/program.javap.txt
+返回全书目录	../../index.html
+下一章：第 2 章	../ch02-computer-basics/chapter.html

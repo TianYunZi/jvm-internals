@@ -1,0 +1,91 @@
+[INFO] Scanning for projects...
+[INFO] ------------------------------------------------------------------------
+[INFO] Reactor Build Order:
+[INFO] 
+[INFO] Java 虚拟机原理书配套源码                                                    [pom]
+[INFO] 第19章 垃圾收集的理论基础                                                     [jar]
+[INFO] 第20章 安全点与屏障                                                        [jar]
+[INFO] 第21章 基础收集器                                                         [jar]
+[INFO] 第22章 G1                                                            [jar]
+[INFO] 第23章 分代ZGC                                                         [jar]
+[INFO] 
+[INFO] ---------------< org.example.jvminternals:jvm-internals >---------------
+[INFO] Building Java 虚拟机原理书配套源码 1.0-SNAPSHOT                              [1/6]
+[INFO]   from pom.xml
+[INFO] --------------------------------[ pom ]---------------------------------
+[INFO] 
+[INFO] ------------< org.example.jvminternals:ch19-gc-foundations >------------
+[INFO] Building 第19章 垃圾收集的理论基础 1.0-SNAPSHOT                               [2/6]
+[INFO]   from chapters/ch19-gc-foundations/pom.xml
+[INFO] --------------------------------[ jar ]---------------------------------
+[INFO] Loaded 64 auto-discovered prefixes for remote repository apache.snapshots (prefixes-apache.snapshots.txt)
+[INFO] 
+[INFO] --- resources:3.3.1:resources (default-resources) @ ch19-gc-foundations ---
+[INFO] skip non existing resourceDirectory /Users/xiejinxin/Developer/Java/jvm-internals/chapters/ch19-gc-foundations/src/main/resources
+[INFO] 
+[INFO] --- compiler:3.14.1:compile (default-compile) @ ch19-gc-foundations ---
+[INFO] Recompiling the module because of added or removed source files.
+[INFO] Compiling 1 source file with javac [debug:lines,vars,source parameters release 25] to target/classes
+[INFO] 
+[INFO] ---------< org.example.jvminternals:ch20-safepoints-barriers >----------
+[INFO] Building 第20章 安全点与屏障 1.0-SNAPSHOT                                  [3/6]
+[INFO]   from chapters/ch20-safepoints-barriers/pom.xml
+[INFO] --------------------------------[ jar ]---------------------------------
+[INFO] 
+[INFO] --- resources:3.3.1:resources (default-resources) @ ch20-safepoints-barriers ---
+[INFO] skip non existing resourceDirectory /Users/xiejinxin/Developer/Java/jvm-internals/chapters/ch20-safepoints-barriers/src/main/resources
+[INFO] 
+[INFO] --- compiler:3.14.1:compile (default-compile) @ ch20-safepoints-barriers ---
+[INFO] Recompiling the module because of added or removed source files.
+[INFO] Compiling 1 source file with javac [debug:lines,vars,source parameters release 25] to target/classes
+[INFO] 
+[INFO] -----------< org.example.jvminternals:ch21-basic-collectors >-----------
+[INFO] Building 第21章 基础收集器 1.0-SNAPSHOT                                   [4/6]
+[INFO]   from chapters/ch21-basic-collectors/pom.xml
+[INFO] --------------------------------[ jar ]---------------------------------
+[INFO] 
+[INFO] --- resources:3.3.1:resources (default-resources) @ ch21-basic-collectors ---
+[INFO] skip non existing resourceDirectory /Users/xiejinxin/Developer/Java/jvm-internals/chapters/ch21-basic-collectors/src/main/resources
+[INFO] 
+[INFO] --- compiler:3.14.1:compile (default-compile) @ ch21-basic-collectors ---
+[INFO] Recompiling the module because of added or removed source files.
+[INFO] Compiling 1 source file with javac [debug:lines,vars,source parameters release 25] to target/classes
+[INFO] 
+[INFO] ------------------< org.example.jvminternals:ch22-g1 >------------------
+[INFO] Building 第22章 G1 1.0-SNAPSHOT                                      [5/6]
+[INFO]   from chapters/ch22-g1/pom.xml
+[INFO] --------------------------------[ jar ]---------------------------------
+[INFO] 
+[INFO] --- resources:3.3.1:resources (default-resources) @ ch22-g1 ---
+[INFO] skip non existing resourceDirectory /Users/xiejinxin/Developer/Java/jvm-internals/chapters/ch22-g1/src/main/resources
+[INFO] 
+[INFO] --- compiler:3.14.1:compile (default-compile) @ ch22-g1 ---
+[INFO] Recompiling the module because of added or removed source files.
+[INFO] Compiling 1 source file with javac [debug:lines,vars,source parameters release 25] to target/classes
+[INFO] 
+[INFO] -----------------< org.example.jvminternals:ch23-zgc >------------------
+[INFO] Building 第23章 分代ZGC 1.0-SNAPSHOT                                   [6/6]
+[INFO]   from chapters/ch23-zgc/pom.xml
+[INFO] --------------------------------[ jar ]---------------------------------
+[INFO] 
+[INFO] --- resources:3.3.1:resources (default-resources) @ ch23-zgc ---
+[INFO] skip non existing resourceDirectory /Users/xiejinxin/Developer/Java/jvm-internals/chapters/ch23-zgc/src/main/resources
+[INFO] 
+[INFO] --- compiler:3.14.1:compile (default-compile) @ ch23-zgc ---
+[INFO] Recompiling the module because of added or removed source files.
+[INFO] Compiling 1 source file with javac [debug:lines,vars,source parameters release 25] to target/classes
+[INFO] ------------------------------------------------------------------------
+[INFO] Reactor Summary for Java 虚拟机原理书配套源码 1.0-SNAPSHOT:
+[INFO] 
+[INFO] Java 虚拟机原理书配套源码 .................................... SUCCESS [  0.001 s]
+[INFO] 第19章 垃圾收集的理论基础 ..................................... SUCCESS [  0.674 s]
+[INFO] 第20章 安全点与屏障 ........................................ SUCCESS [  0.064 s]
+[INFO] 第21章 基础收集器 ......................................... SUCCESS [  0.038 s]
+[INFO] 第22章 G1 ............................................ SUCCESS [  0.043 s]
+[INFO] 第23章 分代ZGC ......................................... SUCCESS [  0.043 s]
+[INFO] ------------------------------------------------------------------------
+[INFO] BUILD SUCCESS
+[INFO] ------------------------------------------------------------------------
+[INFO] Total time:  0.969 s
+[INFO] Finished at: 2026-11-03T18:15:47+08:00
+[INFO] ------------------------------------------------------------------------

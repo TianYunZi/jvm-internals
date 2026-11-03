@@ -1,0 +1,24 @@
+package org.example.jvminternals.ch21;
+
+/** 三种基础收集器共用的有限分配程序；只展示阶段，不计算性能分数。 */
+public final class AllocationJourney {
+    private static final System.Logger LOG = System.getLogger(AllocationJourney.class.getName());
+    private static final byte[][] retained = new byte[64][];
+
+    private AllocationJourney() { }
+
+    /** 总共分配4096个16 KiB数组，最大同时保留64个。 */
+    public static void main(String[] args) throws InterruptedException {
+        LOG.log(System.Logger.Level.INFO, "阶段=开始，累计载荷预算64 MiB，环形持有1 MiB");
+        for (int phase = 0; phase < 2; phase++) {
+            for (int index = 0; index < 2048; index++) {
+                byte[] payload = new byte[16384];
+                payload[0] = (byte) index;
+                retained[index % retained.length] = payload;
+            }
+            LOG.log(System.Logger.Level.INFO, "阶段={0}完成，累计载荷MiB={1}", phase, (phase + 1) * 32);
+            Thread.sleep(200);
+        }
+        LOG.log(System.Logger.Level.INFO, "阶段=正常退出，末块标记={0}", retained[63][0]);
+    }
+}

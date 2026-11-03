@@ -1,0 +1,136 @@
+{
+  "version": "Chrome/156.0.8078.80",
+  "pages": [
+    {
+      "page": "chapters/ch13-interpreter/chapter.html",
+      "codeIds": [
+        "code-002",
+        "code-003",
+        "code-004",
+        "code-005",
+        "code-006",
+        "code-001"
+      ]
+    },
+    {
+      "page": "chapters/ch13-interpreter/sources.html",
+      "codeIds": [
+        "code-001",
+        "code-002"
+      ]
+    },
+    {
+      "page": "chapters/ch13-interpreter/README.html",
+      "codeIds": [
+        "code-001",
+        "code-002"
+      ]
+    },
+    {
+      "page": "chapters/ch14-dispatch/chapter.html",
+      "codeIds": []
+    },
+    {
+      "page": "chapters/ch14-dispatch/sources.html",
+      "codeIds": [
+        "code-001",
+        "code-002"
+      ]
+    },
+    {
+      "page": "chapters/ch14-dispatch/README.html",
+      "codeIds": [
+        "code-001",
+        "code-002"
+      ]
+    },
+    {
+      "page": "chapters/ch15-dynamic-invocation/chapter.html",
+      "codeIds": [
+        "code-001",
+        "code-002",
+        "code-003",
+        "code-004"
+      ]
+    },
+    {
+      "page": "chapters/ch15-dynamic-invocation/sources.html",
+      "codeIds": [
+        "code-001",
+        "code-002"
+      ]
+    },
+    {
+      "page": "chapters/ch15-dynamic-invocation/README.html",
+      "codeIds": [
+        "code-001",
+        "code-002"
+      ]
+    },
+    {
+      "page": "chapters/ch16-tiered-compilation/chapter.html",
+      "codeIds": []
+    },
+    {
+      "page": "chapters/ch16-tiered-compilation/sources.html",
+      "codeIds": [
+        "code-001",
+        "code-002"
+      ]
+    },
+    {
+      "page": "chapters/ch16-tiered-compilation/README.html",
+      "codeIds": [
+        "code-001",
+        "code-002"
+      ]
+    },
+    {
+      "page": "chapters/ch17-compiler-optimizations/chapter.html",
+      "codeIds": [
+        "code-002",
+        "code-003",
+        "code-004",
+        "code-005",
+        "code-006",
+        "code-007",
+        "code-008",
+        "code-009",
+        "code-001"
+      ]
+    },
+    {
+      "page": "chapters/ch17-compiler-optimizations/sources.html",
+      "codeIds": [
+        "code-001",
+        "code-002"
+      ]
+    },
+    {
+      "page": "chapters/ch17-compiler-optimizations/README.html",
+      "codeIds": [
+        "code-001",
+        "code-002",
+        "code-003"
+      ]
+    },
+    {
+      "page": "chapters/ch18-deoptimization/chapter.html",
+      "codeIds": []
+    },
+    {
+      "page": "chapters/ch18-deoptimization/sources.html",
+      "codeIds": [
+        "code-001",
+        "code-002"
+      ]
+    },
+    {
+      "page": "chapters/ch18-deoptimization/README.html",
+      "codeIds": [
+        "code-001",
+        "code-002"
+      ]
+    }
+  ]
+}

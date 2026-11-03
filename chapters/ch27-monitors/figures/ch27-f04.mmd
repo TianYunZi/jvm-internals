@@ -1,0 +1,7 @@
+flowchart TB
+ L[ReentrantLock策略与重入计数] --> A[AQS：状态与等待队列]
+ A --> C[原子状态更新]
+ A --> P[LockSupport停放与唤醒]
+ P --> V[平台线程或虚拟线程适配]
+ M[内置监视器的ObjectMonitor队列] --> V
+ M -. 独立实现与条件协议 .-> A

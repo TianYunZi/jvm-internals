@@ -1,0 +1,10 @@
+flowchart TB
+  A[固定应用归档与配置] --> B[训练进程 record]
+  C[代表性输入] --> B
+  B --> D[配置文件 aotconfig]
+  D --> E[装配进程 create]
+  A --> E
+  E --> F[缓存文件 aot]
+  F --> G[部署进程 on或auto]
+  H[本次真实输入] --> G
+  G --> I[缓存路径与未训练路径共同执行]

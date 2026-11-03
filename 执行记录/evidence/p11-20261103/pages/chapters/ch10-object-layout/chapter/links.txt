@@ -1,0 +1,31 @@
+跳到正文	#main
+Java 虚拟机原理图文书	../../index.html
+从字段到字节	#problem
+10.1 对象与数组	#sec-10-1
+10.2 头部状态	#sec-10-2
+10.3 两类压缩指针	#sec-10-3
+10.4 紧凑对象头	#sec-10-4
+10.5 实际布局	#sec-10-5
+工具与证据	#observe
+回顾与思考	#review
+来源	#sources
+第 8 章	../ch08-type-metadata/chapter.html
+第 9 章	../ch09-runtime-memory/chapter.html
+S01	#s01
+S02	#s02
+S03	#s03
+S04	#s04
+S05	#s05
+S06	#s06
+工具说明	#observe
+阅读副本	sources.html
+运行说明	README.html
+本轮记录	evidence/runs/ch10-20261103-02/记录.md
+来源索引	evidence/索引.md
+精确文件索引	evidence/索引.md
+JEP 519	https://openjdk.org/jeps/519
+本轮有效配置与布局	evidence/runs/ch10-20261103-02/记录.md
+本地工具构建及兼容边界	evidence/tools/构建说明.md
+上一章：第 9 章	../ch09-runtime-memory/chapter.html
+返回全书目录	../../index.html
+下一章：第 11 章	../ch11-allocation/chapter.html

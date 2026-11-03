@@ -1,0 +1,9 @@
+npm notice run generate:p05
+npm notice run node render.mjs
+静态高亮：ch13-interpreter
+静态高亮：ch14-dispatch
+静态高亮：ch15-dynamic-invocation
+静态高亮：ch16-tiered-compilation
+静态高亮：ch17-compiler-optimizations
+静态高亮：ch18-deoptimization
+生成完成：44个代码展示节点；离线页面不加载Shiki脚本。

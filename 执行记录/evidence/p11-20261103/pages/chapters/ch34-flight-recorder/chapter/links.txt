@@ -1,0 +1,21 @@
+跳到正文	#main
+Java 虚拟机原理图文书	../../index.html
+34.1 事件、缓冲与输出	#sec-34-1
+34.2 持续记录与上下文	#sec-34-2
+34.3 跨子系统事件关联	#sec-34-3
+34.4 协作式采样	#sec-34-4
+34.5 方法计时、追踪与处理器时间画像	#sec-34-5
+34.6 记录分析工具	#sec-34-6
+观察与边界	#observe
+回顾与思考	#review
+来源与实现入口	#sources
+源码阅读	sources.html
+运行说明	README.html
+证据索引	evidence/索引.md
+25版jfr命令	https://docs.oracle.com/en/java/javase/25/docs/specs/man/jfr.html
+实现阅读	evidence/实现摘录.md
+25版监控变更	https://www.oracle.com/java/technologies/javase/25-relnote-issues.html
+真实事件时间线	evidence/runs/ch34-20261103-01/timeline.txt
+上一章：第33章	../ch33-observability/chapter.html
+下一章：第35章	../ch35-troubleshooting/chapter.html
+返回全书目录	../../index.html#part-8

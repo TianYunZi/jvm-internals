@@ -1,0 +1,22 @@
+[0.250s][debug][redefine,class,load] loading name=org.example.jvminternals.ch33.ObservedValue kind=101 (avail_mem=4333440K)
+[0.251s][info ][redefine,class,constantpool] old_cp_len=22, scratch_cp_len=22
+[0.251s][debug][redefine,class,constantpool] after pass 0: merge_cp_len=22
+[0.251s][debug][redefine,class,constantpool] after pass 1a: merge_cp_len=24, scratch_i=22, index_map_len=2
+[0.251s][info ][redefine,class,constantpool] merge_cp_len=24, index_map_len=2
+[0.251s][debug][redefine,class,load        ] loaded name=org.example.jvminternals.ch33.ObservedValue (avail_mem=4333440K)
+[0.252s][info ][redefine,class,load        ] redefined name=org.example.jvminternals.ch33.ObservedValue, count=1 (avail_mem=4333440K)
+[0.252s][debug][redefine,class,nmethod     ] Marked dependent nmethods for deopt
+[0.252s][info ][redefine,class,update      ] adjust: name=org.example.jvminternals.ch33.ObservedValue
+[0.253s][info ][redefine,class,timer       ] vm_op: all=2  prologue=0  doit=2
+[0.253s][info ][redefine,class,timer       ] redefine_single_class: phase1=0  phase2=0
+[0.255s][debug][redefine,class,load        ] loading name=org.example.jvminternals.ch33.ObservedValue kind=102 (avail_mem=4333440K)
+[0.255s][info ][redefine,class,constantpool] old_cp_len=24, scratch_cp_len=22
+[0.255s][debug][redefine,class,constantpool] after pass 0: merge_cp_len=24
+[0.255s][debug][redefine,class,constantpool] after pass 1a: merge_cp_len=26, scratch_i=22, index_map_len=2
+[0.255s][info ][redefine,class,constantpool] merge_cp_len=26, index_map_len=2
+[0.255s][debug][redefine,class,load        ] loaded name=org.example.jvminternals.ch33.ObservedValue (avail_mem=4333440K)
+[0.256s][info ][redefine,class,load        ] redefined name=org.example.jvminternals.ch33.ObservedValue, count=2 (avail_mem=4333440K)
+[0.257s][debug][redefine,class,nmethod     ] Marked dependent nmethods for deopt
+[0.257s][info ][redefine,class,update      ] adjust: name=org.example.jvminternals.ch33.ObservedValue
+[0.258s][info ][redefine,class,timer       ] vm_op: all=2  prologue=0  doit=2
+[0.258s][info ][redefine,class,timer       ] redefine_single_class: phase1=0  phase2=0

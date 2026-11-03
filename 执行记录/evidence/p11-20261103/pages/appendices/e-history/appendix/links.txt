@@ -1,0 +1,51 @@
+跳到正文	#main
+Java虚拟机原理 · 全书目录	../../index.html
+E.1 先给旧术语加版本	#sec-e-1
+E.2 8、17、21与25的阅读坐标	#sec-e-2
+E.3 25版主题的一致口径	#sec-e-3
+来源与历史证据边界	#sources
+第12章	../../chapters/ch12-native-memory/chapter.html
+8版官方指南Class Metadata	https://docs.oracle.com/javase/8/docs/technotes/guides/vm/gctuning/considerations.html
+8版官方机制说明	https://docs.oracle.com/javase/8/docs/technotes/guides/vm/gctuning/cms.html
+第21章	../../chapters/ch21-basic-collectors/chapter.html
+第22章	../../chapters/ch22-g1/chapter.html
+17版迁移指南回溯14版移除	https://docs.oracle.com/en/java/javase/17/migrate/removed-tools-and-components.html
+第27章	../../chapters/ch27-monitors/chapter.html
+15版变化的官方回溯	https://docs.oracle.com/en/java/javase/17/migrate/removed-tools-and-components.html
+CH27依据	../../chapters/ch27-monitors/evidence/索引.md
+第3章	../../chapters/ch03-source-environment/chapter.html
+17版指南中16版选项变化	https://docs.oracle.com/en/java/javase/17/migrate/removed-tools-and-components.html
+第31章	../../chapters/ch31-aot-cache/chapter.html
+官方移除说明	https://docs.oracle.com/en/java/javase/17/migrate/removed-tools-and-components.html
+第23章	../../chapters/ch23-zgc/chapter.html
+25版指南回溯24版变化	https://docs.oracle.com/en/java/javase/25/migrate/removed-tools-and-components.html
+第8章	../../chapters/ch08-type-metadata/chapter.html
+第12章	../../chapters/ch12-native-memory/chapter.html
+第3章	../../chapters/ch03-source-environment/chapter.html
+第21章	../../chapters/ch21-basic-collectors/chapter.html
+第27章	../../chapters/ch27-monitors/chapter.html
+21版Thread契约	https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/lang/Thread.html
+第28章	../../chapters/ch28-virtual-threads/chapter.html
+第10章	../../chapters/ch10-object-layout/chapter.html
+第27章	../../chapters/ch27-monitors/chapter.html
+CH10依据	../../chapters/ch10-object-layout/evidence/索引.md
+第24章	../../chapters/ch24-shenandoah/chapter.html
+CH24依据	../../chapters/ch24-shenandoah/evidence/索引.md
+第22章	../../chapters/ch22-g1/chapter.html
+CH22依据	../../chapters/ch22-g1/evidence/索引.md
+第5章	../../chapters/ch05-bytecode-verification/chapter.html
+第30章	../../chapters/ch30-startup-sharing/chapter.html
+25版重要变化	https://docs.oracle.com/en/java/javase/25/migrate/significant-changes-jdk-25.html
+第29章	../../chapters/ch29-scoped-concurrency/chapter.html
+CH29依据	../../chapters/ch29-scoped-concurrency/evidence/索引.md
+第31章	../../chapters/ch31-aot-cache/chapter.html
+CH31依据	../../chapters/ch31-aot-cache/evidence/索引.md
+第34章	../../chapters/ch34-flight-recorder/chapter.html
+CH34依据	../../chapters/ch34-flight-recorder/evidence/索引.md
+第34章	../../chapters/ch34-flight-recorder/chapter.html
+CH34依据	../../chapters/ch34-flight-recorder/evidence/索引.md
+25版发布说明	https://www.oracle.com/java/technologies/javase/25-relnote-issues.html
+第33章	../../chapters/ch33-observability/chapter.html
+上一页	../d-source-map/appendix.html
+附录目录	../../index.html#appendices
+下一页	../f-environments/appendix.html

@@ -1,0 +1,11 @@
+%% CH02-F02：共享资源与独立执行上下文；快照不代表全部历史。
+flowchart TB
+  subgraph P[同一个教学进程]
+    R["共享地址空间与资源<br/>堆、元数据、代码、本地库、映射<br/>文件与系统句柄"]
+    M["main<br/>独立寄存器、栈、调度状态<br/>本次限时等待release：TIMED_WAITING"]
+    W["journey-worker<br/>另一组寄存器、栈、调度状态<br/>本次限时等待release：TIMED_WAITING"]
+    M -->|使用共享资源| R
+    W -->|使用共享资源| R
+  end
+  N["可运行不等于此刻占用处理器<br/>Java的RUNNABLE也不保证正在执行"]
+  P --- N

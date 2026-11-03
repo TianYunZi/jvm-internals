@@ -1,0 +1,83 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Java 虚拟机原理 · 从类文件到运行时</title>
+  <link rel="stylesheet" href="assets/book.css">
+</head>
+<body>
+<a class="skip-link" href="#reading">跳到阅读目录</a>
+<header class="book-header">Java 虚拟机原理</header>
+<main class="home" id="reading">
+  <p class="eyebrow">原理 · 源码 · 图解 · 证据</p>
+  <h1>从类文件到运行时</h1>
+  <p class="lead">以 Java 虚拟机（Java Virtual Machine，JVM）的运行机制为线索，理解程序如何被加载、执行、优化、暂停与回收。</p>
+  <p>本书面向具备 Java 编程基础、了解线程与集合的读者。技术基线为 Java 开发工具包（Java Development Kit，JDK）25 与 OpenJDK HotSpot；规范、具体实现和本机观察分别说明。</p>
+  <p>可从<a href="chapters/ch01-architecture/chapter.html">第 1 章贯穿程序</a>开始，沿第一篇建立运行和源码观察方法，再在第二篇追踪类文件、验证、身份、初始化与元数据存活，进入第三篇理解进程内存、对象布局、分配和本地资源所有权，再沿第四篇追踪调用、编译、优化与恢复，并在第五篇连接安全点、屏障与各收集器的实际工作，继而在第六篇依据同步关系解释线程、监视器、虚拟线程与任务作用域，再在第七篇分析启动共享、缓存训练和本地资源边界，最后在第八篇串联诊断接口、事件时间线、故障推理与性能口径。也可从<a href="chapters/ch04-classfile/chapter.html">第 4 章类文件样章</a>独立阅读。全书由八篇、三十六章与六个附录组成，可按章顺读，也可沿附录中的路线阅读。</p>
+  <div class="note"><p>本轮示例使用 Homebrew OpenJDK 25.0.5.0.2，macOS AArch64。书内必要图文和代码片段支持本地离线阅读；外部规范与源码链接用于追溯。普通构建见<a href="chapters/ch04-classfile/README.html">第 4 章运行说明</a>；含布局章的聚合构建先按<a href="chapters/ch10-object-layout/README.html">第 10 章说明</a>安装随书固定布局工具。</p></div>
+  <nav aria-label="分篇导航"><p><a href="#part-1">运行基础</a> · <a href="#part-2">类与类型</a> · <a href="#part-3">内存与对象</a> · <a href="#part-4">执行与编译</a> · <a href="#part-5">垃圾收集</a> · <a href="#part-6">并发与线程</a> · <a href="#part-7">启动与本地边界</a> · <a href="#part-8">观测与实践</a></p></nav>
+  <div class="parts">
+    <section id="part-1"><h2>第一篇 从 Java 程序到虚拟机</h2><ol>
+      <li><a href="chapters/ch01-architecture/chapter.html">JVM 的职责与整体架构</a></li>
+      <li><a href="chapters/ch02-computer-basics/chapter.html">理解 JVM 所需的计算机基础</a></li>
+      <li><a href="chapters/ch03-source-environment/chapter.html">建立 HotSpot 源码阅读与观察环境</a></li>
+    </ol></section>
+    <section id="part-2"><h2>第二篇 类文件、类型系统与类的生命周期</h2><ol start="4">
+      <li><a href="chapters/ch04-classfile/chapter.html">类文件结构与信息表达</a></li>
+      <li><a href="chapters/ch05-bytecode-verification/chapter.html">字节码指令与验证机制</a></li>
+      <li><a href="chapters/ch06-classloaders-modules/chapter.html">类加载器、命名空间与模块</a></li>
+      <li><a href="chapters/ch07-linking-initialization/chapter.html">连接、解析与初始化</a></li>
+      <li><a href="chapters/ch08-type-metadata/chapter.html">HotSpot 类型系统与运行时元数据</a></li>
+    </ol></section>
+    <section id="part-3"><h2>第三篇 运行时内存与对象模型</h2><ol start="9">
+      <li><a href="chapters/ch09-runtime-memory/chapter.html">运行时数据区与进程内存</a></li>
+      <li><a href="chapters/ch10-object-layout/chapter.html">对象布局、压缩指针与紧凑对象头</a></li>
+      <li><a href="chapters/ch11-allocation/chapter.html">对象分配、初始化与访问</a></li>
+      <li><a href="chapters/ch12-native-memory/chapter.html">元空间与本地内存管理</a></li>
+    </ol></section>
+    <section id="part-4"><h2>第四篇 执行引擎与动态编译</h2><ol start="13">
+      <li><a href="chapters/ch13-interpreter/chapter.html">解释器、栈帧与异常执行</a></li>
+      <li><a href="chapters/ch14-dispatch/chapter.html">方法调用与动态分派</a></li>
+      <li><a href="chapters/ch15-dynamic-invocation/chapter.html">动态调用、反射与运行时生成</a></li>
+      <li><a href="chapters/ch16-tiered-compilation/chapter.html">即时编译与分层执行</a></li>
+      <li><a href="chapters/ch17-compiler-optimizations/chapter.html">编译器如何优化 Java 程序</a></li>
+      <li><a href="chapters/ch18-deoptimization/chapter.html">推测优化、去优化与代码生命周期</a></li>
+    </ol></section>
+    <section id="part-5"><h2>第五篇 垃圾收集与运行时协作</h2><ol start="19">
+      <li><a href="chapters/ch19-gc-foundations/chapter.html">垃圾收集的理论基础</a></li>
+      <li><a href="chapters/ch20-safepoints-barriers/chapter.html">安全点、线程握手与垃圾收集屏障</a></li>
+      <li><a href="chapters/ch21-basic-collectors/chapter.html">Serial、Parallel 与 Epsilon</a></li>
+      <li><a href="chapters/ch22-g1/chapter.html">Garbage-First（G1）的分区回收机制</a></li>
+      <li><a href="chapters/ch23-zgc/chapter.html">Z 垃圾收集器的分代与低延迟设计</a></li>
+      <li><a href="chapters/ch24-shenandoah/chapter.html">Shenandoah 与分代演进</a></li>
+    </ol></section>
+    <section id="part-6"><h2>第六篇 内存模型、同步与线程</h2><ol start="25">
+      <li><a href="chapters/ch25-memory-model/chapter.html">Java 内存模型</a></li>
+      <li><a href="chapters/ch26-platform-threads/chapter.html">平台线程与 HotSpot 线程运行时</a></li>
+      <li><a href="chapters/ch27-monitors/chapter.html">synchronized 与锁的实现</a></li>
+      <li><a href="chapters/ch28-virtual-threads/chapter.html">虚拟线程的运行机制</a></li>
+      <li><a href="chapters/ch29-scoped-concurrency/chapter.html">作用域值与结构化并发</a></li>
+    </ol></section>
+    <section id="part-7"><h2>第七篇 启动、预热与本地互操作</h2><ol start="30">
+      <li><a href="chapters/ch30-startup-sharing/chapter.html">虚拟机启动、退出与类数据共享</a></li>
+      <li><a href="chapters/ch31-aot-cache/chapter.html">提前处理缓存与方法执行画像</a></li>
+      <li><a href="chapters/ch32-native-interop/chapter.html">本地调用与外部内存</a></li>
+    </ol></section>
+    <section id="part-8"><h2>第八篇 可观测性、故障分析与性能实践</h2><ol start="33">
+      <li><a href="chapters/ch33-observability/chapter.html">JVM 的可观测性与诊断接口</a></li>
+      <li><a href="chapters/ch34-flight-recorder/chapter.html">飞行记录器的事件、采样与方法追踪</a></li>
+      <li><a href="chapters/ch35-troubleshooting/chapter.html">常见故障的原理与定位</a></li>
+      <li><a href="chapters/ch36-performance-cases/chapter.html">性能分析方法与综合案例</a></li>
+    </ol></section>
+  </div>
+  <section id="appendices"><h2>附录</h2><ul>
+    <li><a href="appendices/a-terms/appendix.html">A 术语与英文缩写表</a></li><li><a href="appendices/b-bytecode/appendix.html">B 类文件与字节码速查</a></li>
+    <li><a href="appendices/c-commands/appendix.html">C 参数与诊断命令索引</a></li><li><a href="appendices/d-source-map/appendix.html">D HotSpot 源码导航</a></li>
+    <li><a href="appendices/e-history/appendix.html">E 版本演进与历史机制</a></li><li><a href="appendices/f-environments/appendix.html">F 实验环境与阅读路线</a></li>
+  </ul></section>
+  <section><h2>阅读路线</h2><p>原理入门沿第一篇、第二篇、第三篇与垃圾收集基础建立整体图景；源码进阶接续执行引擎、并发与运行时协作；故障分析路线在这些机制基础上阅读第八篇。各章保持原编号，第 4 章可独立阅读。三条路线的前置与学习目标见<a href="appendices/f-environments/appendix.html#sec-f-3">附录 F</a>。</p></section>
+  <footer class="sources"><p>规范依据：<a href="https://docs.oracle.com/javase/specs/jvms/se25/html/index.html">Java 平台标准版（Java Platform, Standard Edition，Java SE）25 虚拟机规范</a>。实施环境与源码差异见<a href="执行记录/基线与约定.md">基线记录</a>。</p></footer>
+</main>
+</body>
+</html>

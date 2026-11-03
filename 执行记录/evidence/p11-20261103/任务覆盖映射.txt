@@ -1,0 +1,619 @@
+chapters/ch08-type-metadata/TASK.md:11:| 8.1.1 | sec-8-1-1 | E01、F01，Klass、数组与实例 | 完成 |
+chapters/ch08-type-metadata/TASK.md:12:| 8.1.2 | sec-8-1-2 | F01、镜像建立分支 | 完成 |
+chapters/ch08-type-metadata/TASK.md:13:| 8.2.1 | sec-8-2-1 | E01、F02，字段／Method／ConstMethod | 完成 |
+chapters/ch08-type-metadata/TASK.md:14:| 8.2.2 | sec-8-2-2 | F02、ConstantPool／Cache 与解析项 | 完成 |
+chapters/ch08-type-metadata/TASK.md:15:| 8.3.1 | sec-8-3-1 | E01 类、接口、数组 | 完成 |
+chapters/ch08-type-metadata/TASK.md:16:| 8.3.2 | sec-8-3-2 | Klass::is_subtype_of、辅助表 | 完成 |
+chapters/ch08-type-metadata/TASK.md:17:| 8.4.1 | sec-8-4-1 | E02 隐藏定义与调用 | 完成 |
+chapters/ch08-type-metadata/TASK.md:18:| 8.4.2 | sec-8-4-2 | 非 STRONG 与普通类资格对照 | 完成 |
+chapters/ch08-type-metadata/TASK.md:19:| 8.5.1 | sec-8-5-1 | E03、F03，持有与加载器数据 | 完成 |
+chapters/ch08-type-metadata/TASK.md:20:| 8.5.2 | sec-8-5-2 | E03 引用队列、卸载日志、元空间 | 完成 |
+chapters/ch08-type-metadata/TASK.md:36:| C01—C08 | 完成 | 10 项覆盖、研究／源码／运行／图文与衔接已有依据，本轮已补齐 C07 打印 |
+chapters/ch03-source-environment/TASK.md:15:| 3.1.1 | sec-3-1-1：类库、启动器、共享实现、系统与处理器目录，F01 | 完成 |
+chapters/ch03-source-environment/TASK.md:16:| 3.1.2 | sec-3-1-2：从 Java 到本地再到机器实现的顺序，F03 | 完成 |
+chapters/ch03-source-environment/TASK.md:17:| 3.2.1 | sec-3-2-1：版本、提交、工具链与二进制差异 | 完成 |
+chapters/ch03-source-environment/TASK.md:18:| 3.2.2 | sec-3-2-2：release、fastdebug、slowdebug 的能力与差异 | 完成 |
+chapters/ch03-source-environment/TASK.md:19:| 3.3.1 | sec-3-3-1：产品／诊断／实验／开发参数及构建条件 | 完成 |
+chapters/ch03-source-environment/TASK.md:20:| 3.3.2 | sec-3-3-2：默认、自动选择、显式设置与支持范围 | 完成 |
+chapters/ch03-source-environment/TASK.md:21:| 3.4.1 | sec-3-4-1：javap 与目标 jcmd help，F02 | 完成 |
+chapters/ch03-source-environment/TASK.md:22:| 3.4.2 | sec-3-4-2：统一日志、本地调试及观测限制，F02 | 完成 |
+chapters/ch03-source-environment/TASK.md:23:| 3.5.1 | sec-3-5-1：一次加载和分配的入口、数据与条件，F03 | 完成 |
+chapters/ch03-source-environment/TASK.md:24:| 3.5.2 | sec-3-5-2：直接调用、生成代码、内建与辅助入口 | 完成 |
+chapters/ch03-source-environment/TASK.md:36:| C01—C08 | 完成 | 10 项覆盖、研究／源码／运行／图文与衔接已有依据，本轮已补齐 C07 打印 |
+chapters/ch02-computer-basics/TASK.md:15:| 2.1.1 | sec-2-1-1：寄存器、流水线、预测、吞吐与依赖 | 概念解释，不作硬件性能推断 | 完成 |
+chapters/ch02-computer-basics/TASK.md:16:| 2.1.2 | sec-2-1-2：缓存行、局部性、一致性与伪共享 | 机制解释与本机实际查询 | 完成 |
+chapters/ch02-computer-basics/TASK.md:17:| 2.2.1 | sec-2-2-1：页表、物理页与缺页 | F01、进程映射、S01 | 完成 |
+chapters/ch02-computer-basics/TASK.md:18:| 2.2.2 | sec-2-2-2：预留、提交、触碰与释放 | F01、O02 与 S05 | 完成 |
+chapters/ch02-computer-basics/TASK.md:19:| 2.3.1 | sec-2-3-1：共享与线程私有资源、状态与调度 | F02、线程记录 | 完成 |
+chapters/ch02-computer-basics/TASK.md:20:| 2.3.2 | sec-2-3-2：系统调用、权限级别与上下文切换 | F02、平台实现 | 完成 |
+chapters/ch02-computer-basics/TASK.md:21:| 2.4.1 | sec-2-4-1：参数、返回值、保存寄存器与对齐 | F03、两种架构调用依据 | 完成 |
+chapters/ch02-computer-basics/TASK.md:22:| 2.4.2 | sec-2-4-2：本地栈与虚拟机逻辑帧的边界 | F03、线程栈 | 完成 |
+chapters/ch02-computer-basics/TASK.md:23:| 2.5.1 | sec-2-5-1：编译器与处理器重排，屏障约束 | S04，概念与具体实现分开 | 完成 |
+chapters/ch02-computer-basics/TASK.md:24:| 2.5.2 | sec-2-5-2：两种架构的调用、原子与内存顺序差异 | 锁定源码及一手架构资料 | 完成 |
+chapters/ch02-computer-basics/TASK.md:36:| C01—C08 | 完成 | 10 项覆盖、研究／源码／运行／图文与衔接已有依据，本轮已补齐 C07 打印 |
+chapters/ch07-linking-initialization/TASK.md:13:| 7.1.1 | sec-7-1-1 | 阶段依赖与解析弹性，F01 | 完成 |
+chapters/ch07-linking-initialization/TASK.md:14:| 7.1.2 | sec-7-1-2 | 成功／失败坐标，E03／E04 | 完成 |
+chapters/ch07-linking-initialization/TASK.md:15:| 7.2.1 | sec-7-2-1 | 类、字段、方法解析，LinkResolver | 完成 |
+chapters/ch07-linking-initialization/TASK.md:16:| 7.2.2 | sec-7-2-2 | E01 字段隐藏与虚调用 | 完成 |
+chapters/ch07-linking-initialization/TASK.md:17:| 7.3.1 | sec-7-3-1 | E01、F02 常量与赋值时间线 | 完成 |
+chapters/ch07-linking-initialization/TASK.md:18:| 7.3.2 | sec-7-3-2 | E01 内联常量／普通读取 | 完成 |
+chapters/ch07-linking-initialization/TASK.md:19:| 7.4.1 | sec-7-4-1 | E01 继承、接口、递归；E02 并发 | 完成 |
+chapters/ch07-linking-initialization/TASK.md:20:| 7.4.2 | sec-7-4-2 | E02、E03、F03 与失败状态 | 完成 |
+chapters/ch07-linking-initialization/TASK.md:21:| 7.5.1 | sec-7-5-1 | E04 四种二进制变体 | 完成 |
+chapters/ch07-linking-initialization/TASK.md:22:| 7.5.2 | sec-7-5-2 | 编译／运行产物身份与兼容性 | 完成 |
+chapters/ch07-linking-initialization/TASK.md:42:| C01—C08 | 完成 | 10 项覆盖、研究／源码／运行／图文与衔接已有依据，本轮已补齐 C07 打印 |
+chapters/ch05-bytecode-verification/TASK.md:17:| 5.1.1 | sec-5-1-1：参数、临时值与返回的栈／槽对应 | E01、F01 逐指令表 | 完成 |
+chapters/ch05-bytecode-verification/TASK.md:18:| 5.1.2 | sec-5-1-2：数值类别、双槽与局部变量复用 | 实际描述符、调试表与指令 | 完成 |
+chapters/ch05-bytecode-verification/TASK.md:19:| 5.2.1 | sec-5-2-1：运算、转换、循环、分支与汇合 | E01、F02 | 完成 |
+chapters/ch05-bytecode-verification/TASK.md:20:| 5.2.2 | sec-5-2-2：数组检查与密集／稀疏选择 | 实际 tableswitch、lookupswitch | 完成 |
+chapters/ch05-bytecode-verification/TASK.md:21:| 5.3.1 | sec-5-3-1：调用指令、接收者、参数与返回 | E01 及构造器 | 完成 |
+chapters/ch05-bytecode-verification/TASK.md:22:| 5.3.2 | sec-5-3-2：异常表、athrow 与同步释放 | 合法编译的块／方法同步产物 | 完成 |
+chapters/ch05-bytecode-verification/TASK.md:23:| 5.4.1 | sec-5-4-1：格式、静态、结构与类型约束 | 规范与 ClassVerifier 路线 | 完成 |
+chapters/ch05-bytecode-verification/TASK.md:24:| 5.4.2 | sec-5-4-2：控制流、帧与验证类型传播 | F02，错误状态仅标推演 | 完成 |
+chapters/ch05-bytecode-verification/TASK.md:25:| 5.5.1 | sec-5-5-1：new 的未初始化类型与构造器调用 | E02、F03 | 完成 |
+chapters/ch05-bytecode-verification/TASK.md:26:| 5.5.2 | sec-5-5-2：灵活构造器体与验证边界 | JDK 25 实际编译及规范 | 完成 |
+chapters/ch05-bytecode-verification/TASK.md:41:| C01—C08 | 完成 | 10 项覆盖、研究／源码／运行／图文与衔接已有依据，本轮已补齐 C07 打印 |
+chapters/ch06-classloaders-modules/TASK.md:15:| 6.1.1 | sec-6-1-1：启动、平台、应用加载器与模块化运行时 | E01、F01 |
+chapters/ch06-classloaders-modules/TASK.md:16:| 6.1.2 | sec-6-1-2：类／资源／模块查找及启动加载器 null 表示 | E01 |
+chapters/ch06-classloaders-modules/TASK.md:17:| 6.2.1 | sec-6-2-1：查询、委派、查找、定义、链接请求和加载锁 | E01、F01 |
+chapters/ch06-classloaders-modules/TASK.md:18:| 6.2.2 | sec-6-2-2：委派策略与类型约束的区别 | E01、F02 |
+chapters/ch06-classloaders-modules/TASK.md:19:| 6.3.1 | sec-6-3-1：定义／发起加载器与二进制名称 | E01、F02 |
+chapters/ch06-classloaders-modules/TASK.md:20:| 6.3.2 | sec-6-3-2：相同描述符、自类型签名、转换与共享签名约束 | E01、F02 |
+chapters/ch06-classloaders-modules/TASK.md:21:| 6.4.1 | sec-6-4-1：服务提供者发现、上下文加载器设置与恢复 | E02 |
+chapters/ch06-classloaders-modules/TASK.md:22:| 6.4.2 | sec-6-4-2：线程与缓存持有加载器的生命周期影响 | E02，衔接 CH08 |
+chapters/ch06-classloaders-modules/TASK.md:23:| 6.5.1 | sec-6-5-1：可读、导出、开放与加载器身份 | E03、F03 |
+chapters/ch06-classloaders-modules/TASK.md:24:| 6.5.2 | sec-6-5-2：自定义模块层、未命名模块、发现与访问失败 | E03、E04、F03 |
+chapters/ch06-classloaders-modules/TASK.md:39:| C01—C08 | 完成 | 10 项覆盖、研究／源码／运行／图文与衔接已有依据，本轮已补齐 C07 打印 |
+chapters/ch04-classfile/TASK.md:18:| [项目规则](../../AGENTS.md)、[总计划](../../执行计划.md)、[分章清单](../../执行计划/分章任务清单.md)、[模板](../../执行计划/任务模板.md) | 已读取；按 C01—C08 分别留证据 |
+chapters/ch04-classfile/TASK.md:21:| [公共基线](../../执行记录/基线与约定.md) | Homebrew Java 开发工具包（Java Development Kit，JDK）25.0.5.0.2；macOS AArch64；外部源码标签与提交已锁定 |
+chapters/ch04-classfile/TASK.md:36:| 4.1.1 | 读取顺序、计数、属性层级及本章文件头 | sec-4-1-1 | E01、F01 | S01、S04、O01 | 完成 |
+chapters/ch04-classfile/TASK.md:37:| 4.1.2 | 69.0、预览标记、格式／依赖兼容与版本检查 | sec-4-1-2 | E01、F01 | S01、S04、O01 | 完成；错误条件据规范／源码，未制造失败 |
+chapters/ch04-classfile/TASK.md:38:| 4.2.1 | 字面量／符号引用、实际索引链及描述符解读 | sec-4-2-1 | E01、F02 | S01、O01 | 完成 |
+chapters/ch04-classfile/TASK.md:39:| 4.2.2 | 字段／方法表、Number 描述符与 T 签名 | sec-4-2-2 | E01、F02 | S01、S06、O01 | 完成 |
+chapters/ch04-classfile/TASK.md:40:| 4.3.1 | 容量、指令数组、半开异常范围与处理器 | sec-4-3-1 | E01、F03 | S01、S04、O01 | 完成 |
+chapters/ch04-classfile/TASK.md:41:| 4.3.2 | 两个帧的偏移推导、调试与参数名信息分工 | sec-4-3-2 | E01、F03 | S01、O01 | 完成 |
+chapters/ch04-classfile/TASK.md:42:| 4.4.1 | 注解、记录、密封、嵌套与巢；生成结构及属性区分 | sec-4-4-1 | E02 | S01、S02、S07、O01 | 完成 |
+chapters/ch04-classfile/TASK.md:43:| 4.4.2 | 反射元数据、运行期可见性、访问控制与执行需求 | sec-4-4-2 | E02 | S01、S02、S07、O01 | 完成 |
+chapters/ch04-classfile/TASK.md:44:| 4.5.1 | 模型、延迟读取、层级与元素遍历 | sec-4-5-1 | E03 | S03、S05、O01 | 完成 |
+chapters/ch04-classfile/TASK.md:45:| 4.5.2 | 生成／变换、立即数／常量池、派生栈映射及语义边界 | sec-4-5-2 | E04、F03 衔接 | S03、S05、O01 | 完成；未执行生成类，不声称校验或业务正确性 |
+chapters/ch04-classfile/TASK.md:79:| 图解与代码对应 | 完成 | 实际常量池索引、容量与偏移均和 O01 一致；图形可读性已按 C06、C07 核对 |
+chapters/ch04-classfile/TASK.md:81:| C01—C08 整体验收 | 完成 | 全部适用项有实际依据；模型与用户的核对范围分别登记 |
+chapters/ch04-classfile/TASK.md:87:| C01 内容覆盖 | 10 项、三类图主题、四组教学源码、源码与反汇编对应均有正文位置 | 无内容占位；不代表全书其他章节完成 |
+chapters/ch04-classfile/TASK.md:88:| C02 原理解释 | 检查符号与运行时地址、描述符与泛型、异常表与运行轨迹、结构与语义的边界 | 结论严格限定已核对来源与输入 |
+chapters/ch04-classfile/TASK.md:89:| C03 源码依据 | 外部源码提交明确；按最短路径读取 parse_stream、版本、方法／属性及 ClassFileImpl 协作 | 没有重建整个 Homebrew 二进制 |
+chapters/ch04-classfile/TASK.md:90:| C04 教学源码 | 编译 4 个文件成功；正文片段对照源文件，未增加测试 | 无额外覆盖率或质量平台要求 |
+chapters/ch04-classfile/TASK.md:91:| C05 运行证据 | 编译、反汇编、反射、模型和生成／变换原始结果随章保留 | 未声称执行生成类或穷尽验证 |
+chapters/ch04-classfile/TASK.md:92:| C06 图文 | 三幅图均可编辑，索引与偏移和原始记录一致；两份构建与三幅图经 xmllint 解析，退出 0；图内文字已实际查看 | 窄屏最小图宽调至 760 像素并复查 |
+chapters/ch04-classfile/TASK.md:93:| C07 页面阅读 | 模型在 Chrome 156.0.8078.80 检查 1440×1000、768×1000、390×844：正文、图注、三图、代码／表局部滚动、目录、源码及证据入口；实际查看完整打印预览首页（14 页） | 打印图表页由用户手动检查并明确回复“已手动检查，通过”；不冒充模型完成了翻页检查 |
+chapters/ch04-classfile/TASK.md:94:| C08 衔接交接 | 与 CH05、CH07、CH08、CH15 分工明确；公共术语、版本、页面约定与后续条件已记录 | 后续章节成稿后再补实际上下章链接 |
+chapters/ch04-classfile/TASK.md:102:| 本地文件协议被工具拒绝 | 本轮直接文件协议打开未实测 | 用户已授权仅监听 127.0.0.1 的临时服务，实际屏幕阅读据此完成；不把回环访问冒充直接文件协议检查 |
+chapters/ch01-architecture/TASK.md:17:| 1.1.1 | sec-1-1-1：源码、类文件与硬件指令的信息层次 | F01、E01 | 完成 |
+chapters/ch01-architecture/TASK.md:18:| 1.1.2 | sec-1-1-2：编译、加载、解释与热点编译及多种执行形态 | F01 | 完成 |
+chapters/ch01-architecture/TASK.md:19:| 1.2.1 | sec-1-2-1：编译器、启动器、运行时及标准库分工 | F02 | 完成 |
+chapters/ch01-architecture/TASK.md:20:| 1.2.2 | sec-1-2-2：文件、线程及内存申请怎样经过本地边界 | E01、F02 | 完成 |
+chapters/ch01-architecture/TASK.md:21:| 1.3.1 | sec-1-3-1：子系统职责和依赖 | F02 | 完成 |
+chapters/ch01-architecture/TASK.md:22:| 1.3.2 | sec-1-3-2：创建对象并调用方法时类型、分配和目标协作 | E01、F02 | 完成 |
+chapters/ch01-architecture/TASK.md:23:| 1.4.1 | sec-1-4-1：规范约束与布局／策略选择 | F01 | 完成 |
+chapters/ch01-architecture/TASK.md:24:| 1.4.2 | sec-1-4-2：格式、类库、本地库和环境的可移植条件 | E01 | 完成 |
+chapters/ch01-architecture/TASK.md:25:| 1.5.1 | sec-1-5-1：进程启动到退出的生命周期 | F03、E01 | 完成 |
+chapters/ch01-architecture/TASK.md:26:| 1.5.2 | sec-1-5-2：加载、线程、分配、编译与回收的可能位置 | F03、E01 | 完成 |
+chapters/ch01-architecture/TASK.md:43:| C01—C08 | 完成 | 10 项覆盖、研究／源码／运行／图文与衔接已有依据，本轮已补齐 C07 打印 |
+chapters/ch16-tiered-compilation/TASK.md:29:| 16.1.1 | chapter.html#sec-16-1-1 | S01／S02 | 完成 |
+chapters/ch16-tiered-compilation/TASK.md:30:| 16.1.2 | chapter.html#sec-16-1-2 | S01／S02 | 完成 |
+chapters/ch16-tiered-compilation/TASK.md:31:| 16.2.1 | chapter.html#sec-16-2-1 | S02 | 完成 |
+chapters/ch16-tiered-compilation/TASK.md:32:| 16.2.2 | chapter.html#sec-16-2-2 | S02 | 完成 |
+chapters/ch16-tiered-compilation/TASK.md:33:| 16.3.1 | chapter.html#sec-16-3-1 | E01／S02 | 完成 |
+chapters/ch16-tiered-compilation/TASK.md:34:| 16.3.2 | chapter.html#sec-16-3-2 | E01／S02 | 完成 |
+chapters/ch16-tiered-compilation/TASK.md:35:| 16.4.1 | chapter.html#sec-16-4-1 | S02／S03 | 完成 |
+chapters/ch16-tiered-compilation/TASK.md:36:| 16.4.2 | chapter.html#sec-16-4-2 | S02／S03 | 完成 |
+chapters/ch16-tiered-compilation/TASK.md:37:| 16.5.1 | chapter.html#sec-16-5-1 | E01／O02 | 完成 |
+chapters/ch16-tiered-compilation/TASK.md:38:| 16.5.2 | chapter.html#sec-16-5-2 | E01／O02 | 完成 |
+chapters/ch16-tiered-compilation/TASK.md:53:| C01—C08 | 完成 | 覆盖、解释、来源、源码、编译／观察、图文、页面与篇级衔接均有实际依据；适用边界如下 |
+chapters/ch11-allocation/TASK.md:22:| 11.1.1 | sec-11-1-1 | E01、F01 | S01 | 完成 |
+chapters/ch11-allocation/TASK.md:23:| 11.1.2 | sec-11-1-2 | E01、F01 | S01、S02 | 完成 |
+chapters/ch11-allocation/TASK.md:24:| 11.2.1 | sec-11-2-1 | E01、F02 | S01 | 完成 |
+chapters/ch11-allocation/TASK.md:25:| 11.2.2 | sec-11-2-2 | E01、F02 | S01 | 完成 |
+chapters/ch11-allocation/TASK.md:26:| 11.3.1 | sec-11-3-1 | E01、F01 | S01、S03 | 完成 |
+chapters/ch11-allocation/TASK.md:27:| 11.3.2 | sec-11-3-2 | E01、F01 | S03 | 完成 |
+chapters/ch11-allocation/TASK.md:28:| 11.4.1 | sec-11-4-1 | E01、E02 | S04、CH10 | 完成 |
+chapters/ch11-allocation/TASK.md:29:| 11.4.2 | sec-11-4-2 | E02 | S04、S05 | 完成 |
+chapters/ch11-allocation/TASK.md:30:| 11.5.1 | sec-11-5-1 | E01、F03 | S02、O01 | 完成 |
+chapters/ch11-allocation/TASK.md:31:| 11.5.2 | sec-11-5-2 | F03 | S06 | 完成 |
+chapters/ch11-allocation/TASK.md:42:| C01 内容覆盖 | 完成 | 本任务单10项映射逐项对应正文同号三级锚点；三类图解主题、示例与篇末问题都有实质内容 |
+chapters/ch11-allocation/TASK.md:43:| C02 原理解释 | 完成 | 正文按规范、实现、观测及推断分别解释原因和边界，不以一次输出替代全部语义 |
+chapters/ch11-allocation/TASK.md:44:| C03 源码依据 | 完成 | evidence/索引.md；具体锁定文件、符号与关键分支已读，版本与适用条件明确 |
+chapters/ch11-allocation/TASK.md:45:| C04 源码与编译 | 完成 | 本章README及运行记录；当前输入摘要可查，没有新增测试；公共P04聚合只覆盖三新源码章 |
+chapters/ch11-allocation/TASK.md:46:| C05 运行与案例 | 完成 | 必需普通观察的真实输出、阶段／退出和限制已核对；失败或不足记录独立保留 |
+chapters/ch11-allocation/TASK.md:47:| C06 图文 | 完成 | 三幅可编辑矢量图、来源与正文锚点对应；结构解析、屏幕与打印实读均完成 |
+chapters/ch11-allocation/TASK.md:48:| C07 页面阅读 | 完成 | [页面记录](evidence/browser/记录.md)、[打印记录](evidence/browser/print/记录.md)；三视口、三图、导航／源码与正文全部7页实读，问题已修复 |
+chapters/ch11-allocation/TASK.md:49:| C08 衔接与交接 | 完成 | 第三篇公共核对、术语、实际前后章／源码导航及完整交接已核对，无必需待办 |
+chapters/ch11-allocation/TASK.md:50:| 全章C01—C08 | 完成 | 适用要求均有实际证据，无未决必需项 |
+chapters/ch10-object-layout/TASK.md:17:| 10.1.1 | sec-10-1-1 | E01、F01 | S01、O01 | 完成 |
+chapters/ch10-object-layout/TASK.md:18:| 10.1.2 | sec-10-1-2 | E01、F01 | S02、O01 | 完成 |
+chapters/ch10-object-layout/TASK.md:19:| 10.2.1 | sec-10-2-1 | F03 | S03 | 完成 |
+chapters/ch10-object-layout/TASK.md:20:| 10.2.2 | sec-10-2-2 | F03 | S03、S04 | 完成 |
+chapters/ch10-object-layout/TASK.md:21:| 10.3.1 | sec-10-3-1 | F02 | S05 | 完成 |
+chapters/ch10-object-layout/TASK.md:22:| 10.3.2 | sec-10-3-2 | F02 | S05、O01 | 完成 |
+chapters/ch10-object-layout/TASK.md:23:| 10.4.1 | sec-10-4-1 | F03 | S03、S06 | 完成 |
+chapters/ch10-object-layout/TASK.md:24:| 10.4.2 | sec-10-4-2 | F03 | S04、S06 | 完成 |
+chapters/ch10-object-layout/TASK.md:25:| 10.5.1 | sec-10-5-1 | E01 | O01、S06 | 完成 |
+chapters/ch10-object-layout/TASK.md:26:| 10.5.2 | sec-10-5-2 | E01、F01 | O01 | 完成 |
+chapters/ch10-object-layout/TASK.md:37:| C01 内容覆盖 | 完成 | 本任务单10项映射逐项对应正文同号三级锚点；三类图解主题、示例与篇末问题都有实质内容 |
+chapters/ch10-object-layout/TASK.md:38:| C02 原理解释 | 完成 | 正文按规范、实现、观测及推断分别解释原因和边界，不以一次输出替代全部语义 |
+chapters/ch10-object-layout/TASK.md:39:| C03 源码依据 | 完成 | evidence/索引.md；具体锁定文件、符号与关键分支已读，版本与适用条件明确 |
+chapters/ch10-object-layout/TASK.md:40:| C04 源码与编译 | 完成 | 本章README及运行记录；当前输入摘要可查，没有新增测试；公共P04聚合只覆盖三新源码章 |
+chapters/ch10-object-layout/TASK.md:41:| C05 运行与案例 | 完成 | 必需普通观察的真实输出、阶段／退出和限制已核对；失败或不足记录独立保留 |
+chapters/ch10-object-layout/TASK.md:42:| C06 图文 | 完成 | 三幅可编辑矢量图、来源与正文锚点对应；结构解析、屏幕与打印实读均完成 |
+chapters/ch10-object-layout/TASK.md:43:| C07 页面阅读 | 完成 | [页面记录](evidence/browser/记录.md)、[打印记录](evidence/browser/print/记录.md)；三视口、三图、导航／源码与正文全部8页实读，问题已修复 |
+chapters/ch10-object-layout/TASK.md:44:| C08 衔接与交接 | 完成 | 第三篇公共核对、术语、实际前后章／源码导航及完整交接已核对，无必需待办 |
+chapters/ch10-object-layout/TASK.md:45:| 全章C01—C08 | 完成 | 适用要求均有实际证据，无未决必需项 |
+chapters/ch15-dynamic-invocation/TASK.md:29:| 15.1.1 | chapter.html#sec-15-1-1 | E01／S01 | 完成 |
+chapters/ch15-dynamic-invocation/TASK.md:30:| 15.1.2 | chapter.html#sec-15-1-2 | E01／S01 | 完成 |
+chapters/ch15-dynamic-invocation/TASK.md:31:| 15.2.1 | chapter.html#sec-15-2-1 | E02／S02／S03 | 完成 |
+chapters/ch15-dynamic-invocation/TASK.md:32:| 15.2.2 | chapter.html#sec-15-2-2 | E02／S02／S03 | 完成 |
+chapters/ch15-dynamic-invocation/TASK.md:33:| 15.3.1 | chapter.html#sec-15-3-1 | E02／S02 | 完成 |
+chapters/ch15-dynamic-invocation/TASK.md:34:| 15.3.2 | chapter.html#sec-15-3-2 | E02／S02 | 完成 |
+chapters/ch15-dynamic-invocation/TASK.md:35:| 15.4.1 | chapter.html#sec-15-4-1 | E01／S03 | 完成 |
+chapters/ch15-dynamic-invocation/TASK.md:36:| 15.4.2 | chapter.html#sec-15-4-2 | E01／S03 | 完成 |
+chapters/ch15-dynamic-invocation/TASK.md:37:| 15.5.1 | chapter.html#sec-15-5-1 | E01／S03 | 完成 |
+chapters/ch15-dynamic-invocation/TASK.md:38:| 15.5.2 | chapter.html#sec-15-5-2 | E01／S03 | 完成 |
+chapters/ch15-dynamic-invocation/TASK.md:53:| C01—C08 | 完成 | 覆盖、解释、来源、源码、编译／观察、图文、页面与篇级衔接均有实际依据；适用边界如下 |
+chapters/ch13-interpreter/TASK.md:29:| 13.1.1 | chapter.html#sec-13-1-1 | S01／S02 | 完成 |
+chapters/ch13-interpreter/TASK.md:30:| 13.1.2 | chapter.html#sec-13-1-2 | S01／S02 | 完成 |
+chapters/ch13-interpreter/TASK.md:31:| 13.2.1 | chapter.html#sec-13-2-1 | S02 | 完成 |
+chapters/ch13-interpreter/TASK.md:32:| 13.2.2 | chapter.html#sec-13-2-2 | S02 | 完成 |
+chapters/ch13-interpreter/TASK.md:33:| 13.3.1 | chapter.html#sec-13-3-1 | S01／S02 | 完成 |
+chapters/ch13-interpreter/TASK.md:34:| 13.3.2 | chapter.html#sec-13-3-2 | S01／S02 | 完成 |
+chapters/ch13-interpreter/TASK.md:35:| 13.4.1 | chapter.html#sec-13-4-1 | E01／S03 | 完成 |
+chapters/ch13-interpreter/TASK.md:36:| 13.4.2 | chapter.html#sec-13-4-2 | E01／S03 | 完成 |
+chapters/ch13-interpreter/TASK.md:37:| 13.5.1 | chapter.html#sec-13-5-1 | S03 | 完成 |
+chapters/ch13-interpreter/TASK.md:38:| 13.5.2 | chapter.html#sec-13-5-2 | S03 | 完成 |
+chapters/ch13-interpreter/TASK.md:53:| C01—C08 | 完成 | 覆盖、解释、来源、源码、编译／观察、图文、页面与篇级衔接均有实际依据；适用边界如下 |
+chapters/ch14-dispatch/TASK.md:29:| 14.1.1 | chapter.html#sec-14-1-1 | E01／S01 | 完成 |
+chapters/ch14-dispatch/TASK.md:30:| 14.1.2 | chapter.html#sec-14-1-2 | E01／S01 | 完成 |
+chapters/ch14-dispatch/TASK.md:31:| 14.2.1 | chapter.html#sec-14-2-1 | S01／S02 | 完成 |
+chapters/ch14-dispatch/TASK.md:32:| 14.2.2 | chapter.html#sec-14-2-2 | S01／S02 | 完成 |
+chapters/ch14-dispatch/TASK.md:33:| 14.3.1 | chapter.html#sec-14-3-1 | S02／S03 | 完成 |
+chapters/ch14-dispatch/TASK.md:34:| 14.3.2 | chapter.html#sec-14-3-2 | S02／S03 | 完成 |
+chapters/ch14-dispatch/TASK.md:35:| 14.4.1 | chapter.html#sec-14-4-1 | E01／O01 | 完成 |
+chapters/ch14-dispatch/TASK.md:36:| 14.4.2 | chapter.html#sec-14-4-2 | E01／O01 | 完成 |
+chapters/ch14-dispatch/TASK.md:37:| 14.5.1 | chapter.html#sec-14-5-1 | O01／S03 | 完成 |
+chapters/ch14-dispatch/TASK.md:38:| 14.5.2 | chapter.html#sec-14-5-2 | O01／S03 | 完成 |
+chapters/ch14-dispatch/TASK.md:53:| C01—C08 | 完成 | 覆盖、解释、来源、源码、编译／观察、图文、页面与篇级衔接均有实际依据；适用边界如下 |
+chapters/ch24-shenandoah/TASK.md:17:| 24.1.1 | chapter.html#sec-24-1-1 | 见正文来源及O01；机制／实测分别解释 |
+chapters/ch24-shenandoah/TASK.md:18:| 24.1.2 | chapter.html#sec-24-1-2 | 见正文来源及O01；机制／实测分别解释 |
+chapters/ch24-shenandoah/TASK.md:19:| 24.2.1 | chapter.html#sec-24-2-1 | 见正文来源及O01；机制／实测分别解释 |
+chapters/ch24-shenandoah/TASK.md:20:| 24.2.2 | chapter.html#sec-24-2-2 | 见正文来源及O01；机制／实测分别解释 |
+chapters/ch24-shenandoah/TASK.md:21:| 24.3.1 | chapter.html#sec-24-3-1 | 见正文来源及O01；机制／实测分别解释 |
+chapters/ch24-shenandoah/TASK.md:22:| 24.3.2 | chapter.html#sec-24-3-2 | 见正文来源及O01；机制／实测分别解释 |
+chapters/ch24-shenandoah/TASK.md:23:| 24.4.1 | chapter.html#sec-24-4-1 | 见正文来源及O01；机制／实测分别解释 |
+chapters/ch24-shenandoah/TASK.md:24:| 24.4.2 | chapter.html#sec-24-4-2 | 见正文来源及O01；机制／实测分别解释 |
+chapters/ch24-shenandoah/TASK.md:25:| 24.5.1 | chapter.html#sec-24-5-1 | 见正文来源及O01；机制／实测分别解释 |
+chapters/ch24-shenandoah/TASK.md:26:| 24.5.2 | chapter.html#sec-24-5-2 | 见正文来源及O01；机制／实测分别解释 |
+chapters/ch24-shenandoah/TASK.md:53:| C01内容覆盖／C02原理 | 完成；本章10项要点逐项对应，原理、来源与观察边界分别核对 |
+chapters/ch24-shenandoah/TASK.md:54:| C03来源 | 已定位固定提交与一手文档；evidence/索引.md |
+chapters/ch24-shenandoah/TASK.md:55:| C04源码／编译 | 完成；五源码章18:15:47最小聚合编译成功，CH24明确复用CH23 |
+chapters/ch24-shenandoah/TASK.md:56:| C05运行 | 实际观察见O01，未出现的现象不填写已实测 |
+chapters/ch24-shenandoah/TASK.md:57:| C06图文 | 完成；图源／导出、正文对应、屏幕与最终打印均已实读，见evidence/browser/记录.md |
+chapters/ch24-shenandoah/TASK.md:58:| C07高亮／浏览器／打印 | 完成；52节点文本对照及六组源码／命令复制一致，本章三视口和9页正式正文打印实读 |
+chapters/ch24-shenandoah/TASK.md:59:| C08衔接 | 术语、版本主题及篇末三问题已整合；见公共阶段核对 |
+chapters/ch23-zgc/TASK.md:17:| 23.1.1 | chapter.html#sec-23-1-1 | 见正文来源及O01；机制／实测分别解释 |
+chapters/ch23-zgc/TASK.md:18:| 23.1.2 | chapter.html#sec-23-1-2 | 见正文来源及O01；机制／实测分别解释 |
+chapters/ch23-zgc/TASK.md:19:| 23.2.1 | chapter.html#sec-23-2-1 | 见正文来源及O01；机制／实测分别解释 |
+chapters/ch23-zgc/TASK.md:20:| 23.2.2 | chapter.html#sec-23-2-2 | 见正文来源及O01；机制／实测分别解释 |
+chapters/ch23-zgc/TASK.md:21:| 23.3.1 | chapter.html#sec-23-3-1 | 见正文来源及O01；机制／实测分别解释 |
+chapters/ch23-zgc/TASK.md:22:| 23.3.2 | chapter.html#sec-23-3-2 | 见正文来源及O01；机制／实测分别解释 |
+chapters/ch23-zgc/TASK.md:23:| 23.4.1 | chapter.html#sec-23-4-1 | 见正文来源及O01；机制／实测分别解释 |
+chapters/ch23-zgc/TASK.md:24:| 23.4.2 | chapter.html#sec-23-4-2 | 见正文来源及O01；机制／实测分别解释 |
+chapters/ch23-zgc/TASK.md:25:| 23.5.1 | chapter.html#sec-23-5-1 | 见正文来源及O01；机制／实测分别解释 |
+chapters/ch23-zgc/TASK.md:26:| 23.5.2 | chapter.html#sec-23-5-2 | 见正文来源及O01；机制／实测分别解释 |
+chapters/ch23-zgc/TASK.md:55:| C01内容覆盖／C02原理 | 完成；本章10项要点逐项对应，原理、来源与观察边界分别核对 |
+chapters/ch23-zgc/TASK.md:56:| C03来源 | 已定位固定提交与一手文档；evidence/索引.md |
+chapters/ch23-zgc/TASK.md:57:| C04源码／编译 | 完成；五源码章18:15:47最小聚合编译成功，CH24明确复用CH23 |
+chapters/ch23-zgc/TASK.md:58:| C05运行 | 实际观察见O01，未出现的现象不填写已实测 |
+chapters/ch23-zgc/TASK.md:59:| C06图文 | 完成；图源／导出、正文对应、屏幕与最终打印均已实读，见evidence/browser/记录.md |
+chapters/ch23-zgc/TASK.md:60:| C07高亮／浏览器／打印 | 完成；52节点文本对照及六组源码／命令复制一致，本章三视口和9页正式正文打印实读 |
+chapters/ch23-zgc/TASK.md:61:| C08衔接 | 术语、版本主题及篇末三问题已整合；见公共阶段核对 |
+chapters/ch09-runtime-memory/TASK.md:15:| 9.1.1 | sec-9-1-1 | F01 | S01 | 完成 |
+chapters/ch09-runtime-memory/TASK.md:16:| 9.1.2 | sec-9-1-2 | F01 | S01 | 完成 |
+chapters/ch09-runtime-memory/TASK.md:17:| 9.2.1 | sec-9-2-1 | F02、O01 | S02、S04 | 完成 |
+chapters/ch09-runtime-memory/TASK.md:18:| 9.2.2 | sec-9-2-2 | F01 | S03、CH08 | 完成 |
+chapters/ch09-runtime-memory/TASK.md:19:| 9.3.1 | sec-9-3-1 | F02、O01 | S02、S04 | 完成 |
+chapters/ch09-runtime-memory/TASK.md:20:| 9.3.2 | sec-9-3-2 | O01 | S04 | 完成 |
+chapters/ch09-runtime-memory/TASK.md:21:| 9.4.1 | sec-9-4-1 | F02 | S02、S04 | 完成 |
+chapters/ch09-runtime-memory/TASK.md:22:| 9.4.2 | sec-9-4-2 | F03 | S01、S05 | 完成 |
+chapters/ch09-runtime-memory/TASK.md:23:| 9.5.1 | sec-9-5-1 | F03 | S01、S03 | 完成 |
+chapters/ch09-runtime-memory/TASK.md:24:| 9.5.2 | sec-9-5-2 | F03 | S01、S03 | 完成 |
+chapters/ch09-runtime-memory/TASK.md:37:| C01 内容覆盖 | 完成 | 本任务单10项映射逐项对应正文同号三级锚点；三类图解主题、示例与篇末问题都有实质内容 |
+chapters/ch09-runtime-memory/TASK.md:38:| C02 原理解释 | 完成 | 正文按规范、实现、观测及推断分别解释原因和边界，不以一次输出替代全部语义 |
+chapters/ch09-runtime-memory/TASK.md:39:| C03 源码依据 | 完成 | evidence/索引.md；具体锁定文件、符号与关键分支已读，版本与适用条件明确 |
+chapters/ch09-runtime-memory/TASK.md:40:| C04 源码与编译 | 完成 | 本章README及运行记录；当前输入摘要可查，没有新增测试；公共P04聚合只覆盖三新源码章 |
+chapters/ch09-runtime-memory/TASK.md:41:| C05 运行与案例 | 完成 | 必需普通观察的真实输出、阶段／退出和限制已核对；失败或不足记录独立保留 |
+chapters/ch09-runtime-memory/TASK.md:42:| C06 图文 | 完成 | 三幅可编辑矢量图、来源与正文锚点对应；结构解析、屏幕与打印实读均完成 |
+chapters/ch09-runtime-memory/TASK.md:43:| C07 页面阅读 | 完成 | [页面记录](evidence/browser/记录.md)、[打印记录](evidence/browser/print/记录.md)；三视口、三图、导航／源码与正文全部7页实读，问题已修复 |
+chapters/ch09-runtime-memory/TASK.md:44:| C08 衔接与交接 | 完成 | 第三篇公共核对、术语、实际前后章／源码导航及完整交接已核对，无必需待办 |
+chapters/ch09-runtime-memory/TASK.md:45:| 全章C01—C08 | 完成 | 适用要求均有实际证据，无未决必需项 |
+chapters/ch12-native-memory/TASK.md:19:| 12.1.1 | sec-12-1-1 | E01、F01 | S01 | 完成 |
+chapters/ch12-native-memory/TASK.md:20:| 12.1.2 | sec-12-1-2 | F01、O02 | S01 | 完成 |
+chapters/ch12-native-memory/TASK.md:21:| 12.2.1 | sec-12-2-1 | E01、F03 | S02 | 完成 |
+chapters/ch12-native-memory/TASK.md:22:| 12.2.2 | sec-12-2-2 | E01 | S02、O02 | 完成 |
+chapters/ch12-native-memory/TASK.md:23:| 12.3.1 | sec-12-3-1 | E01、F02 | S03 | 完成 |
+chapters/ch12-native-memory/TASK.md:24:| 12.3.2 | sec-12-3-2 | F02 | S03 | 完成 |
+chapters/ch12-native-memory/TASK.md:25:| 12.4.1 | sec-12-4-1 | E01、F03 | S04、O02 | 完成 |
+chapters/ch12-native-memory/TASK.md:26:| 12.4.2 | sec-12-4-2 | F03 | S04、CH09 | 完成 |
+chapters/ch12-native-memory/TASK.md:27:| 12.5.1 | sec-12-5-1 | E01、F02 | S05 | 完成 |
+chapters/ch12-native-memory/TASK.md:28:| 12.5.2 | sec-12-5-2 | F02 | S03、S05 | 完成 |
+chapters/ch12-native-memory/TASK.md:39:| C01 内容覆盖 | 完成 | 本任务单10项映射逐项对应正文同号三级锚点；三类图解主题、示例与篇末问题都有实质内容 |
+chapters/ch12-native-memory/TASK.md:40:| C02 原理解释 | 完成 | 正文按规范、实现、观测及推断分别解释原因和边界，不以一次输出替代全部语义 |
+chapters/ch12-native-memory/TASK.md:41:| C03 源码依据 | 完成 | evidence/索引.md；具体锁定文件、符号与关键分支已读，版本与适用条件明确 |
+chapters/ch12-native-memory/TASK.md:42:| C04 源码与编译 | 完成 | 本章README及运行记录；当前输入摘要可查，没有新增测试；公共P04聚合只覆盖三新源码章 |
+chapters/ch12-native-memory/TASK.md:43:| C05 运行与案例 | 完成 | 必需普通观察的真实输出、阶段／退出和限制已核对；失败或不足记录独立保留 |
+chapters/ch12-native-memory/TASK.md:44:| C06 图文 | 完成 | 三幅可编辑矢量图、来源与正文锚点对应；结构解析、屏幕与打印实读均完成 |
+chapters/ch12-native-memory/TASK.md:45:| C07 页面阅读 | 完成 | [页面记录](evidence/browser/记录.md)、[打印记录](evidence/browser/print/记录.md)；三视口、三图、导航／源码与正文全部8页实读，问题已修复 |
+chapters/ch12-native-memory/TASK.md:46:| C08 衔接与交接 | 完成 | 第三篇公共核对、术语、实际前后章／源码导航及完整交接已核对，无必需待办 |
+chapters/ch12-native-memory/TASK.md:47:| 全章C01—C08 | 完成 | 适用要求均有实际证据，无未决必需项 |
+chapters/ch19-gc-foundations/TASK.md:17:| 19.1.1 | chapter.html#sec-19-1-1 | 见正文来源及O01；机制／实测分别解释 |
+chapters/ch19-gc-foundations/TASK.md:18:| 19.1.2 | chapter.html#sec-19-1-2 | 见正文来源及O01；机制／实测分别解释 |
+chapters/ch19-gc-foundations/TASK.md:19:| 19.2.1 | chapter.html#sec-19-2-1 | 见正文来源及O01；机制／实测分别解释 |
+chapters/ch19-gc-foundations/TASK.md:20:| 19.2.2 | chapter.html#sec-19-2-2 | 见正文来源及O01；机制／实测分别解释 |
+chapters/ch19-gc-foundations/TASK.md:21:| 19.3.1 | chapter.html#sec-19-3-1 | 见正文来源及O01；机制／实测分别解释 |
+chapters/ch19-gc-foundations/TASK.md:22:| 19.3.2 | chapter.html#sec-19-3-2 | 见正文来源及O01；机制／实测分别解释 |
+chapters/ch19-gc-foundations/TASK.md:23:| 19.4.1 | chapter.html#sec-19-4-1 | 见正文来源及O01；机制／实测分别解释 |
+chapters/ch19-gc-foundations/TASK.md:24:| 19.4.2 | chapter.html#sec-19-4-2 | 见正文来源及O01；机制／实测分别解释 |
+chapters/ch19-gc-foundations/TASK.md:25:| 19.5.1 | chapter.html#sec-19-5-1 | 见正文来源及O01；机制／实测分别解释 |
+chapters/ch19-gc-foundations/TASK.md:26:| 19.5.2 | chapter.html#sec-19-5-2 | 见正文来源及O01；机制／实测分别解释 |
+chapters/ch19-gc-foundations/TASK.md:53:| C01内容覆盖／C02原理 | 完成；本章10项要点逐项对应，原理、来源与观察边界分别核对 |
+chapters/ch19-gc-foundations/TASK.md:54:| C03来源 | 已定位固定提交与一手文档；evidence/索引.md |
+chapters/ch19-gc-foundations/TASK.md:55:| C04源码／编译 | 完成；五源码章18:15:47最小聚合编译成功，CH24明确复用CH23 |
+chapters/ch19-gc-foundations/TASK.md:56:| C05运行 | 实际观察见O01，未出现的现象不填写已实测 |
+chapters/ch19-gc-foundations/TASK.md:57:| C06图文 | 完成；图源／导出、正文对应、屏幕与最终打印均已实读，见evidence/browser/记录.md |
+chapters/ch19-gc-foundations/TASK.md:58:| C07高亮／浏览器／打印 | 完成；52节点文本对照及六组源码／命令复制一致，本章三视口和6页正式正文打印实读 |
+chapters/ch19-gc-foundations/TASK.md:59:| C08衔接 | 术语、版本主题及篇末三问题已整合；见公共阶段核对 |
+chapters/ch21-basic-collectors/TASK.md:17:| 21.1.1 | chapter.html#sec-21-1-1 | 见正文来源及O01；机制／实测分别解释 |
+chapters/ch21-basic-collectors/TASK.md:18:| 21.1.2 | chapter.html#sec-21-1-2 | 见正文来源及O01；机制／实测分别解释 |
+chapters/ch21-basic-collectors/TASK.md:19:| 21.2.1 | chapter.html#sec-21-2-1 | 见正文来源及O01；机制／实测分别解释 |
+chapters/ch21-basic-collectors/TASK.md:20:| 21.2.2 | chapter.html#sec-21-2-2 | 见正文来源及O01；机制／实测分别解释 |
+chapters/ch21-basic-collectors/TASK.md:21:| 21.3.1 | chapter.html#sec-21-3-1 | 见正文来源及O01；机制／实测分别解释 |
+chapters/ch21-basic-collectors/TASK.md:22:| 21.3.2 | chapter.html#sec-21-3-2 | 见正文来源及O01；机制／实测分别解释 |
+chapters/ch21-basic-collectors/TASK.md:23:| 21.4.1 | chapter.html#sec-21-4-1 | 见正文来源及O01；机制／实测分别解释 |
+chapters/ch21-basic-collectors/TASK.md:24:| 21.4.2 | chapter.html#sec-21-4-2 | 见正文来源及O01；机制／实测分别解释 |
+chapters/ch21-basic-collectors/TASK.md:25:| 21.5.1 | chapter.html#sec-21-5-1 | 见正文来源及O01；机制／实测分别解释 |
+chapters/ch21-basic-collectors/TASK.md:26:| 21.5.2 | chapter.html#sec-21-5-2 | 见正文来源及O01；机制／实测分别解释 |
+chapters/ch21-basic-collectors/TASK.md:54:| C01内容覆盖／C02原理 | 完成；本章10项要点逐项对应，原理、来源与观察边界分别核对 |
+chapters/ch21-basic-collectors/TASK.md:55:| C03来源 | 已定位固定提交与一手文档；evidence/索引.md |
+chapters/ch21-basic-collectors/TASK.md:56:| C04源码／编译 | 完成；五源码章18:15:47最小聚合编译成功，CH24明确复用CH23 |
+chapters/ch21-basic-collectors/TASK.md:57:| C05运行 | 实际观察见O01，未出现的现象不填写已实测 |
+chapters/ch21-basic-collectors/TASK.md:58:| C06图文 | 完成；图源／导出、正文对应、屏幕与最终打印均已实读，见evidence/browser/记录.md |
+chapters/ch21-basic-collectors/TASK.md:59:| C07高亮／浏览器／打印 | 完成；52节点文本对照及六组源码／命令复制一致，本章三视口和8页正式正文打印实读 |
+chapters/ch21-basic-collectors/TASK.md:60:| C08衔接 | 术语、版本主题及篇末三问题已整合；见公共阶段核对 |
+chapters/ch31-aot-cache/TASK.md:14:| 31.1.1 | [正文](chapter.html#sec-31-1-1) | 本节因果解释、来源与[观察边界](chapter.html#observe)；图与源按下表及证据索引对应 |
+chapters/ch31-aot-cache/TASK.md:15:| 31.1.2 | [正文](chapter.html#sec-31-1-2) | 本节因果解释、来源与[观察边界](chapter.html#observe)；图与源按下表及证据索引对应 |
+chapters/ch31-aot-cache/TASK.md:16:| 31.2.1 | [正文](chapter.html#sec-31-2-1) | 本节因果解释、来源与[观察边界](chapter.html#observe)；图与源按下表及证据索引对应 |
+chapters/ch31-aot-cache/TASK.md:17:| 31.2.2 | [正文](chapter.html#sec-31-2-2) | 本节因果解释、来源与[观察边界](chapter.html#observe)；图与源按下表及证据索引对应 |
+chapters/ch31-aot-cache/TASK.md:18:| 31.3.1 | [正文](chapter.html#sec-31-3-1) | 本节因果解释、来源与[观察边界](chapter.html#observe)；图与源按下表及证据索引对应 |
+chapters/ch31-aot-cache/TASK.md:19:| 31.3.2 | [正文](chapter.html#sec-31-3-2) | 本节因果解释、来源与[观察边界](chapter.html#observe)；图与源按下表及证据索引对应 |
+chapters/ch31-aot-cache/TASK.md:20:| 31.4.1 | [正文](chapter.html#sec-31-4-1) | 本节因果解释、来源与[观察边界](chapter.html#observe)；图与源按下表及证据索引对应 |
+chapters/ch31-aot-cache/TASK.md:21:| 31.4.2 | [正文](chapter.html#sec-31-4-2) | 本节因果解释、来源与[观察边界](chapter.html#observe)；图与源按下表及证据索引对应 |
+chapters/ch31-aot-cache/TASK.md:22:| 31.5.1 | [正文](chapter.html#sec-31-5-1) | 本节因果解释、来源与[观察边界](chapter.html#observe)；图与源按下表及证据索引对应 |
+chapters/ch31-aot-cache/TASK.md:23:| 31.5.2 | [正文](chapter.html#sec-31-5-2) | 本节因果解释、来源与[观察边界](chapter.html#observe)；图与源按下表及证据索引对应 |
+chapters/ch31-aot-cache/TASK.md:24:| 31.6.1 | [正文](chapter.html#sec-31-6-1) | 本节因果解释、来源与[观察边界](chapter.html#observe)；图与源按下表及证据索引对应 |
+chapters/ch31-aot-cache/TASK.md:25:| 31.6.2 | [正文](chapter.html#sec-31-6-2) | 本节因果解释、来源与[观察边界](chapter.html#observe)；图与源按下表及证据索引对应 |
+chapters/ch31-aot-cache/TASK.md:42:| 研究／C03来源 | 完成；[证据索引](evidence/索引.md)、锁定符号、精选实现原文与源文件摘要；官方命令／规范及适用类库文档已读取，网页403未冒充已读 |
+chapters/ch31-aot-cache/TASK.md:43:| 正文／C01覆盖 | 完成；本章12个三级要点均有对应实质解释、示例、机制及边界 |
+chapters/ch31-aot-cache/TASK.md:44:| 原理／C02因果 | 完成；规范、锁定实现与有限观测分别说明，不以成功运行替代语义 |
+chapters/ch31-aot-cache/TASK.md:45:| 源码及编译／C04 | 完成；正式源和运行说明齐备，公共仅3普通模块聚合编译退出0；紧凑源与本地构建按本章说明独立处理 |
+chapters/ch31-aot-cache/TASK.md:46:| 运行／C05 | 完成；[本轮记录](evidence/runs/ch31-20261103-01/记录.md)及实际输出、源与产物摘要；未触发路径明确说明 |
+chapters/ch31-aot-cache/TASK.md:47:| 图解／C06 | 完成；4图的图源、显示图、分类与图注对应，最终屏幕及打印实读 |
+chapters/ch31-aot-cache/TASK.md:48:| 页面／C07 | 完成；Shiki4.6.0静态输出；三视口、代码选区及本章8页正文打印逐页实读；[浏览器记录](evidence/browser/记录.md) |
+chapters/ch31-aot-cache/TASK.md:49:| 整体／C08 | 完成；与CH07初始化、CH16／18画像、CH12所有权、CH20回收协作及CH28本地固定边界一致，见公共篇级核对 |
+chapters/ch22-g1/TASK.md:17:| 22.1.1 | chapter.html#sec-22-1-1 | 见正文来源及O01；机制／实测分别解释 |
+chapters/ch22-g1/TASK.md:18:| 22.1.2 | chapter.html#sec-22-1-2 | 见正文来源及O01；机制／实测分别解释 |
+chapters/ch22-g1/TASK.md:19:| 22.2.1 | chapter.html#sec-22-2-1 | 见正文来源及O01；机制／实测分别解释 |
+chapters/ch22-g1/TASK.md:20:| 22.2.2 | chapter.html#sec-22-2-2 | 见正文来源及O01；机制／实测分别解释 |
+chapters/ch22-g1/TASK.md:21:| 22.3.1 | chapter.html#sec-22-3-1 | 见正文来源及O01；机制／实测分别解释 |
+chapters/ch22-g1/TASK.md:22:| 22.3.2 | chapter.html#sec-22-3-2 | 见正文来源及O01；机制／实测分别解释 |
+chapters/ch22-g1/TASK.md:23:| 22.4.1 | chapter.html#sec-22-4-1 | 见正文来源及O01；机制／实测分别解释 |
+chapters/ch22-g1/TASK.md:24:| 22.4.2 | chapter.html#sec-22-4-2 | 见正文来源及O01；机制／实测分别解释 |
+chapters/ch22-g1/TASK.md:25:| 22.5.1 | chapter.html#sec-22-5-1 | 见正文来源及O01；机制／实测分别解释 |
+chapters/ch22-g1/TASK.md:26:| 22.5.2 | chapter.html#sec-22-5-2 | 见正文来源及O01；机制／实测分别解释 |
+chapters/ch22-g1/TASK.md:55:| C01内容覆盖／C02原理 | 完成；本章10项要点逐项对应，原理、来源与观察边界分别核对 |
+chapters/ch22-g1/TASK.md:56:| C03来源 | 已定位固定提交与一手文档；evidence/索引.md |
+chapters/ch22-g1/TASK.md:57:| C04源码／编译 | 完成；五源码章18:15:47最小聚合编译成功，CH24明确复用CH23 |
+chapters/ch22-g1/TASK.md:58:| C05运行 | 实际观察见O01，未出现的现象不填写已实测 |
+chapters/ch22-g1/TASK.md:59:| C06图文 | 完成；图源／导出、正文对应、屏幕与最终打印均已实读，见evidence/browser/记录.md |
+chapters/ch22-g1/TASK.md:60:| C07高亮／浏览器／打印 | 完成；52节点文本对照及六组源码／命令复制一致，本章三视口和7页正式正文打印实读 |
+chapters/ch22-g1/TASK.md:61:| C08衔接 | 术语、版本主题及篇末三问题已整合；见公共阶段核对 |
+chapters/ch32-native-interop/TASK.md:14:| 32.1.1 | [正文](chapter.html#sec-32-1-1) | 本节因果解释、来源与[观察边界](chapter.html#observe)；图与源按下表及证据索引对应 |
+chapters/ch32-native-interop/TASK.md:15:| 32.1.2 | [正文](chapter.html#sec-32-1-2) | 本节因果解释、来源与[观察边界](chapter.html#observe)；图与源按下表及证据索引对应 |
+chapters/ch32-native-interop/TASK.md:16:| 32.2.1 | [正文](chapter.html#sec-32-2-1) | 本节因果解释、来源与[观察边界](chapter.html#observe)；图与源按下表及证据索引对应 |
+chapters/ch32-native-interop/TASK.md:17:| 32.2.2 | [正文](chapter.html#sec-32-2-2) | 本节因果解释、来源与[观察边界](chapter.html#observe)；图与源按下表及证据索引对应 |
+chapters/ch32-native-interop/TASK.md:18:| 32.3.1 | [正文](chapter.html#sec-32-3-1) | 本节因果解释、来源与[观察边界](chapter.html#observe)；图与源按下表及证据索引对应 |
+chapters/ch32-native-interop/TASK.md:19:| 32.3.2 | [正文](chapter.html#sec-32-3-2) | 本节因果解释、来源与[观察边界](chapter.html#observe)；图与源按下表及证据索引对应 |
+chapters/ch32-native-interop/TASK.md:20:| 32.4.1 | [正文](chapter.html#sec-32-4-1) | 本节因果解释、来源与[观察边界](chapter.html#observe)；图与源按下表及证据索引对应 |
+chapters/ch32-native-interop/TASK.md:21:| 32.4.2 | [正文](chapter.html#sec-32-4-2) | 本节因果解释、来源与[观察边界](chapter.html#observe)；图与源按下表及证据索引对应 |
+chapters/ch32-native-interop/TASK.md:22:| 32.5.1 | [正文](chapter.html#sec-32-5-1) | 本节因果解释、来源与[观察边界](chapter.html#observe)；图与源按下表及证据索引对应 |
+chapters/ch32-native-interop/TASK.md:23:| 32.5.2 | [正文](chapter.html#sec-32-5-2) | 本节因果解释、来源与[观察边界](chapter.html#observe)；图与源按下表及证据索引对应 |
+chapters/ch32-native-interop/TASK.md:24:| 32.6.1 | [正文](chapter.html#sec-32-6-1) | 本节因果解释、来源与[观察边界](chapter.html#observe)；图与源按下表及证据索引对应 |
+chapters/ch32-native-interop/TASK.md:25:| 32.6.2 | [正文](chapter.html#sec-32-6-2) | 本节因果解释、来源与[观察边界](chapter.html#observe)；图与源按下表及证据索引对应 |
+chapters/ch32-native-interop/TASK.md:43:| 研究／C03来源 | 完成；[证据索引](evidence/索引.md)、锁定符号、精选实现原文与源文件摘要；官方命令／规范及适用类库文档已读取，网页403未冒充已读 |
+chapters/ch32-native-interop/TASK.md:44:| 正文／C01覆盖 | 完成；本章12个三级要点均有对应实质解释、示例、机制及边界 |
+chapters/ch32-native-interop/TASK.md:45:| 原理／C02因果 | 完成；规范、锁定实现与有限观测分别说明，不以成功运行替代语义 |
+chapters/ch32-native-interop/TASK.md:46:| 源码及编译／C04 | 完成；正式源和运行说明齐备，公共仅3普通模块聚合编译退出0；紧凑源与本地构建按本章说明独立处理 |
+chapters/ch32-native-interop/TASK.md:47:| 运行／C05 | 完成；[本轮记录](evidence/runs/ch32-20261103-01/记录.md)及实际输出、源与产物摘要；未触发路径明确说明 |
+chapters/ch32-native-interop/TASK.md:48:| 图解／C06 | 完成；5图的图源、显示图、分类与图注对应，最终屏幕及打印实读 |
+chapters/ch32-native-interop/TASK.md:49:| 页面／C07 | 完成；Shiki4.6.0静态输出；三视口、代码选区及本章9页正文打印逐页实读；[浏览器记录](evidence/browser/记录.md) |
+chapters/ch32-native-interop/TASK.md:50:| 整体／C08 | 完成；与CH07初始化、CH16／18画像、CH12所有权、CH20回收协作及CH28本地固定边界一致，见公共篇级核对 |
+chapters/ch18-deoptimization/TASK.md:29:| 18.1.1 | chapter.html#sec-18-1-1 | E01／S01／S03 | 完成 |
+chapters/ch18-deoptimization/TASK.md:30:| 18.1.2 | chapter.html#sec-18-1-2 | E01／S01／S03 | 完成 |
+chapters/ch18-deoptimization/TASK.md:31:| 18.2.1 | chapter.html#sec-18-2-1 | E01／O01 | 完成 |
+chapters/ch18-deoptimization/TASK.md:32:| 18.2.2 | chapter.html#sec-18-2-2 | E01／O01 | 完成 |
+chapters/ch18-deoptimization/TASK.md:33:| 18.3.1 | chapter.html#sec-18-3-1 | S01 | 完成 |
+chapters/ch18-deoptimization/TASK.md:34:| 18.3.2 | chapter.html#sec-18-3-2 | S01 | 完成 |
+chapters/ch18-deoptimization/TASK.md:35:| 18.4.1 | chapter.html#sec-18-4-1 | E02／S02 | 完成 |
+chapters/ch18-deoptimization/TASK.md:36:| 18.4.2 | chapter.html#sec-18-4-2 | E02／S02 | 完成 |
+chapters/ch18-deoptimization/TASK.md:37:| 18.5.1 | chapter.html#sec-18-5-1 | S03 | 完成 |
+chapters/ch18-deoptimization/TASK.md:38:| 18.5.2 | chapter.html#sec-18-5-2 | S03 | 完成 |
+chapters/ch18-deoptimization/TASK.md:53:| C01—C08 | 完成 | 覆盖、解释、来源、源码、编译／观察、图文、页面与篇级衔接均有实际依据；适用边界如下 |
+chapters/ch17-compiler-optimizations/TASK.md:29:| 17.1.1 | chapter.html#sec-17-1-1 | S01／S02 | 完成 |
+chapters/ch17-compiler-optimizations/TASK.md:30:| 17.1.2 | chapter.html#sec-17-1-2 | S01／S02 | 完成 |
+chapters/ch17-compiler-optimizations/TASK.md:31:| 17.2.1 | chapter.html#sec-17-2-1 | E01／O01 | 完成 |
+chapters/ch17-compiler-optimizations/TASK.md:32:| 17.2.2 | chapter.html#sec-17-2-2 | E01／O01 | 完成 |
+chapters/ch17-compiler-optimizations/TASK.md:33:| 17.3.1 | chapter.html#sec-17-3-1 | E01／S02 | 完成 |
+chapters/ch17-compiler-optimizations/TASK.md:34:| 17.3.2 | chapter.html#sec-17-3-2 | E01／S02 | 完成 |
+chapters/ch17-compiler-optimizations/TASK.md:35:| 17.4.1 | chapter.html#sec-17-4-1 | E01／S03 | 完成 |
+chapters/ch17-compiler-optimizations/TASK.md:36:| 17.4.2 | chapter.html#sec-17-4-2 | E01／S03 | 完成 |
+chapters/ch17-compiler-optimizations/TASK.md:37:| 17.5.1 | chapter.html#sec-17-5-1 | O02／S03 | 完成 |
+chapters/ch17-compiler-optimizations/TASK.md:38:| 17.5.2 | chapter.html#sec-17-5-2 | O02／S03 | 完成 |
+chapters/ch17-compiler-optimizations/TASK.md:53:| C01—C08 | 完成 | 覆盖、解释、来源、源码、编译／观察、图文、页面与篇级衔接均有实际依据；适用边界如下 |
+chapters/ch20-safepoints-barriers/TASK.md:17:| 20.1.1 | chapter.html#sec-20-1-1 | 见正文来源及O01；机制／实测分别解释 |
+chapters/ch20-safepoints-barriers/TASK.md:18:| 20.1.2 | chapter.html#sec-20-1-2 | 见正文来源及O01；机制／实测分别解释 |
+chapters/ch20-safepoints-barriers/TASK.md:19:| 20.2.1 | chapter.html#sec-20-2-1 | 见正文来源及O01；机制／实测分别解释 |
+chapters/ch20-safepoints-barriers/TASK.md:20:| 20.2.2 | chapter.html#sec-20-2-2 | 见正文来源及O01；机制／实测分别解释 |
+chapters/ch20-safepoints-barriers/TASK.md:21:| 20.3.1 | chapter.html#sec-20-3-1 | 见正文来源及O01；机制／实测分别解释 |
+chapters/ch20-safepoints-barriers/TASK.md:22:| 20.3.2 | chapter.html#sec-20-3-2 | 见正文来源及O01；机制／实测分别解释 |
+chapters/ch20-safepoints-barriers/TASK.md:23:| 20.4.1 | chapter.html#sec-20-4-1 | 见正文来源及O01；机制／实测分别解释 |
+chapters/ch20-safepoints-barriers/TASK.md:24:| 20.4.2 | chapter.html#sec-20-4-2 | 见正文来源及O01；机制／实测分别解释 |
+chapters/ch20-safepoints-barriers/TASK.md:25:| 20.5.1 | chapter.html#sec-20-5-1 | 见正文来源及O01；机制／实测分别解释 |
+chapters/ch20-safepoints-barriers/TASK.md:26:| 20.5.2 | chapter.html#sec-20-5-2 | 见正文来源及O01；机制／实测分别解释 |
+chapters/ch20-safepoints-barriers/TASK.md:27:| 20.6.1 | chapter.html#sec-20-6-1 | 见正文来源及O01；机制／实测分别解释 |
+chapters/ch20-safepoints-barriers/TASK.md:28:| 20.6.2 | chapter.html#sec-20-6-2 | 见正文来源及O01；机制／实测分别解释 |
+chapters/ch20-safepoints-barriers/TASK.md:57:| C01内容覆盖／C02原理 | 完成；本章12项要点逐项对应，原理、来源与观察边界分别核对 |
+chapters/ch20-safepoints-barriers/TASK.md:58:| C03来源 | 已定位固定提交与一手文档；evidence/索引.md |
+chapters/ch20-safepoints-barriers/TASK.md:59:| C04源码／编译 | 完成；五源码章18:15:47最小聚合编译成功，CH24明确复用CH23 |
+chapters/ch20-safepoints-barriers/TASK.md:60:| C05运行 | 实际观察见O01，未出现的现象不填写已实测 |
+chapters/ch20-safepoints-barriers/TASK.md:61:| C06图文 | 完成；图源／导出、正文对应、屏幕与最终打印均已实读，见evidence/browser/记录.md |
+chapters/ch20-safepoints-barriers/TASK.md:62:| C07高亮／浏览器／打印 | 完成；52节点文本对照及六组源码／命令复制一致，本章三视口和8页正式正文打印实读 |
+chapters/ch20-safepoints-barriers/TASK.md:63:| C08衔接 | 术语、版本主题及篇末三问题已整合；见公共阶段核对 |
+chapters/ch29-scoped-concurrency/TASK.md:13:| 29.1.1 | chapter.html#sec-29-1-1 | 正文来源、实现入口与O01；规范／实现／观察边界单列 |
+chapters/ch29-scoped-concurrency/TASK.md:14:| 29.1.2 | chapter.html#sec-29-1-2 | 正文来源、实现入口与O01；规范／实现／观察边界单列 |
+chapters/ch29-scoped-concurrency/TASK.md:15:| 29.2.1 | chapter.html#sec-29-2-1 | 正文来源、实现入口与O01；规范／实现／观察边界单列 |
+chapters/ch29-scoped-concurrency/TASK.md:16:| 29.2.2 | chapter.html#sec-29-2-2 | 正文来源、实现入口与O01；规范／实现／观察边界单列 |
+chapters/ch29-scoped-concurrency/TASK.md:17:| 29.3.1 | chapter.html#sec-29-3-1 | 正文来源、实现入口与O01；规范／实现／观察边界单列 |
+chapters/ch29-scoped-concurrency/TASK.md:18:| 29.3.2 | chapter.html#sec-29-3-2 | 正文来源、实现入口与O01；规范／实现／观察边界单列 |
+chapters/ch29-scoped-concurrency/TASK.md:19:| 29.4.1 | chapter.html#sec-29-4-1 | 正文来源、实现入口与O01；规范／实现／观察边界单列 |
+chapters/ch29-scoped-concurrency/TASK.md:20:| 29.4.2 | chapter.html#sec-29-4-2 | 正文来源、实现入口与O01；规范／实现／观察边界单列 |
+chapters/ch29-scoped-concurrency/TASK.md:21:| 29.5.1 | chapter.html#sec-29-5-1 | 正文来源、实现入口与O01；规范／实现／观察边界单列 |
+chapters/ch29-scoped-concurrency/TASK.md:22:| 29.5.2 | chapter.html#sec-29-5-2 | 正文来源、实现入口与O01；规范／实现／观察边界单列 |
+chapters/ch29-scoped-concurrency/TASK.md:39:| C01内容／C02原理 | 完成；全部三级要点、例与图逐项对应，规范、机制与有限观察分开解释 |
+chapters/ch29-scoped-concurrency/TASK.md:40:| C03来源 | 已读取固定源码与官方文档，见evidence/索引.md；首次增强提案网页403保留公共记录，不声称读过该网页全文 |
+chapters/ch29-scoped-concurrency/TASK.md:41:| C04源码／编译 | 五普通模块最小聚合编译成功；本章正式源码已编译；CH29预览独立成功，CH28本地库实际加载成功 |
+chapters/ch29-scoped-concurrency/TASK.md:42:| C05运行 | 完成；本章O01与真实输出；未触发现象不记为实测 |
+chapters/ch29-scoped-concurrency/TASK.md:43:| C06图文 | 完成；18图按登记分类，图源／导出、正文引用及最终屏幕与打印实读；见evidence/browser/记录.md |
+chapters/ch29-scoped-concurrency/TASK.md:44:| C07高亮／浏览器 | 完成；本章三视口与8页正文打印逐页实读，24节点及7源文本对应无差异；见evidence/browser/记录.md |
+chapters/ch29-scoped-concurrency/TASK.md:45:| C08衔接／交接 | 完成；CH10当前锁／头配置、CH20收集屏障与应用同步、平台／虚拟线程和25版接口边界口径一致 |
+appendices/c-commands/TASK.md:30:| C01 大纲覆盖 | 完成；上表对应本附录全部要求 |
+appendices/c-commands/TASK.md:31:| C02 因果与边界 | 完成；规范、实现、观察与历史分开，简表不替代完整规则 |
+appendices/c-commands/TASK.md:32:| C03 来源 | 完成；实际访问的一手文档或固定实现／既有章节索引可定位 |
+appendices/c-commands/TASK.md:33:| C04 教学源码 | 完成；索引直接回链归属章真实源与完整运行说明，无新模块 |
+appendices/c-commands/TASK.md:34:| C05 运行证据 | 完成；环境和结论沿既有实际记录，本轮没有新增实验 |
+appendices/c-commands/TASK.md:35:| C06 图文 | 完成；逐节分类与实际图文／图注已实读，索引表不强制凑图 |
+appendices/c-commands/TASK.md:36:| C07 页面 | 完成；1440×1000、768×1000、390×844、局部滚动与4页正式打印已实读；涉及代码的节点为Shiki4.6.0实际输出，复制无差异 |
+appendices/c-commands/TASK.md:37:| C08 交接 | 完成；导航、主要正文回链、环境限制与下一步均保留 |
+appendices/d-source-map/TASK.md:29:| C01 大纲覆盖 | 完成；上表对应本附录全部要求 |
+appendices/d-source-map/TASK.md:30:| C02 因果与边界 | 完成；规范、实现、观察与历史分开，简表不替代完整规则 |
+appendices/d-source-map/TASK.md:31:| C03 来源 | 完成；实际访问的一手文档或固定实现／既有章节索引可定位 |
+appendices/d-source-map/TASK.md:32:| C04 教学源码 | 完成；索引直接回链归属章真实源与完整运行说明，无新模块 |
+appendices/d-source-map/TASK.md:33:| C05 运行证据 | 完成；环境和结论沿既有实际记录，本轮没有新增实验 |
+appendices/d-source-map/TASK.md:34:| C06 图文 | 完成；逐节分类与实际图文／图注已实读，索引表不强制凑图 |
+appendices/d-source-map/TASK.md:35:| C07 页面 | 完成；1440×1000、768×1000、390×844、局部滚动与4页正式打印已实读；涉及代码的节点为Shiki4.6.0实际输出，复制无差异 |
+appendices/d-source-map/TASK.md:36:| C08 交接 | 完成；导航、主要正文回链、环境限制与下一步均保留 |
+chapters/ch30-startup-sharing/TASK.md:14:| 30.1.1 | [正文](chapter.html#sec-30-1-1) | 本节因果解释、来源与[观察边界](chapter.html#observe)；图与源按下表及证据索引对应 |
+chapters/ch30-startup-sharing/TASK.md:15:| 30.1.2 | [正文](chapter.html#sec-30-1-2) | 本节因果解释、来源与[观察边界](chapter.html#observe)；图与源按下表及证据索引对应 |
+chapters/ch30-startup-sharing/TASK.md:16:| 30.2.1 | [正文](chapter.html#sec-30-2-1) | 本节因果解释、来源与[观察边界](chapter.html#observe)；图与源按下表及证据索引对应 |
+chapters/ch30-startup-sharing/TASK.md:17:| 30.2.2 | [正文](chapter.html#sec-30-2-2) | 本节因果解释、来源与[观察边界](chapter.html#observe)；图与源按下表及证据索引对应 |
+chapters/ch30-startup-sharing/TASK.md:18:| 30.3.1 | [正文](chapter.html#sec-30-3-1) | 本节因果解释、来源与[观察边界](chapter.html#observe)；图与源按下表及证据索引对应 |
+chapters/ch30-startup-sharing/TASK.md:19:| 30.3.2 | [正文](chapter.html#sec-30-3-2) | 本节因果解释、来源与[观察边界](chapter.html#observe)；图与源按下表及证据索引对应 |
+chapters/ch30-startup-sharing/TASK.md:20:| 30.4.1 | [正文](chapter.html#sec-30-4-1) | 本节因果解释、来源与[观察边界](chapter.html#observe)；图与源按下表及证据索引对应 |
+chapters/ch30-startup-sharing/TASK.md:21:| 30.4.2 | [正文](chapter.html#sec-30-4-2) | 本节因果解释、来源与[观察边界](chapter.html#observe)；图与源按下表及证据索引对应 |
+chapters/ch30-startup-sharing/TASK.md:22:| 30.5.1 | [正文](chapter.html#sec-30-5-1) | 本节因果解释、来源与[观察边界](chapter.html#observe)；图与源按下表及证据索引对应 |
+chapters/ch30-startup-sharing/TASK.md:23:| 30.5.2 | [正文](chapter.html#sec-30-5-2) | 本节因果解释、来源与[观察边界](chapter.html#observe)；图与源按下表及证据索引对应 |
+chapters/ch30-startup-sharing/TASK.md:40:| 研究／C03来源 | 完成；[证据索引](evidence/索引.md)、锁定符号、精选实现原文与源文件摘要；官方命令／规范及适用类库文档已读取，网页403未冒充已读 |
+chapters/ch30-startup-sharing/TASK.md:41:| 正文／C01覆盖 | 完成；本章10个三级要点均有对应实质解释、示例、机制及边界 |
+chapters/ch30-startup-sharing/TASK.md:42:| 原理／C02因果 | 完成；规范、锁定实现与有限观测分别说明，不以成功运行替代语义 |
+chapters/ch30-startup-sharing/TASK.md:43:| 源码及编译／C04 | 完成；正式源和运行说明齐备，公共仅3普通模块聚合编译退出0；紧凑源与本地构建按本章说明独立处理 |
+chapters/ch30-startup-sharing/TASK.md:44:| 运行／C05 | 完成；[本轮记录](evidence/runs/ch30-20261103-01/记录.md)及实际输出、源与产物摘要；未触发路径明确说明 |
+chapters/ch30-startup-sharing/TASK.md:45:| 图解／C06 | 完成；4图的图源、显示图、分类与图注对应，最终屏幕及打印实读 |
+chapters/ch30-startup-sharing/TASK.md:46:| 页面／C07 | 完成；Shiki4.6.0静态输出；三视口、代码选区及本章7页正文打印逐页实读；[浏览器记录](evidence/browser/记录.md) |
+chapters/ch30-startup-sharing/TASK.md:47:| 整体／C08 | 完成；与CH07初始化、CH16／18画像、CH12所有权、CH20回收协作及CH28本地固定边界一致，见公共篇级核对 |
+chapters/ch27-monitors/TASK.md:13:| 27.1.1 | chapter.html#sec-27-1-1 | 正文来源、实现入口与O01；规范／实现／观察边界单列 |
+chapters/ch27-monitors/TASK.md:14:| 27.1.2 | chapter.html#sec-27-1-2 | 正文来源、实现入口与O01；规范／实现／观察边界单列 |
+chapters/ch27-monitors/TASK.md:15:| 27.2.1 | chapter.html#sec-27-2-1 | 正文来源、实现入口与O01；规范／实现／观察边界单列 |
+chapters/ch27-monitors/TASK.md:16:| 27.2.2 | chapter.html#sec-27-2-2 | 正文来源、实现入口与O01；规范／实现／观察边界单列 |
+chapters/ch27-monitors/TASK.md:17:| 27.3.1 | chapter.html#sec-27-3-1 | 正文来源、实现入口与O01；规范／实现／观察边界单列 |
+chapters/ch27-monitors/TASK.md:18:| 27.3.2 | chapter.html#sec-27-3-2 | 正文来源、实现入口与O01；规范／实现／观察边界单列 |
+chapters/ch27-monitors/TASK.md:19:| 27.4.1 | chapter.html#sec-27-4-1 | 正文来源、实现入口与O01；规范／实现／观察边界单列 |
+chapters/ch27-monitors/TASK.md:20:| 27.4.2 | chapter.html#sec-27-4-2 | 正文来源、实现入口与O01；规范／实现／观察边界单列 |
+chapters/ch27-monitors/TASK.md:21:| 27.5.1 | chapter.html#sec-27-5-1 | 正文来源、实现入口与O01；规范／实现／观察边界单列 |
+chapters/ch27-monitors/TASK.md:22:| 27.5.2 | chapter.html#sec-27-5-2 | 正文来源、实现入口与O01；规范／实现／观察边界单列 |
+chapters/ch27-monitors/TASK.md:23:| 27.6.1 | chapter.html#sec-27-6-1 | 正文来源、实现入口与O01；规范／实现／观察边界单列 |
+chapters/ch27-monitors/TASK.md:24:| 27.6.2 | chapter.html#sec-27-6-2 | 正文来源、实现入口与O01；规范／实现／观察边界单列 |
+chapters/ch27-monitors/TASK.md:41:| C01内容／C02原理 | 完成；全部三级要点、例与图逐项对应，规范、机制与有限观察分开解释 |
+chapters/ch27-monitors/TASK.md:42:| C03来源 | 已读取固定源码与官方文档，见evidence/索引.md；首次增强提案网页403保留公共记录，不声称读过该网页全文 |
+chapters/ch27-monitors/TASK.md:43:| C04源码／编译 | 五普通模块最小聚合编译成功；本章正式源码已编译；CH29预览独立成功，CH28本地库实际加载成功 |
+chapters/ch27-monitors/TASK.md:44:| C05运行 | 完成；本章O01与真实输出；未触发现象不记为实测 |
+chapters/ch27-monitors/TASK.md:45:| C06图文 | 完成；18图按登记分类，图源／导出、正文引用及最终屏幕与打印实读；见evidence/browser/记录.md |
+chapters/ch27-monitors/TASK.md:46:| C07高亮／浏览器 | 完成；本章三视口与9页正文打印逐页实读，24节点及7源文本对应无差异；见evidence/browser/记录.md |
+chapters/ch27-monitors/TASK.md:47:| C08衔接／交接 | 完成；CH10当前锁／头配置、CH20收集屏障与应用同步、平台／虚拟线程和25版接口边界口径一致 |
+chapters/ch26-platform-threads/TASK.md:13:| 26.1.1 | chapter.html#sec-26-1-1 | 正文来源、实现入口与O01；规范／实现／观察边界单列 |
+chapters/ch26-platform-threads/TASK.md:14:| 26.1.2 | chapter.html#sec-26-1-2 | 正文来源、实现入口与O01；规范／实现／观察边界单列 |
+chapters/ch26-platform-threads/TASK.md:15:| 26.2.1 | chapter.html#sec-26-2-1 | 正文来源、实现入口与O01；规范／实现／观察边界单列 |
+chapters/ch26-platform-threads/TASK.md:16:| 26.2.2 | chapter.html#sec-26-2-2 | 正文来源、实现入口与O01；规范／实现／观察边界单列 |
+chapters/ch26-platform-threads/TASK.md:17:| 26.3.1 | chapter.html#sec-26-3-1 | 正文来源、实现入口与O01；规范／实现／观察边界单列 |
+chapters/ch26-platform-threads/TASK.md:18:| 26.3.2 | chapter.html#sec-26-3-2 | 正文来源、实现入口与O01；规范／实现／观察边界单列 |
+chapters/ch26-platform-threads/TASK.md:19:| 26.4.1 | chapter.html#sec-26-4-1 | 正文来源、实现入口与O01；规范／实现／观察边界单列 |
+chapters/ch26-platform-threads/TASK.md:20:| 26.4.2 | chapter.html#sec-26-4-2 | 正文来源、实现入口与O01；规范／实现／观察边界单列 |
+chapters/ch26-platform-threads/TASK.md:21:| 26.5.1 | chapter.html#sec-26-5-1 | 正文来源、实现入口与O01；规范／实现／观察边界单列 |
+chapters/ch26-platform-threads/TASK.md:22:| 26.5.2 | chapter.html#sec-26-5-2 | 正文来源、实现入口与O01；规范／实现／观察边界单列 |
+chapters/ch26-platform-threads/TASK.md:38:| C01内容／C02原理 | 完成；全部三级要点、例与图逐项对应，规范、机制与有限观察分开解释 |
+chapters/ch26-platform-threads/TASK.md:39:| C03来源 | 已读取固定源码与官方文档，见evidence/索引.md；首次增强提案网页403保留公共记录，不声称读过该网页全文 |
+chapters/ch26-platform-threads/TASK.md:40:| C04源码／编译 | 五普通模块最小聚合编译成功；本章正式源码已编译；CH29预览独立成功，CH28本地库实际加载成功 |
+chapters/ch26-platform-threads/TASK.md:41:| C05运行 | 完成；本章O01与真实输出；未触发现象不记为实测 |
+chapters/ch26-platform-threads/TASK.md:42:| C06图文 | 完成；18图按登记分类，图源／导出、正文引用及最终屏幕与打印实读；见evidence/browser/记录.md |
+chapters/ch26-platform-threads/TASK.md:43:| C07高亮／浏览器 | 完成；本章三视口与7页正文打印逐页实读，24节点及7源文本对应无差异；见evidence/browser/记录.md |
+chapters/ch26-platform-threads/TASK.md:44:| C08衔接／交接 | 完成；CH10当前锁／头配置、CH20收集屏障与应用同步、平台／虚拟线程和25版接口边界口径一致 |
+chapters/ch28-virtual-threads/TASK.md:13:| 28.1.1 | chapter.html#sec-28-1-1 | 正文来源、实现入口与O01；规范／实现／观察边界单列 |
+chapters/ch28-virtual-threads/TASK.md:14:| 28.1.2 | chapter.html#sec-28-1-2 | 正文来源、实现入口与O01；规范／实现／观察边界单列 |
+chapters/ch28-virtual-threads/TASK.md:15:| 28.2.1 | chapter.html#sec-28-2-1 | 正文来源、实现入口与O01；规范／实现／观察边界单列 |
+chapters/ch28-virtual-threads/TASK.md:16:| 28.2.2 | chapter.html#sec-28-2-2 | 正文来源、实现入口与O01；规范／实现／观察边界单列 |
+chapters/ch28-virtual-threads/TASK.md:17:| 28.3.1 | chapter.html#sec-28-3-1 | 正文来源、实现入口与O01；规范／实现／观察边界单列 |
+chapters/ch28-virtual-threads/TASK.md:18:| 28.3.2 | chapter.html#sec-28-3-2 | 正文来源、实现入口与O01；规范／实现／观察边界单列 |
+chapters/ch28-virtual-threads/TASK.md:19:| 28.4.1 | chapter.html#sec-28-4-1 | 正文来源、实现入口与O01；规范／实现／观察边界单列 |
+chapters/ch28-virtual-threads/TASK.md:20:| 28.4.2 | chapter.html#sec-28-4-2 | 正文来源、实现入口与O01；规范／实现／观察边界单列 |
+chapters/ch28-virtual-threads/TASK.md:21:| 28.5.1 | chapter.html#sec-28-5-1 | 正文来源、实现入口与O01；规范／实现／观察边界单列 |
+chapters/ch28-virtual-threads/TASK.md:22:| 28.5.2 | chapter.html#sec-28-5-2 | 正文来源、实现入口与O01；规范／实现／观察边界单列 |
+chapters/ch28-virtual-threads/TASK.md:39:| C01内容／C02原理 | 完成；全部三级要点、例与图逐项对应，规范、机制与有限观察分开解释 |
+chapters/ch28-virtual-threads/TASK.md:40:| C03来源 | 已读取固定源码与官方文档，见evidence/索引.md；首次增强提案网页403保留公共记录，不声称读过该网页全文 |
+chapters/ch28-virtual-threads/TASK.md:41:| C04源码／编译 | 五普通模块最小聚合编译成功；本章正式源码已编译；CH29预览独立成功，CH28本地库实际加载成功 |
+chapters/ch28-virtual-threads/TASK.md:42:| C05运行 | 完成；本章O01与真实输出；未触发现象不记为实测 |
+chapters/ch28-virtual-threads/TASK.md:43:| C06图文 | 完成；18图按登记分类，图源／导出、正文引用及最终屏幕与打印实读；见evidence/browser/记录.md |
+chapters/ch28-virtual-threads/TASK.md:44:| C07高亮／浏览器 | 完成；本章三视口与7页正文打印逐页实读，24节点及7源文本对应无差异；见evidence/browser/记录.md |
+chapters/ch28-virtual-threads/TASK.md:45:| C08衔接／交接 | 完成；CH10当前锁／头配置、CH20收集屏障与应用同步、平台／虚拟线程和25版接口边界口径一致 |
+appendices/a-terms/TASK.md:28:| C01 大纲覆盖 | 完成；上表对应本附录全部要求 |
+appendices/a-terms/TASK.md:29:| C02 因果与边界 | 完成；规范、实现、观察与历史分开，简表不替代完整规则 |
+appendices/a-terms/TASK.md:30:| C03 来源 | 完成；实际访问的一手文档或固定实现／既有章节索引可定位 |
+appendices/a-terms/TASK.md:31:| C04 教学源码 | 完成；索引直接回链归属章真实源与完整运行说明，无新模块 |
+appendices/a-terms/TASK.md:32:| C05 运行证据 | 完成；环境和结论沿既有实际记录，本轮没有新增实验 |
+appendices/a-terms/TASK.md:33:| C06 图文 | 完成；逐节分类与实际图文／图注已实读，索引表不强制凑图 |
+appendices/a-terms/TASK.md:34:| C07 页面 | 完成；1440×1000、768×1000、390×844、局部滚动与8页正式打印已实读；涉及代码的节点为Shiki4.6.0实际输出，复制无差异 |
+appendices/a-terms/TASK.md:35:| C08 交接 | 完成；导航、主要正文回链、环境限制与下一步均保留 |
+chapters/ch36-performance-cases/TASK.md:13:| 36.1.1 | [本节](chapter.html#sec-36-1-1) | 因果解释、来源与实际／未实测边界；见[证据索引](evidence/索引.md) |
+chapters/ch36-performance-cases/TASK.md:14:| 36.1.2 | [本节](chapter.html#sec-36-1-2) | 因果解释、来源与实际／未实测边界；见[证据索引](evidence/索引.md) |
+chapters/ch36-performance-cases/TASK.md:15:| 36.2.1 | [本节](chapter.html#sec-36-2-1) | 因果解释、来源与实际／未实测边界；见[证据索引](evidence/索引.md) |
+chapters/ch36-performance-cases/TASK.md:16:| 36.2.2 | [本节](chapter.html#sec-36-2-2) | 因果解释、来源与实际／未实测边界；见[证据索引](evidence/索引.md) |
+chapters/ch36-performance-cases/TASK.md:17:| 36.3.1 | [本节](chapter.html#sec-36-3-1) | 因果解释、来源与实际／未实测边界；见[证据索引](evidence/索引.md) |
+chapters/ch36-performance-cases/TASK.md:18:| 36.3.2 | [本节](chapter.html#sec-36-3-2) | 因果解释、来源与实际／未实测边界；见[证据索引](evidence/索引.md) |
+chapters/ch36-performance-cases/TASK.md:19:| 36.4.1 | [本节](chapter.html#sec-36-4-1) | 因果解释、来源与实际／未实测边界；见[证据索引](evidence/索引.md) |
+chapters/ch36-performance-cases/TASK.md:20:| 36.4.2 | [本节](chapter.html#sec-36-4-2) | 因果解释、来源与实际／未实测边界；见[证据索引](evidence/索引.md) |
+chapters/ch36-performance-cases/TASK.md:21:| 36.5.1 | [本节](chapter.html#sec-36-5-1) | 因果解释、来源与实际／未实测边界；见[证据索引](evidence/索引.md) |
+chapters/ch36-performance-cases/TASK.md:22:| 36.5.2 | [本节](chapter.html#sec-36-5-2) | 因果解释、来源与实际／未实测边界；见[证据索引](evidence/索引.md) |
+chapters/ch36-performance-cases/TASK.md:23:| 36.6.1 | [本节](chapter.html#sec-36-6-1) | 因果解释、来源与实际／未实测边界；见[证据索引](evidence/索引.md) |
+chapters/ch36-performance-cases/TASK.md:24:| 36.6.2 | [本节](chapter.html#sec-36-6-2) | 因果解释、来源与实际／未实测边界；见[证据索引](evidence/索引.md) |
+chapters/ch36-performance-cases/TASK.md:43:| 研究／C03 | 完成；固定源码符号与[实现摘录](evidence/实现摘录.md)，官方来源索引；未将403页面当已读 |
+chapters/ch36-performance-cases/TASK.md:44:| 正文／C01 | 完成；12个三级要点有实际解释，保留原编号；不是仅标题齐全 |
+chapters/ch36-performance-cases/TASK.md:45:| 机制／C02 | 完成；规范／实现／本机有限观察／推断分别说明 |
+chapters/ch36-performance-cases/TASK.md:46:| 源码编译／C04 | 完成；[运行说明](README.html)与正式源对应，公共最小聚合编译成功；独立基准仅在第36章编译 |
+chapters/ch36-performance-cases/TASK.md:47:| 案例／C05 | 完成于用户同意范围；[运行记录](evidence/runs/ch36-20261103-01/记录.md)，未发生／未实测项单列 |
+chapters/ch36-performance-cases/TASK.md:48:| 图文／C06 | 完成；4图图源／导出与当前屏幕、打印实读对应，未用位图代替 |
+chapters/ch36-performance-cases/TASK.md:49:| 页面／C07 | 完成；Shiki4.6.0静态生成，真实选区、三视口及7页正文打印实读；见[页面记录](evidence/browser/记录.md) |
+chapters/ch36-performance-cases/TASK.md:50:| 衔接／C08 | 完成；与前置章节、篇末问题和[公共阶段核对](../../执行记录/evidence/p09-20261103/阶段核对.md)口径一致 |
+appendices/b-bytecode/TASK.md:30:| C01 大纲覆盖 | 完成；上表对应本附录全部要求 |
+appendices/b-bytecode/TASK.md:31:| C02 因果与边界 | 完成；规范、实现、观察与历史分开，简表不替代完整规则 |
+appendices/b-bytecode/TASK.md:32:| C03 来源 | 完成；实际访问的一手文档或固定实现／既有章节索引可定位 |
+appendices/b-bytecode/TASK.md:33:| C04 教学源码 | 完成；索引直接回链归属章真实源与完整运行说明，无新模块 |
+appendices/b-bytecode/TASK.md:34:| C05 运行证据 | 完成；环境和结论沿既有实际记录，本轮没有新增实验 |
+appendices/b-bytecode/TASK.md:35:| C06 图文 | 完成；逐节分类与实际图文／图注已实读，索引表不强制凑图 |
+appendices/b-bytecode/TASK.md:36:| C07 页面 | 完成；1440×1000、768×1000、390×844、局部滚动与4页正式打印已实读；涉及代码的节点为Shiki4.6.0实际输出，复制无差异 |
+appendices/b-bytecode/TASK.md:37:| C08 交接 | 完成；导航、主要正文回链、环境限制与下一步均保留 |
+chapters/ch35-troubleshooting/TASK.md:13:| 35.1.1 | [本节](chapter.html#sec-35-1-1) | 因果解释、来源与实际／未实测边界；见[证据索引](evidence/索引.md) |
+chapters/ch35-troubleshooting/TASK.md:14:| 35.1.2 | [本节](chapter.html#sec-35-1-2) | 因果解释、来源与实际／未实测边界；见[证据索引](evidence/索引.md) |
+chapters/ch35-troubleshooting/TASK.md:15:| 35.2.1 | [本节](chapter.html#sec-35-2-1) | 因果解释、来源与实际／未实测边界；见[证据索引](evidence/索引.md) |
+chapters/ch35-troubleshooting/TASK.md:16:| 35.2.2 | [本节](chapter.html#sec-35-2-2) | 因果解释、来源与实际／未实测边界；见[证据索引](evidence/索引.md) |
+chapters/ch35-troubleshooting/TASK.md:17:| 35.3.1 | [本节](chapter.html#sec-35-3-1) | 因果解释、来源与实际／未实测边界；见[证据索引](evidence/索引.md) |
+chapters/ch35-troubleshooting/TASK.md:18:| 35.3.2 | [本节](chapter.html#sec-35-3-2) | 因果解释、来源与实际／未实测边界；见[证据索引](evidence/索引.md) |
+chapters/ch35-troubleshooting/TASK.md:19:| 35.4.1 | [本节](chapter.html#sec-35-4-1) | 因果解释、来源与实际／未实测边界；见[证据索引](evidence/索引.md) |
+chapters/ch35-troubleshooting/TASK.md:20:| 35.4.2 | [本节](chapter.html#sec-35-4-2) | 因果解释、来源与实际／未实测边界；见[证据索引](evidence/索引.md) |
+chapters/ch35-troubleshooting/TASK.md:21:| 35.5.1 | [本节](chapter.html#sec-35-5-1) | 因果解释、来源与实际／未实测边界；见[证据索引](evidence/索引.md) |
+chapters/ch35-troubleshooting/TASK.md:22:| 35.5.2 | [本节](chapter.html#sec-35-5-2) | 因果解释、来源与实际／未实测边界；见[证据索引](evidence/索引.md) |
+chapters/ch35-troubleshooting/TASK.md:23:| 35.6.1 | [本节](chapter.html#sec-35-6-1) | 因果解释、来源与实际／未实测边界；见[证据索引](evidence/索引.md) |
+chapters/ch35-troubleshooting/TASK.md:24:| 35.6.2 | [本节](chapter.html#sec-35-6-2) | 因果解释、来源与实际／未实测边界；见[证据索引](evidence/索引.md) |
+chapters/ch35-troubleshooting/TASK.md:43:| 研究／C03 | 完成；固定源码符号与[实现摘录](evidence/实现摘录.md)，官方来源索引；未将403页面当已读 |
+chapters/ch35-troubleshooting/TASK.md:44:| 正文／C01 | 完成；12个三级要点有实际解释，保留原编号；不是仅标题齐全 |
+chapters/ch35-troubleshooting/TASK.md:45:| 机制／C02 | 完成；规范／实现／本机有限观察／推断分别说明 |
+chapters/ch35-troubleshooting/TASK.md:46:| 源码编译／C04 | 完成；[运行说明](README.html)与正式源对应，公共最小聚合编译成功；独立基准仅在第36章编译 |
+chapters/ch35-troubleshooting/TASK.md:47:| 案例／C05 | 完成于用户同意范围；[运行记录](evidence/runs/ch35-20261103-01/记录.md)，未发生／未实测项单列 |
+chapters/ch35-troubleshooting/TASK.md:48:| 图文／C06 | 完成；4图图源／导出与当前屏幕、打印实读对应，未用位图代替 |
+chapters/ch35-troubleshooting/TASK.md:49:| 页面／C07 | 完成；Shiki4.6.0静态生成，真实选区、三视口及8页正文打印实读；见[页面记录](evidence/browser/记录.md) |
+chapters/ch35-troubleshooting/TASK.md:50:| 衔接／C08 | 完成；与前置章节、篇末问题和[公共阶段核对](../../执行记录/evidence/p09-20261103/阶段核对.md)口径一致 |
+chapters/ch25-memory-model/TASK.md:13:| 25.1.1 | chapter.html#sec-25-1-1 | 正文来源、实现入口与O01；规范／实现／观察边界单列 |
+chapters/ch25-memory-model/TASK.md:14:| 25.1.2 | chapter.html#sec-25-1-2 | 正文来源、实现入口与O01；规范／实现／观察边界单列 |
+chapters/ch25-memory-model/TASK.md:15:| 25.2.1 | chapter.html#sec-25-2-1 | 正文来源、实现入口与O01；规范／实现／观察边界单列 |
+chapters/ch25-memory-model/TASK.md:16:| 25.2.2 | chapter.html#sec-25-2-2 | 正文来源、实现入口与O01；规范／实现／观察边界单列 |
+chapters/ch25-memory-model/TASK.md:17:| 25.3.1 | chapter.html#sec-25-3-1 | 正文来源、实现入口与O01；规范／实现／观察边界单列 |
+chapters/ch25-memory-model/TASK.md:18:| 25.3.2 | chapter.html#sec-25-3-2 | 正文来源、实现入口与O01；规范／实现／观察边界单列 |
+chapters/ch25-memory-model/TASK.md:19:| 25.4.1 | chapter.html#sec-25-4-1 | 正文来源、实现入口与O01；规范／实现／观察边界单列 |
+chapters/ch25-memory-model/TASK.md:20:| 25.4.2 | chapter.html#sec-25-4-2 | 正文来源、实现入口与O01；规范／实现／观察边界单列 |
+chapters/ch25-memory-model/TASK.md:21:| 25.5.1 | chapter.html#sec-25-5-1 | 正文来源、实现入口与O01；规范／实现／观察边界单列 |
+chapters/ch25-memory-model/TASK.md:22:| 25.5.2 | chapter.html#sec-25-5-2 | 正文来源、实现入口与O01；规范／实现／观察边界单列 |
+chapters/ch25-memory-model/TASK.md:38:| C01内容／C02原理 | 完成；全部三级要点、例与图逐项对应，规范、机制与有限观察分开解释 |
+chapters/ch25-memory-model/TASK.md:39:| C03来源 | 已读取固定源码与官方文档，见evidence/索引.md；首次增强提案网页403保留公共记录，不声称读过该网页全文 |
+chapters/ch25-memory-model/TASK.md:40:| C04源码／编译 | 五普通模块最小聚合编译成功；本章正式源码已编译；CH29预览独立成功，CH28本地库实际加载成功 |
+chapters/ch25-memory-model/TASK.md:41:| C05运行 | 完成；本章O01与真实输出；未触发现象不记为实测 |
+chapters/ch25-memory-model/TASK.md:42:| C06图文 | 完成；18图按登记分类，图源／导出、正文引用及最终屏幕与打印实读；见evidence/browser/记录.md |
+chapters/ch25-memory-model/TASK.md:43:| C07高亮／浏览器 | 完成；本章三视口与7页正文打印逐页实读，24节点及7源文本对应无差异；见evidence/browser/记录.md |
+chapters/ch25-memory-model/TASK.md:44:| C08衔接／交接 | 完成；CH10当前锁／头配置、CH20收集屏障与应用同步、平台／虚拟线程和25版接口边界口径一致 |
+appendices/f-environments/TASK.md:29:| C01 大纲覆盖 | 完成；上表对应本附录全部要求 |
+appendices/f-environments/TASK.md:30:| C02 因果与边界 | 完成；规范、实现、观察与历史分开，简表不替代完整规则 |
+appendices/f-environments/TASK.md:31:| C03 来源 | 完成；实际访问的一手文档或固定实现／既有章节索引可定位 |
+appendices/f-environments/TASK.md:32:| C04 教学源码 | 完成；索引直接回链归属章真实源与完整运行说明，无新模块 |
+appendices/f-environments/TASK.md:33:| C05 运行证据 | 完成；环境和结论沿既有实际记录，本轮没有新增实验 |
+appendices/f-environments/TASK.md:34:| C06 图文 | 完成；逐节分类与实际图文／图注已实读，索引表不强制凑图 |
+appendices/f-environments/TASK.md:35:| C07 页面 | 完成；1440×1000、768×1000、390×844、局部滚动与3页正式打印已实读；涉及代码的节点为Shiki4.6.0实际输出，复制无差异 |
+appendices/f-environments/TASK.md:36:| C08 交接 | 完成；导航、主要正文回链、环境限制与下一步均保留 |
+chapters/ch34-flight-recorder/TASK.md:13:| 34.1.1 | [本节](chapter.html#sec-34-1-1) | 因果解释、来源与实际／未实测边界；见[证据索引](evidence/索引.md) |
+chapters/ch34-flight-recorder/TASK.md:14:| 34.1.2 | [本节](chapter.html#sec-34-1-2) | 因果解释、来源与实际／未实测边界；见[证据索引](evidence/索引.md) |
+chapters/ch34-flight-recorder/TASK.md:15:| 34.2.1 | [本节](chapter.html#sec-34-2-1) | 因果解释、来源与实际／未实测边界；见[证据索引](evidence/索引.md) |
+chapters/ch34-flight-recorder/TASK.md:16:| 34.2.2 | [本节](chapter.html#sec-34-2-2) | 因果解释、来源与实际／未实测边界；见[证据索引](evidence/索引.md) |
+chapters/ch34-flight-recorder/TASK.md:17:| 34.3.1 | [本节](chapter.html#sec-34-3-1) | 因果解释、来源与实际／未实测边界；见[证据索引](evidence/索引.md) |
+chapters/ch34-flight-recorder/TASK.md:18:| 34.3.2 | [本节](chapter.html#sec-34-3-2) | 因果解释、来源与实际／未实测边界；见[证据索引](evidence/索引.md) |
+chapters/ch34-flight-recorder/TASK.md:19:| 34.4.1 | [本节](chapter.html#sec-34-4-1) | 因果解释、来源与实际／未实测边界；见[证据索引](evidence/索引.md) |
+chapters/ch34-flight-recorder/TASK.md:20:| 34.4.2 | [本节](chapter.html#sec-34-4-2) | 因果解释、来源与实际／未实测边界；见[证据索引](evidence/索引.md) |
+chapters/ch34-flight-recorder/TASK.md:21:| 34.5.1 | [本节](chapter.html#sec-34-5-1) | 因果解释、来源与实际／未实测边界；见[证据索引](evidence/索引.md) |
+chapters/ch34-flight-recorder/TASK.md:22:| 34.5.2 | [本节](chapter.html#sec-34-5-2) | 因果解释、来源与实际／未实测边界；见[证据索引](evidence/索引.md) |
+chapters/ch34-flight-recorder/TASK.md:23:| 34.6.1 | [本节](chapter.html#sec-34-6-1) | 因果解释、来源与实际／未实测边界；见[证据索引](evidence/索引.md) |
+chapters/ch34-flight-recorder/TASK.md:24:| 34.6.2 | [本节](chapter.html#sec-34-6-2) | 因果解释、来源与实际／未实测边界；见[证据索引](evidence/索引.md) |
+chapters/ch34-flight-recorder/TASK.md:43:| 研究／C03 | 完成；固定源码符号与[实现摘录](evidence/实现摘录.md)，官方来源索引；未将403页面当已读 |
+chapters/ch34-flight-recorder/TASK.md:44:| 正文／C01 | 完成；12个三级要点有实际解释，保留原编号；不是仅标题齐全 |
+chapters/ch34-flight-recorder/TASK.md:45:| 机制／C02 | 完成；规范／实现／本机有限观察／推断分别说明 |
+chapters/ch34-flight-recorder/TASK.md:46:| 源码编译／C04 | 完成；[运行说明](README.html)与正式源对应，公共最小聚合编译成功；独立基准仅在第36章编译 |
+chapters/ch34-flight-recorder/TASK.md:47:| 案例／C05 | 完成于用户同意范围；[运行记录](evidence/runs/ch34-20261103-01/记录.md)，未发生／未实测项单列 |
+chapters/ch34-flight-recorder/TASK.md:48:| 图文／C06 | 完成；4图图源／导出与当前屏幕、打印实读对应，未用位图代替 |
+chapters/ch34-flight-recorder/TASK.md:49:| 页面／C07 | 完成；Shiki4.6.0静态生成，真实选区、三视口及7页正文打印实读；见[页面记录](evidence/browser/记录.md) |
+chapters/ch34-flight-recorder/TASK.md:50:| 衔接／C08 | 完成；与前置章节、篇末问题和[公共阶段核对](../../执行记录/evidence/p09-20261103/阶段核对.md)口径一致 |
+chapters/ch33-observability/TASK.md:13:| 33.1.1 | [本节](chapter.html#sec-33-1-1) | 因果解释、来源与实际／未实测边界；见[证据索引](evidence/索引.md) |
+chapters/ch33-observability/TASK.md:14:| 33.1.2 | [本节](chapter.html#sec-33-1-2) | 因果解释、来源与实际／未实测边界；见[证据索引](evidence/索引.md) |
+chapters/ch33-observability/TASK.md:15:| 33.2.1 | [本节](chapter.html#sec-33-2-1) | 因果解释、来源与实际／未实测边界；见[证据索引](evidence/索引.md) |
+chapters/ch33-observability/TASK.md:16:| 33.2.2 | [本节](chapter.html#sec-33-2-2) | 因果解释、来源与实际／未实测边界；见[证据索引](evidence/索引.md) |
+chapters/ch33-observability/TASK.md:17:| 33.3.1 | [本节](chapter.html#sec-33-3-1) | 因果解释、来源与实际／未实测边界；见[证据索引](evidence/索引.md) |
+chapters/ch33-observability/TASK.md:18:| 33.3.2 | [本节](chapter.html#sec-33-3-2) | 因果解释、来源与实际／未实测边界；见[证据索引](evidence/索引.md) |
+chapters/ch33-observability/TASK.md:19:| 33.4.1 | [本节](chapter.html#sec-33-4-1) | 因果解释、来源与实际／未实测边界；见[证据索引](evidence/索引.md) |
+chapters/ch33-observability/TASK.md:20:| 33.4.2 | [本节](chapter.html#sec-33-4-2) | 因果解释、来源与实际／未实测边界；见[证据索引](evidence/索引.md) |
+chapters/ch33-observability/TASK.md:21:| 33.5.1 | [本节](chapter.html#sec-33-5-1) | 因果解释、来源与实际／未实测边界；见[证据索引](evidence/索引.md) |
+chapters/ch33-observability/TASK.md:22:| 33.5.2 | [本节](chapter.html#sec-33-5-2) | 因果解释、来源与实际／未实测边界；见[证据索引](evidence/索引.md) |
+chapters/ch33-observability/TASK.md:23:| 33.6.1 | [本节](chapter.html#sec-33-6-1) | 因果解释、来源与实际／未实测边界；见[证据索引](evidence/索引.md) |
+chapters/ch33-observability/TASK.md:24:| 33.6.2 | [本节](chapter.html#sec-33-6-2) | 因果解释、来源与实际／未实测边界；见[证据索引](evidence/索引.md) |
+chapters/ch33-observability/TASK.md:43:| 研究／C03 | 完成；固定源码符号与[实现摘录](evidence/实现摘录.md)，官方来源索引；未将403页面当已读 |
+chapters/ch33-observability/TASK.md:44:| 正文／C01 | 完成；12个三级要点有实际解释，保留原编号；不是仅标题齐全 |
+chapters/ch33-observability/TASK.md:45:| 机制／C02 | 完成；规范／实现／本机有限观察／推断分别说明 |
+chapters/ch33-observability/TASK.md:46:| 源码编译／C04 | 完成；[运行说明](README.html)与正式源对应，公共最小聚合编译成功；独立基准仅在第36章编译 |
+chapters/ch33-observability/TASK.md:47:| 案例／C05 | 完成于用户同意范围；[运行记录](evidence/runs/ch33-20261103-02/记录.md)，未发生／未实测项单列 |
+chapters/ch33-observability/TASK.md:48:| 图文／C06 | 完成；4图图源／导出与当前屏幕、打印实读对应，未用位图代替 |
+chapters/ch33-observability/TASK.md:49:| 页面／C07 | 完成；Shiki4.6.0静态生成，真实选区、三视口及7页正文打印实读；见[页面记录](evidence/browser/记录.md) |
+chapters/ch33-observability/TASK.md:50:| 衔接／C08 | 完成；与前置章节、篇末问题和[公共阶段核对](../../执行记录/evidence/p09-20261103/阶段核对.md)口径一致 |
+appendices/e-history/TASK.md:29:| C01 大纲覆盖 | 完成；上表对应本附录全部要求 |
+appendices/e-history/TASK.md:30:| C02 因果与边界 | 完成；规范、实现、观察与历史分开，简表不替代完整规则 |
+appendices/e-history/TASK.md:31:| C03 来源 | 完成；实际访问的一手文档或固定实现／既有章节索引可定位 |
+appendices/e-history/TASK.md:32:| C04 教学源码 | 完成；索引直接回链归属章真实源与完整运行说明，无新模块 |
+appendices/e-history/TASK.md:33:| C05 运行证据 | 完成；环境和结论沿既有实际记录，本轮没有新增实验 |
+appendices/e-history/TASK.md:34:| C06 图文 | 完成；逐节分类与实际图文／图注已实读，索引表不强制凑图 |
+appendices/e-history/TASK.md:35:| C07 页面 | 完成；1440×1000、768×1000、390×844、局部滚动与3页正式打印已实读；涉及代码的节点为Shiki4.6.0实际输出，复制无差异 |
+appendices/e-history/TASK.md:36:| C08 交接 | 完成；导航、主要正文回链、环境限制与下一步均保留 |

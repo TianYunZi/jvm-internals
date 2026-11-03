@@ -1,0 +1,57 @@
+{
+  "browser": "Chrome/156.0.8078.80",
+  "origin": "http://127.0.0.1:8773",
+  "cache": "disabled",
+  "pages": [
+    {
+      "path": "chapters/ch01-architecture/chapter.html",
+      "revised": true,
+      "screenshot": "desktop.png"
+    },
+    {
+      "path": "chapters/ch02-computer-basics/chapter.html",
+      "revised": true,
+      "screenshot": "desktop.png"
+    },
+    {
+      "path": "chapters/ch03-source-environment/chapter.html",
+      "revised": true,
+      "screenshot": "desktop.png"
+    },
+    {
+      "path": "chapters/ch05-bytecode-verification/chapter.html",
+      "revised": true,
+      "screenshot": "desktop.png"
+    },
+    {
+      "path": "chapters/ch06-classloaders-modules/chapter.html",
+      "revised": true,
+      "screenshot": "desktop.png"
+    },
+    {
+      "path": "chapters/ch07-linking-initialization/chapter.html",
+      "revised": true,
+      "screenshot": "desktop.png"
+    },
+    {
+      "path": "chapters/ch08-type-metadata/chapter.html",
+      "revised": true,
+      "screenshot": "desktop.png"
+    },
+    {
+      "path": "chapters/ch09-runtime-memory/chapter.html",
+      "revised": true,
+      "screenshot": "desktop.png"
+    },
+    {
+      "path": "chapters/ch11-allocation/chapter.html",
+      "revised": true,
+      "screenshot": "desktop.png"
+    },
+    {
+      "path": "chapters/ch12-native-memory/chapter.html",
+      "revised": true,
+      "screenshot": "desktop.png"
+    }
+  ]
+}

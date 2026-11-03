@@ -1,0 +1,4 @@
+# 在教学进程的观察窗口内，从其输出取得本次pid。
+read task_pid
+jcmd "$task_pid" Thread.print -l
+jcmd "$task_pid" Thread.dump_to_file -format=json "$PWD/chapters/ch28-virtual-threads/target/threads.json"

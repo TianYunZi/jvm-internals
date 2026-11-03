@@ -1,0 +1,14 @@
+{
+  "browser": "Chrome/156.0.8078.80",
+  "origin": "http://127.0.0.1:8772",
+  "pages": [
+    {
+      "page": "appendices/d-source-map/appendix.html",
+      "viewports": [
+        "1440×1000",
+        "768×1000",
+        "390×844"
+      ]
+    }
+  ]
+}

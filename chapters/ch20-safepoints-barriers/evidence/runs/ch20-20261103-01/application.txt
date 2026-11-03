@@ -1,0 +1,10 @@
+11月 03, 2026 6:05:32 下午 org.example.jvminternals.ch20.SafepointJourney allocate
+INFO: 阶段=教学线程启动
+11月 03, 2026 6:05:32 下午 org.example.jvminternals.ch20.SafepointJourney main
+INFO: 阶段=主线程第一次请求回收
+11月 03, 2026 6:05:32 下午 org.example.jvminternals.ch20.SafepointJourney main
+INFO: 阶段=主线程第二次请求回收
+11月 03, 2026 6:05:33 下午 org.example.jvminternals.ch20.SafepointJourney allocate
+INFO: 阶段=教学线程自然完成
+11月 03, 2026 6:05:33 下午 org.example.jvminternals.ch20.SafepointJourney main
+INFO: 阶段=线程收尾，末块字节=23

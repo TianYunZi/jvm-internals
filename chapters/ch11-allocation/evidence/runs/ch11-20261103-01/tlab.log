@@ -1,0 +1,216 @@
+[0.005s][info][gc] Using G1
+[0.009s][trace][gc,tlab] ThreadLocalAllocBuffer::compute_size(2) returns 44566
+[0.009s][trace][gc,tlab] TLAB: fill thread: 0x00000001007948e0 [id: 4867] desired_size: 348KB slow allocs: 0  refill waste: 5568B alloc: 0.99999     1024KB refills: 1 waste  0.0% gc: 0B slow: 0B
+[0.018s][trace][gc,tlab] ThreadLocalAllocBuffer::compute_size(2) returns 44566
+[0.018s][trace][gc,tlab] TLAB: fill thread: 0x000000755ecdc000 [id: 23055] desired_size: 348KB slow allocs: 0  refill waste: 5568B alloc: 0.99999     1024KB refills: 1 waste  0.0% gc: 0B slow: 0B
+[0.027s][trace][gc,tlab] ThreadLocalAllocBuffer::compute_size(514) returns 41940
+[0.027s][trace][gc,tlab] TLAB: fill thread: 0x00000001007948e0 [id: 4867] desired_size: 348KB slow allocs: 0  refill waste: 5568B alloc: 0.99999     1024KB refills: 2 waste  0.3% gc: 0B slow: 2368B
+[0.032s][trace][gc,tlab] ThreadLocalAllocBuffer::compute_size(4) returns 44568
+[0.032s][trace][gc,tlab] TLAB: fill thread: 0x00000001007948e0 [id: 4867] desired_size: 348KB slow allocs: 0  refill waste: 5568B alloc: 0.99999     2048KB refills: 3 waste  0.3% gc: 0B slow: 3416B
+[0.049s][trace][gc,tlab] ThreadLocalAllocBuffer::compute_size(2) returns 44566
+[0.049s][trace][gc,tlab] TLAB: fill thread: 0x00000001007948e0 [id: 4867] desired_size: 348KB slow allocs: 0  refill waste: 5568B alloc: 0.99999     2048KB refills: 4 waste  0.3% gc: 0B slow: 4448B
+[0.060s][trace][gc,tlab] ThreadLocalAllocBuffer::compute_size(5066) returns 41938
+[0.060s][trace][gc,tlab] TLAB: fill thread: 0x00000001007948e0 [id: 4867] desired_size: 348KB slow allocs: 0  refill waste: 5568B alloc: 0.99999     2048KB refills: 5 waste  0.5% gc: 0B slow: 9424B
+[0.068s][trace][gc,tlab] ThreadLocalAllocBuffer::compute_size(2050) returns 46614
+[0.069s][trace][gc,tlab] TLAB: fill thread: 0x00000001007948e0 [id: 4867] desired_size: 348KB slow allocs: 0  refill waste: 5568B alloc: 0.99999     3072KB refills: 6 waste  0.6% gc: 0B slow: 13624B
+[0.089s][trace][gc,tlab] ThreadLocalAllocBuffer::compute_size(3) returns 44567
+[0.089s][trace][gc,tlab] TLAB: fill thread: 0x00000001007948e0 [id: 4867] desired_size: 348KB slow allocs: 1  refill waste: 5600B alloc: 0.99999     3072KB refills: 7 waste  0.6% gc: 0B slow: 14656B
+[0.150s][trace][gc,tlab] ThreadLocalAllocBuffer::compute_size(2050) returns 30306
+[0.150s][trace][gc,tlab] TLAB: fill thread: 0x00000001007948e0 [id: 4867] desired_size: 348KB slow allocs: 1  refill waste: 5568B alloc: 0.99999     3072KB refills: 8 waste  0.7% gc: 0B slow: 18144B
+[0.156s][trace][gc,tlab] ThreadLocalAllocBuffer::compute_size(62) returns 44626
+[0.156s][trace][gc,tlab] TLAB: fill thread: 0x00000001007948e0 [id: 4867] desired_size: 348KB slow allocs: 1  refill waste: 5568B alloc: 0.99999     4096KB refills: 9 waste  0.6% gc: 0B slow: 19288B
+[0.171s][trace][gc,tlab] ThreadLocalAllocBuffer::compute_size(2050) returns 46614
+[0.171s][trace][gc,tlab] TLAB: fill thread: 0x00000001007948e0 [id: 4867] desired_size: 348KB slow allocs: 1  refill waste: 5568B alloc: 0.99999     4096KB refills: 10 waste  0.6% gc: 0B slow: 21184B
+[0.182s][trace][gc,tlab] ThreadLocalAllocBuffer::compute_size(514) returns 39832
+[0.182s][trace][gc,tlab] TLAB: fill thread: 0x00000001007948e0 [id: 4867] desired_size: 348KB slow allocs: 1  refill waste: 5568B alloc: 0.99999     4096KB refills: 11 waste  0.6% gc: 0B slow: 22528B
+[0.189s][trace][gc,tlab] ThreadLocalAllocBuffer::compute_size(8) returns 44572
+[0.189s][trace][gc,tlab] TLAB: fill thread: 0x00000001007948e0 [id: 4867] desired_size: 348KB slow allocs: 1  refill waste: 5568B alloc: 0.99999     5120KB refills: 12 waste  0.6% gc: 0B slow: 23584B
+[0.204s][trace][gc,tlab] ThreadLocalAllocBuffer::compute_size(6) returns 44570
+[0.204s][trace][gc,tlab] TLAB: fill thread: 0x00000001007948e0 [id: 4867] desired_size: 348KB slow allocs: 2  refill waste: 5600B alloc: 0.99999     5120KB refills: 13 waste  0.6% gc: 0B slow: 24616B
+[0.220s][trace][gc,tlab] ThreadLocalAllocBuffer::compute_size(3) returns 37830
+[0.220s][trace][gc,tlab] TLAB: fill thread: 0x00000001007948e0 [id: 4867] desired_size: 348KB slow allocs: 3  refill waste: 5600B alloc: 0.99999     5120KB refills: 14 waste  0.5% gc: 0B slow: 25648B
+[0.226s][trace][gc,tlab] ThreadLocalAllocBuffer::compute_size(514) returns 45078
+[0.226s][trace][gc,tlab] TLAB: fill thread: 0x00000001007948e0 [id: 4867] desired_size: 348KB slow allocs: 4  refill waste: 5600B alloc: 0.99999     6144KB refills: 15 waste  0.6% gc: 0B slow: 28872B
+[0.239s][trace][gc,tlab] ThreadLocalAllocBuffer::compute_size(6) returns 44570
+[0.239s][trace][gc,tlab] TLAB: fill thread: 0x00000001007948e0 [id: 4867] desired_size: 348KB slow allocs: 4  refill waste: 5568B alloc: 0.99999     6144KB refills: 16 waste  0.5% gc: 0B slow: 29928B
+[0.247s][trace][gc,tlab] ThreadLocalAllocBuffer::compute_size(3) returns 39374
+[0.247s][trace][gc,tlab] TLAB: fill thread: 0x00000001007948e0 [id: 4867] desired_size: 348KB slow allocs: 4  refill waste: 5568B alloc: 0.99999     6144KB refills: 17 waste  0.5% gc: 0B slow: 30960B
+[0.255s][trace][gc,tlab] ThreadLocalAllocBuffer::compute_size(3) returns 44567
+[0.255s][trace][gc,tlab] TLAB: fill thread: 0x00000001007948e0 [id: 4867] desired_size: 348KB slow allocs: 4  refill waste: 5568B alloc: 0.99999     7168KB refills: 18 waste  0.5% gc: 0B slow: 31992B
+[0.264s][trace][gc,tlab] ThreadLocalAllocBuffer::compute_size(6) returns 44570
+[0.264s][trace][gc,tlab] TLAB: fill thread: 0x00000001007948e0 [id: 4867] desired_size: 348KB slow allocs: 4  refill waste: 5568B alloc: 0.99999     7168KB refills: 19 waste  0.5% gc: 0B slow: 33048B
+[0.283s][trace][gc,tlab] ThreadLocalAllocBuffer::compute_size(3) returns 41935
+[0.283s][trace][gc,tlab] TLAB: fill thread: 0x00000001007948e0 [id: 4867] desired_size: 348KB slow allocs: 4  refill waste: 5568B alloc: 0.99999     7168KB refills: 20 waste  0.5% gc: 0B slow: 34088B
+[0.297s][trace][gc,tlab] ThreadLocalAllocBuffer::compute_size(4) returns 44568
+[0.297s][trace][gc,tlab] TLAB: fill thread: 0x00000001007948e0 [id: 4867] desired_size: 348KB slow allocs: 4  refill waste: 5568B alloc: 0.99999     8192KB refills: 21 waste  0.5% gc: 0B slow: 35136B
+[0.309s][trace][gc,tlab] ThreadLocalAllocBuffer::compute_size(8) returns 44572
+[0.309s][trace][gc,tlab] TLAB: fill thread: 0x00000001007948e0 [id: 4867] desired_size: 348KB slow allocs: 4  refill waste: 5568B alloc: 0.99999     8192KB refills: 22 waste  0.5% gc: 0B slow: 36160B
+[0.347s][trace][gc,tlab] ThreadLocalAllocBuffer::compute_size(2050) returns 41932
+[0.347s][trace][gc,tlab] TLAB: fill thread: 0x00000001007948e0 [id: 4867] desired_size: 348KB slow allocs: 4  refill waste: 5568B alloc: 0.99999     8192KB refills: 23 waste  0.5% gc: 0B slow: 38504B
+[0.356s][trace][gc,tlab] ThreadLocalAllocBuffer::compute_size(130) returns 44694
+[0.356s][trace][gc,tlab] TLAB: fill thread: 0x00000001007948e0 [id: 4867] desired_size: 348KB slow allocs: 5  refill waste: 5600B alloc: 0.99999     9216KB refills: 24 waste  0.5% gc: 0B slow: 39984B
+[0.382s][trace][gc,tlab] ThreadLocalAllocBuffer::compute_size(6) returns 44570
+[0.382s][trace][gc,tlab] TLAB: fill thread: 0x00000001007948e0 [id: 4867] desired_size: 348KB slow allocs: 6  refill waste: 5600B alloc: 0.99999     9216KB refills: 25 waste  0.5% gc: 0B slow: 41040B
+[0.402s][trace][gc,tlab] ThreadLocalAllocBuffer::compute_size(5) returns 37708
+[0.402s][trace][gc,tlab] TLAB: fill thread: 0x00000001007948e0 [id: 4867] desired_size: 348KB slow allocs: 6  refill waste: 5568B alloc: 0.99999     9216KB refills: 26 waste  0.5% gc: 0B slow: 42072B
+[0.415s][trace][gc,tlab] ThreadLocalAllocBuffer::compute_size(3) returns 44567
+[0.415s][trace][gc,tlab] TLAB: fill thread: 0x00000001007948e0 [id: 4867] desired_size: 348KB slow allocs: 6  refill waste: 5568B alloc: 0.99999    10240KB refills: 27 waste  0.5% gc: 0B slow: 43112B
+[0.432s][trace][gc,tlab] ThreadLocalAllocBuffer::compute_size(7) returns 44571
+[0.432s][trace][gc,tlab] TLAB: fill thread: 0x00000001007948e0 [id: 4867] desired_size: 348KB slow allocs: 6  refill waste: 5568B alloc: 0.99999    10240KB refills: 28 waste  0.5% gc: 0B slow: 44184B
+[0.442s][trace][gc,tlab] ThreadLocalAllocBuffer::compute_size(4) returns 41934
+[0.442s][trace][gc,tlab] TLAB: fill thread: 0x00000001007948e0 [id: 4867] desired_size: 348KB slow allocs: 6  refill waste: 5568B alloc: 0.99999    10240KB refills: 29 waste  0.5% gc: 0B slow: 45224B
+[0.450s][trace][gc,tlab] ThreadLocalAllocBuffer::compute_size(4) returns 44568
+[0.450s][trace][gc,tlab] TLAB: fill thread: 0x00000001007948e0 [id: 4867] desired_size: 348KB slow allocs: 6  refill waste: 5568B alloc: 0.99999    11264KB refills: 30 waste  0.4% gc: 0B slow: 46264B
+[0.456s][trace][gc,tlab] ThreadLocalAllocBuffer::compute_size(10) returns 44574
+[0.456s][trace][gc,tlab] TLAB: fill thread: 0x00000001007948e0 [id: 4867] desired_size: 348KB slow allocs: 6  refill waste: 5568B alloc: 0.99999    11264KB refills: 31 waste  0.4% gc: 0B slow: 47304B
+[0.475s][trace][gc,tlab] ThreadLocalAllocBuffer::compute_size(4) returns 41930
+[0.475s][trace][gc,tlab] TLAB: fill thread: 0x00000001007948e0 [id: 4867] desired_size: 348KB slow allocs: 6  refill waste: 5568B alloc: 0.99999    11264KB refills: 32 waste  0.4% gc: 0B slow: 48344B
+[0.493s][trace][gc,tlab] ThreadLocalAllocBuffer::compute_size(4) returns 44568
+[0.493s][trace][gc,tlab] TLAB: fill thread: 0x00000001007948e0 [id: 4867] desired_size: 348KB slow allocs: 6  refill waste: 5568B alloc: 0.99999    12288KB refills: 33 waste  0.4% gc: 0B slow: 49392B
+[0.502s][trace][gc,tlab] ThreadLocalAllocBuffer::compute_size(2050) returns 46614
+[0.502s][trace][gc,tlab] TLAB: fill thread: 0x00000001007948e0 [id: 4867] desired_size: 348KB slow allocs: 6  refill waste: 5568B alloc: 0.99999    12288KB refills: 34 waste  0.5% gc: 0B slow: 53304B
+[0.517s][trace][gc,tlab] ThreadLocalAllocBuffer::compute_size(11) returns 39890
+[0.517s][trace][gc,tlab] TLAB: fill thread: 0x00000001007948e0 [id: 4867] desired_size: 348KB slow allocs: 6  refill waste: 5568B alloc: 0.99999    12288KB refills: 35 waste  0.5% gc: 0B slow: 54344B
+[0.527s][trace][gc,tlab] ThreadLocalAllocBuffer::compute_size(3) returns 44567
+[0.527s][trace][gc,tlab] TLAB: fill thread: 0x00000001007948e0 [id: 4867] desired_size: 348KB slow allocs: 7  refill waste: 5600B alloc: 0.99999    13312KB refills: 36 waste  0.4% gc: 0B slow: 55384B
+[0.545s][trace][gc,tlab] ThreadLocalAllocBuffer::compute_size(7) returns 44571
+[0.545s][trace][gc,tlab] TLAB: fill thread: 0x00000001007948e0 [id: 4867] desired_size: 348KB slow allocs: 7  refill waste: 5568B alloc: 0.99999    13312KB refills: 37 waste  0.4% gc: 0B slow: 56408B
+[0.550s][trace][gc,tlab] ThreadLocalAllocBuffer::compute_size(3) returns 39884
+[0.550s][trace][gc,tlab] TLAB: fill thread: 0x00000001007948e0 [id: 4867] desired_size: 348KB slow allocs: 7  refill waste: 5568B alloc: 0.99999    13312KB refills: 38 waste  0.4% gc: 0B slow: 57440B
+[0.555s][trace][gc,tlab] ThreadLocalAllocBuffer::compute_size(3) returns 44567
+[0.555s][trace][gc,tlab] TLAB: fill thread: 0x000000755e4cd800 [id: 29955] desired_size: 348KB slow allocs: 0  refill waste: 5568B alloc: 0.99999    14336KB refills: 1 waste  0.0% gc: 0B slow: 0B
+[0.557s][trace][gc,tlab] ThreadLocalAllocBuffer::compute_size(2050) returns 46614
+[0.557s][trace][gc,tlab] TLAB: fill thread: 0x00000001007948e0 [id: 4867] desired_size: 348KB slow allocs: 9  refill waste: 5632B alloc: 0.99999    14336KB refills: 39 waste  0.5% gc: 0B slow: 62040B
+[0.563s][trace][gc,tlab] ThreadLocalAllocBuffer::compute_size(3) returns 32839
+[0.563s][trace][gc,tlab] TLAB: fill thread: 0x00000001007948e0 [id: 4867] desired_size: 348KB slow allocs: 9  refill waste: 5568B alloc: 0.99999    14336KB refills: 40 waste  0.5% gc: 0B slow: 63064B
+[0.566s][trace][gc,tlab] ThreadLocalAllocBuffer::compute_size(3) returns 44567
+[0.566s][trace][gc,tlab] TLAB: fill thread: 0x00000001007948e0 [id: 4867] desired_size: 348KB slow allocs: 9  refill waste: 5568B alloc: 0.99999    15360KB refills: 41 waste  0.5% gc: 0B slow: 64096B
+[0.568s][trace][gc,tlab] ThreadLocalAllocBuffer::compute_size(3) returns 44567
+[0.568s][trace][gc,tlab] TLAB: fill thread: 0x00000001007948e0 [id: 4867] desired_size: 348KB slow allocs: 9  refill waste: 5568B alloc: 0.99999    15360KB refills: 42 waste  0.5% gc: 0B slow: 65120B
+[0.577s][trace][gc,tlab] ThreadLocalAllocBuffer::compute_size(7) returns 41938
+[0.577s][trace][gc,tlab] TLAB: fill thread: 0x00000001007948e0 [id: 4867] desired_size: 348KB slow allocs: 9  refill waste: 5568B alloc: 0.99999    15360KB refills: 43 waste  0.4% gc: 0B slow: 66184B
+[0.578s][trace][gc,tlab] ThreadLocalAllocBuffer::compute_size(4) returns 44568
+[0.578s][trace][gc,tlab] TLAB: fill thread: 0x00000001007948e0 [id: 4867] desired_size: 348KB slow allocs: 9  refill waste: 5568B alloc: 0.99999    16384KB refills: 44 waste  0.4% gc: 0B slow: 67232B
+[0.611s][trace][gc,tlab] ThreadLocalAllocBuffer::compute_size(5) returns 44569
+[0.611s][trace][gc,tlab] TLAB: fill thread: 0x00000001007948e0 [id: 4867] desired_size: 348KB slow allocs: 9  refill waste: 5568B alloc: 0.99999    16384KB refills: 45 waste  0.4% gc: 0B slow: 68288B
+[0.626s][trace][gc,tlab] ThreadLocalAllocBuffer::compute_size(4) returns 41935
+[0.626s][trace][gc,tlab] TLAB: fill thread: 0x00000001007948e0 [id: 4867] desired_size: 348KB slow allocs: 9  refill waste: 5568B alloc: 0.99999    16384KB refills: 46 waste  0.4% gc: 0B slow: 69336B
+[0.725s][trace][gc,tlab] ThreadLocalAllocBuffer::compute_size(6) returns 44570
+[0.725s][trace][gc,tlab] TLAB: fill thread: 0x00000001007948e0 [id: 4867] desired_size: 348KB slow allocs: 9  refill waste: 5568B alloc: 0.99999    17408KB refills: 47 waste  0.4% gc: 0B slow: 70384B
+[0.780s][trace][gc,tlab] ThreadLocalAllocBuffer::compute_size(514) returns 45078
+[0.780s][trace][gc,tlab] TLAB: fill thread: 0x00000001007948e0 [id: 4867] desired_size: 348KB slow allocs: 10  refill waste: 5600B alloc: 0.99999    17408KB refills: 48 waste  0.5% gc: 0B slow: 75208B
+[0.783s][trace][gc,tlab] ThreadLocalAllocBuffer::compute_size(3) returns 8654
+[0.783s][trace][gc,tlab] TLAB: fill thread: 0x00000001007948e0 [id: 4867] desired_size: 348KB slow allocs: 10  refill waste: 5568B alloc: 0.99999    17408KB refills: 49 waste  0.5% gc: 0B slow: 76248B
+[0.783s][trace][gc,tlab] ThreadLocalAllocBuffer::compute_size(3) returns 44567
+[0.783s][trace][gc,tlab] GC(0) TLAB: gc thread: 0x00000001007948e0 [id: 4867] desired_size: 348KB slow allocs: 10  refill waste: 5568B alloc: 0.99999    17408KB refills: 49 waste  0.5% gc: 0B slow: 77272B
+[0.783s][trace][gc,tlab] GC(0) TLAB: gc thread: 0x000000755ecdc000 [id: 23055] desired_size: 348KB slow allocs: 0  refill waste: 5568B alloc: 0.99999    17408KB refills: 1 waste 100.0% gc: 356464B slow: 0B
+[0.783s][trace][gc,tlab] GC(0) TLAB: gc thread: 0x000000755ecdc800 [id: 23811] desired_size: 348KB slow allocs: 0  refill waste: 5568B alloc: 0.99999    17408KB refills: 0 waste  0.0% gc: 0B slow: 0B
+[0.783s][trace][gc,tlab] GC(0) TLAB: gc thread: 0x000000755ecdd000 [id: 30467] desired_size: 348KB slow allocs: 0  refill waste: 5568B alloc: 0.99999    17408KB refills: 0 waste  0.0% gc: 0B slow: 0B
+[0.783s][trace][gc,tlab] GC(0) TLAB: gc thread: 0x000000755ecdd800 [id: 24323] desired_size: 348KB slow allocs: 0  refill waste: 5568B alloc: 0.99999    17408KB refills: 0 waste  0.0% gc: 0B slow: 0B
+[0.783s][trace][gc,tlab] GC(0) TLAB: gc thread: 0x000000755ecde000 [id: 24835] desired_size: 348KB slow allocs: 0  refill waste: 5568B alloc: 0.99999    17408KB refills: 0 waste  0.0% gc: 0B slow: 0B
+[0.783s][trace][gc,tlab] GC(0) TLAB: gc thread: 0x000000755ec71e00 [id: 25347] desired_size: 348KB slow allocs: 0  refill waste: 5568B alloc: 0.99999    17408KB refills: 0 waste  0.0% gc: 0B slow: 0B
+[0.783s][trace][gc,tlab] GC(0) TLAB: gc thread: 0x000000755ecdf800 [id: 25859] desired_size: 348KB slow allocs: 0  refill waste: 5568B alloc: 0.99999    17408KB refills: 0 waste  0.0% gc: 0B slow: 0B
+[0.783s][trace][gc,tlab] GC(0) TLAB: gc thread: 0x000000755ed8c000 [id: 26371] desired_size: 348KB slow allocs: 0  refill waste: 5568B alloc: 0.99999    17408KB refills: 0 waste  0.0% gc: 0B slow: 0B
+[0.783s][trace][gc,tlab] GC(0) TLAB: gc thread: 0x000000755e4cd800 [id: 29955] desired_size: 348KB slow allocs: 0  refill waste: 5568B alloc: 0.99999    17408KB refills: 1 waste 72.7% gc: 259376B slow: 0B
+[0.783s][trace][gc,tlab] GC(0) TLAB: gc thread: 0x000000755e7f9800 [id: 28675] desired_size: 348KB slow allocs: 0  refill waste: 5568B alloc: 0.99999    17408KB refills: 0 waste  0.0% gc: 0B slow: 0B
+[0.783s][debug][gc,tlab] GC(0) TLAB totals: thrds: 3  refills: 51 max: 49 slow allocs: 10 max 10 waste:  4.0% gc: 615840B max: 356464B slow: 77272B max: 77272B
+[0.785s][trace][gc,tlab] GC(0) TLAB new size: thread: 0x00000001007948e0 [id: 4867] refills 50  alloc: 0.977826 desired_size: 44564 -> 35886
+[0.785s][trace][gc,tlab] GC(0) TLAB new size: thread: 0x000000755ecdc000 [id: 23055] refills 50  alloc: 0.499996 desired_size: 44564 -> 18349
+[0.785s][trace][gc,tlab] GC(0) TLAB new size: thread: 0x000000755ecdc800 [id: 23811] refills 50  alloc: 0.999989 desired_size: 44564 -> 36699
+[0.785s][trace][gc,tlab] GC(0) TLAB new size: thread: 0x000000755ecdd000 [id: 30467] refills 50  alloc: 0.999989 desired_size: 44564 -> 36699
+[0.785s][trace][gc,tlab] GC(0) TLAB new size: thread: 0x000000755ecdd800 [id: 24323] refills 50  alloc: 0.999989 desired_size: 44564 -> 36699
+[0.785s][trace][gc,tlab] GC(0) TLAB new size: thread: 0x000000755ecde000 [id: 24835] refills 50  alloc: 0.999989 desired_size: 44564 -> 36699
+[0.785s][trace][gc,tlab] GC(0) TLAB new size: thread: 0x000000755ec71e00 [id: 25347] refills 50  alloc: 0.999989 desired_size: 44564 -> 36699
+[0.785s][trace][gc,tlab] GC(0) TLAB new size: thread: 0x000000755ecdf800 [id: 25859] refills 50  alloc: 0.999989 desired_size: 44564 -> 36699
+[0.785s][trace][gc,tlab] GC(0) TLAB new size: thread: 0x000000755ed8c000 [id: 26371] refills 50  alloc: 0.999989 desired_size: 44564 -> 36699
+[0.785s][trace][gc,tlab] GC(0) TLAB new size: thread: 0x000000755e4cd800 [id: 29955] refills 50  alloc: 0.502720 desired_size: 44564 -> 18449
+[0.785s][trace][gc,tlab] GC(0) TLAB new size: thread: 0x000000755e7f9800 [id: 28675] refills 50  alloc: 0.999989 desired_size: 44564 -> 36699
+[0.785s][info ][gc     ] GC(0) Pause Young (Normal) (G1 Evacuation Pause) 18M->3M(34M) 2.451ms
+[0.785s][trace][gc,tlab] ThreadLocalAllocBuffer::compute_size(3) returns 35889
+[0.785s][trace][gc,tlab] TLAB: fill thread: 0x00000001007948e0 [id: 4867] desired_size: 280KB slow allocs: 0  refill waste: 4480B alloc: 0.97783     1001KB refills: 1 waste  0.0% gc: 0B slow: 0B
+[0.788s][trace][gc,tlab] ThreadLocalAllocBuffer::compute_size(3) returns 35889
+[0.788s][trace][gc,tlab] TLAB: fill thread: 0x00000001007948e0 [id: 4867] desired_size: 280KB slow allocs: 0  refill waste: 4480B alloc: 0.97783     1001KB refills: 2 waste  0.2% gc: 0B slow: 1024B
+[0.793s][trace][gc,tlab] ThreadLocalAllocBuffer::compute_size(3) returns 35889
+[0.793s][trace][gc,tlab] TLAB: fill thread: 0x00000001007948e0 [id: 4867] desired_size: 280KB slow allocs: 0  refill waste: 4480B alloc: 0.97783     1001KB refills: 3 waste  0.2% gc: 0B slow: 2048B
+[0.795s][trace][gc,tlab] ThreadLocalAllocBuffer::compute_size(3) returns 23402
+[0.795s][trace][gc,tlab] TLAB: fill thread: 0x00000001007948e0 [id: 4867] desired_size: 280KB slow allocs: 0  refill waste: 4480B alloc: 0.97783     1001KB refills: 4 waste  0.3% gc: 0B slow: 3080B
+[0.795s][trace][gc,tlab] ThreadLocalAllocBuffer::compute_size(3) returns 35889
+[0.795s][trace][gc,tlab] TLAB: fill thread: 0x00000001007948e0 [id: 4867] desired_size: 280KB slow allocs: 0  refill waste: 4480B alloc: 0.97783     2003KB refills: 5 waste  0.3% gc: 0B slow: 4104B
+[0.795s][trace][gc,tlab] ThreadLocalAllocBuffer::compute_size(3) returns 35889
+[0.795s][trace][gc,tlab] TLAB: fill thread: 0x00000001007948e0 [id: 4867] desired_size: 280KB slow allocs: 0  refill waste: 4480B alloc: 0.97783     2003KB refills: 6 waste  0.3% gc: 0B slow: 5136B
+[0.795s][trace][gc,tlab] ThreadLocalAllocBuffer::compute_size(3) returns 35889
+[0.795s][trace][gc,tlab] TLAB: fill thread: 0x00000001007948e0 [id: 4867] desired_size: 280KB slow allocs: 0  refill waste: 4480B alloc: 0.97783     2003KB refills: 7 waste  0.3% gc: 0B slow: 6168B
+[0.795s][trace][gc,tlab] ThreadLocalAllocBuffer::compute_size(3) returns 23405
+[0.795s][trace][gc,tlab] TLAB: fill thread: 0x00000001007948e0 [id: 4867] desired_size: 280KB slow allocs: 0  refill waste: 4480B alloc: 0.97783     2003KB refills: 8 waste  0.3% gc: 0B slow: 7200B
+[0.795s][trace][gc,tlab] ThreadLocalAllocBuffer::compute_size(3) returns 35889
+[0.795s][trace][gc,tlab] TLAB: fill thread: 0x00000001007948e0 [id: 4867] desired_size: 280KB slow allocs: 0  refill waste: 4480B alloc: 0.97783     3004KB refills: 9 waste  0.3% gc: 0B slow: 8224B
+[0.795s][trace][gc,tlab] ThreadLocalAllocBuffer::compute_size(3) returns 35889
+[0.795s][trace][gc,tlab] TLAB: fill thread: 0x00000001007948e0 [id: 4867] desired_size: 280KB slow allocs: 0  refill waste: 4480B alloc: 0.97783     3004KB refills: 10 waste  0.3% gc: 0B slow: 9256B
+[0.795s][trace][gc,tlab] ThreadLocalAllocBuffer::compute_size(3) returns 35889
+[0.795s][trace][gc,tlab] TLAB: fill thread: 0x00000001007948e0 [id: 4867] desired_size: 280KB slow allocs: 0  refill waste: 4480B alloc: 0.97783     3004KB refills: 11 waste  0.3% gc: 0B slow: 10288B
+[0.795s][trace][gc,tlab] ThreadLocalAllocBuffer::compute_size(3) returns 23405
+[0.795s][trace][gc,tlab] TLAB: fill thread: 0x00000001007948e0 [id: 4867] desired_size: 280KB slow allocs: 0  refill waste: 4480B alloc: 0.97783     3004KB refills: 12 waste  0.4% gc: 0B slow: 11320B
+[0.795s][trace][gc,tlab] ThreadLocalAllocBuffer::compute_size(3) returns 35889
+[0.795s][trace][gc,tlab] TLAB: fill thread: 0x00000001007948e0 [id: 4867] desired_size: 280KB slow allocs: 0  refill waste: 4480B alloc: 0.97783     4005KB refills: 13 waste  0.4% gc: 0B slow: 12344B
+[0.795s][trace][gc,tlab] ThreadLocalAllocBuffer::compute_size(3) returns 35889
+[0.795s][trace][gc,tlab] TLAB: fill thread: 0x00000001007948e0 [id: 4867] desired_size: 280KB slow allocs: 0  refill waste: 4480B alloc: 0.97783     4005KB refills: 14 waste  0.4% gc: 0B slow: 13376B
+[0.795s][trace][gc,tlab] ThreadLocalAllocBuffer::compute_size(3) returns 35889
+[0.795s][trace][gc,tlab] TLAB: fill thread: 0x00000001007948e0 [id: 4867] desired_size: 280KB slow allocs: 0  refill waste: 4480B alloc: 0.97783     4005KB refills: 15 waste  0.4% gc: 0B slow: 14408B
+[0.795s][trace][gc,tlab] ThreadLocalAllocBuffer::compute_size(3) returns 23405
+[0.795s][trace][gc,tlab] TLAB: fill thread: 0x00000001007948e0 [id: 4867] desired_size: 280KB slow allocs: 0  refill waste: 4480B alloc: 0.97783     4005KB refills: 16 waste  0.4% gc: 0B slow: 15440B
+[0.795s][trace][gc,tlab] ThreadLocalAllocBuffer::compute_size(3) returns 35889
+[0.795s][trace][gc,tlab] TLAB: fill thread: 0x00000001007948e0 [id: 4867] desired_size: 280KB slow allocs: 0  refill waste: 4480B alloc: 0.97783     5006KB refills: 17 waste  0.4% gc: 0B slow: 16464B
+[0.795s][trace][gc,tlab] ThreadLocalAllocBuffer::compute_size(3) returns 35889
+[0.795s][trace][gc,tlab] TLAB: fill thread: 0x00000001007948e0 [id: 4867] desired_size: 280KB slow allocs: 0  refill waste: 4480B alloc: 0.97783     5006KB refills: 18 waste  0.4% gc: 0B slow: 17496B
+[0.795s][trace][gc,tlab] ThreadLocalAllocBuffer::compute_size(3) returns 35889
+[0.795s][trace][gc,tlab] TLAB: fill thread: 0x00000001007948e0 [id: 4867] desired_size: 280KB slow allocs: 0  refill waste: 4480B alloc: 0.97783     5006KB refills: 19 waste  0.4% gc: 0B slow: 18528B
+[0.795s][trace][gc,tlab] ThreadLocalAllocBuffer::compute_size(3) returns 23405
+[0.795s][trace][gc,tlab] TLAB: fill thread: 0x00000001007948e0 [id: 4867] desired_size: 280KB slow allocs: 0  refill waste: 4480B alloc: 0.97783     5006KB refills: 20 waste  0.4% gc: 0B slow: 19560B
+[0.795s][trace][gc,tlab] ThreadLocalAllocBuffer::compute_size(3) returns 35889
+[0.795s][trace][gc,tlab] TLAB: fill thread: 0x00000001007948e0 [id: 4867] desired_size: 280KB slow allocs: 0  refill waste: 4480B alloc: 0.97783     6008KB refills: 21 waste  0.4% gc: 0B slow: 20584B
+[0.796s][trace][gc,tlab] GC(1) TLAB: gc thread: 0x00000001007948e0 [id: 4867] desired_size: 280KB slow allocs: 0  refill waste: 4480B alloc: 0.97783     6008KB refills: 21 waste  2.9% gc: 141768B slow: 20584B
+[0.796s][trace][gc,tlab] GC(1) TLAB: gc thread: 0x000000755ecdc000 [id: 23055] desired_size: 143KB slow allocs: 0  refill waste: 2288B alloc: 0.50000     3072KB refills: 0 waste  0.0% gc: 0B slow: 0B
+[0.796s][trace][gc,tlab] GC(1) TLAB: gc thread: 0x000000755ecdc800 [id: 23811] desired_size: 286KB slow allocs: 0  refill waste: 4584B alloc: 0.99999     6144KB refills: 0 waste  0.0% gc: 0B slow: 0B
+[0.796s][trace][gc,tlab] GC(1) TLAB: gc thread: 0x000000755ecdd000 [id: 30467] desired_size: 286KB slow allocs: 0  refill waste: 4584B alloc: 0.99999     6144KB refills: 0 waste  0.0% gc: 0B slow: 0B
+[0.796s][trace][gc,tlab] GC(1) TLAB: gc thread: 0x000000755ecdd800 [id: 24323] desired_size: 286KB slow allocs: 0  refill waste: 4584B alloc: 0.99999     6144KB refills: 0 waste  0.0% gc: 0B slow: 0B
+[0.796s][trace][gc,tlab] GC(1) TLAB: gc thread: 0x000000755ecde000 [id: 24835] desired_size: 286KB slow allocs: 0  refill waste: 4584B alloc: 0.99999     6144KB refills: 0 waste  0.0% gc: 0B slow: 0B
+[0.796s][trace][gc,tlab] GC(1) TLAB: gc thread: 0x000000755ec71e00 [id: 25347] desired_size: 286KB slow allocs: 0  refill waste: 4584B alloc: 0.99999     6144KB refills: 0 waste  0.0% gc: 0B slow: 0B
+[0.796s][trace][gc,tlab] GC(1) TLAB: gc thread: 0x000000755ecdf800 [id: 25859] desired_size: 286KB slow allocs: 0  refill waste: 4584B alloc: 0.99999     6144KB refills: 0 waste  0.0% gc: 0B slow: 0B
+[0.796s][trace][gc,tlab] GC(1) TLAB: gc thread: 0x000000755ed8c000 [id: 26371] desired_size: 286KB slow allocs: 0  refill waste: 4584B alloc: 0.99999     6144KB refills: 0 waste  0.0% gc: 0B slow: 0B
+[0.796s][trace][gc,tlab] GC(1) TLAB: gc thread: 0x000000755e4cd800 [id: 29955] desired_size: 144KB slow allocs: 0  refill waste: 2304B alloc: 0.50272     3089KB refills: 0 waste  0.0% gc: 0B slow: 0B
+[0.796s][trace][gc,tlab] GC(1) TLAB: gc thread: 0x000000755e7f9800 [id: 28675] desired_size: 286KB slow allocs: 0  refill waste: 4584B alloc: 0.99999     6144KB refills: 0 waste  0.0% gc: 0B slow: 0B
+[0.796s][debug][gc,tlab] GC(1) TLAB totals: thrds: 1  refills: 21 max: 21 slow allocs: 0 max 0 waste:  2.9% gc: 141768B max: 141768B slow: 20584B max: 20584B
+[0.800s][trace][gc,tlab] GC(1) TLAB new size: thread: 0x00000001007948e0 [id: 4867] refills 50  alloc: 0.977826 desired_size: 35886 -> 41013
+[0.800s][trace][gc,tlab] GC(1) TLAB new size: thread: 0x000000755ecdc000 [id: 23055] refills 50  alloc: 0.499996 desired_size: 18349 -> 20971
+[0.800s][trace][gc,tlab] GC(1) TLAB new size: thread: 0x000000755ecdc800 [id: 23811] refills 50  alloc: 0.999989 desired_size: 36699 -> 41942
+[0.800s][trace][gc,tlab] GC(1) TLAB new size: thread: 0x000000755ecdd000 [id: 30467] refills 50  alloc: 0.999989 desired_size: 36699 -> 41942
+[0.800s][trace][gc,tlab] GC(1) TLAB new size: thread: 0x000000755ecdd800 [id: 24323] refills 50  alloc: 0.999989 desired_size: 36699 -> 41942
+[0.800s][trace][gc,tlab] GC(1) TLAB new size: thread: 0x000000755ecde000 [id: 24835] refills 50  alloc: 0.999989 desired_size: 36699 -> 41942
+[0.800s][trace][gc,tlab] GC(1) TLAB new size: thread: 0x000000755ec71e00 [id: 25347] refills 50  alloc: 0.999989 desired_size: 36699 -> 41942
+[0.800s][trace][gc,tlab] GC(1) TLAB new size: thread: 0x000000755ecdf800 [id: 25859] refills 50  alloc: 0.999989 desired_size: 36699 -> 41942
+[0.800s][trace][gc,tlab] GC(1) TLAB new size: thread: 0x000000755ed8c000 [id: 26371] refills 50  alloc: 0.999989 desired_size: 36699 -> 41942
+[0.800s][trace][gc,tlab] GC(1) TLAB new size: thread: 0x000000755e4cd800 [id: 29955] refills 50  alloc: 0.502720 desired_size: 18449 -> 21085
+[0.800s][trace][gc,tlab] GC(1) TLAB new size: thread: 0x000000755e7f9800 [id: 28675] refills 50  alloc: 0.999989 desired_size: 36699 -> 41942
+[0.800s][info ][gc     ] GC(1) Pause Full (System.gc()) 9M->3M(32M) 4.029ms
+[0.800s][trace][gc,tlab] ThreadLocalAllocBuffer::compute_size(7) returns 41020
+[0.800s][trace][gc,tlab] TLAB: fill thread: 0x00000001007948e0 [id: 4867] desired_size: 320KB slow allocs: 0  refill waste: 5120B alloc: 0.97783     1001KB refills: 1 waste  0.0% gc: 0B slow: 0B
+[0.801s][trace][gc,tlab] ThreadLocalAllocBuffer::compute_size(14) returns 15742
+[0.801s][trace][gc,tlab] TLAB: fill thread: 0x000000755e7fa000 [id: 4867] desired_size: 122KB slow allocs: 0  refill waste: 1960B alloc: 0.49998      512KB refills: 1 waste  0.0% gc: 0B slow: 0B
+[0.801s][trace][gc,tlab] ThreadLocalAllocBuffer::compute_size(2) returns 15730
+[0.801s][trace][gc,tlab] TLAB: fill thread: 0x000000755e7f9000 [id: 27139] desired_size: 122KB slow allocs: 0  refill waste: 1960B alloc: 0.49998      512KB refills: 1 waste  0.0% gc: 0B slow: 0B
+[0.810s][trace][gc,tlab] ThreadLocalAllocBuffer::compute_size(21) returns 15749
+[0.810s][trace][gc,tlab] TLAB: fill thread: 0x000000755e7f9000 [id: 27139] desired_size: 122KB slow allocs: 0  refill waste: 1960B alloc: 0.49998      512KB refills: 2 waste  0.4% gc: 0B slow: 1096B
+[0.815s][trace][gc,tlab] ThreadLocalAllocBuffer::compute_size(6) returns 15734
+[0.815s][trace][gc,tlab] TLAB: fill thread: 0x000000755e7f9000 [id: 27139] desired_size: 122KB slow allocs: 0  refill waste: 1960B alloc: 0.49998      512KB refills: 3 waste  0.6% gc: 0B slow: 2120B
+[0.816s][trace][gc,tlab] ThreadLocalAllocBuffer::compute_size(119) returns 15847
+[0.816s][trace][gc,tlab] TLAB: fill thread: 0x000000755e7f9000 [id: 27139] desired_size: 122KB slow allocs: 1  refill waste: 1992B alloc: 0.49998      512KB refills: 4 waste  0.7% gc: 0B slow: 3576B
+[0.825s][trace][gc,tlab] ThreadLocalAllocBuffer::compute_size(4) returns 7150
+[0.825s][trace][gc,tlab] TLAB: fill thread: 0x000000755e7f9000 [id: 27139] desired_size: 122KB slow allocs: 2  refill waste: 1992B alloc: 0.49998      512KB refills: 5 waste  0.8% gc: 0B slow: 4600B
+[0.827s][trace][gc,tlab] ThreadLocalAllocBuffer::compute_size(8) returns 15736
+[0.827s][trace][gc,tlab] TLAB: fill thread: 0x000000755e7f9000 [id: 27139] desired_size: 122KB slow allocs: 4  refill waste: 2024B alloc: 0.49998     1024KB refills: 6 waste  0.8% gc: 0B slow: 5632B
+[0.829s][trace][gc,tlab] ThreadLocalAllocBuffer::compute_size(16) returns 15744
+[0.829s][trace][gc,tlab] TLAB: fill thread: 0x000000755e7f9000 [id: 27139] desired_size: 122KB slow allocs: 4  refill waste: 1960B alloc: 0.49998     1024KB refills: 7 waste  0.8% gc: 0B slow: 6744B
+[0.832s][trace][gc,tlab] ThreadLocalAllocBuffer::compute_size(5) returns 15733
+[0.832s][trace][gc,tlab] TLAB: fill thread: 0x000000755e7f9000 [id: 27139] desired_size: 122KB slow allocs: 5  refill waste: 1992B alloc: 0.49998     1024KB refills: 8 waste  0.8% gc: 0B slow: 7768B
+[0.834s][trace][gc,tlab] ThreadLocalAllocBuffer::compute_size(34) returns 15762
+[0.834s][trace][gc,tlab] TLAB: fill thread: 0x000000755e7f9000 [id: 27139] desired_size: 122KB slow allocs: 5  refill waste: 1960B alloc: 0.49998     1024KB refills: 9 waste  0.8% gc: 0B slow: 9008B

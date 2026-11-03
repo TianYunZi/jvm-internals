@@ -1,0 +1,7 @@
+子任务slow上下文=request-29
+子任务fast上下文=request-29
+子任务slow finally退出
+汇合结果：slow-result,fast-result
+拥有者即将close
+任务作用域已关闭
+绑定退出：isBound=false

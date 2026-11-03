@@ -1,0 +1,17 @@
+Files artifacts/p05-before-shiki-raster/ch13-page-4.png and artifacts/p05-after-shiki-raster/ch13-page-4.png differ
+Files artifacts/p05-before-shiki-raster/ch13-page-5.png and artifacts/p05-after-shiki-raster/ch13-page-5.png differ
+Files artifacts/p05-before-shiki-raster/ch13-page-6.png and artifacts/p05-after-shiki-raster/ch13-page-6.png differ
+Files artifacts/p05-before-shiki-raster/ch13-page-7.png and artifacts/p05-after-shiki-raster/ch13-page-7.png differ
+Only in artifacts/p05-before-shiki-raster: ch13-render.log
+Only in artifacts/p05-before-shiki-raster: ch14-render.log
+Files artifacts/p05-before-shiki-raster/ch15-page-3.png and artifacts/p05-after-shiki-raster/ch15-page-3.png differ
+Files artifacts/p05-before-shiki-raster/ch15-page-5.png and artifacts/p05-after-shiki-raster/ch15-page-5.png differ
+Files artifacts/p05-before-shiki-raster/ch15-page-6.png and artifacts/p05-after-shiki-raster/ch15-page-6.png differ
+Files artifacts/p05-before-shiki-raster/ch15-page-7.png and artifacts/p05-after-shiki-raster/ch15-page-7.png differ
+Only in artifacts/p05-before-shiki-raster: ch15-render.log
+Only in artifacts/p05-before-shiki-raster: ch16-render.log
+Files artifacts/p05-before-shiki-raster/ch17-page-3.png and artifacts/p05-after-shiki-raster/ch17-page-3.png differ
+Files artifacts/p05-before-shiki-raster/ch17-page-6.png and artifacts/p05-after-shiki-raster/ch17-page-6.png differ
+Files artifacts/p05-before-shiki-raster/ch17-page-7.png and artifacts/p05-after-shiki-raster/ch17-page-7.png differ
+Only in artifacts/p05-before-shiki-raster: ch17-render.log
+Only in artifacts/p05-before-shiki-raster: ch18-render.log

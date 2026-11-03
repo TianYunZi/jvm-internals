@@ -1,0 +1,86 @@
+[0.002s][info][aot] Disabled all JVMTI agents during -XX:AOTMode=create
+[0.005s][info][aot] Core region alignment: 16384
+[0.005s][info][aot] trying to map AOTConfiguration file chapters/ch36-performance-cases/target/startup.aot.config
+[0.005s][info][aot] Opened AOT configuration file chapters/ch36-performance-cases/target/startup.aot.config.
+[0.005s][info][aot] The AOT configuration file was created with UseCompressedOops = 1, UseCompressedClassPointers = 1, UseCompactObjectHeaders = 0
+[0.005s][info][aot] Core region alignment: 16384
+[0.005s][info][aot] ArchiveRelocationMode: 1
+[0.005s][info][aot] ArchiveRelocationMode == 1: always map archive(s) at an alternative address
+[0.005s][info][aot] Try to map archive(s) at an alternative address
+[0.005s][info][aot] Reserved archive_space_rs [0x000007f000000000 - 0x000007f001000000] (16777216) bytes (includes protection zone)
+[0.005s][info][aot] Reserved class_space_rs   [0x000007f001000000 - 0x000007f041000000] (1073741824) bytes
+[0.006s][info][aot] Mapped static  region #0 at base 0x000007f000004000 top 0x000007f000414000 (ReadWrite)
+[0.006s][info][aot] Mapped static  region #1 at base 0x000007f000414000 top 0x000007f000ab0000 (ReadOnly)
+[0.006s][info][aot] Mapped static  region #2 at base 0x0000000102a8c000 top 0x0000000102ab0000 (Bitmap)
+[0.008s][info][aot] archived module property jdk.module.main: (null)
+[0.008s][info][aot] archived module property jdk.module.addexports: (null)
+[0.008s][info][aot] archived module property jdk.module.addmods: (null)
+[0.008s][info][aot] archived module property jdk.module.enable.native.access: (null)
+[0.008s][info][aot] archived module property jdk.module.addopens: (null)
+[0.008s][info][aot] archived module property jdk.module.addreads: (null)
+[0.008s][info][aot] optimized module handling: enabled
+[0.008s][info][aot] full module graph: enabled
+[0.008s][info][aot] full module graph cannot be loaded: archive heap loading failed
+[0.008s][info][aot] initial optimized module handling: enabled
+[0.008s][info][aot] initial full module graph: disabled
+[0.008s][info][aot] Unmapping region #2 at base 0x0000000102a8c000 (Bitmap)
+[0.008s][info][aot] Using AOT-linked classes: false (static archive: no aot-linked classes)
+[0.018s][info][aot] JVM_StartThread() ignored: java.lang.ref.Reference$ReferenceHandler
+[0.019s][info][aot] JVM_StartThread() ignored: java.lang.ref.Finalizer$FinalizerThread
+[0.036s][info][aot] Not starting management agent during creation of AOT cache.
+[0.037s][info][aot] Rewriting and linking classes ...
+[0.047s][info][aot] JVM_StartThread() ignored: jdk.internal.misc.InnocuousThread
+[0.061s][info][aot] Rewriting and linking classes: done
+[0.065s][info][aot] allocated string table for 4101 strings
+[0.065s][info][aot] string table array (single level) length = 4101
+[0.065s][info][aot] Writing AOTCache file: chapters/ch36-performance-cases/target/startup.aot
+[0.065s][info][aot] Gathering all archivable objects ... 
+[0.065s][info][aot] Heap range = [0x0000000126000000 - 0x000000012a000000]
+[0.073s][info][aot] Archived 4099 interned strings
+[0.073s][info][aot] Gathering classes and symbols ... 
+[0.105s][info][aot] Sorting symbols ... 
+[0.107s][info][aot] Sorting classes ... 
+[0.156s][info][aot] Reserved output buffer space at 0x00000070c0000000 [1073741824 bytes]
+[0.159s][info][aot] Allocating RW objects ... 
+[0.162s][info][aot] done (29117 objects)
+[0.162s][info][aot] Allocating RO objects ... 
+[0.172s][info][aot] done (72072 objects)
+[0.172s][info][aot] Relocating embedded pointers in core regions ... 
+[0.184s][info][aot] Make classes shareable
+[0.192s][info][aot] Number of classes 1233
+[0.192s][info][aot]     instance classes   =  1067, aot-linked =  1067, inited =   179
+[0.192s][info][aot]       boot             =  1060, aot-linked =  1060, inited =   179
+[0.192s][info][aot]         vm             =   151, aot-linked =   151, inited =    42
+[0.192s][info][aot]       platform         =     4, aot-linked =     4, inited =     0
+[0.192s][info][aot]       app              =     3, aot-linked =     3, inited =     0
+[0.192s][info][aot]       unregistered     =     0, aot-linked =     0, inited =     0
+[0.192s][info][aot]       (enum)           =    32, aot-linked =    32, inited =     9
+[0.192s][info][aot]       (hidden)         =    40, aot-linked =    40, inited =    40
+[0.192s][info][aot]       (old)            =     0, aot-linked =     0, inited =     0
+[0.192s][info][aot]       (unlinked)       =     0, boot = 0, plat = 0, app = 0, unreg = 0
+[0.192s][info][aot]     obj array classes  =   157
+[0.192s][info][aot]     type array classes =     9
+[0.192s][info][aot]                symbols = 37715
+[0.194s][info][aot] sorting heap objects
+[0.195s][info][aot] computed ranks
+[0.195s][info][aot] sorting heap objects done
+[0.198s][info][aot] Size of heap region = 866984 bytes, 19510 objects, 2053 roots, 1503 native ptrs
+[0.200s][info][aot] oopmap =       4 ...  216746 (  0% ... 100% =  99%)
+[0.200s][info][aot] ptrmap =   51628 ...   72453 ( 47% ...  66% =  19%)
+[0.200s][info][aot] Dumping symbol table ...
+[0.207s][info][aot] Archived 32 method handle intrinsics (8968 bytes)
+[0.210s][info][aot] Shared file region (rw) 0:  4042136 bytes, addr 0x0000000800004000 file offset 0x00004000 crc 0xbd86ed96
+[0.211s][info][aot] Shared file region (ro) 1:  6957648 bytes, addr 0x00000008003e0000 file offset 0x003e0000 crc 0xc98f8056
+[0.215s][info][aot] Shared file region (ac) 4:        0 bytes
+[0.218s][info][aot] Shared file region (bm) 2:   160824 bytes, addr 0x0000000000000000 file offset 0x00a84000 crc 0x4a52a2f7
+[0.218s][info][aot] Shared file region (hp) 3:   866984 bytes, addr 0x0000000129f00000 file offset 0x00aac000 crc 0xf10dd12f
+[0.223s][info][aot] Full module graph = enabled
+[0.224s][info][aot] Class  CP entries =  15354, archived =   4775 ( 31.1%), reverted =      0
+[0.224s][info][aot] Field  CP entries =   6132, archived =   1723 ( 28.1%), reverted =      0
+[0.224s][info][aot] Method CP entries =   5022, archived =   5002 ( 99.6%), reverted =     20
+[0.224s][info][aot] Indy   CP entries =     34, archived =     34 (100.0%), reverted =      0
+[0.224s][info][aot] Platform loader initiated classes =    562
+[0.224s][info][aot] App      loader initiated classes =    566
+[0.224s][info][aot] MethodCounters                    =   3372 (  215808 bytes)
+[0.224s][info][aot] KlassTrainingData                 =    123 (    5904 bytes)
+[0.224s][info][aot] MethodTrainingData                =    271 (   26016 bytes)

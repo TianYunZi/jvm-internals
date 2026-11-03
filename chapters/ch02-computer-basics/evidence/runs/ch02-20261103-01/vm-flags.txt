@@ -1,0 +1,7 @@
+15162:
+com.sun.tools.attach.AttachNotSupportedException: Unable to open socket file /var/folders/f8/xst91y2147q6_nntdrlwdy7r0000gn/T/.java_pid15162: target process 15162 doesn't respond within 10500ms or HotSpot VM not loaded
+	at jdk.attach/sun.tools.attach.VirtualMachineImpl.<init>(VirtualMachineImpl.java:100)
+	at jdk.attach/sun.tools.attach.AttachProviderImpl.attachVirtualMachine(AttachProviderImpl.java:56)
+	at jdk.attach/com.sun.tools.attach.VirtualMachine.attach(VirtualMachine.java:201)
+	at jdk.jcmd/sun.tools.jcmd.JCmd.executeCommandForPid(JCmd.java:113)
+	at jdk.jcmd/sun.tools.jcmd.JCmd.main(JCmd.java:97)

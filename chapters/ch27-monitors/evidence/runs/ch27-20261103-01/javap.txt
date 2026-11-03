@@ -1,0 +1,320 @@
+Compiled from "MonitorJourney.java"
+public final class org.example.jvminternals.ch27.MonitorJourney {
+  private final java.lang.Object monitor;
+
+  private final java.util.concurrent.locks.ReentrantLock libraryLock;
+
+  private final java.util.concurrent.CountDownLatch waiting;
+
+  private final java.util.concurrent.CountDownLatch holding;
+
+  private boolean ready;
+
+  private int count;
+
+  private org.example.jvminternals.ch27.MonitorJourney();
+    Code:
+         0: aload_0
+         1: invokespecial #1                  // Method java/lang/Object."<init>":()V
+         4: aload_0
+         5: new           #2                  // class java/lang/Object
+         8: dup
+         9: invokespecial #1                  // Method java/lang/Object."<init>":()V
+        12: putfield      #7                  // Field monitor:Ljava/lang/Object;
+        15: aload_0
+        16: new           #13                 // class java/util/concurrent/locks/ReentrantLock
+        19: dup
+        20: invokespecial #15                 // Method java/util/concurrent/locks/ReentrantLock."<init>":()V
+        23: putfield      #16                 // Field libraryLock:Ljava/util/concurrent/locks/ReentrantLock;
+        26: aload_0
+        27: new           #20                 // class java/util/concurrent/CountDownLatch
+        30: dup
+        31: iconst_1
+        32: invokespecial #22                 // Method java/util/concurrent/CountDownLatch."<init>":(I)V
+        35: putfield      #25                 // Field waiting:Ljava/util/concurrent/CountDownLatch;
+        38: aload_0
+        39: new           #20                 // class java/util/concurrent/CountDownLatch
+        42: dup
+        43: iconst_1
+        44: invokespecial #22                 // Method java/util/concurrent/CountDownLatch."<init>":(I)V
+        47: putfield      #29                 // Field holding:Ljava/util/concurrent/CountDownLatch;
+        50: return
+
+  public static void main(java.lang.String[]) throws java.lang.InterruptedException;
+    Code:
+         0: new           #8                  // class org/example/jvminternals/ch27/MonitorJourney
+         3: dup
+         4: invokespecial #32                 // Method "<init>":()V
+         7: invokevirtual #33                 // Method runJourney:()V
+        10: return
+
+  private void runJourney() throws java.lang.InterruptedException;
+    Code:
+         0: invokestatic  #36                 // Method java/lang/Thread.ofPlatform:()Ljava/lang/Thread$Builder$OfPlatform;
+         3: ldc           #42                 // String monitor-waiter
+         5: invokeinterface #44,  2           // InterfaceMethod java/lang/Thread$Builder$OfPlatform.name:(Ljava/lang/String;)Ljava/lang/Thread$Builder$OfPlatform;
+        10: aload_0
+        11: invokedynamic #50,  0             // InvokeDynamic #0:run:(Lorg/example/jvminternals/ch27/MonitorJourney;)Ljava/lang/Runnable;
+        16: invokeinterface #54,  2           // InterfaceMethod java/lang/Thread$Builder$OfPlatform.start:(Ljava/lang/Runnable;)Ljava/lang/Thread;
+        21: astore_1
+        22: aload_0
+        23: getfield      #25                 // Field waiting:Ljava/util/concurrent/CountDownLatch;
+        26: ldc2_w        #58                 // long 2l
+        29: getstatic     #60                 // Field java/util/concurrent/TimeUnit.SECONDS:Ljava/util/concurrent/TimeUnit;
+        32: invokevirtual #66                 // Method java/util/concurrent/CountDownLatch.await:(JLjava/util/concurrent/TimeUnit;)Z
+        35: pop
+        36: invokestatic  #36                 // Method java/lang/Thread.ofPlatform:()Ljava/lang/Thread$Builder$OfPlatform;
+        39: ldc           #70                 // String monitor-holder
+        41: invokeinterface #44,  2           // InterfaceMethod java/lang/Thread$Builder$OfPlatform.name:(Ljava/lang/String;)Ljava/lang/Thread$Builder$OfPlatform;
+        46: aload_0
+        47: invokedynamic #72,  0             // InvokeDynamic #1:run:(Lorg/example/jvminternals/ch27/MonitorJourney;)Ljava/lang/Runnable;
+        52: invokeinterface #54,  2           // InterfaceMethod java/lang/Thread$Builder$OfPlatform.start:(Ljava/lang/Runnable;)Ljava/lang/Thread;
+        57: astore_2
+        58: aload_0
+        59: getfield      #29                 // Field holding:Ljava/util/concurrent/CountDownLatch;
+        62: ldc2_w        #58                 // long 2l
+        65: getstatic     #60                 // Field java/util/concurrent/TimeUnit.SECONDS:Ljava/util/concurrent/TimeUnit;
+        68: invokevirtual #66                 // Method java/util/concurrent/CountDownLatch.await:(JLjava/util/concurrent/TimeUnit;)Z
+        71: pop
+        72: invokestatic  #36                 // Method java/lang/Thread.ofPlatform:()Ljava/lang/Thread$Builder$OfPlatform;
+        75: ldc           #73                 // String monitor-contender
+        77: invokeinterface #44,  2           // InterfaceMethod java/lang/Thread$Builder$OfPlatform.name:(Ljava/lang/String;)Ljava/lang/Thread$Builder$OfPlatform;
+        82: aload_0
+        83: invokedynamic #75,  0             // InvokeDynamic #2:run:(Lorg/example/jvminternals/ch27/MonitorJourney;)Ljava/lang/Runnable;
+        88: invokeinterface #54,  2           // InterfaceMethod java/lang/Thread$Builder$OfPlatform.start:(Ljava/lang/Runnable;)Ljava/lang/Thread;
+        93: astore_3
+        94: getstatic     #76                 // Field java/lang/System.out:Ljava/io/PrintStream;
+        97: ldc           #82                 // String 观察窗口：pid=%d%n
+        99: iconst_1
+       100: anewarray     #2                  // class java/lang/Object
+       103: dup
+       104: iconst_0
+       105: invokestatic  #84                 // InterfaceMethod java/lang/ProcessHandle.current:()Ljava/lang/ProcessHandle;
+       108: invokeinterface #90,  1           // InterfaceMethod java/lang/ProcessHandle.pid:()J
+       113: invokestatic  #94                 // Method java/lang/Long.valueOf:(J)Ljava/lang/Long;
+       116: aastore
+       117: invokevirtual #100                // Method java/io/PrintStream.printf:(Ljava/lang/String;[Ljava/lang/Object;)Ljava/io/PrintStream;
+       120: pop
+       121: aload_2
+       122: invokevirtual #106                // Method java/lang/Thread.join:()V
+       125: aload_3
+       126: invokevirtual #106                // Method java/lang/Thread.join:()V
+       129: aload_1
+       130: invokevirtual #106                // Method java/lang/Thread.join:()V
+       133: aload_0
+       134: getfield      #16                 // Field libraryLock:Ljava/util/concurrent/locks/ReentrantLock;
+       137: invokevirtual #109                // Method java/util/concurrent/locks/ReentrantLock.lock:()V
+       140: aload_0
+       141: getfield      #16                 // Field libraryLock:Ljava/util/concurrent/locks/ReentrantLock;
+       144: invokevirtual #109                // Method java/util/concurrent/locks/ReentrantLock.lock:()V
+       147: getstatic     #76                 // Field java/lang/System.out:Ljava/io/PrintStream;
+       150: ldc           #112                // String 类库锁重入：holdCount=%d%n
+       152: iconst_1
+       153: anewarray     #2                  // class java/lang/Object
+       156: dup
+       157: iconst_0
+       158: aload_0
+       159: getfield      #16                 // Field libraryLock:Ljava/util/concurrent/locks/ReentrantLock;
+       162: invokevirtual #114                // Method java/util/concurrent/locks/ReentrantLock.getHoldCount:()I
+       165: invokestatic  #118                // Method java/lang/Integer.valueOf:(I)Ljava/lang/Integer;
+       168: aastore
+       169: invokevirtual #100                // Method java/io/PrintStream.printf:(Ljava/lang/String;[Ljava/lang/Object;)Ljava/io/PrintStream;
+       172: pop
+       173: aload_0
+       174: getfield      #16                 // Field libraryLock:Ljava/util/concurrent/locks/ReentrantLock;
+       177: invokevirtual #123                // Method java/util/concurrent/locks/ReentrantLock.unlock:()V
+       180: goto          195
+       183: astore        4
+       185: aload_0
+       186: getfield      #16                 // Field libraryLock:Ljava/util/concurrent/locks/ReentrantLock;
+       189: invokevirtual #123                // Method java/util/concurrent/locks/ReentrantLock.unlock:()V
+       192: aload         4
+       194: athrow
+       195: aload_0
+       196: getfield      #16                 // Field libraryLock:Ljava/util/concurrent/locks/ReentrantLock;
+       199: invokevirtual #123                // Method java/util/concurrent/locks/ReentrantLock.unlock:()V
+       202: goto          217
+       205: astore        5
+       207: aload_0
+       208: getfield      #16                 // Field libraryLock:Ljava/util/concurrent/locks/ReentrantLock;
+       211: invokevirtual #123                // Method java/util/concurrent/locks/ReentrantLock.unlock:()V
+       214: aload         5
+       216: athrow
+       217: getstatic     #76                 // Field java/lang/System.out:Ljava/io/PrintStream;
+       220: ldc           #126                // String 结束：count=%d hash=%d%n
+       222: iconst_2
+       223: anewarray     #2                  // class java/lang/Object
+       226: dup
+       227: iconst_0
+       228: aload_0
+       229: getfield      #128                // Field count:I
+       232: invokestatic  #118                // Method java/lang/Integer.valueOf:(I)Ljava/lang/Integer;
+       235: aastore
+       236: dup
+       237: iconst_1
+       238: aload_0
+       239: getfield      #7                  // Field monitor:Ljava/lang/Object;
+       242: invokestatic  #132                // Method java/lang/System.identityHashCode:(Ljava/lang/Object;)I
+       245: invokestatic  #118                // Method java/lang/Integer.valueOf:(I)Ljava/lang/Integer;
+       248: aastore
+       249: invokevirtual #100                // Method java/io/PrintStream.printf:(Ljava/lang/String;[Ljava/lang/Object;)Ljava/io/PrintStream;
+       252: pop
+       253: return
+      Exception table:
+         from    to  target type
+           147   173   183   any
+           183   185   183   any
+           140   195   205   any
+           205   207   205   any
+
+  private void awaitReady();
+    Code:
+         0: aload_0
+         1: getfield      #7                  // Field monitor:Ljava/lang/Object;
+         4: dup
+         5: astore_1
+         6: monitorenter
+         7: aload_0
+         8: getfield      #25                 // Field waiting:Ljava/util/concurrent/CountDownLatch;
+        11: invokevirtual #136                // Method java/util/concurrent/CountDownLatch.countDown:()V
+        14: invokestatic  #139                // Method java/lang/System.nanoTime:()J
+        17: ldc2_w        #142                // long 12000000000l
+        20: ladd
+        21: lstore_2
+        22: aload_0
+        23: getfield      #144                // Field ready:Z
+        26: ifne          50
+        29: invokestatic  #139                // Method java/lang/System.nanoTime:()J
+        32: lload_2
+        33: lcmp
+        34: ifge          50
+        37: aload_0
+        38: getfield      #7                  // Field monitor:Ljava/lang/Object;
+        41: ldc2_w        #148                // long 1000l
+        44: invokevirtual #150                // Method java/lang/Object.wait:(J)V
+        47: goto          22
+        50: getstatic     #76                 // Field java/lang/System.out:Ljava/io/PrintStream;
+        53: ldc           #154                // String 等待者重新获取监视器：ready=%s%n
+        55: iconst_1
+        56: anewarray     #2                  // class java/lang/Object
+        59: dup
+        60: iconst_0
+        61: aload_0
+        62: getfield      #144                // Field ready:Z
+        65: invokestatic  #156                // Method java/lang/Boolean.valueOf:(Z)Ljava/lang/Boolean;
+        68: aastore
+        69: invokevirtual #100                // Method java/io/PrintStream.printf:(Ljava/lang/String;[Ljava/lang/Object;)Ljava/io/PrintStream;
+        72: pop
+        73: goto          92
+        76: astore        4
+        78: invokestatic  #163                // Method java/lang/Thread.currentThread:()Ljava/lang/Thread;
+        81: invokevirtual #167                // Method java/lang/Thread.interrupt:()V
+        84: getstatic     #76                 // Field java/lang/System.out:Ljava/io/PrintStream;
+        87: ldc           #170                // String 等待者被中断并退出
+        89: invokevirtual #172                // Method java/io/PrintStream.println:(Ljava/lang/String;)V
+        92: aload_1
+        93: monitorexit
+        94: goto          104
+        97: astore        5
+        99: aload_1
+       100: monitorexit
+       101: aload         5
+       103: athrow
+       104: return
+      Exception table:
+         from    to  target type
+            22    73    76   Class java/lang/InterruptedException
+             7    94    97   any
+            97   101    97   any
+
+  private void holdAndNotify();
+    Code:
+         0: aload_0
+         1: getfield      #7                  // Field monitor:Ljava/lang/Object;
+         4: dup
+         5: astore_1
+         6: monitorenter
+         7: aload_0
+         8: getfield      #7                  // Field monitor:Ljava/lang/Object;
+        11: dup
+        12: astore_2
+        13: monitorenter
+        14: getstatic     #76                 // Field java/lang/System.out:Ljava/io/PrintStream;
+        17: ldc           #176                // String 监视器重入，持有6秒以便外部观察
+        19: invokevirtual #172                // Method java/io/PrintStream.println:(Ljava/lang/String;)V
+        22: aload_0
+        23: getfield      #29                 // Field holding:Ljava/util/concurrent/CountDownLatch;
+        26: invokevirtual #136                // Method java/util/concurrent/CountDownLatch.countDown:()V
+        29: ldc2_w        #178                // long 6000l
+        32: invokestatic  #180                // Method java/lang/Thread.sleep:(J)V
+        35: goto          53
+        38: astore_3
+        39: invokestatic  #163                // Method java/lang/Thread.currentThread:()Ljava/lang/Thread;
+        42: invokevirtual #167                // Method java/lang/Thread.interrupt:()V
+        45: getstatic     #76                 // Field java/lang/System.out:Ljava/io/PrintStream;
+        48: ldc           #183                // String 持有者被中断，仍发布条件并释放锁
+        50: invokevirtual #172                // Method java/io/PrintStream.println:(Ljava/lang/String;)V
+        53: aload_0
+        54: iconst_1
+        55: putfield      #144                // Field ready:Z
+        58: aload_0
+        59: getfield      #7                  // Field monitor:Ljava/lang/Object;
+        62: invokevirtual #185                // Method java/lang/Object.notifyAll:()V
+        65: getstatic     #76                 // Field java/lang/System.out:Ljava/io/PrintStream;
+        68: ldc           #188                // String 已notifyAll，当前仍持有监视器
+        70: invokevirtual #172                // Method java/io/PrintStream.println:(Ljava/lang/String;)V
+        73: aload_2
+        74: monitorexit
+        75: goto          85
+        78: astore        4
+        80: aload_2
+        81: monitorexit
+        82: aload         4
+        84: athrow
+        85: aload_1
+        86: monitorexit
+        87: goto          97
+        90: astore        5
+        92: aload_1
+        93: monitorexit
+        94: aload         5
+        96: athrow
+        97: return
+      Exception table:
+         from    to  target type
+            29    35    38   Class java/lang/InterruptedException
+            14    75    78   any
+            78    82    78   any
+             7    87    90   any
+            90    94    90   any
+
+  private void lambda$runJourney$0();
+    Code:
+         0: aload_0
+         1: getfield      #7                  // Field monitor:Ljava/lang/Object;
+         4: dup
+         5: astore_1
+         6: monitorenter
+         7: aload_0
+         8: dup
+         9: getfield      #128                // Field count:I
+        12: iconst_1
+        13: iadd
+        14: putfield      #128                // Field count:I
+        17: getstatic     #76                 // Field java/lang/System.out:Ljava/io/PrintStream;
+        20: ldc           #190                // String 竞争者获得监视器
+        22: invokevirtual #172                // Method java/io/PrintStream.println:(Ljava/lang/String;)V
+        25: aload_1
+        26: monitorexit
+        27: goto          35
+        30: astore_2
+        31: aload_1
+        32: monitorexit
+        33: aload_2
+        34: athrow
+        35: return
+      Exception table:
+         from    to  target type
+             7    27    30   any
+            30    33    30   any
+}

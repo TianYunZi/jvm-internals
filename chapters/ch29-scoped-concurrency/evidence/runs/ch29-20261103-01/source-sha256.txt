@@ -1,0 +1,2 @@
+2c73a747b14971ea8ea6afc707339bc1347c1664ff2369d26c43e84023af9237  chapters/ch29-scoped-concurrency/preview/src/main/java/org/example/jvminternals/ch29/StructuredJourney.java
+babc175ad434cb4f14698cb96f4270e05f384e5732a49b64683ea73aace4db94  chapters/ch29-scoped-concurrency/src/main/java/org/example/jvminternals/ch29/ContextJourney.java

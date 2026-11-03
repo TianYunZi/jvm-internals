@@ -1,0 +1,23 @@
+[INFO] Scanning for projects...
+[INFO] 
+[INFO] ---------------< org.example.jvminternals:jvm-internals >---------------
+[INFO] Building Java 虚拟机原理书配套源码 1.0-SNAPSHOT
+[INFO]   from pom.xml
+[INFO] --------------------------------[ pom ]---------------------------------
+[INFO] 
+[INFO] --- install:3.2.0:install-file (default-cli) @ jvm-internals ---
+[INFO] ------------------------------------------------------------------------
+[ERROR] BUILD FAILURE
+[INFO] ------------------------------------------------------------------------
+[INFO] Total time:  0.279 s
+[INFO] Finished at: 2026-11-03T12:59:19+08:00
+[INFO] ------------------------------------------------------------------------
+[ERROR] Failed to execute goal org.apache.maven.plugins:maven-install-plugin:3.2.0:install-file (default-cli) on project jvm-internals: Execution default-cli of goal org.apache.maven.plugins:maven-install-plugin:3.2.0:install-file failed: Plugin org.apache.maven.plugins:maven-install-plugin:3.2.0 or one of its dependencies could not be resolved:
+[ERROR] 	Failed to read artifact descriptor for org.apache.maven.resolver:maven-resolver-util:jar:1.9.27
+[ERROR] -> [Help 1]
+[ERROR] 
+[ERROR] To see the full stack trace of the errors, re-run Maven with the -e switch.
+[ERROR] Re-run Maven using the -X switch to enable full debug logging.
+[ERROR] 
+[ERROR] For more information about the errors and possible solutions, please read the following articles:
+[ERROR] [Help 1] http://cwiki.apache.org/confluence/display/MAVEN/PluginResolutionException

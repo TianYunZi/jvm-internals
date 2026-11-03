@@ -1,0 +1,21 @@
+跳到正文	#main
+Java 虚拟机原理图文书	../../index.html
+33.1 统一日志	#sec-33-1
+33.2 诊断命令、转储与内存统计	#sec-33-2
+33.3 工具接口、插桩与附加	#sec-33-3
+33.4 类变换与重定义	#sec-33-4
+33.5 观测方法的开销与偏差	#sec-33-5
+33.6 25版的兼容性变化	#sec-33-6
+观察与边界	#observe
+回顾与思考	#review
+来源与实现入口	#sources
+源码阅读	sources.html
+运行说明	README.html
+证据索引	evidence/索引.md
+25版jcmd文档	https://docs.oracle.com/en/java/javase/25/docs/specs/man/jcmd.html
+Instrumentation契约	https://docs.oracle.com/en/java/javase/25/docs/api/java.instrument/java/lang/instrument/Instrumentation.html
+实现阅读	evidence/实现摘录.md
+25版发布说明	https://www.oracle.com/java/technologies/javase/25-relnote-issues.html
+上一章：第32章	../ch32-native-interop/chapter.html
+下一章：第34章	../ch34-flight-recorder/chapter.html
+返回全书目录	../../index.html#part-8

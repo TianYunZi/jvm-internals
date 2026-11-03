@@ -1,0 +1,33 @@
+23682:
+ClassLoader         Parent              CLD*               Classes   ChunkSz   BlockSz  Type
+0x000000e001019db8  0x000000e0001cd608  0x00000078db033f10       1      6144      1432  java.net.URLClassLoader
+0x000000e001019db8  0x000000e0001cd608  0x00000078db033e50       1      6144      1432  java.net.URLClassLoader
+0x000000e001019db8  0x000000e0001cd608  0x00000078db033790       1      6144      1432  java.net.URLClassLoader
+0x000000e001019db8  0x000000e0001cd608  0x00000078db033b50       1      6144      1432  java.net.URLClassLoader
+0x000000e001019db8  0x000000e0001cd608  0x00000078db033d90       1      6144      1432  java.net.URLClassLoader
+0x000000e001019db8  0x000000e0001cd608  0x00000078db538850       1      6144      1432  java.net.URLClassLoader
+0x000000e001019db8  0x000000e0001cd608  0x00000078db0339d0       1      6144      1432  java.net.URLClassLoader
+0x000000e0001cd608  0x0000000000000000  0x00000078db4a7850       0         0         0  jdk.internal.loader.ClassLoaders$PlatformClassLoader
+0x000000e001019db8  0x000000e0001cd608  0x00000078db538490       1      6144      1432  java.net.URLClassLoader
+0x000000e001019db8  0x000000e0001cd608  0x00000078db538fd0       1      6144      1432  java.net.URLClassLoader
+0x000000e001019db8  0x000000e0001cd608  0x00000078db033850       1      5120      1432  java.net.URLClassLoader
+0x000000e001019db8  0x000000e0001cd608  0x00000078db538790       1      6144      1432  java.net.URLClassLoader
+0x000000e001019db8  0x000000e0001cd608  0x00000078db5380d0       1      6144      1432  java.net.URLClassLoader
+0x000000e001019db8  0x000000e0001cd608  0x00000078db033910       1      6144      1432  java.net.URLClassLoader
+0x000000e001019db8  0x000000e0001cd608  0x00000078db538550       1      6144      1432  java.net.URLClassLoader
+0x0000000000000000  0x0000000000000000  0x00000078db4a7310    1251   4456448   1270080  <boot class loader>
+                                                                30     95232     56064   + hidden classes
+0x000000e001019db8  0x000000e0001cd608  0x00000078db538c10       1      6144      1432  java.net.URLClassLoader
+0x000000e001019db8  0x000000e0001cd608  0x00000078db5389d0       1      6144      1432  java.net.URLClassLoader
+0x000000e001019db8  0x000000e0001cd608  0x00000078db5383d0       1      6144      1432  java.net.URLClassLoader
+0x000000e0001cd0e8  0x000000e0001cd608  0x00000078db4a7910       3     14336     13472  jdk.internal.loader.ClassLoaders$AppClassLoader
+0x000000e001019db8  0x000000e0001cd608  0x00000078db538d90       1      6144      1432  java.net.URLClassLoader
+0x000000e001019db8  0x000000e0001cd608  0x00000078db033a90       1      6144      1432  java.net.URLClassLoader
+0x000000e001019db8  0x000000e0001cd608  0x00000078db033cd0       1      6144      1432  java.net.URLClassLoader
+0x000000e001019db8  0x000000e0001cd608  0x00000078db538a90       1      6144      1432  java.net.URLClassLoader
+0x000000e001019db8  0x000000e0001cd608  0x00000078db538250       1      6144      1432  java.net.URLClassLoader
+0x000000e001019db8  0x000000e0001cd608  0x00000078db033c10       1      6144      1432  java.net.URLClassLoader
+0x000000e001019db8  0x000000e0001cd608  0x00000078db538cd0       1      6144      1432  java.net.URLClassLoader
+Total = 27                                                    1308   4712448   1373984  
+ChunkSz: Total size of all allocated metaspace chunks
+BlockSz: Total size of all allocated metaspace blocks (each chunk has several blocks)

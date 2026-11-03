@@ -1,0 +1,5 @@
+4b5e9ee9740e196f2a7323cd8d851635a145a3ca9051f9fc3f8c0c5cdc71a40e  assets/book.css
+8539ce355698cb99b55e34e57658521b26f83eea3bc88675a0ff6f0424b66da4  chapters/ch09-runtime-memory/chapter.html
+f694fd0e41127b32c25f7c94efe6e97a3e906f31e2dd0a96436b4234e56ca6e9  chapters/ch10-object-layout/chapter.html
+411ab2c17468509cdb7706f7811fc01c53f63626e41493cc59d397a13b684b80  chapters/ch10-object-layout/figures/ch10-f02-decode.svg
+085e0c3631d404750562890d509ddc9a60c535612368ee30eee8da1f9c23a99e  chapters/ch12-native-memory/chapter.html

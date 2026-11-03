@@ -1,0 +1,2 @@
+588cfca15a33e1e4d3113c516f4ba5e450b26dbb32cd0a9ee8c31d53daa37991  chapters/ch22-g1/src/main/java/org/example/jvminternals/ch22/RegionJourney.java
+70eca8cceab5b8cc911c6a3e350799cc3d7cc1f41a5b9cc055af326c49f5e9c7  chapters/ch22-g1/target/classes/org/example/jvminternals/ch22/RegionJourney.class

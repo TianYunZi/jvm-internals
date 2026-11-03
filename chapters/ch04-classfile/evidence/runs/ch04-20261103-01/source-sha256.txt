@@ -1,0 +1,6 @@
+93a20771f56d0e154b6c25c7b4579bdeaac08c6aa6f2c295c071146a9d7a5cdb  chapters/ch04-classfile/src/main/java/org/example/jvminternals/ch04/model/ClassfileExplorer.java
+35268aea96d3ab658e2d3a27a0a0b7b850a7b250b6e911abb76ab08da67a0eb7  chapters/ch04-classfile/src/main/java/org/example/jvminternals/ch04/modern/ModernShapes.java
+227ed6001a66e4b67678d3f387fd5bf93f3af03cdf3533c86dbe8a7445f33ae2  chapters/ch04-classfile/src/main/java/org/example/jvminternals/ch04/structure/ClassfileSubject.java
+6ea9a4ae1d920e7cd9744cc8227430751a80a3a2268197d474810a39b23291b3  chapters/ch04-classfile/src/main/java/org/example/jvminternals/ch04/transform/ClassfileWorkshop.java
+c8f43d536b2f8cdfc128bbf92c9c8f7a928760ebafc7258a177060e8aa29b5b6  pom.xml
+3f929fd74f36805e9ebaf2eec940ef7a0003bfd144f4ad2879b40b4c49a26583  chapters/ch04-classfile/pom.xml

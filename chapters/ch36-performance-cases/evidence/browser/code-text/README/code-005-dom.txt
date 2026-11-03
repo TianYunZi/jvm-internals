@@ -1,0 +1,2 @@
+"$P09_JDK/bin/java" -Xms32m -Xmx32m -XX:+StartAttachListener -XX:NativeMemoryTracking=summary -cp chapters/ch36-performance-cases/target/classes org.example.jvminternals.ch36.CaseWorkload retained
+"$P09_JDK/bin/java" -Xms32m -Xmx32m -XX:+StartAttachListener -XX:NativeMemoryTracking=summary -cp chapters/ch36-performance-cases/target/classes org.example.jvminternals.ch36.CaseWorkload scoped

@@ -1,0 +1,6 @@
+线程局部：legacy-context
+外层：outer
+内层：inner
+内层结束：outer
+作用域退出：isBound=false
+线程局部已remove

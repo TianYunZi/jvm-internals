@@ -1,0 +1,16 @@
+%% P05机制图：依据本章来源索引；本地导出后供离线阅读。
+sequenceDiagram
+  accTitle: 业务阶段与编译活动关联
+  participant J as 教学主线程
+  participant C as 编译系统
+  participant T as 外部工具
+  J->>J: 初始100次hot调用
+  Note over J,T: 第一个10秒观察窗口<br/>只是采集安排，不是预热成本
+  T->>C: 查询编译队列初始快照
+  J->>J: 再执行200000次hot
+  J->>C: 画像／回边满足策略<br/>提交编译
+  C-->>J: 安装第3／4层代码<br/>含普通与循环入口
+  Note over J,T: 第二个10秒观察窗口
+  T->>C: 查询队列与代码缓存
+  J->>J: 后续200000次调用<br/>输出结果并退出
+  Note over J,T: 用同进程存活时间关联<br/>不把编译事件或等待时间当业务延迟统计

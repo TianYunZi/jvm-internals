@@ -1,0 +1,3 @@
+案例 pid=84221 mode=scoped time=2026-11-03T13:41:13.644076Z processors=8
+资源快照窗口 requestedBytes=8388608 scoped=true
+所有Arena关闭

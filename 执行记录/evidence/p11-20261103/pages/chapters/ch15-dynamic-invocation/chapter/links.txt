@@ -1,0 +1,23 @@
+跳到正文	#main
+Java 虚拟机原理图文书	../../index.html
+从现象开始	#problem
+15.1 方法句柄与类型适配	#sec-15-1
+15.2 动态调用点链接	#sec-15-2
+15.3 动态常量	#sec-15-3
+15.4 Lambda与字符串拼接	#sec-15-4
+15.5 反射、代理与运行时类生成	#sec-15-5
+证据与复做	#observe
+回顾与边界	#review
+来源	#sources
+CH15-F02	#fig-15-2
+CH15-F01	#fig-15-1
+CH15-F03	#fig-15-3
+CH15-F04	#fig-15-4
+运行说明	README.html
+源码阅读	sources.html
+证据索引	evidence/索引.md
+MethodHandle类型契约	https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/invoke/MethodHandle.html
+MutableCallSite可见性	https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/invoke/MutableCallSite.html
+上一章	../ch14-dispatch/chapter.html
+下一章	../ch16-tiered-compilation/chapter.html
+全书目录	../../index.html

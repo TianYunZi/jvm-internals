@@ -1,0 +1,92 @@
+<!doctype html><html lang="zh-CN"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="shiki-version" content="4.6.0"><title>第34章源码阅读</title><link rel="stylesheet" href="../../assets/book.css"></head><body><main class="home" id="main"><h1>第34章源码阅读</h1><p>由正式源文件生成的静态阅读副本。<a href="chapter.html">返回正文</a> · <a href="README.html">运行说明</a></p><h2><code class="shiki-inline" data-shiki-version="4.6.0" data-code-id="code-001" data-code-language="text"><span>src/main/java/org/example/jvminternals/ch34/LatencyJourney.java</span></code></h2><pre data-shiki-version="4.6.0" class="shiki github-light" style="background-color:#fff;color:#24292e" tabindex="0"><code data-code-id="code-002" data-code-language="java" data-source-file="chapters/ch34-flight-recorder/src/main/java/org/example/jvminternals/ch34/LatencyJourney.java"><span class="line"><span style="color:#D73A49">package</span><span style="color:#24292E"> org.example.jvminternals.ch34;</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#D73A49">import</span><span style="color:#24292E"> java.io.IOException;</span></span>
+<span class="line"><span style="color:#D73A49">import</span><span style="color:#24292E"> java.nio.file.Path;</span></span>
+<span class="line"><span style="color:#D73A49">import</span><span style="color:#24292E"> java.time.Duration;</span></span>
+<span class="line"><span style="color:#D73A49">import</span><span style="color:#24292E"> java.util.concurrent.CountDownLatch;</span></span>
+<span class="line"><span style="color:#D73A49">import</span><span style="color:#24292E"> jdk.jfr.Configuration;</span></span>
+<span class="line"><span style="color:#D73A49">import</span><span style="color:#24292E"> jdk.jfr.Event;</span></span>
+<span class="line"><span style="color:#D73A49">import</span><span style="color:#24292E"> jdk.jfr.Label;</span></span>
+<span class="line"><span style="color:#D73A49">import</span><span style="color:#24292E"> jdk.jfr.Name;</span></span>
+<span class="line"><span style="color:#D73A49">import</span><span style="color:#24292E"> jdk.jfr.Recording;</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#6A737D">/** 固定三次请求，把业务区间与锁持有者放到同一条记录。 */</span></span>
+<span class="line"><span style="color:#D73A49">public</span><span style="color:#D73A49"> final</span><span style="color:#D73A49"> class</span><span style="color:#6F42C1"> LatencyJourney</span><span style="color:#24292E"> {</span></span>
+<span class="line"><span style="color:#D73A49">    private</span><span style="color:#D73A49"> static</span><span style="color:#D73A49"> final</span><span style="color:#24292E"> Object GATE </span><span style="color:#D73A49">=</span><span style="color:#D73A49"> new</span><span style="color:#6F42C1"> Object</span><span style="color:#24292E">();</span></span>
+<span class="line"><span style="color:#D73A49">    private</span><span style="color:#D73A49"> static</span><span style="color:#D73A49"> volatile</span><span style="color:#D73A49"> long</span><span style="color:#24292E"> consumed;</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#24292E">    @</span><span style="color:#D73A49">Name</span><span style="color:#24292E">(</span><span style="color:#032F62">"book.Request"</span><span style="color:#24292E">)</span></span>
+<span class="line"><span style="color:#24292E">    @</span><span style="color:#D73A49">Label</span><span style="color:#24292E">(</span><span style="color:#032F62">"教学请求"</span><span style="color:#24292E">)</span></span>
+<span class="line"><span style="color:#D73A49">    static</span><span style="color:#D73A49"> final</span><span style="color:#D73A49"> class</span><span style="color:#6F42C1"> RequestEvent</span><span style="color:#D73A49"> extends</span><span style="color:#6F42C1"> Event</span><span style="color:#24292E"> {</span></span>
+<span class="line"><span style="color:#24292E">        @</span><span style="color:#D73A49">Label</span><span style="color:#24292E">(</span><span style="color:#032F62">"请求编号"</span><span style="color:#24292E">)</span></span>
+<span class="line"><span style="color:#D73A49">        int</span><span style="color:#24292E"> requestId;</span></span>
+<span class="line"><span style="color:#24292E">    }</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#24292E">    @</span><span style="color:#D73A49">Name</span><span style="color:#24292E">(</span><span style="color:#032F62">"book.Holder"</span><span style="color:#24292E">)</span></span>
+<span class="line"><span style="color:#24292E">    @</span><span style="color:#D73A49">Label</span><span style="color:#24292E">(</span><span style="color:#032F62">"教学持锁区间"</span><span style="color:#24292E">)</span></span>
+<span class="line"><span style="color:#D73A49">    static</span><span style="color:#D73A49"> final</span><span style="color:#D73A49"> class</span><span style="color:#6F42C1"> HolderEvent</span><span style="color:#D73A49"> extends</span><span style="color:#6F42C1"> Event</span><span style="color:#24292E"> {</span></span>
+<span class="line"><span style="color:#24292E">    }</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#D73A49">    private</span><span style="color:#6F42C1"> LatencyJourney</span><span style="color:#24292E">() {</span></span>
+<span class="line"><span style="color:#24292E">    }</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#6A737D">    /** recording在本作用域关闭；输出路径由命令明确给出。 */</span></span>
+<span class="line"><span style="color:#D73A49">    public</span><span style="color:#D73A49"> static</span><span style="color:#D73A49"> void</span><span style="color:#6F42C1"> main</span><span style="color:#24292E">(</span><span style="color:#D73A49">String</span><span style="color:#24292E">[] </span><span style="color:#E36209">args</span><span style="color:#24292E">)</span></span>
+<span class="line"><span style="color:#D73A49">            throws</span><span style="color:#24292E"> IOException, java.text.ParseException, InterruptedException {</span></span>
+<span class="line"><span style="color:#D73A49">        try</span><span style="color:#24292E"> (Recording recording </span><span style="color:#D73A49">=</span><span style="color:#D73A49"> new</span><span style="color:#6F42C1"> Recording</span><span style="color:#24292E">(Configuration.</span><span style="color:#6F42C1">getConfiguration</span><span style="color:#24292E">(</span><span style="color:#032F62">"profile"</span><span style="color:#24292E">))) {</span></span>
+<span class="line"><span style="color:#24292E">            recording.</span><span style="color:#6F42C1">enable</span><span style="color:#24292E">(RequestEvent.class).</span><span style="color:#6F42C1">withThreshold</span><span style="color:#24292E">(Duration.ZERO);</span></span>
+<span class="line"><span style="color:#24292E">            recording.</span><span style="color:#6F42C1">enable</span><span style="color:#24292E">(HolderEvent.class).</span><span style="color:#6F42C1">withThreshold</span><span style="color:#24292E">(Duration.ZERO);</span></span>
+<span class="line"><span style="color:#24292E">            recording.</span><span style="color:#6F42C1">enable</span><span style="color:#24292E">(</span><span style="color:#032F62">"jdk.JavaMonitorEnter"</span><span style="color:#24292E">).</span><span style="color:#6F42C1">withThreshold</span><span style="color:#24292E">(Duration.</span><span style="color:#6F42C1">ofMillis</span><span style="color:#24292E">(</span><span style="color:#005CC5">1</span><span style="color:#24292E">));</span></span>
+<span class="line"><span style="color:#24292E">            recording.</span><span style="color:#6F42C1">enable</span><span style="color:#24292E">(</span><span style="color:#032F62">"jdk.MethodTrace"</span><span style="color:#24292E">).</span><span style="color:#6F42C1">with</span><span style="color:#24292E">(</span><span style="color:#032F62">"filter"</span><span style="color:#24292E">,</span></span>
+<span class="line"><span style="color:#032F62">                    "org.example.jvminternals.ch34.LatencyJourney::service"</span><span style="color:#24292E">).</span><span style="color:#6F42C1">withThreshold</span><span style="color:#24292E">(Duration.ZERO);</span></span>
+<span class="line"><span style="color:#24292E">            recording.</span><span style="color:#6F42C1">enable</span><span style="color:#24292E">(</span><span style="color:#032F62">"jdk.MethodTiming"</span><span style="color:#24292E">).</span><span style="color:#6F42C1">with</span><span style="color:#24292E">(</span><span style="color:#032F62">"filter"</span><span style="color:#24292E">,</span></span>
+<span class="line"><span style="color:#032F62">                    "org.example.jvminternals.ch34.LatencyJourney::service"</span><span style="color:#24292E">).</span><span style="color:#6F42C1">withPeriod</span><span style="color:#24292E">(Duration.</span><span style="color:#6F42C1">ofMillis</span><span style="color:#24292E">(</span><span style="color:#005CC5">100</span><span style="color:#24292E">));</span></span>
+<span class="line"><span style="color:#24292E">            recording.</span><span style="color:#6F42C1">setMaxSize</span><span style="color:#24292E">(</span><span style="color:#005CC5">16L</span><span style="color:#D73A49"> *</span><span style="color:#005CC5"> 1024</span><span style="color:#D73A49"> *</span><span style="color:#005CC5"> 1024</span><span style="color:#24292E">);</span></span>
+<span class="line"><span style="color:#24292E">            recording.</span><span style="color:#6F42C1">start</span><span style="color:#24292E">();</span></span>
+<span class="line"><span style="color:#6F42C1">            service</span><span style="color:#24292E">(</span><span style="color:#005CC5">1</span><span style="color:#24292E">);</span></span>
+<span class="line"><span style="color:#24292E">            CountDownLatch held </span><span style="color:#D73A49">=</span><span style="color:#D73A49"> new</span><span style="color:#6F42C1"> CountDownLatch</span><span style="color:#24292E">(</span><span style="color:#005CC5">1</span><span style="color:#24292E">);</span></span>
+<span class="line"><span style="color:#24292E">            Thread holder </span><span style="color:#D73A49">=</span><span style="color:#24292E"> Thread.</span><span style="color:#6F42C1">ofPlatform</span><span style="color:#24292E">().</span><span style="color:#6F42C1">name</span><span style="color:#24292E">(</span><span style="color:#032F62">"latency-holder"</span><span style="color:#24292E">).</span><span style="color:#6F42C1">start</span><span style="color:#24292E">(() </span><span style="color:#D73A49">-></span><span style="color:#6F42C1"> hold</span><span style="color:#24292E">(held));</span></span>
+<span class="line"><span style="color:#24292E">            held.</span><span style="color:#6F42C1">await</span><span style="color:#24292E">();</span></span>
+<span class="line"><span style="color:#6F42C1">            service</span><span style="color:#24292E">(</span><span style="color:#005CC5">2</span><span style="color:#24292E">);</span></span>
+<span class="line"><span style="color:#24292E">            holder.</span><span style="color:#6F42C1">join</span><span style="color:#24292E">();</span></span>
+<span class="line"><span style="color:#6F42C1">            service</span><span style="color:#24292E">(</span><span style="color:#005CC5">3</span><span style="color:#24292E">);</span></span>
+<span class="line"><span style="color:#24292E">            recording.</span><span style="color:#6F42C1">stop</span><span style="color:#24292E">();</span></span>
+<span class="line"><span style="color:#24292E">            recording.</span><span style="color:#6F42C1">dump</span><span style="color:#24292E">(Path.</span><span style="color:#6F42C1">of</span><span style="color:#24292E">(args[</span><span style="color:#005CC5">0</span><span style="color:#24292E">]));</span></span>
+<span class="line"><span style="color:#24292E">            System.out.</span><span style="color:#6F42C1">println</span><span style="color:#24292E">(</span><span style="color:#032F62">"记录已保存，checksum="</span><span style="color:#D73A49"> +</span><span style="color:#24292E"> consumed);</span></span>
+<span class="line"><span style="color:#24292E">        }</span></span>
+<span class="line"><span style="color:#24292E">    }</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#6A737D">    /** 整个请求区间包括等锁和计算，不能把它当成处理器时间。 */</span></span>
+<span class="line"><span style="color:#D73A49">    public</span><span style="color:#D73A49"> static</span><span style="color:#D73A49"> void</span><span style="color:#6F42C1"> service</span><span style="color:#24292E">(</span><span style="color:#D73A49">int</span><span style="color:#E36209"> requestId</span><span style="color:#24292E">) {</span></span>
+<span class="line"><span style="color:#24292E">        RequestEvent event </span><span style="color:#D73A49">=</span><span style="color:#D73A49"> new</span><span style="color:#6F42C1"> RequestEvent</span><span style="color:#24292E">();</span></span>
+<span class="line"><span style="color:#24292E">        event.requestId </span><span style="color:#D73A49">=</span><span style="color:#24292E"> requestId;</span></span>
+<span class="line"><span style="color:#24292E">        event.</span><span style="color:#6F42C1">begin</span><span style="color:#24292E">();</span></span>
+<span class="line"><span style="color:#D73A49">        synchronized</span><span style="color:#24292E"> (GATE) {</span></span>
+<span class="line"><span style="color:#D73A49">            long</span><span style="color:#24292E"> value </span><span style="color:#D73A49">=</span><span style="color:#24292E"> requestId;</span></span>
+<span class="line"><span style="color:#D73A49">            for</span><span style="color:#24292E"> (</span><span style="color:#D73A49">int</span><span style="color:#24292E"> index </span><span style="color:#D73A49">=</span><span style="color:#005CC5"> 0</span><span style="color:#24292E">; index </span><span style="color:#D73A49">&#x3C;</span><span style="color:#005CC5"> 500_000</span><span style="color:#24292E">; index</span><span style="color:#D73A49">++</span><span style="color:#24292E">) {</span></span>
+<span class="line"><span style="color:#24292E">                value </span><span style="color:#D73A49">=</span><span style="color:#24292E"> value </span><span style="color:#D73A49">*</span><span style="color:#005CC5"> 1_664_525</span><span style="color:#D73A49"> +</span><span style="color:#005CC5"> 1_013_904_223</span><span style="color:#24292E">;</span></span>
+<span class="line"><span style="color:#24292E">            }</span></span>
+<span class="line"><span style="color:#24292E">            consumed </span><span style="color:#D73A49">=</span><span style="color:#24292E"> value;</span></span>
+<span class="line"><span style="color:#24292E">        }</span></span>
+<span class="line"><span style="color:#24292E">        event.</span><span style="color:#6F42C1">commit</span><span style="color:#24292E">();</span></span>
+<span class="line"><span style="color:#24292E">        System.out.</span><span style="color:#6F42C1">println</span><span style="color:#24292E">(</span><span style="color:#032F62">"请求完成 id="</span><span style="color:#D73A49"> +</span><span style="color:#24292E"> requestId);</span></span>
+<span class="line"><span style="color:#24292E">    }</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#D73A49">    private</span><span style="color:#D73A49"> static</span><span style="color:#D73A49"> void</span><span style="color:#6F42C1"> hold</span><span style="color:#24292E">(CountDownLatch </span><span style="color:#E36209">held</span><span style="color:#24292E">) {</span></span>
+<span class="line"><span style="color:#D73A49">        synchronized</span><span style="color:#24292E"> (GATE) {</span></span>
+<span class="line"><span style="color:#24292E">            HolderEvent event </span><span style="color:#D73A49">=</span><span style="color:#D73A49"> new</span><span style="color:#6F42C1"> HolderEvent</span><span style="color:#24292E">();</span></span>
+<span class="line"><span style="color:#24292E">            event.</span><span style="color:#6F42C1">begin</span><span style="color:#24292E">();</span></span>
+<span class="line"><span style="color:#24292E">            held.</span><span style="color:#6F42C1">countDown</span><span style="color:#24292E">();</span></span>
+<span class="line"><span style="color:#D73A49">            try</span><span style="color:#24292E"> {</span></span>
+<span class="line"><span style="color:#6A737D">                // 明确的教学等待，制造可解释区间；时间不作为性能收益证据。</span></span>
+<span class="line"><span style="color:#24292E">                Thread.</span><span style="color:#6F42C1">sleep</span><span style="color:#24292E">(</span><span style="color:#005CC5">180</span><span style="color:#24292E">);</span></span>
+<span class="line"><span style="color:#24292E">            } </span><span style="color:#D73A49">catch</span><span style="color:#24292E"> (InterruptedException </span><span style="color:#E36209">interrupted</span><span style="color:#24292E">) {</span></span>
+<span class="line"><span style="color:#24292E">                Thread.</span><span style="color:#6F42C1">currentThread</span><span style="color:#24292E">().</span><span style="color:#6F42C1">interrupt</span><span style="color:#24292E">();</span></span>
+<span class="line"><span style="color:#24292E">                System.err.</span><span style="color:#6F42C1">println</span><span style="color:#24292E">(</span><span style="color:#032F62">"持锁阶段中断，释放监视器"</span><span style="color:#24292E">);</span></span>
+<span class="line"><span style="color:#24292E">            } </span><span style="color:#D73A49">finally</span><span style="color:#24292E"> {</span></span>
+<span class="line"><span style="color:#24292E">                event.</span><span style="color:#6F42C1">commit</span><span style="color:#24292E">();</span></span>
+<span class="line"><span style="color:#24292E">            }</span></span>
+<span class="line"><span style="color:#24292E">        }</span></span>
+<span class="line"><span style="color:#24292E">    }</span></span>
+<span class="line"><span style="color:#24292E">}</span></span>
+<span class="line"></span></code></pre></main></body></html>

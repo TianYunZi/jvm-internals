@@ -1,0 +1,57 @@
+[0.001s][info][aot] Selected AOTMode=record because AOTCacheOutput is specified
+[0.007s][info][aot] Core region alignment: 16384
+[0.007s][info][aot] Writing binary AOTConfiguration file: chapters/ch36-performance-cases/target/startup.aot.config
+[0.128s][info][aot] Reading lambda form invokers from JDK default classlist ...
+[0.128s][info][aot] Parsing /opt/homebrew/Cellar/openjdk@25/25.0.5.0.2/libexec/openjdk.jdk/Contents/Home/lib/classlist (lambda form invokers only)
+[0.129s][info][aot] Rewriting and linking classes ...
+[0.131s][info][aot] Rewriting and linking classes: done
+[0.131s][info][aot] Regenerate MethodHandle Holder classes...
+[0.186s][info][aot] Regenerate MethodHandle Holder classes...done
+[0.186s][info][aot] Not dumping heap, reset CDSConfig::_is_using_optimized_module_handling
+[0.186s][info][aot] Gathering all archivable objects ... 
+[0.186s][info][aot] Skipping jdk/internal/misc/CDS$UnregisteredClassLoader$Source: used only when dumping CDS archive
+[0.187s][info][aot] Skipping jdk/internal/misc/CDS$UnregisteredClassLoader: used only when dumping CDS archive
+[0.187s][info][aot] Skipping java/lang/invoke/BoundMethodHandle$Species_F because it is dynamically generated
+[0.187s][info][aot] Skipping java/lang/invoke/BoundMethodHandle$Species_J because it is dynamically generated
+[0.187s][info][aot] Gathering classes and symbols ... 
+[0.219s][info][aot] Sorting symbols ... 
+[0.220s][info][aot] Sorting classes ... 
+[0.271s][info][aot] Reserved output buffer space at 0x00000070c0000000 [1073741824 bytes]
+[0.275s][info][aot] Allocating RW objects ... 
+[0.278s][info][aot] done (30211 objects)
+[0.278s][info][aot] Allocating RO objects ... 
+[0.288s][info][aot] done (70369 objects)
+[0.288s][info][aot] Relocating embedded pointers in core regions ... 
+[0.299s][info][aot] Make classes shareable
+[0.308s][info][aot] Number of classes 1181
+[0.308s][info][aot]     instance classes   =  1020, aot-linked =     0, inited =     0
+[0.308s][info][aot]       boot             =  1013, aot-linked =     0, inited =     0
+[0.308s][info][aot]         vm             =   151, aot-linked =     0, inited =     0
+[0.308s][info][aot]       platform         =     4, aot-linked =     0, inited =     0
+[0.308s][info][aot]       app              =     3, aot-linked =     0, inited =     0
+[0.308s][info][aot]       unregistered     =     0, aot-linked =     0, inited =     0
+[0.308s][info][aot]       (enum)           =    32, aot-linked =     0, inited =     0
+[0.308s][info][aot]       (hidden)         =     0, aot-linked =     0, inited =     0
+[0.308s][info][aot]       (old)            =     0, aot-linked =     0, inited =     0
+[0.308s][info][aot]       (unlinked)       =     0, boot = 0, plat = 0, app = 0, unreg = 0
+[0.308s][info][aot]     obj array classes  =   152
+[0.308s][info][aot]     type array classes =     9
+[0.308s][info][aot]                symbols = 36608
+[0.308s][info][aot] Archived java heap is not supported: Programmatically disabled
+[0.308s][info][aot] Dumping symbol table ...
+[0.315s][info][aot] Archived 0 method handle intrinsics (16 bytes)
+[0.315s][info][aot] Adjust lambda proxy class dictionary
+[0.318s][info][aot] Shared file region (rw) 0:  4258392 bytes, addr 0x0000000800004000 file offset 0x00004000 crc 0xa1d27c34
+[0.319s][info][aot] Shared file region (ro) 1:  6925488 bytes, addr 0x0000000800414000 file offset 0x00414000 crc 0x5a141525
+[0.323s][info][aot] Shared file region (ac) 4:        0 bytes
+[0.327s][info][aot] Shared file region (bm) 2:   143296 bytes, addr 0x0000000000000000 file offset 0x00ab0000 crc 0xb68df144
+[0.333s][info][aot] Full module graph = disabled
+[0.333s][info][aot] Class  CP entries =  15071, archived =   2476 ( 16.4%), reverted =   2143
+[0.333s][info][aot] Field  CP entries =   6077, archived =   1558 ( 25.6%), reverted =    228
+[0.333s][info][aot] Method CP entries =   4890, archived =   3265 ( 66.8%), reverted =   1625
+[0.333s][info][aot] Indy   CP entries =     29, archived =      0 (  0.0%), reverted =     29
+[0.333s][info][aot] Platform loader initiated classes =      0
+[0.333s][info][aot] App      loader initiated classes =      0
+[0.333s][info][aot] MethodCounters                    =   4522 (  289408 bytes)
+[0.333s][info][aot] KlassTrainingData                 =    123 (    5904 bytes)
+[0.333s][info][aot] MethodTrainingData                =    271 (   26016 bytes)

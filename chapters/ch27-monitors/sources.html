@@ -1,0 +1,87 @@
+<!doctype html><html lang="zh-CN"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="shiki-version" content="4.6.0"><title>第27章源码阅读</title><link rel="stylesheet" href="../../assets/book.css"></head><body><main class="home" id="main"><h1>第27章源码阅读</h1><p>由正式源文件生成的静态阅读副本。<a href="chapter.html">返回正文</a> · <a href="README.html">运行说明</a></p><h2><code class="shiki-inline" data-shiki-version="4.6.0" data-code-id="code-001" data-code-language="text"><span>src/main/java/org/example/jvminternals/ch27/MonitorJourney.java</span></code></h2><pre data-shiki-version="4.6.0" class="shiki github-light" style="background-color:#fff;color:#24292e" tabindex="0"><code data-code-id="code-002" data-code-language="java" data-source-file="chapters/ch27-monitors/src/main/java/org/example/jvminternals/ch27/MonitorJourney.java"><span class="line"><span style="color:#D73A49">package</span><span style="color:#24292E"> org.example.jvminternals.ch27;</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#D73A49">import</span><span style="color:#24292E"> java.util.concurrent.CountDownLatch;</span></span>
+<span class="line"><span style="color:#D73A49">import</span><span style="color:#24292E"> java.util.concurrent.TimeUnit;</span></span>
+<span class="line"><span style="color:#D73A49">import</span><span style="color:#24292E"> java.util.concurrent.locks.ReentrantLock;</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#6A737D">/** 让竞争和等待具有清楚的对象与阶段，不制造死锁或资源耗尽。 */</span></span>
+<span class="line"><span style="color:#D73A49">public</span><span style="color:#D73A49"> final</span><span style="color:#D73A49"> class</span><span style="color:#6F42C1"> MonitorJourney</span><span style="color:#24292E"> {</span></span>
+<span class="line"><span style="color:#D73A49">    private</span><span style="color:#D73A49"> final</span><span style="color:#24292E"> Object monitor </span><span style="color:#D73A49">=</span><span style="color:#D73A49"> new</span><span style="color:#6F42C1"> Object</span><span style="color:#24292E">();</span></span>
+<span class="line"><span style="color:#D73A49">    private</span><span style="color:#D73A49"> final</span><span style="color:#24292E"> ReentrantLock libraryLock </span><span style="color:#D73A49">=</span><span style="color:#D73A49"> new</span><span style="color:#6F42C1"> ReentrantLock</span><span style="color:#24292E">();</span></span>
+<span class="line"><span style="color:#D73A49">    private</span><span style="color:#D73A49"> final</span><span style="color:#24292E"> CountDownLatch waiting </span><span style="color:#D73A49">=</span><span style="color:#D73A49"> new</span><span style="color:#6F42C1"> CountDownLatch</span><span style="color:#24292E">(</span><span style="color:#005CC5">1</span><span style="color:#24292E">);</span></span>
+<span class="line"><span style="color:#D73A49">    private</span><span style="color:#D73A49"> final</span><span style="color:#24292E"> CountDownLatch holding </span><span style="color:#D73A49">=</span><span style="color:#D73A49"> new</span><span style="color:#6F42C1"> CountDownLatch</span><span style="color:#24292E">(</span><span style="color:#005CC5">1</span><span style="color:#24292E">);</span></span>
+<span class="line"><span style="color:#D73A49">    private</span><span style="color:#D73A49"> boolean</span><span style="color:#24292E"> ready;</span></span>
+<span class="line"><span style="color:#D73A49">    private</span><span style="color:#D73A49"> int</span><span style="color:#24292E"> count;</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#D73A49">    private</span><span style="color:#6F42C1"> MonitorJourney</span><span style="color:#24292E">() { }</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#6A737D">    /** 有界等待通知、竞争与类库重入对照。 */</span></span>
+<span class="line"><span style="color:#D73A49">    public</span><span style="color:#D73A49"> static</span><span style="color:#D73A49"> void</span><span style="color:#6F42C1"> main</span><span style="color:#24292E">(</span><span style="color:#D73A49">String</span><span style="color:#24292E">[] </span><span style="color:#E36209">args</span><span style="color:#24292E">) </span><span style="color:#D73A49">throws</span><span style="color:#24292E"> InterruptedException {</span></span>
+<span class="line"><span style="color:#D73A49">        new</span><span style="color:#6F42C1"> MonitorJourney</span><span style="color:#24292E">().</span><span style="color:#6F42C1">runJourney</span><span style="color:#24292E">();</span></span>
+<span class="line"><span style="color:#24292E">    }</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#D73A49">    private</span><span style="color:#D73A49"> void</span><span style="color:#6F42C1"> runJourney</span><span style="color:#24292E">() </span><span style="color:#D73A49">throws</span><span style="color:#24292E"> InterruptedException {</span></span>
+<span class="line"><span style="color:#24292E">        Thread waiter </span><span style="color:#D73A49">=</span><span style="color:#24292E"> Thread.</span><span style="color:#6F42C1">ofPlatform</span><span style="color:#24292E">().</span><span style="color:#6F42C1">name</span><span style="color:#24292E">(</span><span style="color:#032F62">"monitor-waiter"</span><span style="color:#24292E">).</span><span style="color:#6F42C1">start</span><span style="color:#24292E">(</span><span style="color:#005CC5">this</span><span style="color:#D73A49">::</span><span style="color:#24292E">awaitReady);</span></span>
+<span class="line"><span style="color:#24292E">        waiting.</span><span style="color:#6F42C1">await</span><span style="color:#24292E">(</span><span style="color:#005CC5">2</span><span style="color:#24292E">, TimeUnit.SECONDS);</span></span>
+<span class="line"><span style="color:#24292E">        Thread holder </span><span style="color:#D73A49">=</span><span style="color:#24292E"> Thread.</span><span style="color:#6F42C1">ofPlatform</span><span style="color:#24292E">().</span><span style="color:#6F42C1">name</span><span style="color:#24292E">(</span><span style="color:#032F62">"monitor-holder"</span><span style="color:#24292E">).</span><span style="color:#6F42C1">start</span><span style="color:#24292E">(</span><span style="color:#005CC5">this</span><span style="color:#D73A49">::</span><span style="color:#24292E">holdAndNotify);</span></span>
+<span class="line"><span style="color:#24292E">        holding.</span><span style="color:#6F42C1">await</span><span style="color:#24292E">(</span><span style="color:#005CC5">2</span><span style="color:#24292E">, TimeUnit.SECONDS);</span></span>
+<span class="line"><span style="color:#24292E">        Thread contender </span><span style="color:#D73A49">=</span><span style="color:#24292E"> Thread.</span><span style="color:#6F42C1">ofPlatform</span><span style="color:#24292E">().</span><span style="color:#6F42C1">name</span><span style="color:#24292E">(</span><span style="color:#032F62">"monitor-contender"</span><span style="color:#24292E">).</span><span style="color:#6F42C1">start</span><span style="color:#24292E">(() </span><span style="color:#D73A49">-></span><span style="color:#24292E"> {</span></span>
+<span class="line"><span style="color:#D73A49">            synchronized</span><span style="color:#24292E"> (monitor) {</span></span>
+<span class="line"><span style="color:#24292E">                count</span><span style="color:#D73A49">++</span><span style="color:#24292E">;</span></span>
+<span class="line"><span style="color:#24292E">                System.out.</span><span style="color:#6F42C1">println</span><span style="color:#24292E">(</span><span style="color:#032F62">"竞争者获得监视器"</span><span style="color:#24292E">);</span></span>
+<span class="line"><span style="color:#24292E">            }</span></span>
+<span class="line"><span style="color:#24292E">        });</span></span>
+<span class="line"><span style="color:#24292E">        System.out.</span><span style="color:#6F42C1">printf</span><span style="color:#24292E">(</span><span style="color:#032F62">"观察窗口：pid=%d%n"</span><span style="color:#24292E">, ProcessHandle.</span><span style="color:#6F42C1">current</span><span style="color:#24292E">().</span><span style="color:#6F42C1">pid</span><span style="color:#24292E">());</span></span>
+<span class="line"><span style="color:#24292E">        holder.</span><span style="color:#6F42C1">join</span><span style="color:#24292E">();</span></span>
+<span class="line"><span style="color:#24292E">        contender.</span><span style="color:#6F42C1">join</span><span style="color:#24292E">();</span></span>
+<span class="line"><span style="color:#24292E">        waiter.</span><span style="color:#6F42C1">join</span><span style="color:#24292E">();</span></span>
+<span class="line"><span style="color:#24292E">        libraryLock.</span><span style="color:#6F42C1">lock</span><span style="color:#24292E">();</span></span>
+<span class="line"><span style="color:#D73A49">        try</span><span style="color:#24292E"> {</span></span>
+<span class="line"><span style="color:#24292E">            libraryLock.</span><span style="color:#6F42C1">lock</span><span style="color:#24292E">();</span></span>
+<span class="line"><span style="color:#D73A49">            try</span><span style="color:#24292E"> {</span></span>
+<span class="line"><span style="color:#24292E">                System.out.</span><span style="color:#6F42C1">printf</span><span style="color:#24292E">(</span><span style="color:#032F62">"类库锁重入：holdCount=%d%n"</span><span style="color:#24292E">, libraryLock.</span><span style="color:#6F42C1">getHoldCount</span><span style="color:#24292E">());</span></span>
+<span class="line"><span style="color:#24292E">            } </span><span style="color:#D73A49">finally</span><span style="color:#24292E"> {</span></span>
+<span class="line"><span style="color:#24292E">                libraryLock.</span><span style="color:#6F42C1">unlock</span><span style="color:#24292E">();</span></span>
+<span class="line"><span style="color:#24292E">            }</span></span>
+<span class="line"><span style="color:#24292E">        } </span><span style="color:#D73A49">finally</span><span style="color:#24292E"> {</span></span>
+<span class="line"><span style="color:#24292E">            libraryLock.</span><span style="color:#6F42C1">unlock</span><span style="color:#24292E">();</span></span>
+<span class="line"><span style="color:#24292E">        }</span></span>
+<span class="line"><span style="color:#24292E">        System.out.</span><span style="color:#6F42C1">printf</span><span style="color:#24292E">(</span><span style="color:#032F62">"结束：count=%d hash=%d%n"</span><span style="color:#24292E">, count, System.</span><span style="color:#6F42C1">identityHashCode</span><span style="color:#24292E">(monitor));</span></span>
+<span class="line"><span style="color:#24292E">    }</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#D73A49">    private</span><span style="color:#D73A49"> void</span><span style="color:#6F42C1"> awaitReady</span><span style="color:#24292E">() {</span></span>
+<span class="line"><span style="color:#D73A49">        synchronized</span><span style="color:#24292E"> (monitor) {</span></span>
+<span class="line"><span style="color:#24292E">            waiting.</span><span style="color:#6F42C1">countDown</span><span style="color:#24292E">();</span></span>
+<span class="line"><span style="color:#D73A49">            long</span><span style="color:#24292E"> deadline </span><span style="color:#D73A49">=</span><span style="color:#24292E"> System.</span><span style="color:#6F42C1">nanoTime</span><span style="color:#24292E">() </span><span style="color:#D73A49">+</span><span style="color:#005CC5"> 12_000_000_000L</span><span style="color:#24292E">;</span></span>
+<span class="line"><span style="color:#D73A49">            try</span><span style="color:#24292E"> {</span></span>
+<span class="line"><span style="color:#D73A49">                while</span><span style="color:#24292E"> (</span><span style="color:#D73A49">!</span><span style="color:#24292E">ready </span><span style="color:#D73A49">&#x26;&#x26;</span><span style="color:#24292E"> System.</span><span style="color:#6F42C1">nanoTime</span><span style="color:#24292E">() </span><span style="color:#D73A49">&#x3C;</span><span style="color:#24292E"> deadline) {</span></span>
+<span class="line"><span style="color:#24292E">                    monitor.</span><span style="color:#6F42C1">wait</span><span style="color:#24292E">(</span><span style="color:#005CC5">1_000L</span><span style="color:#24292E">);</span></span>
+<span class="line"><span style="color:#24292E">                }</span></span>
+<span class="line"><span style="color:#24292E">                System.out.</span><span style="color:#6F42C1">printf</span><span style="color:#24292E">(</span><span style="color:#032F62">"等待者重新获取监视器：ready=%s%n"</span><span style="color:#24292E">, ready);</span></span>
+<span class="line"><span style="color:#24292E">            } </span><span style="color:#D73A49">catch</span><span style="color:#24292E"> (InterruptedException </span><span style="color:#E36209">interrupted</span><span style="color:#24292E">) {</span></span>
+<span class="line"><span style="color:#24292E">                Thread.</span><span style="color:#6F42C1">currentThread</span><span style="color:#24292E">().</span><span style="color:#6F42C1">interrupt</span><span style="color:#24292E">();</span></span>
+<span class="line"><span style="color:#24292E">                System.out.</span><span style="color:#6F42C1">println</span><span style="color:#24292E">(</span><span style="color:#032F62">"等待者被中断并退出"</span><span style="color:#24292E">);</span></span>
+<span class="line"><span style="color:#24292E">            }</span></span>
+<span class="line"><span style="color:#24292E">        }</span></span>
+<span class="line"><span style="color:#24292E">    }</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#D73A49">    private</span><span style="color:#D73A49"> void</span><span style="color:#6F42C1"> holdAndNotify</span><span style="color:#24292E">() {</span></span>
+<span class="line"><span style="color:#D73A49">        synchronized</span><span style="color:#24292E"> (monitor) {</span></span>
+<span class="line"><span style="color:#D73A49">            synchronized</span><span style="color:#24292E"> (monitor) {</span></span>
+<span class="line"><span style="color:#24292E">                System.out.</span><span style="color:#6F42C1">println</span><span style="color:#24292E">(</span><span style="color:#032F62">"监视器重入，持有6秒以便外部观察"</span><span style="color:#24292E">);</span></span>
+<span class="line"><span style="color:#24292E">                holding.</span><span style="color:#6F42C1">countDown</span><span style="color:#24292E">();</span></span>
+<span class="line"><span style="color:#D73A49">                try</span><span style="color:#24292E"> {</span></span>
+<span class="line"><span style="color:#6A737D">                    // sleep保留监视器，只用于留出教学观察窗口。</span></span>
+<span class="line"><span style="color:#24292E">                    Thread.</span><span style="color:#6F42C1">sleep</span><span style="color:#24292E">(</span><span style="color:#005CC5">6_000L</span><span style="color:#24292E">);</span></span>
+<span class="line"><span style="color:#24292E">                } </span><span style="color:#D73A49">catch</span><span style="color:#24292E"> (InterruptedException </span><span style="color:#E36209">interrupted</span><span style="color:#24292E">) {</span></span>
+<span class="line"><span style="color:#24292E">                    Thread.</span><span style="color:#6F42C1">currentThread</span><span style="color:#24292E">().</span><span style="color:#6F42C1">interrupt</span><span style="color:#24292E">();</span></span>
+<span class="line"><span style="color:#24292E">                    System.out.</span><span style="color:#6F42C1">println</span><span style="color:#24292E">(</span><span style="color:#032F62">"持有者被中断，仍发布条件并释放锁"</span><span style="color:#24292E">);</span></span>
+<span class="line"><span style="color:#24292E">                }</span></span>
+<span class="line"><span style="color:#24292E">                ready </span><span style="color:#D73A49">=</span><span style="color:#005CC5"> true</span><span style="color:#24292E">;</span></span>
+<span class="line"><span style="color:#24292E">                monitor.</span><span style="color:#6F42C1">notifyAll</span><span style="color:#24292E">();</span></span>
+<span class="line"><span style="color:#24292E">                System.out.</span><span style="color:#6F42C1">println</span><span style="color:#24292E">(</span><span style="color:#032F62">"已notifyAll，当前仍持有监视器"</span><span style="color:#24292E">);</span></span>
+<span class="line"><span style="color:#24292E">            }</span></span>
+<span class="line"><span style="color:#24292E">        }</span></span>
+<span class="line"><span style="color:#24292E">    }</span></span>
+<span class="line"><span style="color:#24292E">}</span></span>
+<span class="line"></span></code></pre></main></body></html>

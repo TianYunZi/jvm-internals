@@ -1,0 +1,9 @@
+13523bd415b52d46f085004ff319be6db261e384ad7d858fd0cd7f93e9437bf2  chapters/ch10-object-layout/src/main/java/org/example/jvminternals/ch10/LayoutJourney.java
+55cd7917ca9367f0c6ad67d6086aeb2ab31dd512498a2741ef22006a70fa47da  chapters/ch10-object-layout/pom.xml
+1512685156327d59da211d5626ff6f2e43e9609a8e7c2b5e25b21d4c88ce6747  chapters/ch10-object-layout/evidence/tools/jol-core-db2cc744.jar
+4fb74a7c214be9c90f5c743a1c60c1b006cbad65921bf87dfebce02cf92384ef  chapters/ch10-object-layout/evidence/tools/jol-core-db2cc744-source.tar.gz
+ab3cf70cd29998c8477e643e3171b78ab3a0ba3c9145eeeb31b67efdd01a091a  chapters/ch10-object-layout/target/classes/org/example/jvminternals/ch10/LayoutJourney$Base.class
+3e7882fbfe33e03ed10a3a40021769e062f922616992a281a90518183c766154  chapters/ch10-object-layout/target/classes/org/example/jvminternals/ch10/LayoutJourney$Child.class
+d17ec41481c8254495e596f49f99f7da8affd141eb464fda3f1279c1a1b7adcd  chapters/ch10-object-layout/target/classes/org/example/jvminternals/ch10/LayoutJourney$Mixed.class
+d0bd407c2ff9b3b2f3f678c17de56d1d16d87d13d1a9b45114fb41ac2b4cfb0f  chapters/ch10-object-layout/target/classes/org/example/jvminternals/ch10/LayoutJourney$SingleInt.class
+4cbbdb3c8bd5077ed874a3f8cec2620bfb1a1d7efb825855733df72764292715  chapters/ch10-object-layout/target/classes/org/example/jvminternals/ch10/LayoutJourney.class

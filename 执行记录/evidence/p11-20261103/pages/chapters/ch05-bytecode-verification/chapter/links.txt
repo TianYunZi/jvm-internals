@@ -1,0 +1,35 @@
+跳到正文	#chapter
+Java 虚拟机原理 / 第二篇	../../index.html
+从类型状态看指令	#question
+5.1 栈与局部变量	#sec-5-1
+5.2 控制流与数组	#sec-5-2
+5.3 调用、异常与同步	#sec-5-3
+5.4 验证器	#sec-5-4
+5.5 未初始化对象	#sec-5-5
+实际观察	#observe
+回顾与思考	#review
+来源	#sources
+BytecodeCases	sources.html#ch05-e01
+S01	#s01
+S02	#s02
+S03 §4.8—4.10	#s03
+S05	#s05
+S03 §4.10.1.2、§4.10.1.9	#s03
+FlexibleConstruction	sources.html#ch05-e02
+S04	#s04
+S05	#s05
+运行说明	README.html
+本次记录	evidence/runs/ch05-20261103-01/记录.md
+Java SE 25 虚拟机规范 §2.6	https://docs.oracle.com/javase/specs/jvms/se25/html/jvms-2.html#jvms-2.6
+指令集第 6 章	https://docs.oracle.com/javase/specs/jvms/se25/html/jvms-6.html
+类文件规范 §4.8—4.10	https://docs.oracle.com/javase/specs/jvms/se25/html/jvms-4.html#jvms-4.10.1
+语言规范构造器章节	https://docs.oracle.com/javase/specs/jls/se25/html/jls-8.html#jls-8.8.7
+JEP 513	https://openjdk.org/jeps/513
+来源索引	evidence/索引.md
+方法组反汇编	evidence/runs/ch05-20261103-01/cases.javap.txt
+构造器反汇编	evidence/runs/ch05-20261103-01/flexible.javap.txt
+验证日志	evidence/runs/ch05-20261103-01/verification.log
+构造器验证日志	evidence/runs/ch05-20261103-01/flexible-verification.log
+上一章：第 4 章	../ch04-classfile/chapter.html
+返回全书目录	../../index.html
+下一章：第 6 章	../ch06-classloaders-modules/chapter.html

@@ -1,0 +1,257 @@
+warning: [options] bootstrap class path is not set in conjunction with -source 8
+  not setting the bootstrap class path may lead to class files that cannot run on JDK 8
+    --release 8 is recommended instead of -source 8 -target 8 because it sets the bootstrap class path automatically
+warning: [options] source value 8 is obsolete and will be removed in a future release
+warning: [options] target value 8 is obsolete and will be removed in a future release
+warning: [options] To suppress warnings about obsolete options, use -Xlint:-options.
+artifacts/tool-sources/jol/jol-core/src/main/java/org/openjdk/jol/vm/VM.java:29: warning: Unsafe is internal proprietary API and may be removed in a future release
+import sun.misc.Unsafe;
+               ^
+artifacts/tool-sources/jol/jol-core/src/main/java/org/openjdk/jol/vm/VM.java:33: warning: [removal] AccessController in java.security has been deprecated and marked for removal
+import java.security.AccessController;
+                    ^
+artifacts/tool-sources/jol/jol-core/src/main/java/org/openjdk/jol/vm/HotspotUnsafe.java:31: warning: Unsafe is internal proprietary API and may be removed in a future release
+import sun.misc.Unsafe;
+               ^
+artifacts/tool-sources/jol/jol-core/src/main/java/org/openjdk/jol/vm/VM.java:38: warning: Unsafe is internal proprietary API and may be removed in a future release
+    private static Unsafe tryUnsafe() {
+                   ^
+artifacts/tool-sources/jol/jol-core/src/main/java/org/openjdk/jol/vm/VM.java:39: warning: Unsafe is internal proprietary API and may be removed in a future release
+        return AccessController.doPrivileged((PrivilegedAction<Unsafe>) () -> {
+                                                               ^
+artifacts/tool-sources/jol/jol-core/src/main/java/org/openjdk/jol/vm/VM.java:41: warning: Unsafe is internal proprietary API and may be removed in a future release
+                Field unsafe = Unsafe.class.getDeclaredField("theUnsafe");
+                               ^
+artifacts/tool-sources/jol/jol-core/src/main/java/org/openjdk/jol/vm/VM.java:43: warning: Unsafe is internal proprietary API and may be removed in a future release
+                return (Unsafe) unsafe.get(null);
+                        ^
+artifacts/tool-sources/jol/jol-core/src/main/java/org/openjdk/jol/vm/VM.java:39: warning: [removal] AccessController in java.security has been deprecated and marked for removal
+        return AccessController.doPrivileged((PrivilegedAction<Unsafe>) () -> {
+               ^
+artifacts/tool-sources/jol/jol-core/src/main/java/org/openjdk/jol/vm/VM.java:60: warning: Unsafe is internal proprietary API and may be removed in a future release
+        Unsafe u = tryUnsafe();
+        ^
+artifacts/tool-sources/jol/jol-core/src/main/java/org/openjdk/jol/vm/HotspotUnsafe.java:60: warning: Unsafe is internal proprietary API and may be removed in a future release
+    private final Unsafe U;
+                  ^
+artifacts/tool-sources/jol/jol-core/src/main/java/org/openjdk/jol/vm/HotspotUnsafe.java:91: warning: Unsafe is internal proprietary API and may be removed in a future release
+    HotspotUnsafe(Unsafe u, Instrumentation inst, UniverseData saDetails) {
+                  ^
+artifacts/tool-sources/jol/jol-core/src/main/java/org/openjdk/jol/vm/HotspotUnsafe.java:98: warning: [removal] arrayBaseOffset(Class<?>) in Unsafe has been deprecated and marked for removal
+        arrayObjectBase = U.arrayBaseOffset(Object[].class);
+                           ^
+artifacts/tool-sources/jol/jol-core/src/main/java/org/openjdk/jol/vm/HotspotUnsafe.java:120: warning: Unsafe is internal proprietary API and may be removed in a future release
+    HotspotUnsafe(Unsafe u, Instrumentation inst) {
+                  ^
+artifacts/tool-sources/jol/jol-core/src/main/java/org/openjdk/jol/vm/HotspotUnsafe.java:127: warning: [removal] arrayBaseOffset(Class<?>) in Unsafe has been deprecated and marked for removal
+        arrayObjectBase = U.arrayBaseOffset(Object[].class);
+                           ^
+artifacts/tool-sources/jol/jol-core/src/main/java/org/openjdk/jol/vm/HotspotUnsafe.java:128: warning: [removal] addressSize() in Unsafe has been deprecated and marked for removal
+        addressSize = U.addressSize();
+                       ^
+artifacts/tool-sources/jol/jol-core/src/main/java/org/openjdk/jol/vm/HotspotUnsafe.java:216: warning: [removal] objectFieldOffset(Field) in Unsafe has been deprecated and marked for removal
+            long off1 = U.objectFieldOffset(Experiments.CompressedOopsClass.class.getField("obj1"));
+                         ^
+artifacts/tool-sources/jol/jol-core/src/main/java/org/openjdk/jol/vm/HotspotUnsafe.java:217: warning: [removal] objectFieldOffset(Field) in Unsafe has been deprecated and marked for removal
+            long off2 = U.objectFieldOffset(Experiments.CompressedOopsClass.class.getField("obj2"));
+                         ^
+artifacts/tool-sources/jol/jol-core/src/main/java/org/openjdk/jol/vm/HotspotUnsafe.java:228: warning: [removal] objectFieldOffset(Field) in Unsafe has been deprecated and marked for removal
+            long off1 = U.objectFieldOffset(Experiments.HeaderClass.class.getField("b1"));
+                         ^
+artifacts/tool-sources/jol/jol-core/src/main/java/org/openjdk/jol/vm/HotspotUnsafe.java:266: warning: [removal] objectFieldOffset(Field) in Unsafe has been deprecated and marked for removal
+            int off1 = (int) U.objectFieldOffset(klass.getDeclaredField("f1"));
+                              ^
+artifacts/tool-sources/jol/jol-core/src/main/java/org/openjdk/jol/vm/HotspotUnsafe.java:267: warning: [removal] objectFieldOffset(Field) in Unsafe has been deprecated and marked for removal
+            int off2 = (int) U.objectFieldOffset(klass.getDeclaredField("f2"));
+                              ^
+artifacts/tool-sources/jol/jol-core/src/main/java/org/openjdk/jol/vm/HotspotUnsafe.java:268: warning: [removal] objectFieldOffset(Field) in Unsafe has been deprecated and marked for removal
+            int off3 = (int) U.objectFieldOffset(klass.getDeclaredField("f3"));
+                              ^
+artifacts/tool-sources/jol/jol-core/src/main/java/org/openjdk/jol/vm/HotspotUnsafe.java:269: warning: [removal] objectFieldOffset(Field) in Unsafe has been deprecated and marked for removal
+            int off4 = (int) U.objectFieldOffset(klass.getDeclaredField("f4"));
+                              ^
+artifacts/tool-sources/jol/jol-core/src/main/java/org/openjdk/jol/vm/HotspotUnsafe.java:370: warning: [removal] arrayIndexScale(Class<?>) in Unsafe has been deprecated and marked for removal
+                U.arrayIndexScale(Object[].class),
+                 ^
+artifacts/tool-sources/jol/jol-core/src/main/java/org/openjdk/jol/vm/HotspotUnsafe.java:371: warning: [removal] arrayIndexScale(Class<?>) in Unsafe has been deprecated and marked for removal
+                U.arrayIndexScale(boolean[].class),
+                 ^
+artifacts/tool-sources/jol/jol-core/src/main/java/org/openjdk/jol/vm/HotspotUnsafe.java:372: warning: [removal] arrayIndexScale(Class<?>) in Unsafe has been deprecated and marked for removal
+                U.arrayIndexScale(byte[].class),
+                 ^
+artifacts/tool-sources/jol/jol-core/src/main/java/org/openjdk/jol/vm/HotspotUnsafe.java:373: warning: [removal] arrayIndexScale(Class<?>) in Unsafe has been deprecated and marked for removal
+                U.arrayIndexScale(char[].class),
+                 ^
+artifacts/tool-sources/jol/jol-core/src/main/java/org/openjdk/jol/vm/HotspotUnsafe.java:374: warning: [removal] arrayIndexScale(Class<?>) in Unsafe has been deprecated and marked for removal
+                U.arrayIndexScale(short[].class),
+                 ^
+artifacts/tool-sources/jol/jol-core/src/main/java/org/openjdk/jol/vm/HotspotUnsafe.java:375: warning: [removal] arrayIndexScale(Class<?>) in Unsafe has been deprecated and marked for removal
+                U.arrayIndexScale(int[].class),
+                 ^
+artifacts/tool-sources/jol/jol-core/src/main/java/org/openjdk/jol/vm/HotspotUnsafe.java:376: warning: [removal] arrayIndexScale(Class<?>) in Unsafe has been deprecated and marked for removal
+                U.arrayIndexScale(float[].class),
+                 ^
+artifacts/tool-sources/jol/jol-core/src/main/java/org/openjdk/jol/vm/HotspotUnsafe.java:377: warning: [removal] arrayIndexScale(Class<?>) in Unsafe has been deprecated and marked for removal
+                U.arrayIndexScale(long[].class),
+                 ^
+artifacts/tool-sources/jol/jol-core/src/main/java/org/openjdk/jol/vm/HotspotUnsafe.java:378: warning: [removal] arrayIndexScale(Class<?>) in Unsafe has been deprecated and marked for removal
+                U.arrayIndexScale(double[].class)
+                 ^
+artifacts/tool-sources/jol/jol-core/src/main/java/org/openjdk/jol/vm/HotspotUnsafe.java:383: warning: [removal] arrayBaseOffset(Class<?>) in Unsafe has been deprecated and marked for removal
+                U.arrayBaseOffset(Object[].class),
+                 ^
+artifacts/tool-sources/jol/jol-core/src/main/java/org/openjdk/jol/vm/HotspotUnsafe.java:384: warning: [removal] arrayBaseOffset(Class<?>) in Unsafe has been deprecated and marked for removal
+                U.arrayBaseOffset(boolean[].class),
+                 ^
+artifacts/tool-sources/jol/jol-core/src/main/java/org/openjdk/jol/vm/HotspotUnsafe.java:385: warning: [removal] arrayBaseOffset(Class<?>) in Unsafe has been deprecated and marked for removal
+                U.arrayBaseOffset(byte[].class),
+                 ^
+artifacts/tool-sources/jol/jol-core/src/main/java/org/openjdk/jol/vm/HotspotUnsafe.java:386: warning: [removal] arrayBaseOffset(Class<?>) in Unsafe has been deprecated and marked for removal
+                U.arrayBaseOffset(char[].class),
+                 ^
+artifacts/tool-sources/jol/jol-core/src/main/java/org/openjdk/jol/vm/HotspotUnsafe.java:387: warning: [removal] arrayBaseOffset(Class<?>) in Unsafe has been deprecated and marked for removal
+                U.arrayBaseOffset(short[].class),
+                 ^
+artifacts/tool-sources/jol/jol-core/src/main/java/org/openjdk/jol/vm/HotspotUnsafe.java:388: warning: [removal] arrayBaseOffset(Class<?>) in Unsafe has been deprecated and marked for removal
+                U.arrayBaseOffset(int[].class),
+                 ^
+artifacts/tool-sources/jol/jol-core/src/main/java/org/openjdk/jol/vm/HotspotUnsafe.java:389: warning: [removal] arrayBaseOffset(Class<?>) in Unsafe has been deprecated and marked for removal
+                U.arrayBaseOffset(float[].class),
+                 ^
+artifacts/tool-sources/jol/jol-core/src/main/java/org/openjdk/jol/vm/HotspotUnsafe.java:390: warning: [removal] arrayBaseOffset(Class<?>) in Unsafe has been deprecated and marked for removal
+                U.arrayBaseOffset(long[].class),
+                 ^
+artifacts/tool-sources/jol/jol-core/src/main/java/org/openjdk/jol/vm/HotspotUnsafe.java:391: warning: [removal] arrayBaseOffset(Class<?>) in Unsafe has been deprecated and marked for removal
+                U.arrayBaseOffset(double[].class)
+                 ^
+artifacts/tool-sources/jol/jol-core/src/main/java/org/openjdk/jol/vm/HotspotUnsafe.java:439: warning: [removal] getInt(Object,long) in Unsafe has been deprecated and marked for removal
+                objectAddress = U.getInt(array, arrayObjectBase) & 0xFFFFFFFFL;
+                                 ^
+artifacts/tool-sources/jol/jol-core/src/main/java/org/openjdk/jol/vm/HotspotUnsafe.java:442: warning: [removal] getLong(Object,long) in Unsafe has been deprecated and marked for removal
+                objectAddress = U.getLong(array, arrayObjectBase);
+                                 ^
+artifacts/tool-sources/jol/jol-core/src/main/java/org/openjdk/jol/vm/HotspotUnsafe.java:456: warning: [removal] arrayBaseOffset(Class<?>) in Unsafe has been deprecated and marked for removal
+        if (arrayComponentKlass.equals("byte"))    return U.arrayBaseOffset(byte[].class);
+                                                           ^
+artifacts/tool-sources/jol/jol-core/src/main/java/org/openjdk/jol/vm/HotspotUnsafe.java:457: warning: [removal] arrayBaseOffset(Class<?>) in Unsafe has been deprecated and marked for removal
+        if (arrayComponentKlass.equals("boolean")) return U.arrayBaseOffset(boolean[].class);
+                                                           ^
+artifacts/tool-sources/jol/jol-core/src/main/java/org/openjdk/jol/vm/HotspotUnsafe.java:458: warning: [removal] arrayBaseOffset(Class<?>) in Unsafe has been deprecated and marked for removal
+        if (arrayComponentKlass.equals("short"))   return U.arrayBaseOffset(short[].class);
+                                                           ^
+artifacts/tool-sources/jol/jol-core/src/main/java/org/openjdk/jol/vm/HotspotUnsafe.java:459: warning: [removal] arrayBaseOffset(Class<?>) in Unsafe has been deprecated and marked for removal
+        if (arrayComponentKlass.equals("char"))    return U.arrayBaseOffset(char[].class);
+                                                           ^
+artifacts/tool-sources/jol/jol-core/src/main/java/org/openjdk/jol/vm/HotspotUnsafe.java:460: warning: [removal] arrayBaseOffset(Class<?>) in Unsafe has been deprecated and marked for removal
+        if (arrayComponentKlass.equals("int"))     return U.arrayBaseOffset(int[].class);
+                                                           ^
+artifacts/tool-sources/jol/jol-core/src/main/java/org/openjdk/jol/vm/HotspotUnsafe.java:461: warning: [removal] arrayBaseOffset(Class<?>) in Unsafe has been deprecated and marked for removal
+        if (arrayComponentKlass.equals("float"))   return U.arrayBaseOffset(float[].class);
+                                                           ^
+artifacts/tool-sources/jol/jol-core/src/main/java/org/openjdk/jol/vm/HotspotUnsafe.java:462: warning: [removal] arrayBaseOffset(Class<?>) in Unsafe has been deprecated and marked for removal
+        if (arrayComponentKlass.equals("long"))    return U.arrayBaseOffset(long[].class);
+                                                           ^
+artifacts/tool-sources/jol/jol-core/src/main/java/org/openjdk/jol/vm/HotspotUnsafe.java:463: warning: [removal] arrayBaseOffset(Class<?>) in Unsafe has been deprecated and marked for removal
+        if (arrayComponentKlass.equals("double"))  return U.arrayBaseOffset(double[].class);
+                                                           ^
+artifacts/tool-sources/jol/jol-core/src/main/java/org/openjdk/jol/vm/HotspotUnsafe.java:464: warning: [removal] arrayBaseOffset(Class<?>) in Unsafe has been deprecated and marked for removal
+        return U.arrayBaseOffset(Object[].class);
+                ^
+artifacts/tool-sources/jol/jol-core/src/main/java/org/openjdk/jol/vm/HotspotUnsafe.java:469: warning: [removal] arrayIndexScale(Class<?>) in Unsafe has been deprecated and marked for removal
+        if (arrayComponentKlass.equals("byte"))    return U.arrayIndexScale(byte[].class);
+                                                           ^
+artifacts/tool-sources/jol/jol-core/src/main/java/org/openjdk/jol/vm/HotspotUnsafe.java:470: warning: [removal] arrayIndexScale(Class<?>) in Unsafe has been deprecated and marked for removal
+        if (arrayComponentKlass.equals("boolean")) return U.arrayIndexScale(boolean[].class);
+                                                           ^
+artifacts/tool-sources/jol/jol-core/src/main/java/org/openjdk/jol/vm/HotspotUnsafe.java:471: warning: [removal] arrayIndexScale(Class<?>) in Unsafe has been deprecated and marked for removal
+        if (arrayComponentKlass.equals("short"))   return U.arrayIndexScale(short[].class);
+                                                           ^
+artifacts/tool-sources/jol/jol-core/src/main/java/org/openjdk/jol/vm/HotspotUnsafe.java:472: warning: [removal] arrayIndexScale(Class<?>) in Unsafe has been deprecated and marked for removal
+        if (arrayComponentKlass.equals("char"))    return U.arrayIndexScale(char[].class);
+                                                           ^
+artifacts/tool-sources/jol/jol-core/src/main/java/org/openjdk/jol/vm/HotspotUnsafe.java:473: warning: [removal] arrayIndexScale(Class<?>) in Unsafe has been deprecated and marked for removal
+        if (arrayComponentKlass.equals("int"))     return U.arrayIndexScale(int[].class);
+                                                           ^
+artifacts/tool-sources/jol/jol-core/src/main/java/org/openjdk/jol/vm/HotspotUnsafe.java:474: warning: [removal] arrayIndexScale(Class<?>) in Unsafe has been deprecated and marked for removal
+        if (arrayComponentKlass.equals("float"))   return U.arrayIndexScale(float[].class);
+                                                           ^
+artifacts/tool-sources/jol/jol-core/src/main/java/org/openjdk/jol/vm/HotspotUnsafe.java:475: warning: [removal] arrayIndexScale(Class<?>) in Unsafe has been deprecated and marked for removal
+        if (arrayComponentKlass.equals("long"))    return U.arrayIndexScale(long[].class);
+                                                           ^
+artifacts/tool-sources/jol/jol-core/src/main/java/org/openjdk/jol/vm/HotspotUnsafe.java:476: warning: [removal] arrayIndexScale(Class<?>) in Unsafe has been deprecated and marked for removal
+        if (arrayComponentKlass.equals("double"))  return U.arrayIndexScale(double[].class);
+                                                           ^
+artifacts/tool-sources/jol/jol-core/src/main/java/org/openjdk/jol/vm/HotspotUnsafe.java:477: warning: [removal] arrayIndexScale(Class<?>) in Unsafe has been deprecated and marked for removal
+        return U.arrayIndexScale(Object[].class);
+                ^
+artifacts/tool-sources/jol/jol-core/src/main/java/org/openjdk/jol/vm/HotspotUnsafe.java:482: warning: [removal] getBoolean(Object,long) in Unsafe has been deprecated and marked for removal
+        return U.getBoolean(obj, offset);
+                ^
+artifacts/tool-sources/jol/jol-core/src/main/java/org/openjdk/jol/vm/HotspotUnsafe.java:487: warning: [removal] getByte(Object,long) in Unsafe has been deprecated and marked for removal
+        return U.getByte(obj, offset);
+                ^
+artifacts/tool-sources/jol/jol-core/src/main/java/org/openjdk/jol/vm/HotspotUnsafe.java:492: warning: [removal] getShort(Object,long) in Unsafe has been deprecated and marked for removal
+        return U.getShort(obj, offset);
+                ^
+artifacts/tool-sources/jol/jol-core/src/main/java/org/openjdk/jol/vm/HotspotUnsafe.java:497: warning: [removal] getChar(Object,long) in Unsafe has been deprecated and marked for removal
+        return U.getChar(obj, offset);
+                ^
+artifacts/tool-sources/jol/jol-core/src/main/java/org/openjdk/jol/vm/HotspotUnsafe.java:502: warning: [removal] getInt(Object,long) in Unsafe has been deprecated and marked for removal
+        return U.getInt(obj, offset);
+                ^
+artifacts/tool-sources/jol/jol-core/src/main/java/org/openjdk/jol/vm/HotspotUnsafe.java:507: warning: [removal] getFloat(Object,long) in Unsafe has been deprecated and marked for removal
+        return U.getFloat(obj, offset);
+                ^
+artifacts/tool-sources/jol/jol-core/src/main/java/org/openjdk/jol/vm/HotspotUnsafe.java:512: warning: [removal] getLong(Object,long) in Unsafe has been deprecated and marked for removal
+        return U.getLong(obj, offset);
+                ^
+artifacts/tool-sources/jol/jol-core/src/main/java/org/openjdk/jol/vm/HotspotUnsafe.java:517: warning: [removal] getDouble(Object,long) in Unsafe has been deprecated and marked for removal
+        return U.getDouble(obj, offset);
+                ^
+artifacts/tool-sources/jol/jol-core/src/main/java/org/openjdk/jol/vm/HotspotUnsafe.java:522: warning: [removal] getObject(Object,long) in Unsafe has been deprecated and marked for removal
+        return U.getObject(obj, offset);
+                ^
+artifacts/tool-sources/jol/jol-core/src/main/java/org/openjdk/jol/vm/HotspotUnsafe.java:529: warning: [removal] staticFieldOffset(Field) in Unsafe has been deprecated and marked for removal
+                return U.staticFieldOffset(field);
+                        ^
+artifacts/tool-sources/jol/jol-core/src/main/java/org/openjdk/jol/vm/HotspotUnsafe.java:531: warning: [removal] objectFieldOffset(Field) in Unsafe has been deprecated and marked for removal
+                return U.objectFieldOffset(field);
+                        ^
+artifacts/tool-sources/jol/jol-core/src/main/java/org/openjdk/jol/vm/HotspotUnsafe.java:567: warning: [removal] getBoolean(Object,long) in Unsafe has been deprecated and marked for removal
+                    boolean vFalse = U.getBoolean(acFalse, off);
+                                      ^
+artifacts/tool-sources/jol/jol-core/src/main/java/org/openjdk/jol/vm/HotspotUnsafe.java:568: warning: [removal] getBoolean(Object,long) in Unsafe has been deprecated and marked for removal
+                    boolean vTrue  = U.getBoolean(acTrue, off);
+                                      ^
+artifacts/tool-sources/jol/jol-core/src/main/java/org/openjdk/jol/vm/HotspotUnsafe.java:576: warning: [removal] getBoolean(Object,long) in Unsafe has been deprecated and marked for removal
+                            if (U.getBoolean(acTest, off) != test) {
+                                 ^
+artifacts/tool-sources/jol/jol-core/src/main/java/org/openjdk/jol/vm/HotspotUnsafe.java:597: warning: [removal] staticFieldBase(Field) in Unsafe has been deprecated and marked for removal
+                    mfoUnsafe = U.getObject(U.staticFieldBase(fu), U.staticFieldOffset(fu));
+                                             ^
+artifacts/tool-sources/jol/jol-core/src/main/java/org/openjdk/jol/vm/HotspotUnsafe.java:597: warning: [removal] staticFieldOffset(Field) in Unsafe has been deprecated and marked for removal
+                    mfoUnsafe = U.getObject(U.staticFieldBase(fu), U.staticFieldOffset(fu));
+                                                                    ^
+artifacts/tool-sources/jol/jol-core/src/main/java/org/openjdk/jol/vm/HotspotUnsafe.java:597: warning: [removal] getObject(Object,long) in Unsafe has been deprecated and marked for removal
+                    mfoUnsafe = U.getObject(U.staticFieldBase(fu), U.staticFieldOffset(fu));
+                                 ^
+artifacts/tool-sources/jol/jol-core/src/main/java/org/openjdk/jol/vm/HotspotUnsafe.java:612: warning: [removal] getInt(Object,long) in Unsafe has been deprecated and marked for removal
+                        int old = U.getInt(mfo, slotOffset);
+                                   ^
+artifacts/tool-sources/jol/jol-core/src/main/java/org/openjdk/jol/vm/HotspotUnsafe.java:615: warning: [removal] putBoolean(Object,long,boolean) in Unsafe has been deprecated and marked for removal
+                        U.putBoolean(mfo, magicOffset, true);
+                         ^
+artifacts/tool-sources/jol/jol-core/src/main/java/org/openjdk/jol/vm/HotspotUnsafe.java:620: warning: [removal] putInt(Object,long,int) in Unsafe has been deprecated and marked for removal
+                            U.putInt(mfo, slotOffset, old);
+                             ^
+artifacts/tool-sources/jol/jol-core/src/main/java/org/openjdk/jol/vm/sa/ServiceabilityAgentSupport.java:153: warning: VMManagement is internal proprietary API and may be removed in a future release
+            sun.management.VMManagement management = (sun.management.VMManagement) jvmField.get(mxbean);
+                          ^
+artifacts/tool-sources/jol/jol-core/src/main/java/org/openjdk/jol/vm/sa/ServiceabilityAgentSupport.java:153: warning: VMManagement is internal proprietary API and may be removed in a future release
+            sun.management.VMManagement management = (sun.management.VMManagement) jvmField.get(mxbean);
+                                                                    ^
+Note: Some input files use or override a deprecated API.
+Note: Recompile with -Xlint:deprecation for details.
+Note: Some input files use unchecked or unsafe operations.
+Note: Recompile with -Xlint:unchecked for details.
+86 warnings

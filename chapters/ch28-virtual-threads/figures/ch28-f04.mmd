@@ -1,0 +1,11 @@
+sequenceDiagram
+ participant B as 阻塞虚拟线程
+ participant C as 唯一载体
+ participant P as 探针虚拟线程
+ B->>C: monitor模式：同步体内sleep
+ C->>P: 已卸载，可运行探针
+ Note over B,C: 同步体仍保有锁
+ B->>C: native模式：本地回调内sleep
+ Note over B,C: 本地帧阻止冻结，载体停放
+ C->>P: 阻塞结束后才执行探针
+ Note over B,P: 顺序示意，不是性能比例

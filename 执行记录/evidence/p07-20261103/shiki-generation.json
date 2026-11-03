@@ -1,0 +1,191 @@
+{
+  "version": "4.6.0",
+  "theme": "github-light",
+  "languages": [
+    "java",
+    "bash",
+    "xml",
+    "json",
+    "cpp",
+    "c",
+    "asm"
+  ],
+  "plainTextLanguage": "text",
+  "records": [
+    {
+      "page": "chapters/ch25-memory-model/chapter.html",
+      "id": "code-001",
+      "language": "java",
+      "kind": "block",
+      "sha256": "a4c8c67a5d5d9a47018bc46d11477b9ae40f897edd634e7b29efc394adf3fae3"
+    },
+    {
+      "page": "chapters/ch25-memory-model/sources.html",
+      "id": "code-001",
+      "language": "text",
+      "kind": "inline",
+      "sha256": "b5cda2f13cf664ad4640b44e182c5bdd226f5dd9a92f00c607ad8354b3a08e04"
+    },
+    {
+      "page": "chapters/ch25-memory-model/sources.html",
+      "id": "code-002",
+      "language": "java",
+      "kind": "block",
+      "sourceFile": "chapters/ch25-memory-model/src/main/java/org/example/jvminternals/ch25/PublicationJourney.java",
+      "sha256": "715e621a215a7c5d1165274f78434970b682c4333af776cf9b0b1535d2bd29f7"
+    },
+    {
+      "page": "chapters/ch25-memory-model/README.html",
+      "id": "code-001",
+      "language": "bash",
+      "kind": "block",
+      "sha256": "e32448b0551ade64c7f6ef49b2ad052bc194ecada6f9de6eec3be690f790b4b5"
+    },
+    {
+      "page": "chapters/ch26-platform-threads/sources.html",
+      "id": "code-001",
+      "language": "text",
+      "kind": "inline",
+      "sha256": "783e3db043d60c772a07a95ff4464ed6abca2fead38d93f22625d7fac926e09b"
+    },
+    {
+      "page": "chapters/ch26-platform-threads/sources.html",
+      "id": "code-002",
+      "language": "java",
+      "kind": "block",
+      "sourceFile": "chapters/ch26-platform-threads/src/main/java/org/example/jvminternals/ch26/PlatformJourney.java",
+      "sha256": "2fea2e59acb7aa875b1617ff94429bee26b6de3687efbabdfb51fc3070557550"
+    },
+    {
+      "page": "chapters/ch26-platform-threads/README.html",
+      "id": "code-001",
+      "language": "bash",
+      "kind": "block",
+      "sha256": "0c611e6a849e9ff42af76d51b1b175bf3d02ea76f8b7675725f07d1cc874cae1"
+    },
+    {
+      "page": "chapters/ch26-platform-threads/README.html",
+      "id": "code-002",
+      "language": "bash",
+      "kind": "block",
+      "sha256": "b9ff635538cce93defff80bd7360eacdc0cae6a10703d9c534ad19b8f9633b00"
+    },
+    {
+      "page": "chapters/ch27-monitors/sources.html",
+      "id": "code-001",
+      "language": "text",
+      "kind": "inline",
+      "sha256": "288334e4558a371a4662e66b51aea3e4c0cb0b4448514c4737e5fdfb2bc38e2f"
+    },
+    {
+      "page": "chapters/ch27-monitors/sources.html",
+      "id": "code-002",
+      "language": "java",
+      "kind": "block",
+      "sourceFile": "chapters/ch27-monitors/src/main/java/org/example/jvminternals/ch27/MonitorJourney.java",
+      "sha256": "e28090b4d20e83a246e34fe95befc5877860a8729119e45cebfc8e2ae949e3c9"
+    },
+    {
+      "page": "chapters/ch27-monitors/README.html",
+      "id": "code-001",
+      "language": "bash",
+      "kind": "block",
+      "sha256": "b87e7870679b07cb8adccfd014fcdf49563b89befa4f8290a0631a7ad25ea5e8"
+    },
+    {
+      "page": "chapters/ch27-monitors/README.html",
+      "id": "code-002",
+      "language": "bash",
+      "kind": "block",
+      "sha256": "4c115e532fd965281b79d16072a08470164c7ba0fea5431957ff532f249a68b4"
+    },
+    {
+      "page": "chapters/ch28-virtual-threads/sources.html",
+      "id": "code-001",
+      "language": "text",
+      "kind": "inline",
+      "sha256": "626525378602a78f7331e72e2fae627cb4f91e67a61003894cf03dfbb91059e0"
+    },
+    {
+      "page": "chapters/ch28-virtual-threads/sources.html",
+      "id": "code-002",
+      "language": "java",
+      "kind": "block",
+      "sourceFile": "chapters/ch28-virtual-threads/src/main/java/org/example/jvminternals/ch28/VirtualJourney.java",
+      "sha256": "f07d1e17573ada4d49803e9c9249037fb04b9deee137ea577727cc63838c412f"
+    },
+    {
+      "page": "chapters/ch28-virtual-threads/sources.html",
+      "id": "code-003",
+      "language": "text",
+      "kind": "inline",
+      "sha256": "21dae77f5336eaf521b48fac451fc9f51fe8c4b6242d4bdfbbf385ffa2c2f0af"
+    },
+    {
+      "page": "chapters/ch28-virtual-threads/sources.html",
+      "id": "code-004",
+      "language": "c",
+      "kind": "block",
+      "sourceFile": "chapters/ch28-virtual-threads/native/carrierjourney.c",
+      "sha256": "397c33f8917b13606d80683485cb99fd4c92c4a933802e6025a1132e5099feca"
+    },
+    {
+      "page": "chapters/ch28-virtual-threads/README.html",
+      "id": "code-001",
+      "language": "bash",
+      "kind": "block",
+      "sha256": "c97a36c3c8a3ab0d773aa0a059fe7d13e35ede0eb8f4a73d5419d9952ae92092"
+    },
+    {
+      "page": "chapters/ch28-virtual-threads/README.html",
+      "id": "code-002",
+      "language": "bash",
+      "kind": "block",
+      "sha256": "0f8394393da5efc007cfe87aadbcef6aa5a8af34729a1ba5a5534d245e4381b4"
+    },
+    {
+      "page": "chapters/ch29-scoped-concurrency/chapter.html",
+      "id": "code-001",
+      "language": "java",
+      "kind": "block",
+      "sha256": "efe18788ea5a6664e9ed8795d0e3c27aab7dd71c1fe1583b3f9bf37bcdb5d6ba"
+    },
+    {
+      "page": "chapters/ch29-scoped-concurrency/sources.html",
+      "id": "code-001",
+      "language": "text",
+      "kind": "inline",
+      "sha256": "2bcf9d8a5425f6b07ece64957f96a1279b71636b667bfc47a1655a8596588aa7"
+    },
+    {
+      "page": "chapters/ch29-scoped-concurrency/sources.html",
+      "id": "code-002",
+      "language": "java",
+      "kind": "block",
+      "sourceFile": "chapters/ch29-scoped-concurrency/src/main/java/org/example/jvminternals/ch29/ContextJourney.java",
+      "sha256": "babc175ad434cb4f14698cb96f4270e05f384e5732a49b64683ea73aace4db94"
+    },
+    {
+      "page": "chapters/ch29-scoped-concurrency/sources.html",
+      "id": "code-003",
+      "language": "text",
+      "kind": "inline",
+      "sha256": "56c9d9b997b75b65e58715c0ff1426100f52e44e920b61e9fc83b2f65e7aa087"
+    },
+    {
+      "page": "chapters/ch29-scoped-concurrency/sources.html",
+      "id": "code-004",
+      "language": "java",
+      "kind": "block",
+      "sourceFile": "chapters/ch29-scoped-concurrency/preview/src/main/java/org/example/jvminternals/ch29/StructuredJourney.java",
+      "sha256": "2c73a747b14971ea8ea6afc707339bc1347c1664ff2369d26c43e84023af9237"
+    },
+    {
+      "page": "chapters/ch29-scoped-concurrency/README.html",
+      "id": "code-001",
+      "language": "bash",
+      "kind": "block",
+      "sha256": "1e101d5a1867f9d5d49ae1a83ebb974d029f51331d9948e512736e6b06b7ee7b"
+    }
+  ]
+}

@@ -1,0 +1,4 @@
+渲染章节：ch31-aot-cache
+本章截图与打印完成：ch31-aot-cache
+渲染章节：ch32-native-interop
+本章截图与打印完成：ch32-native-interop

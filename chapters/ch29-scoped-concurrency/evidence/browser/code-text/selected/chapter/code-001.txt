@@ -1,0 +1,3 @@
+try (var scope = StructuredTaskScope.open(
+        StructuredTaskScope.Joiner.<String>awaitAllSuccessfulOrThrow(),
+        config -> config.withName("request-scope").withTimeout(Duration.ofSeconds(5)))) {

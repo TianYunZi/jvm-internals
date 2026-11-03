@@ -1,0 +1,16 @@
+%% CH08-F02：文件坐标到运行时结构，不将重写索引当文件原索引。
+flowchart TB
+  F["类文件：名字、描述符、常量池编号<br/>字段、方法、Code"]
+  K["InstanceKlass<br/>字段信息流与查找辅助表"]
+  P["_constants：ConstantPool<br/>解析类型关联"]
+  M["_methods：Method"]
+  C["ConstMethod<br/>字节码、签名索引等"]
+  E["Method运行入口<br/>可选nmethod在代码缓存"]
+  R["ConstantPoolCache专用解析项<br/>字段：声明者、偏移、原池索引、标志<br/>方法和动态调用有各自信息"]
+  H["已解析对象引用句柄<br/>关联堆对象"]
+  F -->|解析与建立，不是逐字复制| K
+  K --> P --> R
+  K --> M --> C
+  M --> E
+  R --> H
+  R --- N["指令索引可被重写<br/>文件编号不等于通用缓存数组下标<br/>元数据、代码与堆分别管理；访问规则不变"]

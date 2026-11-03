@@ -1,0 +1,2 @@
+"$P09_JDK/bin/jar" --create --file chapters/ch33-observability/target/observation-agent.jar --manifest chapters/ch33-observability/target/agent.mf -C chapters/ch33-observability/target/classes .
+"$P09_JDK/bin/java" -Xmx64m -XX:+StartAttachListener -XX:NativeMemoryTracking=summary -javaagent:chapters/ch33-observability/target/observation-agent.jar '-Xlog:class+load=info,safepoint=info:file=chapters/ch33-observability/target/runtime.log:uptime,level,tags,tid:filecount=2,filesize=1m' -cp chapters/ch33-observability/target/classes org.example.jvminternals.ch33.ObservationJourney

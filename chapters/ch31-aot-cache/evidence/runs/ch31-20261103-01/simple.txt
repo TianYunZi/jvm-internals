@@ -1,0 +1,10 @@
+CH31 入口 mode=add uptimeMs=78
+CH31 就绪 uptimeMs=95
+CH31 请求流结束 result=1800390000
+CH31 结束 uptimeMs=97
+Temporary AOTConfiguration recorded: chapters/ch31-aot-cache/target/simple.aot.config
+Launching child process /opt/homebrew/Cellar/openjdk@25/25.0.5.0.2/libexec/openjdk.jdk/Contents/Home/bin/java to assemble AOT cache chapters/ch31-aot-cache/target/simple.aot using configuration chapters/ch31-aot-cache/target/simple.aot.config
+Picked up JAVA_TOOL_OPTIONS: -Djava.class.path=chapters/ch31-aot-cache/target/cache.jar -Xmx64m -Xlog:aot=info:file=chapters/ch31-aot-cache/evidence/runs/ch31-20261103-01/simple.log -XX:AOTCacheOutput=chapters/ch31-aot-cache/target/simple.aot -XX:AOTConfiguration=chapters/ch31-aot-cache/target/simple.aot.config -XX:AOTMode=create
+Reading AOTConfiguration chapters/ch31-aot-cache/target/simple.aot.config and writing AOTCache chapters/ch31-aot-cache/target/simple.aot
+AOTCache creation is complete: chapters/ch31-aot-cache/target/simple.aot 12058624 bytes
+Removed temporary AOT configuration file chapters/ch31-aot-cache/target/simple.aot.config

@@ -1,0 +1,35 @@
+package org.example.jvminternals.ch30;
+
+import java.lang.management.ManagementFactory;
+
+/** 以正常结束的短进程观察初始化、入口、非守护线程和关闭钩子。 */
+public final class StartupJourney {
+    static {
+        System.out.println("CH30 类初始化：当前进程建立静态状态");
+    }
+
+    private StartupJourney() {
+    }
+
+    /** 钩子只作结束标记，不承担资源正确性或跨钩子排序责任。 */
+    public static void main(String[] args) {
+        System.out.printf("CH30 入口：参数数=%d uptimeMs=%d%n", args.length,
+                ManagementFactory.getRuntimeMXBean().getUptime());
+        Runtime.getRuntime().addShutdownHook(new Thread(
+                () -> System.out.println("CH30 关闭钩子：本轮正常关闭"), "ch30-hook"));
+        Thread worker = new Thread(StartupJourney::finishWork, "ch30-worker");
+        worker.start();
+        System.out.println("CH30 main返回：非守护工作线程仍有自己的结束边界");
+    }
+
+    private static void finishWork() {
+        try {
+            // 有界等待只用于让生命周期阶段可见，不用它证明调度顺序或测量性能。
+            Thread.sleep(100);
+            System.out.println("CH30 工作线程结束");
+        } catch (InterruptedException interrupted) {
+            Thread.currentThread().interrupt();
+            System.err.println("CH30 工作线程被中断，保留中断标记后结束");
+        }
+    }
+}

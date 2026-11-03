@@ -1,0 +1,58 @@
+<!doctype html><html lang="zh-CN"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="shiki-version" content="4.6.0"><title>第30章源码阅读</title><link rel="stylesheet" href="../../assets/book.css"></head><body><main class="home" id="main"><h1>第30章源码阅读</h1><p>由正式源文件生成的静态阅读副本。<a href="chapter.html">返回正文</a> · <a href="README.html">运行说明</a></p><h2><code class="shiki-inline" data-shiki-version="4.6.0" data-code-id="code-001" data-code-language="text"><span>src/main/java/org/example/jvminternals/ch30/InstanceEntry.java</span></code></h2><pre data-shiki-version="4.6.0" class="shiki github-light" style="background-color:#fff;color:#24292e" tabindex="0"><code data-code-id="code-002" data-code-language="java" data-source-file="chapters/ch30-startup-sharing/src/main/java/org/example/jvminternals/ch30/InstanceEntry.java"><span class="line"><span style="color:#D73A49">package</span><span style="color:#24292E"> org.example.jvminternals.ch30;</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#6A737D">/** JDK 25正式实例入口；带参数候选优先于无参数候选。 */</span></span>
+<span class="line"><span style="color:#D73A49">public</span><span style="color:#D73A49"> final</span><span style="color:#D73A49"> class</span><span style="color:#6F42C1"> InstanceEntry</span><span style="color:#24292E"> {</span></span>
+<span class="line"><span style="color:#6F42C1">    InstanceEntry</span><span style="color:#24292E">() {</span></span>
+<span class="line"><span style="color:#24292E">        System.out.</span><span style="color:#6F42C1">println</span><span style="color:#24292E">(</span><span style="color:#032F62">"CH30 实例入口：先执行无参数构造器"</span><span style="color:#24292E">);</span></span>
+<span class="line"><span style="color:#24292E">    }</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#D73A49">    void</span><span style="color:#6F42C1"> main</span><span style="color:#24292E">(</span><span style="color:#D73A49">String</span><span style="color:#24292E">[] </span><span style="color:#E36209">args</span><span style="color:#24292E">) {</span></span>
+<span class="line"><span style="color:#24292E">        System.out.</span><span style="color:#6F42C1">printf</span><span style="color:#24292E">(</span><span style="color:#032F62">"CH30 选择带参数实例main：参数数=%d%n"</span><span style="color:#24292E">, args.length);</span></span>
+<span class="line"><span style="color:#24292E">    }</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#D73A49">    void</span><span style="color:#6F42C1"> main</span><span style="color:#24292E">() {</span></span>
+<span class="line"><span style="color:#24292E">        System.out.</span><span style="color:#6F42C1">println</span><span style="color:#24292E">(</span><span style="color:#032F62">"CH30 无参数候选main"</span><span style="color:#24292E">);</span></span>
+<span class="line"><span style="color:#24292E">    }</span></span>
+<span class="line"><span style="color:#24292E">}</span></span>
+<span class="line"></span></code></pre>
+<h2><code class="shiki-inline" data-shiki-version="4.6.0" data-code-id="code-003" data-code-language="text"><span>src/main/java/org/example/jvminternals/ch30/StartupJourney.java</span></code></h2><pre data-shiki-version="4.6.0" class="shiki github-light" style="background-color:#fff;color:#24292e" tabindex="0"><code data-code-id="code-004" data-code-language="java" data-source-file="chapters/ch30-startup-sharing/src/main/java/org/example/jvminternals/ch30/StartupJourney.java"><span class="line"><span style="color:#D73A49">package</span><span style="color:#24292E"> org.example.jvminternals.ch30;</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#D73A49">import</span><span style="color:#24292E"> java.lang.management.ManagementFactory;</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#6A737D">/** 以正常结束的短进程观察初始化、入口、非守护线程和关闭钩子。 */</span></span>
+<span class="line"><span style="color:#D73A49">public</span><span style="color:#D73A49"> final</span><span style="color:#D73A49"> class</span><span style="color:#6F42C1"> StartupJourney</span><span style="color:#24292E"> {</span></span>
+<span class="line"><span style="color:#D73A49">    static</span><span style="color:#24292E"> {</span></span>
+<span class="line"><span style="color:#24292E">        System.out.</span><span style="color:#6F42C1">println</span><span style="color:#24292E">(</span><span style="color:#032F62">"CH30 类初始化：当前进程建立静态状态"</span><span style="color:#24292E">);</span></span>
+<span class="line"><span style="color:#24292E">    }</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#D73A49">    private</span><span style="color:#6F42C1"> StartupJourney</span><span style="color:#24292E">() {</span></span>
+<span class="line"><span style="color:#24292E">    }</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#6A737D">    /** 钩子只作结束标记，不承担资源正确性或跨钩子排序责任。 */</span></span>
+<span class="line"><span style="color:#D73A49">    public</span><span style="color:#D73A49"> static</span><span style="color:#D73A49"> void</span><span style="color:#6F42C1"> main</span><span style="color:#24292E">(</span><span style="color:#D73A49">String</span><span style="color:#24292E">[] </span><span style="color:#E36209">args</span><span style="color:#24292E">) {</span></span>
+<span class="line"><span style="color:#24292E">        System.out.</span><span style="color:#6F42C1">printf</span><span style="color:#24292E">(</span><span style="color:#032F62">"CH30 入口：参数数=%d uptimeMs=%d%n"</span><span style="color:#24292E">, args.length,</span></span>
+<span class="line"><span style="color:#24292E">                ManagementFactory.</span><span style="color:#6F42C1">getRuntimeMXBean</span><span style="color:#24292E">().</span><span style="color:#6F42C1">getUptime</span><span style="color:#24292E">());</span></span>
+<span class="line"><span style="color:#24292E">        Runtime.</span><span style="color:#6F42C1">getRuntime</span><span style="color:#24292E">().</span><span style="color:#6F42C1">addShutdownHook</span><span style="color:#24292E">(</span><span style="color:#D73A49">new</span><span style="color:#6F42C1"> Thread</span><span style="color:#24292E">(</span></span>
+<span class="line"><span style="color:#24292E">                () </span><span style="color:#D73A49">-></span><span style="color:#24292E"> System.out.</span><span style="color:#6F42C1">println</span><span style="color:#24292E">(</span><span style="color:#032F62">"CH30 关闭钩子：本轮正常关闭"</span><span style="color:#24292E">), </span><span style="color:#032F62">"ch30-hook"</span><span style="color:#24292E">));</span></span>
+<span class="line"><span style="color:#24292E">        Thread worker </span><span style="color:#D73A49">=</span><span style="color:#D73A49"> new</span><span style="color:#6F42C1"> Thread</span><span style="color:#24292E">(StartupJourney</span><span style="color:#D73A49">::</span><span style="color:#24292E">finishWork, </span><span style="color:#032F62">"ch30-worker"</span><span style="color:#24292E">);</span></span>
+<span class="line"><span style="color:#24292E">        worker.</span><span style="color:#6F42C1">start</span><span style="color:#24292E">();</span></span>
+<span class="line"><span style="color:#24292E">        System.out.</span><span style="color:#6F42C1">println</span><span style="color:#24292E">(</span><span style="color:#032F62">"CH30 main返回：非守护工作线程仍有自己的结束边界"</span><span style="color:#24292E">);</span></span>
+<span class="line"><span style="color:#24292E">    }</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#D73A49">    private</span><span style="color:#D73A49"> static</span><span style="color:#D73A49"> void</span><span style="color:#6F42C1"> finishWork</span><span style="color:#24292E">() {</span></span>
+<span class="line"><span style="color:#D73A49">        try</span><span style="color:#24292E"> {</span></span>
+<span class="line"><span style="color:#6A737D">            // 有界等待只用于让生命周期阶段可见，不用它证明调度顺序或测量性能。</span></span>
+<span class="line"><span style="color:#24292E">            Thread.</span><span style="color:#6F42C1">sleep</span><span style="color:#24292E">(</span><span style="color:#005CC5">100</span><span style="color:#24292E">);</span></span>
+<span class="line"><span style="color:#24292E">            System.out.</span><span style="color:#6F42C1">println</span><span style="color:#24292E">(</span><span style="color:#032F62">"CH30 工作线程结束"</span><span style="color:#24292E">);</span></span>
+<span class="line"><span style="color:#24292E">        } </span><span style="color:#D73A49">catch</span><span style="color:#24292E"> (InterruptedException </span><span style="color:#E36209">interrupted</span><span style="color:#24292E">) {</span></span>
+<span class="line"><span style="color:#24292E">            Thread.</span><span style="color:#6F42C1">currentThread</span><span style="color:#24292E">().</span><span style="color:#6F42C1">interrupt</span><span style="color:#24292E">();</span></span>
+<span class="line"><span style="color:#24292E">            System.err.</span><span style="color:#6F42C1">println</span><span style="color:#24292E">(</span><span style="color:#032F62">"CH30 工作线程被中断，保留中断标记后结束"</span><span style="color:#24292E">);</span></span>
+<span class="line"><span style="color:#24292E">        }</span></span>
+<span class="line"><span style="color:#24292E">    }</span></span>
+<span class="line"><span style="color:#24292E">}</span></span>
+<span class="line"></span></code></pre>
+<h2><code class="shiki-inline" data-shiki-version="4.6.0" data-code-id="code-005" data-code-language="text"><span>compact/CompactEntry.java</span></code></h2><pre data-shiki-version="4.6.0" class="shiki github-light" style="background-color:#fff;color:#24292e" tabindex="0"><code data-code-id="code-006" data-code-language="java" data-source-file="chapters/ch30-startup-sharing/compact/CompactEntry.java"><span class="line"><span style="color:#6A737D">/** 紧凑源文件生成隐式声明类，入口仍由启动协议选择。 */</span></span>
+<span class="line"><span style="color:#D73A49">void</span><span style="color:#6F42C1"> main</span><span style="color:#24292E">() {</span></span>
+<span class="line"><span style="color:#24292E">    System.out.</span><span style="color:#6F42C1">println</span><span style="color:#24292E">(</span><span style="color:#032F62">"CH30 紧凑源文件：实例无参数入口"</span><span style="color:#24292E">);</span></span>
+<span class="line"><span style="color:#24292E">}</span></span>
+<span class="line"></span></code></pre></main></body></html>

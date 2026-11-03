@@ -1,0 +1,4 @@
+目标 pid=83541 mode=locks time=2026-11-03T13:37:58.074795Z
+等待超时，释放第一把锁 thread=left-to-right
+等待超时，释放第一把锁 thread=right-to-left
+有界案例完成
