@@ -1,0 +1,27 @@
+Warning: The following taps are not trusted:
+  sidneys/homebrew
+
+Homebrew is currently ignoring formulae, casks and commands
+from these taps because tap trust is required.
+Untap them with:
+  brew untap sidneys/homebrew
+Trust specific formulae, casks and commands with:
+  brew trust --formula <user>/<tap>/<formula>
+  brew trust --cask <user>/<tap>/<cask>
+  brew trust --command <user>/<tap>/<command>
+Whole-tap trust is broader and includes all current and future formulae,
+casks and commands from the listed taps. Trust whole taps with:
+  brew trust sidneys/homebrew
+For more information, see:
+  https://docs.brew.sh/Tap-Trust
+==> Fetching downloads for: jdk-mission-control
+✔︎ Cask jdk-mission-control (9.1.2,05)
+Warning: It seems there is already an App at '/Applications/JDK Mission Control.app'; overwriting.
+==> Installing Cask jdk-mission-control
+==> Removing App '/Applications/JDK Mission Control.app'
+==> Moving App 'JDK Mission Control.app' to '/Applications/JDK Mission Control.app'
+🍺  jdk-mission-control was successfully installed!
+==> Caveats
+==> jdk-mission-control
+jdk-mission-control requires Java 21. You can install it with:
+  brew install --cask temurin@21

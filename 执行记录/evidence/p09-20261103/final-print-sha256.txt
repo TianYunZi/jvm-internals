@@ -1,0 +1,6 @@
+b9cfab7e46efce5b839482abc98541c5fb0498c5e657f25d52d9a2b8bc65caff  chapters/ch33-observability/evidence/browser/print/README.pdf
+58dd4bdd10daf2647d09cf1628ce09ce84c400aa824d29ff50e1aad642598265  chapters/ch33-observability/evidence/browser/print/chapter.pdf
+2c0d1e058c873f934fefc3d1203a3d1f1a77573456681396b462a6062ae5e847  chapters/ch34-flight-recorder/evidence/browser/print/chapter.pdf
+1c5117fc3cbbc149e0fc14f0d89559e59bfa929f7b55cd822a031c552e780916  chapters/ch35-troubleshooting/evidence/browser/print/chapter.pdf
+5f29eee0b8407c8b9605e5805becc3b8a20bcabfe02cab0dbce75d2b6aea294f  chapters/ch36-performance-cases/evidence/browser/print/chapter.pdf
+14e6ae991d48c12f79f612d8af06bc03f0c9c8de0a09d386d369959ce580c94d  chapters/ch36-performance-cases/evidence/browser/print/sources.pdf

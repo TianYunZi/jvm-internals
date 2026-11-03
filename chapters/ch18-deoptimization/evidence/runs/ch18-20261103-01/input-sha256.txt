@@ -1,0 +1,5 @@
+966e6856078ada7daba5f23ff8a4afcad61ccdb4cae3e3a261ac3b3850b705f2  artifacts/ch18-20261103-01/compilation.xml
+558076fb8a61af7e26665b15cb60f73548549a5714aaef161e8257f657c39b08  artifacts/ch18-20261103-01/stdout.txt
+ad520c9d06f7b7e9b1851d59157a7929719bab413feb22ac74b93c49343be62b  chapters/ch18-deoptimization/evidence/runs/ch18-20261103-01/recovery.jfr
+22b5a35913439e83d67ed8187b254108a631fbe05bb67b7d34cc51bdd290603b  chapters/ch18-deoptimization/src/main/java/org/example/jvminternals/ch18/RecoveryJourney.java
+4c52bf876f4a861b22b96acd852a736cecccdbeac65dbaff20c9d57676f38450  chapters/ch18-deoptimization/target/classes/org/example/jvminternals/ch18/RecoveryJourney.class

@@ -1,0 +1,8 @@
+flowchart TB
+  A[先查询数组长度等信息] --> B[GetPrimitiveArrayCritical]
+  B --> C[短时访问数组指针]
+  C --> D[ReleasePrimitiveArrayCritical]
+  D --> E[恢复普通JNI工作和日志]
+  C -. 约束 .-> F[不阻塞、不回调、不任意调用JNI]
+  B -. 当前实现委派 .-> G[收集器pin协议]
+  D -. 当前实现委派 .-> H[收集器unpin协议]

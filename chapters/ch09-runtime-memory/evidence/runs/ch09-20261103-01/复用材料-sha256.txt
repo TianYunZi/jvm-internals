@@ -1,0 +1,10 @@
+d15989f15fa893ae3706e8773f672990696fde07dc567b14680c6aa102438db9  chapters/ch01-architecture/src/main/java/org/example/jvminternals/ch01/ProgramJourney.java
+4d125facb4c3cff366f93e82b7edd1697e54fbe3f6b325f6fb0b7a603c1feb06  chapters/ch01-architecture/src/main/resources/message.txt
+5fb1989956f40973812fa2332110f4e4ef850ad334e58721856e99f17463586f  chapters/ch01-architecture/target/classes/org/example/jvminternals/ch01/ProgramJourney.class
+aa52bbd963549e02c18dd9494b068734e02472f89a9fcd58c3d6fd576f451561  chapters/ch02-computer-basics/evidence/runs/ch02-20261103-02/input-sha256.txt
+d97ea47a512943b3633041d22b82cc9177c490f1ab931c9815a4dd630df62800  chapters/ch02-computer-basics/evidence/runs/ch02-20261103-02/heap.txt
+aac9b99cdb36b2a510b70bd97966e5789a147cddf5b1bf1e020641609c878dd6  chapters/ch02-computer-basics/evidence/runs/ch02-20261103-02/process.txt
+0522e01b1358949f96087e6a44dd0df798647a3f95ea2ab4643cc39ada407537  chapters/ch02-computer-basics/evidence/runs/ch02-20261103-02/native-memory.txt
+39aeebe7d35b7708a856e0de2b31f686c620fbebfa5ad7ca3299aec105dbe7d9  chapters/ch02-computer-basics/evidence/runs/ch02-20261103-02/vmmap.txt
+81a8ebe118a44c939b78078fbb959b33bf06b391091d6c44cb84420270aff507  chapters/ch02-computer-basics/evidence/runs/ch02-20261103-02/vmmap-summary.txt
+d15a41a4ab9556a4467b881a410a04bc4f5deaceb1f590d3bfee591dc8205d41  chapters/ch01-architecture/target/classes/org/example/jvminternals/ch01/ProgramJourney$Payload.class

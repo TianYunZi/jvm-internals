@@ -1,0 +1,2 @@
+3709a5ff42c3bb6045981f62f427753dc83570b579f658846eaeb63456d042e6  chapters/ch15-dynamic-invocation/src/main/java/org/example/jvminternals/ch15/DynamicJourney.java
+1e2b65f7ea02486306986639bd462e19a284fff43d85ef58562c152f71fce012  chapters/ch15-dynamic-invocation/evidence/runs/ch15-20261103-01/GeneratedLinkage.class

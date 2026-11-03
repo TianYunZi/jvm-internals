@@ -1,0 +1,2 @@
+f08b020cc4e419e98b7a791bc18dd194c43703b87c5fdfffbec649e623f4daf6  artifacts/p08-runs/ch31-20261103-01/assembly.log
+6fe042e880f98fd84b070fca49d0674c4e7c2624498a3d3e56e1e53d3fdf847a  artifacts/p08-runs/ch31-20261103-01/training.log

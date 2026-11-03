@@ -1,0 +1,19 @@
+Title:           第 10 章 对象布局、压缩指针与紧凑对象头
+Creator:         Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/156.0.0.0 Safari/537.36
+Producer:        Skia/PDF m156
+CreationDate:    Tue Nov  3 14:37:26 2026 CST
+ModDate:         Tue Nov  3 14:37:26 2026 CST
+Custom Metadata: no
+Metadata Stream: no
+Tagged:          yes
+UserProperties:  no
+Suspects:        no
+Form:            none
+JavaScript:      no
+Pages:           8
+Encrypted:       no
+Page size:       594.96 x 841.92 pts (A4)
+Page rot:        0
+File size:       1383531 bytes
+Optimized:       no
+PDF version:     1.4

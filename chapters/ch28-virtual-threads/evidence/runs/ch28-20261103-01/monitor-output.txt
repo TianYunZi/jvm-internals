@@ -1,0 +1,8 @@
+[0.206s][info][jfr,startup] Started recording 1. No limit specified, using maxsize=250MB as default.
+[0.206s][info][jfr,startup] 
+[0.206s][info][jfr,startup] Use jcmd 82103 JFR.dump name=1 to copy recording data to file.
+阻塞开始：VirtualThread[#31,virtual-blocker]/runnable@ForkJoinPool-1-worker-1
+探针执行：VirtualThread[#34,virtual-probe]/runnable@ForkJoinPool-1-worker-1
+观察窗口：pid=82103 mode=monitor
+阻塞结束：VirtualThread[#31,virtual-blocker]/runnable@ForkJoinPool-1-worker-1
+两个虚拟线程均已退出

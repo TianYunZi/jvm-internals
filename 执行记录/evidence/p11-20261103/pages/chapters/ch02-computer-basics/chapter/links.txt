@@ -1,0 +1,30 @@
+跳到正文	#chapter
+Java 虚拟机原理 / 第一篇	../../index.html
+为什么内存数字不同	#question
+2.1 处理器与缓存	#sec-2-1
+2.2 虚拟与物理内存	#sec-2-2
+2.3 进程、线程与调度	#sec-2-3
+2.4 调用约定与栈	#sec-2-4
+2.5 内存顺序与架构	#sec-2-5
+实际观察方法	#observe
+回顾与思考	#review
+来源	#sources
+ProgramJourney	../ch01-architecture/sources.html#ch01-e01
+S04	#s04
+S01	#s01
+S05	#s05
+S02	#s02
+S04	#s04
+S03	#s03
+S04	#s04
+运行说明	README.html
+虚拟内存概念文档	https://developer.apple.com/library/archive/documentation/Performance/Conceptual/ManagingMemory/Articles/AboutMemory.html
+Java 开发工具包（Java Development Kit，JDK）25 jcmd 文档	https://docs.oracle.com/en/java/javase/25/docs/specs/man/jcmd.html
+64 位过程调用标准 2025Q1	https://github.com/ARM-software/abi-aa/blob/2025Q1/aapcs64/aapcs64.rst
+ARM64 平台调用说明	https://developer.apple.com/documentation/xcode/writing-arm64-code-for-apple-platforms
+证据索引	evidence/索引.md
+O01 失败条件	evidence/runs/ch02-20261103-01/记录.md
+O02 完整采集	evidence/runs/ch02-20261103-02/记录.md
+上一章：第 1 章	../ch01-architecture/chapter.html
+返回全书目录	../../index.html
+下一章：第 3 章	../ch03-source-environment/chapter.html

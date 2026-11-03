@@ -1,0 +1,6 @@
+JAVA_HOME="$P09_JDK" mvn -pl chapters/ch34-flight-recorder -am compile
+"$P09_JDK/bin/java" -Xmx64m -cp chapters/ch34-flight-recorder/target/classes org.example.jvminternals.ch34.LatencyJourney chapters/ch34-flight-recorder/target/latency.jfr
+"$P09_JDK/bin/jfr" summary chapters/ch34-flight-recorder/target/latency.jfr
+"$P09_JDK/bin/jfr" metadata --events 'book.*,jdk.MethodTrace,jdk.MethodTiming,jdk.CPUTimeSample' chapters/ch34-flight-recorder/target/latency.jfr
+"$P09_JDK/bin/jfr" print --events 'book.*,jdk.JavaMonitorEnter,jdk.MethodTrace,jdk.MethodTiming' chapters/ch34-flight-recorder/target/latency.jfr
+"$P09_JDK/bin/jfr" view hot-methods chapters/ch34-flight-recorder/target/latency.jfr

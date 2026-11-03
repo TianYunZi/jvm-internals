@@ -1,0 +1,107 @@
+chapters/ch36-performance-cases/evidence/runs/ch36-20261103-01/allocate-2.txt:2:测量 count=40000 wallNs=21912167 p50Ns=167 p99Ns=1250 maxNs=4554917 threadAllocatedBytes=164800016
+chapters/ch36-performance-cases/evidence/runs/ch36-20261103-01/allocate-2.txt:3:real 0.09
+chapters/ch36-performance-cases/evidence/runs/ch36-20261103-01/allocate-2.txt:4:user 0.09
+chapters/ch36-performance-cases/evidence/runs/ch36-20261103-01/allocate-2.txt:5:sys 0.02
+chapters/ch36-performance-cases/evidence/runs/ch36-20261103-01/locked-2.txt:2:测量 count=64 wallNs=803515917 p50Ns=414973292 p99Ns=797174417 maxNs=797174417 completed=64
+chapters/ch36-performance-cases/evidence/runs/ch36-20261103-01/locked-2.txt:3:real 0.86
+chapters/ch36-performance-cases/evidence/runs/ch36-20261103-01/locked-2.txt:4:user 0.08
+chapters/ch36-performance-cases/evidence/runs/ch36-20261103-01/locked-2.txt:5:sys 0.02
+chapters/ch36-performance-cases/evidence/runs/ch36-20261103-01/locked-3.txt:2:测量 count=64 wallNs=798168167 p50Ns=411467958 p99Ns=788145709 maxNs=788145709 completed=64
+chapters/ch36-performance-cases/evidence/runs/ch36-20261103-01/locked-3.txt:3:real 0.93
+chapters/ch36-performance-cases/evidence/runs/ch36-20261103-01/locked-3.txt:4:user 0.12
+chapters/ch36-performance-cases/evidence/runs/ch36-20261103-01/locked-3.txt:5:sys 0.03
+chapters/ch36-performance-cases/evidence/runs/ch36-20261103-01/locked-1.txt:2:测量 count=64 wallNs=797531791 p50Ns=405742000 p99Ns=784159792 maxNs=784159792 completed=64
+chapters/ch36-performance-cases/evidence/runs/ch36-20261103-01/locked-1.txt:3:real 0.88
+chapters/ch36-performance-cases/evidence/runs/ch36-20261103-01/locked-1.txt:4:user 0.10
+chapters/ch36-performance-cases/evidence/runs/ch36-20261103-01/locked-1.txt:5:sys 0.02
+chapters/ch36-performance-cases/evidence/runs/ch36-20261103-01/allocate-3.txt:2:测量 count=40000 wallNs=16883292 p50Ns=167 p99Ns=625 maxNs=1072792 threadAllocatedBytes=164800016
+chapters/ch36-performance-cases/evidence/runs/ch36-20261103-01/allocate-3.txt:3:real 0.10
+chapters/ch36-performance-cases/evidence/runs/ch36-20261103-01/allocate-3.txt:4:user 0.09
+chapters/ch36-performance-cases/evidence/runs/ch36-20261103-01/allocate-3.txt:5:sys 0.02
+chapters/ch36-performance-cases/evidence/runs/ch36-20261103-01/allocate-1.txt:2:测量 count=40000 wallNs=17060042 p50Ns=167 p99Ns=917 maxNs=961000 threadAllocatedBytes=164800016
+chapters/ch36-performance-cases/evidence/runs/ch36-20261103-01/allocate-1.txt:3:real 0.11
+chapters/ch36-performance-cases/evidence/runs/ch36-20261103-01/allocate-1.txt:4:user 0.10
+chapters/ch36-performance-cases/evidence/runs/ch36-20261103-01/allocate-1.txt:5:sys 0.03
+chapters/ch36-performance-cases/evidence/runs/ch36-20261103-01/platform-budget-1.txt:2:测量 count=64 wallNs=197306709 p50Ns=106939000 p99Ns=193828333 maxNs=193828333 completed=64
+chapters/ch36-performance-cases/evidence/runs/ch36-20261103-01/platform-budget-1.txt:3:real 0.26
+chapters/ch36-performance-cases/evidence/runs/ch36-20261103-01/platform-budget-1.txt:4:user 0.07
+chapters/ch36-performance-cases/evidence/runs/ch36-20261103-01/platform-budget-1.txt:5:sys 0.02
+chapters/ch36-performance-cases/evidence/runs/ch36-20261103-01/platform-budget-2.txt:2:测量 count=64 wallNs=196296916 p50Ns=109437583 p99Ns=193053333 maxNs=193053333 completed=64
+chapters/ch36-performance-cases/evidence/runs/ch36-20261103-01/platform-budget-2.txt:3:real 0.25
+chapters/ch36-performance-cases/evidence/runs/ch36-20261103-01/platform-budget-2.txt:4:user 0.07
+chapters/ch36-performance-cases/evidence/runs/ch36-20261103-01/platform-budget-2.txt:5:sys 0.02
+chapters/ch36-performance-cases/evidence/runs/ch36-20261103-01/narrow-2.txt:2:测量 count=64 wallNs=19677250 p50Ns=13556375 p99Ns=18502458 maxNs=18502458 completed=64
+chapters/ch36-performance-cases/evidence/runs/ch36-20261103-01/narrow-2.txt:3:real 0.08
+chapters/ch36-performance-cases/evidence/runs/ch36-20261103-01/narrow-2.txt:4:user 0.07
+chapters/ch36-performance-cases/evidence/runs/ch36-20261103-01/narrow-2.txt:5:sys 0.01
+chapters/ch36-performance-cases/evidence/runs/ch36-20261103-01/platform-budget-3.txt:2:测量 count=64 wallNs=203081083 p50Ns=108230333 p99Ns=196854584 maxNs=196854584 completed=64
+chapters/ch36-performance-cases/evidence/runs/ch36-20261103-01/platform-budget-3.txt:3:real 0.26
+chapters/ch36-performance-cases/evidence/runs/ch36-20261103-01/platform-budget-3.txt:4:user 0.08
+chapters/ch36-performance-cases/evidence/runs/ch36-20261103-01/platform-budget-3.txt:5:sys 0.02
+chapters/ch36-performance-cases/evidence/runs/ch36-20261103-01/narrow-3.txt:2:测量 count=64 wallNs=21047334 p50Ns=14233459 p99Ns=19440125 maxNs=19440125 completed=64
+chapters/ch36-performance-cases/evidence/runs/ch36-20261103-01/narrow-3.txt:3:real 0.08
+chapters/ch36-performance-cases/evidence/runs/ch36-20261103-01/narrow-3.txt:4:user 0.08
+chapters/ch36-performance-cases/evidence/runs/ch36-20261103-01/narrow-3.txt:5:sys 0.02
+chapters/ch36-performance-cases/evidence/runs/ch36-20261103-01/reuse-3.txt:2:测量 count=40000 wallNs=4489167 p50Ns=42 p99Ns=84 maxNs=39583 threadAllocatedBytes=320984
+chapters/ch36-performance-cases/evidence/runs/ch36-20261103-01/reuse-3.txt:3:real 0.11
+chapters/ch36-performance-cases/evidence/runs/ch36-20261103-01/reuse-3.txt:4:user 0.08
+chapters/ch36-performance-cases/evidence/runs/ch36-20261103-01/reuse-3.txt:5:sys 0.02
+chapters/ch36-performance-cases/evidence/runs/ch36-20261103-01/narrow-1.txt:2:测量 count=64 wallNs=21340792 p50Ns=14306167 p99Ns=19831334 maxNs=19831334 completed=64
+chapters/ch36-performance-cases/evidence/runs/ch36-20261103-01/narrow-1.txt:3:real 0.09
+chapters/ch36-performance-cases/evidence/runs/ch36-20261103-01/narrow-1.txt:4:user 0.08
+chapters/ch36-performance-cases/evidence/runs/ch36-20261103-01/narrow-1.txt:5:sys 0.02
+chapters/ch36-performance-cases/evidence/runs/ch36-20261103-01/reuse-1.txt:2:测量 count=40000 wallNs=2865083 p50Ns=42 p99Ns=84 maxNs=28291 threadAllocatedBytes=320984
+chapters/ch36-performance-cases/evidence/runs/ch36-20261103-01/reuse-1.txt:3:real 0.11
+chapters/ch36-performance-cases/evidence/runs/ch36-20261103-01/reuse-1.txt:4:user 0.09
+chapters/ch36-performance-cases/evidence/runs/ch36-20261103-01/reuse-1.txt:5:sys 0.02
+chapters/ch36-performance-cases/evidence/runs/ch36-20261103-01/reuse-2.txt:2:测量 count=40000 wallNs=2558792 p50Ns=42 p99Ns=84 maxNs=5500 threadAllocatedBytes=320016
+chapters/ch36-performance-cases/evidence/runs/ch36-20261103-01/reuse-2.txt:3:real 0.08
+chapters/ch36-performance-cases/evidence/runs/ch36-20261103-01/reuse-2.txt:4:user 0.08
+chapters/ch36-performance-cases/evidence/runs/ch36-20261103-01/reuse-2.txt:5:sys 0.02
+chapters/ch36-performance-cases/evidence/runs/ch36-20261103-01/startup-on-2.txt:1:CH31 入口 mode=add uptimeMs=27
+chapters/ch36-performance-cases/evidence/runs/ch36-20261103-01/startup-on-2.txt:2:CH31 就绪 uptimeMs=34
+chapters/ch36-performance-cases/evidence/runs/ch36-20261103-01/startup-on-2.txt:5:real 0.04
+chapters/ch36-performance-cases/evidence/runs/ch36-20261103-01/startup-on-2.txt:6:user 0.04
+chapters/ch36-performance-cases/evidence/runs/ch36-20261103-01/startup-on-2.txt:7:sys 0.01
+chapters/ch36-performance-cases/evidence/runs/ch36-20261103-01/startup-off-3.txt:1:CH31 入口 mode=add uptimeMs=70
+chapters/ch36-performance-cases/evidence/runs/ch36-20261103-01/startup-off-3.txt:2:CH31 就绪 uptimeMs=87
+chapters/ch36-performance-cases/evidence/runs/ch36-20261103-01/startup-off-3.txt:5:real 0.10
+chapters/ch36-performance-cases/evidence/runs/ch36-20261103-01/startup-off-3.txt:6:user 0.10
+chapters/ch36-performance-cases/evidence/runs/ch36-20261103-01/startup-off-3.txt:7:sys 0.01
+chapters/ch36-performance-cases/evidence/runs/ch36-20261103-01/startup-off-2.txt:1:CH31 入口 mode=add uptimeMs=73
+chapters/ch36-performance-cases/evidence/runs/ch36-20261103-01/startup-off-2.txt:2:CH31 就绪 uptimeMs=90
+chapters/ch36-performance-cases/evidence/runs/ch36-20261103-01/startup-off-2.txt:5:real 0.10
+chapters/ch36-performance-cases/evidence/runs/ch36-20261103-01/startup-off-2.txt:6:user 0.10
+chapters/ch36-performance-cases/evidence/runs/ch36-20261103-01/startup-off-2.txt:7:sys 0.01
+chapters/ch36-performance-cases/evidence/runs/ch36-20261103-01/startup-off-1.txt:1:CH31 入口 mode=add uptimeMs=69
+chapters/ch36-performance-cases/evidence/runs/ch36-20261103-01/startup-off-1.txt:2:CH31 就绪 uptimeMs=85
+chapters/ch36-performance-cases/evidence/runs/ch36-20261103-01/startup-off-1.txt:5:real 0.10
+chapters/ch36-performance-cases/evidence/runs/ch36-20261103-01/startup-off-1.txt:6:user 0.10
+chapters/ch36-performance-cases/evidence/runs/ch36-20261103-01/startup-off-1.txt:7:sys 0.01
+chapters/ch36-performance-cases/evidence/runs/ch36-20261103-01/virtual-budget-3.txt:2:测量 count=64 wallNs=205469791 p50Ns=111859042 p99Ns=198866792 maxNs=198866792 completed=64
+chapters/ch36-performance-cases/evidence/runs/ch36-20261103-01/virtual-budget-3.txt:3:real 0.31
+chapters/ch36-performance-cases/evidence/runs/ch36-20261103-01/virtual-budget-3.txt:4:user 0.10
+chapters/ch36-performance-cases/evidence/runs/ch36-20261103-01/virtual-budget-3.txt:5:sys 0.02
+chapters/ch36-performance-cases/evidence/runs/ch36-20261103-01/startup-on-1.txt:1:CH31 入口 mode=add uptimeMs=25
+chapters/ch36-performance-cases/evidence/runs/ch36-20261103-01/startup-on-1.txt:2:CH31 就绪 uptimeMs=32
+chapters/ch36-performance-cases/evidence/runs/ch36-20261103-01/startup-on-1.txt:5:real 0.04
+chapters/ch36-performance-cases/evidence/runs/ch36-20261103-01/startup-on-1.txt:6:user 0.04
+chapters/ch36-performance-cases/evidence/runs/ch36-20261103-01/startup-on-1.txt:7:sys 0.01
+chapters/ch36-performance-cases/evidence/runs/ch36-20261103-01/startup-on-3.txt:1:CH31 入口 mode=add uptimeMs=26
+chapters/ch36-performance-cases/evidence/runs/ch36-20261103-01/startup-on-3.txt:2:CH31 就绪 uptimeMs=34
+chapters/ch36-performance-cases/evidence/runs/ch36-20261103-01/startup-on-3.txt:5:real 0.04
+chapters/ch36-performance-cases/evidence/runs/ch36-20261103-01/startup-on-3.txt:6:user 0.04
+chapters/ch36-performance-cases/evidence/runs/ch36-20261103-01/startup-on-3.txt:7:sys 0.01
+chapters/ch36-performance-cases/evidence/runs/ch36-20261103-01/virtual-budget-1.txt:2:测量 count=64 wallNs=203474959 p50Ns=108117542 p99Ns=196589250 maxNs=196589250 completed=64
+chapters/ch36-performance-cases/evidence/runs/ch36-20261103-01/virtual-budget-1.txt:3:real 0.28
+chapters/ch36-performance-cases/evidence/runs/ch36-20261103-01/virtual-budget-1.txt:4:user 0.09
+chapters/ch36-performance-cases/evidence/runs/ch36-20261103-01/virtual-budget-1.txt:5:sys 0.02
+chapters/ch36-performance-cases/evidence/runs/ch36-20261103-01/virtual-budget-2.txt:2:测量 count=64 wallNs=206324166 p50Ns=113729625 p99Ns=199980625 maxNs=199980625 completed=64
+chapters/ch36-performance-cases/evidence/runs/ch36-20261103-01/virtual-budget-2.txt:3:real 0.26
+chapters/ch36-performance-cases/evidence/runs/ch36-20261103-01/virtual-budget-2.txt:4:user 0.09
+chapters/ch36-performance-cases/evidence/runs/ch36-20261103-01/virtual-budget-2.txt:5:sys 0.02
+chapters/ch36-performance-cases/evidence/runs/ch36-20261103-01/train.txt:1:CH31 入口 mode=add uptimeMs=104
+chapters/ch36-performance-cases/evidence/runs/ch36-20261103-01/train.txt:2:CH31 就绪 uptimeMs=125
+chapters/ch36-performance-cases/evidence/runs/ch36-20261103-01/train.txt:11:real 0.59
+chapters/ch36-performance-cases/evidence/runs/ch36-20261103-01/train.txt:12:user 0.66
+chapters/ch36-performance-cases/evidence/runs/ch36-20261103-01/train.txt:13:sys 0.07

@@ -1,0 +1,55 @@
+第23章源码阅读
+
+由正式源文件生成的静态阅读副本。返回正文 · 运行说明
+
+src/main/java/org/example/jvminternals/ch23/ConcurrentCycleJourney.java
+package org.example.jvminternals.ch23;
+
+import java.lang.management.ManagementFactory;
+
+/** 并发收集器共用的有界持有关系；打印阶段窗口供日志关联。 */
+public final class ConcurrentCycleJourney {
+    private static final System.Logger LOG = System.getLogger(ConcurrentCycleJourney.class.getName());
+    private static final byte[][] longLived = new byte[384][];
+    private static final byte[][] recent = new byte[64][];
+
+    private ConcurrentCycleJourney() { }
+
+    /** 固定48批后退出；同一类文件供ZGC及两种Shenandoah模式复用。 */
+    public static void main(String[] args) throws InterruptedException {
+        for (int index = 0; index < longLived.length; index++) {
+            longLived[index] = new byte[32768];
+        }
+        mark("建立长期持有12 MiB", 12);
+        System.gc();
+        for (int phase = 0; phase < 2; phase++) {
+            for (int batch = 0; batch < 24; batch++) {
+                for (int item = 0; item < 128; item++) {
+                    byte[] payload = new byte[32768];
+                    payload[0] = (byte) batch;
+                    recent[item % recent.length] = payload;
+                }
+                Thread.sleep(20);
+            }
+            mark("分配阶段" + phase + "结束", 12 + (phase + 1) * 96);
+            if (phase == 0) {
+                for (int index = 0; index < longLived.length; index += 2) {
+                    longLived[index] = null;
+                }
+                mark("长期持有降至6 MiB，请求全代观察", 108);
+                System.gc();
+            }
+        }
+        LOG.log(System.Logger.Level.INFO, "阶段=正常退出，存活块长度={0}，最近标记={1}",
+                longLived[1].length, recent[63][0]);
+    }
+
+    /** 只在阶段边界采集时间和堆账本；已用堆包含尚未回收的对象。 */
+    private static void mark(String stage, int payloadMiB) {
+        Runtime runtime = Runtime.getRuntime();
+        LOG.log(System.Logger.Level.INFO,
+                "阶段={0}，uptimeMs={1}，累计载荷MiB={2}，已提交字节={3}，已用字节={4}，最大堆字节={5}",
+                stage, ManagementFactory.getRuntimeMXBean().getUptime(), payloadMiB,
+                runtime.totalMemory(), runtime.totalMemory() - runtime.freeMemory(), runtime.maxMemory());
+    }
+}

@@ -1,0 +1,4 @@
+静态高亮：ch30-startup-sharing
+静态高亮：ch31-aot-cache
+静态高亮：ch32-native-interop
+生成完成：32个代码展示节点；离线页面不加载Shiki脚本。

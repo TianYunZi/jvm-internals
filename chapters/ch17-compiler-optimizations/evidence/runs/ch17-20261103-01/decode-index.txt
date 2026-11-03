@@ -1,0 +1,6 @@
+transform: original_base=0x11d564940; main_end=0x11d564c60; captured_bytes=800; source=transform-11d564940.s; decoded=transform-11d564940-decoded.txt
+transform: original_base=0x11d564d80; main_end=0x11d564f98; captured_bytes=536; source=transform-11d564d80.s; decoded=transform-11d564d80-decoded.txt
+folded: original_base=0x11d565280; main_end=0x11d5652e0; captured_bytes=96; source=folded-11d565280.s; decoded=folded-11d565280-decoded.txt
+local: original_base=0x11d565400; main_end=0x11d565460; captured_bytes=96; source=local-11d565400.s; decoded=local-11d565400-decoded.txt
+escaped: original_base=0x11d565580; main_end=0x11d565748; captured_bytes=456; source=escaped-11d565580.s; decoded=escaped-11d565580-decoded.txt
+locked: original_base=0x11d565880; main_end=0x11d5658e0; captured_bytes=96; source=locked-11d565880.s; decoded=locked-11d565880-decoded.txt

@@ -1,0 +1,12 @@
+{
+  "name": "jvm-internals-code-highlighting",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "generate:p05": "node render.mjs"
+  },
+  "dependencies": {
+    "marked": "17.0.5",
+    "shiki": "4.6.0"
+  }
+}

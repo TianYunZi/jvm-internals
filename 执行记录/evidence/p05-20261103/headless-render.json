@@ -1,0 +1,95 @@
+{
+  "time": "2026-11-03T10:00:35.700Z",
+  "version": "Chrome/156.0.8078.80",
+  "profileMode": "独立临时配置；仅本地书稿",
+  "chapters": [
+    {
+      "folder": "ch13-interpreter",
+      "figureIds": [
+        "fig-13-1",
+        "fig-13-2",
+        "fig-13-3",
+        "fig-13-4"
+      ],
+      "paper": "A4",
+      "viewports": [
+        "1440×1000",
+        "768×1000",
+        "390×844"
+      ]
+    },
+    {
+      "folder": "ch14-dispatch",
+      "figureIds": [
+        "fig-14-1",
+        "fig-14-2",
+        "fig-14-3"
+      ],
+      "paper": "A4",
+      "viewports": [
+        "1440×1000",
+        "768×1000",
+        "390×844"
+      ]
+    },
+    {
+      "folder": "ch15-dynamic-invocation",
+      "figureIds": [
+        "fig-15-2",
+        "fig-15-1",
+        "fig-15-3",
+        "fig-15-4"
+      ],
+      "paper": "A4",
+      "viewports": [
+        "1440×1000",
+        "768×1000",
+        "390×844"
+      ]
+    },
+    {
+      "folder": "ch16-tiered-compilation",
+      "figureIds": [
+        "fig-16-2",
+        "fig-16-1",
+        "fig-16-3"
+      ],
+      "paper": "A4",
+      "viewports": [
+        "1440×1000",
+        "768×1000",
+        "390×844"
+      ]
+    },
+    {
+      "folder": "ch17-compiler-optimizations",
+      "figureIds": [
+        "fig-17-1",
+        "fig-17-2",
+        "fig-17-3",
+        "fig-17-4"
+      ],
+      "paper": "A4",
+      "viewports": [
+        "1440×1000",
+        "768×1000",
+        "390×844"
+      ]
+    },
+    {
+      "folder": "ch18-deoptimization",
+      "figureIds": [
+        "fig-18-1",
+        "fig-18-2",
+        "fig-18-4",
+        "fig-18-3"
+      ],
+      "paper": "A4",
+      "viewports": [
+        "1440×1000",
+        "768×1000",
+        "390×844"
+      ]
+    }
+  ]
+}

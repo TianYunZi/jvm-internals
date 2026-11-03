@@ -1,0 +1,329 @@
+{
+  "version": "4.6.0",
+  "theme": "github-light",
+  "languages": [
+    "java",
+    "bash",
+    "xml",
+    "json",
+    "cpp",
+    "asm"
+  ],
+  "plainTextLanguage": "text",
+  "records": [
+    {
+      "page": "chapters/ch13-interpreter/chapter.html",
+      "id": "code-001",
+      "language": "text",
+      "kind": "block",
+      "sha256": "149b22aab27b78818fc028e0c168d978cd41411bd78a3b957231a106e99999bb"
+    },
+    {
+      "page": "chapters/ch13-interpreter/chapter.html",
+      "id": "code-002",
+      "language": "text",
+      "kind": "inline",
+      "sha256": "dbe9547fdb4bd3a1fbb86f6f6b3ddddf13990c9c83a5547b2cc63b2078362459"
+    },
+    {
+      "page": "chapters/ch13-interpreter/chapter.html",
+      "id": "code-003",
+      "language": "text",
+      "kind": "inline",
+      "sha256": "b46dd2689f8c886178ef37c629bf7d2d8f2f9c0cb1a5c4f8603edce5f7ed5629"
+    },
+    {
+      "page": "chapters/ch13-interpreter/chapter.html",
+      "id": "code-004",
+      "language": "cpp",
+      "kind": "inline",
+      "sha256": "c6f117be62b8e15c1b5c788bcc97ec257900494a80129126fc804e9c3afe6da1"
+    },
+    {
+      "page": "chapters/ch13-interpreter/chapter.html",
+      "id": "code-005",
+      "language": "cpp",
+      "kind": "inline",
+      "sha256": "1ccccb651b8c16d39d5fcd7ed74b19442e2cce6244751495ada018f6340a1014"
+    },
+    {
+      "page": "chapters/ch13-interpreter/chapter.html",
+      "id": "code-006",
+      "language": "cpp",
+      "kind": "inline",
+      "sha256": "5ca6cc3aa7dbc141f553c7a6e6db866eef58caa0ed701829cc82292c9e9ba551"
+    },
+    {
+      "page": "chapters/ch13-interpreter/sources.html",
+      "id": "code-001",
+      "language": "text",
+      "kind": "inline",
+      "sha256": "ec446b65d8f7288a1d39d71af766f04226363864f52ab7ad65ab6790053998fd"
+    },
+    {
+      "page": "chapters/ch13-interpreter/sources.html",
+      "id": "code-002",
+      "language": "java",
+      "kind": "block",
+      "sourceFile": "chapters/ch13-interpreter/src/main/java/org/example/jvminternals/ch13/ExceptionJourney.java",
+      "sha256": "ef32b672bd4a2af6639f22ec114d4fab90f305a9fbd2175fe6b46e5fd44000dd"
+    },
+    {
+      "page": "chapters/ch13-interpreter/README.html",
+      "id": "code-001",
+      "language": "bash",
+      "kind": "block",
+      "sha256": "869cf1dd4f6797b63bb20a33394220b6029fa7c7e49f3fe7ae6088c24b6c44d8"
+    },
+    {
+      "page": "chapters/ch13-interpreter/README.html",
+      "id": "code-002",
+      "language": "bash",
+      "kind": "block",
+      "sha256": "c25732d0cb8bf397888ed8b60d0b28e07d38949dbeaeab5751708e99152c84a5"
+    },
+    {
+      "page": "chapters/ch14-dispatch/sources.html",
+      "id": "code-001",
+      "language": "text",
+      "kind": "inline",
+      "sha256": "59600d4ea788f347725d6eaa3dbf2e23ea516c1cf03b4dd40d1f56ffd20d7754"
+    },
+    {
+      "page": "chapters/ch14-dispatch/sources.html",
+      "id": "code-002",
+      "language": "java",
+      "kind": "block",
+      "sourceFile": "chapters/ch14-dispatch/src/main/java/org/example/jvminternals/ch14/DispatchJourney.java",
+      "sha256": "e0801458eeaa8feb40b2a5ce2aab78d56a88f4b39f43adce0ba480e44cb83732"
+    },
+    {
+      "page": "chapters/ch14-dispatch/README.html",
+      "id": "code-001",
+      "language": "bash",
+      "kind": "block",
+      "sha256": "35f5be4dadfe4f123ba1b24e732b990fbdb3ef99c80af22d539dc4fe822cd9ad"
+    },
+    {
+      "page": "chapters/ch14-dispatch/README.html",
+      "id": "code-002",
+      "language": "bash",
+      "kind": "block",
+      "sha256": "342a21c2c58ccfefbf544f7b6455ba5107856abfe009bcb04d896811a460a7df"
+    },
+    {
+      "page": "chapters/ch15-dynamic-invocation/chapter.html",
+      "id": "code-001",
+      "language": "java",
+      "kind": "inline",
+      "sha256": "e566760bbc901edb7cadd6875f35f97632a9ede3ab2545932f8b17dc1ba7b26a"
+    },
+    {
+      "page": "chapters/ch15-dynamic-invocation/chapter.html",
+      "id": "code-002",
+      "language": "java",
+      "kind": "inline",
+      "sha256": "da644831b4b59e4c1148f83aad3648c49d09874bfc9ee9ff428d1fbfef4d9419"
+    },
+    {
+      "page": "chapters/ch15-dynamic-invocation/chapter.html",
+      "id": "code-003",
+      "language": "java",
+      "kind": "inline",
+      "sha256": "a6634bb50bfeca1b294ba80a292736afc550a3859b3793b8cc0663e7f18ac0c2"
+    },
+    {
+      "page": "chapters/ch15-dynamic-invocation/chapter.html",
+      "id": "code-004",
+      "language": "java",
+      "kind": "inline",
+      "sha256": "71e643ceb323f40358620c172fcf33fd4467b00e84580bbb8769fe822efc7a32"
+    },
+    {
+      "page": "chapters/ch15-dynamic-invocation/sources.html",
+      "id": "code-001",
+      "language": "text",
+      "kind": "inline",
+      "sha256": "4ed25f1d2f360b28dc88b415d4b97114547893b91b189db12362b801b6995ddf"
+    },
+    {
+      "page": "chapters/ch15-dynamic-invocation/sources.html",
+      "id": "code-002",
+      "language": "java",
+      "kind": "block",
+      "sourceFile": "chapters/ch15-dynamic-invocation/src/main/java/org/example/jvminternals/ch15/DynamicJourney.java",
+      "sha256": "3709a5ff42c3bb6045981f62f427753dc83570b579f658846eaeb63456d042e6"
+    },
+    {
+      "page": "chapters/ch15-dynamic-invocation/README.html",
+      "id": "code-001",
+      "language": "bash",
+      "kind": "block",
+      "sha256": "4710d9fd01dee1588f99a1b1814c624d064b92d21ff7cbc96ff06a4c1f268a3e"
+    },
+    {
+      "page": "chapters/ch15-dynamic-invocation/README.html",
+      "id": "code-002",
+      "language": "bash",
+      "kind": "block",
+      "sha256": "8ed5b11e6899eeb7af50c1cdb95c4272bcec891cced9f89d9850b40e5304cf5d"
+    },
+    {
+      "page": "chapters/ch16-tiered-compilation/sources.html",
+      "id": "code-001",
+      "language": "text",
+      "kind": "inline",
+      "sha256": "610ba68e5d55b6cc4be8b0f0f794e4ccff97c106e1f6f0087273cb853889771e"
+    },
+    {
+      "page": "chapters/ch16-tiered-compilation/sources.html",
+      "id": "code-002",
+      "language": "java",
+      "kind": "block",
+      "sourceFile": "chapters/ch16-tiered-compilation/src/main/java/org/example/jvminternals/ch16/TieredJourney.java",
+      "sha256": "fef9e9e3620110d0ff5ca8364051792d961132992de67c4569931b3f759cbcf2"
+    },
+    {
+      "page": "chapters/ch16-tiered-compilation/README.html",
+      "id": "code-001",
+      "language": "bash",
+      "kind": "block",
+      "sha256": "5deb69261cbd37eb7205324d4df6aca8dbf4a12428325955c6d8813047ceac2b"
+    },
+    {
+      "page": "chapters/ch16-tiered-compilation/README.html",
+      "id": "code-002",
+      "language": "bash",
+      "kind": "block",
+      "sha256": "db354a621e9ab445952080174d4556af6217b719ba7d0813617863f4d65edb2f"
+    },
+    {
+      "page": "chapters/ch17-compiler-optimizations/chapter.html",
+      "id": "code-001",
+      "language": "text",
+      "kind": "block",
+      "sha256": "13feb32954be7f090ee515a737d4c16797e209991abb518e22949b380c1db9e5"
+    },
+    {
+      "page": "chapters/ch17-compiler-optimizations/chapter.html",
+      "id": "code-002",
+      "language": "cpp",
+      "kind": "inline",
+      "sha256": "9e0d125ccccb05b2fc7f07e8cd94069140b85a85b8ede099e56d7591f23c9a4e"
+    },
+    {
+      "page": "chapters/ch17-compiler-optimizations/chapter.html",
+      "id": "code-003",
+      "language": "text",
+      "kind": "inline",
+      "sha256": "50b71be8f6ceb4fb85e231ea0184b24f9815cf0f6c0438e6afe3db89e95175a2"
+    },
+    {
+      "page": "chapters/ch17-compiler-optimizations/chapter.html",
+      "id": "code-004",
+      "language": "asm",
+      "kind": "inline",
+      "sha256": "019372ef7a743d781711939768a05474b60e0b0b92f3a347fdcb02a1920ca7cd"
+    },
+    {
+      "page": "chapters/ch17-compiler-optimizations/chapter.html",
+      "id": "code-005",
+      "language": "asm",
+      "kind": "inline",
+      "sha256": "4d22ef9fb25d3c7d5c8685d88ac86e40efd030e5567e63ca538348986fe7dc2a"
+    },
+    {
+      "page": "chapters/ch17-compiler-optimizations/chapter.html",
+      "id": "code-006",
+      "language": "text",
+      "kind": "inline",
+      "sha256": "ba3588932b7c6a1f3843009d1086d11a2e606fb5d768b1b4dcff7cc4ecbbd80c"
+    },
+    {
+      "page": "chapters/ch17-compiler-optimizations/chapter.html",
+      "id": "code-007",
+      "language": "asm",
+      "kind": "inline",
+      "sha256": "311cf41c42884eafd0f546e141702dc257ab6d9f6d258fcc7b6b4355db372b8c"
+    },
+    {
+      "page": "chapters/ch17-compiler-optimizations/chapter.html",
+      "id": "code-008",
+      "language": "text",
+      "kind": "inline",
+      "sha256": "61a948d3fcc498bd5388572490c3c0338c728988b08a0c6a5c3f5fc8ef60d235"
+    },
+    {
+      "page": "chapters/ch17-compiler-optimizations/chapter.html",
+      "id": "code-009",
+      "language": "asm",
+      "kind": "inline",
+      "sha256": "5a1b7fa793a78c73d1bfccf0ddea6d6e51f56e14dcf2f0c89b639ad070e3e7d7"
+    },
+    {
+      "page": "chapters/ch17-compiler-optimizations/sources.html",
+      "id": "code-001",
+      "language": "text",
+      "kind": "inline",
+      "sha256": "d3f590d3e578f293e32e56c51689fcf9e9475e0b33a92306357f046309dd7c06"
+    },
+    {
+      "page": "chapters/ch17-compiler-optimizations/sources.html",
+      "id": "code-002",
+      "language": "java",
+      "kind": "block",
+      "sourceFile": "chapters/ch17-compiler-optimizations/src/main/java/org/example/jvminternals/ch17/OptimizationJourney.java",
+      "sha256": "fa880140df1097ebef6d18742eca2232c798f97c52d0f2e14a0eac25eb6eea44"
+    },
+    {
+      "page": "chapters/ch17-compiler-optimizations/README.html",
+      "id": "code-001",
+      "language": "bash",
+      "kind": "block",
+      "sha256": "4e9841e8c9889598af26e2197430d380d24b8a0d895bb44cdb246ca001b541d7"
+    },
+    {
+      "page": "chapters/ch17-compiler-optimizations/README.html",
+      "id": "code-002",
+      "language": "bash",
+      "kind": "block",
+      "sha256": "e25736157c33fdd7a4774bb15a63b8e27a7b5ae4e7d8bbcd43b15499bd4cd924"
+    },
+    {
+      "page": "chapters/ch17-compiler-optimizations/README.html",
+      "id": "code-003",
+      "language": "bash",
+      "kind": "block",
+      "sha256": "85c1cea75cf7b18f7255d97e9b1a19c208f1d5094acadc41a6da8b1068c4aa88"
+    },
+    {
+      "page": "chapters/ch18-deoptimization/sources.html",
+      "id": "code-001",
+      "language": "text",
+      "kind": "inline",
+      "sha256": "02953ef8bbd16af9d4da4ddaf8221e5699136d92a3c5e0071dd413b08eaea630"
+    },
+    {
+      "page": "chapters/ch18-deoptimization/sources.html",
+      "id": "code-002",
+      "language": "java",
+      "kind": "block",
+      "sourceFile": "chapters/ch18-deoptimization/src/main/java/org/example/jvminternals/ch18/RecoveryJourney.java",
+      "sha256": "22b5a35913439e83d67ed8187b254108a631fbe05bb67b7d34cc51bdd290603b"
+    },
+    {
+      "page": "chapters/ch18-deoptimization/README.html",
+      "id": "code-001",
+      "language": "bash",
+      "kind": "block",
+      "sha256": "24ebec98c15306af0a71d368af01a5e1ecdaec83f5beeab5bfa3855dd3a2cd69"
+    },
+    {
+      "page": "chapters/ch18-deoptimization/README.html",
+      "id": "code-002",
+      "language": "bash",
+      "kind": "block",
+      "sha256": "3ec6131e81eb060d1dd6f9f5947b8698bd3ec39269469949f7a478a239a41fb3"
+    }
+  ]
+}

@@ -1,0 +1,37 @@
+<task compile_id='563' method='org.example.jvminternals.ch11.AllocationJourney localSum (I)I' bytes='22' count='6784' iicount='6784' blocking='1' stamp='0.786'>
+<type id='1210' name='int'/>
+<klass id='1386' name='org.example.jvminternals.ch11.AllocationJourney' flags='17'/>
+<method id='1387' holder='1386' name='localSum' return='1210' arguments='1210' flags='10' bytes='22' iicount='6784'/>
+<parse method='1387' uses='6784.000000' stamp='0.786'>
+<dependency type='evol_method' x0='1387'/>
+<bc code='183' bci='8'/>
+<type id='1212' name='void'/>
+<klass id='1389' name='org.example.jvminternals.ch11.AllocationJourney$Pair' flags='26'/>
+<method id='1390' holder='1389' name='&lt;init&gt;' return='1212' arguments='1210 1210' flags='2' bytes='15' compile_id='562' compiler='c2' iicount='6784'/>
+<call method='1390' count='5120' prof_factor='1.000000' inline='1'/>
+<inline_success reason='inline (hot)'/>
+<parse method='1390' uses='6784.000000' stamp='0.786'>
+<dependency type='evol_method' x0='1390'/>
+<bc code='183' bci='1'/>
+<klass id='1217' name='java.lang.Object' flags='1'/>
+<method id='1391' holder='1217' name='&lt;init&gt;' return='1212' flags='1' bytes='1' compile_id='38' compiler='c2' iicount='6784'/>
+<call method='1391' count='5121' prof_factor='1.000000' inline='1'/>
+<inline_success reason='inline (hot)'/>
+<parse method='1391' uses='6785.000000' stamp='0.786'>
+<dependency type='evol_method' x0='1391'/>
+<parse_done nodes='87' live='86' memory='14264' stamp='0.786'/>
+</parse>
+<parse_done nodes='107' live='105' memory='17320' stamp='0.786'/>
+</parse>
+<parse_done nodes='112' live='109' memory='18312' stamp='0.786'/>
+</parse>
+<eliminate_allocation type='1389'>
+<jvms bci='0' method='1387'/>
+</eliminate_allocation>
+<regalloc attempts='0' success='1'/>
+<dependency type='evol_method' x0='1387'/>
+<dependency type='evol_method' x0='1390'/>
+<dependency type='evol_method' x0='1391'/>
+<code_cache total_blobs='991' nmethods='563' adapters='373' free_code_cache='49152832'/>
+<task_done success='1' nmsize='112' count='6784' inlined_bytes='16' stamp='0.786'/>
+</task>

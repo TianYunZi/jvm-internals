@@ -1,0 +1,114 @@
+diff -r artifacts/p05-code-copy/input/chapters/ch13-interpreter/README/code-001.txt artifacts/p05-code-copy/selected/chapters/ch13-interpreter/README/code-001.txt
+5c5
+< javap -c -v -p -classpath chapters/ch13-interpreter/target/classes org.example.jvminternals.ch13.ExceptionJourney
+---
+> javap -c -v -p -classpath chapters/ch13-interpreter/target/classes org.example.jvminternals.ch13.ExceptionJourney
+\ No newline at end of file
+diff -r artifacts/p05-code-copy/input/chapters/ch13-interpreter/README/code-002.txt artifacts/p05-code-copy/selected/chapters/ch13-interpreter/README/code-002.txt
+3c3
+< done
+---
+> done
+\ No newline at end of file
+diff -r artifacts/p05-code-copy/input/chapters/ch13-interpreter/sources/code-002.txt artifacts/p05-code-copy/selected/chapters/ch13-interpreter/sources/code-002.txt
+43c43
+< }
+---
+> }
+\ No newline at end of file
+diff -r artifacts/p05-code-copy/input/chapters/ch14-dispatch/README/code-001.txt artifacts/p05-code-copy/selected/chapters/ch14-dispatch/README/code-001.txt
+5c5
+< javap -c -v -p -classpath chapters/ch14-dispatch/target/classes org.example.jvminternals.ch14.DispatchJourney 'org.example.jvminternals.ch14.DispatchJourney$First' 
+---
+> javap -c -v -p -classpath chapters/ch14-dispatch/target/classes org.example.jvminternals.ch14.DispatchJourney 'org.example.jvminternals.ch14.DispatchJourney$First' 
+\ No newline at end of file
+diff -r artifacts/p05-code-copy/input/chapters/ch14-dispatch/README/code-002.txt artifacts/p05-code-copy/selected/chapters/ch14-dispatch/README/code-002.txt
+3c3
+< done
+---
+> done
+\ No newline at end of file
+diff -r artifacts/p05-code-copy/input/chapters/ch14-dispatch/sources/code-002.txt artifacts/p05-code-copy/selected/chapters/ch14-dispatch/sources/code-002.txt
+76c76
+< }
+---
+> }
+\ No newline at end of file
+diff -r artifacts/p05-code-copy/input/chapters/ch15-dynamic-invocation/README/code-001.txt artifacts/p05-code-copy/selected/chapters/ch15-dynamic-invocation/README/code-001.txt
+6c6
+< javap -c -v -p -classpath chapters/ch15-dynamic-invocation/target/classes org.example.jvminternals.ch15.DynamicJourney
+---
+> javap -c -v -p -classpath chapters/ch15-dynamic-invocation/target/classes org.example.jvminternals.ch15.DynamicJourney
+\ No newline at end of file
+diff -r artifacts/p05-code-copy/input/chapters/ch15-dynamic-invocation/README/code-002.txt artifacts/p05-code-copy/selected/chapters/ch15-dynamic-invocation/README/code-002.txt
+3c3
+< done
+---
+> done
+\ No newline at end of file
+diff -r artifacts/p05-code-copy/input/chapters/ch15-dynamic-invocation/sources/code-002.txt artifacts/p05-code-copy/selected/chapters/ch15-dynamic-invocation/sources/code-002.txt
+106c106
+< }
+---
+> }
+\ No newline at end of file
+diff -r artifacts/p05-code-copy/input/chapters/ch16-tiered-compilation/README/code-001.txt artifacts/p05-code-copy/selected/chapters/ch16-tiered-compilation/README/code-001.txt
+12c12
+< wait "$p05_ch16_pid"
+---
+> wait "$p05_ch16_pid"
+\ No newline at end of file
+diff -r artifacts/p05-code-copy/input/chapters/ch16-tiered-compilation/README/code-002.txt artifacts/p05-code-copy/selected/chapters/ch16-tiered-compilation/README/code-002.txt
+3c3
+< done
+---
+> done
+\ No newline at end of file
+diff -r artifacts/p05-code-copy/input/chapters/ch16-tiered-compilation/sources/code-002.txt artifacts/p05-code-copy/selected/chapters/ch16-tiered-compilation/sources/code-002.txt
+44c44
+< }
+---
+> }
+\ No newline at end of file
+diff -r artifacts/p05-code-copy/input/chapters/ch17-compiler-optimizations/README/code-001.txt artifacts/p05-code-copy/selected/chapters/ch17-compiler-optimizations/README/code-001.txt
+5c5
+< javap -c -p -classpath chapters/ch17-compiler-optimizations/target/classes org.example.jvminternals.ch17.OptimizationJourney
+---
+> javap -c -p -classpath chapters/ch17-compiler-optimizations/target/classes org.example.jvminternals.ch17.OptimizationJourney
+\ No newline at end of file
+diff -r artifacts/p05-code-copy/input/chapters/ch17-compiler-optimizations/README/code-002.txt artifacts/p05-code-copy/selected/chapters/ch17-compiler-optimizations/README/code-002.txt
+1c1
+< python3 chapters/ch17-compiler-optimizations/evidence/runs/ch17-20261103-01/decode-capture.py
+---
+> python3 chapters/ch17-compiler-optimizations/evidence/runs/ch17-20261103-01/decode-capture.py
+\ No newline at end of file
+diff -r artifacts/p05-code-copy/input/chapters/ch17-compiler-optimizations/README/code-003.txt artifacts/p05-code-copy/selected/chapters/ch17-compiler-optimizations/README/code-003.txt
+3c3
+< done
+---
+> done
+\ No newline at end of file
+diff -r artifacts/p05-code-copy/input/chapters/ch17-compiler-optimizations/sources/code-002.txt artifacts/p05-code-copy/selected/chapters/ch17-compiler-optimizations/sources/code-002.txt
+71c71
+< }
+---
+> }
+\ No newline at end of file
+diff -r artifacts/p05-code-copy/input/chapters/ch18-deoptimization/README/code-001.txt artifacts/p05-code-copy/selected/chapters/ch18-deoptimization/README/code-001.txt
+6c6
+< javap -c -v -p -classpath chapters/ch18-deoptimization/target/classes org.example.jvminternals.ch18.RecoveryJourney
+---
+> javap -c -v -p -classpath chapters/ch18-deoptimization/target/classes org.example.jvminternals.ch18.RecoveryJourney
+\ No newline at end of file
+diff -r artifacts/p05-code-copy/input/chapters/ch18-deoptimization/README/code-002.txt artifacts/p05-code-copy/selected/chapters/ch18-deoptimization/README/code-002.txt
+3c3
+< done
+---
+> done
+\ No newline at end of file
+diff -r artifacts/p05-code-copy/input/chapters/ch18-deoptimization/sources/code-002.txt artifacts/p05-code-copy/selected/chapters/ch18-deoptimization/sources/code-002.txt
+71c71
+< }
+---
+> }
+\ No newline at end of file

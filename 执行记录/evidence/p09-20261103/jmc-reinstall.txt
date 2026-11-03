@@ -1,0 +1,11 @@
+==> Fetching downloads for: jdk-mission-control
+✔︎ Cask jdk-mission-control (9.1.2,05)
+==> Uninstalling Cask jdk-mission-control
+==> Purging files for version 9.1.2,05 of Cask jdk-mission-control
+==> Installing Cask jdk-mission-control
+==> Moving App 'JDK Mission Control.app' to '/Applications/JDK Mission Control.app'
+🍺  jdk-mission-control was successfully installed!
+==> Caveats
+==> jdk-mission-control
+jdk-mission-control requires Java 21. You can install it with:
+  brew install --cask temurin@21

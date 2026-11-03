@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+  <groupId>org.example.jvminternals</groupId>
+  <artifactId>jvm-internals</artifactId>
+  <version>1.0-SNAPSHOT</version>
+  <packaging>pom</packaging>
+  <name>Java 虚拟机原理书配套源码</name>
+  <modules>
+    <module>chapters/ch01-architecture</module>
+    <module>chapters/ch04-classfile</module>
+    <module>chapters/ch05-bytecode-verification</module>
+    <module>chapters/ch06-classloaders-modules</module>
+    <module>chapters/ch07-linking-initialization</module>
+    <module>chapters/ch08-type-metadata</module>
+    <module>chapters/ch10-object-layout</module>
+    <module>chapters/ch11-allocation</module>
+    <module>chapters/ch12-native-memory</module>
+    <module>chapters/ch13-interpreter</module>
+    <module>chapters/ch14-dispatch</module>
+    <module>chapters/ch15-dynamic-invocation</module>
+    <module>chapters/ch16-tiered-compilation</module>
+    <module>chapters/ch17-compiler-optimizations</module>
+    <module>chapters/ch18-deoptimization</module>
+    <module>chapters/ch19-gc-foundations</module>
+    <module>chapters/ch20-safepoints-barriers</module>
+    <module>chapters/ch21-basic-collectors</module>
+    <module>chapters/ch22-g1</module>
+    <module>chapters/ch23-zgc</module>
+    <module>chapters/ch25-memory-model</module>
+    <module>chapters/ch26-platform-threads</module>
+    <module>chapters/ch27-monitors</module>
+    <module>chapters/ch28-virtual-threads</module>
+    <module>chapters/ch29-scoped-concurrency</module>
+    <module>chapters/ch30-startup-sharing</module>
+    <module>chapters/ch31-aot-cache</module>
+    <module>chapters/ch32-native-interop</module>
+    <module>chapters/ch33-observability</module>
+    <module>chapters/ch34-flight-recorder</module>
+    <module>chapters/ch35-troubleshooting</module>
+    <module>chapters/ch36-performance-cases</module>
+  </modules>
+  <properties>
+    <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+    <maven.compiler.release>25</maven.compiler.release>
+  </properties>
+  <!-- 默认生命周期只编译教学源码；无进程启动、预览参数或实验自动执行。 -->
+  <build>
+    <pluginManagement>
+      <plugins>
+        <plugin>
+          <groupId>org.apache.maven.plugins</groupId>
+          <artifactId>maven-compiler-plugin</artifactId>
+          <version>3.14.1</version>
+          <configuration>
+            <debug>true</debug>
+            <debuglevel>lines,vars,source</debuglevel>
+            <parameters>true</parameters>
+          </configuration>
+        </plugin>
+        <plugin>
+          <groupId>org.apache.maven.plugins</groupId>
+          <artifactId>maven-resources-plugin</artifactId>
+          <version>3.3.1</version>
+        </plugin>
+      </plugins>
+    </pluginManagement>
+  </build>
+</project>

@@ -1,0 +1,30 @@
+[0.020s][info][verification] Verifying class org.example.jvminternals.ch05.FlexibleConstruction with new format
+[0.020s][info][verification] Verifying method org.example.jvminternals.ch05.FlexibleConstruction.<init>()V
+[0.020s][info][verification] Verifying method org.example.jvminternals.ch05.FlexibleConstruction.<clinit>()V
+[0.020s][info][verification] Verifying method org.example.jvminternals.ch05.FlexibleConstruction.main([Ljava/lang/String;)V
+[0.020s][info][verification] End class verification for: org.example.jvminternals.ch05.FlexibleConstruction
+[0.051s][info][verification] Verifying class sun.util.resources.cldr.provider.CLDRLocaleDataMetaInfo with new format
+[0.051s][info][verification] Verifying method sun.util.resources.cldr.provider.CLDRLocaleDataMetaInfo.<init>()V
+[0.051s][info][verification] Verifying method sun.util.resources.cldr.provider.CLDRLocaleDataMetaInfo.getType()Lsun/util/locale/provider/LocaleProviderAdapter$Type;
+[0.051s][info][verification] Verifying method sun.util.resources.cldr.provider.CLDRLocaleDataMetaInfo.availableLanguageTags(Ljava/lang/String;)Ljava/lang/String;
+[0.051s][info][verification] End class verification for: sun.util.resources.cldr.provider.CLDRLocaleDataMetaInfo
+[0.056s][info][verification] Verifying class sun.util.resources.provider.LocaleDataProvider with new format
+[0.056s][info][verification] Verifying method sun.util.resources.provider.LocaleDataProvider.<init>()V
+[0.056s][info][verification] Verifying method sun.util.resources.provider.LocaleDataProvider.loadResourceBundle(Ljava/lang/String;)Ljava/util/ResourceBundle;
+[0.056s][info][verification] Verifying method sun.util.resources.provider.LocaleDataProvider.getBundle(Ljava/lang/String;Ljava/util/Locale;)Ljava/util/ResourceBundle;
+[0.056s][info][verification] End class verification for: sun.util.resources.provider.LocaleDataProvider
+[0.057s][info][verification] Verifying class sun.text.resources.cldr.ext.FormatData_zh with new format
+[0.057s][info][verification] Verifying method sun.text.resources.cldr.ext.FormatData_zh.<init>()V
+[0.057s][info][verification] Verifying method sun.text.resources.cldr.ext.FormatData_zh.getContents()[[Ljava/lang/Object;
+[0.057s][info][verification] End class verification for: sun.text.resources.cldr.ext.FormatData_zh
+[0.057s][info][verification] Verifying class sun.text.resources.cldr.ext.FormatData_zh_Hans_SG with new format
+[0.057s][info][verification] Verifying method sun.text.resources.cldr.ext.FormatData_zh_Hans_SG.<init>()V
+[0.057s][info][verification] Verifying method sun.text.resources.cldr.ext.FormatData_zh_Hans_SG.getContents()[[Ljava/lang/Object;
+[0.057s][info][verification] End class verification for: sun.text.resources.cldr.ext.FormatData_zh_Hans_SG
+[0.059s][info][verification] Verifying class org.example.jvminternals.ch05.FlexibleConstruction$Base with new format
+[0.059s][info][verification] Verifying method org.example.jvminternals.ch05.FlexibleConstruction$Base.<init>(I)V
+[0.059s][info][verification] Verifying method org.example.jvminternals.ch05.FlexibleConstruction$Base.normalized()I
+[0.059s][info][verification] End class verification for: org.example.jvminternals.ch05.FlexibleConstruction$Base
+[0.059s][info][verification] Verifying class org.example.jvminternals.ch05.FlexibleConstruction$Child with new format
+[0.059s][info][verification] Verifying method org.example.jvminternals.ch05.FlexibleConstruction$Child.<init>(I)V
+[0.059s][info][verification] End class verification for: org.example.jvminternals.ch05.FlexibleConstruction$Child

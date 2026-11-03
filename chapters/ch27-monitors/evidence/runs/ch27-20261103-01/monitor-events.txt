@@ -1,0 +1,196 @@
+jdk.JavaMonitorInflate {
+  startTime = 19:17:14.671 (2026-11-03)
+  duration = 0.0671 ms
+  monitorClass = jdk.jfr.internal.PlatformRecorder (classLoader = bootstrap)
+  address = 0x120902B40
+  cause = "Monitor Enter"
+  eventThread = "JFR Periodic Tasks" (javaThreadId = 26)
+  stackTrace = [
+    jdk.jfr.internal.PlatformRecorder.periodicTask() line: 495
+    jdk.jfr.internal.PlatformRecorder.lambda$startDiskMonitor$0() line: 428
+    java.lang.Thread.run() line: 1474
+    ...
+  ]
+}
+
+jdk.JavaMonitorEnter {
+  startTime = 19:17:14.671 (2026-11-03)
+  duration = 3.06 ms
+  monitorClass = jdk.jfr.internal.PlatformRecorder (classLoader = bootstrap)
+  previousOwner = "main" (javaThreadId = 3)
+  address = 0x7865A74620
+  eventThread = "JFR Periodic Tasks" (javaThreadId = 26)
+  stackTrace = [
+    jdk.jfr.internal.PlatformRecorder.periodicTask() line: 495
+    jdk.jfr.internal.PlatformRecorder.lambda$startDiskMonitor$0() line: 428
+    java.lang.Thread.run() line: 1474
+    ...
+  ]
+}
+
+jdk.JavaMonitorInflate {
+  startTime = 19:17:14.677 (2026-11-03)
+  duration = 0.0395 ms
+  monitorClass = java.lang.Object (classLoader = bootstrap)
+  address = 0x11FCEFE58
+  cause = "Monitor Wait"
+  eventThread = "monitor-waiter" (javaThreadId = 30)
+  stackTrace = [
+    java.lang.Object.wait0(long)
+    java.lang.Object.wait(long) line: 389
+    org.example.jvminternals.ch27.MonitorJourney.awaitReady() line: 58
+    java.lang.Thread.run() line: 1474
+  ]
+}
+
+jdk.JavaMonitorInflate {
+  startTime = 19:17:14.677 (2026-11-03)
+  duration = 0.0140 ms
+  monitorClass = java.io.PrintStream (classLoader = bootstrap)
+  address = 0x120D051E8
+  cause = "Monitor Enter"
+  eventThread = "monitor-holder" (javaThreadId = 31)
+  stackTrace = [
+    java.io.PrintStream.write(byte[], int, int) line: 538
+    sun.nio.cs.StreamEncoder.writeBytes() line: 220
+    sun.nio.cs.StreamEncoder.implFlushBuffer() line: 315
+    sun.nio.cs.StreamEncoder.flushBuffer() line: 101
+    java.io.OutputStreamWriter.flushBuffer() line: 179
+    ...
+  ]
+}
+
+jdk.JavaMonitorInflate {
+  startTime = 19:17:14.688 (2026-11-03)
+  duration = 0.0176 ms
+  monitorClass = java.lang.Thread (classLoader = bootstrap)
+  address = 0x11FCFF420
+  cause = "Monitor Wait"
+  eventThread = "main" (javaThreadId = 3)
+  stackTrace = [
+    java.lang.Object.wait0(long)
+    java.lang.Object.wait(long) line: 389
+    java.lang.Thread.join(long) line: 1887
+    java.lang.Thread.join() line: 1963
+    org.example.jvminternals.ch27.MonitorJourney.runJourney() line: 35
+    ...
+  ]
+}
+
+jdk.JavaMonitorWait {
+  startTime = 19:17:14.677 (2026-11-03)
+  duration = 1.01 s
+  monitorClass = java.lang.Object (classLoader = bootstrap)
+  notifier = N/A
+  timeout = 1.00 s
+  timedOut = true
+  address = 0x7865A747E0
+  eventThread = "monitor-waiter" (javaThreadId = 30)
+  stackTrace = [
+    java.lang.Object.wait0(long)
+    java.lang.Object.wait(long) line: 389
+    org.example.jvminternals.ch27.MonitorJourney.awaitReady() line: 58
+    java.lang.Thread.run() line: 1474
+  ]
+}
+
+jdk.JavaMonitorEnter {
+  startTime = 19:17:14.677 (2026-11-03)
+  duration = 6.01 s
+  monitorClass = java.lang.Object (classLoader = bootstrap)
+  previousOwner = "monitor-holder" (javaThreadId = 31)
+  address = 0x7865A747E0
+  eventThread = "monitor-contender" (javaThreadId = 32)
+  stackTrace = [
+    org.example.jvminternals.ch27.MonitorJourney.lambda$runJourney$0() line: 30
+    java.lang.Thread.run() line: 1474
+  ]
+}
+
+jdk.JavaMonitorWait {
+  startTime = 19:17:14.688 (2026-11-03)
+  duration = 6.00 s
+  monitorClass = java.lang.Thread (classLoader = bootstrap)
+  notifier = "monitor-holder" (javaThreadId = 31)
+  timeout = 0 s
+  timedOut = false
+  address = 0x7865A75260
+  eventThread = "main" (javaThreadId = 3)
+  stackTrace = [
+    java.lang.Object.wait0(long)
+    java.lang.Object.wait(long) line: 389
+    java.lang.Thread.join(long) line: 1887
+    java.lang.Thread.join() line: 1963
+    org.example.jvminternals.ch27.MonitorJourney.runJourney() line: 35
+    ...
+  ]
+}
+
+jdk.JavaMonitorInflate {
+  startTime = 19:17:20.683 (2026-11-03)
+  duration = 0.0456 ms
+  monitorClass = java.lang.Thread (classLoader = bootstrap)
+  address = 0x11FCF7D70
+  cause = "Monitor Wait"
+  eventThread = "main" (javaThreadId = 3)
+  stackTrace = [
+    java.lang.Object.wait0(long)
+    java.lang.Object.wait(long) line: 389
+    java.lang.Thread.join(long) line: 1887
+    java.lang.Thread.join() line: 1963
+    org.example.jvminternals.ch27.MonitorJourney.runJourney() line: 37
+    ...
+  ]
+}
+
+jdk.JavaMonitorEnter {
+  startTime = 19:17:15.682 (2026-11-03)
+  duration = 5.00 s
+  monitorClass = java.lang.Object (classLoader = bootstrap)
+  previousOwner = "monitor-contender" (javaThreadId = 32)
+  address = 0x7865A747E0
+  eventThread = "monitor-waiter" (javaThreadId = 30)
+  stackTrace = [
+    java.lang.Object.wait0(long)
+    java.lang.Object.wait(long) line: 389
+    org.example.jvminternals.ch27.MonitorJourney.awaitReady() line: 58
+    java.lang.Thread.run() line: 1474
+  ]
+}
+
+jdk.JavaMonitorWait {
+  startTime = 19:17:20.683 (2026-11-03)
+  duration = 0.427 ms
+  monitorClass = java.lang.Thread (classLoader = bootstrap)
+  notifier = "monitor-waiter" (javaThreadId = 30)
+  timeout = 0 s
+  timedOut = false
+  address = 0x7865A75340
+  eventThread = "main" (javaThreadId = 3)
+  stackTrace = [
+    java.lang.Object.wait0(long)
+    java.lang.Object.wait(long) line: 389
+    java.lang.Thread.join(long) line: 1887
+    java.lang.Thread.join() line: 1963
+    org.example.jvminternals.ch27.MonitorJourney.runJourney() line: 37
+    ...
+  ]
+}
+
+jdk.JavaMonitorInflate {
+  startTime = 19:17:20.685 (2026-11-03)
+  duration = 0.109 ms
+  monitorClass = jdk.jfr.internal.ShutdownHook (classLoader = bootstrap)
+  address = 0x11FF37270
+  cause = "Monitor Wait"
+  eventThread = "DestroyJavaVM" (javaThreadId = 34)
+  stackTrace = [
+    java.lang.Object.wait0(long)
+    java.lang.Object.wait(long) line: 389
+    java.lang.Thread.join(long) line: 1887
+    java.lang.Thread.join() line: 1963
+    java.lang.ApplicationShutdownHooks.runHooks() line: 114
+    ...
+  ]
+}
+

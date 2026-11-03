@@ -1,0 +1,9 @@
+代码展示已渲染并导出选取文本：chapters/ch30-startup-sharing/chapter.html
+代码展示已渲染并导出选取文本：chapters/ch30-startup-sharing/sources.html
+代码展示已渲染并导出选取文本：chapters/ch30-startup-sharing/README.html
+代码展示已渲染并导出选取文本：chapters/ch31-aot-cache/chapter.html
+代码展示已渲染并导出选取文本：chapters/ch31-aot-cache/sources.html
+代码展示已渲染并导出选取文本：chapters/ch31-aot-cache/README.html
+代码展示已渲染并导出选取文本：chapters/ch32-native-interop/chapter.html
+代码展示已渲染并导出选取文本：chapters/ch32-native-interop/sources.html
+代码展示已渲染并导出选取文本：chapters/ch32-native-interop/README.html

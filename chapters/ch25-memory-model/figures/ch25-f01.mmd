@@ -1,0 +1,6 @@
+flowchart TB
+ W[写payload与构造Message] -->|程序顺序| V[volatile写ready为true]
+ V -->|同一变量的同步关系| R[volatile读ready得到true]
+ R -->|程序顺序| D[读payload与message]
+ W -. happens-before的传递闭包 .-> D
+ T[现实时间较早或sleep] -. 不单独建立上述边 .-> D

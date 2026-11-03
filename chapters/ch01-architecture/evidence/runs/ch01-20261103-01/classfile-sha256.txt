@@ -1,0 +1,2 @@
+d15a41a4ab9556a4467b881a410a04bc4f5deaceb1f590d3bfee591dc8205d41  chapters/ch01-architecture/target/classes/org/example/jvminternals/ch01/ProgramJourney$Payload.class
+5fb1989956f40973812fa2332110f4e4ef850ad334e58721856e99f17463586f  chapters/ch01-architecture/target/classes/org/example/jvminternals/ch01/ProgramJourney.class

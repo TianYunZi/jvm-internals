@@ -1,0 +1,6 @@
+# 在教学进程的观察窗口内，从其输出取得本次pid。
+read task_pid
+jcmd "$task_pid" Thread.print -l
+ps -M -p "$task_pid"
+jcmd "$task_pid" Thread.print -l
+ps -M -p "$task_pid"

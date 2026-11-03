@@ -1,0 +1,34 @@
+jdk.VirtualThreadStart {
+  startTime = 19:17:17.843 (2026-11-03)
+  javaThreadId = 31
+  eventThread = "virtual-blocker" (javaThreadId = 31, virtual)
+  stackTrace = [
+    java.lang.VirtualThread.run(Runnable) line: 455
+    jdk.internal.vm.Continuation.enterSpecial(Continuation, boolean, boolean)
+    ...
+  ]
+}
+
+jdk.VirtualThreadStart {
+  startTime = 19:17:18.252 (2026-11-03)
+  javaThreadId = 34
+  eventThread = "virtual-probe" (javaThreadId = 34, virtual)
+  stackTrace = [
+    java.lang.VirtualThread.run(Runnable) line: 455
+    jdk.internal.vm.Continuation.enterSpecial(Continuation, boolean, boolean)
+    ...
+  ]
+}
+
+jdk.VirtualThreadEnd {
+  startTime = 19:17:18.252 (2026-11-03)
+  javaThreadId = 34
+  eventThread = "virtual-probe" (javaThreadId = 34, virtual)
+}
+
+jdk.VirtualThreadEnd {
+  startTime = 19:17:23.851 (2026-11-03)
+  javaThreadId = 31
+  eventThread = "virtual-blocker" (javaThreadId = 31, virtual)
+}
+

@@ -1,0 +1,10 @@
+出版页面：chapters/ch01-architecture/chapter.html
+出版页面：chapters/ch02-computer-basics/chapter.html
+出版页面：chapters/ch03-source-environment/chapter.html
+出版页面：chapters/ch05-bytecode-verification/chapter.html
+出版页面：chapters/ch06-classloaders-modules/chapter.html
+出版页面：chapters/ch07-linking-initialization/chapter.html
+出版页面：chapters/ch08-type-metadata/chapter.html
+出版页面：chapters/ch09-runtime-memory/chapter.html
+出版页面：chapters/ch11-allocation/chapter.html
+出版页面：chapters/ch12-native-memory/chapter.html

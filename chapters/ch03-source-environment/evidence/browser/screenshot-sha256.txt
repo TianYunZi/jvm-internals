@@ -1,0 +1,7 @@
+3d3fcac32a2331eb65b74ea2aa344678e68d527513140f74797021c2fdeeb453  chapters/ch03-source-environment/evidence/browser/desktop-1440.jpg
+44aa54137fd38c0a1c4eb56f9caf1f8ee7709f78057250334be3b9b4a0c82f70  chapters/ch03-source-environment/evidence/browser/figure-1.jpg
+8fbce9c14e9ec4302546a6266dd7bb208af3769665e5d69bcd4fb4a08d0176a8  chapters/ch03-source-environment/evidence/browser/figure-2.jpg
+a91a329c834005731ce227be816e8df1ca2be84609ced2a078ea53cda5efcef0  chapters/ch03-source-environment/evidence/browser/figure-3.jpg
+c009774df659c33a6be51c84a8f0ff21bb5644f3f7e07b98bf64ecc46be8f651  chapters/ch03-source-environment/evidence/browser/mobile-390.jpg
+d908541438d9c1d9455f65fe311299c9166482da4c200b9d98f883a3d2c8816b  chapters/ch03-source-environment/evidence/browser/mobile-scroll.jpg
+64809572ed09bcdb6c768114ec67575e32d696684c3ce47e10e7990667a39f6b  chapters/ch03-source-environment/evidence/browser/tablet-768.jpg

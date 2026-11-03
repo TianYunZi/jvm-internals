@@ -1,0 +1,16 @@
+%% CH07-F03：门闩与初始化等待不同；快照状态按原始记录。
+sequenceDiagram
+  participant O as init-owner
+  participant M as main
+  participant C as init-contender
+  O->>O: 登记所有者<br/>释放初始化锁<br/>进入Lazy代码
+  O-->>M: 通知已进入
+  O->>O: 等待应用RELEASE门闩
+  M->>C: 启动第二工作线程
+  C->>C: 请求Lazy.VALUE<br/>等待初始化
+  Note over O,C: 快照：所有者TIMED_WAITING<br/>竞争者RUNNABLE，另有类初始化等待注记
+  M->>M: 留出25秒采集窗口
+  M->>O: 释放应用门闩
+  O->>O: 返回73<br/>登记完成并通知
+  O-->>C: 等待者可重新检查
+  Note over O,C: 两线程都读取73；打印先后仍由调度决定，时间不按比例

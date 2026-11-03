@@ -1,0 +1,111 @@
+第33章源码阅读
+
+由正式源文件生成的静态阅读副本。返回正文 · 运行说明
+
+src/main/java/org/example/jvminternals/ch33/ObservationAgent.java
+package org.example.jvminternals.ch33;
+
+import java.lang.classfile.ClassFile;
+import java.lang.classfile.ClassTransform;
+import java.lang.classfile.instruction.ConstantInstruction;
+import java.lang.instrument.ClassFileTransformer;
+import java.lang.instrument.Instrumentation;
+import java.security.ProtectionDomain;
+
+/** 启动时显式加载，避免把动态附加许可和类变换能力混为一谈。 */
+public final class ObservationAgent implements ClassFileTransformer {
+    private static Instrumentation instrumentation;
+    private static volatile String replacement = "load";
+
+    /** 注册允许重转换的代理；清单同时声明重定义能力。 */
+    public static void premain(String options, Instrumentation value) {
+        instrumentation = value;
+        value.addTransformer(new ObservationAgent(), true);
+        System.out.printf("代理启动 retransform=%s redefine=%s%n",
+                value.isRetransformClassesSupported(), value.isRedefineClassesSupported());
+    }
+
+    /** 后续重转换仍从虚拟机提供的输入出发，不叠加上次输出。 */
+    public static Instrumentation prepare(String next) {
+        replacement = next;
+        return instrumentation;
+    }
+
+    /** 只处理一个固定教学类；其他类明确保持原样。 */
+    @Override
+    public byte[] transform(Module module, ClassLoader loader, String name, Class<?> redefined,
+                            ProtectionDomain domain, byte[] bytes) {
+        if (!"org/example/jvminternals/ch33/ObservedValue".equals(name)) {
+            return null;
+        }
+        String current = replacement;
+        System.out.printf("变换回调 phase=%s inputBytes=%d replacement=%s%n",
+                redefined == null ? "load" : "existing", bytes.length, current);
+        ClassFile classFile = ClassFile.of();
+        return classFile.transformClass(classFile.parse(bytes),
+                ClassTransform.transformingMethodBodies((builder, element) -> {
+                    if (element instanceof ConstantInstruction constant
+                            && "original".equals(constant.constantValue())) {
+                        builder.ldc(current);
+                    } else {
+                        builder.with(element);
+                    }
+                }));
+    }
+}
+
+src/main/java/org/example/jvminternals/ch33/ObservationJourney.java
+package org.example.jvminternals.ch33;
+
+import java.io.IOException;
+import java.lang.instrument.ClassDefinition;
+import java.lang.instrument.UnmodifiableClassException;
+import java.time.Instant;
+
+/** 三个变换阶段后保留十二秒窗口，供同一目标的诊断观察。 */
+public final class ObservationJourney {
+    private ObservationJourney() {
+    }
+
+    /** 有界普通进程，代理必须由启动命令显式指定。 */
+    public static void main(String[] args)
+            throws IOException, UnmodifiableClassException, ClassNotFoundException, InterruptedException {
+        System.out.printf("目标 pid=%d time=%s value=%s%n",
+                ProcessHandle.current().pid(), Instant.now(), ObservedValue.value());
+        ObservationAgent.prepare("retransform").retransformClasses(ObservedValue.class);
+        System.out.println("重转换 value=" + ObservedValue.value());
+        try (var input = ObservedValue.class.getResourceAsStream("ObservedValue.class")) {
+            if (input == null) {
+                throw new IOException("未找到正式类文件资源");
+            }
+            ObservationAgent.prepare("redefine").redefineClasses(
+                    new ClassDefinition(ObservedValue.class, input.readAllBytes()));
+        }
+        System.out.println("重定义 value=" + ObservedValue.value());
+        Thread virtual = Thread.ofVirtual().name("observed-virtual").start(() -> {
+            try {
+                Thread.sleep(12_000);
+            } catch (InterruptedException interrupted) {
+                Thread.currentThread().interrupt();
+                System.err.println("观察窗口被中断，虚拟线程收尾");
+            }
+        });
+        System.out.println("诊断窗口开始");
+        virtual.join();
+        System.out.println("诊断窗口结束");
+    }
+}
+
+src/main/java/org/example/jvminternals/ch33/ObservedValue.java
+package org.example.jvminternals.ch33;
+
+/** 仅改变方法返回常量，类的字段与方法结构保持不变。 */
+public final class ObservedValue {
+    private ObservedValue() {
+    }
+
+    /** 返回值让加载时变换、重转换和重定义的结果可见。 */
+    public static String value() {
+        return "original";
+    }
+}

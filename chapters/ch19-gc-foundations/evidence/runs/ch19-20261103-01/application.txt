@@ -1,0 +1,14 @@
+11月 03, 2026 6:02:06 下午 org.example.jvminternals.ch19.ReferenceJourney main
+INFO: 阶段=强持有，弱引用仍指向对象=true
+11月 03, 2026 6:02:06 下午 org.example.jvminternals.ch19.ReferenceJourney main
+INFO: 阶段=请求后仍强持有，弱引用仍指向对象=true
+11月 03, 2026 6:02:06 下午 org.example.jvminternals.ch19.ReferenceJourney main
+INFO: 阶段=释放强持有，发出第二次回收请求
+11月 03, 2026 6:02:06 下午 org.example.jvminternals.ch19.ReferenceJourney main
+INFO: 队列观察序号=0，引用类型=WeakReference
+11月 03, 2026 6:02:06 下午 org.example.jvminternals.ch19.ReferenceJourney main
+INFO: 队列观察序号=1，引用类型=PhantomReference
+11月 03, 2026 6:02:06 下午 org.example.jvminternals.ch19.ReferenceJourney main
+INFO: 阶段=窗口结束，弱引用已清除=true，虚引用get=null
+11月 03, 2026 6:02:06 下午 org.example.jvminternals.ch19.ReferenceJourney lambda$showExplicitCleanup$0
+INFO: 清理动作=显式执行；本例没有外部资源

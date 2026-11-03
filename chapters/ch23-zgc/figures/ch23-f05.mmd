@@ -1,0 +1,11 @@
+flowchart TD
+ S["Pause Mark Start：阶段起点"] --> M["Concurrent Mark"]
+ M --> E{"Pause Mark End：闭包完成？"}
+ E -->|否| C["Concurrent Mark Continue"]
+ C --> E
+ E -->|是| F["Concurrent Mark Free"]
+ F --> R["重置旧重定位集合"]
+ R --> Q["选择新重定位集合"]
+ Q --> P["Pause Relocate Start"]
+ P --> V["Concurrent Relocate"]
+ V --> D["本代周期收尾；与另一代协调"]

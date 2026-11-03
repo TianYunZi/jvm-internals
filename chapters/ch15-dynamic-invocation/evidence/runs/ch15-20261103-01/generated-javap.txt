@@ -1,0 +1,60 @@
+Classfile /Users/xiejinxin/Developer/Java/jvm-internals/chapters/ch15-dynamic-invocation/target/generated/GeneratedLinkage.class
+  Last modified 2026年11月3日; size 625 bytes
+  SHA-256 checksum 1e2b65f7ea02486306986639bd462e19a284fff43d85ef58562c152f71fce012
+public class org.example.jvminternals.ch15.GeneratedLinkage
+  minor version: 0
+  major version: 69
+  flags: (0x0021) ACC_PUBLIC, ACC_SUPER
+  this_class: #2                          // org/example/jvminternals/ch15/GeneratedLinkage
+  super_class: #25                        // java/lang/Object
+  interfaces: 0, fields: 0, methods: 2, attributes: 1
+Constant pool:
+   #1 = Utf8               org/example/jvminternals/ch15/GeneratedLinkage
+   #2 = Class              #1             // org/example/jvminternals/ch15/GeneratedLinkage
+   #3 = Utf8               dynamic
+   #4 = Utf8               ()Ljava/lang/String;
+   #5 = Utf8               org/example/jvminternals/ch15/DynamicJourney
+   #6 = Class              #5             // org/example/jvminternals/ch15/DynamicJourney
+   #7 = Utf8               bootstrapCall
+   #8 = Utf8               (Ljava/lang/invoke/MethodHandles$Lookup;Ljava/lang/String;Ljava/lang/invoke/MethodType;)Ljava/lang/invoke/CallSite;
+   #9 = NameAndType        #7:#8          // bootstrapCall:(Ljava/lang/invoke/MethodHandles$Lookup;Ljava/lang/String;Ljava/lang/invoke/MethodType;)Ljava/lang/invoke/CallSite;
+  #10 = Methodref          #6.#9          // org/example/jvminternals/ch15/DynamicJourney.bootstrapCall:(Ljava/lang/invoke/MethodHandles$Lookup;Ljava/lang/String;Ljava/lang/invoke/MethodType;)Ljava/lang/invoke/CallSite;
+  #11 = MethodHandle       6:#10          // REF_invokeStatic org/example/jvminternals/ch15/DynamicJourney.bootstrapCall:(Ljava/lang/invoke/MethodHandles$Lookup;Ljava/lang/String;Ljava/lang/invoke/MethodType;)Ljava/lang/invoke/CallSite;
+  #12 = Utf8               message
+  #13 = NameAndType        #12:#4         // message:()Ljava/lang/String;
+  #14 = InvokeDynamic      #0:#13         // #0:message:()Ljava/lang/String;
+  #15 = Utf8               constant
+  #16 = Utf8               bootstrapConstant
+  #17 = Utf8               (Ljava/lang/invoke/MethodHandles$Lookup;Ljava/lang/String;Ljava/lang/Class;)Ljava/lang/Object;
+  #18 = NameAndType        #16:#17        // bootstrapConstant:(Ljava/lang/invoke/MethodHandles$Lookup;Ljava/lang/String;Ljava/lang/Class;)Ljava/lang/Object;
+  #19 = Methodref          #6.#18         // org/example/jvminternals/ch15/DynamicJourney.bootstrapConstant:(Ljava/lang/invoke/MethodHandles$Lookup;Ljava/lang/String;Ljava/lang/Class;)Ljava/lang/Object;
+  #20 = MethodHandle       6:#19          // REF_invokeStatic org/example/jvminternals/ch15/DynamicJourney.bootstrapConstant:(Ljava/lang/invoke/MethodHandles$Lookup;Ljava/lang/String;Ljava/lang/Class;)Ljava/lang/Object;
+  #21 = Utf8               Ljava/lang/String;
+  #22 = NameAndType        #12:#21        // message:Ljava/lang/String;
+  #23 = Dynamic            #1:#22         // #1:message:Ljava/lang/String;
+  #24 = Utf8               java/lang/Object
+  #25 = Class              #24            // java/lang/Object
+  #26 = Utf8               Code
+  #27 = Utf8               BootstrapMethods
+{
+  public static java.lang.String dynamic();
+    descriptor: ()Ljava/lang/String;
+    flags: (0x0009) ACC_PUBLIC, ACC_STATIC
+    Code:
+      stack=1, locals=0, args_size=0
+         0: invokedynamic #14,  0             // InvokeDynamic #0:message:()Ljava/lang/String;
+         5: areturn
+
+  public static java.lang.String constant();
+    descriptor: ()Ljava/lang/String;
+    flags: (0x0009) ACC_PUBLIC, ACC_STATIC
+    Code:
+      stack=1, locals=0, args_size=0
+         0: ldc           #23                 // Dynamic #1:message:Ljava/lang/String;
+         2: areturn
+}
+BootstrapMethods:
+  0: #11 REF_invokeStatic org/example/jvminternals/ch15/DynamicJourney.bootstrapCall:(Ljava/lang/invoke/MethodHandles$Lookup;Ljava/lang/String;Ljava/lang/invoke/MethodType;)Ljava/lang/invoke/CallSite;
+    Method arguments:
+  1: #20 REF_invokeStatic org/example/jvminternals/ch15/DynamicJourney.bootstrapConstant:(Ljava/lang/invoke/MethodHandles$Lookup;Ljava/lang/String;Ljava/lang/Class;)Ljava/lang/Object;
+    Method arguments:

@@ -1,0 +1,30 @@
+<!doctype html><html lang="zh-CN"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="shiki-version" content="4.6.0"><title>第9章运行说明</title><link rel="stylesheet" href="../../assets/book.css"></head><body><main class="home" id="main"><h1>第9章运行说明</h1><p><a href="chapter.html">返回正文</a></p><p>本章为观察复用章，不创建空构建模块。Java 开发工具包（Java Development Kit，JDK）25.0.5.0.2、macOS AArch64；正式超文本标记语言（Hypertext Markup Language，HTML）正文见 <a href="chapter.html">chapter.html</a>。</p>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+<th>示例</th>
+<th>性质、输入与授权</th>
+<th>源码及证据</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>CH09-O01</td>
+<td>普通对象、线程、类活动的进程账本观察；随用户“执行P04”授权复用；无新代码或新运行</td>
+<td>CH01-E01 ProgramJourney、message.txt；CH02-O02 同窗口采集</td>
+</tr>
+</tbody></table>
+</div><p>源文件入口为 <code class="shiki-inline" data-shiki-version="4.6.0" data-code-id="code-001" data-code-language="text"><span>../ch01-architecture/src/main/java/org/example/jvminternals/ch01/ProgramJourney.java</span></code>，阅读页为 <a href="../ch01-architecture/sources.html">CH01 源码</a>。没有变更。原编译为 CH01-O01，当前源与类文件摘要复核见本章 evidence/runs/ch09-20261103-01/。复用既有编译和观测，不用一次重新编译来冒充旧进程的输入。</p>
+<p>原进程堆初始 32、上限 128 兆二进制字节（mebibyte，MiB），只增加一个教学工作线程，观察窗口 60 秒后自然退出。命令工作目录为项目根目录：</p>
+<pre data-shiki-version="4.6.0" class="shiki github-light" style="background-color:#fff;color:#24292e" tabindex="0"><code data-code-id="code-002" data-code-language="bash"><span class="line"><span style="color:#24292E">task_jdk</span><span style="color:#D73A49">=</span><span style="color:#032F62">/opt/homebrew/Cellar/openjdk@25/25.0.5.0.2/libexec/openjdk.jdk/Contents/Home</span></span>
+<span class="line"><span style="color:#24292E">JAVA_HOME</span><span style="color:#D73A49">=</span><span style="color:#032F62">"</span><span style="color:#24292E">$task_jdk</span><span style="color:#032F62">"</span><span style="color:#6F42C1"> mvn</span><span style="color:#005CC5"> -B</span><span style="color:#005CC5"> -ntp</span><span style="color:#005CC5"> -pl</span><span style="color:#032F62"> chapters/ch01-architecture</span><span style="color:#005CC5"> -am</span><span style="color:#032F62"> compile</span></span>
+<span class="line"><span style="color:#6F42C1">"</span><span style="color:#24292E">$task_jdk</span><span style="color:#6F42C1">/bin/java"</span><span style="color:#005CC5"> -Xms32m</span><span style="color:#005CC5"> -Xmx128m</span><span style="color:#005CC5"> -XX:NativeMemoryTracking=detail</span><span style="color:#005CC5"> -cp</span><span style="color:#032F62"> chapters/ch01-architecture/target/classes</span><span style="color:#032F62"> org.example.jvminternals.ch01.ProgramJourney</span><span style="color:#032F62"> chapters/ch01-architecture/src/main/resources/message.txt</span><span style="color:#005CC5"> 60</span></span>
+<span class="line"><span style="color:#6A737D"># 从上述程序的阶段输出取得实际进程号，用它替换 TASK_PID；不要重用历史 15216。</span></span>
+<span class="line"><span style="color:#6F42C1">ps</span><span style="color:#005CC5"> -p</span><span style="color:#032F62"> TASK_PID</span><span style="color:#005CC5"> -o</span><span style="color:#032F62"> pid,ppid,%cpu,rss,vsz,etime,command</span></span>
+<span class="line"><span style="color:#6F42C1">vmmap</span><span style="color:#005CC5"> -summary</span><span style="color:#032F62"> TASK_PID</span></span>
+<span class="line"><span style="color:#6F42C1">vmmap</span><span style="color:#032F62"> TASK_PID</span></span>
+<span class="line"><span style="color:#6F42C1">"</span><span style="color:#24292E">$task_jdk</span><span style="color:#6F42C1">/bin/jcmd"</span><span style="color:#032F62"> TASK_PID</span><span style="color:#032F62"> GC.heap_info</span></span>
+<span class="line"><span style="color:#6F42C1">"</span><span style="color:#24292E">$task_jdk</span><span style="color:#6F42C1">/bin/jcmd"</span><span style="color:#032F62"> TASK_PID</span><span style="color:#032F62"> VM.native_memory</span><span style="color:#032F62"> detail</span><span style="color:#032F62"> scale=KB</span></span>
+<span class="line"><span style="color:#6F42C1">"</span><span style="color:#24292E">$task_jdk</span><span style="color:#6F42C1">/bin/jcmd"</span><span style="color:#032F62"> TASK_PID</span><span style="color:#032F62"> VM.flags</span></span>
+<span class="line"></span></code></pre><p>本地内存跟踪（Native Memory Tracking，NMT）必须从启动启用；附加需要本机权限。原运行还启用了线程日志并采集线程，完整历史命令以 <a href="../ch02-computer-basics/evidence/runs/ch02-20261103-02/%E8%AE%B0%E5%BD%95.md">CH02-O02</a> 为准。预期比较的是不同账目范围，不预设数值或驻留比例；本轮实值、时间和限制见<a href="evidence/runs/ch09-20261103-01/%E8%AE%B0%E5%BD%95.md">本章复核记录</a>。提前停止只针对自己新启动的进程，不操作历史编号或其他 Java 程序。</p>
+<p>容器终止、资源耗尽和栈溢出本轮仅解释机制，没有编写或运行故障代码。这里也没有压力、性能基准、断言或测试脚本。</p>
+</main></body></html>

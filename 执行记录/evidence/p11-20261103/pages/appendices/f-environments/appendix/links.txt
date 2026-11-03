@@ -1,0 +1,41 @@
+跳到正文	#main
+Java虚拟机原理 · 全书目录	../../index.html
+F.1 可复查的主环境	#sec-f-1
+F.2 构建、运行与平台条件	#sec-f-2
+F.3 三条有前置的阅读路线	#sec-f-3
+证据入口与接续	#sources
+公共基线	../../执行记录/基线与约定.md
+第2章	../../chapters/ch02-computer-basics/chapter.html
+CH04命令	../../chapters/ch04-classfile/README.html
+附录D	../d-source-map/appendix.html
+基线差异	../../执行记录/基线与约定.md
+CH32命令	../../chapters/ch32-native-interop/README.html
+CH10依据	../../chapters/ch10-object-layout/evidence/索引.md
+第34章	../../chapters/ch34-flight-recorder/chapter.html
+高亮生成说明	../../tools/code-highlighting/README.md
+第1章	../../chapters/ch01-architecture/chapter.html
+第3章	../../chapters/ch03-source-environment/chapter.html
+第4章	../../chapters/ch04-classfile/chapter.html
+第12章	../../chapters/ch12-native-memory/chapter.html
+第19章	../../chapters/ch19-gc-foundations/chapter.html
+第20章	../../chapters/ch20-safepoints-barriers/chapter.html
+第25章	../../chapters/ch25-memory-model/chapter.html
+第13章	../../chapters/ch13-interpreter/chapter.html
+第18章	../../chapters/ch18-deoptimization/chapter.html
+第21章	../../chapters/ch21-basic-collectors/chapter.html
+第24章	../../chapters/ch24-shenandoah/chapter.html
+第26章	../../chapters/ch26-platform-threads/chapter.html
+第32章	../../chapters/ch32-native-interop/chapter.html
+第9章	../../chapters/ch09-runtime-memory/chapter.html
+第12章	../../chapters/ch12-native-memory/chapter.html
+第16章	../../chapters/ch16-tiered-compilation/chapter.html
+第20章	../../chapters/ch20-safepoints-barriers/chapter.html
+第25章	../../chapters/ch25-memory-model/chapter.html
+第28章	../../chapters/ch28-virtual-threads/chapter.html
+第33章	../../chapters/ch33-observability/chapter.html
+第34章	../../chapters/ch34-flight-recorder/chapter.html
+第35章	../../chapters/ch35-troubleshooting/chapter.html
+第36章	../../chapters/ch36-performance-cases/chapter.html
+上一页	../e-history/appendix.html
+附录目录	../../index.html#appendices
+下一页	../../index.html

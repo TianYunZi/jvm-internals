@@ -1,0 +1,12 @@
+81563:
+sun.jvmstat.monitor.MonitorException: Could not attach to 81563
+	at jdk.internal.jvmstat/sun.jvmstat.perfdata.monitor.protocol.local.PerfDataBuffer.<init>(PerfDataBuffer.java:61)
+	at jdk.internal.jvmstat/sun.jvmstat.perfdata.monitor.protocol.local.LocalMonitoredVm.<init>(LocalMonitoredVm.java:66)
+	at jdk.internal.jvmstat/sun.jvmstat.perfdata.monitor.protocol.local.MonitoredHostProvider.getMonitoredVm(MonitoredHostProvider.java:77)
+	at jdk.jcmd/sun.tools.jcmd.JCmd.listCounters(JCmd.java:144)
+	at jdk.jcmd/sun.tools.jcmd.JCmd.main(JCmd.java:94)
+Caused by: java.lang.IllegalArgumentException: Process not found
+	at java.base/jdk.internal.perf.Perf.attach0(Native Method)
+	at java.base/jdk.internal.perf.Perf.attach(Perf.java:122)
+	at jdk.internal.jvmstat/sun.jvmstat.perfdata.monitor.protocol.local.PerfDataBuffer.<init>(PerfDataBuffer.java:57)
+	... 4 more

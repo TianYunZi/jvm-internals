@@ -1,0 +1,57 @@
+<!doctype html><html lang="zh-CN"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="shiki-version" content="4.6.0"><title>第25章源码阅读</title><link rel="stylesheet" href="../../assets/book.css"></head><body><main class="home" id="main"><h1>第25章源码阅读</h1><p>由正式源文件生成的静态阅读副本。<a href="chapter.html">返回正文</a> · <a href="README.html">运行说明</a></p><h2><code class="shiki-inline" data-shiki-version="4.6.0" data-code-id="code-001" data-code-language="text"><span>src/main/java/org/example/jvminternals/ch25/PublicationJourney.java</span></code></h2><pre data-shiki-version="4.6.0" class="shiki github-light" style="background-color:#fff;color:#24292e" tabindex="0"><code data-code-id="code-002" data-code-language="java" data-source-file="chapters/ch25-memory-model/src/main/java/org/example/jvminternals/ch25/PublicationJourney.java"><span class="line"><span style="color:#D73A49">package</span><span style="color:#24292E"> org.example.jvminternals.ch25;</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#D73A49">import</span><span style="color:#24292E"> java.util.concurrent.locks.LockSupport;</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#6A737D">/** 用有限发布过程说明同步边；不以运行次数证明所有允许执行。 */</span></span>
+<span class="line"><span style="color:#D73A49">public</span><span style="color:#D73A49"> final</span><span style="color:#D73A49"> class</span><span style="color:#6F42C1"> PublicationJourney</span><span style="color:#24292E"> {</span></span>
+<span class="line"><span style="color:#D73A49">    private</span><span style="color:#D73A49"> final</span><span style="color:#24292E"> Object monitor </span><span style="color:#D73A49">=</span><span style="color:#D73A49"> new</span><span style="color:#6F42C1"> Object</span><span style="color:#24292E">();</span></span>
+<span class="line"><span style="color:#D73A49">    private</span><span style="color:#D73A49"> int</span><span style="color:#24292E"> payload;</span></span>
+<span class="line"><span style="color:#D73A49">    private</span><span style="color:#D73A49"> volatile</span><span style="color:#D73A49"> boolean</span><span style="color:#24292E"> ready;</span></span>
+<span class="line"><span style="color:#D73A49">    private</span><span style="color:#D73A49"> int</span><span style="color:#24292E"> count;</span></span>
+<span class="line"><span style="color:#D73A49">    private</span><span style="color:#24292E"> Message message;</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#6A737D">    /** 构造期间不逸出；final只约束本字段的初始化语义。 */</span></span>
+<span class="line"><span style="color:#D73A49">    private</span><span style="color:#D73A49"> record</span><span style="color:#6F42C1"> Message</span><span style="color:#24292E">(</span><span style="color:#D73A49">int</span><span style="color:#24292E"> value) { }</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#D73A49">    private</span><span style="color:#6F42C1"> PublicationJourney</span><span style="color:#24292E">() { }</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#6A737D">    /** 启动两个教学线程，结束后读取join所发布的结果。 */</span></span>
+<span class="line"><span style="color:#D73A49">    public</span><span style="color:#D73A49"> static</span><span style="color:#D73A49"> void</span><span style="color:#6F42C1"> main</span><span style="color:#24292E">(</span><span style="color:#D73A49">String</span><span style="color:#24292E">[] </span><span style="color:#E36209">args</span><span style="color:#24292E">) </span><span style="color:#D73A49">throws</span><span style="color:#24292E"> InterruptedException {</span></span>
+<span class="line"><span style="color:#D73A49">        new</span><span style="color:#6F42C1"> PublicationJourney</span><span style="color:#24292E">().</span><span style="color:#6F42C1">runJourney</span><span style="color:#24292E">();</span></span>
+<span class="line"><span style="color:#24292E">    }</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#D73A49">    private</span><span style="color:#D73A49"> void</span><span style="color:#6F42C1"> runJourney</span><span style="color:#24292E">() </span><span style="color:#D73A49">throws</span><span style="color:#24292E"> InterruptedException {</span></span>
+<span class="line"><span style="color:#24292E">        Thread reader </span><span style="color:#D73A49">=</span><span style="color:#24292E"> Thread.</span><span style="color:#6F42C1">ofPlatform</span><span style="color:#24292E">().</span><span style="color:#6F42C1">name</span><span style="color:#24292E">(</span><span style="color:#032F62">"publication-reader"</span><span style="color:#24292E">).</span><span style="color:#6F42C1">unstarted</span><span style="color:#24292E">(() </span><span style="color:#D73A49">-></span><span style="color:#24292E"> {</span></span>
+<span class="line"><span style="color:#D73A49">            long</span><span style="color:#24292E"> deadline </span><span style="color:#D73A49">=</span><span style="color:#24292E"> System.</span><span style="color:#6F42C1">nanoTime</span><span style="color:#24292E">() </span><span style="color:#D73A49">+</span><span style="color:#005CC5"> 2_000_000_000L</span><span style="color:#24292E">;</span></span>
+<span class="line"><span style="color:#6A737D">            // park只减少忙等；发布保证来自ready的volatile写读。</span></span>
+<span class="line"><span style="color:#D73A49">            while</span><span style="color:#24292E"> (</span><span style="color:#D73A49">!</span><span style="color:#24292E">ready </span><span style="color:#D73A49">&#x26;&#x26;</span><span style="color:#24292E"> System.</span><span style="color:#6F42C1">nanoTime</span><span style="color:#24292E">() </span><span style="color:#D73A49">&#x3C;</span><span style="color:#24292E"> deadline) {</span></span>
+<span class="line"><span style="color:#24292E">                LockSupport.</span><span style="color:#6F42C1">parkNanos</span><span style="color:#24292E">(</span><span style="color:#005CC5">100_000L</span><span style="color:#24292E">);</span></span>
+<span class="line"><span style="color:#24292E">            }</span></span>
+<span class="line"><span style="color:#D73A49">            if</span><span style="color:#24292E"> (ready) {</span></span>
+<span class="line"><span style="color:#24292E">                System.out.</span><span style="color:#6F42C1">printf</span><span style="color:#24292E">(</span><span style="color:#032F62">"读取：payload=%d final=%d%n"</span><span style="color:#24292E">, payload, message.</span><span style="color:#6F42C1">value</span><span style="color:#24292E">());</span></span>
+<span class="line"><span style="color:#24292E">            } </span><span style="color:#D73A49">else</span><span style="color:#24292E"> {</span></span>
+<span class="line"><span style="color:#24292E">                System.out.</span><span style="color:#6F42C1">println</span><span style="color:#24292E">(</span><span style="color:#032F62">"读取：观察窗口结束，未见ready"</span><span style="color:#24292E">);</span></span>
+<span class="line"><span style="color:#24292E">            }</span></span>
+<span class="line"><span style="color:#6F42C1">            increment</span><span style="color:#24292E">();</span></span>
+<span class="line"><span style="color:#24292E">        });</span></span>
+<span class="line"><span style="color:#24292E">        Thread writer </span><span style="color:#D73A49">=</span><span style="color:#24292E"> Thread.</span><span style="color:#6F42C1">ofPlatform</span><span style="color:#24292E">().</span><span style="color:#6F42C1">name</span><span style="color:#24292E">(</span><span style="color:#032F62">"publication-writer"</span><span style="color:#24292E">).</span><span style="color:#6F42C1">unstarted</span><span style="color:#24292E">(() </span><span style="color:#D73A49">-></span><span style="color:#24292E"> {</span></span>
+<span class="line"><span style="color:#24292E">            payload </span><span style="color:#D73A49">=</span><span style="color:#005CC5"> 42</span><span style="color:#24292E">;</span></span>
+<span class="line"><span style="color:#24292E">            message </span><span style="color:#D73A49">=</span><span style="color:#D73A49"> new</span><span style="color:#6F42C1"> Message</span><span style="color:#24292E">(</span><span style="color:#005CC5">7</span><span style="color:#24292E">);</span></span>
+<span class="line"><span style="color:#24292E">            ready </span><span style="color:#D73A49">=</span><span style="color:#005CC5"> true</span><span style="color:#24292E">;</span></span>
+<span class="line"><span style="color:#6F42C1">            increment</span><span style="color:#24292E">();</span></span>
+<span class="line"><span style="color:#24292E">        });</span></span>
+<span class="line"><span style="color:#24292E">        reader.</span><span style="color:#6F42C1">start</span><span style="color:#24292E">();</span></span>
+<span class="line"><span style="color:#24292E">        writer.</span><span style="color:#6F42C1">start</span><span style="color:#24292E">();</span></span>
+<span class="line"><span style="color:#24292E">        reader.</span><span style="color:#6F42C1">join</span><span style="color:#24292E">();</span></span>
+<span class="line"><span style="color:#24292E">        writer.</span><span style="color:#6F42C1">join</span><span style="color:#24292E">();</span></span>
+<span class="line"><span style="color:#24292E">        System.out.</span><span style="color:#6F42C1">printf</span><span style="color:#24292E">(</span><span style="color:#032F62">"结束：count=%d ready=%s%n"</span><span style="color:#24292E">, count, ready);</span></span>
+<span class="line"><span style="color:#24292E">    }</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#D73A49">    private</span><span style="color:#D73A49"> void</span><span style="color:#6F42C1"> increment</span><span style="color:#24292E">() {</span></span>
+<span class="line"><span style="color:#6A737D">        // 读改写整体置于同一监视器下，volatile不能独自替代这段互斥。</span></span>
+<span class="line"><span style="color:#D73A49">        synchronized</span><span style="color:#24292E"> (monitor) {</span></span>
+<span class="line"><span style="color:#24292E">            count</span><span style="color:#D73A49">++</span><span style="color:#24292E">;</span></span>
+<span class="line"><span style="color:#24292E">        }</span></span>
+<span class="line"><span style="color:#24292E">    }</span></span>
+<span class="line"><span style="color:#24292E">}</span></span>
+<span class="line"></span></code></pre></main></body></html>

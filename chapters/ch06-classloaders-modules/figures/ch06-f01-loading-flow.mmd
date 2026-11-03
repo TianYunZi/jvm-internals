@@ -1,0 +1,9 @@
+%% CH06-F01：只表示本例继承的默认loadClass流程。
+flowchart TB
+  A["getClassLoadingLock(name)<br/>在加载锁内处理"] --> B{"findLoadedClass<br/>本加载器已记录此类？"}
+  B -->|是| R["按resolve选择链接请求<br/>返回Class"]
+  B -->|否| C["委派父加载器<br/>无父则尝试启动加载器"]
+  C -->|找到| R
+  C -->|未找到| D["findClass<br/>本例提供字节并defineClass"]
+  D --> R
+  R --- N["锁可按类名或整个加载器划分<br/>链接请求不等于初始化或全部常量池解析<br/>不概括所有内建模块加载路径"]

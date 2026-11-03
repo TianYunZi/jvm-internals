@@ -1,0 +1,43 @@
+第17章运行说明
+
+返回正文 · 源码阅读
+
+Java开发工具包（Java Development Kit，JDK）25.0.5.0.2、HotSpot、macOS AArch64；工具显式选用下列目录。源码为本章src/main/java，页面阅读副本为sources.html。
+
+示例与授权
+
+CH17-E01 OptimizationJourney：常量／内联、局部／发布对象、局部锁、数组循环与内建候选。固定50000次、单线程、64兆二进制字节（mebibyte，MiB）堆；结果被打印，不测性能。
+
+用户“执行P05”授权普通教学源码与有界机制观察；不包含测试框架、断言、故障耗尽或性能基准。只打印阶段与必要结果，不在热点内打印。所有命令在项目根目录执行；编译不自动运行进程。
+
+完整命令
+export JAVA_HOME=/opt/homebrew/Cellar/openjdk@25/25.0.5.0.2/libexec/openjdk.jdk/Contents/Home
+export PATH="$JAVA_HOME/bin:/opt/homebrew/bin:$PATH"
+mvn -B -ntp -pl chapters/ch17-compiler-optimizations -am compile
+java -Xms16m -Xmx64m -Xbatch -XX:+UnlockDiagnosticVMOptions -XX:+LogCompilation -XX:LogFile=chapters/ch17-compiler-optimizations/evidence/runs/ch17-20261103-01/compilation.xml -XX:+PrintCompilation -XX:+PrintInlining '-XX:CompileCommand=dontinline,org.example.jvminternals.ch17.OptimizationJourney::folded' '-XX:CompileCommand=dontinline,org.example.jvminternals.ch17.OptimizationJourney::local' '-XX:CompileCommand=dontinline,org.example.jvminternals.ch17.OptimizationJourney::escaped' '-XX:CompileCommand=dontinline,org.example.jvminternals.ch17.OptimizationJourney::locked' '-XX:CompileCommand=dontinline,org.example.jvminternals.ch17.OptimizationJourney::transform' '-XX:CompileCommand=print,org.example.jvminternals.ch17.OptimizationJourney::*' -cp chapters/ch17-compiler-optimizations/target/classes org.example.jvminternals.ch17.OptimizationJourney
+javap -c -p -classpath chapters/ch17-compiler-optimizations/target/classes org.example.jvminternals.ch17.OptimizationJourney
+
+实际观察与边界
+
+编译和教学进程／javap退出0，结果10001532512、数组末项256、发布值49999。编译号22 local有eliminate_allocation；24 locked有NonEscObj锁／解锁和分配消除。folded与local／locked主体有标量加法，transform两个版本实际有ldr q、add.4s和str q。decode-index.txt定位每份封装及实际解码；原始stdout含完整机器字节与注释。
+
+PrintIdeal能力查询退出1：release构建只允许debug版本使用该develop选项，原文保留。F01是源码／日志支持的解释图，不是原始Ideal图。x86-64只做同提交实现规则对照，未实测；没有额外诊断构建或性能基准。bitCount仅为内建候选，本轮不声称已证实调用点内建。CH18承接状态恢复，CH25承接完整Java Memory Model（JMM）。
+
+原始文本及退出情况见evidence/runs/ch17-20261103-01/记录.md。观察是具体配置的结果，不提供性能排名或跨平台保证。正式正文、本章配图、源码与相应编号在正文对照。
+
+已记录机器字节的解码
+
+本轮无需安装hsdis。只对已保存的实际字节进行离线格式转换，下面的脚本使用系统clang生成不可执行对象文件，再调用otool，不运行封装对象。它不复现程序或执行测试。各原始基址和输出文件名见同目录decode-index.txt；对象文件零基偏移须加回原地址理解。
+
+python3 chapters/ch17-compiler-optimizations/evidence/runs/ch17-20261103-01/decode-capture.py
+
+配图源与本地导出
+
+软件流程、交互、状态和协作图以figures中的Mermaid源文件维护，帧布局使用可缩放矢量图形（Scalable Vector Graphics，SVG）；逐节分类见TASK.md。当前本机Mermaid命令行接口（Command-Line Interface，CLI）工具为12.2.0。下面在项目根目录只重新导出当前章节图源，不启动教学进程或测试；需要可启动本地离屏渲染器的权限。
+
+for p05_diagram in chapters/ch17-compiler-optimizations/figures/*.mmd; do
+  mmdc -i "$p05_diagram" -o "${p05_diagram%.mmd}.svg" -c assets/mermaid.json -b '#f7fafc' -I "$(basename "${p05_diagram%.mmd}")" --no-font-embed
+done
+
+
+图源修订后必须重新导出；正文图片的自然宽度与打印宽度按新viewBox同步，相关尺寸记录见公共P05证据。截图只作验收证据，不替代绘制的图。

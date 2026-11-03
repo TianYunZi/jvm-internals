@@ -1,0 +1,8 @@
+f7f5540a09fdeb663b9b653d9825922a4865f5245a3b419b7a5bcea53533954d  chapters/ch06-classloaders-modules/chapter.html
+7b5303d60fefcb96e4c8a4039d0873476cf8f5d580ffdec8a3e5768b950f5c49  assets/book.css
+12d0adb35e1864b964a0bb32e591ee94811f22298e481cc50a4f0202695aef8c  chapters/ch06-classloaders-modules/figures/ch06-f01-loading-flow.svg
+478427868045cb607ce4b63527e90fe1c1386662f11417940cddd01496029ec3  chapters/ch06-classloaders-modules/figures/ch06-f02-type-identity.svg
+b0ddc387bd91c96d4ed82bebb4b5730b353555916d6b711a5455161b23977555  chapters/ch06-classloaders-modules/figures/ch06-f03-module-access.svg
+0f059c6761db2b49ead2c685b1cfb16c7c2b31054f1b33b5467bcf1e7e5451b8  chapters/ch06-classloaders-modules/evidence/browser/print/chrome-print.pdf
+8f3069949f992d0f32a6cc9046916983be9583699362f9fe300893539edd4b7f  chapters/ch06-classloaders-modules/evidence/browser/print/long-output-detail.png
+e6cea551a48467ae5016b68e40c39de14ea11fd25f133557ed6410834216e441  chapters/ch06-classloaders-modules/evidence/browser/print/page-8.png

@@ -1,0 +1,14 @@
+{
+  "shikiVersion": "4.6.0",
+  "theme": "github-light",
+  "languages": ["java", "bash", "xml", "json", "cpp", "asm"],
+  "plainTextLanguage": "text",
+  "chapters": [
+    "ch13-interpreter",
+    "ch14-dispatch",
+    "ch15-dynamic-invocation",
+    "ch16-tiered-compilation",
+    "ch17-compiler-optimizations",
+    "ch18-deoptimization"
+  ]
+}

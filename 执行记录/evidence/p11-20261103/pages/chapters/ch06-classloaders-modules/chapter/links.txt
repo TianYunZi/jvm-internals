@@ -1,0 +1,35 @@
+跳到正文	#chapter
+Java 虚拟机原理 / 第二篇	../../index.html
+同名类型为何不能转换	#question
+6.1 内建加载器	#sec-6-1
+6.2 委派与自定义加载	#sec-6-2
+6.3 类身份与加载约束	#sec-6-3
+6.4 上下文与服务发现	#sec-6-4
+6.5 模块可访问性	#sec-6-5
+编译与观察	#observe
+回顾与思考	#review
+来源	#sources
+S01	#s01
+S02 §5.3	#s02
+S03	#s03
+S05	#s05
+S04	#s04
+运行说明	README.html
+本轮记录	evidence/runs/ch06-20261103-01/记录.md
+JDK 25 ClassLoader 文档	https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/ClassLoader.html
+虚拟机规范 §5.3—5.4	https://docs.oracle.com/javase/specs/jvms/se25/html/jvms-5.html
+ServiceLoader 契约	https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/util/ServiceLoader.html
+ModuleLayer 文档	https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/ModuleLayer.html
+Module 契约	https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Module.html
+AccessibleObject 契约	https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/reflect/AccessibleObject.html
+来源索引	evidence/索引.md
+静态源码阅读页	sources.html
+身份	evidence/runs/ch06-20261103-01/identity.txt
+服务	evidence/runs/ch06-20261103-01/service.txt
+子层	evidence/runs/ch06-20261103-01/layer.txt
+模块基线	evidence/runs/ch06-20261103-01/module-default.txt
+导出	evidence/runs/ch06-20261103-01/module-exports.txt
+开放	evidence/runs/ch06-20261103-01/module-opens.txt
+上一章：第 5 章	../ch05-bytecode-verification/chapter.html
+返回全书目录	../../index.html
+下一章：第 7 章	../ch07-linking-initialization/chapter.html

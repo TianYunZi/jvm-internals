@@ -1,0 +1,10 @@
+d9c8fbd8dce9bde3f44d80326e63687f836e5ff189aff321ba698cb7bfd412a8  /Users/xiejinxin/Developer/OpenJDK/jdk25u-25.0.5.0.2/src/hotspot/share/prims/jni.cpp
+20a7bc104210b9582fcea376ff2635d90b9638412ac8451695db5b49a476d207  /Users/xiejinxin/Developer/OpenJDK/jdk25u-25.0.5.0.2/src/hotspot/share/runtime/jniHandles.cpp
+eb7b2bf80324db5b915da1715051272edd54fb0850b3fc5e696e044855f31c50  /Users/xiejinxin/Developer/OpenJDK/jdk25u-25.0.5.0.2/src/hotspot/share/runtime/interfaceSupport.inline.hpp
+ffd02895332a6a7fd4d5019d46d7a9af5cef3a6bbede25d0936bec9c324ef632  /Users/xiejinxin/Developer/OpenJDK/jdk25u-25.0.5.0.2/src/hotspot/share/gc/g1/g1CollectedHeap.inline.hpp
+779120679a4256f2fab11abe70d9f38df4b221a2cd1b7ff5f2b3566f297e0a50  /Users/xiejinxin/Developer/OpenJDK/jdk25u-25.0.5.0.2/src/hotspot/share/gc/z/zCollectedHeap.cpp
+78d2f68ab1debf116c03a79d42e9b4d1be8e8cc8d2426ddc81599b5850815278  /Users/xiejinxin/Developer/OpenJDK/jdk25u-25.0.5.0.2/src/hotspot/share/gc/shenandoah/shenandoahHeap.cpp
+956530d3fe36c2ab1a06c00ada48da992c08cafd5d1b3334aace975be3a3bf85  /Users/xiejinxin/Developer/OpenJDK/jdk25u-25.0.5.0.2/src/java.base/share/classes/jdk/internal/foreign/MemorySessionImpl.java
+98a3dadabccaa0eb5cf6cc9f6f427939631c2b441427fc84126215efc2d3bc9d  /Users/xiejinxin/Developer/OpenJDK/jdk25u-25.0.5.0.2/src/java.base/share/classes/jdk/internal/foreign/AbstractMemorySegmentImpl.java
+97f74ae8b8a17d70ddca2745c782078adc54ca3438093b371095f2916580ec95  /Users/xiejinxin/Developer/OpenJDK/jdk25u-25.0.5.0.2/src/java.base/share/classes/jdk/internal/foreign/ConfinedSession.java
+2140c25a3dae78605c11b30df56fdedf7a8d516b7de961c4e79f74af2ebf0bc3  /Users/xiejinxin/Developer/OpenJDK/jdk25u-25.0.5.0.2/src/java.base/share/classes/jdk/internal/foreign/abi/AbstractLinker.java

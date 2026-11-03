@@ -1,0 +1,71 @@
+package org.example.jvminternals.ch17;
+
+/** 固定规模展示优化候选，是否发生以编译记录与机器码为依据。 */
+public final class OptimizationJourney {
+    private static volatile Pair published;
+
+    private OptimizationJourney() {
+    }
+
+    static final class Pair {
+        final int left;
+        final int right;
+
+        Pair(int left, int right) {
+            this.left = left;
+            this.right = right;
+        }
+    }
+
+    /** 结果与数组尾项均被观察，阻止整段运算成为无用途语句。 */
+    public static void main(String[] args) {
+        int[] input = new int[256];
+        int[] output = new int[256];
+        for (int i = 0; i < input.length; i++) {
+            input[i] = i;
+        }
+        long result = 0;
+        System.out.println("阶段=优化候选开始；次数=50000");
+        for (int i = 0; i < 50_000; i++) {
+            result += folded(i) + local(i) + escaped(i) + locked(i);
+            transform(input, output);
+            result += Integer.bitCount(i);
+        }
+        System.out.println("阶段=正常结束；结果=" + result + "；数组末项=" + output[255] + "；发布值=" + published.left);
+        published = null;
+    }
+
+    private static int folded(int value) {
+        int common = twice(value);
+        return common + (8 * 3);
+    }
+
+    private static int twice(int value) {
+        return value + value;
+    }
+
+    private static int local(int value) {
+        Pair pair = new Pair(value, value + 1);
+        return pair.left + pair.right;
+    }
+
+    private static int escaped(int value) {
+        Pair pair = new Pair(value, value + 1);
+        published = pair;
+        return pair.left + pair.right;
+    }
+
+    private static int locked(int value) {
+        // 全新对象只在当前线程使用，使锁消除成为候选，不声明必然消除。
+        Pair pair = new Pair(value, value + 1);
+        synchronized (pair) {
+            return pair.left + pair.right;
+        }
+    }
+
+    private static void transform(int[] input, int[] output) {
+        for (int i = 0; i < input.length; i++) {
+            output[i] = input[i] + 1;
+        }
+    }
+}

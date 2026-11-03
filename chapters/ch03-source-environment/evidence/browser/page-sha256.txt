@@ -1,0 +1,5 @@
+27bec31f15f585b593b640cb6d27a33e2b17421ce0273d770d57152f9c00d3f1  chapters/ch03-source-environment/chapter.html
+dc32ae3ee28d85b7075d9e3306e78a011ae74b03b587e3bc769c638711847b8b  chapters/ch03-source-environment/figures/ch03-f01-source-map.svg
+557b29f1885f4ba8d6b8c93ca68c32a40a7aa368daea949d315c2ec42df715bd  chapters/ch03-source-environment/figures/ch03-f02-observation-tools.svg
+ad41837412cee024c5536063ffef7f131f84a7412d8b66cc330e99a8948af9d7  chapters/ch03-source-environment/figures/ch03-f03-reading-routes.svg
+7b5303d60fefcb96e4c8a4039d0873476cf8f5d580ffdec8a3e5768b950f5c49  assets/book.css

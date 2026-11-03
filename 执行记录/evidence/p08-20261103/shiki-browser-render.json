@@ -1,0 +1,82 @@
+{
+  "version": "Chrome/156.0.8078.80",
+  "pages": [
+    {
+      "page": "chapters/ch30-startup-sharing/chapter.html",
+      "codeIds": [
+        "code-001",
+        "code-002"
+      ]
+    },
+    {
+      "page": "chapters/ch30-startup-sharing/sources.html",
+      "codeIds": [
+        "code-001",
+        "code-002",
+        "code-003",
+        "code-004",
+        "code-005",
+        "code-006"
+      ]
+    },
+    {
+      "page": "chapters/ch30-startup-sharing/README.html",
+      "codeIds": [
+        "code-001",
+        "code-002",
+        "code-003",
+        "code-004",
+        "code-005"
+      ]
+    },
+    {
+      "page": "chapters/ch31-aot-cache/chapter.html",
+      "codeIds": [
+        "code-001"
+      ]
+    },
+    {
+      "page": "chapters/ch31-aot-cache/sources.html",
+      "codeIds": [
+        "code-001",
+        "code-002"
+      ]
+    },
+    {
+      "page": "chapters/ch31-aot-cache/README.html",
+      "codeIds": [
+        "code-001",
+        "code-002",
+        "code-003",
+        "code-004",
+        "code-005"
+      ]
+    },
+    {
+      "page": "chapters/ch32-native-interop/chapter.html",
+      "codeIds": [
+        "code-001"
+      ]
+    },
+    {
+      "page": "chapters/ch32-native-interop/sources.html",
+      "codeIds": [
+        "code-001",
+        "code-002",
+        "code-003",
+        "code-004",
+        "code-005",
+        "code-006"
+      ]
+    },
+    {
+      "page": "chapters/ch32-native-interop/README.html",
+      "codeIds": [
+        "code-001",
+        "code-002",
+        "code-003",
+        "code-004"
+      ]
+    }
+  ]
+}

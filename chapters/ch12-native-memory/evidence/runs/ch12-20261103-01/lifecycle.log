@@ -1,0 +1,38 @@
+[0.005s][info][gc] Using G1
+[0.008s][info][gc,metaspace] CDS archive(s) mapped at: [0x000003ff00000000-0x000003ff00d98000-0x000003ff00d98000), size 14254080, SharedBaseAddress: 0x000003ff00000000, ArchiveRelocationMode: 1.
+[0.008s][info][gc,metaspace] Compressed class space mapped at: 0x000003ff01000000-0x000003ff41000000, reserved size: 1073741824
+[0.008s][info][gc,metaspace] UseCompressedClassPointers 1, UseCompactObjectHeaders 0
+[0.008s][info][gc,metaspace] Narrow klass pointer bits 32, Max shift 3
+[0.008s][info][gc,metaspace] Narrow klass base: 0x000003ff00000000, Narrow klass shift: 0
+[0.008s][info][gc,metaspace] Encoding Range: [0x000003ff00000000 - 0x0000040000000000), (4294967296 bytes)
+[0.008s][info][gc,metaspace] Klass Range:    [0x000003ff00004000 - 0x000003ff41000000), (1090502656 bytes)
+[0.008s][info][gc,metaspace] Klass ID Range:  [16384 - 1090519033) (1090502649)
+[0.008s][info][gc,metaspace] Protection zone: [0x000003ff00000000 - 0x000003ff00004000), (16384 bytes)
+[30.098s][info][class,unload] unloading class org.example.jvminternals.ch08.disposable.Disposable 0x000003ff01051800
+[30.098s][info][class,unload] unloading class org.example.jvminternals.ch08.disposable.Disposable 0x000003ff01051000
+[30.098s][info][class,unload] unloading class org.example.jvminternals.ch08.disposable.Disposable 0x000003ff01050800
+[30.098s][info][class,unload] unloading class org.example.jvminternals.ch08.disposable.Disposable 0x000003ff01050000
+[30.098s][info][class,unload] unloading class org.example.jvminternals.ch08.disposable.Disposable 0x000003ff0104f800
+[30.098s][info][class,unload] unloading class org.example.jvminternals.ch08.disposable.Disposable 0x000003ff0104f000
+[30.098s][info][class,unload] unloading class org.example.jvminternals.ch08.disposable.Disposable 0x000003ff0104e800
+[30.098s][info][class,unload] unloading class org.example.jvminternals.ch08.disposable.Disposable 0x000003ff0104e000
+[30.098s][info][class,unload] unloading class org.example.jvminternals.ch08.disposable.Disposable 0x000003ff0104d800
+[30.098s][info][class,unload] unloading class org.example.jvminternals.ch08.disposable.Disposable 0x000003ff0104d000
+[30.098s][info][class,unload] unloading class org.example.jvminternals.ch08.disposable.Disposable 0x000003ff0104c800
+[30.098s][info][class,unload] unloading class org.example.jvminternals.ch08.disposable.Disposable 0x000003ff0104c000
+[30.098s][info][class,unload] unloading class org.example.jvminternals.ch08.disposable.Disposable 0x000003ff0104b800
+[30.098s][info][class,unload] unloading class org.example.jvminternals.ch08.disposable.Disposable 0x000003ff0104b000
+[30.098s][info][class,unload] unloading class org.example.jvminternals.ch08.disposable.Disposable 0x000003ff0104a800
+[30.098s][info][class,unload] unloading class org.example.jvminternals.ch08.disposable.Disposable 0x000003ff0104a000
+[30.098s][info][class,unload] unloading class org.example.jvminternals.ch08.disposable.Disposable 0x000003ff01049800
+[30.098s][info][class,unload] unloading class org.example.jvminternals.ch08.disposable.Disposable 0x000003ff01049000
+[30.098s][info][class,unload] unloading class org.example.jvminternals.ch08.disposable.Disposable 0x000003ff01048800
+[30.098s][info][class,unload] unloading class org.example.jvminternals.ch08.disposable.Disposable 0x000003ff01048000
+[30.098s][info][class,unload] unloading class org.example.jvminternals.ch08.disposable.Disposable 0x000003ff01047800
+[30.098s][info][class,unload] unloading class org.example.jvminternals.ch08.disposable.Disposable 0x000003ff01047000
+[30.098s][info][class,unload] unloading class org.example.jvminternals.ch08.disposable.Disposable 0x000003ff01046400
+[30.098s][info][class,unload] unloading class org.example.jvminternals.ch08.disposable.Disposable 0x000003ff01046800
+[30.101s][info][gc,metaspace] GC(0) Metaspace: 1345K(1600K)->1311K(1536K) NonClass: 1205K(1344K)->1184K(1280K) Class: 139K(256K)->127K(256K)
+[30.101s][info][gc          ] GC(0) Pause Full (System.gc()) 6M->1M(32M) 5.735ms
+[45.116s][info][gc,metaspace] GC(1) Metaspace: 1311K(1536K)->1311K(1536K) NonClass: 1184K(1280K)->1184K(1280K) Class: 127K(256K)->127K(256K)
+[45.116s][info][gc          ] GC(1) Pause Full (System.gc()) 1M->1M(32M) 4.591ms

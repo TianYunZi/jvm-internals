@@ -1,0 +1,91 @@
+package org.example.jvminternals.ch34;
+
+import java.io.IOException;
+import java.nio.file.Path;
+import java.time.Duration;
+import java.util.concurrent.CountDownLatch;
+import jdk.jfr.Configuration;
+import jdk.jfr.Event;
+import jdk.jfr.Label;
+import jdk.jfr.Name;
+import jdk.jfr.Recording;
+
+/** 固定三次请求，把业务区间与锁持有者放到同一条记录。 */
+public final class LatencyJourney {
+    private static final Object GATE = new Object();
+    private static volatile long consumed;
+
+    @Name("book.Request")
+    @Label("教学请求")
+    static final class RequestEvent extends Event {
+        @Label("请求编号")
+        int requestId;
+    }
+
+    @Name("book.Holder")
+    @Label("教学持锁区间")
+    static final class HolderEvent extends Event {
+    }
+
+    private LatencyJourney() {
+    }
+
+    /** recording在本作用域关闭；输出路径由命令明确给出。 */
+    public static void main(String[] args)
+            throws IOException, java.text.ParseException, InterruptedException {
+        try (Recording recording = new Recording(Configuration.getConfiguration("profile"))) {
+            recording.enable(RequestEvent.class).withThreshold(Duration.ZERO);
+            recording.enable(HolderEvent.class).withThreshold(Duration.ZERO);
+            recording.enable("jdk.JavaMonitorEnter").withThreshold(Duration.ofMillis(1));
+            recording.enable("jdk.MethodTrace").with("filter",
+                    "org.example.jvminternals.ch34.LatencyJourney::service").withThreshold(Duration.ZERO);
+            recording.enable("jdk.MethodTiming").with("filter",
+                    "org.example.jvminternals.ch34.LatencyJourney::service").withPeriod(Duration.ofMillis(100));
+            recording.setMaxSize(16L * 1024 * 1024);
+            recording.start();
+            service(1);
+            CountDownLatch held = new CountDownLatch(1);
+            Thread holder = Thread.ofPlatform().name("latency-holder").start(() -> hold(held));
+            held.await();
+            service(2);
+            holder.join();
+            service(3);
+            recording.stop();
+            recording.dump(Path.of(args[0]));
+            System.out.println("记录已保存，checksum=" + consumed);
+        }
+    }
+
+    /** 整个请求区间包括等锁和计算，不能把它当成处理器时间。 */
+    public static void service(int requestId) {
+        RequestEvent event = new RequestEvent();
+        event.requestId = requestId;
+        event.begin();
+        synchronized (GATE) {
+            long value = requestId;
+            for (int index = 0; index < 500_000; index++) {
+                value = value * 1_664_525 + 1_013_904_223;
+            }
+            consumed = value;
+        }
+        event.commit();
+        System.out.println("请求完成 id=" + requestId);
+    }
+
+    private static void hold(CountDownLatch held) {
+        synchronized (GATE) {
+            HolderEvent event = new HolderEvent();
+            event.begin();
+            held.countDown();
+            try {
+                // 明确的教学等待，制造可解释区间；时间不作为性能收益证据。
+                Thread.sleep(180);
+            } catch (InterruptedException interrupted) {
+                Thread.currentThread().interrupt();
+                System.err.println("持锁阶段中断，释放监视器");
+            } finally {
+                event.commit();
+            }
+        }
+    }
+}

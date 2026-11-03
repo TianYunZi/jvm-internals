@@ -1,0 +1,2 @@
+Exception in thread "main" java.lang.NoSuchMethodError: 'java.lang.String org.example.jvminternals.ch07.library.Api.greet()'
+	at org.example.jvminternals.ch07.client.BinaryClient.main(BinaryClient.java:9)

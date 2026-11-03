@@ -1,0 +1,5 @@
+案例 pid=84066 mode=allocate time=2026-11-03T13:40:11.356713Z processors=8
+测量 count=40000 wallNs=16883292 p50Ns=167 p99Ns=625 maxNs=1072792 threadAllocatedBytes=164800016
+real 0.10
+user 0.09
+sys 0.02

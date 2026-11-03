@@ -1,0 +1,10 @@
+CH32 堆内段 bytes=12 native=false
+CH32 本地段 bytes=12 alive=true owner=true first=2
+WARNING: A restricted method in java.lang.foreign.SymbolLookup has been called
+WARNING: java.lang.foreign.SymbolLookup::libraryLookup has been called by org.example.jvminternals.ch32.ForeignJourney in an unnamed module (file:/Users/xiejinxin/Developer/Java/jvm-internals/chapters/ch32-native-interop/target/classes/)
+WARNING: Use --enable-native-access=ALL-UNNAMED to avoid a warning for callers in this module
+WARNING: Restricted methods will be blocked in a future release unless native access is enabled
+
+CH32 下行调用及同步上行回调 result=34
+CH32 Arena关闭后 alive=false；不再解引用本地段或调用桩
+exit=0

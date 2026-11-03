@@ -1,0 +1,14 @@
+sequenceDiagram
+  participant J as 托管代码
+  participant N as 本地方法
+  participant T as 外部原生线程
+  participant V as HotSpot
+  J->>N: 下行调用并转换线程状态
+  N->>T: 创建线程并保持类全局引用
+  T->>V: AttachCurrentThread
+  T->>J: 回调Java方法（由外部线程执行）
+  J-->>T: 回调返回
+  T->>V: DetachCurrentThread
+  T-->>N: 线程退出，调用方join
+  N-->>J: 清理临时引用后返回
+  Note over J,T: 回调由外部附加线程执行，不切回最初调用线程

@@ -1,0 +1,5 @@
+CH32 堆内段 bytes=12 native=false
+CH32 本地段 bytes=12 alive=true owner=true first=2
+CH32 下行调用及同步上行回调 result=34
+CH32 Arena关闭后 alive=false；不再解引用本地段或调用桩
+exit=0

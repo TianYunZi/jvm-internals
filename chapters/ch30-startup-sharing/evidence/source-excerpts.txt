@@ -1,0 +1,491 @@
+
+FILE src/java.base/share/native/libjli/java.c
+SYMBOLS JLI_Launch、JavaMain、InitializeJVM、invokeInstanceMainWithArgs
+226: JLI_Launch(int argc, char ** argv,              /* main argc, argv */
+227:         int jargc, const char** jargv,          /* java args */
+228:         int appclassc, const char** appclassv,  /* app classpath */
+229:         const char* fullversion,                /* full version defined */
+230:         const char* dotversion,                 /* UNUSED dot version defined */
+231:         const char* pname,                      /* program name */
+232:         const char* lname,                      /* launcher name */
+233:         jboolean javaargs,                      /* JAVA_ARGS */
+234:         jboolean cpwildcard,                    /* classpath wildcard*/
+235:         jboolean javaw,                         /* windows-only javaw */
+236:         jint ergo                               /* unused */
+237: )
+238: {
+239:     int mode = LM_UNKNOWN;
+240:     char *what = NULL;
+241:     int ret;
+242:     InvocationFunctions ifn;
+243:     jlong start = 0, end = 0;
+244:     char jvmpath[MAXPATHLEN];
+468: JavaMain(void* _args)
+469: {
+470:     JavaMainArgs *args = (JavaMainArgs *)_args;
+471:     int argc = args->argc;
+472:     char **argv = args->argv;
+473:     int mode = args->mode;
+474:     char *what = args->what;
+475:     InvocationFunctions ifn = args->ifn;
+476: 
+477:     JavaVM *vm = 0;
+478:     JNIEnv *env = 0;
+479:     jclass mainClass = NULL;
+480:     jclass appClass = NULL; // actual application class being launched
+481:     jobjectArray mainArgs;
+482:     int ret = 0;
+483:     jlong start = 0, end = 0;
+484:     jclass helperClass;
+485:     jfieldID isStaticMainField;
+486:     jboolean isStaticMain;
+487:     jfieldID noArgMainField;
+488:     jboolean noArgMain;
+489: 
+490:     RegisterThread();
+491: 
+492:     /* Initialize the virtual machine */
+493:     start = CurrentTimeMicros();
+494:     if (!InitializeJVM(&vm, &env, &ifn)) {
+495:         JLI_ReportErrorMessage(JVM_ERROR1);
+496:         exit(1);
+497:     }
+498: 
+499:     if (showSettings != NULL) {
+500:         ShowSettings(env, showSettings);
+501:         CHECK_EXCEPTION_LEAVE(1);
+502:     }
+503: 
+628:     isStaticMainField = (*env)->GetStaticFieldID(env, helperClass, "isStaticMain", "Z");
+629:     CHECK_EXCEPTION_NULL_LEAVE(isStaticMainField);
+630:     isStaticMain = (*env)->GetStaticBooleanField(env, helperClass, isStaticMainField);
+631: 
+632:     noArgMainField = (*env)->GetStaticFieldID(env, helperClass, "noArgMain", "Z");
+633:     CHECK_EXCEPTION_NULL_LEAVE(noArgMainField);
+634:     noArgMain = (*env)->GetStaticBooleanField(env, helperClass, noArgMainField);
+635: 
+636:     if (isStaticMain) {
+637:         if (noArgMain) {
+638:             ret = invokeStaticMainWithoutArgs(env, mainClass);
+639:         } else {
+640:             ret = invokeStaticMainWithArgs(env, mainClass, mainArgs);
+641:         }
+642:     } else {
+643:         if (noArgMain) {
+644:             ret = invokeInstanceMainWithoutArgs(env, mainClass);
+645:         } else {
+646:             ret = invokeInstanceMainWithArgs(env, mainClass, mainArgs);
+647:         }
+648:     }
+649:     if (!ret) {
+650:         // An appropriate main method couldn't be located, check and report
+651:         // any exception and LEAVE()
+652:         CHECK_EXCEPTION_LEAVE(1);
+653:     }
+654: 
+655:     /*
+656:      * The launcher's exit code (in the absence of calls to
+657:      * System.exit) will be non-zero if main threw an exception.
+
+FILE src/java.base/share/classes/sun/launcher/LauncherHelper.java
+SYMBOLS validateMainMethod
+920:     private static boolean isStaticMain = false;
+921:     private static boolean noArgMain = false;
+922: 
+923:     // Check the existence and signature of main and abort if incorrect.
+924:     private static void validateMainMethod(Class<?> mainClass) {
+925:         Method mainMethod = null;
+926:         try {
+927:             mainMethod = MethodFinder.findMainMethod(mainClass);
+928: 
+929:             if (mainMethod == null) {
+930:                 // invalid main or not FX application, abort with an error
+931:                 abort(null, "java.launcher.cls.error2", mainClass.getName(),
+932:                       JAVAFX_APPLICATION_CLASS_NAME);
+933:             }
+934:         } catch (Throwable e) {
+935:             if (mainClass.getModule().isNamed()) {
+936:                 abort(e, "java.launcher.module.error3",
+937:                       mainClass.getName(), mainClass.getModule().getName(),
+938:                       e.getClass().getName(), e.getLocalizedMessage());
+939:             } else {
+940:                 abort(e, "java.launcher.cls.error5", mainClass.getName(),
+941:                       e.getClass().getName(), e.getLocalizedMessage());
+942:             }
+943:         }
+944: 
+945:         int mods = mainMethod.getModifiers();
+946:         isStaticMain = Modifier.isStatic(mods);
+947:         noArgMain = mainMethod.getParameterCount() == 0;
+948: 
+949:         if (!isStaticMain) {
+950:             String className = mainMethod.getDeclaringClass().getName();
+951:             if (Modifier.isAbstract(mainClass.getModifiers())) {
+952:                 abort(null, "java.launcher.cls.error8", className);
+953:             }
+954:             if (mainClass.isMemberClass() && !Modifier.isStatic(mainClass.getModifiers())) {
+955:                 abort(null, "java.launcher.cls.error7", className);
+956:             }
+957:             try {
+958:                 Constructor<?> constructor = mainClass.getDeclaredConstructor();
+959:                 if (Modifier.isPrivate(constructor.getModifiers())) {
+960:                     abort(null, "java.launcher.cls.error6", className);
+961:                 }
+962:             } catch (Throwable ex) {
+963:                 abort(null, "java.launcher.cls.error6", className);
+964:             }
+965:         }
+966:     }
+967: 
+968:     private static final String encprop = "sun.jnu.encoding";
+969:     private static String encoding = null;
+970:     private static boolean isCharsetSupported = false;
+
+FILE src/java.base/share/classes/jdk/internal/misc/MethodFinder.java
+SYMBOLS findMainMethod
+45:     /**
+46:      * Return the first method that meets the requirements of an application main method
+47:      * {@jls 12.1.4}. The method must:
+48:      * <ul>
+49:      * <li>be declared in this class's hierarchy</li>
+50:      * <li>have the name "main"</li>
+51:      * <li>have a single argument of type {@code String[]}, {@code String...} or no argument</li>
+52:      * <li>have the return type of void</li>
+53:      * <li>be public, protected or package private</li>
+54:      *</ul>
+55:      *
+56:      * The method returned would be used by a launcher to initiate the execution of an
+57:      * application.
+58:      *
+59:      * Searching continues until a main method is found or the search is exhausted. The
+60:      * primary search occurs in two phases, once for a main method with a {@code
+61:      * String[]} or {@code String...} argument and failing that, once for a main method
+62:      * with a no arguments. The search itself uses recursion to first look at methods
+63:      * in this class, then default methods in this class's interface hierarchy and
+64:      * then repeating these steps with the class's super class.
+65:      *
+66:      * @apiNote The method returned may be declared in this class, a super class
+67:      * or as a default method of an interface that the class or super class
+68:      * implements.
+69:      * <p>It is not possible to declare a static main method and instance main
+70:      * method with the same signature in the same class. {@jls 8.4.2} states that
+71:      * "It is a compile-time error to declare two methods with override-equivalent
+72:      * signatures in a class."
+73:      * <p>{@link SecurityException SecurityExceptions} can halt
+74:      * the search. In this case, a null is returned.
+75:      *
+76:      * @return the main method if a method found or null if no method is found
+77:      *
+78:      * @jls 8.2 Class Members
+79:      * @jls 8.4 Method Declarations
+80:      * @jls 8.4.2 Method Signature
+81:      * @jls 12.1.4 Invoke a main method
+82:      */
+83:     public static Method findMainMethod(Class<?> cls) {
+84:         Method mainMethod = JLA.findMethod(cls, true, "main", String[].class);
+85: 
+86:         if (mainMethod == null) {
+87:             //if not public method, try to lookup a non-public one
+88:             mainMethod = JLA.findMethod(cls, false, "main", String[].class);
+89:         }
+90: 
+91:         if (mainMethod == null || !isValidMainMethod(mainMethod)) {
+92:             mainMethod = JLA.findMethod(cls, false, "main");
+93:         }
+94: 
+95:         if (mainMethod == null || !isValidMainMethod(mainMethod)) {
+96:             return null;
+97:         }
+98: 
+99:         return mainMethod;
+100:     }
+101: 
+102:     private static boolean isValidMainMethod(Method mainMethodCandidate) {
+103:         return mainMethodCandidate.getReturnType() == void.class &&
+104:                !Modifier.isPrivate(mainMethodCandidate.getModifiers());
+105: 
+106:     }
+107: 
+108: }
+
+FILE src/hotspot/share/runtime/threads.cpp
+SYMBOLS Threads::create_vm
+441: jint Threads::create_vm(JavaVMInitArgs* args, bool* canTryAgain) {
+442:   extern void JDK_Version_init();
+443: 
+444:   // Preinitialize version info.
+445:   VM_Version::early_initialize();
+446: 
+447:   // Check version
+448:   if (!is_supported_jni_version(args->version)) return JNI_EVERSION;
+449: 
+450:   // Initialize library-based TLS
+451:   ThreadLocalStorage::init();
+452: 
+453:   // Initialize the output stream module
+454:   ostream_init();
+455: 
+456:   // Process java launcher properties.
+457:   Arguments::process_sun_java_launcher_properties(args);
+458: 
+459:   // Initialize the os module
+460:   os::init();
+461: 
+462:   // Initialize memory pools
+535:   // Launch -agentlib/-agentpath and converted -Xrun agents
+536:   JvmtiAgentList::load_agents();
+537: 
+538:   // Initialize Threads state
+539:   _number_of_threads = 0;
+540:   _number_of_non_daemon_threads = 0;
+541: 
+542:   // Initialize global data structures and create system classes in heap
+543:   vm_init_globals();
+544: 
+545: #if INCLUDE_JVMCI
+546:   if (JVMCICounterSize > 0) {
+547:     JavaThread::_jvmci_old_thread_counters = NEW_C_HEAP_ARRAY(jlong, JVMCICounterSize, mtJVMCI);
+548:     memset(JavaThread::_jvmci_old_thread_counters, 0, sizeof(jlong) * JVMCICounterSize);
+549:   } else {
+550:     JavaThread::_jvmci_old_thread_counters = nullptr;
+585:   main_thread->stack_overflow_state()->create_stack_guard_pages();
+586: 
+587:   // Initialize Java-Level synchronization subsystem
+588:   ObjectMonitor::Initialize();
+589:   ObjectSynchronizer::initialize();
+590: 
+591:   // Initialize global modules
+592:   jint status = init_globals();
+593:   if (status != JNI_OK) {
+594:     main_thread->smr_delete();
+595:     *canTryAgain = false; // don't let caller call JNI_CreateJavaVM again
+596:     return status;
+597:   }
+598: 
+599:   // Have the WatcherThread read the release file in the background.
+600:   ReadReleaseFileTask* read_task = new ReadReleaseFileTask();
+601:   read_task->enroll();
+602: 
+603:   // Create WatcherThread as soon as we can since we need it in case
+680:   // may be attached late and JVMTI must track phases of VM execution
+681:   JvmtiExport::enter_early_start_phase();
+682: 
+683:   // Notify JVMTI agents that VM has started (JNI is up) - nop if no agents.
+684:   JvmtiExport::post_early_vm_start();
+685: 
+686:   // Launch -Xrun agents early if EagerXrunInit is set
+687:   if (EagerXrunInit) {
+688:     JvmtiAgentList::load_xrun_agents();
+689:   }
+690: 
+691:   initialize_java_lang_classes(main_thread, CHECK_JNI_ERR);
+692: 
+693:   quicken_jni_functions();
+694: 
+695:   // No more stub generation allowed after that point.
+696:   StubCodeDesc::freeze();
+697: 
+698:   // Set flag that basic initialization has completed. Used by exceptions and various
+699:   // debug stuff, that does not work until all basic classes have been initialized.
+700:   set_init_completed();
+701: 
+702:   LogConfiguration::post_initialize();
+703:   Metaspace::post_initialize();
+704:   MutexLockerImpl::post_initialize();
+
+FILE src/hotspot/share/cds/filemap.cpp
+SYMBOLS FileMapInfo::validate_class_location、map_regions
+310:   st->print_cr("- heap_root_segments.roots_count: %d" , _heap_root_segments.roots_count());
+311:   st->print_cr("- heap_root_segments.base_offset: 0x%zx", _heap_root_segments.base_offset());
+312:   st->print_cr("- heap_root_segments.count:       %zu", _heap_root_segments.count());
+313:   st->print_cr("- heap_root_segments.max_size_elems: %d", _heap_root_segments.max_size_in_elems());
+314:   st->print_cr("- heap_root_segments.max_size_bytes: %d", _heap_root_segments.max_size_in_bytes());
+315:   st->print_cr("- _heap_oopmap_start_pos:         %zu", _heap_oopmap_start_pos);
+316:   st->print_cr("- _heap_ptrmap_start_pos:         %zu", _heap_ptrmap_start_pos);
+317:   st->print_cr("- _rw_ptrmap_start_pos:           %zu", _rw_ptrmap_start_pos);
+318:   st->print_cr("- _ro_ptrmap_start_pos:           %zu", _ro_ptrmap_start_pos);
+319:   st->print_cr("- allow_archiving_with_java_agent:%d", _allow_archiving_with_java_agent);
+320:   st->print_cr("- use_optimized_module_handling:  %d", _use_optimized_module_handling);
+321:   st->print_cr("- has_full_module_graph           %d", _has_full_module_graph);
+322:   st->print_cr("- has_aot_linked_classes          %d", _has_aot_linked_classes);
+323: }
+324: 
+325: bool FileMapInfo::validate_class_location() {
+326:   assert(CDSConfig::is_using_archive(), "runtime only");
+327: 
+328:   AOTClassLocationConfig* config = header()->class_location_config();
+329:   bool has_extra_module_paths = false;
+330:   if (!config->validate(full_path(), header()->has_aot_linked_classes(), &has_extra_module_paths)) {
+331:     if (PrintSharedArchiveAndExit) {
+332:       MetaspaceShared::set_archive_loading_failed();
+333:       return true;
+334:     } else {
+335:       return false;
+336:     }
+337:   }
+338: 
+339:   if (header()->has_full_module_graph() && has_extra_module_paths) {
+340:     CDSConfig::stop_using_optimized_module_handling();
+1132: MapArchiveResult FileMapInfo::map_regions(int regions[], int num_regions, char* mapped_base_address, ReservedSpace rs) {
+1133:   DEBUG_ONLY(FileMapRegion* last_region = nullptr);
+1134:   intx addr_delta = mapped_base_address - header()->requested_base_address();
+1135: 
+1136:   // Make sure we don't attempt to use header()->mapped_base_address() unless
+1137:   // it's been successfully mapped.
+1138:   DEBUG_ONLY(header()->set_mapped_base_address((char*)(uintptr_t)0xdeadbeef);)
+1139: 
+1140:   for (int i = 0; i < num_regions; i++) {
+1141:     int idx = regions[i];
+1142:     MapArchiveResult result = map_region(idx, addr_delta, mapped_base_address, rs);
+1143:     if (result != MAP_ARCHIVE_SUCCESS) {
+1144:       return result;
+1145:     }
+1146:     FileMapRegion* r = region_at(idx);
+1147:     DEBUG_ONLY(if (last_region != nullptr) {
+1148:         // Ensure that the OS won't be able to allocate new memory spaces between any mapped
+1149:         // regions, or else it would mess up the simple comparison in MetaspaceObj::is_shared().
+1150:         assert(r->mapped_base() == last_region->mapped_end(), "must have no gaps");
+1151:       }
+1152:       last_region = r;)
+1153:     aot_log_info(aot)("Mapped %s region #%d at base " INTPTR_FORMAT " top " INTPTR_FORMAT " (%s)", is_static() ? "static " : "dynamic",
+1154:                   idx, p2i(r->mapped_base()), p2i(r->mapped_end()),
+1155:                   shared_region_name[idx]);
+1156: 
+1157:   }
+1158: 
+1159:   header()->set_mapped_base_address(header()->requested_base_address() + addr_delta);
+1160:   if (addr_delta != 0 && !relocate_pointers_in_core_regions(addr_delta)) {
+1161:     return MAP_ARCHIVE_OTHER_FAILURE;
+1162:   }
+1163: 
+1164:   return MAP_ARCHIVE_SUCCESS;
+1165: }
+1166: 
+1167: bool FileMapInfo::read_region(int i, char* base, size_t size, bool do_commit) {
+1168:   FileMapRegion* r = region_at(i);
+1169:   if (do_commit) {
+1170:     aot_log_info(aot)("Commit %s region #%d at base " INTPTR_FORMAT " top " INTPTR_FORMAT " (%s)%s",
+1171:                   is_static() ? "static " : "dynamic", i, p2i(base), p2i(base + size),
+1172:                   shared_region_name[i], r->allow_exec() ? " exec" : "");
+1173:     if (!os::commit_memory(base, size, r->allow_exec())) {
+1174:       aot_log_error(aot)("Failed to commit %s region #%d (%s)", is_static() ? "static " : "dynamic",
+1175:                      i, shared_region_name[i]);
+1176:       return false;
+1177:     }
+1178:   }
+1179:   if (os::lseek(_fd, (long)r->file_offset(), SEEK_SET) != (int)r->file_offset() ||
+1180:       read_bytes(base, size) != size) {
+1181:     return false;
+1182:   }
+1183: 
+1184:   if (VerifySharedSpaces && !r->check_region_crc(base)) {
+1185:     return false;
+1186:   }
+1187: 
+1188:   r->set_mapped_from_file(false);
+
+FILE src/java.base/share/classes/java/lang/Shutdown.java
+SYMBOLS runHooks、exit、shutdown
+104:     /* Run all system shutdown hooks.
+105:      *
+106:      * The system shutdown hooks are run in the thread synchronized on
+107:      * Shutdown.class.  Other threads calling Runtime::exit, Runtime::halt
+108:      * or JNI DestroyJavaVM will block indefinitely.
+109:      *
+110:      * ApplicationShutdownHooks is registered as one single hook that starts
+111:      * all application shutdown hooks and waits until they finish.
+112:      */
+113:     private static void runHooks() {
+114:         synchronized (lock) {
+115:             /* Guard against the possibility of a daemon thread invoking exit
+116:              * after DestroyJavaVM initiates the shutdown sequence
+117:              */
+118:             if (VM.isShutdown()) return;
+119:         }
+120: 
+121:         for (int i=0; i < MAX_SYSTEM_HOOKS; i++) {
+122:             try {
+123:                 Runnable hook;
+124:                 synchronized (lock) {
+125:                     // acquire the lock to make sure the hook registered during
+126:                     // shutdown is visible here.
+127:                     currentRunningHook = i;
+128:                     hook = hooks[i];
+129:                 }
+130:                 if (hook != null) hook.run();
+131:             } catch (Throwable t) {
+132:                 // ignore
+133:             }
+134:         }
+135: 
+136:         // set shutdown state
+137:         VM.shutdown();
+138:     }
+139: 
+140:     /* Notify the VM that it's time to halt. */
+141:     static native void beforeHalt();
+142: 
+143:     /* The halt method is synchronized on the halt lock
+144:      * to avoid corruption of the delete-on-shutdown file list.
+145:      * It invokes the true native halt method.
+146:      */
+147:     static void halt(int status) {
+148:         synchronized (haltLock) {
+149:             halt0(status);
+150:         }
+151:     }
+152: 
+153:     static native void halt0(int status);
+154: 
+155:     /* Invoked by Runtime.exit, which does all the security checks.
+156:      * Also invoked by handlers for system-provided termination events,
+157:      * which should pass a nonzero status code.
+158:      */
+159:     static void exit(int status) {
+160:         logRuntimeExit(status);         // Log without holding the lock;
+161: 
+162:         synchronized (Shutdown.class) {
+163:             /* Synchronize on the class object, causing any other thread
+164:              * that attempts to initiate shutdown to stall indefinitely
+165:              */
+166:             beforeHalt();
+167:             runHooks();
+168:             halt(status);
+169:         }
+170:     }
+198:     static void shutdown() {
+199:         synchronized (Shutdown.class) {
+200:             runHooks();
+201:         }
+202:     }
+203: 
+204: }
+
+FILE src/java.base/share/classes/java/lang/ApplicationShutdownHooks.java
+SYMBOLS runHooks
+96:         Collection<Thread> threads;
+97:         synchronized(ApplicationShutdownHooks.class) {
+98:             threads = hooks.keySet();
+99:             hooks = null;
+100:         }
+101:         for (Thread hook : threads) {
+102:             try {
+103:                 hook.start();
+104:             } catch (IllegalThreadStateException ignore) {
+105:                 // already started
+106:             } catch (RejectedExecutionException ignore) {
+107:                 // scheduler shutdown?
+108:                 assert hook.isVirtual();
+109:             }
+110:         }
+111:         for (Thread hook : threads) {
+112:             while (true) {
+113:                 try {
+114:                     hook.join();
+115:                     break;
+116:                 } catch (InterruptedException ignored) {
+117:                 }
+118:             }
+119:         }
+120:     }
+121: }

@@ -1,0 +1,6 @@
+Exception in thread "main" java.lang.NoClassDefFoundError: org/example/jvminternals/ch07/library/Api
+	at org.example.jvminternals.ch07.client.BinaryClient.main(BinaryClient.java:9)
+Caused by: java.lang.ClassNotFoundException: org.example.jvminternals.ch07.library.Api
+	at java.base/jdk.internal.loader.BuiltinClassLoader.loadClass(BuiltinClassLoader.java:580)
+	at java.base/java.lang.ClassLoader.loadClass(ClassLoader.java:490)
+	... 1 more

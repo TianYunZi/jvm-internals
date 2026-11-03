@@ -1,0 +1,28 @@
+全书目录	../../index.html
+阶段与时机	#sec-7-1
+符号引用解析	#sec-7-2
+静态字段与初始化	#sec-7-3
+并发、递归与失败	#sec-7-4
+链接错误与兼容性	#sec-7-5
+源码与观察	#observe
+回顾与思考	#review
+来源	#sources
+第 5 章验证	../ch05-bytecode-verification/chapter.html
+第 6 章身份和访问	../ch06-classloaders-modules/chapter.html
+S01	#s01
+S03	#s03
+S02	#s02
+S04	#s04
+源码阅读页	sources.html
+运行说明	README.html
+本轮记录	evidence/runs/ch07-20261103-01/记录.md
+Java SE 25 虚拟机规范第 5 章	https://docs.oracle.com/javase/specs/jvms/se25/html/jvms-5.html
+语言规范第 12 章	https://docs.oracle.com/javase/specs/jls/se25/html/jls-12.html
+来源索引	evidence/索引.md
+正常初始化	evidence/runs/ch07-20261103-01/journey.txt
+失败链	evidence/runs/ch07-20261103-01/failure.txt
+线程快照	evidence/runs/ch07-20261103-01/race-threads.txt
+固定客户端反汇编	evidence/runs/ch07-20261103-01/client.javap.txt
+上一章：第 6 章	../ch06-classloaders-modules/chapter.html
+返回全书目录	../../index.html
+下一章：第 8 章	../ch08-type-metadata/chapter.html

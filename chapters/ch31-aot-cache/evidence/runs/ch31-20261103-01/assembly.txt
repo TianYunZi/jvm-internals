@@ -1,0 +1,6 @@
+Reading AOTConfiguration chapters/ch31-aot-cache/target/training.aotconfig and writing AOTCache chapters/ch31-aot-cache/target/cache.aot
+AOTCache creation is complete: chapters/ch31-aot-cache/target/cache.aot 12058624 bytes
+real 0.99
+user 0.55
+sys 0.44
+exit=0

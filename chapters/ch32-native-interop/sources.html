@@ -1,0 +1,218 @@
+<!doctype html><html lang="zh-CN"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="shiki-version" content="4.6.0"><title>第32章源码阅读</title><link rel="stylesheet" href="../../assets/book.css"></head><body><main class="home" id="main"><h1>第32章源码阅读</h1><p>由正式源文件生成的静态阅读副本。<a href="chapter.html">返回正文</a> · <a href="README.html">运行说明</a></p><h2><code class="shiki-inline" data-shiki-version="4.6.0" data-code-id="code-001" data-code-language="text"><span>src/main/java/org/example/jvminternals/ch32/ForeignJourney.java</span></code></h2><pre data-shiki-version="4.6.0" class="shiki github-light" style="background-color:#fff;color:#24292e" tabindex="0"><code data-code-id="code-002" data-code-language="java" data-source-file="chapters/ch32-native-interop/src/main/java/org/example/jvminternals/ch32/ForeignJourney.java"><span class="line"><span style="color:#D73A49">package</span><span style="color:#24292E"> org.example.jvminternals.ch32;</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#D73A49">import</span><span style="color:#24292E"> java.lang.foreign.Arena;</span></span>
+<span class="line"><span style="color:#D73A49">import</span><span style="color:#24292E"> java.lang.foreign.FunctionDescriptor;</span></span>
+<span class="line"><span style="color:#D73A49">import</span><span style="color:#24292E"> java.lang.foreign.Linker;</span></span>
+<span class="line"><span style="color:#D73A49">import</span><span style="color:#24292E"> java.lang.foreign.MemorySegment;</span></span>
+<span class="line"><span style="color:#D73A49">import</span><span style="color:#24292E"> java.lang.foreign.SymbolLookup;</span></span>
+<span class="line"><span style="color:#D73A49">import</span><span style="color:#24292E"> java.lang.foreign.ValueLayout;</span></span>
+<span class="line"><span style="color:#D73A49">import</span><span style="color:#24292E"> java.lang.invoke.MethodHandle;</span></span>
+<span class="line"><span style="color:#D73A49">import</span><span style="color:#24292E"> java.lang.invoke.MethodHandles;</span></span>
+<span class="line"><span style="color:#D73A49">import</span><span style="color:#24292E"> java.nio.file.Path;</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#6A737D">/** 用同步回调使库、段、桩与Arena的有效期处于同一个词法范围。 */</span></span>
+<span class="line"><span style="color:#D73A49">public</span><span style="color:#D73A49"> final</span><span style="color:#D73A49"> class</span><span style="color:#6F42C1"> ForeignJourney</span><span style="color:#24292E"> {</span></span>
+<span class="line"><span style="color:#D73A49">    private</span><span style="color:#6F42C1"> ForeignJourney</span><span style="color:#24292E">() {</span></span>
+<span class="line"><span style="color:#24292E">    }</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#6A737D">    /** 本地调用约定不允许Java异常任意跨越回调边界；本回调只做有限整数运算。 */</span></span>
+<span class="line"><span style="color:#D73A49">    public</span><span style="color:#D73A49"> static</span><span style="color:#D73A49"> int</span><span style="color:#6F42C1"> adjust</span><span style="color:#24292E">(</span><span style="color:#D73A49">int</span><span style="color:#E36209"> value</span><span style="color:#24292E">) {</span></span>
+<span class="line"><span style="color:#D73A49">        return</span><span style="color:#24292E"> value </span><span style="color:#D73A49">+</span><span style="color:#005CC5"> 10</span><span style="color:#24292E">;</span></span>
+<span class="line"><span style="color:#24292E">    }</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#6A737D">    /** MethodHandle精确调用声明Throwable；异常交给进程入口，不吞掉失败上下文。 */</span></span>
+<span class="line"><span style="color:#D73A49">    public</span><span style="color:#D73A49"> static</span><span style="color:#D73A49"> void</span><span style="color:#6F42C1"> main</span><span style="color:#24292E">(</span><span style="color:#D73A49">String</span><span style="color:#24292E">[] </span><span style="color:#E36209">args</span><span style="color:#24292E">) </span><span style="color:#D73A49">throws</span><span style="color:#24292E"> Throwable {</span></span>
+<span class="line"><span style="color:#24292E">        MemorySegment heap </span><span style="color:#D73A49">=</span><span style="color:#24292E"> MemorySegment.</span><span style="color:#6F42C1">ofArray</span><span style="color:#24292E">(</span><span style="color:#D73A49">new</span><span style="color:#D73A49"> int</span><span style="color:#24292E">[]{</span><span style="color:#005CC5">2</span><span style="color:#24292E">, </span><span style="color:#005CC5">3</span><span style="color:#24292E">, </span><span style="color:#005CC5">5</span><span style="color:#24292E">});</span></span>
+<span class="line"><span style="color:#24292E">        System.out.</span><span style="color:#6F42C1">printf</span><span style="color:#24292E">(</span><span style="color:#032F62">"CH32 堆内段 bytes=%d native=%s%n"</span><span style="color:#24292E">, heap.</span><span style="color:#6F42C1">byteSize</span><span style="color:#24292E">(), heap.</span><span style="color:#6F42C1">isNative</span><span style="color:#24292E">());</span></span>
+<span class="line"><span style="color:#24292E">        MemorySegment.Scope scope;</span></span>
+<span class="line"><span style="color:#D73A49">        try</span><span style="color:#24292E"> (Arena arena </span><span style="color:#D73A49">=</span><span style="color:#24292E"> Arena.</span><span style="color:#6F42C1">ofConfined</span><span style="color:#24292E">()) {</span></span>
+<span class="line"><span style="color:#24292E">            scope </span><span style="color:#D73A49">=</span><span style="color:#24292E"> arena.</span><span style="color:#6F42C1">scope</span><span style="color:#24292E">();</span></span>
+<span class="line"><span style="color:#24292E">            MemorySegment data </span><span style="color:#D73A49">=</span><span style="color:#24292E"> arena.</span><span style="color:#6F42C1">allocateFrom</span><span style="color:#24292E">(ValueLayout.JAVA_INT, </span><span style="color:#005CC5">2</span><span style="color:#24292E">, </span><span style="color:#005CC5">3</span><span style="color:#24292E">, </span><span style="color:#005CC5">5</span><span style="color:#24292E">);</span></span>
+<span class="line"><span style="color:#24292E">            System.out.</span><span style="color:#6F42C1">printf</span><span style="color:#24292E">(</span><span style="color:#032F62">"CH32 本地段 bytes=%d alive=%s owner=%s first=%d%n"</span><span style="color:#24292E">,</span></span>
+<span class="line"><span style="color:#24292E">                    data.</span><span style="color:#6F42C1">byteSize</span><span style="color:#24292E">(), scope.</span><span style="color:#6F42C1">isAlive</span><span style="color:#24292E">(), data.</span><span style="color:#6F42C1">isAccessibleBy</span><span style="color:#24292E">(Thread.</span><span style="color:#6F42C1">currentThread</span><span style="color:#24292E">()),</span></span>
+<span class="line"><span style="color:#24292E">                    data.</span><span style="color:#6F42C1">get</span><span style="color:#24292E">(ValueLayout.JAVA_INT, </span><span style="color:#005CC5">0</span><span style="color:#24292E">));</span></span>
+<span class="line"><span style="color:#24292E">            Linker linker </span><span style="color:#D73A49">=</span><span style="color:#24292E"> Linker.</span><span style="color:#6F42C1">nativeLinker</span><span style="color:#24292E">();</span></span>
+<span class="line"><span style="color:#24292E">            SymbolLookup symbols </span><span style="color:#D73A49">=</span><span style="color:#24292E"> SymbolLookup.</span><span style="color:#6F42C1">libraryLookup</span><span style="color:#24292E">(</span></span>
+<span class="line"><span style="color:#24292E">                    Path.</span><span style="color:#6F42C1">of</span><span style="color:#24292E">(System.</span><span style="color:#6F42C1">getProperty</span><span style="color:#24292E">(</span><span style="color:#032F62">"ch32.library"</span><span style="color:#24292E">)), arena);</span></span>
+<span class="line"><span style="color:#24292E">            FunctionDescriptor callbackType </span><span style="color:#D73A49">=</span><span style="color:#24292E"> FunctionDescriptor.</span><span style="color:#6F42C1">of</span><span style="color:#24292E">(ValueLayout.JAVA_INT, ValueLayout.JAVA_INT);</span></span>
+<span class="line"><span style="color:#24292E">            MethodHandle callback </span><span style="color:#D73A49">=</span><span style="color:#24292E"> MethodHandles.</span><span style="color:#6F42C1">lookup</span><span style="color:#24292E">().</span><span style="color:#6F42C1">findStatic</span><span style="color:#24292E">(</span></span>
+<span class="line"><span style="color:#24292E">                    ForeignJourney.class, </span><span style="color:#032F62">"adjust"</span><span style="color:#24292E">, callbackType.</span><span style="color:#6F42C1">toMethodType</span><span style="color:#24292E">());</span></span>
+<span class="line"><span style="color:#24292E">            MemorySegment stub </span><span style="color:#D73A49">=</span><span style="color:#24292E"> linker.</span><span style="color:#6F42C1">upcallStub</span><span style="color:#24292E">(callback, callbackType, arena);</span></span>
+<span class="line"><span style="color:#24292E">            MethodHandle transform </span><span style="color:#D73A49">=</span><span style="color:#24292E"> linker.</span><span style="color:#6F42C1">downcallHandle</span><span style="color:#24292E">(symbols.</span><span style="color:#6F42C1">findOrThrow</span><span style="color:#24292E">(</span><span style="color:#032F62">"ch32_transform"</span><span style="color:#24292E">),</span></span>
+<span class="line"><span style="color:#24292E">                    FunctionDescriptor.</span><span style="color:#6F42C1">of</span><span style="color:#24292E">(ValueLayout.JAVA_INT, ValueLayout.JAVA_INT, ValueLayout.ADDRESS));</span></span>
+<span class="line"><span style="color:#D73A49">            int</span><span style="color:#24292E"> result </span><span style="color:#D73A49">=</span><span style="color:#24292E"> (</span><span style="color:#D73A49">int</span><span style="color:#24292E">) transform.</span><span style="color:#6F42C1">invokeExact</span><span style="color:#24292E">(</span><span style="color:#005CC5">7</span><span style="color:#24292E">, stub);</span></span>
+<span class="line"><span style="color:#24292E">            System.out.</span><span style="color:#6F42C1">printf</span><span style="color:#24292E">(</span><span style="color:#032F62">"CH32 下行调用及同步上行回调 result=%d%n"</span><span style="color:#24292E">, result);</span></span>
+<span class="line"><span style="color:#6A737D">            // 本地函数不保留段或回调指针；返回后才允许关闭所属Arena。</span></span>
+<span class="line"><span style="color:#24292E">        }</span></span>
+<span class="line"><span style="color:#24292E">        System.out.</span><span style="color:#6F42C1">printf</span><span style="color:#24292E">(</span><span style="color:#032F62">"CH32 Arena关闭后 alive=%s；不再解引用本地段或调用桩%n"</span><span style="color:#24292E">, scope.</span><span style="color:#6F42C1">isAlive</span><span style="color:#24292E">());</span></span>
+<span class="line"><span style="color:#24292E">    }</span></span>
+<span class="line"><span style="color:#24292E">}</span></span>
+<span class="line"></span></code></pre>
+<h2><code class="shiki-inline" data-shiki-version="4.6.0" data-code-id="code-003" data-code-language="text"><span>src/main/java/org/example/jvminternals/ch32/NativeJourney.java</span></code></h2><pre data-shiki-version="4.6.0" class="shiki github-light" style="background-color:#fff;color:#24292e" tabindex="0"><code data-code-id="code-004" data-code-language="java" data-source-file="chapters/ch32-native-interop/src/main/java/org/example/jvminternals/ch32/NativeJourney.java"><span class="line"><span style="color:#D73A49">package</span><span style="color:#24292E"> org.example.jvminternals.ch32;</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#6A737D">/** 以短本地调用显示引用、临界区和外部线程的责任边界。 */</span></span>
+<span class="line"><span style="color:#D73A49">public</span><span style="color:#D73A49"> final</span><span style="color:#D73A49"> class</span><span style="color:#6F42C1"> NativeJourney</span><span style="color:#24292E"> {</span></span>
+<span class="line"><span style="color:#D73A49">    private</span><span style="color:#6F42C1"> NativeJourney</span><span style="color:#24292E">() {</span></span>
+<span class="line"><span style="color:#24292E">    }</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#D73A49">    private</span><span style="color:#D73A49"> static</span><span style="color:#D73A49"> native</span><span style="color:#D73A49"> boolean</span><span style="color:#6F42C1"> acquire</span><span style="color:#24292E">(Object </span><span style="color:#E36209">value</span><span style="color:#24292E">);</span></span>
+<span class="line"><span style="color:#D73A49">    private</span><span style="color:#D73A49"> static</span><span style="color:#D73A49"> native</span><span style="color:#D73A49"> long</span><span style="color:#6F42C1"> sumCritical</span><span style="color:#24292E">(</span><span style="color:#D73A49">int</span><span style="color:#24292E">[] </span><span style="color:#E36209">values</span><span style="color:#24292E">);</span></span>
+<span class="line"><span style="color:#D73A49">    private</span><span style="color:#D73A49"> static</span><span style="color:#D73A49"> native</span><span style="color:#D73A49"> int</span><span style="color:#6F42C1"> attachedCallback</span><span style="color:#24292E">();</span></span>
+<span class="line"><span style="color:#D73A49">    private</span><span style="color:#D73A49"> static</span><span style="color:#D73A49"> native</span><span style="color:#D73A49"> void</span><span style="color:#6F42C1"> release</span><span style="color:#24292E">();</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#6A737D">    /** 由已附加的原生线程调用；不能把调用者线程的JNIEnv转交给它。 */</span></span>
+<span class="line"><span style="color:#D73A49">    public</span><span style="color:#D73A49"> static</span><span style="color:#D73A49"> void</span><span style="color:#6F42C1"> onNativeThread</span><span style="color:#24292E">() {</span></span>
+<span class="line"><span style="color:#24292E">        System.out.</span><span style="color:#6F42C1">printf</span><span style="color:#24292E">(</span><span style="color:#032F62">"CH32 原生线程回调：%s virtual=%s%n"</span><span style="color:#24292E">,</span></span>
+<span class="line"><span style="color:#24292E">                Thread.</span><span style="color:#6F42C1">currentThread</span><span style="color:#24292E">().</span><span style="color:#6F42C1">getName</span><span style="color:#24292E">(), Thread.</span><span style="color:#6F42C1">currentThread</span><span style="color:#24292E">().</span><span style="color:#6F42C1">isVirtual</span><span style="color:#24292E">());</span></span>
+<span class="line"><span style="color:#24292E">    }</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#6A737D">    /** 强全局引用在finally显式释放；弱引用不承担保持对象存活的责任。 */</span></span>
+<span class="line"><span style="color:#D73A49">    public</span><span style="color:#D73A49"> static</span><span style="color:#D73A49"> void</span><span style="color:#6F42C1"> main</span><span style="color:#24292E">(</span><span style="color:#D73A49">String</span><span style="color:#24292E">[] </span><span style="color:#E36209">args</span><span style="color:#24292E">) {</span></span>
+<span class="line"><span style="color:#24292E">        System.</span><span style="color:#6F42C1">load</span><span style="color:#24292E">(System.</span><span style="color:#6F42C1">getProperty</span><span style="color:#24292E">(</span><span style="color:#032F62">"ch32.library"</span><span style="color:#24292E">));</span></span>
+<span class="line"><span style="color:#24292E">        System.out.</span><span style="color:#6F42C1">println</span><span style="color:#24292E">(</span><span style="color:#032F62">"CH32 本地库已加载"</span><span style="color:#24292E">);</span></span>
+<span class="line"><span style="color:#D73A49">        try</span><span style="color:#24292E"> {</span></span>
+<span class="line"><span style="color:#D73A49">            boolean</span><span style="color:#24292E"> held </span><span style="color:#D73A49">=</span><span style="color:#6F42C1"> acquire</span><span style="color:#24292E">(</span><span style="color:#D73A49">new</span><span style="color:#D73A49"> byte</span><span style="color:#24292E">[</span><span style="color:#005CC5">16</span><span style="color:#24292E">]);</span></span>
+<span class="line"><span style="color:#24292E">            System.out.</span><span style="color:#6F42C1">printf</span><span style="color:#24292E">(</span><span style="color:#032F62">"CH32 跨调用引用已建立=%s%n"</span><span style="color:#24292E">, held);</span></span>
+<span class="line"><span style="color:#D73A49">            if</span><span style="color:#24292E"> (held) {</span></span>
+<span class="line"><span style="color:#24292E">                System.out.</span><span style="color:#6F42C1">printf</span><span style="color:#24292E">(</span><span style="color:#032F62">"CH32 临界区求和=%d%n"</span><span style="color:#24292E">, </span><span style="color:#6F42C1">sumCritical</span><span style="color:#24292E">(</span><span style="color:#D73A49">new</span><span style="color:#D73A49"> int</span><span style="color:#24292E">[]{</span><span style="color:#005CC5">2</span><span style="color:#24292E">, </span><span style="color:#005CC5">3</span><span style="color:#24292E">, </span><span style="color:#005CC5">5</span><span style="color:#24292E">}));</span></span>
+<span class="line"><span style="color:#24292E">                System.out.</span><span style="color:#6F42C1">printf</span><span style="color:#24292E">(</span><span style="color:#032F62">"CH32 附加线程返回状态=%d%n"</span><span style="color:#24292E">, </span><span style="color:#6F42C1">attachedCallback</span><span style="color:#24292E">());</span></span>
+<span class="line"><span style="color:#24292E">            }</span></span>
+<span class="line"><span style="color:#24292E">        } </span><span style="color:#D73A49">finally</span><span style="color:#24292E"> {</span></span>
+<span class="line"><span style="color:#6F42C1">            release</span><span style="color:#24292E">();</span></span>
+<span class="line"><span style="color:#24292E">            System.out.</span><span style="color:#6F42C1">println</span><span style="color:#24292E">(</span><span style="color:#032F62">"CH32 全局及弱全局引用已释放"</span><span style="color:#24292E">);</span></span>
+<span class="line"><span style="color:#24292E">        }</span></span>
+<span class="line"><span style="color:#24292E">    }</span></span>
+<span class="line"><span style="color:#24292E">}</span></span>
+<span class="line"></span></code></pre>
+<h2><code class="shiki-inline" data-shiki-version="4.6.0" data-code-id="code-005" data-code-language="text"><span>native/interop.c</span></code></h2><pre data-shiki-version="4.6.0" class="shiki github-light" style="background-color:#fff;color:#24292e" tabindex="0"><code data-code-id="code-006" data-code-language="c" data-source-file="chapters/ch32-native-interop/native/interop.c"><span class="line"><span style="color:#D73A49">#include</span><span style="color:#032F62"> &#x3C;jni.h></span></span>
+<span class="line"><span style="color:#D73A49">#include</span><span style="color:#032F62"> &#x3C;pthread.h></span></span>
+<span class="line"><span style="color:#D73A49">#include</span><span style="color:#032F62"> &#x3C;stdint.h></span></span>
+<span class="line"><span style="color:#D73A49">#include</span><span style="color:#032F62"> &#x3C;stdio.h></span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#6A737D">/* 单主线程教学调用；共享槽只在创建原生线程之前写入、join之后释放。 */</span></span>
+<span class="line"><span style="color:#D73A49">static</span><span style="color:#24292E"> JavaVM </span><span style="color:#D73A49">*</span><span style="color:#24292E">vm;</span></span>
+<span class="line"><span style="color:#D73A49">static</span><span style="color:#24292E"> jobject strong_ref;</span></span>
+<span class="line"><span style="color:#D73A49">static</span><span style="color:#24292E"> jweak weak_ref;</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#24292E">JNIEXPORT jint JNICALL </span><span style="color:#6F42C1">JNI_OnLoad</span><span style="color:#24292E">(JavaVM </span><span style="color:#D73A49">*</span><span style="color:#E36209">loaded_vm</span><span style="color:#24292E">, </span><span style="color:#D73A49">void</span><span style="color:#D73A49"> *</span><span style="color:#E36209">reserved</span><span style="color:#24292E">) {</span></span>
+<span class="line"><span style="color:#24292E">    (</span><span style="color:#D73A49">void</span><span style="color:#24292E">)reserved;</span></span>
+<span class="line"><span style="color:#24292E">    vm </span><span style="color:#D73A49">=</span><span style="color:#24292E"> loaded_vm;</span></span>
+<span class="line"><span style="color:#D73A49">    return</span><span style="color:#24292E"> JNI_VERSION_1_8;</span></span>
+<span class="line"><span style="color:#24292E">}</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#24292E">JNIEXPORT jboolean JNICALL Java_org_example_jvminternals_ch32_NativeJourney_acquire</span></span>
+<span class="line"><span style="color:#24292E">  (JNIEnv </span><span style="color:#D73A49">*</span><span style="color:#24292E">env, jclass type, jobject value) {</span></span>
+<span class="line"><span style="color:#24292E">    (</span><span style="color:#D73A49">void</span><span style="color:#24292E">)type;</span></span>
+<span class="line"><span style="color:#24292E">    strong_ref </span><span style="color:#D73A49">=</span><span style="color:#24292E"> (</span><span style="color:#D73A49">*</span><span style="color:#24292E">env)-></span><span style="color:#6F42C1">NewGlobalRef</span><span style="color:#24292E">(env, value);</span></span>
+<span class="line"><span style="color:#D73A49">    if</span><span style="color:#24292E"> (strong_ref </span><span style="color:#D73A49">==</span><span style="color:#005CC5"> NULL</span><span style="color:#24292E">) {</span></span>
+<span class="line"><span style="color:#D73A49">        return</span><span style="color:#24292E"> JNI_FALSE;</span></span>
+<span class="line"><span style="color:#24292E">    }</span></span>
+<span class="line"><span style="color:#24292E">    weak_ref </span><span style="color:#D73A49">=</span><span style="color:#24292E"> (</span><span style="color:#D73A49">*</span><span style="color:#24292E">env)-></span><span style="color:#6F42C1">NewWeakGlobalRef</span><span style="color:#24292E">(env, value);</span></span>
+<span class="line"><span style="color:#D73A49">    if</span><span style="color:#24292E"> (weak_ref </span><span style="color:#D73A49">==</span><span style="color:#005CC5"> NULL</span><span style="color:#24292E">) {</span></span>
+<span class="line"><span style="color:#24292E">        (</span><span style="color:#D73A49">*</span><span style="color:#24292E">env)-></span><span style="color:#6F42C1">DeleteGlobalRef</span><span style="color:#24292E">(env, strong_ref);</span></span>
+<span class="line"><span style="color:#24292E">        strong_ref </span><span style="color:#D73A49">=</span><span style="color:#005CC5"> NULL</span><span style="color:#24292E">;</span></span>
+<span class="line"><span style="color:#D73A49">        return</span><span style="color:#24292E"> JNI_FALSE;</span></span>
+<span class="line"><span style="color:#24292E">    }</span></span>
+<span class="line"><span style="color:#D73A49">    return</span><span style="color:#24292E"> JNI_TRUE;</span></span>
+<span class="line"><span style="color:#24292E">}</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#24292E">JNIEXPORT jlong JNICALL Java_org_example_jvminternals_ch32_NativeJourney_sumCritical</span></span>
+<span class="line"><span style="color:#24292E">  (JNIEnv </span><span style="color:#D73A49">*</span><span style="color:#24292E">env, jclass type, jintArray values) {</span></span>
+<span class="line"><span style="color:#24292E">    (</span><span style="color:#D73A49">void</span><span style="color:#24292E">)type;</span></span>
+<span class="line"><span style="color:#6A737D">    /* 先把弱引用提升为局部强引用；此例还保留全局强引用，不制造回收竞态。 */</span></span>
+<span class="line"><span style="color:#24292E">    jobject local </span><span style="color:#D73A49">=</span><span style="color:#24292E"> (</span><span style="color:#D73A49">*</span><span style="color:#24292E">env)-></span><span style="color:#6F42C1">NewLocalRef</span><span style="color:#24292E">(env, weak_ref);</span></span>
+<span class="line"><span style="color:#D73A49">    if</span><span style="color:#24292E"> (local </span><span style="color:#D73A49">==</span><span style="color:#005CC5"> NULL</span><span style="color:#24292E">) {</span></span>
+<span class="line"><span style="color:#D73A49">        return</span><span style="color:#D73A49"> -</span><span style="color:#005CC5">1</span><span style="color:#24292E">;</span></span>
+<span class="line"><span style="color:#24292E">    }</span></span>
+<span class="line"><span style="color:#24292E">    (</span><span style="color:#D73A49">*</span><span style="color:#24292E">env)-></span><span style="color:#6F42C1">DeleteLocalRef</span><span style="color:#24292E">(env, local);</span></span>
+<span class="line"><span style="color:#24292E">    jsize length </span><span style="color:#D73A49">=</span><span style="color:#24292E"> (</span><span style="color:#D73A49">*</span><span style="color:#24292E">env)-></span><span style="color:#6F42C1">GetArrayLength</span><span style="color:#24292E">(env, values);</span></span>
+<span class="line"><span style="color:#24292E">    jboolean copied </span><span style="color:#D73A49">=</span><span style="color:#24292E"> JNI_FALSE;</span></span>
+<span class="line"><span style="color:#24292E">    jint </span><span style="color:#D73A49">*</span><span style="color:#24292E">elements </span><span style="color:#D73A49">=</span><span style="color:#24292E"> (</span><span style="color:#D73A49">*</span><span style="color:#24292E">env)-></span><span style="color:#6F42C1">GetPrimitiveArrayCritical</span><span style="color:#24292E">(env, values, </span><span style="color:#D73A49">&#x26;</span><span style="color:#24292E">copied);</span></span>
+<span class="line"><span style="color:#D73A49">    if</span><span style="color:#24292E"> (elements </span><span style="color:#D73A49">==</span><span style="color:#005CC5"> NULL</span><span style="color:#24292E">) {</span></span>
+<span class="line"><span style="color:#D73A49">        return</span><span style="color:#D73A49"> -</span><span style="color:#005CC5">1</span><span style="color:#24292E">;</span></span>
+<span class="line"><span style="color:#24292E">    }</span></span>
+<span class="line"><span style="color:#24292E">    jlong total </span><span style="color:#D73A49">=</span><span style="color:#005CC5"> 0</span><span style="color:#24292E">;</span></span>
+<span class="line"><span style="color:#6A737D">    /* 临界区内只访问这段数组；不打印、不阻塞、不回调或调用其他JNI函数。 */</span></span>
+<span class="line"><span style="color:#D73A49">    for</span><span style="color:#24292E"> (jsize index </span><span style="color:#D73A49">=</span><span style="color:#005CC5"> 0</span><span style="color:#24292E">; index </span><span style="color:#D73A49">&#x3C;</span><span style="color:#24292E"> length; index</span><span style="color:#D73A49">++</span><span style="color:#24292E">) {</span></span>
+<span class="line"><span style="color:#24292E">        total </span><span style="color:#D73A49">+=</span><span style="color:#E36209"> elements</span><span style="color:#24292E">[index];</span></span>
+<span class="line"><span style="color:#24292E">    }</span></span>
+<span class="line"><span style="color:#24292E">    (</span><span style="color:#D73A49">*</span><span style="color:#24292E">env)-></span><span style="color:#6F42C1">ReleasePrimitiveArrayCritical</span><span style="color:#24292E">(env, values, elements, JNI_ABORT);</span></span>
+<span class="line"><span style="color:#6F42C1">    printf</span><span style="color:#24292E">(</span><span style="color:#032F62">"CH32 临界区已释放 isCopy=</span><span style="color:#005CC5">%s\n</span><span style="color:#032F62">"</span><span style="color:#24292E">, copied </span><span style="color:#D73A49">==</span><span style="color:#24292E"> JNI_TRUE </span><span style="color:#D73A49">?</span><span style="color:#032F62"> "true"</span><span style="color:#D73A49"> :</span><span style="color:#032F62"> "false"</span><span style="color:#24292E">);</span></span>
+<span class="line"><span style="color:#6F42C1">    fflush</span><span style="color:#24292E">(stdout);</span></span>
+<span class="line"><span style="color:#D73A49">    return</span><span style="color:#24292E"> total;</span></span>
+<span class="line"><span style="color:#24292E">}</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#D73A49">struct</span><span style="color:#24292E"> CallbackContext {</span></span>
+<span class="line"><span style="color:#24292E">    jclass type;</span></span>
+<span class="line"><span style="color:#24292E">    jmethodID callback;</span></span>
+<span class="line"><span style="color:#D73A49">    int</span><span style="color:#24292E"> status;</span></span>
+<span class="line"><span style="color:#24292E">};</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#6A737D">/* 原生线程必须取得自己的JNIEnv，并在退出前分离；类型由调用方全局引用保持。 */</span></span>
+<span class="line"><span style="color:#D73A49">static</span><span style="color:#D73A49"> void</span><span style="color:#D73A49"> *</span><span style="color:#6F42C1">run_callback</span><span style="color:#24292E">(</span><span style="color:#D73A49">void</span><span style="color:#D73A49"> *</span><span style="color:#E36209">argument</span><span style="color:#24292E">) {</span></span>
+<span class="line"><span style="color:#D73A49">    struct</span><span style="color:#24292E"> CallbackContext </span><span style="color:#D73A49">*</span><span style="color:#24292E">context </span><span style="color:#D73A49">=</span><span style="color:#24292E"> argument;</span></span>
+<span class="line"><span style="color:#24292E">    JNIEnv </span><span style="color:#D73A49">*</span><span style="color:#24292E">env </span><span style="color:#D73A49">=</span><span style="color:#005CC5"> NULL</span><span style="color:#24292E">;</span></span>
+<span class="line"><span style="color:#24292E">    JavaVMAttachArgs args </span><span style="color:#D73A49">=</span><span style="color:#24292E"> {JNI_VERSION_1_8, </span><span style="color:#032F62">"ch32-attached"</span><span style="color:#24292E">, </span><span style="color:#005CC5">NULL</span><span style="color:#24292E">};</span></span>
+<span class="line"><span style="color:#24292E">    context->status </span><span style="color:#D73A49">=</span><span style="color:#24292E"> (</span><span style="color:#D73A49">*</span><span style="color:#24292E">vm)-></span><span style="color:#6F42C1">AttachCurrentThread</span><span style="color:#24292E">(vm, (</span><span style="color:#D73A49">void</span><span style="color:#D73A49"> **</span><span style="color:#24292E">)</span><span style="color:#D73A49">&#x26;</span><span style="color:#24292E">env, </span><span style="color:#D73A49">&#x26;</span><span style="color:#24292E">args);</span></span>
+<span class="line"><span style="color:#D73A49">    if</span><span style="color:#24292E"> (context->status </span><span style="color:#D73A49">!=</span><span style="color:#24292E"> JNI_OK) {</span></span>
+<span class="line"><span style="color:#D73A49">        return</span><span style="color:#005CC5"> NULL</span><span style="color:#24292E">;</span></span>
+<span class="line"><span style="color:#24292E">    }</span></span>
+<span class="line"><span style="color:#24292E">    (</span><span style="color:#D73A49">*</span><span style="color:#24292E">env)-></span><span style="color:#6F42C1">CallStaticVoidMethod</span><span style="color:#24292E">(env, context->type, context->callback);</span></span>
+<span class="line"><span style="color:#D73A49">    if</span><span style="color:#24292E"> ((</span><span style="color:#D73A49">*</span><span style="color:#24292E">env)-></span><span style="color:#6F42C1">ExceptionCheck</span><span style="color:#24292E">(env)) {</span></span>
+<span class="line"><span style="color:#6A737D">        /* 无Java调用栈的外部线程在本边界报告异常；不携带待处理异常继续JNI工作。 */</span></span>
+<span class="line"><span style="color:#24292E">        (</span><span style="color:#D73A49">*</span><span style="color:#24292E">env)-></span><span style="color:#6F42C1">ExceptionDescribe</span><span style="color:#24292E">(env);</span></span>
+<span class="line"><span style="color:#24292E">        (</span><span style="color:#D73A49">*</span><span style="color:#24292E">env)-></span><span style="color:#6F42C1">ExceptionClear</span><span style="color:#24292E">(env);</span></span>
+<span class="line"><span style="color:#24292E">        context->status </span><span style="color:#D73A49">=</span><span style="color:#24292E"> JNI_ERR;</span></span>
+<span class="line"><span style="color:#24292E">    }</span></span>
+<span class="line"><span style="color:#24292E">    jint detached </span><span style="color:#D73A49">=</span><span style="color:#24292E"> (</span><span style="color:#D73A49">*</span><span style="color:#24292E">vm)-></span><span style="color:#6F42C1">DetachCurrentThread</span><span style="color:#24292E">(vm);</span></span>
+<span class="line"><span style="color:#D73A49">    if</span><span style="color:#24292E"> (detached </span><span style="color:#D73A49">!=</span><span style="color:#24292E"> JNI_OK) {</span></span>
+<span class="line"><span style="color:#24292E">        context->status </span><span style="color:#D73A49">=</span><span style="color:#24292E"> detached;</span></span>
+<span class="line"><span style="color:#24292E">    }</span></span>
+<span class="line"><span style="color:#D73A49">    return</span><span style="color:#005CC5"> NULL</span><span style="color:#24292E">;</span></span>
+<span class="line"><span style="color:#24292E">}</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#24292E">JNIEXPORT jint JNICALL Java_org_example_jvminternals_ch32_NativeJourney_attachedCallback</span></span>
+<span class="line"><span style="color:#24292E">  (JNIEnv </span><span style="color:#D73A49">*</span><span style="color:#24292E">env, jclass type) {</span></span>
+<span class="line"><span style="color:#D73A49">    struct</span><span style="color:#24292E"> CallbackContext context </span><span style="color:#D73A49">=</span><span style="color:#24292E"> {</span><span style="color:#005CC5">NULL</span><span style="color:#24292E">, </span><span style="color:#005CC5">NULL</span><span style="color:#24292E">, JNI_ERR};</span></span>
+<span class="line"><span style="color:#24292E">    context.callback </span><span style="color:#D73A49">=</span><span style="color:#24292E"> (</span><span style="color:#D73A49">*</span><span style="color:#24292E">env)-></span><span style="color:#6F42C1">GetStaticMethodID</span><span style="color:#24292E">(env, type, </span><span style="color:#032F62">"onNativeThread"</span><span style="color:#24292E">, </span><span style="color:#032F62">"()V"</span><span style="color:#24292E">);</span></span>
+<span class="line"><span style="color:#D73A49">    if</span><span style="color:#24292E"> (context.callback </span><span style="color:#D73A49">==</span><span style="color:#005CC5"> NULL</span><span style="color:#24292E">) {</span></span>
+<span class="line"><span style="color:#D73A49">        return</span><span style="color:#24292E"> JNI_ERR;</span></span>
+<span class="line"><span style="color:#24292E">    }</span></span>
+<span class="line"><span style="color:#24292E">    context.type </span><span style="color:#D73A49">=</span><span style="color:#24292E"> (</span><span style="color:#D73A49">*</span><span style="color:#24292E">env)-></span><span style="color:#6F42C1">NewGlobalRef</span><span style="color:#24292E">(env, type);</span></span>
+<span class="line"><span style="color:#D73A49">    if</span><span style="color:#24292E"> (context.type </span><span style="color:#D73A49">==</span><span style="color:#005CC5"> NULL</span><span style="color:#24292E">) {</span></span>
+<span class="line"><span style="color:#D73A49">        return</span><span style="color:#24292E"> JNI_ERR;</span></span>
+<span class="line"><span style="color:#24292E">    }</span></span>
+<span class="line"><span style="color:#D73A49">    pthread_t</span><span style="color:#24292E"> worker;</span></span>
+<span class="line"><span style="color:#D73A49">    int</span><span style="color:#24292E"> created </span><span style="color:#D73A49">=</span><span style="color:#6F42C1"> pthread_create</span><span style="color:#24292E">(</span><span style="color:#D73A49">&#x26;</span><span style="color:#24292E">worker, </span><span style="color:#005CC5">NULL</span><span style="color:#24292E">, run_callback, </span><span style="color:#D73A49">&#x26;</span><span style="color:#24292E">context);</span></span>
+<span class="line"><span style="color:#D73A49">    if</span><span style="color:#24292E"> (created </span><span style="color:#D73A49">==</span><span style="color:#005CC5"> 0</span><span style="color:#24292E">) {</span></span>
+<span class="line"><span style="color:#6A737D">        /* 成功创建的线程必须join后才销毁栈上上下文和全局类引用。 */</span></span>
+<span class="line"><span style="color:#D73A49">        int</span><span style="color:#24292E"> joined </span><span style="color:#D73A49">=</span><span style="color:#6F42C1"> pthread_join</span><span style="color:#24292E">(worker, </span><span style="color:#005CC5">NULL</span><span style="color:#24292E">);</span></span>
+<span class="line"><span style="color:#D73A49">        if</span><span style="color:#24292E"> (joined </span><span style="color:#D73A49">!=</span><span style="color:#005CC5"> 0</span><span style="color:#24292E">) {</span></span>
+<span class="line"><span style="color:#6A737D">            /* 此编程错误不能安全返回并留下悬空栈指针，终止当前进程。 */</span></span>
+<span class="line"><span style="color:#24292E">            (</span><span style="color:#D73A49">*</span><span style="color:#24292E">env)-></span><span style="color:#6F42C1">FatalError</span><span style="color:#24292E">(env, </span><span style="color:#032F62">"CH32 cannot join owned native thread"</span><span style="color:#24292E">);</span></span>
+<span class="line"><span style="color:#24292E">        }</span></span>
+<span class="line"><span style="color:#24292E">    } </span><span style="color:#D73A49">else</span><span style="color:#24292E"> {</span></span>
+<span class="line"><span style="color:#6F42C1">        fprintf</span><span style="color:#24292E">(stderr, </span><span style="color:#032F62">"CH32 创建本地线程失败：</span><span style="color:#005CC5">%d\n</span><span style="color:#032F62">"</span><span style="color:#24292E">, created);</span></span>
+<span class="line"><span style="color:#24292E">    }</span></span>
+<span class="line"><span style="color:#24292E">    (</span><span style="color:#D73A49">*</span><span style="color:#24292E">env)-></span><span style="color:#6F42C1">DeleteGlobalRef</span><span style="color:#24292E">(env, context.type);</span></span>
+<span class="line"><span style="color:#D73A49">    return</span><span style="color:#24292E"> context.status;</span></span>
+<span class="line"><span style="color:#24292E">}</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#24292E">JNIEXPORT </span><span style="color:#D73A49">void</span><span style="color:#24292E"> JNICALL Java_org_example_jvminternals_ch32_NativeJourney_release</span></span>
+<span class="line"><span style="color:#24292E">  (JNIEnv </span><span style="color:#D73A49">*</span><span style="color:#24292E">env, jclass type) {</span></span>
+<span class="line"><span style="color:#24292E">    (</span><span style="color:#D73A49">void</span><span style="color:#24292E">)type;</span></span>
+<span class="line"><span style="color:#D73A49">    if</span><span style="color:#24292E"> (weak_ref </span><span style="color:#D73A49">!=</span><span style="color:#005CC5"> NULL</span><span style="color:#24292E">) {</span></span>
+<span class="line"><span style="color:#24292E">        (</span><span style="color:#D73A49">*</span><span style="color:#24292E">env)-></span><span style="color:#6F42C1">DeleteWeakGlobalRef</span><span style="color:#24292E">(env, weak_ref);</span></span>
+<span class="line"><span style="color:#24292E">        weak_ref </span><span style="color:#D73A49">=</span><span style="color:#005CC5"> NULL</span><span style="color:#24292E">;</span></span>
+<span class="line"><span style="color:#24292E">    }</span></span>
+<span class="line"><span style="color:#D73A49">    if</span><span style="color:#24292E"> (strong_ref </span><span style="color:#D73A49">!=</span><span style="color:#005CC5"> NULL</span><span style="color:#24292E">) {</span></span>
+<span class="line"><span style="color:#24292E">        (</span><span style="color:#D73A49">*</span><span style="color:#24292E">env)-></span><span style="color:#6F42C1">DeleteGlobalRef</span><span style="color:#24292E">(env, strong_ref);</span></span>
+<span class="line"><span style="color:#24292E">        strong_ref </span><span style="color:#D73A49">=</span><span style="color:#005CC5"> NULL</span><span style="color:#24292E">;</span></span>
+<span class="line"><span style="color:#24292E">    }</span></span>
+<span class="line"><span style="color:#24292E">}</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#6A737D">/* 固定int32_t契约；同步调用一次回调，不在返回后保留函数指针。 */</span></span>
+<span class="line"><span style="color:#D73A49">int32_t</span><span style="color:#6F42C1"> ch32_transform</span><span style="color:#24292E">(</span><span style="color:#D73A49">int32_t</span><span style="color:#E36209"> value</span><span style="color:#24292E">, </span><span style="color:#D73A49">int32_t</span><span style="color:#24292E"> (</span><span style="color:#D73A49">*</span><span style="color:#24292E">callback)(</span><span style="color:#D73A49">int32_t</span><span style="color:#24292E">)) {</span></span>
+<span class="line"><span style="color:#D73A49">    return</span><span style="color:#6F42C1"> callback</span><span style="color:#24292E">(value) </span><span style="color:#D73A49">*</span><span style="color:#005CC5"> 2</span><span style="color:#24292E">;</span></span>
+<span class="line"><span style="color:#24292E">}</span></span>
+<span class="line"></span></code></pre></main></body></html>

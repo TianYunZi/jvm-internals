@@ -1,0 +1,25 @@
+跳到正文	#main
+Java 虚拟机原理图文书	../../index.html
+27.1 同步语义与字节码	#sec-27-1
+27.2 轻量级路径与膨胀	#sec-27-2
+27.3 原子操作、自旋与阻塞	#sec-27-3
+27.4 等待与通知	#sec-27-4
+27.5 监视器收缩与对象头协作	#sec-27-5
+27.6 类库锁与运行时原语	#sec-27-6
+观察与边界	#observe
+回顾与思考	#review
+来源	#sources
+源码阅读	sources.html
+运行说明	README.html
+证据索引	evidence/索引.md
+S2	#s2
+S1	#s1
+语言规范25监视器与等待	https://docs.oracle.com/javase/specs/jls/se25/html/jls-17.html#jls-17.2
+LightweightSynchronizer	https://github.com/openjdk/jdk25u/blob/1775ea114f649f0314e4e43eb6c802ff16dfab7c/src/hotspot/share/runtime/lightweightSynchronizer.cpp
+ObjectMonitor	https://github.com/openjdk/jdk25u/blob/1775ea114f649f0314e4e43eb6c802ff16dfab7c/src/hotspot/share/runtime/objectMonitor.cpp
+同步器与对象头	https://github.com/openjdk/jdk25u/blob/1775ea114f649f0314e4e43eb6c802ff16dfab7c/src/hotspot/share/runtime/synchronizer.cpp
+AQS与ReentrantLock	https://github.com/openjdk/jdk25u/blob/1775ea114f649f0314e4e43eb6c802ff16dfab7c/src/java.base/share/classes/java/util/concurrent/locks/AbstractQueuedSynchronizer.java
+来源索引	evidence/索引.md
+上一章	../ch26-platform-threads/chapter.html
+第六篇目录	../../index.html#part-6
+下一章	../ch28-virtual-threads/chapter.html

@@ -1,0 +1,81 @@
+第14章源码阅读
+
+由正式源文件生成的静态阅读副本。返回正文 · 运行说明
+
+src/main/java/org/example/jvminternals/ch14/DispatchJourney.java
+package org.example.jvminternals.ch14;
+
+/** 同一调用点先遇到一种再遇到多种合法接收者，不测调用性能。 */
+public final class DispatchJourney {
+    private DispatchJourney() {
+    }
+
+    interface Operation {
+        int apply(int value);
+    }
+
+    static class Base {
+        int label() {
+            return 10;
+        }
+    }
+
+    static final class First extends Base implements Operation {
+        @Override
+        int label() {
+            return super.label() + 1;
+        }
+
+        @Override
+        public int apply(int value) {
+            return value + 1;
+        }
+    }
+
+    static final class Second implements Operation {
+        @Override
+        public int apply(int value) {
+            return value + 2;
+        }
+    }
+
+    static final class Third implements Operation {
+        @Override
+        public int apply(int value) {
+            return value + 3;
+        }
+    }
+
+    static final class Fourth implements Operation {
+        @Override
+        public int apply(int value) {
+            return value + 4;
+        }
+    }
+
+    /** 保留具体阶段边界；结果使全部调用具有可观察用途。 */
+    public static void main(String[] args) {
+        // 所有类型先创建，后续变化只改变画像，不声称由新类加载触发。
+        Operation[] receivers = {new First(), new Second(), new Third(), new Fourth()};
+        Base base = (First) receivers[0];
+        System.out.println("静态=" + staticValue(5) + "；虚调用=" + base.label());
+        long sum = 0;
+        System.out.println("阶段=单接收者");
+        for (int i = 0; i < 100_000; i++) {
+            sum += call(receivers[0], i);
+        }
+        System.out.println("阶段=四接收者；前段结果=" + sum);
+        for (int i = 0; i < 200_000; i++) {
+            sum += call(receivers[i & 3], i);
+        }
+        System.out.println("阶段=正常结束；结果=" + sum);
+    }
+
+    private static int staticValue(int value) {
+        return value * 2;
+    }
+
+    private static int call(Operation receiver, int value) {
+        return receiver.apply(value);
+    }
+}

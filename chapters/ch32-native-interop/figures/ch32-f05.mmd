@@ -1,0 +1,13 @@
+sequenceDiagram
+  participant A as Java作用域
+  participant L as 链接器
+  participant C as C函数
+  participant U as Java回调
+  A->>L: Arena内打开库并查符号
+  A->>L: 创建下行句柄与上行桩
+  A->>C: transform(7, stub)
+  C->>U: 同步调用adjust(7)
+  U-->>C: 返回17
+  C-->>A: 返回34且不保留指针
+  A->>A: 关闭Arena释放资源
+  Note over A,U: 异步本地库必须先停止回调并等待结束，才能关闭Arena

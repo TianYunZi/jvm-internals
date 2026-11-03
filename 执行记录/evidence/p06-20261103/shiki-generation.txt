@@ -1,0 +1,7 @@
+静态高亮：ch19-gc-foundations
+静态高亮：ch20-safepoints-barriers
+静态高亮：ch21-basic-collectors
+静态高亮：ch22-g1
+静态高亮：ch23-zgc
+静态高亮：ch24-shenandoah
+生成完成：52个代码展示节点；离线页面不加载Shiki脚本。

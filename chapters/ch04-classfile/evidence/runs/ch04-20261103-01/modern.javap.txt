@@ -1,0 +1,668 @@
+Classfile /Users/xiejinxin/Developer/Java/jvm-internals/chapters/ch04-classfile/target/classes/org/example/jvminternals/ch04/modern/ModernShapes$Point.class
+  Last modified 2026年11月3日; size 2159 bytes
+  SHA-256 checksum add77b782f8bc204a65a32121811779a5eb7102401f1cadfa52c8a637374d739
+  Compiled from "ModernShapes.java"
+public final class org.example.jvminternals.ch04.modern.ModernShapes$Point extends java.lang.Record implements org.example.jvminternals.ch04.modern.ModernShapes$Shape
+  minor version: 0
+  major version: 69
+  flags: (0x0031) ACC_PUBLIC, ACC_FINAL, ACC_SUPER
+  this_class: #8                          // org/example/jvminternals/ch04/modern/ModernShapes$Point
+  super_class: #2                         // java/lang/Record
+  interfaces: 1, fields: 2, methods: 6, attributes: 7
+Constant pool:
+   #1 = Methodref          #2.#3          // java/lang/Record."<init>":()V
+   #2 = Class              #4             // java/lang/Record
+   #3 = NameAndType        #5:#6          // "<init>":()V
+   #4 = Utf8               java/lang/Record
+   #5 = Utf8               <init>
+   #6 = Utf8               ()V
+   #7 = Fieldref           #8.#9          // org/example/jvminternals/ch04/modern/ModernShapes$Point.x:I
+   #8 = Class              #10            // org/example/jvminternals/ch04/modern/ModernShapes$Point
+   #9 = NameAndType        #11:#12        // x:I
+  #10 = Utf8               org/example/jvminternals/ch04/modern/ModernShapes$Point
+  #11 = Utf8               x
+  #12 = Utf8               I
+  #13 = Fieldref           #8.#14         // org/example/jvminternals/ch04/modern/ModernShapes$Point.y:I
+  #14 = NameAndType        #15:#12        // y:I
+  #15 = Utf8               y
+  #16 = InvokeDynamic      #0:#17         // #0:toString:(Lorg/example/jvminternals/ch04/modern/ModernShapes$Point;)Ljava/lang/String;
+  #17 = NameAndType        #18:#19        // toString:(Lorg/example/jvminternals/ch04/modern/ModernShapes$Point;)Ljava/lang/String;
+  #18 = Utf8               toString
+  #19 = Utf8               (Lorg/example/jvminternals/ch04/modern/ModernShapes$Point;)Ljava/lang/String;
+  #20 = InvokeDynamic      #0:#21         // #0:hashCode:(Lorg/example/jvminternals/ch04/modern/ModernShapes$Point;)I
+  #21 = NameAndType        #22:#23        // hashCode:(Lorg/example/jvminternals/ch04/modern/ModernShapes$Point;)I
+  #22 = Utf8               hashCode
+  #23 = Utf8               (Lorg/example/jvminternals/ch04/modern/ModernShapes$Point;)I
+  #24 = InvokeDynamic      #0:#25         // #0:equals:(Lorg/example/jvminternals/ch04/modern/ModernShapes$Point;Ljava/lang/Object;)Z
+  #25 = NameAndType        #26:#27        // equals:(Lorg/example/jvminternals/ch04/modern/ModernShapes$Point;Ljava/lang/Object;)Z
+  #26 = Utf8               equals
+  #27 = Utf8               (Lorg/example/jvminternals/ch04/modern/ModernShapes$Point;Ljava/lang/Object;)Z
+  #28 = Class              #29            // org/example/jvminternals/ch04/modern/ModernShapes$Shape
+  #29 = Utf8               org/example/jvminternals/ch04/modern/ModernShapes$Shape
+  #30 = Utf8               (II)V
+  #31 = Utf8               Code
+  #32 = Utf8               LineNumberTable
+  #33 = Utf8               LocalVariableTable
+  #34 = Utf8               this
+  #35 = Utf8               Lorg/example/jvminternals/ch04/modern/ModernShapes$Point;
+  #36 = Utf8               MethodParameters
+  #37 = Utf8               ()Ljava/lang/String;
+  #38 = Utf8               ()I
+  #39 = Utf8               (Ljava/lang/Object;)Z
+  #40 = Utf8               o
+  #41 = Utf8               Ljava/lang/Object;
+  #42 = Utf8               SourceFile
+  #43 = Utf8               ModernShapes.java
+  #44 = Utf8               RuntimeVisibleAnnotations
+  #45 = Utf8               Lorg/example/jvminternals/ch04/modern/ModernShapes$RuntimeTag;
+  #46 = Utf8               RuntimeInvisibleAnnotations
+  #47 = Utf8               Lorg/example/jvminternals/ch04/modern/ModernShapes$ClassTag;
+  #48 = Utf8               NestHost
+  #49 = Class              #50            // org/example/jvminternals/ch04/modern/ModernShapes
+  #50 = Utf8               org/example/jvminternals/ch04/modern/ModernShapes
+  #51 = Utf8               Record
+  #52 = Utf8               BootstrapMethods
+  #53 = String             #54            // x;y
+  #54 = Utf8               x;y
+  #55 = MethodHandle       1:#7           // REF_getField org/example/jvminternals/ch04/modern/ModernShapes$Point.x:I
+  #56 = MethodHandle       1:#13          // REF_getField org/example/jvminternals/ch04/modern/ModernShapes$Point.y:I
+  #57 = MethodHandle       6:#58          // REF_invokeStatic java/lang/runtime/ObjectMethods.bootstrap:(Ljava/lang/invoke/MethodHandles$Lookup;Ljava/lang/String;Ljava/lang/invoke/TypeDescriptor;Ljava/lang/Class;Ljava/lang/String;[Ljava/lang/invoke/MethodHandle;)Ljava/lang/Object;
+  #58 = Methodref          #59.#60        // java/lang/runtime/ObjectMethods.bootstrap:(Ljava/lang/invoke/MethodHandles$Lookup;Ljava/lang/String;Ljava/lang/invoke/TypeDescriptor;Ljava/lang/Class;Ljava/lang/String;[Ljava/lang/invoke/MethodHandle;)Ljava/lang/Object;
+  #59 = Class              #61            // java/lang/runtime/ObjectMethods
+  #60 = NameAndType        #62:#63        // bootstrap:(Ljava/lang/invoke/MethodHandles$Lookup;Ljava/lang/String;Ljava/lang/invoke/TypeDescriptor;Ljava/lang/Class;Ljava/lang/String;[Ljava/lang/invoke/MethodHandle;)Ljava/lang/Object;
+  #61 = Utf8               java/lang/runtime/ObjectMethods
+  #62 = Utf8               bootstrap
+  #63 = Utf8               (Ljava/lang/invoke/MethodHandles$Lookup;Ljava/lang/String;Ljava/lang/invoke/TypeDescriptor;Ljava/lang/Class;Ljava/lang/String;[Ljava/lang/invoke/MethodHandle;)Ljava/lang/Object;
+  #64 = Utf8               InnerClasses
+  #65 = Utf8               Point
+  #66 = Utf8               Shape
+  #67 = Class              #68            // org/example/jvminternals/ch04/modern/ModernShapes$RuntimeTag
+  #68 = Utf8               org/example/jvminternals/ch04/modern/ModernShapes$RuntimeTag
+  #69 = Utf8               RuntimeTag
+  #70 = Class              #71            // org/example/jvminternals/ch04/modern/ModernShapes$ClassTag
+  #71 = Utf8               org/example/jvminternals/ch04/modern/ModernShapes$ClassTag
+  #72 = Utf8               ClassTag
+  #73 = Class              #74            // java/lang/invoke/MethodHandles$Lookup
+  #74 = Utf8               java/lang/invoke/MethodHandles$Lookup
+  #75 = Class              #76            // java/lang/invoke/MethodHandles
+  #76 = Utf8               java/lang/invoke/MethodHandles
+  #77 = Utf8               Lookup
+{
+  private final int x;
+    descriptor: I
+    flags: (0x0012) ACC_PRIVATE, ACC_FINAL
+
+  private final int y;
+    descriptor: I
+    flags: (0x0012) ACC_PRIVATE, ACC_FINAL
+
+  public org.example.jvminternals.ch04.modern.ModernShapes$Point(int, int);
+    descriptor: (II)V
+    flags: (0x0001) ACC_PUBLIC
+    Code:
+      stack=2, locals=3, args_size=3
+         0: aload_0
+         1: invokespecial #1                  // Method java/lang/Record."<init>":()V
+         4: aload_0
+         5: iload_1
+         6: putfield      #7                  // Field x:I
+         9: aload_0
+        10: iload_2
+        11: putfield      #13                 // Field y:I
+        14: return
+      LineNumberTable:
+        line 38: 0
+      LocalVariableTable:
+        Start  Length  Slot  Name   Signature
+            0      15     0  this   Lorg/example/jvminternals/ch04/modern/ModernShapes$Point;
+            0      15     1     x   I
+            0      15     2     y   I
+    MethodParameters:
+      Name                           Flags
+      x
+      y
+
+  public final java.lang.String toString();
+    descriptor: ()Ljava/lang/String;
+    flags: (0x0011) ACC_PUBLIC, ACC_FINAL
+    Code:
+      stack=1, locals=1, args_size=1
+         0: aload_0
+         1: invokedynamic #16,  0             // InvokeDynamic #0:toString:(Lorg/example/jvminternals/ch04/modern/ModernShapes$Point;)Ljava/lang/String;
+         6: areturn
+      LineNumberTable:
+        line 36: 0
+      LocalVariableTable:
+        Start  Length  Slot  Name   Signature
+            0       7     0  this   Lorg/example/jvminternals/ch04/modern/ModernShapes$Point;
+
+  public final int hashCode();
+    descriptor: ()I
+    flags: (0x0011) ACC_PUBLIC, ACC_FINAL
+    Code:
+      stack=1, locals=1, args_size=1
+         0: aload_0
+         1: invokedynamic #20,  0             // InvokeDynamic #0:hashCode:(Lorg/example/jvminternals/ch04/modern/ModernShapes$Point;)I
+         6: ireturn
+      LineNumberTable:
+        line 36: 0
+      LocalVariableTable:
+        Start  Length  Slot  Name   Signature
+            0       7     0  this   Lorg/example/jvminternals/ch04/modern/ModernShapes$Point;
+
+  public final boolean equals(java.lang.Object);
+    descriptor: (Ljava/lang/Object;)Z
+    flags: (0x0011) ACC_PUBLIC, ACC_FINAL
+    Code:
+      stack=2, locals=2, args_size=2
+         0: aload_0
+         1: aload_1
+         2: invokedynamic #24,  0             // InvokeDynamic #0:equals:(Lorg/example/jvminternals/ch04/modern/ModernShapes$Point;Ljava/lang/Object;)Z
+         7: ireturn
+      LineNumberTable:
+        line 36: 0
+      LocalVariableTable:
+        Start  Length  Slot  Name   Signature
+            0       8     0  this   Lorg/example/jvminternals/ch04/modern/ModernShapes$Point;
+            0       8     1     o   Ljava/lang/Object;
+    MethodParameters:
+      Name                           Flags
+      o
+
+  public int x();
+    descriptor: ()I
+    flags: (0x0001) ACC_PUBLIC
+    Code:
+      stack=1, locals=1, args_size=1
+         0: aload_0
+         1: getfield      #7                  // Field x:I
+         4: ireturn
+      LineNumberTable:
+        line 36: 0
+      LocalVariableTable:
+        Start  Length  Slot  Name   Signature
+            0       5     0  this   Lorg/example/jvminternals/ch04/modern/ModernShapes$Point;
+
+  public int y();
+    descriptor: ()I
+    flags: (0x0001) ACC_PUBLIC
+    Code:
+      stack=1, locals=1, args_size=1
+         0: aload_0
+         1: getfield      #13                 // Field y:I
+         4: ireturn
+      LineNumberTable:
+        line 36: 0
+      LocalVariableTable:
+        Start  Length  Slot  Name   Signature
+            0       5     0  this   Lorg/example/jvminternals/ch04/modern/ModernShapes$Point;
+}
+SourceFile: "ModernShapes.java"
+RuntimeVisibleAnnotations:
+  0: #45()
+    org.example.jvminternals.ch04.modern.ModernShapes$RuntimeTag
+RuntimeInvisibleAnnotations:
+  0: #47()
+    org.example.jvminternals.ch04.modern.ModernShapes$ClassTag
+NestHost: class org/example/jvminternals/ch04/modern/ModernShapes
+Record:
+  int x;
+    descriptor: I
+
+  int y;
+    descriptor: I
+
+BootstrapMethods:
+  0: #57 REF_invokeStatic java/lang/runtime/ObjectMethods.bootstrap:(Ljava/lang/invoke/MethodHandles$Lookup;Ljava/lang/String;Ljava/lang/invoke/TypeDescriptor;Ljava/lang/Class;Ljava/lang/String;[Ljava/lang/invoke/MethodHandle;)Ljava/lang/Object;
+    Method arguments:
+      #8 org/example/jvminternals/ch04/modern/ModernShapes$Point
+      #53 x;y
+      #55 REF_getField org/example/jvminternals/ch04/modern/ModernShapes$Point.x:I
+      #56 REF_getField org/example/jvminternals/ch04/modern/ModernShapes$Point.y:I
+InnerClasses:
+  public static final #65= #8 of #49;     // Point=class org/example/jvminternals/ch04/modern/ModernShapes$Point of class org/example/jvminternals/ch04/modern/ModernShapes
+  public static #66= #28 of #49;          // Shape=class org/example/jvminternals/ch04/modern/ModernShapes$Shape of class org/example/jvminternals/ch04/modern/ModernShapes
+  public static #69= #67 of #49;          // RuntimeTag=class org/example/jvminternals/ch04/modern/ModernShapes$RuntimeTag of class org/example/jvminternals/ch04/modern/ModernShapes
+  public static #72= #70 of #49;          // ClassTag=class org/example/jvminternals/ch04/modern/ModernShapes$ClassTag of class org/example/jvminternals/ch04/modern/ModernShapes
+  public static final #77= #73 of #75;    // Lookup=class java/lang/invoke/MethodHandles$Lookup of class java/lang/invoke/MethodHandles
+Classfile /Users/xiejinxin/Developer/Java/jvm-internals/chapters/ch04-classfile/target/classes/org/example/jvminternals/ch04/modern/ModernShapes$Shape.class
+  Last modified 2026年11月3日; size 370 bytes
+  SHA-256 checksum 8a8152f6a858431e8ced353d678e92afd648db7c55f67158f460909f3021f8ad
+  Compiled from "ModernShapes.java"
+public interface org.example.jvminternals.ch04.modern.ModernShapes$Shape
+  minor version: 0
+  major version: 69
+  flags: (0x0601) ACC_PUBLIC, ACC_INTERFACE, ACC_ABSTRACT
+  this_class: #1                          // org/example/jvminternals/ch04/modern/ModernShapes$Shape
+  super_class: #3                         // java/lang/Object
+  interfaces: 0, fields: 0, methods: 0, attributes: 4
+Constant pool:
+   #1 = Class              #2             // org/example/jvminternals/ch04/modern/ModernShapes$Shape
+   #2 = Utf8               org/example/jvminternals/ch04/modern/ModernShapes$Shape
+   #3 = Class              #4             // java/lang/Object
+   #4 = Utf8               java/lang/Object
+   #5 = Utf8               SourceFile
+   #6 = Utf8               ModernShapes.java
+   #7 = Utf8               NestHost
+   #8 = Class              #9             // org/example/jvminternals/ch04/modern/ModernShapes
+   #9 = Utf8               org/example/jvminternals/ch04/modern/ModernShapes
+  #10 = Utf8               PermittedSubclasses
+  #11 = Class              #12            // org/example/jvminternals/ch04/modern/ModernShapes$Point
+  #12 = Utf8               org/example/jvminternals/ch04/modern/ModernShapes$Point
+  #13 = Utf8               InnerClasses
+  #14 = Utf8               Shape
+  #15 = Utf8               Point
+{
+}
+SourceFile: "ModernShapes.java"
+NestHost: class org/example/jvminternals/ch04/modern/ModernShapes
+PermittedSubclasses:
+  org/example/jvminternals/ch04/modern/ModernShapes$Point
+InnerClasses:
+  public static #14= #1 of #8;            // Shape=class org/example/jvminternals/ch04/modern/ModernShapes$Shape of class org/example/jvminternals/ch04/modern/ModernShapes
+  public static final #15= #11 of #8;     // Point=class org/example/jvminternals/ch04/modern/ModernShapes$Point of class org/example/jvminternals/ch04/modern/ModernShapes
+Classfile /Users/xiejinxin/Developer/Java/jvm-internals/chapters/ch04-classfile/target/classes/org/example/jvminternals/ch04/modern/ModernShapes$Member.class
+  Last modified 2026年11月3日; size 835 bytes
+  SHA-256 checksum 1f5da8cadb1d41442e5d96ac4595ae4b052d5b9db30254dec8677cc83de03948
+  Compiled from "ModernShapes.java"
+public final class org.example.jvminternals.ch04.modern.ModernShapes$Member
+  minor version: 0
+  major version: 69
+  flags: (0x0031) ACC_PUBLIC, ACC_FINAL, ACC_SUPER
+  this_class: #8                          // org/example/jvminternals/ch04/modern/ModernShapes$Member
+  super_class: #14                        // java/lang/Object
+  interfaces: 0, fields: 1, methods: 2, attributes: 3
+Constant pool:
+   #1 = Methodref          #2.#3          // java/util/Objects.requireNonNull:(Ljava/lang/Object;)Ljava/lang/Object;
+   #2 = Class              #4             // java/util/Objects
+   #3 = NameAndType        #5:#6          // requireNonNull:(Ljava/lang/Object;)Ljava/lang/Object;
+   #4 = Utf8               java/util/Objects
+   #5 = Utf8               requireNonNull
+   #6 = Utf8               (Ljava/lang/Object;)Ljava/lang/Object;
+   #7 = Fieldref           #8.#9          // org/example/jvminternals/ch04/modern/ModernShapes$Member.this$0:Lorg/example/jvminternals/ch04/modern/ModernShapes;
+   #8 = Class              #10            // org/example/jvminternals/ch04/modern/ModernShapes$Member
+   #9 = NameAndType        #11:#12        // this$0:Lorg/example/jvminternals/ch04/modern/ModernShapes;
+  #10 = Utf8               org/example/jvminternals/ch04/modern/ModernShapes$Member
+  #11 = Utf8               this$0
+  #12 = Utf8               Lorg/example/jvminternals/ch04/modern/ModernShapes;
+  #13 = Methodref          #14.#15        // java/lang/Object."<init>":()V
+  #14 = Class              #16            // java/lang/Object
+  #15 = NameAndType        #17:#18        // "<init>":()V
+  #16 = Utf8               java/lang/Object
+  #17 = Utf8               <init>
+  #18 = Utf8               ()V
+  #19 = Fieldref           #20.#21        // org/example/jvminternals/ch04/modern/ModernShapes.offset:I
+  #20 = Class              #22            // org/example/jvminternals/ch04/modern/ModernShapes
+  #21 = NameAndType        #23:#24        // offset:I
+  #22 = Utf8               org/example/jvminternals/ch04/modern/ModernShapes
+  #23 = Utf8               offset
+  #24 = Utf8               I
+  #25 = Utf8               (Lorg/example/jvminternals/ch04/modern/ModernShapes;)V
+  #26 = Utf8               Code
+  #27 = Utf8               LineNumberTable
+  #28 = Utf8               LocalVariableTable
+  #29 = Utf8               this
+  #30 = Utf8               Lorg/example/jvminternals/ch04/modern/ModernShapes$Member;
+  #31 = Utf8               MethodParameters
+  #32 = Utf8               ()I
+  #33 = Utf8               SourceFile
+  #34 = Utf8               ModernShapes.java
+  #35 = Utf8               NestHost
+  #36 = Utf8               InnerClasses
+  #37 = Utf8               Member
+{
+  final org.example.jvminternals.ch04.modern.ModernShapes this$0;
+    descriptor: Lorg/example/jvminternals/ch04/modern/ModernShapes;
+    flags: (0x1010) ACC_FINAL, ACC_SYNTHETIC
+
+  public org.example.jvminternals.ch04.modern.ModernShapes$Member(org.example.jvminternals.ch04.modern.ModernShapes);
+    descriptor: (Lorg/example/jvminternals/ch04/modern/ModernShapes;)V
+    flags: (0x0001) ACC_PUBLIC
+    Code:
+      stack=3, locals=2, args_size=2
+         0: aload_0
+         1: aload_1
+         2: dup
+         3: invokestatic  #1                  // Method java/util/Objects.requireNonNull:(Ljava/lang/Object;)Ljava/lang/Object;
+         6: pop
+         7: putfield      #7                  // Field this$0:Lorg/example/jvminternals/ch04/modern/ModernShapes;
+        10: aload_0
+        11: invokespecial #13                 // Method java/lang/Object."<init>":()V
+        14: return
+      LineNumberTable:
+        line 42: 0
+      LocalVariableTable:
+        Start  Length  Slot  Name   Signature
+            0      15     0  this   Lorg/example/jvminternals/ch04/modern/ModernShapes$Member;
+            0      15     1 this$0   Lorg/example/jvminternals/ch04/modern/ModernShapes;
+    MethodParameters:
+      Name                           Flags
+      this$0                         final mandated
+
+  public int offset();
+    descriptor: ()I
+    flags: (0x0001) ACC_PUBLIC
+    Code:
+      stack=1, locals=1, args_size=1
+         0: aload_0
+         1: getfield      #7                  // Field this$0:Lorg/example/jvminternals/ch04/modern/ModernShapes;
+         4: getfield      #19                 // Field org/example/jvminternals/ch04/modern/ModernShapes.offset:I
+         7: ireturn
+      LineNumberTable:
+        line 45: 0
+      LocalVariableTable:
+        Start  Length  Slot  Name   Signature
+            0       8     0  this   Lorg/example/jvminternals/ch04/modern/ModernShapes$Member;
+}
+SourceFile: "ModernShapes.java"
+NestHost: class org/example/jvminternals/ch04/modern/ModernShapes
+InnerClasses:
+  public final #37= #8 of #20;            // Member=class org/example/jvminternals/ch04/modern/ModernShapes$Member of class org/example/jvminternals/ch04/modern/ModernShapes
+Classfile /Users/xiejinxin/Developer/Java/jvm-internals/chapters/ch04-classfile/target/classes/org/example/jvminternals/ch04/modern/ModernShapes.class
+  Last modified 2026年11月3日; size 2896 bytes
+  SHA-256 checksum ca732296f1961bb7e83b76d884025bd84107e6b50f59e72ed6bdb1c5bc4c55f8
+  Compiled from "ModernShapes.java"
+public final class org.example.jvminternals.ch04.modern.ModernShapes
+  minor version: 0
+  major version: 69
+  flags: (0x0031) ACC_PUBLIC, ACC_FINAL, ACC_SUPER
+  this_class: #8                          // org/example/jvminternals/ch04/modern/ModernShapes
+  super_class: #2                         // java/lang/Object
+  interfaces: 0, fields: 2, methods: 3, attributes: 4
+Constant pool:
+    #1 = Methodref          #2.#3         // java/lang/Object."<init>":()V
+    #2 = Class              #4            // java/lang/Object
+    #3 = NameAndType        #5:#6         // "<init>":()V
+    #4 = Utf8               java/lang/Object
+    #5 = Utf8               <init>
+    #6 = Utf8               ()V
+    #7 = Fieldref           #8.#9         // org/example/jvminternals/ch04/modern/ModernShapes.offset:I
+    #8 = Class              #10           // org/example/jvminternals/ch04/modern/ModernShapes
+    #9 = NameAndType        #11:#12       // offset:I
+   #10 = Utf8               org/example/jvminternals/ch04/modern/ModernShapes
+   #11 = Utf8               offset
+   #12 = Utf8               I
+   #13 = Fieldref           #8.#14        // org/example/jvminternals/ch04/modern/ModernShapes.LOGGER:Ljava/lang/System$Logger;
+   #14 = NameAndType        #15:#16       // LOGGER:Ljava/lang/System$Logger;
+   #15 = Utf8               LOGGER
+   #16 = Utf8               Ljava/lang/System$Logger;
+   #17 = Fieldref           #18.#19       // java/lang/System$Logger$Level.INFO:Ljava/lang/System$Logger$Level;
+   #18 = Class              #20           // java/lang/System$Logger$Level
+   #19 = NameAndType        #21:#22       // INFO:Ljava/lang/System$Logger$Level;
+   #20 = Utf8               java/lang/System$Logger$Level
+   #21 = Utf8               INFO
+   #22 = Utf8               Ljava/lang/System$Logger$Level;
+   #23 = String             #24           // 开始读取记录类、密封接口与注解元数据
+   #24 = Utf8               开始读取记录类、密封接口与注解元数据
+   #25 = InterfaceMethodref #26.#27       // java/lang/System$Logger.log:(Ljava/lang/System$Logger$Level;Ljava/lang/String;)V
+   #26 = Class              #28           // java/lang/System$Logger
+   #27 = NameAndType        #29:#30       // log:(Ljava/lang/System$Logger$Level;Ljava/lang/String;)V
+   #28 = Utf8               java/lang/System$Logger
+   #29 = Utf8               log
+   #30 = Utf8               (Ljava/lang/System$Logger$Level;Ljava/lang/String;)V
+   #31 = Fieldref           #32.#33       // java/lang/System.out:Ljava/io/PrintStream;
+   #32 = Class              #34           // java/lang/System
+   #33 = NameAndType        #35:#36       // out:Ljava/io/PrintStream;
+   #34 = Utf8               java/lang/System
+   #35 = Utf8               out
+   #36 = Utf8               Ljava/io/PrintStream;
+   #37 = Class              #38           // org/example/jvminternals/ch04/modern/ModernShapes$Point
+   #38 = Utf8               org/example/jvminternals/ch04/modern/ModernShapes$Point
+   #39 = Methodref          #40.#41       // java/lang/Class.isRecord:()Z
+   #40 = Class              #42           // java/lang/Class
+   #41 = NameAndType        #43:#44       // isRecord:()Z
+   #42 = Utf8               java/lang/Class
+   #43 = Utf8               isRecord
+   #44 = Utf8               ()Z
+   #45 = InvokeDynamic      #0:#46        // #0:makeConcatWithConstants:(Z)Ljava/lang/String;
+   #46 = NameAndType        #47:#48       // makeConcatWithConstants:(Z)Ljava/lang/String;
+   #47 = Utf8               makeConcatWithConstants
+   #48 = Utf8               (Z)Ljava/lang/String;
+   #49 = Methodref          #50.#51       // java/io/PrintStream.println:(Ljava/lang/String;)V
+   #50 = Class              #52           // java/io/PrintStream
+   #51 = NameAndType        #53:#54       // println:(Ljava/lang/String;)V
+   #52 = Utf8               java/io/PrintStream
+   #53 = Utf8               println
+   #54 = Utf8               (Ljava/lang/String;)V
+   #55 = Methodref          #40.#56       // java/lang/Class.getRecordComponents:()[Ljava/lang/reflect/RecordComponent;
+   #56 = NameAndType        #57:#58       // getRecordComponents:()[Ljava/lang/reflect/RecordComponent;
+   #57 = Utf8               getRecordComponents
+   #58 = Utf8               ()[Ljava/lang/reflect/RecordComponent;
+   #59 = Methodref          #60.#61       // java/util/Arrays.toString:([Ljava/lang/Object;)Ljava/lang/String;
+   #60 = Class              #62           // java/util/Arrays
+   #61 = NameAndType        #63:#64       // toString:([Ljava/lang/Object;)Ljava/lang/String;
+   #62 = Utf8               java/util/Arrays
+   #63 = Utf8               toString
+   #64 = Utf8               ([Ljava/lang/Object;)Ljava/lang/String;
+   #65 = InvokeDynamic      #1:#66        // #1:makeConcatWithConstants:(Ljava/lang/String;)Ljava/lang/String;
+   #66 = NameAndType        #47:#67       // makeConcatWithConstants:(Ljava/lang/String;)Ljava/lang/String;
+   #67 = Utf8               (Ljava/lang/String;)Ljava/lang/String;
+   #68 = Methodref          #40.#69       // java/lang/Class.getDeclaredAnnotations:()[Ljava/lang/annotation/Annotation;
+   #69 = NameAndType        #70:#71       // getDeclaredAnnotations:()[Ljava/lang/annotation/Annotation;
+   #70 = Utf8               getDeclaredAnnotations
+   #71 = Utf8               ()[Ljava/lang/annotation/Annotation;
+   #72 = InvokeDynamic      #2:#66        // #2:makeConcatWithConstants:(Ljava/lang/String;)Ljava/lang/String;
+   #73 = Class              #74           // org/example/jvminternals/ch04/modern/ModernShapes$Shape
+   #74 = Utf8               org/example/jvminternals/ch04/modern/ModernShapes$Shape
+   #75 = Methodref          #40.#76       // java/lang/Class.isSealed:()Z
+   #76 = NameAndType        #77:#44       // isSealed:()Z
+   #77 = Utf8               isSealed
+   #78 = InvokeDynamic      #3:#46        // #3:makeConcatWithConstants:(Z)Ljava/lang/String;
+   #79 = Methodref          #40.#80       // java/lang/Class.getPermittedSubclasses:()[Ljava/lang/Class;
+   #80 = NameAndType        #81:#82       // getPermittedSubclasses:()[Ljava/lang/Class;
+   #81 = Utf8               getPermittedSubclasses
+   #82 = Utf8               ()[Ljava/lang/Class;
+   #83 = InvokeDynamic      #4:#66        // #4:makeConcatWithConstants:(Ljava/lang/String;)Ljava/lang/String;
+   #84 = Class              #85           // org/example/jvminternals/ch04/modern/ModernShapes$Member
+   #85 = Utf8               org/example/jvminternals/ch04/modern/ModernShapes$Member
+   #86 = Methodref          #40.#87       // java/lang/Class.getNestHost:()Ljava/lang/Class;
+   #87 = NameAndType        #88:#89       // getNestHost:()Ljava/lang/Class;
+   #88 = Utf8               getNestHost
+   #89 = Utf8               ()Ljava/lang/Class;
+   #90 = Methodref          #40.#91       // java/lang/Class.getName:()Ljava/lang/String;
+   #91 = NameAndType        #92:#93       // getName:()Ljava/lang/String;
+   #92 = Utf8               getName
+   #93 = Utf8               ()Ljava/lang/String;
+   #94 = InvokeDynamic      #5:#66        // #5:makeConcatWithConstants:(Ljava/lang/String;)Ljava/lang/String;
+   #95 = String             #96           // 元数据读取结束
+   #96 = Utf8               元数据读取结束
+   #97 = Methodref          #32.#98       // java/lang/System.getLogger:(Ljava/lang/String;)Ljava/lang/System$Logger;
+   #98 = NameAndType        #99:#100      // getLogger:(Ljava/lang/String;)Ljava/lang/System$Logger;
+   #99 = Utf8               getLogger
+  #100 = Utf8               (Ljava/lang/String;)Ljava/lang/System$Logger;
+  #101 = Utf8               (I)V
+  #102 = Utf8               Code
+  #103 = Utf8               LineNumberTable
+  #104 = Utf8               LocalVariableTable
+  #105 = Utf8               this
+  #106 = Utf8               Lorg/example/jvminternals/ch04/modern/ModernShapes;
+  #107 = Utf8               MethodParameters
+  #108 = Utf8               main
+  #109 = Utf8               ([Ljava/lang/String;)V
+  #110 = Utf8               args
+  #111 = Utf8               [Ljava/lang/String;
+  #112 = Utf8               <clinit>
+  #113 = Utf8               SourceFile
+  #114 = Utf8               ModernShapes.java
+  #115 = Utf8               NestMembers
+  #116 = Class              #117          // org/example/jvminternals/ch04/modern/ModernShapes$ClassTag
+  #117 = Utf8               org/example/jvminternals/ch04/modern/ModernShapes$ClassTag
+  #118 = Class              #119          // org/example/jvminternals/ch04/modern/ModernShapes$RuntimeTag
+  #119 = Utf8               org/example/jvminternals/ch04/modern/ModernShapes$RuntimeTag
+  #120 = Utf8               BootstrapMethods
+  #121 = String             #122          // Point.isRecord=\u0001
+  #122 = Utf8               Point.isRecord=\u0001
+  #123 = String             #124          // Point.recordComponents=\u0001
+  #124 = Utf8               Point.recordComponents=\u0001
+  #125 = String             #126          // Point.annotations=\u0001
+  #126 = Utf8               Point.annotations=\u0001
+  #127 = String             #128          // Shape.isSealed=\u0001
+  #128 = Utf8               Shape.isSealed=\u0001
+  #129 = String             #130          // Shape.permitted=\u0001
+  #130 = Utf8               Shape.permitted=\u0001
+  #131 = String             #132          // Member.nestHost=\u0001
+  #132 = Utf8               Member.nestHost=\u0001
+  #133 = MethodHandle       6:#134        // REF_invokeStatic java/lang/invoke/StringConcatFactory.makeConcatWithConstants:(Ljava/lang/invoke/MethodHandles$Lookup;Ljava/lang/String;Ljava/lang/invoke/MethodType;Ljava/lang/String;[Ljava/lang/Object;)Ljava/lang/invoke/CallSite;
+  #134 = Methodref          #135.#136     // java/lang/invoke/StringConcatFactory.makeConcatWithConstants:(Ljava/lang/invoke/MethodHandles$Lookup;Ljava/lang/String;Ljava/lang/invoke/MethodType;Ljava/lang/String;[Ljava/lang/Object;)Ljava/lang/invoke/CallSite;
+  #135 = Class              #137          // java/lang/invoke/StringConcatFactory
+  #136 = NameAndType        #47:#138      // makeConcatWithConstants:(Ljava/lang/invoke/MethodHandles$Lookup;Ljava/lang/String;Ljava/lang/invoke/MethodType;Ljava/lang/String;[Ljava/lang/Object;)Ljava/lang/invoke/CallSite;
+  #137 = Utf8               java/lang/invoke/StringConcatFactory
+  #138 = Utf8               (Ljava/lang/invoke/MethodHandles$Lookup;Ljava/lang/String;Ljava/lang/invoke/MethodType;Ljava/lang/String;[Ljava/lang/Object;)Ljava/lang/invoke/CallSite;
+  #139 = Utf8               InnerClasses
+  #140 = Utf8               Logger
+  #141 = Utf8               Level
+  #142 = Utf8               Point
+  #143 = Utf8               Shape
+  #144 = Utf8               Member
+  #145 = Utf8               ClassTag
+  #146 = Utf8               RuntimeTag
+  #147 = Class              #148          // java/lang/invoke/MethodHandles$Lookup
+  #148 = Utf8               java/lang/invoke/MethodHandles$Lookup
+  #149 = Class              #150          // java/lang/invoke/MethodHandles
+  #150 = Utf8               java/lang/invoke/MethodHandles
+  #151 = Utf8               Lookup
+{
+  private static final java.lang.System$Logger LOGGER;
+    descriptor: Ljava/lang/System$Logger;
+    flags: (0x001a) ACC_PRIVATE, ACC_STATIC, ACC_FINAL
+
+  private final int offset;
+    descriptor: I
+    flags: (0x0012) ACC_PRIVATE, ACC_FINAL
+
+  public org.example.jvminternals.ch04.modern.ModernShapes(int);
+    descriptor: (I)V
+    flags: (0x0001) ACC_PUBLIC
+    Code:
+      stack=2, locals=2, args_size=2
+         0: aload_0
+         1: invokespecial #1                  // Method java/lang/Object."<init>":()V
+         4: aload_0
+         5: iload_1
+         6: putfield      #7                  // Field offset:I
+         9: return
+      LineNumberTable:
+        line 15: 0
+        line 16: 4
+        line 17: 9
+      LocalVariableTable:
+        Start  Length  Slot  Name   Signature
+            0      10     0  this   Lorg/example/jvminternals/ch04/modern/ModernShapes;
+            0      10     1 offset   I
+    MethodParameters:
+      Name                           Flags
+      offset
+
+  public static void main(java.lang.String[]);
+    descriptor: ([Ljava/lang/String;)V
+    flags: (0x0009) ACC_PUBLIC, ACC_STATIC
+    Code:
+      stack=3, locals=1, args_size=1
+         0: getstatic     #13                 // Field LOGGER:Ljava/lang/System$Logger;
+         3: getstatic     #17                 // Field java/lang/System$Logger$Level.INFO:Ljava/lang/System$Logger$Level;
+         6: ldc           #23                 // String 开始读取记录类、密封接口与注解元数据
+         8: invokeinterface #25,  3           // InterfaceMethod java/lang/System$Logger.log:(Ljava/lang/System$Logger$Level;Ljava/lang/String;)V
+        13: getstatic     #31                 // Field java/lang/System.out:Ljava/io/PrintStream;
+        16: ldc           #37                 // class org/example/jvminternals/ch04/modern/ModernShapes$Point
+        18: invokevirtual #39                 // Method java/lang/Class.isRecord:()Z
+        21: invokedynamic #45,  0             // InvokeDynamic #0:makeConcatWithConstants:(Z)Ljava/lang/String;
+        26: invokevirtual #49                 // Method java/io/PrintStream.println:(Ljava/lang/String;)V
+        29: getstatic     #31                 // Field java/lang/System.out:Ljava/io/PrintStream;
+        32: ldc           #37                 // class org/example/jvminternals/ch04/modern/ModernShapes$Point
+        34: invokevirtual #55                 // Method java/lang/Class.getRecordComponents:()[Ljava/lang/reflect/RecordComponent;
+        37: invokestatic  #59                 // Method java/util/Arrays.toString:([Ljava/lang/Object;)Ljava/lang/String;
+        40: invokedynamic #65,  0             // InvokeDynamic #1:makeConcatWithConstants:(Ljava/lang/String;)Ljava/lang/String;
+        45: invokevirtual #49                 // Method java/io/PrintStream.println:(Ljava/lang/String;)V
+        48: getstatic     #31                 // Field java/lang/System.out:Ljava/io/PrintStream;
+        51: ldc           #37                 // class org/example/jvminternals/ch04/modern/ModernShapes$Point
+        53: invokevirtual #68                 // Method java/lang/Class.getDeclaredAnnotations:()[Ljava/lang/annotation/Annotation;
+        56: invokestatic  #59                 // Method java/util/Arrays.toString:([Ljava/lang/Object;)Ljava/lang/String;
+        59: invokedynamic #72,  0             // InvokeDynamic #2:makeConcatWithConstants:(Ljava/lang/String;)Ljava/lang/String;
+        64: invokevirtual #49                 // Method java/io/PrintStream.println:(Ljava/lang/String;)V
+        67: getstatic     #31                 // Field java/lang/System.out:Ljava/io/PrintStream;
+        70: ldc           #73                 // class org/example/jvminternals/ch04/modern/ModernShapes$Shape
+        72: invokevirtual #75                 // Method java/lang/Class.isSealed:()Z
+        75: invokedynamic #78,  0             // InvokeDynamic #3:makeConcatWithConstants:(Z)Ljava/lang/String;
+        80: invokevirtual #49                 // Method java/io/PrintStream.println:(Ljava/lang/String;)V
+        83: getstatic     #31                 // Field java/lang/System.out:Ljava/io/PrintStream;
+        86: ldc           #73                 // class org/example/jvminternals/ch04/modern/ModernShapes$Shape
+        88: invokevirtual #79                 // Method java/lang/Class.getPermittedSubclasses:()[Ljava/lang/Class;
+        91: invokestatic  #59                 // Method java/util/Arrays.toString:([Ljava/lang/Object;)Ljava/lang/String;
+        94: invokedynamic #83,  0             // InvokeDynamic #4:makeConcatWithConstants:(Ljava/lang/String;)Ljava/lang/String;
+        99: invokevirtual #49                 // Method java/io/PrintStream.println:(Ljava/lang/String;)V
+       102: getstatic     #31                 // Field java/lang/System.out:Ljava/io/PrintStream;
+       105: ldc           #84                 // class org/example/jvminternals/ch04/modern/ModernShapes$Member
+       107: invokevirtual #86                 // Method java/lang/Class.getNestHost:()Ljava/lang/Class;
+       110: invokevirtual #90                 // Method java/lang/Class.getName:()Ljava/lang/String;
+       113: invokedynamic #94,  0             // InvokeDynamic #5:makeConcatWithConstants:(Ljava/lang/String;)Ljava/lang/String;
+       118: invokevirtual #49                 // Method java/io/PrintStream.println:(Ljava/lang/String;)V
+       121: getstatic     #13                 // Field LOGGER:Ljava/lang/System$Logger;
+       124: getstatic     #17                 // Field java/lang/System$Logger$Level.INFO:Ljava/lang/System$Logger$Level;
+       127: ldc           #95                 // String 元数据读取结束
+       129: invokeinterface #25,  3           // InterfaceMethod java/lang/System$Logger.log:(Ljava/lang/System$Logger$Level;Ljava/lang/String;)V
+       134: return
+      LineNumberTable:
+        line 51: 0
+        line 52: 13
+        line 53: 29
+        line 54: 48
+        line 55: 67
+        line 56: 83
+        line 57: 102
+        line 58: 121
+        line 59: 134
+      LocalVariableTable:
+        Start  Length  Slot  Name   Signature
+            0     135     0  args   [Ljava/lang/String;
+    MethodParameters:
+      Name                           Flags
+      args
+
+  static {};
+    descriptor: ()V
+    flags: (0x0008) ACC_STATIC
+    Code:
+      stack=1, locals=0, args_size=0
+         0: ldc           #8                  // class org/example/jvminternals/ch04/modern/ModernShapes
+         2: invokevirtual #90                 // Method java/lang/Class.getName:()Ljava/lang/String;
+         5: invokestatic  #97                 // Method java/lang/System.getLogger:(Ljava/lang/String;)Ljava/lang/System$Logger;
+         8: putstatic     #13                 // Field LOGGER:Ljava/lang/System$Logger;
+        11: return
+      LineNumberTable:
+        line 11: 0
+}
+SourceFile: "ModernShapes.java"
+NestMembers:
+  org/example/jvminternals/ch04/modern/ModernShapes$Member
+  org/example/jvminternals/ch04/modern/ModernShapes$Point
+  org/example/jvminternals/ch04/modern/ModernShapes$Shape
+  org/example/jvminternals/ch04/modern/ModernShapes$ClassTag
+  org/example/jvminternals/ch04/modern/ModernShapes$RuntimeTag
+BootstrapMethods:
+  0: #133 REF_invokeStatic java/lang/invoke/StringConcatFactory.makeConcatWithConstants:(Ljava/lang/invoke/MethodHandles$Lookup;Ljava/lang/String;Ljava/lang/invoke/MethodType;Ljava/lang/String;[Ljava/lang/Object;)Ljava/lang/invoke/CallSite;
+    Method arguments:
+      #121 Point.isRecord=\u0001
+  1: #133 REF_invokeStatic java/lang/invoke/StringConcatFactory.makeConcatWithConstants:(Ljava/lang/invoke/MethodHandles$Lookup;Ljava/lang/String;Ljava/lang/invoke/MethodType;Ljava/lang/String;[Ljava/lang/Object;)Ljava/lang/invoke/CallSite;
+    Method arguments:
+      #123 Point.recordComponents=\u0001
+  2: #133 REF_invokeStatic java/lang/invoke/StringConcatFactory.makeConcatWithConstants:(Ljava/lang/invoke/MethodHandles$Lookup;Ljava/lang/String;Ljava/lang/invoke/MethodType;Ljava/lang/String;[Ljava/lang/Object;)Ljava/lang/invoke/CallSite;
+    Method arguments:
+      #125 Point.annotations=\u0001
+  3: #133 REF_invokeStatic java/lang/invoke/StringConcatFactory.makeConcatWithConstants:(Ljava/lang/invoke/MethodHandles$Lookup;Ljava/lang/String;Ljava/lang/invoke/MethodType;Ljava/lang/String;[Ljava/lang/Object;)Ljava/lang/invoke/CallSite;
+    Method arguments:
+      #127 Shape.isSealed=\u0001
+  4: #133 REF_invokeStatic java/lang/invoke/StringConcatFactory.makeConcatWithConstants:(Ljava/lang/invoke/MethodHandles$Lookup;Ljava/lang/String;Ljava/lang/invoke/MethodType;Ljava/lang/String;[Ljava/lang/Object;)Ljava/lang/invoke/CallSite;
+    Method arguments:
+      #129 Shape.permitted=\u0001
+  5: #133 REF_invokeStatic java/lang/invoke/StringConcatFactory.makeConcatWithConstants:(Ljava/lang/invoke/MethodHandles$Lookup;Ljava/lang/String;Ljava/lang/invoke/MethodType;Ljava/lang/String;[Ljava/lang/Object;)Ljava/lang/invoke/CallSite;
+    Method arguments:
+      #131 Member.nestHost=\u0001
+InnerClasses:
+  public static #140= #26 of #32;         // Logger=class java/lang/System$Logger of class java/lang/System
+  public static final #141= #18 of #26;   // Level=class java/lang/System$Logger$Level of class java/lang/System$Logger
+  public static final #142= #37 of #8;    // Point=class org/example/jvminternals/ch04/modern/ModernShapes$Point of class org/example/jvminternals/ch04/modern/ModernShapes
+  public static #143= #73 of #8;          // Shape=class org/example/jvminternals/ch04/modern/ModernShapes$Shape of class org/example/jvminternals/ch04/modern/ModernShapes
+  public final #144= #84 of #8;           // Member=class org/example/jvminternals/ch04/modern/ModernShapes$Member of class org/example/jvminternals/ch04/modern/ModernShapes
+  public static #145= #116 of #8;         // ClassTag=class org/example/jvminternals/ch04/modern/ModernShapes$ClassTag of class org/example/jvminternals/ch04/modern/ModernShapes
+  public static #146= #118 of #8;         // RuntimeTag=class org/example/jvminternals/ch04/modern/ModernShapes$RuntimeTag of class org/example/jvminternals/ch04/modern/ModernShapes
+  public static final #151= #147 of #149; // Lookup=class java/lang/invoke/MethodHandles$Lookup of class java/lang/invoke/MethodHandles

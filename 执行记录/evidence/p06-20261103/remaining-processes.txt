@@ -1,0 +1,2 @@
+2026-11-03，Asia/Shanghai。最终成功复核：自建仅127.0.0.1:8768服务74015已终止，运行会话6935退出143；lsof无监听，退出1。ps查询退出0，按本任务Java入口与/private/tmp/p06-chrome-render-配置匹配无进程，rg退出1；原始空输出分别保留在remaining-listener.txt、remaining-task-processes.txt。
+独立渲染器全部返回退出0，并由finally关闭浏览器与移除自身临时配置。临时视口已reset，标签135960439关闭。未操作其他任务进程／标签。前轮ps被沙箱拒绝是历史，不能据当时空输出声称已复核；当前结论依据本次成功命令。

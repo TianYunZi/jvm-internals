@@ -1,0 +1,381 @@
+jdk.Deoptimization {
+  startTime = 15:50:15.901 (2026-11-03)
+  compileId = 1380
+  compiler = "c2"
+  method = java.util.Collections$UnmodifiableCollection$1.<init>(Collections$UnmodifiableCollection)
+  lineNumber = 1077
+  bci = 22
+  instruction = "invokeinterface"
+  reason = "class_check"
+  action = "maybe_recompile"
+  eventThread = "main" (javaThreadId = 3)
+  stackTrace = [
+    java.util.Collections$UnmodifiableCollection$1.<init>(Collections$UnmodifiableCollection) line: 1077
+    java.util.Collections$UnmodifiableCollection.iterator() line: 1076
+    jdk.jfr.internal.JDKEvents.emitInitialSecurityProperties() line: 229
+    jdk.jfr.internal.periodic.JavaEventTask.execute(long, PeriodicType) line: 53
+    jdk.jfr.internal.periodic.PeriodicTask.run(long, PeriodicType) line: 125
+  ]
+}
+
+jdk.Deoptimization {
+  startTime = 15:50:15.901 (2026-11-03)
+  compileId = 1241
+  compiler = "c2"
+  method = java.util.Collections$UnmodifiableCollection$1.hasNext()
+  lineNumber = 1079
+  bci = 4
+  instruction = "invokeinterface"
+  reason = "class_check"
+  action = "maybe_recompile"
+  eventThread = "main" (javaThreadId = 3)
+  stackTrace = [
+    java.util.Collections$UnmodifiableCollection$1.hasNext() line: 1079
+    jdk.jfr.internal.JDKEvents.emitInitialSecurityProperties() line: 229
+    jdk.jfr.internal.periodic.JavaEventTask.execute(long, PeriodicType) line: 53
+    jdk.jfr.internal.periodic.PeriodicTask.run(long, PeriodicType) line: 125
+    jdk.jfr.internal.periodic.PeriodicEvents.doChunkBegin(boolean) line: 78
+  ]
+}
+
+jdk.Deoptimization {
+  startTime = 15:50:15.901 (2026-11-03)
+  compileId = 1369
+  compiler = "c2"
+  method = java.util.Collections$UnmodifiableCollection$1.next()
+  lineNumber = 1080
+  bci = 4
+  instruction = "invokeinterface"
+  reason = "class_check"
+  action = "maybe_recompile"
+  eventThread = "main" (javaThreadId = 3)
+  stackTrace = [
+    java.util.Collections$UnmodifiableCollection$1.next() line: 1080
+    jdk.jfr.internal.JDKEvents.emitInitialSecurityProperties() line: 229
+    jdk.jfr.internal.periodic.JavaEventTask.execute(long, PeriodicType) line: 53
+    jdk.jfr.internal.periodic.PeriodicTask.run(long, PeriodicType) line: 125
+    jdk.jfr.internal.periodic.PeriodicEvents.doChunkBegin(boolean) line: 78
+  ]
+}
+
+jdk.Deoptimization {
+  startTime = 15:50:15.901 (2026-11-03)
+  compileId = 1241
+  compiler = "c2"
+  method = java.util.Collections$UnmodifiableCollection$1.hasNext()
+  lineNumber = 1079
+  bci = 4
+  instruction = "invokeinterface"
+  reason = "class_check"
+  action = "maybe_recompile"
+  eventThread = "main" (javaThreadId = 3)
+  stackTrace = [
+    java.util.Collections$UnmodifiableCollection$1.hasNext() line: 1079
+    jdk.jfr.internal.JDKEvents.emitInitialSecurityProperties() line: 229
+    jdk.jfr.internal.periodic.JavaEventTask.execute(long, PeriodicType) line: 53
+    jdk.jfr.internal.periodic.PeriodicTask.run(long, PeriodicType) line: 125
+    jdk.jfr.internal.periodic.PeriodicEvents.doChunkBegin(boolean) line: 78
+  ]
+}
+
+jdk.Deoptimization {
+  startTime = 15:50:15.901 (2026-11-03)
+  compileId = 1369
+  compiler = "c2"
+  method = java.util.Collections$UnmodifiableCollection$1.next()
+  lineNumber = 1080
+  bci = 4
+  instruction = "invokeinterface"
+  reason = "class_check"
+  action = "maybe_recompile"
+  eventThread = "main" (javaThreadId = 3)
+  stackTrace = [
+    java.util.Collections$UnmodifiableCollection$1.next() line: 1080
+    jdk.jfr.internal.JDKEvents.emitInitialSecurityProperties() line: 229
+    jdk.jfr.internal.periodic.JavaEventTask.execute(long, PeriodicType) line: 53
+    jdk.jfr.internal.periodic.PeriodicTask.run(long, PeriodicType) line: 125
+    jdk.jfr.internal.periodic.PeriodicEvents.doChunkBegin(boolean) line: 78
+  ]
+}
+
+jdk.Deoptimization {
+  startTime = 15:50:15.902 (2026-11-03)
+  compileId = 1241
+  compiler = "c2"
+  method = java.util.Collections$UnmodifiableCollection$1.hasNext()
+  lineNumber = 1079
+  bci = 4
+  instruction = "invokeinterface"
+  reason = "class_check"
+  action = "maybe_recompile"
+  eventThread = "main" (javaThreadId = 3)
+  stackTrace = [
+    java.util.Collections$UnmodifiableCollection$1.hasNext() line: 1079
+    jdk.jfr.internal.JDKEvents.emitInitialSecurityProperties() line: 229
+    jdk.jfr.internal.periodic.JavaEventTask.execute(long, PeriodicType) line: 53
+    jdk.jfr.internal.periodic.PeriodicTask.run(long, PeriodicType) line: 125
+    jdk.jfr.internal.periodic.PeriodicEvents.doChunkBegin(boolean) line: 78
+  ]
+}
+
+jdk.Deoptimization {
+  startTime = 15:50:15.902 (2026-11-03)
+  compileId = 1369
+  compiler = "c2"
+  method = java.util.Collections$UnmodifiableCollection$1.next()
+  lineNumber = 1080
+  bci = 4
+  instruction = "invokeinterface"
+  reason = "class_check"
+  action = "maybe_recompile"
+  eventThread = "main" (javaThreadId = 3)
+  stackTrace = [
+    java.util.Collections$UnmodifiableCollection$1.next() line: 1080
+    jdk.jfr.internal.JDKEvents.emitInitialSecurityProperties() line: 229
+    jdk.jfr.internal.periodic.JavaEventTask.execute(long, PeriodicType) line: 53
+    jdk.jfr.internal.periodic.PeriodicTask.run(long, PeriodicType) line: 125
+    jdk.jfr.internal.periodic.PeriodicEvents.doChunkBegin(boolean) line: 78
+  ]
+}
+
+jdk.Deoptimization {
+  startTime = 15:50:15.902 (2026-11-03)
+  compileId = 1241
+  compiler = "c2"
+  method = java.util.Collections$UnmodifiableCollection$1.hasNext()
+  lineNumber = 1079
+  bci = 4
+  instruction = "invokeinterface"
+  reason = "class_check"
+  action = "maybe_recompile"
+  eventThread = "main" (javaThreadId = 3)
+  stackTrace = [
+    java.util.Collections$UnmodifiableCollection$1.hasNext() line: 1079
+    jdk.jfr.internal.JDKEvents.emitInitialSecurityProperties() line: 229
+    jdk.jfr.internal.periodic.JavaEventTask.execute(long, PeriodicType) line: 53
+    jdk.jfr.internal.periodic.PeriodicTask.run(long, PeriodicType) line: 125
+    jdk.jfr.internal.periodic.PeriodicEvents.doChunkBegin(boolean) line: 78
+  ]
+}
+
+jdk.Deoptimization {
+  startTime = 15:50:15.902 (2026-11-03)
+  compileId = 1369
+  compiler = "c2"
+  method = java.util.Collections$UnmodifiableCollection$1.next()
+  lineNumber = 1080
+  bci = 4
+  instruction = "invokeinterface"
+  reason = "class_check"
+  action = "maybe_recompile"
+  eventThread = "main" (javaThreadId = 3)
+  stackTrace = [
+    java.util.Collections$UnmodifiableCollection$1.next() line: 1080
+    jdk.jfr.internal.JDKEvents.emitInitialSecurityProperties() line: 229
+    jdk.jfr.internal.periodic.JavaEventTask.execute(long, PeriodicType) line: 53
+    jdk.jfr.internal.periodic.PeriodicTask.run(long, PeriodicType) line: 125
+    jdk.jfr.internal.periodic.PeriodicEvents.doChunkBegin(boolean) line: 78
+  ]
+}
+
+jdk.Deoptimization {
+  startTime = 15:50:15.903 (2026-11-03)
+  compileId = 960
+  compiler = "c2"
+  method = java.lang.StringLatin1.replace(byte[], char, char)
+  lineNumber = 296
+  bci = 19
+  instruction = "if_icmpge"
+  reason = "unstable_if"
+  action = "reinterpret"
+  eventThread = "main" (javaThreadId = 3)
+  stackTrace = [
+    java.lang.StringLatin1.replace(byte[], char, char) line: 296
+    java.lang.String.replace(char, char) line: 2998
+    sun.launcher.LauncherHelper.loadMainClass(int, String) line: 855
+    sun.launcher.LauncherHelper.checkAndLoadMain(boolean, int, String) line: 745
+  ]
+}
+
+jdk.Deoptimization {
+  startTime = 15:50:15.906 (2026-11-03)
+  compileId = 352
+  compiler = "c2"
+  method = java.lang.String.isLatin1()
+  lineNumber = 4893
+  bci = 10
+  instruction = "ifne"
+  reason = "unstable_if"
+  action = "reinterpret"
+  eventThread = "main" (javaThreadId = 3)
+  stackTrace = [
+    java.lang.String.isLatin1() line: 4893
+    java.lang.String.getChars(int, int, char[], int) line: 1758
+    java.io.BufferedWriter.write(String, int, int) line: 278
+    java.io.Writer.write(String) line: 248
+    java.io.PrintStream.writeln(String) line: 687
+    ...
+  ]
+}
+
+jdk.Deoptimization {
+  startTime = 15:50:15.911 (2026-11-03)
+  compileId = 326
+  compiler = "c2"
+  method = java.lang.String.isLatin1()
+  lineNumber = 4893
+  bci = 10
+  instruction = "ifne"
+  reason = "unstable_if"
+  action = "reinterpret"
+  eventThread = "main" (javaThreadId = 3)
+  stackTrace = [
+    java.lang.String.isLatin1() line: 4893
+    java.lang.String.charAt(int) line: 1623
+    java.lang.invoke.StringConcatFactory.parseRecipe(MethodType, String, Object[]) line: 433
+    java.lang.invoke.StringConcatFactory.makeConcatWithConstants(MethodHandles$Lookup, String, MethodType, String, Object[]) line: 375
+    java.lang.invoke.BootstrapMethodInvoker.invoke(Class, MethodHandle, String, Object, Object, Class) line: 102
+  ]
+}
+
+jdk.Deoptimization {
+  startTime = 15:50:15.911 (2026-11-03)
+  compileId = 1338
+  compiler = "c2"
+  method = java.lang.AbstractStringBuilder.needsNewBuffer(byte[], byte, int, byte)
+  lineNumber = 250
+  bci = 8
+  instruction = "if_icmpne"
+  reason = "unstable_if"
+  action = "reinterpret"
+  eventThread = "main" (javaThreadId = 3)
+  stackTrace = [
+    java.lang.AbstractStringBuilder.needsNewBuffer(byte[], byte, int, byte) line: 250
+    java.lang.AbstractStringBuilder.append(char) line: 896
+    java.lang.StringBuilder.append(char) line: 246
+    java.lang.invoke.StringConcatFactory.parseRecipe(MethodType, String, Object[]) line: 455
+    java.lang.invoke.StringConcatFactory.makeConcatWithConstants(MethodHandles$Lookup, String, MethodType, String, Object[]) line: 375
+    ...
+  ]
+}
+
+jdk.Deoptimization {
+  startTime = 15:50:15.913 (2026-11-03)
+  compileId = 869
+  compiler = "c2"
+  method = java.lang.String.getBytes(byte[], int, byte)
+  lineNumber = 4796
+  bci = 5
+  instruction = "if_icmpne"
+  reason = "unstable_if"
+  action = "reinterpret"
+  eventThread = "main" (javaThreadId = 3)
+  stackTrace = [
+    java.lang.String.getBytes(byte[], int, byte) line: 4796
+    java.lang.StringConcatHelper.newArrayWithSuffix(String, int, byte) line: 615
+    java.lang.StringConcatHelper$Concat1.concat(long) line: 119
+    org.example.jvminternals.ch18.RecoveryJourney.main(String[]) line: 49
+  ]
+}
+
+jdk.Deoptimization {
+  startTime = 15:50:15.913 (2026-11-03)
+  compileId = 1488
+  compiler = "c2"
+  method = org.example.jvminternals.ch18.RecoveryJourney.evaluate(RecoveryJourney$Operation, int)
+  lineNumber = 61
+  bci = 14
+  instruction = "invokeinterface"
+  reason = "class_check"
+  action = "maybe_recompile"
+  eventThread = "main" (javaThreadId = 3)
+  stackTrace = [
+    org.example.jvminternals.ch18.RecoveryJourney.evaluate(RecoveryJourney$Operation, int) line: 61
+    org.example.jvminternals.ch18.RecoveryJourney.main(String[]) line: 51
+  ]
+}
+
+jdk.Deoptimization {
+  startTime = 15:50:15.913 (2026-11-03)
+  compileId = 1488
+  compiler = "c2"
+  method = org.example.jvminternals.ch18.RecoveryJourney.evaluate(RecoveryJourney$Operation, int)
+  lineNumber = 61
+  bci = 14
+  instruction = "invokeinterface"
+  reason = "class_check"
+  action = "maybe_recompile"
+  eventThread = "main" (javaThreadId = 3)
+  stackTrace = [
+    org.example.jvminternals.ch18.RecoveryJourney.evaluate(RecoveryJourney$Operation, int) line: 61
+    org.example.jvminternals.ch18.RecoveryJourney.main(String[]) line: 51
+  ]
+}
+
+jdk.Deoptimization {
+  startTime = 15:50:15.913 (2026-11-03)
+  compileId = 1488
+  compiler = "c2"
+  method = org.example.jvminternals.ch18.RecoveryJourney.evaluate(RecoveryJourney$Operation, int)
+  lineNumber = 61
+  bci = 14
+  instruction = "invokeinterface"
+  reason = "class_check"
+  action = "maybe_recompile"
+  eventThread = "main" (javaThreadId = 3)
+  stackTrace = [
+    org.example.jvminternals.ch18.RecoveryJourney.evaluate(RecoveryJourney$Operation, int) line: 61
+    org.example.jvminternals.ch18.RecoveryJourney.main(String[]) line: 51
+  ]
+}
+
+jdk.Deoptimization {
+  startTime = 15:50:15.913 (2026-11-03)
+  compileId = 1488
+  compiler = "c2"
+  method = org.example.jvminternals.ch18.RecoveryJourney.evaluate(RecoveryJourney$Operation, int)
+  lineNumber = 61
+  bci = 14
+  instruction = "invokeinterface"
+  reason = "class_check"
+  action = "maybe_recompile"
+  eventThread = "main" (javaThreadId = 3)
+  stackTrace = [
+    org.example.jvminternals.ch18.RecoveryJourney.evaluate(RecoveryJourney$Operation, int) line: 61
+    org.example.jvminternals.ch18.RecoveryJourney.main(String[]) line: 51
+  ]
+}
+
+jdk.Deoptimization {
+  startTime = 15:50:15.918 (2026-11-03)
+  compileId = 1500
+  compiler = "c2"
+  method = org.example.jvminternals.ch18.RecoveryJourney.main(String[])
+  lineNumber = 50
+  bci = 71
+  instruction = "if_icmpge"
+  reason = "unstable_if"
+  action = "reinterpret"
+  eventThread = "main" (javaThreadId = 3)
+  stackTrace = [
+    org.example.jvminternals.ch18.RecoveryJourney.main(String[]) line: 50
+  ]
+}
+
+jdk.Deoptimization {
+  startTime = 15:50:15.930 (2026-11-03)
+  compileId = 1510
+  compiler = "c2"
+  method = org.example.jvminternals.ch18.RecoveryJourney.longLoop(int)
+  lineNumber = 66
+  bci = 6
+  instruction = "if_icmpge"
+  reason = "unstable_if"
+  action = "reinterpret"
+  eventThread = "main" (javaThreadId = 3)
+  stackTrace = [
+    org.example.jvminternals.ch18.RecoveryJourney.longLoop(int) line: 66
+    org.example.jvminternals.ch18.RecoveryJourney.main(String[]) line: 54
+  ]
+}
+

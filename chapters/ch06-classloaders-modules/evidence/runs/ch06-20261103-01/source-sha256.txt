@@ -1,0 +1,15 @@
+1959e339f39e2581d5a5b61eb2d4a50ab6768dd2a0383d3145c73cb329acb431  chapters/ch06-classloaders-modules/src/main/java/org/example/jvminternals/ch06/Greeter.java
+f22e9cfcb126a3be7c587e51fb884dec7136e0fc491d1a9a91f6fdc72dc289b4  chapters/ch06-classloaders-modules/src/main/java/org/example/jvminternals/ch06/LayerJourney.java
+99d53b1e62b5f6739f7d60fec67bfbea8f94d38c0fb73c8ac204eec256169271  chapters/ch06-classloaders-modules/src/main/java/org/example/jvminternals/ch06/LoaderJourney.java
+3bb968648003ec7e81f50d49abaf0e17c1364b6cc93f2c27fc2731c67a077335  chapters/ch06-classloaders-modules/src/main/java/org/example/jvminternals/ch06/ServiceJourney.java
+71d02f6573716146e1adac8d8612a93ede75fea4ed0a7045664c4257ea39b16f  chapters/ch06-classloaders-modules/src/main/resources/notes.txt
+09b2848e7450588aeb8ade5fe2f7aa01eaf8adca748082454c57b398b8e716f1  chapters/ch06-classloaders-modules/variants/plugin/src/org/example/jvminternals/ch06/isolated/Plugin.java
+c5df76f14340c84febfd52fcc8fd89dd3e01c3491badd493d7d76fd7aebcf25a  chapters/ch06-classloaders-modules/variants/service/src/org/example/jvminternals/ch06/provider/FriendlyGreeter.java
+bdd110c3a488f4e932b468c23fa58fec1ceeb4d5db2ffef34290f58e21eae89e  chapters/ch06-classloaders-modules/variants/service/resources/META-INF/services/org.example.jvminternals.ch06.Greeter
+96bf97d44cc459951ba4732c38977a7a804ddcda918c7de26c3522bb45bdaa18  chapters/ch06-classloaders-modules/variants/modules/src/lesson.client/module-info.java
+dacea6bcb9227d20fc34d97503d747c3cc2fdd024daf8d95310974c8e614894e  chapters/ch06-classloaders-modules/variants/modules/src/lesson.library/module-info.java
+7300db05a094661a67509fe24cfaf1dd8e3dc19f5d4813ebb79686c059aaf9cd  chapters/ch06-classloaders-modules/variants/modules/src/lesson.library/org/example/jvminternals/ch06/internal/Secret.java
+462f8e6d9a5a576203b8b48c6f560bba44bcaec0d4c3b17fcc3088aff8e6bbd8  chapters/ch06-classloaders-modules/variants/modules/src/lesson.library/org/example/jvminternals/ch06/moduleapi/PublicGreeting.java
+35e8dec16bd0bd771feb454b9e96bd4913a77f572f3abe4d503bcbd13cc6d797  chapters/ch06-classloaders-modules/variants/modules/src/lesson.client/org/example/jvminternals/ch06/client/ModuleAccessJourney.java
+c17d3f614c7cbcc63621fd8756358a8d23277526715376afb560a050e2560947  chapters/ch06-classloaders-modules/pom.xml
+fca1721117472bbc7e7942be5dc4a951ac6d67f8c3a43b4e0aeb0de98b8d1c18  chapters/ch06-classloaders-modules/evidence/runs/ch06-20261103-01/parent-pom.xml

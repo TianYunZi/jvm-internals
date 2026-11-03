@@ -1,0 +1,6 @@
+flowchart TB
+ T[长期Thread] --> M[ThreadLocalMap]
+ M -. 弱引用键 .-> K[ThreadLocal键]
+ M -->|强引用值| V[上下文值]
+ R[任务finally调用remove] --> M
+ D[线程退出清理映射] --> T

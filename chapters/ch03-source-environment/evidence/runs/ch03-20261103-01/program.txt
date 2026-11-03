@@ -1,0 +1,14 @@
+11月 03, 2026 10:50:34 上午 org.example.jvminternals.ch01.ProgramJourney main
+INFO: 贯穿程序启动，观察窗口为 0 秒
+elapsed_ms=47 thread=main stage=main-enter
+elapsed_ms=50 thread=main stage=object-created
+elapsed_ms=52 thread=journey-worker stage=worker-enter
+payload=从源码出发，沿证据解释运行过程。 workspace_bytes=1024
+elapsed_ms=54 thread=journey-worker stage=worker-ready
+pid=18336 observation_seconds=0
+elapsed_ms=58 thread=main stage=observation-window
+elapsed_ms=58 thread=journey-worker stage=worker-return
+elapsed_ms=58 thread=main stage=main-return
+11月 03, 2026 10:50:34 上午 org.example.jvminternals.ch01.ProgramJourney main
+INFO: 贯穿程序结束，工作线程存活状态为 false
+elapsed_ms=59 thread=journey-shutdown stage=shutdown-hook

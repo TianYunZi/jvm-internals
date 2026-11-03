@@ -1,0 +1,46 @@
+跳到正文	#main
+Java虚拟机原理 · 全书目录	../../index.html
+B.1 先读结构和版本	#sec-b-1
+B.2 描述符和栈计数	#sec-b-2
+B.3 常见指令分类	#sec-b-3
+B.4 调用、异常与诊断	#sec-b-4
+来源	#sources
+JVMS §4.1	https://docs.oracle.com/javase/specs/jvms/se25/html/jvms-4.html#jvms-4.1
+第4章	../../chapters/ch04-classfile/chapter.html#sec-4-1
+第4章	../../chapters/ch04-classfile/chapter.html#sec-4-2
+第4章	../../chapters/ch04-classfile/chapter.html#sec-4-3
+第4章	../../chapters/ch04-classfile/chapter.html#sec-4-4
+第5章	../../chapters/ch05-bytecode-verification/chapter.html
+第4章	../../chapters/ch04-classfile/chapter.html#sec-4-5
+JVMS §2.6	https://docs.oracle.com/javase/specs/jvms/se25/html/jvms-2.html#jvms-2.6
+JVMS第6章	https://docs.oracle.com/javase/specs/jvms/se25/html/jvms-6.html
+第4章	../../chapters/ch04-classfile/chapter.html
+第15章	../../chapters/ch15-dynamic-invocation/chapter.html
+第5章	../../chapters/ch05-bytecode-verification/chapter.html
+第13章	../../chapters/ch13-interpreter/chapter.html
+第5章	../../chapters/ch05-bytecode-verification/chapter.html
+第5章	../../chapters/ch05-bytecode-verification/chapter.html
+第4章	../../chapters/ch04-classfile/chapter.html
+第7章	../../chapters/ch07-linking-initialization/chapter.html
+第13章	../../chapters/ch13-interpreter/chapter.html
+第5章	../../chapters/ch05-bytecode-verification/chapter.html
+第13章	../../chapters/ch13-interpreter/chapter.html
+第6章	../../chapters/ch06-classloaders-modules/chapter.html
+第27章	../../chapters/ch27-monitors/chapter.html
+第13章	../../chapters/ch13-interpreter/chapter.html
+第5章	../../chapters/ch05-bytecode-verification/chapter.html
+第14章	../../chapters/ch14-dispatch/chapter.html
+第15章	../../chapters/ch15-dynamic-invocation/chapter.html
+CH04 parseOrDefault	../../chapters/ch04-classfile/chapter.html
+CH05同步块	../../chapters/ch05-bytecode-verification/chapter.html
+解释器帧与异常分派	../../chapters/ch13-interpreter/chapter.html
+CH04命令	../../chapters/ch04-classfile/README.html
+CH05命令	../../chapters/ch05-bytecode-verification/README.html
+CH04依据	../../chapters/ch04-classfile/evidence/索引.md
+CH05依据	../../chapters/ch05-bytecode-verification/evidence/索引.md
+CH13依据	../../chapters/ch13-interpreter/evidence/索引.md
+CH14依据	../../chapters/ch14-dispatch/evidence/索引.md
+CH15依据	../../chapters/ch15-dynamic-invocation/evidence/索引.md
+上一页	../a-terms/appendix.html
+附录目录	../../index.html#appendices
+下一页	../c-commands/appendix.html

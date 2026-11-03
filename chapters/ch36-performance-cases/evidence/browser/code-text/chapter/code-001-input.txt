@@ -1,0 +1,6 @@
+mvn -f chapters/ch36-performance-cases/benchmarks/pom.xml compile \
+  org.apache.maven.plugins:maven-dependency-plugin:3.8.1:build-classpath \
+  -Dmdep.outputFile=target/classpath.txt
+# 完整工具路径、类路径与有限fork参数见运行说明。
+java -Djmh.bindAddress=127.0.0.1 -cp "$CASE_CLASSPATH" \
+  org.openjdk.jmh.Main WorkBenchmark -rf json -rff jmh.json

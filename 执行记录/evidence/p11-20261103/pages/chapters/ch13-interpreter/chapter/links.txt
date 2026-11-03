@@ -1,0 +1,22 @@
+跳到正文	#main
+Java 虚拟机原理图文书	../../index.html
+从现象开始	#problem
+13.1 栈式模型与模板解释器	#sec-13-1
+13.2 入口、分派与模板生成	#sec-13-2
+13.3 栈帧建立与遍历	#sec-13-3
+13.4 异常传播	#sec-13-4
+13.5 不同执行形态之间的转换	#sec-13-5
+证据与复做	#observe
+回顾与边界	#review
+来源	#sources
+CH13-F01	#fig-13-1
+CH13-F02	#fig-13-2
+CH13-F03	#fig-13-3
+CH13-F04	#fig-13-4
+运行说明	README.html
+源码阅读	sources.html
+证据索引	evidence/索引.md
+JVMS 25 §2.6、§2.10	https://docs.oracle.com/javase/specs/jvms/se25/html/jvms-2.html#jvms-2.6
+上一章	../ch12-native-memory/chapter.html
+下一章	../ch14-dispatch/chapter.html
+全书目录	../../index.html

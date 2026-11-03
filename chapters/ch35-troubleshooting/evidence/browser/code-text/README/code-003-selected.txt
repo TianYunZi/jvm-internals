@@ -1,0 +1,6 @@
+P09_PID=当前案例输出的进程号
+"$P09_JDK/bin/jcmd" "$P09_PID" GC.class_histogram
+"$P09_JDK/bin/jcmd" "$P09_PID" VM.native_memory summary
+ps -o pid,rss,vsz,%cpu,etime -p "$P09_PID"
+"$P09_JDK/bin/jcmd" "$P09_PID" Thread.print -l
+"$P09_JDK/bin/jfr" view hot-methods chapters/ch35-troubleshooting/target/cpu.jfr

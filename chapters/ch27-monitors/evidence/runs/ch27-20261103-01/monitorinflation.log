@@ -1,0 +1,23 @@
+[15ms][trace][monitorinflation] inflate: object=0x0000000120d02368, mark=0x0000007868c708c2, type='java.lang.ref.ReferenceQueue$Lock' cause=Monitor Wait
+[37ms][trace][monitorinflation] inflate: object=0x0000000120ba8a88, mark=0x0000007868c731e2, type='java.lang.ref.ReferenceQueue$Lock' cause=Monitor Wait
+[135ms][trace][monitorinflation] inflate: object=0x000000012040aaf8, mark=0x0000007868ffc382, type='java.lang.Class' cause=Monitor Enter
+[186ms][trace][monitorinflation] inflate: object=0x0000000120b9e2d0, mark=0x0000007868fff482, type='jdk.jfr.internal.management.HiddenWait' cause=Monitor Wait
+[203ms][trace][monitorinflation] inflate: object=0x0000000120902b40, mark=0x0000007865a74622, type='jdk.jfr.internal.PlatformRecorder' cause=Monitor Enter
+[208ms][trace][monitorinflation] inflate: object=0x000000011fcefe58, mark=0x0000007865a747e2, type='java.lang.Object' cause=Monitor Wait
+[208ms][trace][monitorinflation] inflate: object=0x0000000120d051e8, mark=0x0000007865a748c2, type='java.io.PrintStream' cause=Monitor Enter
+[219ms][trace][monitorinflation] inflate: object=0x000000011fcff420, mark=0x0000007865a75262, type='java.lang.Thread' cause=Monitor Wait
+[6214ms][trace][monitorinflation] inflate: object=0x000000011fcf7d70, mark=0x0000007865a75342, type='java.lang.Thread' cause=Monitor Wait
+[6216ms][trace][monitorinflation] inflate: object=0x000000011ff37270, mark=0x0000007865a75422, type='jdk.jfr.internal.ShutdownHook' cause=Monitor Wait
+[6240ms][info ][monitorinflation] Starting the final audit.
+[6240ms][info ][monitorinflation] Checking in_use_list:
+[6240ms][info ][monitorinflation] count=10, max=10
+[6240ms][info ][monitorinflation] in_use_count=10 equals ck_in_use_count=10
+[6240ms][info ][monitorinflation] in_use_max=10 equals ck_in_use_max=10
+[6240ms][info ][monitorinflation] No errors found in in_use_list checks.
+[6240ms][info ][monitorinflation] In-use monitor info (eliding idle monitors):
+[6240ms][info ][monitorinflation] (B -> is_busy, H -> has hash code, L -> lock status)
+[6240ms][info ][monitorinflation]            monitor  BHL              object         object type
+[6240ms][info ][monitorinflation] ==================  ===  ==================  ==================
+[6240ms][info ][monitorinflation] 0x0000007868fff480  100  0x0000000120b9e2d0  jdk.jfr.internal.management.HiddenWait (is_busy: waiters=1, contentions=0, owner=0, entry_list=0x0000000000000000)
+[6240ms][info ][monitorinflation] 0x0000007868c731e0  100  0x0000000120ba8a88  java.lang.ref.ReferenceQueue$Lock (is_busy: waiters=1, contentions=0, owner=0, entry_list=0x0000000000000000)
+[6240ms][info ][monitorinflation] 0x0000007868c708c0  100  0x0000000120d02368  java.lang.ref.ReferenceQueue$Lock (is_busy: waiters=1, contentions=0, owner=0, entry_list=0x0000000000000000)

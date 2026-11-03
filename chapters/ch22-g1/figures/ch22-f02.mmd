@@ -1,0 +1,11 @@
+flowchart TD
+ Y["年轻代暂停"] --> S["Concurrent Start暂停"]
+ S --> M["并发标记"]
+ M --> R["Remark暂停；候选分组"]
+ R --> B["并发重建记忆集等工作"]
+ B --> C["Cleanup暂停与收尾"]
+ C --> P["Prepare Mixed暂停"]
+ P --> X["Mixed暂停：年轻区及选定老区"]
+ X -->|尚有候选| X
+ X --> Y
+ Y -. "空间／保障不足等条件" .-> F["失败处理或Full GC后备路径"]

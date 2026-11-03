@@ -1,0 +1,99 @@
+[INFO] Scanning for projects...
+[INFO] ------------------------------------------------------------------------
+[INFO] Reactor Build Order:
+[INFO] 
+[INFO] Java 虚拟机原理书配套源码                                                    [pom]
+[INFO] 第 1 章：运行主线与贯穿程序                                                    [jar]
+[INFO] 第 4 章：类文件结构与信息表达                                                   [jar]
+[INFO] 第 5 章：字节码与验证状态                                                     [jar]
+[INFO] 第 6 章：加载器、服务与模块                                                    [jar]
+[INFO] 第 7 章：连接、解析与初始化                                                    [jar]
+[INFO] 第 8 章：类型与元数据                                                       [jar]
+[INFO] 
+[INFO] ---------------< org.example.jvminternals:jvm-internals >---------------
+[INFO] Building Java 虚拟机原理书配套源码 1.0-SNAPSHOT                              [1/7]
+[INFO]   from pom.xml
+[INFO] --------------------------------[ pom ]---------------------------------
+[INFO] 
+[INFO] -------------< org.example.jvminternals:ch01-architecture >-------------
+[INFO] Building 第 1 章：运行主线与贯穿程序 1.0-SNAPSHOT                              [2/7]
+[INFO]   from chapters/ch01-architecture/pom.xml
+[INFO] --------------------------------[ jar ]---------------------------------
+[INFO] Loaded 64 auto-discovered prefixes for remote repository apache.snapshots (prefixes-apache.snapshots.txt)
+[INFO] 
+[INFO] --- resources:3.3.1:resources (default-resources) @ ch01-architecture ---
+[INFO] Copying 1 resource from src/main/resources to target/classes
+[INFO] 
+[INFO] --- compiler:3.14.1:compile (default-compile) @ ch01-architecture ---
+[INFO] Nothing to compile - all classes are up to date.
+[INFO] 
+[INFO] --------------< org.example.jvminternals:ch04-classfile >---------------
+[INFO] Building 第 4 章：类文件结构与信息表达 1.0-SNAPSHOT                             [3/7]
+[INFO]   from chapters/ch04-classfile/pom.xml
+[INFO] --------------------------------[ jar ]---------------------------------
+[INFO] 
+[INFO] --- resources:3.3.1:resources (default-resources) @ ch04-classfile ---
+[INFO] Copying 1 resource from src/main/resources to target/classes
+[INFO] 
+[INFO] --- compiler:3.14.1:compile (default-compile) @ ch04-classfile ---
+[INFO] Nothing to compile - all classes are up to date.
+[INFO] 
+[INFO] --------< org.example.jvminternals:ch05-bytecode-verification >---------
+[INFO] Building 第 5 章：字节码与验证状态 1.0-SNAPSHOT                               [4/7]
+[INFO]   from chapters/ch05-bytecode-verification/pom.xml
+[INFO] --------------------------------[ jar ]---------------------------------
+[INFO] 
+[INFO] --- resources:3.3.1:resources (default-resources) @ ch05-bytecode-verification ---
+[INFO] skip non existing resourceDirectory /Users/xiejinxin/Developer/Java/jvm-internals/chapters/ch05-bytecode-verification/src/main/resources
+[INFO] 
+[INFO] --- compiler:3.14.1:compile (default-compile) @ ch05-bytecode-verification ---
+[INFO] Nothing to compile - all classes are up to date.
+[INFO] 
+[INFO] ---------< org.example.jvminternals:ch06-classloaders-modules >---------
+[INFO] Building 第 6 章：加载器、服务与模块 1.0-SNAPSHOT                              [5/7]
+[INFO]   from chapters/ch06-classloaders-modules/pom.xml
+[INFO] --------------------------------[ jar ]---------------------------------
+[INFO] 
+[INFO] --- resources:3.3.1:resources (default-resources) @ ch06-classloaders-modules ---
+[INFO] Copying 1 resource from src/main/resources to target/classes
+[INFO] 
+[INFO] --- compiler:3.14.1:compile (default-compile) @ ch06-classloaders-modules ---
+[INFO] Nothing to compile - all classes are up to date.
+[INFO] 
+[INFO] --------< org.example.jvminternals:ch07-linking-initialization >--------
+[INFO] Building 第 7 章：连接、解析与初始化 1.0-SNAPSHOT                              [6/7]
+[INFO]   from chapters/ch07-linking-initialization/pom.xml
+[INFO] --------------------------------[ jar ]---------------------------------
+[INFO] 
+[INFO] --- resources:3.3.1:resources (default-resources) @ ch07-linking-initialization ---
+[INFO] skip non existing resourceDirectory /Users/xiejinxin/Developer/Java/jvm-internals/chapters/ch07-linking-initialization/src/main/resources
+[INFO] 
+[INFO] --- compiler:3.14.1:compile (default-compile) @ ch07-linking-initialization ---
+[INFO] Nothing to compile - all classes are up to date.
+[INFO] 
+[INFO] ------------< org.example.jvminternals:ch08-type-metadata >-------------
+[INFO] Building 第 8 章：类型与元数据 1.0-SNAPSHOT                                 [7/7]
+[INFO]   from chapters/ch08-type-metadata/pom.xml
+[INFO] --------------------------------[ jar ]---------------------------------
+[INFO] 
+[INFO] --- resources:3.3.1:resources (default-resources) @ ch08-type-metadata ---
+[INFO] skip non existing resourceDirectory /Users/xiejinxin/Developer/Java/jvm-internals/chapters/ch08-type-metadata/src/main/resources
+[INFO] 
+[INFO] --- compiler:3.14.1:compile (default-compile) @ ch08-type-metadata ---
+[INFO] Nothing to compile - all classes are up to date.
+[INFO] ------------------------------------------------------------------------
+[INFO] Reactor Summary for Java 虚拟机原理书配套源码 1.0-SNAPSHOT:
+[INFO] 
+[INFO] Java 虚拟机原理书配套源码 .................................... SUCCESS [  0.002 s]
+[INFO] 第 1 章：运行主线与贯穿程序 .................................... SUCCESS [  0.382 s]
+[INFO] 第 4 章：类文件结构与信息表达 ................................... SUCCESS [  0.011 s]
+[INFO] 第 5 章：字节码与验证状态 ..................................... SUCCESS [  0.006 s]
+[INFO] 第 6 章：加载器、服务与模块 .................................... SUCCESS [  0.005 s]
+[INFO] 第 7 章：连接、解析与初始化 .................................... SUCCESS [  0.006 s]
+[INFO] 第 8 章：类型与元数据 ....................................... SUCCESS [  0.006 s]
+[INFO] ------------------------------------------------------------------------
+[INFO] BUILD SUCCESS
+[INFO] ------------------------------------------------------------------------
+[INFO] Total time:  0.485 s
+[INFO] Finished at: 2026-11-03T12:18:55+08:00
+[INFO] ------------------------------------------------------------------------

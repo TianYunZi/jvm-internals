@@ -1,0 +1,6 @@
+03e6348cb1d937257d87d3a508fc91f9ad37f9f3dc0f3720b7adbc510530648a  chapters/ch05-bytecode-verification/chapter.html
+7b5303d60fefcb96e4c8a4039d0873476cf8f5d580ffdec8a3e5768b950f5c49  assets/book.css
+de67faadd4d95a87ea7f4fe37869de53275d0f0a567b350988ac1abaaa4b11c6  chapters/ch05-bytecode-verification/figures/ch05-f02-control-flow.svg
+04cf37bd4449a760739e0cea3b57c71c8d23eb4ccff70d2c46b5b20b37b707fc  chapters/ch05-bytecode-verification/figures/ch05-f03-initialization.svg
+1104e070b6ff7bcb413d92b4a561324a53a9f3bc42674bec0d9109a80743c2f0  chapters/ch05-bytecode-verification/evidence/browser/print/chrome-print.pdf
+7593e45847f76304576fa6ecfec0d85460d28a61b8e5a3542f2bb22c1ea73cf4  chapters/ch05-bytecode-verification/evidence/browser/print/page-2.png

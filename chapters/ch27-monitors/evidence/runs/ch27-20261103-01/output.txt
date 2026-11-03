@@ -1,0 +1,10 @@
+[0.206s][info][jfr,startup] Started recording 1. No limit specified, using maxsize=250MB as default.
+[0.206s][info][jfr,startup] 
+[0.206s][info][jfr,startup] Use jcmd 82095 JFR.dump name=1 to copy recording data to file.
+监视器重入，持有6秒以便外部观察
+观察窗口：pid=82095
+已notifyAll，当前仍持有监视器
+竞争者获得监视器
+等待者重新获取监视器：ready=true
+类库锁重入：holdCount=2
+结束：count=1 hash=959869407

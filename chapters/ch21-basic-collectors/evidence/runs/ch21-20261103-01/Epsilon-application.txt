@@ -1,0 +1,8 @@
+11月 03, 2026 6:07:35 下午 org.example.jvminternals.ch21.AllocationJourney main
+INFO: 阶段=开始，累计载荷预算64 MiB，环形持有1 MiB
+11月 03, 2026 6:07:35 下午 org.example.jvminternals.ch21.AllocationJourney main
+INFO: 阶段=0完成，累计载荷MiB=32
+11月 03, 2026 6:07:35 下午 org.example.jvminternals.ch21.AllocationJourney main
+INFO: 阶段=1完成，累计载荷MiB=64
+11月 03, 2026 6:07:35 下午 org.example.jvminternals.ch21.AllocationJourney main
+INFO: 阶段=正常退出，末块标记=-1

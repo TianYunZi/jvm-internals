@@ -1,0 +1,10 @@
+%% P05机制图：依据本章来源索引；本地导出后供离线阅读。
+flowchart TD
+  accTitle: 方法句柄绑定与类型适配
+  A["add句柄<br/>类型为 int,int → int"] -->|绑定首参数7| B["insertArguments<br/>句柄类型为 int → int"]
+  B --> C["invokeExact<br/>调用端int → int，精确匹配"]
+  B --> D["invoke允许约定适配<br/>byte → int；结果int → long"]
+  C --> E["实际计算add 7,5<br/>结果12"]
+  D --> E
+  P["Lookup创建句柄时执行访问检查<br/>发布句柄也可能发布所封装的访问能力"] -.能力边界.-> A
+  N["适配链可被内联<br/>动态性本身不保证零开销"] -.优化边界.-> B

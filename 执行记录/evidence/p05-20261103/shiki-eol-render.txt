@@ -1,0 +1,3 @@
+代码展示已渲染并导出选取文本：chapters/ch15-dynamic-invocation/chapter.html
+代码展示已渲染并导出选取文本：chapters/ch15-dynamic-invocation/sources.html
+代码展示已渲染并导出选取文本：chapters/ch15-dynamic-invocation/README.html

@@ -1,0 +1,41 @@
+# 第26章：源码与运行
+
+Java开发工具包（Java Development Kit，JDK）25.0.5.0.2，HotSpot、macOS AArch64。容量单位采用兆二进制字节（mebibyte，MiB），每个教学进程堆上限128 MiB。
+
+## 示例、性质与边界
+
+CH26-E01：PlatformJourney，包org.example.jvminternals.ch26。正式源码在src/main/java，阅读副本从正式文件生成；用户“执行P07”授权普通教学源码与有界观察，无测试、断言、并发压力或性能基准。
+
+2个子线程，主窗口12秒，子线程循环16秒截止；finally发布结束并join。外部附加是否成功不决定结束。parker先自发许可并消费，随后条件循环接受unpark与interrupt。
+
+## 可复制命令
+
+在项目根目录执行。先编译普通示例；预览模块与本地编译只在各自命令中显式选择。命令运行按顺序等待本轮进程结束。新运行输出放target，保留本轮精选证据。
+
+```bash
+export JAVA_HOME=/opt/homebrew/Cellar/openjdk@25/25.0.5.0.2/libexec/openjdk.jdk/Contents/Home
+export PATH="$JAVA_HOME/bin:/opt/homebrew/bin:$PATH"
+mvn -B -ntp -pl chapters/ch26-platform-threads -am compile
+java -Xmx128m -XX:+StartAttachListener -cp chapters/ch26-platform-threads/target/classes org.example.jvminternals.ch26.PlatformJourney
+```
+
+在第二个终端同样设置上述工具环境，按提示输入刚打印的进程号；历史进程号不能复用。
+
+```bash
+# 在教学进程的观察窗口内，从其输出取得本次pid。
+read task_pid
+jcmd "$task_pid" Thread.print -l
+ps -M -p "$task_pid"
+jcmd "$task_pid" Thread.print -l
+ps -M -p "$task_pid"
+```
+
+## 实际观察和清理
+
+pid81735，12秒窗口采集两份Thread.print和两份ps -M；parker与waiter为不同等待对象，均记录TERMINATED，退出0。macOS ps输出未提供逐线程nid映射，不宣称逐行对应或测得调度延迟。
+
+运行编号ch26-20261103-01，完整输入、输出、身份摘要和边界见[evidence/runs/ch26-20261103-01/记录.md](evidence/runs/ch26-20261103-01/记录.md)。所有本轮Java进程已结束；手动重跑时正常结束会join教学线程，必要时在该终端Ctrl-C停止当前进程，不寻找或结束其他进程。
+
+## 静态阅读
+
+[正文](chapter.html)、[源码阅读](sources.html)、[证据索引](evidence/索引.md)对应。代码采用Shiki 4.6.0、github-light主题；Java、C（本地源）、bash（命令）及text（混合输出）按实际语言生成静态超文本标记语言（Hypertext Markup Language，HTML）。图源位于figures，软件关系和流程使用Mermaid，空间示意使用可缩放矢量图形（Scalable Vector Graphics，SVG）。图源修改后重新导出，源码修改后重新生成阅读页，不依赖网络渲染。

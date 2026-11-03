@@ -1,0 +1,16 @@
+[INFO] Scanning for projects...
+[INFO] 
+[INFO] ---------------< org.example.jvminternals:jvm-internals >---------------
+[INFO] Building Java 虚拟机原理书配套源码 1.0-SNAPSHOT
+[INFO]   from pom.xml
+[INFO] --------------------------------[ pom ]---------------------------------
+[INFO] 
+[INFO] --- install:3.2.0:install-file (default-cli) @ jvm-internals ---
+[INFO] Installing /Users/xiejinxin/Developer/Java/jvm-internals/chapters/ch10-object-layout/evidence/tools/jol-core-db2cc744.jar to /Users/xiejinxin/.m2/repository/org/openjdk/jol/jol-core/0.18-db2cc744/jol-core-0.18-db2cc744.jar
+[INFO] Installing /var/folders/f8/xst91y2147q6_nntdrlwdy7r0000gn/T/mvninstall78756076880299836.pom to /Users/xiejinxin/.m2/repository/org/openjdk/jol/jol-core/0.18-db2cc744/jol-core-0.18-db2cc744.pom
+[INFO] ------------------------------------------------------------------------
+[INFO] BUILD SUCCESS
+[INFO] ------------------------------------------------------------------------
+[INFO] Total time:  1.401 s
+[INFO] Finished at: 2026-11-03T12:59:45+08:00
+[INFO] ------------------------------------------------------------------------

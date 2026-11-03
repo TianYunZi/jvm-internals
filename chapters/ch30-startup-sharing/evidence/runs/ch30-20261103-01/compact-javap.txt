@@ -1,0 +1,15 @@
+Compiled from "CompactEntry.java"
+final class CompactEntry {
+  CompactEntry();
+    Code:
+         0: aload_0
+         1: invokespecial #1                  // Method java/lang/Object."<init>":()V
+         4: return
+
+  void main();
+    Code:
+         0: getstatic     #7                  // Field java/lang/System.out:Ljava/io/PrintStream;
+         3: ldc           #13                 // String CH30 紧凑源文件：实例无参数入口
+         5: invokevirtual #15                 // Method java/io/PrintStream.println:(Ljava/lang/String;)V
+         8: return
+}

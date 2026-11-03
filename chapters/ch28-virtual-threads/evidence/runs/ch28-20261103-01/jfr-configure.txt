@@ -1,0 +1,2 @@
+Configuration written successfully to:
+/Users/xiejinxin/Developer/Java/jvm-internals/chapters/ch28-virtual-threads/evidence/runs/ch28-20261103-01/virtual.jfc

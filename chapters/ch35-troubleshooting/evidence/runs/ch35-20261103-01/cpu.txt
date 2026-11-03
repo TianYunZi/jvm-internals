@@ -1,0 +1,6 @@
+[0.208s][info][jfr,startup] Started recording 1. No limit specified, using maxsize=250MB as default.
+[0.208s][info][jfr,startup] 
+[0.208s][info][jfr,startup] Use jcmd 83521 JFR.dump name=1 to copy recording data to file.
+目标 pid=83521 mode=cpu time=2026-11-03T13:37:51.990538Z
+计算窗口结束 checksum=1096970759055728839
+有界案例完成

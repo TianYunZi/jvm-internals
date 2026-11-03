@@ -1,0 +1,9 @@
+sequenceDiagram
+ participant U as 唤醒者
+ participant P as 停放线程
+ U->>P: unpark：许可设为可用
+ P->>P: park消费许可后返回
+ P->>P: 循环检查共享条件
+ U->>P: 发布条件并请求唤醒
+ P->>P: 返回后重查条件与中断
+ Note over U,P: 许可不累加；唤醒后仍等调度

@@ -1,0 +1,23 @@
+跳到正文	#main
+Java 虚拟机原理图文书	../../index.html
+25.1 内存模型与内存区域	#sec-25-1
+25.2 原子性、可见性与顺序性	#sec-25-2
+25.3 happens-before推理	#sec-25-3
+25.4 关键语言机制	#sec-25-4
+25.5 从语义到实现	#sec-25-5
+观察与边界	#observe
+回顾与思考	#review
+来源	#sources
+源码阅读	sources.html
+运行说明	README.html
+证据索引	evidence/索引.md
+S1	#s1
+S2—S4	#s2
+Java语言规范25第17章	https://docs.oracle.com/javase/specs/jls/se25/html/jls-17.html
+OrderAccess	https://github.com/openjdk/jdk25u/blob/1775ea114f649f0314e4e43eb6c802ff16dfab7c/src/hotspot/share/runtime/orderAccess.hpp
+优化编译器字段访问	https://github.com/openjdk/jdk25u/blob/1775ea114f649f0314e4e43eb6c802ff16dfab7c/src/hotspot/share/opto/parse3.cpp
+平台匹配规则	https://github.com/openjdk/jdk25u/blob/1775ea114f649f0314e4e43eb6c802ff16dfab7c/src/hotspot/cpu/aarch64/aarch64.ad
+来源索引	evidence/索引.md
+上一章	../ch24-shenandoah/chapter.html
+第六篇目录	../../index.html#part-6
+下一章	../ch26-platform-threads/chapter.html

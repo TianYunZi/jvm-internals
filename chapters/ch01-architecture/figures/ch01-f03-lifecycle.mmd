@@ -1,0 +1,17 @@
+%% CH01-F03：启动按源码，入口后按真实阶段；非精确计时。
+sequenceDiagram
+  participant V as 启动器与运行时
+  participant M as main
+  participant W as journey-worker
+  V->>V: 创建虚拟机<br/>加载并选择入口
+  V->>M: 进入main
+  M->>M: main-enter<br/>object-created
+  M->>W: start
+  W->>W: worker-enter<br/>worker-ready
+  W-->>M: 就绪通知
+  M->>M: observation-window
+  M->>W: 释放应用门闩
+  W-->>M: 工作线程结束；join返回
+  M-->>V: main-return
+  V->>V: shutdown-hook；退出
+  Note over V,W: 编译与回收按需交错；时间不按比例

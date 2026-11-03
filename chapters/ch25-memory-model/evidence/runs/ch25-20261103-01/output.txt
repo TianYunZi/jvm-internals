@@ -1,0 +1,2 @@
+读取：payload=42 final=7
+结束：count=2 ready=true

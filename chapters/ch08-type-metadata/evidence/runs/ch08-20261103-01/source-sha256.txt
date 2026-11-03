@@ -1,0 +1,6 @@
+213b06a9d92f4b62be9e9f4c57ba2c3452fe43e006c281c0e859c059cb2bc83a  chapters/ch08-type-metadata/src/main/java/org/example/jvminternals/ch08/HiddenJourney.java
+bcb2b7dad1e197cd617c7c83f3449fa4dad42a19bbfc58eb41c81f1ad083e72a  chapters/ch08-type-metadata/src/main/java/org/example/jvminternals/ch08/TypeJourney.java
+13bf2781257ad35cd866659575def9d72ae6413c348d18a0dc3ff57e18a06cbb  chapters/ch08-type-metadata/src/main/java/org/example/jvminternals/ch08/UnloadingJourney.java
+c6f6160dbe93084113604030dd834ff0a79864c8b0dd407262e88a4a042cc3a3  chapters/ch08-type-metadata/variants/disposable/org/example/jvminternals/ch08/disposable/Disposable.java
+0ecd4cfd5d47456d98b4e6db8a089421ab66dad2b2e716b2b4af91066ad18c4f  chapters/ch08-type-metadata/pom.xml
+98e5ea0ac496b6e74359b55ab744717eaa21b3329b1ffe58f1f428bbb135f41d  chapters/ch08-type-metadata/evidence/runs/ch08-20261103-01/parent-pom.xml

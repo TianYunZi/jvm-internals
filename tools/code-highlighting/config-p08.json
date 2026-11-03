@@ -1,0 +1,12 @@
+{
+  "stage":"p08",
+  "shikiVersion":"4.6.0",
+  "theme":"github-light",
+  "languages":["java","bash","xml","json","cpp","c","asm"],
+  "plainTextLanguage":"text",
+  "chapters":["ch30-startup-sharing","ch31-aot-cache","ch32-native-interop"],
+  "extraSourceFiles":{
+    "ch30-startup-sharing":[{"path":"chapters/ch30-startup-sharing/compact/CompactEntry.java","language":"java"}],
+    "ch32-native-interop":[{"path":"chapters/ch32-native-interop/native/interop.c","language":"c"}]
+  }
+}

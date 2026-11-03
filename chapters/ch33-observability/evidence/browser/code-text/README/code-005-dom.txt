@@ -1,0 +1,2 @@
+"$P09_JDK/bin/java" -Xmx64m -XX:StartFlightRecording=settings=profile,filename=chapters/ch33-observability/target/observation.jfr -javaagent:chapters/ch33-observability/target/observation-agent.jar '-Xlog:redefine+class*=debug:file=chapters/ch33-observability/target/redefine.log:uptime,level,tags' -cp chapters/ch33-observability/target/classes org.example.jvminternals.ch33.ObservationJourney
+"$P09_JDK/bin/jfr" print --events 'jdk.RedefineClasses,jdk.RetransformClasses' chapters/ch33-observability/target/observation.jfr

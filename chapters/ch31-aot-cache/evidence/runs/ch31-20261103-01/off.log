@@ -1,0 +1,1291 @@
+[0.006s][info][class,load] java.lang.Object source: jrt:/java.base
+[0.006s][info][class,load] java.io.Serializable source: jrt:/java.base
+[0.006s][info][class,load] java.lang.Comparable source: jrt:/java.base
+[0.006s][info][class,load] java.lang.CharSequence source: jrt:/java.base
+[0.006s][info][class,load] java.lang.constant.Constable source: jrt:/java.base
+[0.006s][info][class,load] java.lang.constant.ConstantDesc source: jrt:/java.base
+[0.006s][info][class,load] java.lang.String source: jrt:/java.base
+[0.006s][info][class,load] java.lang.reflect.AnnotatedElement source: jrt:/java.base
+[0.006s][info][class,load] java.lang.reflect.GenericDeclaration source: jrt:/java.base
+[0.006s][info][class,load] java.lang.reflect.Type source: jrt:/java.base
+[0.006s][info][class,load] java.lang.invoke.TypeDescriptor source: jrt:/java.base
+[0.006s][info][class,load] java.lang.invoke.TypeDescriptor$OfField source: jrt:/java.base
+[0.007s][info][class,load] java.lang.Class source: jrt:/java.base
+[0.007s][info][class,load] java.lang.Cloneable source: jrt:/java.base
+[0.007s][info][class,load] java.lang.ClassLoader source: jrt:/java.base
+[0.007s][info][class,load] java.lang.System source: jrt:/java.base
+[0.007s][info][class,load] java.lang.Throwable source: jrt:/java.base
+[0.007s][info][class,load] java.lang.Error source: jrt:/java.base
+[0.007s][info][class,load] java.lang.Exception source: jrt:/java.base
+[0.007s][info][class,load] java.lang.RuntimeException source: jrt:/java.base
+[0.007s][info][class,load] java.security.ProtectionDomain source: jrt:/java.base
+[0.007s][info][class,load] java.security.SecureClassLoader source: jrt:/java.base
+[0.007s][info][class,load] java.lang.ReflectiveOperationException source: jrt:/java.base
+[0.007s][info][class,load] java.lang.ClassNotFoundException source: jrt:/java.base
+[0.007s][info][class,load] java.lang.Record source: jrt:/java.base
+[0.007s][info][class,load] java.lang.LinkageError source: jrt:/java.base
+[0.007s][info][class,load] java.lang.NoClassDefFoundError source: jrt:/java.base
+[0.007s][info][class,load] java.lang.ClassCastException source: jrt:/java.base
+[0.007s][info][class,load] java.lang.ArrayStoreException source: jrt:/java.base
+[0.007s][info][class,load] java.lang.VirtualMachineError source: jrt:/java.base
+[0.007s][info][class,load] java.lang.InternalError source: jrt:/java.base
+[0.007s][info][class,load] java.lang.OutOfMemoryError source: jrt:/java.base
+[0.007s][info][class,load] java.lang.StackOverflowError source: jrt:/java.base
+[0.007s][info][class,load] java.lang.IllegalMonitorStateException source: jrt:/java.base
+[0.007s][info][class,load] java.lang.ref.Reference source: jrt:/java.base
+[0.007s][info][class,load] java.lang.IllegalCallerException source: jrt:/java.base
+[0.007s][info][class,load] java.lang.ref.SoftReference source: jrt:/java.base
+[0.007s][info][class,load] java.lang.ref.WeakReference source: jrt:/java.base
+[0.007s][info][class,load] java.lang.ref.FinalReference source: jrt:/java.base
+[0.007s][info][class,load] java.lang.ref.PhantomReference source: jrt:/java.base
+[0.007s][info][class,load] java.lang.ref.Finalizer source: jrt:/java.base
+[0.007s][info][class,load] java.lang.Runnable source: jrt:/java.base
+[0.007s][info][class,load] java.lang.Thread source: jrt:/java.base
+[0.007s][info][class,load] java.lang.Thread$FieldHolder source: jrt:/java.base
+[0.007s][info][class,load] java.lang.Thread$Constants source: jrt:/java.base
+[0.007s][info][class,load] java.lang.Thread$UncaughtExceptionHandler source: jrt:/java.base
+[0.007s][info][class,load] java.lang.ThreadGroup source: jrt:/java.base
+[0.008s][info][class,load] java.lang.BaseVirtualThread source: jrt:/java.base
+[0.008s][info][class,load] java.lang.VirtualThread source: jrt:/java.base
+[0.008s][info][class,load] java.lang.ThreadBuilders$BoundVirtualThread source: jrt:/java.base
+[0.008s][info][class,load] java.util.Map source: jrt:/java.base
+[0.008s][info][class,load] java.util.Dictionary source: jrt:/java.base
+[0.008s][info][class,load] java.util.Hashtable source: jrt:/java.base
+[0.008s][info][class,load] java.util.Properties source: jrt:/java.base
+[0.008s][info][class,load] java.lang.Module source: jrt:/java.base
+[0.008s][info][class,load] java.lang.reflect.AccessibleObject source: jrt:/java.base
+[0.008s][info][class,load] java.lang.reflect.Member source: jrt:/java.base
+[0.008s][info][class,load] java.lang.reflect.Field source: jrt:/java.base
+[0.008s][info][class,load] java.lang.reflect.Parameter source: jrt:/java.base
+[0.008s][info][class,load] java.lang.reflect.Executable source: jrt:/java.base
+[0.008s][info][class,load] java.lang.reflect.Method source: jrt:/java.base
+[0.008s][info][class,load] java.lang.reflect.Constructor source: jrt:/java.base
+[0.008s][info][class,load] jdk.internal.vm.ContinuationScope source: jrt:/java.base
+[0.008s][info][class,load] jdk.internal.vm.Continuation source: jrt:/java.base
+[0.008s][info][class,load] jdk.internal.vm.StackChunk source: jrt:/java.base
+[0.008s][info][class,load] jdk.internal.reflect.MethodAccessor source: jrt:/java.base
+[0.008s][info][class,load] jdk.internal.reflect.MethodAccessorImpl source: jrt:/java.base
+[0.008s][info][class,load] jdk.internal.reflect.ConstantPool source: jrt:/java.base
+[0.008s][info][class,load] java.lang.annotation.Annotation source: jrt:/java.base
+[0.008s][info][class,load] jdk.internal.reflect.CallerSensitive source: jrt:/java.base
+[0.008s][info][class,load] jdk.internal.reflect.ConstructorAccessor source: jrt:/java.base
+[0.008s][info][class,load] jdk.internal.reflect.ConstructorAccessorImpl source: jrt:/java.base
+[0.008s][info][class,load] jdk.internal.reflect.DirectConstructorHandleAccessor$NativeAccessor source: jrt:/java.base
+[0.009s][info][class,load] java.lang.invoke.MethodHandle source: jrt:/java.base
+[0.009s][info][class,load] java.lang.invoke.DirectMethodHandle source: jrt:/java.base
+[0.009s][info][class,load] java.lang.invoke.VarHandle source: jrt:/java.base
+[0.009s][info][class,load] java.lang.invoke.MemberName source: jrt:/java.base
+[0.009s][info][class,load] java.lang.invoke.ResolvedMethodName source: jrt:/java.base
+[0.009s][info][class,load] java.lang.invoke.MethodHandleImpl source: jrt:/java.base
+[0.009s][info][class,load] java.lang.invoke.MethodHandleNatives source: jrt:/java.base
+[0.009s][info][class,load] java.lang.invoke.LambdaForm source: jrt:/java.base
+[0.009s][info][class,load] java.lang.invoke.TypeDescriptor$OfMethod source: jrt:/java.base
+[0.009s][info][class,load] java.lang.invoke.MethodType source: jrt:/java.base
+[0.009s][info][class,load] java.lang.BootstrapMethodError source: jrt:/java.base
+[0.009s][info][class,load] java.lang.invoke.CallSite source: jrt:/java.base
+[0.009s][info][class,load] jdk.internal.foreign.abi.NativeEntryPoint source: jrt:/java.base
+[0.009s][info][class,load] jdk.internal.foreign.abi.ABIDescriptor source: jrt:/java.base
+[0.009s][info][class,load] jdk.internal.foreign.abi.VMStorage source: jrt:/java.base
+[0.009s][info][class,load] jdk.internal.foreign.abi.UpcallLinker$CallRegs source: jrt:/java.base
+[0.009s][info][class,load] java.lang.invoke.ConstantCallSite source: jrt:/java.base
+[0.009s][info][class,load] java.lang.invoke.MutableCallSite source: jrt:/java.base
+[0.009s][info][class,load] java.lang.invoke.VolatileCallSite source: jrt:/java.base
+[0.009s][info][class,load] java.lang.AssertionStatusDirectives source: jrt:/java.base
+[0.009s][info][class,load] java.lang.Appendable source: jrt:/java.base
+[0.010s][info][class,load] java.lang.AbstractStringBuilder source: jrt:/java.base
+[0.010s][info][class,load] java.lang.StringBuffer source: jrt:/java.base
+[0.010s][info][class,load] java.lang.StringBuilder source: jrt:/java.base
+[0.010s][info][class,load] jdk.internal.misc.UnsafeConstants source: jrt:/java.base
+[0.010s][info][class,load] jdk.internal.misc.Unsafe source: jrt:/java.base
+[0.010s][info][class,load] jdk.internal.module.Modules source: jrt:/java.base
+[0.010s][info][class,load] java.lang.AutoCloseable source: jrt:/java.base
+[0.010s][info][class,load] java.io.Closeable source: jrt:/java.base
+[0.010s][info][class,load] java.io.InputStream source: jrt:/java.base
+[0.010s][info][class,load] java.io.ByteArrayInputStream source: jrt:/java.base
+[0.010s][info][class,load] java.net.URL source: jrt:/java.base
+[0.010s][info][class,load] java.lang.Enum source: jrt:/java.base
+[0.010s][info][class,load] java.util.jar.Manifest source: jrt:/java.base
+[0.010s][info][class,load] jdk.internal.loader.BuiltinClassLoader source: jrt:/java.base
+[0.010s][info][class,load] jdk.internal.loader.ClassLoaders source: jrt:/java.base
+[0.010s][info][class,load] jdk.internal.loader.ClassLoaders$AppClassLoader source: jrt:/java.base
+[0.010s][info][class,load] jdk.internal.loader.ClassLoaders$PlatformClassLoader source: jrt:/java.base
+[0.010s][info][class,load] java.security.CodeSource source: jrt:/java.base
+[0.011s][info][class,load] java.util.concurrent.ConcurrentMap source: jrt:/java.base
+[0.011s][info][class,load] java.util.AbstractMap source: jrt:/java.base
+[0.011s][info][class,load] java.util.concurrent.ConcurrentHashMap source: jrt:/java.base
+[0.011s][info][class,load] java.lang.Iterable source: jrt:/java.base
+[0.011s][info][class,load] java.util.Collection source: jrt:/java.base
+[0.011s][info][class,load] java.util.SequencedCollection source: jrt:/java.base
+[0.011s][info][class,load] java.util.List source: jrt:/java.base
+[0.011s][info][class,load] java.util.RandomAccess source: jrt:/java.base
+[0.011s][info][class,load] java.util.AbstractCollection source: jrt:/java.base
+[0.011s][info][class,load] java.util.AbstractList source: jrt:/java.base
+[0.011s][info][class,load] java.util.ArrayList source: jrt:/java.base
+[0.011s][info][class,load] java.lang.StackTraceElement source: jrt:/java.base
+[0.011s][info][class,load] java.nio.Buffer source: jrt:/java.base
+[0.011s][info][class,load] java.lang.StackWalker source: jrt:/java.base
+[0.011s][info][class,load] java.lang.StackStreamFactory$AbstractStackWalker source: jrt:/java.base
+[0.011s][info][class,load] java.lang.StackWalker$StackFrame source: jrt:/java.base
+[0.011s][info][class,load] java.lang.ClassFrameInfo source: jrt:/java.base
+[0.011s][info][class,load] java.lang.StackFrameInfo source: jrt:/java.base
+[0.011s][info][class,load] java.lang.LiveStackFrame source: jrt:/java.base
+[0.011s][info][class,load] java.lang.LiveStackFrameInfo source: jrt:/java.base
+[0.011s][info][class,load] java.util.concurrent.locks.AbstractOwnableSynchronizer source: jrt:/java.base
+[0.011s][info][class,load] java.lang.Boolean source: jrt:/java.base
+[0.011s][info][class,load] java.lang.Character source: jrt:/java.base
+[0.011s][info][class,load] java.lang.Number source: jrt:/java.base
+[0.011s][info][class,load] java.lang.Float source: jrt:/java.base
+[0.011s][info][class,load] java.lang.Double source: jrt:/java.base
+[0.011s][info][class,load] java.lang.Byte source: jrt:/java.base
+[0.011s][info][class,load] java.lang.Short source: jrt:/java.base
+[0.012s][info][class,load] java.lang.Integer source: jrt:/java.base
+[0.012s][info][class,load] java.lang.Long source: jrt:/java.base
+[0.012s][info][class,load] java.lang.Void source: jrt:/java.base
+[0.012s][info][class,load] java.util.Iterator source: jrt:/java.base
+[0.012s][info][class,load] java.lang.reflect.RecordComponent source: jrt:/java.base
+[0.012s][info][class,load] jdk.internal.vm.vector.VectorSupport source: jrt:/java.base
+[0.012s][info][class,load] jdk.internal.vm.vector.VectorSupport$VectorPayload source: jrt:/java.base
+[0.012s][info][class,load] jdk.internal.vm.vector.VectorSupport$Vector source: jrt:/java.base
+[0.012s][info][class,load] jdk.internal.vm.vector.VectorSupport$VectorMask source: jrt:/java.base
+[0.012s][info][class,load] jdk.internal.vm.vector.VectorSupport$VectorShuffle source: jrt:/java.base
+[0.012s][info][class,load] jdk.internal.vm.FillerObject source: jrt:/java.base
+[0.013s][info][class,load] java.lang.NullPointerException source: jrt:/java.base
+[0.013s][info][class,load] java.lang.ArithmeticException source: jrt:/java.base
+[0.013s][info][class,load] java.lang.IndexOutOfBoundsException source: jrt:/java.base
+[0.013s][info][class,load] java.lang.ArrayIndexOutOfBoundsException source: jrt:/java.base
+[0.013s][info][class,load] java.io.ObjectStreamField source: jrt:/java.base
+[0.014s][info][class,load] java.util.Comparator source: jrt:/java.base
+[0.014s][info][class,load] java.lang.String$CaseInsensitiveComparator source: jrt:/java.base
+[0.014s][info][class,load] jdk.internal.misc.VM source: jrt:/java.base
+[0.014s][info][class,load] java.lang.Module$ArchivedData source: jrt:/java.base
+[0.014s][info][class,load] jdk.internal.misc.CDS source: jrt:/java.base
+[0.014s][info][class,load] java.util.Set source: jrt:/java.base
+[0.014s][info][class,load] java.util.ImmutableCollections$AbstractImmutableCollection source: jrt:/java.base
+[0.014s][info][class,load] java.util.ImmutableCollections$AbstractImmutableSet source: jrt:/java.base
+[0.014s][info][class,load] java.util.ImmutableCollections$Set12 source: jrt:/java.base
+[0.014s][info][class,load] java.util.Objects source: jrt:/java.base
+[0.014s][info][class,load] java.util.ImmutableCollections source: jrt:/java.base
+[0.014s][info][class,load] java.util.ImmutableCollections$AbstractImmutableList source: jrt:/java.base
+[0.014s][info][class,load] java.util.ImmutableCollections$ListN source: jrt:/java.base
+[0.014s][info][class,load] java.util.ImmutableCollections$SetN source: jrt:/java.base
+[0.014s][info][class,load] java.util.ImmutableCollections$AbstractImmutableMap source: jrt:/java.base
+[0.014s][info][class,load] java.util.ImmutableCollections$MapN source: jrt:/java.base
+[0.015s][info][class,load] jdk.internal.access.JavaLangReflectAccess source: jrt:/java.base
+[0.015s][info][class,load] java.lang.reflect.ReflectAccess source: jrt:/java.base
+[0.015s][info][class,load] jdk.internal.access.SharedSecrets source: jrt:/java.base
+[0.015s][info][class,load] jdk.internal.reflect.ReflectionFactory source: jrt:/java.base
+[0.015s][info][class,load] java.io.ObjectStreamClass source: jrt:/java.base
+[0.015s][info][class,load] java.lang.Math source: jrt:/java.base
+[0.015s][info][class,load] jdk.internal.reflect.ReflectionFactory$Config source: jrt:/java.base
+[0.015s][info][class,load] jdk.internal.access.JavaLangRefAccess source: jrt:/java.base
+[0.015s][info][class,load] java.lang.ref.Reference$1 source: jrt:/java.base
+[0.015s][info][class,load] java.lang.ref.ReferenceQueue source: jrt:/java.base
+[0.015s][info][class,load] java.lang.ref.ReferenceQueue$Null source: jrt:/java.base
+[0.015s][info][class,load] java.lang.ref.ReferenceQueue$Lock source: jrt:/java.base
+[0.015s][info][class,load] jdk.internal.access.JavaLangAccess source: jrt:/java.base
+[0.015s][info][class,load] java.lang.System$1 source: jrt:/java.base
+[0.016s][info][class,load] jdk.internal.util.SystemProps source: jrt:/java.base
+[0.016s][info][class,load] jdk.internal.util.SystemProps$Raw source: jrt:/java.base
+[0.037s][info][class,load] java.nio.charset.Charset source: jrt:/java.base
+[0.037s][info][class,load] java.nio.charset.spi.CharsetProvider source: jrt:/java.base
+[0.037s][info][class,load] sun.nio.cs.StandardCharsets source: jrt:/java.base
+[0.037s][info][class,load] java.lang.StringLatin1 source: jrt:/java.base
+[0.037s][info][class,load] sun.nio.cs.HistoricallyNamedCharset source: jrt:/java.base
+[0.037s][info][class,load] sun.nio.cs.Unicode source: jrt:/java.base
+[0.037s][info][class,load] sun.nio.cs.UTF_8 source: jrt:/java.base
+[0.037s][info][class,load] java.util.HashMap source: jrt:/java.base
+[0.038s][info][class,load] java.lang.StrictMath source: jrt:/java.base
+[0.038s][info][class,load] jdk.internal.util.ArraysSupport source: jrt:/java.base
+[0.038s][info][class,load] java.util.Map$Entry source: jrt:/java.base
+[0.038s][info][class,load] java.util.HashMap$Node source: jrt:/java.base
+[0.039s][info][class,load] java.util.LinkedHashMap$Entry source: jrt:/java.base
+[0.039s][info][class,load] java.util.HashMap$TreeNode source: jrt:/java.base
+[0.039s][info][class,load] java.lang.StringConcatHelper source: jrt:/java.base
+[0.039s][info][class,load] java.lang.VersionProps source: jrt:/java.base
+[0.039s][info][class,load] java.lang.Runtime source: jrt:/java.base
+[0.039s][info][class,load] java.util.concurrent.locks.Lock source: jrt:/java.base
+[0.039s][info][class,load] java.util.concurrent.locks.ReentrantLock source: jrt:/java.base
+[0.039s][info][class,load] java.util.concurrent.ConcurrentHashMap$Segment source: jrt:/java.base
+[0.039s][info][class,load] java.util.concurrent.ConcurrentHashMap$CounterCell source: jrt:/java.base
+[0.039s][info][class,load] java.util.concurrent.ConcurrentHashMap$Node source: jrt:/java.base
+[0.039s][info][class,load] java.util.concurrent.locks.LockSupport source: jrt:/java.base
+[0.039s][info][class,load] java.util.concurrent.ConcurrentHashMap$ReservationNode source: jrt:/java.base
+[0.039s][info][class,load] java.util.AbstractSet source: jrt:/java.base
+[0.039s][info][class,load] java.util.HashMap$EntrySet source: jrt:/java.base
+[0.039s][info][class,load] java.util.HashMap$HashIterator source: jrt:/java.base
+[0.039s][info][class,load] java.util.HashMap$EntryIterator source: jrt:/java.base
+[0.040s][info][class,load] jdk.internal.util.StaticProperty source: jrt:/java.base
+[0.040s][info][class,load] java.io.FileInputStream source: jrt:/java.base
+[0.040s][info][class,load] java.lang.System$In source: jrt:/java.base
+[0.040s][info][class,load] java.io.FileDescriptor source: jrt:/java.base
+[0.040s][info][class,load] jdk.internal.access.JavaIOFileDescriptorAccess source: jrt:/java.base
+[0.040s][info][class,load] java.io.FileDescriptor$1 source: jrt:/java.base
+[0.040s][info][class,load] java.io.Flushable source: jrt:/java.base
+[0.040s][info][class,load] java.io.OutputStream source: jrt:/java.base
+[0.040s][info][class,load] java.io.FileOutputStream source: jrt:/java.base
+[0.040s][info][class,load] java.lang.System$Out source: jrt:/java.base
+[0.040s][info][class,load] java.io.FilterInputStream source: jrt:/java.base
+[0.040s][info][class,load] java.io.BufferedInputStream source: jrt:/java.base
+[0.040s][info][class,load] java.io.FilterOutputStream source: jrt:/java.base
+[0.040s][info][class,load] java.io.PrintStream source: jrt:/java.base
+[0.040s][info][class,load] java.io.BufferedOutputStream source: jrt:/java.base
+[0.040s][info][class,load] java.io.Writer source: jrt:/java.base
+[0.040s][info][class,load] java.io.OutputStreamWriter source: jrt:/java.base
+[0.040s][info][class,load] sun.nio.cs.StreamEncoder source: jrt:/java.base
+[0.040s][info][class,load] java.nio.charset.CharsetEncoder source: jrt:/java.base
+[0.040s][info][class,load] sun.nio.cs.UTF_8$Encoder source: jrt:/java.base
+[0.040s][info][class,load] java.nio.charset.CodingErrorAction source: jrt:/java.base
+[0.041s][info][class,load] java.util.Arrays source: jrt:/java.base
+[0.041s][info][class,load] java.nio.ByteBuffer source: jrt:/java.base
+[0.041s][info][class,load] jdk.internal.misc.ScopedMemoryAccess source: jrt:/java.base
+[0.041s][info][class,load] java.util.function.Function source: jrt:/java.base
+[0.041s][info][class,load] java.nio.Buffer$1 source: jrt:/java.base
+[0.041s][info][class,load] jdk.internal.util.Preconditions source: jrt:/java.base
+[0.041s][info][class,load] jdk.internal.util.Preconditions$1 source: jrt:/java.base
+[0.041s][info][class,load] java.util.function.BiFunction source: jrt:/java.base
+[0.041s][info][class,load] jdk.internal.util.Preconditions$4 source: jrt:/java.base
+[0.041s][info][class,load] jdk.internal.util.Preconditions$2 source: jrt:/java.base
+[0.041s][info][class,load] jdk.internal.util.Preconditions$3 source: jrt:/java.base
+[0.041s][info][class,load] jdk.internal.access.JavaNioAccess source: jrt:/java.base
+[0.041s][info][class,load] java.nio.Buffer$2 source: jrt:/java.base
+[0.042s][info][class,load] java.nio.HeapByteBuffer source: jrt:/java.base
+[0.042s][info][class,load] java.nio.ByteOrder source: jrt:/java.base
+[0.042s][info][class,load] java.io.BufferedWriter source: jrt:/java.base
+[0.042s][info][class,load] java.lang.Terminator source: jrt:/java.base
+[0.042s][info][class,load] jdk.internal.misc.Signal$Handler source: jrt:/java.base
+[0.042s][info][class,load] java.lang.Terminator$1 source: jrt:/java.base
+[0.042s][info][class,load] jdk.internal.misc.Signal source: jrt:/java.base
+[0.042s][info][class,load] java.util.Hashtable$Entry source: jrt:/java.base
+[0.042s][info][class,load] jdk.internal.misc.Signal$NativeHandler source: jrt:/java.base
+[0.042s][info][class,load] java.lang.Integer$IntegerCache source: jrt:/java.base
+[0.042s][info][class,load] jdk.internal.misc.OSEnvironment source: jrt:/java.base
+[0.042s][info][class,load] java.lang.Thread$State source: jrt:/java.base
+[0.042s][info][class,load] java.lang.ref.Reference$ReferenceHandler source: jrt:/java.base
+[0.042s][info][class,load] java.lang.Thread$ThreadIdentifiers source: jrt:/java.base
+[0.042s][info][class,load] java.lang.ref.Finalizer$FinalizerThread source: jrt:/java.base
+[0.042s][info][class,load] jdk.internal.ref.Cleaner source: jrt:/java.base
+[0.042s][info][class,load] java.util.Collections source: jrt:/java.base
+[0.042s][info][class,load] java.util.Collections$EmptySet source: jrt:/java.base
+[0.042s][info][class,load] java.util.Collections$EmptyList source: jrt:/java.base
+[0.042s][info][class,load] java.util.Collections$EmptyMap source: jrt:/java.base
+[0.043s][info][class,load] java.lang.IllegalArgumentException source: jrt:/java.base
+[0.043s][info][class,load] java.lang.invoke.MethodHandleStatics source: jrt:/java.base
+[0.043s][info][class,load] java.lang.reflect.ClassFileFormatVersion source: jrt:/java.base
+[0.043s][info][jit,compilation]    2       3       java.lang.Byte::toUnsignedInt (6 bytes)
+[0.043s][info][class,load     ] java.lang.CharacterData source: jrt:/java.base
+[0.043s][info][class,load     ] java.lang.CharacterDataLatin1 source: jrt:/java.base
+[0.044s][info][jit,compilation]    1       3       java.lang.Object::<init> (1 bytes)
+[0.044s][info][class,load     ] jdk.internal.util.ClassFileDumper source: jrt:/java.base
+[0.044s][info][class,load     ] java.util.HexFormat source: jrt:/java.base
+[0.044s][info][class,load     ] java.lang.Character$CharacterCache source: jrt:/java.base
+[0.044s][info][class,load     ] java.util.concurrent.atomic.AtomicInteger source: jrt:/java.base
+[0.044s][info][class,load     ] jdk.internal.module.ModuleBootstrap source: jrt:/java.base
+[0.044s][info][class,load     ] java.lang.module.ModuleDescriptor source: jrt:/java.base
+[0.045s][info][class,load     ] java.lang.invoke.MethodHandles source: jrt:/java.base
+[0.045s][info][class,load     ] java.lang.invoke.MemberName$Factory source: jrt:/java.base
+[0.045s][info][class,load     ] jdk.internal.reflect.Reflection source: jrt:/java.base
+[0.045s][info][class,load     ] java.lang.invoke.MethodHandles$Lookup source: jrt:/java.base
+[0.045s][info][class,load     ] java.util.ImmutableCollections$MapN$1 source: jrt:/java.base
+[0.045s][info][class,load     ] java.util.ImmutableCollections$MapN$MapNIterator source: jrt:/java.base
+[0.045s][info][class,load     ] java.util.KeyValueHolder source: jrt:/java.base
+[0.045s][info][class,load     ] sun.invoke.util.VerifyAccess source: jrt:/java.base
+[0.045s][info][class,load     ] java.lang.reflect.Modifier source: jrt:/java.base
+[0.045s][info][class,load     ] jdk.internal.access.JavaLangModuleAccess source: jrt:/java.base
+[0.045s][info][class,load     ] java.lang.module.ModuleDescriptor$1 source: jrt:/java.base
+[0.046s][info][class,load     ] java.io.File source: jrt:/java.base
+[0.046s][info][class,load     ] java.io.DefaultFileSystem source: jrt:/java.base
+[0.046s][info][class,load     ] java.io.FileSystem source: jrt:/java.base
+[0.046s][info][class,load     ] java.io.UnixFileSystem source: jrt:/java.base
+[0.046s][info][class,load     ] jdk.internal.util.DecimalDigits source: jrt:/java.base
+[0.046s][info][class,load     ] jdk.internal.module.ModulePatcher source: jrt:/java.base
+[0.046s][info][class,load     ] jdk.internal.module.ModuleBootstrap$IllegalNativeAccess source: jrt:/java.base
+[0.046s][info][class,load     ] java.util.HashSet source: jrt:/java.base
+[0.046s][info][class,load     ] jdk.internal.module.ModuleLoaderMap source: jrt:/java.base
+[0.046s][info][class,load     ] jdk.internal.module.ModuleLoaderMap$Modules source: jrt:/java.base
+[0.046s][info][jit,compilation]    3       4       java.lang.Byte::toUnsignedInt (6 bytes)
+[0.046s][info][jit,compilation]    5       3       jdk.internal.util.ArraysSupport::unsignedHashCode (36 bytes)
+[0.046s][info][class,load     ] jdk.internal.module.ModuleBootstrap$Counters source: jrt:/java.base
+[0.046s][info][class,load     ] jdk.internal.module.ArchivedBootLayer source: jrt:/java.base
+[0.046s][info][class,load     ] jdk.internal.module.ArchivedModuleGraph source: jrt:/java.base
+[0.046s][info][jit,compilation]    4       3       java.lang.String::hashCode (60 bytes)
+[0.046s][info][jit,compilation]    2       3       java.lang.Byte::toUnsignedInt (6 bytes)   made not entrant: not used
+[0.046s][info][class,load     ] jdk.internal.module.SystemModuleFinders source: jrt:/java.base
+[0.047s][info][class,load     ] java.net.URI source: jrt:/java.base
+[0.047s][info][class,load     ] jdk.internal.access.JavaNetUriAccess source: jrt:/java.base
+[0.047s][info][class,load     ] java.net.URI$1 source: jrt:/java.base
+[0.047s][info][class,load     ] jdk.internal.module.SystemModulesMap source: jrt:/java.base
+[0.047s][info][class,load     ] jdk.internal.module.SystemModules source: jrt:/java.base
+[0.047s][info][class,load     ] jdk.internal.module.SystemModules$default source: jrt:/java.base
+[0.047s][info][class,load     ] java.lang.module.ModuleDescriptor$Requires$Modifier source: jrt:/java.base
+[0.047s][info][class,load     ] java.lang.reflect.AccessFlag source: jrt:/java.base
+[0.047s][info][class,load     ] java.lang.reflect.AccessFlag$Location source: jrt:/java.base
+[0.047s][info][class,load     ] java.util.ImmutableCollections$List12 source: jrt:/java.base
+[0.047s][info][class,load     ] java.util.ListIterator source: jrt:/java.base
+[0.047s][info][class,load     ] java.util.ImmutableCollections$ListItr source: jrt:/java.base
+[0.048s][info][class,load     ] jdk.internal.module.Builder source: jrt:/java.base
+[0.048s][info][class,load     ] java.lang.module.ModuleDescriptor$Requires source: jrt:/java.base
+[0.048s][info][class,load     ] java.lang.module.ModuleDescriptor$Exports source: jrt:/java.base
+[0.048s][info][jit,compilation]    6       3       java.lang.Math::floorMod (20 bytes)
+[0.048s][info][class,load     ] java.util.ImmutableCollections$SetN$SetNIterator source: jrt:/java.base
+[0.048s][info][jit,compilation]    7       3       java.util.ImmutableCollections$SetN::probe (56 bytes)
+[0.048s][info][class,load     ] java.lang.module.ModuleDescriptor$Opens source: jrt:/java.base
+[0.048s][info][class,load     ] java.lang.module.ModuleDescriptor$Provides source: jrt:/java.base
+[0.048s][info][jit,compilation]   10       3       jdk.internal.util.ArraysSupport::hashCodeOfUnsigned (55 bytes)
+[0.048s][info][jit,compilation]    9       3       jdk.internal.util.ArraysSupport::vectorizedHashCode (158 bytes)
+[0.048s][info][class,load     ] java.lang.module.ModuleDescriptor$Version source: jrt:/java.base
+[0.048s][info][class,load     ] java.lang.module.ModuleDescriptor$Modifier source: jrt:/java.base
+[0.048s][info][jit,compilation]    8       3       java.util.Objects::requireNonNull (14 bytes)
+[0.048s][info][jit,compilation]   11       3       java.lang.String::isLatin1 (19 bytes)
+[0.048s][info][jit,compilation]   13       3       java.lang.StringLatin1::equals (36 bytes)
+[0.048s][info][class,load     ] java.util.ImmutableCollections$Set12$1 source: jrt:/java.base
+[0.049s][info][jit,compilation]   12       3       java.lang.String::equals (56 bytes)
+[0.049s][info][jit,compilation]   14       3       java.util.Objects::equals (23 bytes)
+[0.049s][info][jit,compilation]   15       4       java.lang.Object::<init> (1 bytes)
+[0.049s][info][jit,compilation]   16       3       java.util.Set::of (4 bytes)
+[0.049s][info][jit,compilation]    1       3       java.lang.Object::<init> (1 bytes)   made not entrant: not used
+[0.049s][info][jit,compilation]   19       4       jdk.internal.util.ArraysSupport::unsignedHashCode (36 bytes)
+[0.049s][info][jit,compilation]   18       3       java.lang.module.ModuleDescriptor::modsHashCode (43 bytes)
+[0.049s][info][jit,compilation]   17       3       java.lang.module.ModuleDescriptor$Exports::<init> (20 bytes)
+[0.049s][info][jit,compilation]   20       3       java.util.AbstractCollection::<init> (5 bytes)
+[0.049s][info][jit,compilation]   21       3       java.util.ImmutableCollections$AbstractImmutableSet::<init> (5 bytes)
+[0.049s][info][jit,compilation]   22       3       java.util.Set::of (68 bytes)
+[0.049s][info][class,load     ] jdk.internal.module.ModuleTarget source: jrt:/java.base
+[0.049s][info][class,load     ] jdk.internal.module.ModuleHashes source: jrt:/java.base
+[0.049s][info][class,load     ] jdk.internal.module.ModuleHashes$Builder source: jrt:/java.base
+[0.050s][info][class,load     ] java.util.Collections$UnmodifiableMap source: jrt:/java.base
+[0.050s][info][class,load     ] jdk.internal.module.ModuleResolution source: jrt:/java.base
+[0.050s][info][class,load     ] java.lang.module.ModuleReference source: jrt:/java.base
+[0.050s][info][class,load     ] java.util.function.Supplier source: jrt:/java.base
+[0.050s][info][class,load     ] jdk.internal.module.SystemModuleFinders$1 source: jrt:/java.base
+[0.050s][info][class,load     ] jdk.internal.module.ModuleReferenceImpl source: jrt:/java.base
+[0.050s][info][class,load     ] jdk.internal.module.ModuleHashes$HashSupplier source: jrt:/java.base
+[0.050s][info][class,load     ] jdk.internal.module.SystemModuleFinders$2 source: jrt:/java.base
+[0.050s][info][jit,compilation]   23       3       java.lang.String::coder (15 bytes)
+[0.050s][info][jit,compilation]   25     n 0       java.lang.System::arraycopy (native)   (static)
+[0.050s][info][jit,compilation]   24       1       java.lang.module.ModuleDescriptor::name (5 bytes)
+[0.050s][info][class,load     ] java.lang.module.ModuleFinder source: jrt:/java.base
+[0.050s][info][class,load     ] jdk.internal.module.SystemModuleFinders$SystemModuleFinder source: jrt:/java.base
+[0.050s][info][jit,compilation]   26       3       java.lang.String::length (11 bytes)
+[0.050s][info][jit,compilation]   27       1       java.lang.module.ModuleReference::descriptor (5 bytes)
+[0.050s][info][class,load     ] java.util.Optional source: jrt:/java.base
+[0.050s][info][class,load     ] jdk.internal.loader.BootLoader source: jrt:/java.base
+[0.050s][info][class,load     ] java.lang.Module$EnableNativeAccess source: jrt:/java.base
+[0.050s][info][class,load     ] jdk.internal.loader.NativeLibraries source: jrt:/java.base
+[0.050s][info][class,load     ] jdk.internal.loader.ClassLoaderHelper source: jrt:/java.base
+[0.050s][info][jit,compilation]    5       3       jdk.internal.util.ArraysSupport::unsignedHashCode (36 bytes)   made not entrant: not used
+[0.050s][info][class,load     ] jdk.internal.util.OSVersion source: jrt:/java.base
+[0.050s][info][class,load     ] java.util.concurrent.ConcurrentHashMap$CollectionView source: jrt:/java.base
+[0.050s][info][class,load     ] java.util.concurrent.ConcurrentHashMap$KeySetView source: jrt:/java.base
+[0.051s][info][class,load     ] jdk.internal.loader.ArchivedClassLoaders source: jrt:/java.base
+[0.051s][info][class,load     ] jdk.internal.loader.ClassLoaders$BootClassLoader source: jrt:/java.base
+[0.051s][info][class,load     ] java.security.cert.Certificate source: jrt:/java.base
+[0.051s][info][class,load     ] java.lang.ClassLoader$ParallelLoaders source: jrt:/java.base
+[0.051s][info][class,load     ] java.util.WeakHashMap source: jrt:/java.base
+[0.051s][info][class,load     ] java.util.WeakHashMap$Entry source: jrt:/java.base
+[0.051s][info][class,load     ] java.util.Collections$SetFromMap source: jrt:/java.base
+[0.051s][info][class,load     ] java.util.WeakHashMap$KeySet source: jrt:/java.base
+[0.051s][info][class,load     ] java.security.Principal source: jrt:/java.base
+[0.051s][info][class,load     ] jdk.internal.loader.URLClassPath source: jrt:/java.base
+[0.051s][info][jit,compilation]   28     n 0       jdk.internal.misc.Unsafe::getReferenceVolatile (native)   
+[0.051s][info][class,load     ] java.net.URLStreamHandlerFactory source: jrt:/java.base
+[0.051s][info][class,load     ] java.net.URL$DefaultFactory source: jrt:/java.base
+[0.051s][info][class,load     ] jdk.internal.access.JavaNetURLAccess source: jrt:/java.base
+[0.051s][info][class,load     ] java.net.URL$1 source: jrt:/java.base
+[0.051s][info][class,load     ] java.io.File$PathStatus source: jrt:/java.base
+[0.052s][info][class,load     ] sun.net.www.ParseUtil source: jrt:/java.base
+[0.052s][info][jit,compilation]   29       3       java.lang.String::charAt (25 bytes)
+[0.052s][info][class,load     ] java.net.URLStreamHandler source: jrt:/java.base
+[0.052s][info][class,load     ] sun.net.www.protocol.file.Handler source: jrt:/java.base
+[0.052s][info][jit,compilation]   30       3       java.lang.StringLatin1::charAt (15 bytes)
+[0.052s][info][class,load     ] sun.net.util.IPAddressUtil source: jrt:/java.base
+[0.052s][info][class,load     ] sun.net.util.IPAddressUtil$MASKS source: jrt:/java.base
+[0.052s][info][class,load     ] java.util.Queue source: jrt:/java.base
+[0.052s][info][class,load     ] java.util.Deque source: jrt:/java.base
+[0.052s][info][class,load     ] java.util.ArrayDeque source: jrt:/java.base
+[0.052s][info][class,load     ] sun.net.www.protocol.jar.Handler source: jrt:/java.base
+[0.052s][info][class,load     ] jdk.internal.module.ServicesCatalog source: jrt:/java.base
+[0.052s][info][class,load     ] jdk.internal.loader.AbstractClassLoaderValue source: jrt:/java.base
+[0.052s][info][class,load     ] jdk.internal.loader.ClassLoaderValue source: jrt:/java.base
+[0.052s][info][class,load     ] jdk.internal.loader.BuiltinClassLoader$LoadedModule source: jrt:/java.base
+[0.052s][info][jit,compilation]   31       3       java.util.ImmutableCollections$SetN$SetNIterator::hasNext (13 bytes)
+[0.052s][info][jit,compilation]   32     n 0       jdk.internal.misc.Unsafe::compareAndSetLong (native)   
+[0.053s][info][jit,compilation]   33     n 0       jdk.internal.misc.Unsafe::compareAndSetReference (native)   
+[0.053s][info][jit,compilation]   34       3       java.util.concurrent.ConcurrentHashMap::tabAt (21 bytes)
+[0.053s][info][jit,compilation]   35       3       jdk.internal.misc.Unsafe::getReferenceAcquire (7 bytes)
+[0.053s][info][jit,compilation]   36       3       java.util.ImmutableCollections$SetN$SetNIterator::next (90 bytes)
+[0.053s][info][jit,compilation]   37       1       java.util.KeyValueHolder::getKey (5 bytes)
+[0.053s][info][jit,compilation]   38       1       java.util.KeyValueHolder::getValue (5 bytes)
+[0.053s][info][class,load     ] java.lang.module.Configuration source: jrt:/java.base
+[0.053s][info][class,load     ] java.lang.module.ResolvedModule source: jrt:/java.base
+[0.053s][info][class,load     ] java.util.AbstractMap$1 source: jrt:/java.base
+[0.053s][info][class,load     ] java.util.AbstractMap$KeyIterator source: jrt:/java.base
+[0.053s][info][jit,compilation]   39       3       java.util.KeyValueHolder::<init> (21 bytes)
+[0.053s][info][jit,compilation]   40       3       java.util.ImmutableCollections$MapN::probe (60 bytes)
+[0.053s][info][jit,compilation]   43     n 0       java.lang.Object::hashCode (native)   
+[0.053s][info][class,load     ] jdk.internal.module.ModuleLoaderMap$Mapper source: jrt:/java.base
+[0.053s][info][jit,compilation]   41       3       java.util.ImmutableCollections$SetN::iterator (9 bytes)
+[0.053s][info][jit,compilation]   42       3       java.util.ImmutableCollections$SetN$SetNIterator::<init> (41 bytes)
+[0.053s][info][jit,compilation]   44   !   3       java.util.concurrent.ConcurrentHashMap::putVal (432 bytes)
+[0.054s][info][class,load     ] java.lang.ModuleLayer source: jrt:/java.base
+[0.054s][info][jit,compilation]   46       3       java.util.concurrent.ConcurrentHashMap::spread (10 bytes)
+[0.054s][info][jit,compilation]   45       3       java.util.concurrent.ConcurrentHashMap$Node::<init> (20 bytes)
+[0.054s][info][jit,compilation]   47       3       java.util.concurrent.ConcurrentHashMap::addCount (280 bytes)
+[0.055s][info][jit,compilation]   49       3       java.util.concurrent.ConcurrentHashMap::putIfAbsent (8 bytes)
+[0.055s][info][jit,compilation]   48       3       java.util.concurrent.ConcurrentHashMap::casTabAt (20 bytes)
+[0.055s][info][jit,compilation]   54     n 0       java.lang.Module::addExports0 (native)   (static)
+[0.055s][info][jit,compilation]   53       3       java.util.HashMap::putVal (300 bytes)
+[0.055s][info][jit,compilation]   60     n 0       java.lang.Module::addExportsToAll0 (native)   (static)
+[0.055s][info][jit,compilation]   52       3       java.util.HashMap::hash (20 bytes)
+[0.055s][info][jit,compilation]   56       3       java.util.HashMap::newNode (13 bytes)
+[0.055s][info][jit,compilation]   65     n 0       java.lang.Module::addReads0 (native)   (static)
+[0.055s][info][jit,compilation]   57       3       java.util.HashMap$Node::<init> (26 bytes)
+[0.056s][info][jit,compilation]   58       3       java.util.HashMap::afterNodeInsertion (1 bytes)
+[0.056s][info][jit,compilation]   59       3       java.util.HashMap::put (13 bytes)
+[0.056s][info][class,load     ] jdk.internal.loader.AbstractClassLoaderValue$Memoizer source: jrt:/java.base
+[0.056s][info][jit,compilation]   62       3       java.util.HashMap::getNode (150 bytes)
+[0.056s][info][class,load     ] jdk.internal.module.ServicesCatalog$ServiceProvider source: jrt:/java.base
+[0.056s][info][class,load     ] java.util.concurrent.CopyOnWriteArrayList source: jrt:/java.base
+[0.056s][info][jit,compilation]   55       1       java.lang.module.ModuleDescriptor$Exports::source (5 bytes)
+[0.056s][info][jit,compilation]   63       3       java.util.HashMap::get (19 bytes)
+[0.056s][info][jit,compilation]   67       3       java.util.ImmutableCollections$Set12$1::hasNext (13 bytes)
+[0.056s][info][jit,compilation]   51       1       java.lang.module.ResolvedModule::reference (5 bytes)
+[0.056s][info][class,load     ] java.util.HashMap$KeySet source: jrt:/java.base
+[0.056s][info][jit,compilation]   50       1       java.lang.AbstractStringBuilder::length (5 bytes)
+[0.056s][info][class,load     ] java.util.HashMap$KeyIterator source: jrt:/java.base
+[0.056s][info][jit,compilation]   61       1       java.lang.module.ModuleDescriptor::isAutomatic (5 bytes)
+[0.056s][info][jit,compilation]   64       1       java.lang.module.ResolvedModule::configuration (5 bytes)
+[0.056s][info][class,load     ] java.lang.ModuleLayer$Controller source: jrt:/java.base
+[0.056s][info][jit,compilation]   68       1       java.util.ImmutableCollections$Set12::isEmpty (2 bytes)
+[0.056s][info][jit,compilation]   66       1       java.lang.module.ModuleDescriptor$Exports::targets (5 bytes)
+[0.056s][info][jit,compilation]   69     n 0       jdk.internal.vm.Continuation::enterSpecial (native)   (static)
+[0.056s][info][jit,compilation]   70     n 0       jdk.internal.vm.Continuation::doYield (native)   (static)
+[0.056s][info][class,load     ] jdk.internal.vm.ContinuationSupport source: jrt:/java.base
+[0.056s][info][class,load     ] jdk.internal.vm.Continuation$Pinned source: jrt:/java.base
+[0.057s][info][class,load     ] sun.launcher.LauncherHelper source: jrt:/java.base
+[0.057s][info][class,load     ] java.lang.StringCoding source: jrt:/java.base
+[0.057s][info][class,load     ] sun.net.util.URLUtil source: jrt:/java.base
+[0.057s][info][class,load     ] jdk.internal.loader.URLClassPath$Loader source: jrt:/java.base
+[0.057s][info][class,load     ] jdk.internal.loader.URLClassPath$JarLoader source: jrt:/java.base
+[0.057s][info][class,load     ] java.util.zip.ZipConstants source: jrt:/java.base
+[0.057s][info][class,load     ] java.util.zip.ZipFile source: jrt:/java.base
+[0.057s][info][class,load     ] java.util.BitSet source: jrt:/java.base
+[0.058s][info][class,load     ] jdk.internal.access.JavaUtilZipFileAccess source: jrt:/java.base
+[0.058s][info][class,load     ] java.util.zip.ZipFile$1 source: jrt:/java.base
+[0.058s][info][class,load     ] jdk.internal.loader.FileURLMapper source: jrt:/java.base
+[0.058s][info][class,load     ] java.util.jar.JarFile source: jrt:/java.base
+[0.058s][info][class,load     ] jdk.internal.access.JavaUtilJarAccess source: jrt:/java.base
+[0.058s][info][class,load     ] java.util.jar.JavaUtilJarAccessImpl source: jrt:/java.base
+[0.058s][info][class,load     ] java.lang.Runtime$Version source: jrt:/java.base
+[0.058s][info][class,load     ] java.util.zip.ZipCoder source: jrt:/java.base
+[0.058s][info][class,load     ] java.util.zip.ZipCoder$UTF8ZipCoder source: jrt:/java.base
+[0.058s][info][class,load     ] java.util.zip.ZipFile$CleanableResource source: jrt:/java.base
+[0.058s][info][class,load     ] jdk.internal.ref.CleanerFactory source: jrt:/java.base
+[0.058s][info][class,load     ] java.util.concurrent.ThreadFactory source: jrt:/java.base
+[0.058s][info][class,load     ] jdk.internal.ref.CleanerFactory$1 source: jrt:/java.base
+[0.058s][info][class,load     ] java.lang.ref.Cleaner source: jrt:/java.base
+[0.058s][info][class,load     ] java.lang.ref.Cleaner$1 source: jrt:/java.base
+[0.058s][info][class,load     ] jdk.internal.ref.CleanerImpl source: jrt:/java.base
+[0.058s][info][class,load     ] jdk.internal.ref.CleanerImpl$CleanableList source: jrt:/java.base
+[0.058s][info][class,load     ] jdk.internal.ref.CleanerImpl$CleanableList$Node source: jrt:/java.base
+[0.058s][info][class,load     ] java.lang.ref.Cleaner$Cleanable source: jrt:/java.base
+[0.058s][info][class,load     ] jdk.internal.ref.PhantomCleanable source: jrt:/java.base
+[0.058s][info][class,load     ] jdk.internal.ref.CleanerImpl$CleanerCleanable source: jrt:/java.base
+[0.058s][info][class,load     ] jdk.internal.misc.InnocuousThread source: jrt:/java.base
+[0.059s][info][class,load     ] jdk.internal.ref.CleanerImpl$PhantomCleanableRef source: jrt:/java.base
+[0.059s][info][class,load     ] java.util.zip.ZipFile$Source source: jrt:/java.base
+[0.059s][info][class,load     ] sun.nio.fs.DefaultFileSystemProvider source: jrt:/java.base
+[0.059s][info][class,load     ] java.nio.file.spi.FileSystemProvider source: jrt:/java.base
+[0.059s][info][class,load     ] sun.nio.fs.AbstractFileSystemProvider source: jrt:/java.base
+[0.059s][info][class,load     ] sun.nio.fs.UnixFileSystemProvider source: jrt:/java.base
+[0.059s][info][class,load     ] sun.nio.fs.BsdFileSystemProvider source: jrt:/java.base
+[0.059s][info][class,load     ] sun.nio.fs.MacOSXFileSystemProvider source: jrt:/java.base
+[0.059s][info][class,load     ] java.nio.file.OpenOption source: jrt:/java.base
+[0.059s][info][class,load     ] java.nio.file.StandardOpenOption source: jrt:/java.base
+[0.059s][info][class,load     ] java.nio.file.FileSystem source: jrt:/java.base
+[0.059s][info][class,load     ] sun.nio.fs.UnixFileSystem source: jrt:/java.base
+[0.059s][info][class,load     ] sun.nio.fs.BsdFileSystem source: jrt:/java.base
+[0.059s][info][class,load     ] sun.nio.fs.MacOSXFileSystem source: jrt:/java.base
+[0.059s][info][class,load     ] java.nio.file.Watchable source: jrt:/java.base
+[0.059s][info][class,load     ] java.nio.file.Path source: jrt:/java.base
+[0.059s][info][class,load     ] sun.nio.fs.UnixPath source: jrt:/java.base
+[0.059s][info][class,load     ] sun.nio.fs.Util source: jrt:/java.base
+[0.060s][info][class,load     ] sun.nio.fs.UnixNativeDispatcher source: jrt:/java.base
+[0.060s][info][class,load     ] jdk.internal.loader.NativeLibraries$LibraryPaths source: jrt:/java.base
+[0.060s][info][class,load     ] jdk.internal.loader.NativeLibraries$1 source: jrt:/java.base
+[0.060s][info][class,load     ] jdk.internal.loader.NativeLibraries$CountedLock source: jrt:/java.base
+[0.060s][info][class,load     ] java.util.concurrent.locks.AbstractQueuedSynchronizer source: jrt:/java.base
+[0.060s][info][class,load     ] java.util.concurrent.locks.ReentrantLock$Sync source: jrt:/java.base
+[0.060s][info][class,load     ] java.util.concurrent.locks.ReentrantLock$NonfairSync source: jrt:/java.base
+[0.060s][info][class,load     ] jdk.internal.loader.NativeLibraries$NativeLibraryContext source: jrt:/java.base
+[0.060s][info][class,load     ] jdk.internal.loader.NativeLibraries$NativeLibraryContext$1 source: jrt:/java.base
+[0.060s][info][class,load     ] java.util.ArrayDeque$DeqIterator source: jrt:/java.base
+[0.060s][info][class,load     ] jdk.internal.loader.NativeLibrary source: jrt:/java.base
+[0.060s][info][class,load     ] jdk.internal.loader.NativeLibraries$NativeLibraryImpl source: jrt:/java.base
+[0.062s][info][class,load     ] jdk.internal.loader.NativeLibraries$2 source: jrt:/java.base
+[0.062s][info][class,load     ] java.util.concurrent.ConcurrentHashMap$ValuesView source: jrt:/java.base
+[0.062s][info][class,load     ] java.util.Enumeration source: jrt:/java.base
+[0.062s][info][class,load     ] java.util.concurrent.ConcurrentHashMap$Traverser source: jrt:/java.base
+[0.062s][info][class,load     ] java.util.concurrent.ConcurrentHashMap$BaseIterator source: jrt:/java.base
+[0.062s][info][class,load     ] java.util.concurrent.ConcurrentHashMap$ValueIterator source: jrt:/java.base
+[0.062s][info][class,load     ] java.nio.file.attribute.BasicFileAttributes source: jrt:/java.base
+[0.062s][info][class,load     ] java.nio.file.attribute.PosixFileAttributes source: jrt:/java.base
+[0.062s][info][class,load     ] sun.nio.fs.UnixFileAttributes source: jrt:/java.base
+[0.062s][info][class,load     ] sun.nio.fs.UnixFileStoreAttributes source: jrt:/java.base
+[0.062s][info][class,load     ] sun.nio.fs.UnixMountEntry source: jrt:/java.base
+[0.062s][info][class,load     ] java.util.zip.ZipFile$Source$Key source: jrt:/java.base
+[0.062s][info][class,load     ] java.nio.file.CopyOption source: jrt:/java.base
+[0.062s][info][class,load     ] java.nio.file.LinkOption source: jrt:/java.base
+[0.062s][info][class,load     ] java.nio.file.Files source: jrt:/java.base
+[0.062s][info][class,load     ] java.nio.file.attribute.AttributeView source: jrt:/java.base
+[0.062s][info][class,load     ] java.nio.file.attribute.FileAttributeView source: jrt:/java.base
+[0.062s][info][class,load     ] java.nio.file.attribute.BasicFileAttributeView source: jrt:/java.base
+[0.062s][info][class,load     ] sun.nio.fs.BsdFileAttributeViews source: jrt:/java.base
+[0.062s][info][class,load     ] sun.nio.fs.DynamicFileAttributeView source: jrt:/java.base
+[0.062s][info][class,load     ] sun.nio.fs.AbstractBasicFileAttributeView source: jrt:/java.base
+[0.062s][info][class,load     ] sun.nio.fs.UnixFileAttributeViews$Basic source: jrt:/java.base
+[0.062s][info][class,load     ] sun.nio.fs.BsdFileAttributeViews$Basic source: jrt:/java.base
+[0.062s][info][class,load     ] sun.nio.fs.NativeBuffers source: jrt:/java.base
+[0.063s][info][class,load     ] java.lang.ThreadLocal source: jrt:/java.base
+[0.063s][info][class,load     ] jdk.internal.misc.CarrierThreadLocal source: jrt:/java.base
+[0.063s][info][class,load     ] jdk.internal.misc.TerminatingThreadLocal source: jrt:/java.base
+[0.063s][info][class,load     ] sun.nio.fs.NativeBuffers$1 source: jrt:/java.base
+[0.063s][info][class,load     ] jdk.internal.misc.TerminatingThreadLocal$1 source: jrt:/java.base
+[0.063s][info][class,load     ] java.lang.ThreadLocal$ThreadLocalMap source: jrt:/java.base
+[0.063s][info][class,load     ] java.lang.ThreadLocal$ThreadLocalMap$Entry source: jrt:/java.base
+[0.063s][info][class,load     ] java.util.IdentityHashMap source: jrt:/java.base
+[0.063s][info][class,load     ] java.util.IdentityHashMap$KeySet source: jrt:/java.base
+[0.063s][info][class,load     ] sun.nio.fs.NativeBuffer source: jrt:/java.base
+[0.063s][info][class,load     ] sun.nio.fs.NativeBuffer$Deallocator source: jrt:/java.base
+[0.063s][info][class,load     ] sun.nio.fs.UnixFileAttributes$UnixAsBasicFileAttributes source: jrt:/java.base
+[0.063s][info][class,load     ] java.io.DataOutput source: jrt:/java.base
+[0.063s][info][class,load     ] java.io.DataInput source: jrt:/java.base
+[0.063s][info][class,load     ] java.io.RandomAccessFile source: jrt:/java.base
+[0.063s][info][class,load     ] jdk.internal.access.JavaIORandomAccessFileAccess source: jrt:/java.base
+[0.063s][info][class,load     ] java.io.RandomAccessFile$2 source: jrt:/java.base
+[0.063s][info][class,load     ] java.io.FileCleanable source: jrt:/java.base
+[0.063s][info][class,load     ] java.util.zip.ZipFile$Source$End source: jrt:/java.base
+[0.063s][info][class,load     ] java.util.zip.ZipUtils source: jrt:/java.base
+[0.064s][info][jit,compilation]   71       3       jdk.internal.util.Preconditions::checkIndex (18 bytes)
+[0.064s][info][jit,compilation]   72     n 0       jdk.internal.misc.Unsafe::getByte (native)   
+[0.064s][info][class,load     ] java.util.concurrent.TimeUnit source: jrt:/java.base
+[0.064s][info][class,load     ] java.nio.file.attribute.FileTime source: jrt:/java.base
+[0.064s][info][class,load     ] sun.nio.fs.UnixFileKey source: jrt:/java.base
+[0.064s][info][class,load     ] jdk.internal.perf.PerfCounter source: jrt:/java.base
+[0.064s][info][class,load     ] jdk.internal.perf.Perf source: jrt:/java.base
+[0.064s][info][class,load     ] jdk.internal.perf.PerfCounter$CoreCounters source: jrt:/java.base
+[0.064s][info][class,load     ] sun.nio.ch.DirectBuffer source: jrt:/java.base
+[0.064s][info][class,load     ] java.nio.MappedByteBuffer source: jrt:/java.base
+[0.064s][info][class,load     ] java.nio.DirectByteBuffer source: jrt:/java.base
+[0.064s][info][class,load     ] java.nio.Bits source: jrt:/java.base
+[0.064s][info][class,load     ] java.util.concurrent.atomic.AtomicLong source: jrt:/java.base
+[0.064s][info][class,load     ] jdk.internal.misc.VM$BufferPool source: jrt:/java.base
+[0.064s][info][class,load     ] java.nio.Bits$1 source: jrt:/java.base
+[0.064s][info][class,load     ] java.nio.LongBuffer source: jrt:/java.base
+[0.064s][info][class,load     ] java.nio.DirectLongBufferU source: jrt:/java.base
+[0.065s][info][class,load     ] java.util.zip.ZipFile$EntryPos source: jrt:/java.base
+[0.065s][info][class,load     ] java.util.zip.ZipEntry source: jrt:/java.base
+[0.065s][info][class,load     ] java.util.jar.JarEntry source: jrt:/java.base
+[0.065s][info][class,load     ] java.util.jar.JarFile$JarFileEntry source: jrt:/java.base
+[0.065s][info][jit,compilation]   73       3       jdk.internal.misc.Unsafe::pickPos (14 bytes)
+[0.065s][info][class,load     ] java.util.zip.ZipFile$ZipFileInputStream source: jrt:/java.base
+[0.065s][info][class,load     ] java.util.zip.InflaterInputStream source: jrt:/java.base
+[0.065s][info][class,load     ] java.util.zip.ZipFile$ZipFileInflaterInputStream source: jrt:/java.base
+[0.065s][info][class,load     ] java.util.zip.Inflater source: jrt:/java.base
+[0.066s][info][class,load     ] java.util.zip.Inflater$InflaterZStreamRef source: jrt:/java.base
+[0.066s][info][class,load     ] java.util.zip.ZipFile$InflaterCleanupAction source: jrt:/java.base
+[0.066s][info][class,load     ] sun.security.util.SignatureFileVerifier source: jrt:/java.base
+[0.066s][info][class,load     ] sun.security.util.Debug source: jrt:/java.base
+[0.066s][info][class,load     ] java.util.Locale source: jrt:/java.base
+[0.066s][info][class,load     ] sun.util.locale.BaseLocale source: jrt:/java.base
+[0.066s][info][class,load     ] sun.util.locale.LocaleUtils source: jrt:/java.base
+[0.067s][info][class,load     ] sun.util.locale.BaseLocale$1InterningCache source: jrt:/java.base
+[0.067s][info][class,load     ] jdk.internal.util.ReferencedKeySet source: jrt:/java.base
+[0.067s][info][class,load     ] jdk.internal.util.ReferencedKeyMap source: jrt:/java.base
+[0.067s][info][class,load     ] jdk.internal.util.ReferencedKeyMap$1 source: jrt:/java.base
+[0.067s][info][class,load     ] jdk.internal.util.ReferenceKey source: jrt:/java.base
+[0.067s][info][class,load     ] jdk.internal.util.StrongReferenceKey source: jrt:/java.base
+[0.067s][info][class,load     ] jdk.internal.util.SoftReferenceKey source: jrt:/java.base
+[0.067s][info][class,load     ] java.util.Locale$LocaleCache source: jrt:/java.base
+[0.067s][info][jit,compilation]   74       3       jdk.internal.misc.Unsafe::toUnsignedInt (6 bytes)
+[0.067s][info][class,load     ] jdk.internal.loader.Resource source: jrt:/java.base
+[0.067s][info][class,load     ] jdk.internal.loader.URLClassPath$JarLoader$1 source: jrt:/java.base
+[0.067s][info][class,load     ] java.util.jar.Attributes source: jrt:/java.base
+[0.068s][info][class,load     ] java.util.SequencedMap source: jrt:/java.base
+[0.068s][info][class,load     ] java.util.LinkedHashMap source: jrt:/java.base
+[0.068s][info][jit,compilation]   53       3       java.util.HashMap::putVal (300 bytes)   made not entrant: marked for deoptimization
+[0.068s][info][jit,compilation]   59       3       java.util.HashMap::put (13 bytes)   made not entrant: marked for deoptimization
+[0.068s][info][jit,compilation]   63       3       java.util.HashMap::get (19 bytes)   made not entrant: marked for deoptimization
+[0.068s][info][class,load     ] java.util.jar.Manifest$FastInputStream source: jrt:/java.base
+[0.068s][info][class,load     ] java.io.ByteArrayOutputStream source: jrt:/java.base
+[0.068s][info][class,load     ] java.util.jar.Attributes$Name source: jrt:/java.base
+[0.068s][info][class,load     ] java.lang.reflect.Array source: jrt:/java.base
+[0.068s][info][class,load     ] java.lang.NamedPackage source: jrt:/java.base
+[0.068s][info][class,load     ] java.lang.Package source: jrt:/java.base
+[0.068s][info][class,load     ] java.lang.Package$VersionInfo source: jrt:/java.base
+[0.068s][info][class,load     ] sun.nio.ByteBuffered source: jrt:/java.base
+[0.068s][info][class,load     ] java.util.zip.Checksum source: jrt:/java.base
+[0.068s][info][class,load     ] java.util.zip.CRC32 source: jrt:/java.base
+[0.068s][info][class,load     ] java.util.zip.Checksum$1 source: jrt:/java.base
+[0.068s][info][jit,compilation]   75       3       java.lang.Math::min (11 bytes)
+[0.068s][info][class,load     ] java.security.SecureClassLoader$CodeSourceKey source: jrt:/java.base
+[0.068s][info][class,load     ] java.security.SecureClassLoader$1 source: jrt:/java.base
+[0.069s][info][class,load     ] java.security.PermissionCollection source: jrt:/java.base
+[0.069s][info][class,load     ] java.security.Permissions source: jrt:/java.base
+[0.069s][info][class,load     ] org.example.jvminternals.ch31.CacheJourney source: file:/Users/xiejinxin/Developer/Java/jvm-internals/chapters/ch31-aot-cache/target/cache.jar
+[0.069s][info][class,load     ] jdk.internal.misc.MethodFinder source: jrt:/java.base
+[0.069s][info][class,load     ] java.lang.Class$ReflectionData source: jrt:/java.base
+[0.069s][info][class,load     ] java.lang.Class$Atomic source: jrt:/java.base
+[0.069s][info][class,load     ] org.example.jvminternals.ch31.CacheJourney$Operation source: file:/Users/xiejinxin/Developer/Java/jvm-internals/chapters/ch31-aot-cache/target/cache.jar
+[0.069s][info][class,load     ] java.lang.PublicMethods$MethodList source: jrt:/java.base
+[0.069s][info][class,load     ] java.lang.PublicMethods$Key source: jrt:/java.base
+[0.069s][info][class,load     ] java.lang.invoke.StringConcatFactory source: jrt:/java.base
+[0.069s][info][class,load     ] java.lang.invoke.MethodType$1 source: jrt:/java.base
+[0.069s][info][class,load     ] java.lang.invoke.MethodTypeForm source: jrt:/java.base
+[0.069s][info][class,load     ] jdk.internal.util.WeakReferenceKey source: jrt:/java.base
+[0.070s][info][class,load     ] sun.invoke.util.Wrapper source: jrt:/java.base
+[0.070s][info][class,load     ] sun.invoke.util.Wrapper$Format source: jrt:/java.base
+[0.070s][info][class,load     ] java.lang.constant.ConstantDescs source: jrt:/java.base
+[0.070s][info][class,load     ] java.lang.constant.ClassDesc source: jrt:/java.base
+[0.070s][info][class,load     ] jdk.internal.constant.ClassOrInterfaceDescImpl source: jrt:/java.base
+[0.070s][info][class,load     ] jdk.internal.constant.ArrayClassDescImpl source: jrt:/java.base
+[0.070s][info][class,load     ] jdk.internal.constant.ConstantUtils source: jrt:/java.base
+[0.070s][info][class,load     ] java.lang.constant.DirectMethodHandleDesc$Kind source: jrt:/java.base
+[0.070s][info][class,load     ] java.lang.constant.MethodTypeDesc source: jrt:/java.base
+[0.070s][info][class,load     ] jdk.internal.constant.MethodTypeDescImpl source: jrt:/java.base
+[0.070s][info][class,load     ] java.lang.constant.MethodHandleDesc source: jrt:/java.base
+[0.070s][info][class,load     ] java.lang.constant.MethodHandleDesc$1 source: jrt:/java.base
+[0.070s][info][class,load     ] java.lang.constant.DirectMethodHandleDesc source: jrt:/java.base
+[0.070s][info][class,load     ] jdk.internal.constant.DirectMethodHandleDescImpl source: jrt:/java.base
+[0.071s][info][class,load     ] jdk.internal.constant.DirectMethodHandleDescImpl$1 source: jrt:/java.base
+[0.071s][info][class,load     ] java.lang.constant.DynamicConstantDesc source: jrt:/java.base
+[0.071s][info][class,load     ] jdk.internal.constant.PrimitiveClassDescImpl source: jrt:/java.base
+[0.071s][info][class,load     ] java.lang.constant.DynamicConstantDesc$AnonymousDynamicConstantDesc source: jrt:/java.base
+[0.071s][info][class,load     ] java.lang.invoke.LambdaForm$NamedFunction source: jrt:/java.base
+[0.071s][info][class,load     ] java.lang.invoke.DirectMethodHandle$Holder source: jrt:/java.base
+[0.071s][info][class,load     ] sun.invoke.util.ValueConversions source: jrt:/java.base
+[0.071s][info][class,load     ] java.lang.invoke.Invokers source: jrt:/java.base
+[0.071s][info][class,load     ] java.lang.invoke.LambdaForm$Kind source: jrt:/java.base
+[0.072s][info][class,load     ] java.lang.NoSuchMethodException source: jrt:/java.base
+[0.072s][info][jit,compilation]   76     n 0       java.lang.invoke.MethodHandle::linkToStatic(LLLLLL)L (native)   (static)
+[0.072s][info][class,load     ] java.lang.invoke.LambdaForm$BasicType source: jrt:/java.base
+[0.072s][info][class,load     ] java.lang.classfile.TypeKind source: jrt:/java.base
+[0.072s][info][class,load     ] java.lang.invoke.LambdaForm$Name source: jrt:/java.base
+[0.072s][info][class,load     ] java.lang.invoke.LambdaForm$Holder source: jrt:/java.base
+[0.072s][info][jit,compilation]   77       1       java.lang.Class::isPrimitive (5 bytes)
+[0.072s][info][class,load     ] java.lang.invoke.InvokerBytecodeGenerator source: jrt:/java.base
+[0.072s][info][class,load     ] java.lang.classfile.AnnotationElement source: jrt:/java.base
+[0.072s][info][class,load     ] java.lang.classfile.Annotation source: jrt:/java.base
+[0.072s][info][class,load     ] java.lang.classfile.constantpool.ConstantPool source: jrt:/java.base
+[0.072s][info][class,load     ] java.lang.classfile.constantpool.ConstantPoolBuilder source: jrt:/java.base
+[0.072s][info][class,load     ] jdk.internal.classfile.impl.TemporaryConstantPool source: jrt:/java.base
+[0.072s][info][class,load     ] java.lang.classfile.constantpool.PoolEntry source: jrt:/java.base
+[0.072s][info][class,load     ] java.lang.classfile.constantpool.AnnotationConstantValueEntry source: jrt:/java.base
+[0.072s][info][class,load     ] java.lang.classfile.constantpool.Utf8Entry source: jrt:/java.base
+[0.073s][info][class,load     ] jdk.internal.classfile.impl.AbstractPoolEntry source: jrt:/java.base
+[0.073s][info][class,load     ] jdk.internal.classfile.impl.AbstractPoolEntry$Utf8EntryImpl source: jrt:/java.base
+[0.073s][info][class,load     ] jdk.internal.classfile.impl.AbstractPoolEntry$Utf8EntryImpl$State source: jrt:/java.base
+[0.073s][info][class,load     ] jdk.internal.classfile.impl.AnnotationImpl source: jrt:/java.base
+[0.073s][info][class,load     ] java.lang.classfile.ClassFileElement source: jrt:/java.base
+[0.073s][info][class,load     ] java.lang.classfile.Attribute source: jrt:/java.base
+[0.073s][info][class,load     ] java.lang.classfile.ClassElement source: jrt:/java.base
+[0.073s][info][class,load     ] java.lang.classfile.MethodElement source: jrt:/java.base
+[0.073s][info][class,load     ] java.lang.classfile.FieldElement source: jrt:/java.base
+[0.073s][info][class,load     ] java.lang.classfile.attribute.RuntimeVisibleAnnotationsAttribute source: jrt:/java.base
+[0.073s][info][class,load     ] jdk.internal.classfile.impl.Util$Writable source: jrt:/java.base
+[0.073s][info][class,load     ] jdk.internal.classfile.impl.AbstractElement source: jrt:/java.base
+[0.073s][info][class,load     ] jdk.internal.classfile.impl.UnboundAttribute source: jrt:/java.base
+[0.073s][info][class,load     ] jdk.internal.classfile.impl.UnboundAttribute$UnboundRuntimeVisibleAnnotationsAttribute source: jrt:/java.base
+[0.073s][info][class,load     ] java.lang.classfile.Attributes source: jrt:/java.base
+[0.073s][info][class,load     ] java.lang.classfile.AttributeMapper source: jrt:/java.base
+[0.073s][info][class,load     ] jdk.internal.classfile.impl.AbstractAttributeMapper source: jrt:/java.base
+[0.073s][info][class,load     ] jdk.internal.classfile.impl.AbstractAttributeMapper$RuntimeVisibleAnnotationsMapper source: jrt:/java.base
+[0.073s][info][class,load     ] java.lang.classfile.AttributeMapper$AttributeStability source: jrt:/java.base
+[0.073s][info][class,load     ] java.lang.invoke.InvokerBytecodeGenerator$8 source: jrt:/java.base
+[0.073s][info][class,load     ] java.lang.invoke.MethodHandleImpl$Intrinsic source: jrt:/java.base
+[0.073s][info][jit,compilation]   78       1       java.lang.Enum::ordinal (5 bytes)
+[0.073s][info][class,load     ] jdk.internal.access.JavaLangInvokeAccess source: jrt:/java.base
+[0.073s][info][class,load     ] java.lang.invoke.MethodHandleImpl$1 source: jrt:/java.base
+[0.073s][info][class,load     ] java.lang.invoke.DelegatingMethodHandle source: jrt:/java.base
+[0.073s][info][class,load     ] java.lang.invoke.MethodHandleImpl$AsVarargsCollector source: jrt:/java.base
+[0.073s][info][class,load     ] java.lang.invoke.DelegatingMethodHandle$Holder source: jrt:/java.base
+[0.074s][info][class,load     ] java.lang.invoke.BoundMethodHandle source: jrt:/java.base
+[0.074s][info][class,load     ] java.lang.invoke.SimpleMethodHandle source: jrt:/java.base
+[0.074s][info][class,load     ] java.lang.invoke.VarHandle$AccessMode source: jrt:/java.base
+[0.074s][info][class,load     ] java.lang.invoke.VarHandle$AccessType source: jrt:/java.base
+[0.074s][info][class,load     ] java.lang.invoke.Invokers$Holder source: jrt:/java.base
+[0.074s][info][jit,compilation]   79     n 0       java.lang.invoke.MethodHandle::invokeBasic(LLLLL)L (native)   
+[0.074s][info][jit,compilation]   80     n 0       java.lang.invoke.MethodHandle::linkToSpecial(LLLLLLL)L (native)   (static)
+[0.074s][info][class,load     ] java.lang.invoke.BootstrapMethodInvoker source: jrt:/java.base
+[0.074s][info][class,load     ] java.lang.StringUTF16 source: jrt:/java.base
+[0.074s][info][jit,compilation]   81     n 0       java.lang.invoke.MethodHandle::linkToStatic(LLL)L (native)   (static)
+[0.074s][info][class,load     ] java.lang.invoke.ClassSpecializer source: jrt:/java.base
+[0.074s][info][class,load     ] java.lang.invoke.BoundMethodHandle$Specializer source: jrt:/java.base
+[0.074s][info][class,load     ] jdk.internal.vm.annotation.Stable source: jrt:/java.base
+[0.075s][info][class,load     ] java.lang.invoke.ClassSpecializer$1 source: jrt:/java.base
+[0.075s][info][class,load     ] java.lang.invoke.ClassSpecializer$SpeciesData source: jrt:/java.base
+[0.075s][info][class,load     ] java.lang.invoke.BoundMethodHandle$SpeciesData source: jrt:/java.base
+[0.075s][info][class,load     ] java.lang.invoke.ClassSpecializer$Factory source: jrt:/java.base
+[0.075s][info][class,load     ] java.lang.invoke.BoundMethodHandle$Specializer$Factory source: jrt:/java.base
+[0.075s][info][class,load     ] java.lang.NoSuchFieldException source: jrt:/java.base
+[0.075s][info][class,load     ] java.lang.invoke.BoundMethodHandle$Species_L source: jrt:/java.base
+[0.075s][info][jit,compilation]   82     n 0       java.lang.invoke.MethodHandle::linkToStatic(LLLL)L (native)   (static)
+[0.075s][info][jit,compilation]   83       3       java.lang.AbstractStringBuilder::needsNewBuffer (33 bytes)
+[0.075s][info][class,load     ] java.lang.invoke.DirectMethodHandle$2 source: jrt:/java.base
+[0.075s][info][jit,compilation]   84       1       jdk.internal.util.StrongReferenceKey::get (5 bytes)
+[0.075s][info][class,load     ] java.lang.invoke.DirectMethodHandle$Accessor source: jrt:/java.base
+[0.075s][info][jit,compilation]   85     n 0       java.lang.invoke.MethodHandle::invokeBasic(LL)L (native)   
+[0.076s][info][jit,compilation]   86     n 0       java.lang.invoke.MethodHandle::linkToSpecial(LLLL)L (native)   (static)
+[0.076s][info][class,load     ] java.lang.invoke.LambdaFormEditor source: jrt:/java.base
+[0.076s][info][class,load     ] java.lang.invoke.LambdaFormEditor$TransformKey source: jrt:/java.base
+[0.076s][info][class,load     ] java.lang.invoke.LambdaFormBuffer source: jrt:/java.base
+[0.076s][info][class,load     ] java.lang.invoke.BoundMethodHandle$Species_LL source: jrt:/java.base
+[0.076s][info][jit,compilation]   87     n 0       java.lang.invoke.MethodHandle::linkToStatic(LLLLL)L (native)   (static)
+[0.076s][info][jit,compilation]   88     n 0       java.lang.Object::clone (native)   
+[0.076s][info][class,load     ] java.lang.invoke.LambdaFormEditor$Transform source: jrt:/java.base
+[0.076s][info][jit,compilation]   89     n 0       java.lang.invoke.MethodHandle::invokeBasic(LLLL)L (native)   
+[0.076s][info][class,load     ] jdk.internal.classfile.impl.SplitConstantPool source: jrt:/java.base
+[0.076s][info][class,load     ] java.lang.classfile.BootstrapMethodEntry source: jrt:/java.base
+[0.076s][info][class,load     ] jdk.internal.classfile.impl.BootstrapMethodEntryImpl source: jrt:/java.base
+[0.077s][info][class,load     ] jdk.internal.classfile.impl.EntryMap source: jrt:/java.base
+[0.077s][info][class,load     ] jdk.internal.classfile.impl.Util source: jrt:/java.base
+[0.077s][info][class,load     ] java.lang.classfile.constantpool.LoadableConstantEntry source: jrt:/java.base
+[0.077s][info][class,load     ] java.lang.classfile.constantpool.ClassEntry source: jrt:/java.base
+[0.077s][info][class,load     ] jdk.internal.classfile.impl.AbstractPoolEntry$AbstractRefEntry source: jrt:/java.base
+[0.077s][info][class,load     ] jdk.internal.classfile.impl.AbstractPoolEntry$AbstractNamedEntry source: jrt:/java.base
+[0.077s][info][class,load     ] jdk.internal.classfile.impl.AbstractPoolEntry$ClassEntryImpl source: jrt:/java.base
+[0.077s][info][class,load     ] java.util.function.Consumer source: jrt:/java.base
+[0.077s][info][class,load     ] java.lang.invoke.InvokerBytecodeGenerator$3 source: jrt:/java.base
+[0.077s][info][class,load     ] java.lang.classfile.ClassFile source: jrt:/java.base
+[0.077s][info][class,load     ] jdk.internal.classfile.impl.ClassFileImpl source: jrt:/java.base
+[0.077s][info][class,load     ] java.lang.invoke.InvokerBytecodeGenerator$1 source: jrt:/java.base
+[0.077s][info][class,load     ] java.lang.classfile.ClassFileBuilder source: jrt:/java.base
+[0.077s][info][class,load     ] java.lang.classfile.ClassBuilder source: jrt:/java.base
+[0.077s][info][class,load     ] jdk.internal.classfile.impl.AbstractDirectBuilder source: jrt:/java.base
+[0.077s][info][class,load     ] jdk.internal.classfile.impl.DirectClassBuilder source: jrt:/java.base
+[0.077s][info][class,load     ] jdk.internal.classfile.impl.AttributeHolder source: jrt:/java.base
+[0.077s][info][class,load     ] java.lang.classfile.Superclass source: jrt:/java.base
+[0.077s][info][class,load     ] jdk.internal.classfile.impl.SuperclassImpl source: jrt:/java.base
+[0.077s][info][class,load     ] java.lang.classfile.attribute.SourceFileAttribute source: jrt:/java.base
+[0.077s][info][class,load     ] jdk.internal.classfile.impl.UnboundAttribute$UnboundSourceFileAttribute source: jrt:/java.base
+[0.077s][info][class,load     ] jdk.internal.classfile.impl.AbstractAttributeMapper$SourceFileMapper source: jrt:/java.base
+[0.078s][info][class,load     ] jdk.internal.classfile.impl.BoundAttribute source: jrt:/java.base
+[0.078s][info][class,load     ] java.lang.invoke.InvokerBytecodeGenerator$4 source: jrt:/java.base
+[0.078s][info][class,load     ] java.lang.classfile.MethodBuilder source: jrt:/java.base
+[0.078s][info][class,load     ] jdk.internal.classfile.impl.MethodInfo source: jrt:/java.base
+[0.078s][info][class,load     ] jdk.internal.classfile.impl.TerminalMethodBuilder source: jrt:/java.base
+[0.078s][info][class,load     ] jdk.internal.classfile.impl.DirectMethodBuilder source: jrt:/java.base
+[0.078s][info][class,load     ] java.lang.classfile.constantpool.NameAndTypeEntry source: jrt:/java.base
+[0.078s][info][class,load     ] jdk.internal.classfile.impl.AbstractPoolEntry$AbstractRefsEntry source: jrt:/java.base
+[0.078s][info][class,load     ] jdk.internal.classfile.impl.AbstractPoolEntry$NameAndTypeEntryImpl source: jrt:/java.base
+[0.078s][info][class,load     ] java.lang.classfile.constantpool.MemberRefEntry source: jrt:/java.base
+[0.078s][info][class,load     ] java.lang.classfile.constantpool.FieldRefEntry source: jrt:/java.base
+[0.078s][info][class,load     ] jdk.internal.classfile.impl.AbstractPoolEntry$AbstractMemberRefEntry source: jrt:/java.base
+[0.078s][info][class,load     ] jdk.internal.classfile.impl.AbstractPoolEntry$FieldRefEntryImpl source: jrt:/java.base
+[0.078s][info][class,load     ] java.lang.invoke.InvokerBytecodeGenerator$ClassData source: jrt:/java.base
+[0.078s][info][class,load     ] java.lang.invoke.InvokerBytecodeGenerator$4$1 source: jrt:/java.base
+[0.078s][info][class,load     ] java.lang.classfile.CodeBuilder source: jrt:/java.base
+[0.078s][info][class,load     ] jdk.internal.classfile.impl.LabelContext source: jrt:/java.base
+[0.079s][info][class,load     ] jdk.internal.classfile.impl.TerminalCodeBuilder source: jrt:/java.base
+[0.079s][info][class,load     ] jdk.internal.classfile.impl.DirectCodeBuilder source: jrt:/java.base
+[0.079s][info][class,load     ] java.lang.classfile.CodeElement source: jrt:/java.base
+[0.079s][info][class,load     ] java.lang.classfile.PseudoInstruction source: jrt:/java.base
+[0.079s][info][class,load     ] java.lang.classfile.instruction.CharacterRange source: jrt:/java.base
+[0.079s][info][class,load     ] java.lang.classfile.instruction.LocalVariable source: jrt:/java.base
+[0.079s][info][class,load     ] java.lang.classfile.instruction.LocalVariableType source: jrt:/java.base
+[0.079s][info][class,load     ] jdk.internal.classfile.impl.DirectCodeBuilder$DeferredLabel source: jrt:/java.base
+[0.079s][info][class,load     ] java.lang.classfile.BufWriter source: jrt:/java.base
+[0.079s][info][class,load     ] jdk.internal.classfile.impl.BufWriterImpl source: jrt:/java.base
+[0.079s][info][class,load     ] java.lang.classfile.Label source: jrt:/java.base
+[0.079s][info][class,load     ] java.lang.classfile.instruction.LabelTarget source: jrt:/java.base
+[0.079s][info][class,load     ] jdk.internal.classfile.impl.LabelImpl source: jrt:/java.base
+[0.079s][info][class,load     ] jdk.internal.classfile.impl.DirectCodeBuilder$8 source: jrt:/java.base
+[0.079s][info][class,load     ] sun.invoke.util.VerifyType source: jrt:/java.base
+[0.079s][info][class,load     ] sun.invoke.empty.Empty source: jrt:/java.base
+[0.079s][info][class,load     ] java.lang.classfile.Opcode source: jrt:/java.base
+[0.079s][info][class,load     ] java.lang.classfile.Opcode$Kind source: jrt:/java.base
+[0.080s][info][jit,compilation]   90       3       java.lang.Enum::<init> (15 bytes)
+[0.080s][info][class,load     ] java.lang.classfile.constantpool.MethodRefEntry source: jrt:/java.base
+[0.080s][info][class,load     ] jdk.internal.classfile.impl.AbstractPoolEntry$MethodRefEntryImpl source: jrt:/java.base
+[0.080s][info][class,load     ] jdk.internal.classfile.impl.BytecodeHelpers source: jrt:/java.base
+[0.080s][info][class,load     ] jdk.internal.classfile.impl.UnboundAttribute$AdHocAttribute source: jrt:/java.base
+[0.080s][info][class,load     ] jdk.internal.classfile.impl.DirectCodeBuilder$4 source: jrt:/java.base
+[0.080s][info][class,load     ] jdk.internal.classfile.impl.AbstractAttributeMapper$CodeMapper source: jrt:/java.base
+[0.080s][info][class,load     ] java.lang.invoke.InvokerBytecodeGenerator$2 source: jrt:/java.base
+[0.080s][info][class,load     ] jdk.internal.classfile.impl.Util$1WithCodeMethodHandler source: jrt:/java.base
+[0.080s][info][class,load     ] java.lang.classfile.FieldBuilder source: jrt:/java.base
+[0.080s][info][class,load     ] jdk.internal.classfile.impl.TerminalFieldBuilder source: jrt:/java.base
+[0.080s][info][class,load     ] jdk.internal.classfile.impl.DirectFieldBuilder source: jrt:/java.base
+[0.080s][info][class,load     ] java.lang.classfile.CustomAttribute source: jrt:/java.base
+[0.080s][info][class,load     ] jdk.internal.classfile.impl.AnnotationReader source: jrt:/java.base
+[0.081s][info][class,load     ] jdk.internal.classfile.impl.StackMapGenerator source: jrt:/java.base
+[0.081s][info][class,load     ] jdk.internal.classfile.impl.StackMapGenerator$Frame source: jrt:/java.base
+[0.081s][info][class,load     ] jdk.internal.classfile.impl.StackMapGenerator$Type source: jrt:/java.base
+[0.081s][info][class,load     ] jdk.internal.classfile.impl.RawBytecodeHelper source: jrt:/java.base
+[0.081s][info][class,load     ] jdk.internal.classfile.impl.RawBytecodeHelper$1 source: jrt:/java.base
+[0.081s][info][class,load     ] jdk.internal.classfile.impl.RawBytecodeHelper$CodeRange source: jrt:/java.base
+[0.081s][info][class,load     ] jdk.internal.classfile.impl.ClassHierarchyImpl source: jrt:/java.base
+[0.081s][info][class,load     ] java.lang.classfile.ClassHierarchyResolver source: jrt:/java.base
+[0.081s][info][class,load     ] jdk.internal.classfile.impl.ClassHierarchyImpl$ClassLoadingClassHierarchyResolver source: jrt:/java.base
+[0.081s][info][class,load     ] jdk.internal.classfile.impl.ClassHierarchyImpl$ClassLoadingClassHierarchyResolver$1 source: jrt:/java.base
+[0.081s][info][class,load     ] jdk.internal.classfile.impl.ClassHierarchyImpl$CachedClassHierarchyResolver source: jrt:/java.base
+[0.081s][info][class,load     ] java.lang.classfile.ClassHierarchyResolver$1Factory source: jrt:/java.base
+[0.081s][info][class,load     ] java.lang.classfile.ClassHierarchyResolver$ClassHierarchyInfo source: jrt:/java.base
+[0.081s][info][class,load     ] jdk.internal.classfile.impl.ClassHierarchyImpl$ClassHierarchyInfoImpl source: jrt:/java.base
+[0.081s][info][class,load     ] jdk.internal.classfile.impl.ClassHierarchyImpl$CachedClassHierarchyResolver$1 source: jrt:/java.base
+[0.081s][info][class,load     ] java.lang.classfile.ClassReader source: jrt:/java.base
+[0.081s][info][class,load     ] jdk.internal.classfile.impl.ClassReaderImpl source: jrt:/java.base
+[0.082s][info][class,load     ] jdk.internal.util.ModifiedUtf source: jrt:/java.base
+[0.082s][info][jit,compilation]   91       1       jdk.internal.classfile.impl.AbstractPoolEntry::index (5 bytes)
+[0.082s][info][class,load     ] java.lang.invoke.MethodHandles$Lookup$ClassDefiner source: jrt:/java.base
+[0.082s][info][class,load     ] java.lang.invoke.LambdaForm$MH/0x000007e000080800 source: __JVM_LookupDefineClass__
+[0.082s][info][jit,compilation]   92     n 0       java.lang.invoke.MethodHandle::invokeBasic(L)L (native)   
+[0.082s][info][jit,compilation]   94     n 0       java.lang.invoke.MethodHandle::linkToSpecial(LLL)L (native)   (static)
+[0.082s][info][jit,compilation]   93       3       java.util.concurrent.ConcurrentHashMap::get (162 bytes)
+[0.082s][info][class,load     ] java.lang.management.ManagementFactory source: jrt:/java.management
+[0.082s][info][class,load     ] jdk.internal.reflect.Reflection$1Holder source: jrt:/java.base
+[0.082s][info][jit,compilation]   95       1       java.lang.invoke.MethodType::returnType (5 bytes)
+[0.082s][info][jit,compilation]   96       3       java.lang.StringLatin1::indexOfChar (33 bytes)
+[0.083s][info][class,load     ] java.lang.management.PlatformManagedObject source: jrt:/java.management
+[0.083s][info][class,load     ] java.lang.management.RuntimeMXBean source: jrt:/java.management
+[0.083s][info][class,load     ] java.lang.management.ManagementFactory$PlatformMBeanFinder source: jrt:/java.management
+[0.083s][info][class,load     ] sun.management.spi.PlatformMBeanProvider source: jrt:/java.management
+[0.083s][info][class,load     ] java.util.ServiceLoader source: jrt:/java.base
+[0.083s][info][class,load     ] java.util.ServiceLoader$ModuleServicesLookupIterator source: jrt:/java.base
+[0.083s][info][class,load     ] java.util.ServiceLoader$LazyClassPathLookupIterator source: jrt:/java.base
+[0.083s][info][class,load     ] java.util.ServiceLoader$1 source: jrt:/java.base
+[0.083s][info][class,load     ] java.util.ServiceLoader$2 source: jrt:/java.base
+[0.083s][info][class,load     ] java.util.concurrent.CopyOnWriteArrayList$COWIterator source: jrt:/java.base
+[0.083s][info][class,load     ] com.sun.management.internal.PlatformMBeanProviderImpl source: jrt:/jdk.management
+[0.083s][info][class,load     ] java.util.ServiceLoader$Provider source: jrt:/java.base
+[0.083s][info][class,load     ] java.util.ServiceLoader$ProviderImpl source: jrt:/java.base
+[0.084s][info][class,load     ] jdk.internal.reflect.MethodHandleAccessorFactory source: jrt:/java.base
+[0.084s][info][class,load     ] jdk.internal.reflect.MethodHandleAccessorFactory$LazyStaticHolder source: jrt:/java.base
+[0.084s][info][jit,compilation]   97     n 0       java.lang.invoke.MethodHandle::linkToSpecial(LL)V (native)   (static)
+[0.084s][info][class,load     ] java.lang.invoke.DirectMethodHandle$Constructor source: jrt:/java.base
+[0.084s][info][class,load     ] jdk.internal.reflect.DirectConstructorHandleAccessor source: jrt:/java.base
+[0.084s][info][jit,compilation]   98   !   3       java.lang.ref.ReferenceQueue::poll (44 bytes)
+[0.084s][info][jit,compilation]   99     n 0       java.lang.invoke.MethodHandle::invokeBasic()L (native)   
+[0.085s][info][jit,compilation]  100     n 0       java.lang.invoke.MethodHandle::linkToSpecial(LL)L (native)   (static)
+[0.085s][info][class,load     ] sun.management.spi.PlatformMBeanProvider$PlatformComponent source: jrt:/java.management
+[0.085s][info][class,load     ] com.sun.management.internal.PlatformMBeanProviderImpl$1 source: jrt:/jdk.management
+[0.085s][info][class,load     ] java.util.stream.BaseStream source: jrt:/java.base
+[0.085s][info][class,load     ] java.util.stream.Stream source: jrt:/java.base
+[0.085s][info][class,load     ] java.util.Spliterators source: jrt:/java.base
+[0.085s][info][class,load     ] java.util.Spliterator source: jrt:/java.base
+[0.085s][info][class,load     ] java.util.Spliterators$ArraySpliterator source: jrt:/java.base
+[0.085s][info][class,load     ] java.util.stream.StreamSupport source: jrt:/java.base
+[0.085s][info][class,load     ] java.util.stream.PipelineHelper source: jrt:/java.base
+[0.085s][info][class,load     ] java.util.stream.AbstractPipeline source: jrt:/java.base
+[0.085s][info][class,load     ] java.util.stream.ReferencePipeline source: jrt:/java.base
+[0.085s][info][class,load     ] java.util.stream.ReferencePipeline$Head source: jrt:/java.base
+[0.085s][info][class,load     ] java.util.stream.StreamOpFlag source: jrt:/java.base
+[0.085s][info][class,load     ] java.util.stream.StreamOpFlag$Type source: jrt:/java.base
+[0.085s][info][class,load     ] java.util.stream.StreamOpFlag$MaskBuilder source: jrt:/java.base
+[0.085s][info][class,load     ] java.util.EnumMap source: jrt:/java.base
+[0.085s][info][class,load     ] java.util.EnumMap$1 source: jrt:/java.base
+[0.086s][info][class,load     ] sun.reflect.annotation.AnnotationParser source: jrt:/java.base
+[0.086s][info][jit,compilation]  101       1       java.lang.Class::getClassLoader (5 bytes)
+[0.086s][info][jit,compilation]  102     n 0       java.lang.invoke.MethodHandle::linkToStatic(L)L (native)   (static)
+[0.086s][info][jit,compilation]  103       3       java.lang.String::getBytes (44 bytes)
+[0.086s][info][jit,compilation]  104       3       jdk.internal.util.ReferencedKeyMap::removeStaleReferences (30 bytes)
+[0.086s][info][jit,compilation]  105     n 0       java.lang.Object::getClass (native)   
+[0.086s][info][jit,compilation]  107       1       jdk.internal.classfile.impl.SplitConstantPool::size (5 bytes)
+[0.086s][info][class,load     ] java.lang.invoke.LambdaForm$MH/0x000007e000080c00 source: __JVM_LookupDefineClass__
+[0.086s][info][jit,compilation]  106       1       jdk.internal.classfile.impl.AbstractPoolEntry::width (2 bytes)
+[0.086s][info][class,load     ] jdk.internal.reflect.DirectMethodHandleAccessor source: jrt:/java.base
+[0.087s][info][class,load     ] java.util.stream.Collectors source: jrt:/java.base
+[0.087s][info][class,load     ] java.util.stream.Collector$Characteristics source: jrt:/java.base
+[0.087s][info][class,load     ] java.util.EnumSet source: jrt:/java.base
+[0.087s][info][class,load     ] java.util.RegularEnumSet source: jrt:/java.base
+[0.087s][info][class,load     ] java.util.Collections$UnmodifiableCollection source: jrt:/java.base
+[0.087s][info][class,load     ] java.util.Collections$UnmodifiableSet source: jrt:/java.base
+[0.087s][info][class,load     ] java.util.stream.Collector source: jrt:/java.base
+[0.087s][info][class,load     ] java.util.stream.Collectors$CollectorImpl source: jrt:/java.base
+[0.087s][info][class,load     ] java.lang.invoke.LambdaMetafactory source: jrt:/java.base
+[0.087s][info][jit,compilation]  108     n 0       java.lang.invoke.MethodHandle::linkToStatic(LLLLLLL)L (native)   (static)
+[0.087s][info][jit,compilation]  110     n 0       java.lang.invoke.MethodHandle::invokeBasic(LLLLLL)L (native)   
+[0.087s][info][jit,compilation]  109       1       java.lang.invoke.MemberName::getDeclaringClass (5 bytes)
+[0.087s][info][class,load     ] java.lang.invoke.AbstractValidatingLambdaMetafactory source: jrt:/java.base
+[0.087s][info][class,load     ] java.lang.invoke.InnerClassLambdaMetafactory source: jrt:/java.base
+[0.087s][info][class,load     ] java.lang.invoke.MethodHandleInfo source: jrt:/java.base
+[0.087s][info][class,load     ] java.lang.invoke.InfoFromMemberName source: jrt:/java.base
+[0.088s][info][class,load     ] java.lang.invoke.InnerClassLambdaMetafactory$1 source: jrt:/java.base
+[0.088s][info][class,load     ] java.util.ImmutableCollections$Access source: jrt:/java.base
+[0.088s][info][class,load     ] jdk.internal.access.JavaUtilCollectionAccess source: jrt:/java.base
+[0.088s][info][class,load     ] java.util.ImmutableCollections$Access$1 source: jrt:/java.base
+[0.088s][info][class,load     ] java.lang.classfile.Interfaces source: jrt:/java.base
+[0.088s][info][class,load     ] jdk.internal.classfile.impl.InterfacesImpl source: jrt:/java.base
+[0.088s][info][class,load     ] java.lang.invoke.InnerClassLambdaMetafactory$3 source: jrt:/java.base
+[0.088s][info][class,load     ] java.lang.invoke.InnerClassLambdaMetafactory$6 source: jrt:/java.base
+[0.088s][info][class,load     ] java.lang.invoke.TypeConvertingMethodAdapter source: jrt:/java.base
+[0.088s][info][class,load     ] java.util.stream.Collectors$$Lambda/0x000007e0000df0d0 source: java.util.stream.Collectors
+[0.088s][info][jit,compilation]  111       3       java.util.Objects::hashCode (13 bytes)
+[0.088s][info][class,load     ] java.util.function.BiConsumer source: jrt:/java.base
+[0.088s][info][jit,compilation]  112       3       java.lang.invoke.MemberName::isInvocable (8 bytes)
+[0.088s][info][jit,compilation]  114     n 0       java.lang.invoke.MethodHandle::linkToInterface(LLL)I (native)   (static)
+[0.088s][info][jit,compilation]  113       3       java.lang.invoke.MemberName::anyFlagSet (15 bytes)
+[0.088s][info][class,load     ] java.lang.invoke.DirectMethodHandle$Interface source: jrt:/java.base
+[0.088s][info][jit,compilation]  115       3       java.lang.invoke.MethodType::hashCode (53 bytes)
+[0.088s][info][jit,compilation]  116       3       jdk.internal.util.ReferencedKeyMap::lookupKey (9 bytes)
+[0.089s][info][jit,compilation]  117       3       jdk.internal.util.StrongReferenceKey::<init> (10 bytes)
+[0.089s][info][class,load     ] java.lang.classfile.constantpool.InterfaceMethodRefEntry source: jrt:/java.base
+[0.089s][info][class,load     ] jdk.internal.classfile.impl.AbstractPoolEntry$InterfaceMethodRefEntryImpl source: jrt:/java.base
+[0.089s][info][jit,compilation]  118       1       jdk.internal.classfile.impl.RawBytecodeHelper::bci (5 bytes)
+[0.089s][info][jit,compilation]  119       3       jdk.internal.classfile.impl.BufWriterImpl::reserveSpace (22 bytes)
+[0.089s][info][class,load     ] java.util.stream.Collectors$$Lambda/0x000007e0000dfe10 source: java.util.stream.Collectors
+[0.089s][info][class,load     ] java.util.function.BinaryOperator source: jrt:/java.base
+[0.089s][info][jit,compilation]  120       3       jdk.internal.classfile.impl.SplitConstantPool::map (161 bytes)
+[0.089s][info][class,load     ] java.util.stream.Collectors$$Lambda/0x000007e0000e0250 source: java.util.stream.Collectors
+[0.089s][info][jit,compilation]  122       3       java.lang.Class::isArray (13 bytes)
+[0.089s][info][jit,compilation]  123     n 0       java.lang.invoke.MethodHandle::linkToStatic(LL)L (native)   (static)
+[0.089s][info][jit,compilation]  121       1       jdk.internal.classfile.impl.AbstractPoolEntry::constantPool (5 bytes)
+[0.089s][info][class,load     ] java.util.stream.Collectors$$Lambda/0x000007e0000e04a0 source: java.util.stream.Collectors
+[0.090s][info][class,load     ] java.util.stream.ReduceOps source: jrt:/java.base
+[0.090s][info][class,load     ] java.util.stream.TerminalOp source: jrt:/java.base
+[0.090s][info][class,load     ] java.util.stream.ReduceOps$ReduceOp source: jrt:/java.base
+[0.090s][info][class,load     ] java.util.stream.ReduceOps$3 source: jrt:/java.base
+[0.090s][info][class,load     ] java.util.stream.StreamShape source: jrt:/java.base
+[0.090s][info][class,load     ] java.util.stream.Sink source: jrt:/java.base
+[0.090s][info][class,load     ] java.util.stream.TerminalSink source: jrt:/java.base
+[0.090s][info][class,load     ] java.util.stream.ReduceOps$AccumulatingSink source: jrt:/java.base
+[0.090s][info][class,load     ] java.util.stream.ReduceOps$Box source: jrt:/java.base
+[0.090s][info][class,load     ] java.util.stream.ReduceOps$3ReducingSink source: jrt:/java.base
+[0.090s][info][class,load     ] com.sun.management.internal.PlatformMBeanProviderImpl$2 source: jrt:/jdk.management
+[0.090s][info][class,load     ] com.sun.management.internal.PlatformMBeanProviderImpl$3 source: jrt:/jdk.management
+[0.090s][info][class,load     ] jdk.management.HotSpotAOTCacheMXBean source: jrt:/jdk.management
+[0.090s][info][class,load     ] com.sun.management.internal.PlatformMBeanProviderImpl$4 source: jrt:/jdk.management
+[0.090s][info][class,load     ] jdk.management.VirtualThreadSchedulerMXBean source: jrt:/jdk.management
+[0.090s][info][class,load     ] com.sun.management.internal.PlatformMBeanProviderImpl$5 source: jrt:/jdk.management
+[0.090s][info][class,load     ] com.sun.management.internal.PlatformMBeanProviderImpl$6 source: jrt:/jdk.management
+[0.090s][info][class,load     ] java.util.Collections$SingletonSet source: jrt:/java.base
+[0.090s][info][class,load     ] javax.management.DynamicMBean source: jrt:/java.management
+[0.090s][info][class,load     ] com.sun.management.DiagnosticCommandMBean source: jrt:/jdk.management
+[0.090s][info][class,load     ] javax.management.NotificationBroadcaster source: jrt:/java.management
+[0.090s][info][class,load     ] javax.management.NotificationEmitter source: jrt:/java.management
+[0.090s][info][class,load     ] sun.management.NotificationEmitterSupport source: jrt:/java.management
+[0.090s][info][class,load     ] com.sun.management.internal.DiagnosticCommandImpl source: jrt:/jdk.management
+[0.090s][info][class,load     ] sun.management.ManagementFactoryHelper source: jrt:/java.management
+[0.091s][info][jit,compilation]  124       3       java.lang.String::<init> (15 bytes)
+[0.091s][info][class,load     ] sun.management.VMManagement source: jrt:/java.management
+[0.091s][info][class,load     ] sun.management.VMManagementImpl source: jrt:/java.management
+[0.091s][info][class,load     ] com.sun.management.internal.PlatformMBeanProviderImpl$7 source: jrt:/jdk.management
+[0.091s][info][class,load     ] java.util.Collections$UnmodifiableList source: jrt:/java.base
+[0.091s][info][class,load     ] java.util.Collections$UnmodifiableRandomAccessList source: jrt:/java.base
+[0.091s][info][class,load     ] jdk.management.jfr.internal.FlightRecorderMXBeanProvider source: jrt:/jdk.management.jfr
+[0.091s][info][class,load     ] java.util.concurrent.Callable source: jrt:/java.base
+[0.091s][info][jit,compilation]  125       1       java.lang.invoke.MethodType::form (5 bytes)
+[0.091s][info][class,load     ] java.util.Collections$EmptyEnumeration source: jrt:/java.base
+[0.091s][info][class,load     ] java.lang.management.DefaultPlatformMBeanProvider source: jrt:/java.management
+[0.091s][info][class,load     ] java.lang.management.DefaultPlatformMBeanProvider$1 source: jrt:/java.management
+[0.091s][info][class,load     ] java.lang.management.DefaultPlatformMBeanProvider$2 source: jrt:/java.management
+[0.091s][info][class,load     ] java.lang.management.DefaultPlatformMBeanProvider$3 source: jrt:/java.management
+[0.091s][info][class,load     ] java.lang.management.DefaultPlatformMBeanProvider$4 source: jrt:/java.management
+[0.091s][info][class,load     ] java.lang.management.DefaultPlatformMBeanProvider$5 source: jrt:/java.management
+[0.091s][info][class,load     ] java.lang.management.DefaultPlatformMBeanProvider$6 source: jrt:/java.management
+[0.091s][info][class,load     ] java.lang.management.DefaultPlatformMBeanProvider$7 source: jrt:/java.management
+[0.091s][info][class,load     ] java.lang.management.DefaultPlatformMBeanProvider$8 source: jrt:/java.management
+[0.092s][info][class,load     ] sun.management.ManagementFactoryHelper$LoggingMXBeanAccess source: jrt:/java.management
+[0.092s][info][class,load     ] java.util.logging.LogManager source: jrt:/java.logging
+[0.092s][info][class,load     ] java.lang.management.DefaultPlatformMBeanProvider$9 source: jrt:/java.management
+[0.092s][info][class,load     ] java.lang.management.DefaultPlatformMBeanProvider$10 source: jrt:/java.management
+[0.092s][info][class,load     ] java.lang.management.DefaultPlatformMBeanProvider$11 source: jrt:/java.management
+[0.092s][info][class,load     ] java.util.ArrayList$Itr source: jrt:/java.base
+[0.092s][info][class,load     ] java.util.Collections$UnmodifiableCollection$1 source: jrt:/java.base
+[0.092s][info][class,load     ] jdk.management.jfr.FlightRecorderMXBean source: jrt:/jdk.management.jfr
+[0.092s][info][class,load     ] jdk.management.jfr.internal.FlightRecorderMXBeanProvider$SingleMBeanComponent source: jrt:/jdk.management.jfr
+[0.092s][info][class,load     ] java.util.Collections$SingletonList source: jrt:/java.base
+[0.092s][info][class,load     ] java.util.Collections$1 source: jrt:/java.base
+[0.092s][info][jit,compilation]  126       3       java.util.HashMap::putVal (300 bytes)
+[0.092s][info][class,load     ] java.util.HashMap$Values source: jrt:/java.base
+[0.092s][info][class,load     ] java.util.HashMap$HashMapSpliterator source: jrt:/java.base
+[0.092s][info][class,load     ] java.util.HashMap$ValueSpliterator source: jrt:/java.base
+[0.092s][info][class,load     ] java.util.function.Predicate source: jrt:/java.base
+[0.092s][info][jit,compilation]  128     n 0       java.lang.invoke.MethodHandle::linkToStatic(LLL)I (native)   (static)
+[0.093s][info][jit,compilation]  129       3       java.lang.invoke.MethodType::checkSlotCount (33 bytes)
+[0.093s][info][class,load     ] java.lang.management.ManagementFactory$PlatformMBeanFinder$$Lambda/0x000007e0000ea0d0 source: java.lang.management.ManagementFactory
+[0.093s][info][jit,compilation]  131     n 0       java.lang.invoke.MethodHandle::linkToSpecial(LLL)V (native)   (static)
+[0.093s][info][jit,compilation]  130       3       jdk.internal.classfile.impl.SplitConstantPool::entryByIndex (59 bytes)
+[0.093s][info][class,load     ] java.util.stream.ReferencePipeline$StatelessOp source: jrt:/java.base
+[0.093s][info][class,load     ] java.util.stream.ReferencePipeline$2 source: jrt:/java.base
+[0.093s][info][jit,compilation]  132       4       java.lang.String::hashCode (60 bytes)
+[0.093s][info][jit,compilation]  133       3       jdk.internal.classfile.impl.AbstractPoolEntry::hashString (5 bytes)
+[0.093s][info][class,load     ] java.lang.management.ManagementFactory$PlatformMBeanFinder$$Lambda/0x000007e0000ead78 source: java.lang.management.ManagementFactory
+[0.093s][info][jit,compilation]  135       1       java.lang.String::value (5 bytes)
+[0.093s][info][jit,compilation]  127       1       java.lang.module.ModuleDescriptor::isOpen (5 bytes)
+[0.093s][info][jit,compilation]  134       1       jdk.internal.constant.ClassOrInterfaceDescImpl::descriptorString (5 bytes)
+[0.093s][info][jit,compilation]  136       1       java.lang.invoke.MethodType::ptypes (5 bytes)
+[0.093s][info][class,load     ] java.util.stream.ReduceOps$2 source: jrt:/java.base
+[0.093s][info][class,load     ] java.util.stream.ReduceOps$2ReducingSink source: jrt:/java.base
+[0.093s][info][class,load     ] java.util.stream.Sink$ChainedReference source: jrt:/java.base
+[0.093s][info][class,load     ] java.util.stream.ReferencePipeline$2$1 source: jrt:/java.base
+[0.093s][info][class,load     ] sun.management.RuntimeImpl source: jrt:/java.management
+[0.094s][info][class,load     ] java.util.Collections$SingletonMap source: jrt:/java.base
+[0.094s][info][jit,compilation]    4       3       java.lang.String::hashCode (60 bytes)   made not entrant: not used
+[0.094s][info][class,load     ] java.util.Collections$2 source: jrt:/java.base
+[0.094s][info][jit,compilation]  137     n 0       java.lang.invoke.MethodHandle::linkToSpecial(LLL)I (native)   (static)
+[0.094s][info][class,load     ] sun.management.spi.PlatformMBeanProvider$PlatformComponent$$Lambda/0x000007e0000ec4b8 source: sun.management.spi.PlatformMBeanProvider
+[0.094s][info][jit,compilation]  138       3       java.lang.StringCoding::countNonZeroAsciiLatin1 (33 bytes)
+[0.094s][info][jit,compilation]  140       3       jdk.internal.util.ReferencedKeyMap::get (10 bytes)
+[0.094s][info][class,load     ] sun.management.spi.PlatformMBeanProvider$PlatformComponent$$Lambda/0x000007e0000ec718 source: sun.management.spi.PlatformMBeanProvider
+[0.094s][info][jit,compilation]  141       3       java.lang.StringLatin1::canEncode (17 bytes)
+[0.094s][info][class,load     ] java.util.stream.ReferencePipeline$3 source: jrt:/java.base
+[0.094s][info][jit,compilation]  142       3       java.lang.invoke.MethodType::parameterCount (6 bytes)
+[0.095s][info][jit,compilation]  143       3       jdk.internal.util.Preconditions::checkFromToIndex (24 bytes)
+[0.095s][info][jit,compilation]  144       3       jdk.internal.classfile.impl.SplitConstantPool::internalAdd (12 bytes)
+[0.095s][info][jit,compilation]  139       1       jdk.internal.classfile.impl.BufWriterImpl::size (5 bytes)
+[0.095s][info][jit,compilation]  145       3       java.lang.String::checkBoundsBeginEnd (11 bytes)
+[0.095s][info][class,load     ] java.util.stream.Collectors$$Lambda/0x000007e0000ece90 source: java.util.stream.Collectors
+[0.095s][info][jit,compilation]  148       3       jdk.internal.util.StrongReferenceKey::hashCode (8 bytes)
+[0.095s][info][jit,compilation]  146       3       java.lang.StringConcatHelper::newArray (28 bytes)
+[0.095s][info][jit,compilation]  150     n 0       java.lang.Class::isInstance (native)   
+[0.095s][info][jit,compilation]  147       3       jdk.internal.misc.Unsafe::allocateUninitializedArray (55 bytes)
+[0.095s][info][class,load     ] java.util.stream.Collectors$$Lambda/0x000007e0000ed0b8 source: java.util.stream.Collectors
+[0.095s][info][jit,compilation]  149       3       jdk.internal.classfile.impl.RawBytecodeHelper::getU1Unchecked (13 bytes)
+[0.095s][info][jit,compilation]  151       3       jdk.internal.classfile.impl.EntryMap::firstToken (50 bytes)
+[0.095s][info][jit,compilation]  152       3       java.lang.StringLatin1::replace (197 bytes)
+[0.095s][info][class,load     ] java.util.stream.Collectors$$Lambda/0x000007e0000ed2f0 source: java.util.stream.Collectors
+[0.095s][info][class,load     ] java.util.stream.ReferencePipeline$3$1 source: jrt:/java.base
+[0.095s][info][class,load     ] java.lang.Long$LongCache source: jrt:/java.base
+[0.096s][info][class,load     ] java.util.Formatter source: jrt:/java.base
+[0.096s][info][jit,compilation]  153       3       java.lang.Number::<init> (5 bytes)
+[0.096s][info][jit,compilation]  154       3       java.lang.Long::<init> (10 bytes)
+[0.096s][info][class,load     ] java.util.Locale$Category source: jrt:/java.base
+[0.096s][info][class,load     ] java.util.Formatter$FormatString source: jrt:/java.base
+[0.096s][info][class,load     ] java.util.Formatter$FixedString source: jrt:/java.base
+[0.096s][info][class,load     ] java.util.Formatter$Conversion source: jrt:/java.base
+[0.096s][info][class,load     ] java.util.Formatter$FormatSpecifier source: jrt:/java.base
+[0.096s][info][class,load     ] java.lang.Readable source: jrt:/java.base
+[0.096s][info][class,load     ] java.nio.CharBuffer source: jrt:/java.base
+[0.096s][info][class,load     ] java.nio.HeapCharBuffer source: jrt:/java.base
+[0.096s][info][class,load     ] java.nio.charset.CoderResult source: jrt:/java.base
+[0.096s][info][class,load     ] jdk.internal.misc.Blocker source: jrt:/java.base
+[0.097s][info][class,load     ] java.util.Formattable source: jrt:/java.base
+[0.097s][info][class,load     ] java.util.Formatter$Flags source: jrt:/java.base
+[0.097s][info][class,load     ] java.text.DecimalFormatSymbols source: jrt:/java.base
+[0.097s][info][class,load     ] java.util.spi.LocaleServiceProvider source: jrt:/java.base
+[0.097s][info][class,load     ] java.text.spi.DecimalFormatSymbolsProvider source: jrt:/java.base
+[0.097s][info][class,load     ] sun.util.locale.provider.LocaleProviderAdapter source: jrt:/java.base
+[0.097s][info][class,load     ] sun.util.locale.provider.LocaleProviderAdapter$Type source: jrt:/java.base
+[0.097s][info][class,load     ] sun.util.locale.provider.ResourceBundleBasedAdapter source: jrt:/java.base
+[0.097s][info][class,load     ] sun.util.locale.provider.JRELocaleProviderAdapter source: jrt:/java.base
+[0.097s][info][class,load     ] sun.util.cldr.CLDRLocaleProviderAdapter source: jrt:/java.base
+[0.097s][info][class,load     ] sun.util.locale.provider.LocaleDataMetaInfo source: jrt:/java.base
+[0.097s][info][class,load     ] sun.util.cldr.CLDRBaseLocaleDataMetaInfo source: jrt:/java.base
+[0.097s][info][class,load     ] java.text.ParsePosition source: jrt:/java.base
+[0.097s][info][class,load     ] sun.util.locale.LanguageTag source: jrt:/java.base
+[0.097s][info][jit,compilation]  155       3       sun.util.locale.LocaleUtils::isUpper (18 bytes)
+[0.097s][info][class,load     ] sun.util.locale.StringTokenIterator source: jrt:/java.base
+[0.098s][info][jit,compilation]  156       3       java.util.Arrays::copyOfRange (82 bytes)
+[0.098s][info][class,load     ] sun.util.locale.InternalLocaleBuilder source: jrt:/java.base
+[0.098s][info][class,load     ] sun.util.locale.InternalLocaleBuilder$CaseInsensitiveChar source: jrt:/java.base
+[0.098s][info][jit,compilation]  157       3       java.util.HashMap::get (19 bytes)
+[0.098s][info][jit,compilation]  158       3       java.lang.String::isEmpty (14 bytes)
+[0.098s][info][jit,compilation]  159       3       java.util.HashMap::put (13 bytes)
+[0.098s][info][jit,compilation]  160     n 0       java.lang.String::intern (native)   
+[0.098s][info][class,load     ] jdk.internal.loader.BuiltinClassLoader$2 source: jrt:/java.base
+[0.098s][info][class,load     ] java.lang.module.ModuleReader source: jrt:/java.base
+[0.098s][info][class,load     ] jdk.internal.module.SystemModuleFinders$SystemModuleReader source: jrt:/java.base
+[0.098s][info][class,load     ] jdk.internal.module.ModulePatcher$PatchedModuleReader source: jrt:/java.base
+[0.098s][info][class,load     ] jdk.internal.module.SystemModuleFinders$SystemImage source: jrt:/java.base
+[0.098s][info][class,load     ] jdk.internal.jimage.ImageReaderFactory source: jrt:/java.base
+[0.099s][info][jit,compilation]  161       3       java.lang.invoke.MemberName::allFlagsSet (16 bytes)
+[0.099s][info][class,load     ] jdk.internal.jimage.ImageReaderFactory$1 source: jrt:/java.base
+[0.099s][info][jit,compilation]  162       1       java.lang.AbstractStringBuilder::getValue (5 bytes)
+[0.099s][info][class,load     ] jdk.internal.jimage.ImageReader source: jrt:/java.base
+[0.099s][info][class,load     ] jdk.internal.jimage.BasicImageReader source: jrt:/java.base
+[0.099s][info][class,load     ] jdk.internal.jimage.ImageReader$SharedImageReader source: jrt:/java.base
+[0.099s][info][class,load     ] java.security.PrivilegedAction source: jrt:/java.base
+[0.099s][info][class,load     ] jdk.internal.jimage.BasicImageReader$1 source: jrt:/java.base
+[0.099s][info][class,load     ] java.security.AccessController source: jrt:/java.base
+[0.099s][info][class,load     ] java.security.AccessControlContext source: jrt:/java.base
+[0.099s][info][jit,compilation]  163       3       java.util.AbstractMap::<init> (5 bytes)
+[0.099s][info][class,load     ] jdk.internal.jimage.NativeImageBuffer source: jrt:/java.base
+[0.099s][info][class,load     ] jdk.internal.jimage.NativeImageBuffer$1 source: jrt:/java.base
+[0.099s][info][jit,compilation]  164       3       java.lang.StringBuilder::length (5 bytes)
+[0.100s][info][class,load     ] jdk.internal.jimage.ImageHeader source: jrt:/java.base
+[0.100s][info][class,load     ] java.nio.IntBuffer source: jrt:/java.base
+[0.100s][info][class,load     ] java.nio.DirectIntBufferU source: jrt:/java.base
+[0.100s][info][class,load     ] java.nio.DirectByteBufferR source: jrt:/java.base
+[0.100s][info][class,load     ] java.nio.DirectIntBufferRU source: jrt:/java.base
+[0.100s][info][class,load     ] jdk.internal.jimage.ImageStrings source: jrt:/java.base
+[0.100s][info][class,load     ] jdk.internal.jimage.ImageStringsReader source: jrt:/java.base
+[0.100s][info][class,load     ] jdk.internal.jimage.decompressor.Decompressor source: jrt:/java.base
+[0.100s][info][class,load     ] jdk.internal.jimage.ImageLocation source: jrt:/java.base
+[0.100s][info][class,load     ] sun.net.www.protocol.jrt.Handler source: jrt:/java.base
+[0.101s][info][class,load     ] sun.util.resources.cldr.provider.CLDRLocaleDataMetaInfo source: jrt:/jdk.localedata
+[0.101s][info][class,load     ] sun.util.locale.provider.AvailableLanguageTags source: jrt:/java.base
+[0.101s][info][class,load     ] sun.util.locale.provider.DecimalFormatSymbolsProviderImpl source: jrt:/java.base
+[0.101s][info][class,load     ] java.util.regex.Pattern source: jrt:/java.base
+[0.101s][info][class,load     ] java.util.regex.Pattern$Node source: jrt:/java.base
+[0.101s][info][class,load     ] java.util.regex.Pattern$LastNode source: jrt:/java.base
+[0.101s][info][class,load     ] java.util.regex.Pattern$GroupHead source: jrt:/java.base
+[0.101s][info][class,load     ] java.util.regex.Pattern$CharPredicate source: jrt:/java.base
+[0.101s][info][class,load     ] java.util.regex.Pattern$BmpCharPredicate source: jrt:/java.base
+[0.101s][info][jit,compilation]  165     n 0       java.lang.invoke.MethodHandle::linkToStatic(IIL)I (native)   (static)
+[0.102s][info][class,load     ] java.util.regex.Pattern$$Lambda/0x000007e0000f8af0 source: java.util.regex.Pattern
+[0.102s][info][jit,compilation]  166     n 0       java.lang.invoke.MethodHandle::linkToSpecial(LIL)V (native)   (static)
+[0.102s][info][jit,compilation]  167     n 0       java.lang.invoke.MethodHandle::invokeBasic(I)L (native)   
+[0.102s][info][jit,compilation]  168     n 0       java.lang.invoke.MethodHandle::linkToSpecial(LIL)L (native)   (static)
+[0.102s][info][class,load     ] java.util.regex.Pattern$CharProperty source: jrt:/java.base
+[0.102s][info][class,load     ] java.util.regex.Pattern$BmpCharProperty source: jrt:/java.base
+[0.102s][info][class,load     ] java.util.regex.Pattern$Qtype source: jrt:/java.base
+[0.102s][info][class,load     ] java.util.regex.Pattern$CharPropertyGreedy source: jrt:/java.base
+[0.102s][info][class,load     ] java.util.regex.Pattern$BmpCharPropertyGreedy source: jrt:/java.base
+[0.102s][info][class,load     ] java.util.regex.Pattern$SliceNode source: jrt:/java.base
+[0.102s][info][class,load     ] java.util.regex.Pattern$Slice source: jrt:/java.base
+[0.102s][info][class,load     ] java.util.regex.Pattern$Begin source: jrt:/java.base
+[0.102s][info][class,load     ] java.util.regex.Pattern$First source: jrt:/java.base
+[0.102s][info][class,load     ] java.util.regex.Pattern$Start source: jrt:/java.base
+[0.102s][info][class,load     ] java.util.regex.Pattern$TreeInfo source: jrt:/java.base
+[0.102s][info][class,load     ] java.util.regex.MatchResult source: jrt:/java.base
+[0.102s][info][class,load     ] java.util.regex.Matcher source: jrt:/java.base
+[0.102s][info][class,load     ] java.util.regex.IntHashSet source: jrt:/java.base
+[0.102s][info][jit,compilation]  169       3       java.util.regex.Pattern$$Lambda/0x000007e0000f8af0::is (9 bytes)
+[0.102s][info][jit,compilation]  171       3       java.util.regex.Pattern$BmpCharPropertyGreedy::match (89 bytes)
+[0.102s][info][jit,compilation]  170       3       java.util.regex.Pattern::lambda$Single$0 (11 bytes)
+[0.103s][info][jit,compilation]  172       3       java.lang.String::substring (58 bytes)
+[0.103s][info][jit,compilation]  174       3       java.util.regex.Matcher::checkMatch (19 bytes)
+[0.103s][info][jit,compilation]  178       3       java.util.regex.Pattern$Start::match (90 bytes)
+[0.103s][info][jit,compilation]  179       4       java.lang.String::charAt (25 bytes)
+[0.103s][info][jit,compilation]  175       3       java.util.regex.Matcher::hasMatch (13 bytes)
+[0.103s][info][jit,compilation]  180       3       java.util.ArrayList::add (23 bytes)
+[0.103s][info][jit,compilation]  181       3       java.util.regex.Matcher::start (9 bytes)
+[0.103s][info][jit,compilation]  185       3       java.util.regex.Matcher::search (154 bytes)
+[0.103s][info][jit,compilation]  173       3       java.util.ArrayList::add (25 bytes)
+[0.103s][info][jit,compilation]  176       3       java.lang.StringLatin1::newString (24 bytes)
+[0.103s][info][jit,compilation]   29       3       java.lang.String::charAt (25 bytes)   made not entrant: not used
+[0.103s][info][jit,compilation]  187       4       java.util.regex.Pattern$BmpCharPropertyGreedy::match (89 bytes)
+[0.103s][info][jit,compilation]  177       3       java.lang.String::toString (2 bytes)
+[0.103s][info][jit,compilation]  182       3       java.lang.String::subSequence (7 bytes)
+[0.104s][info][jit,compilation]  183       3       java.util.regex.Matcher::end (9 bytes)
+[0.104s][info][class,load     ] java.util.ArrayList$SubList source: jrt:/java.base
+[0.104s][info][jit,compilation]  184       3       java.util.regex.Matcher::find (69 bytes)
+[0.104s][info][jit,compilation]  188       3       java.util.ImmutableCollections$SetN::<init> (90 bytes)
+[0.104s][info][class,load     ] java.util.Collections$EmptyIterator source: jrt:/java.base
+[0.104s][info][class,load     ] sun.util.locale.provider.CalendarDataUtility source: jrt:/java.base
+[0.104s][info][class,load     ] java.util.Locale$Builder source: jrt:/java.base
+[0.104s][info][jit,compilation]  186       3       java.util.regex.Pattern$LastNode::match (45 bytes)
+[0.104s][info][class,load     ] sun.util.locale.provider.LocaleResources source: jrt:/java.base
+[0.104s][info][jit,compilation]  189     n 0       java.lang.Class::desiredAssertionStatus0 (native)   (static)
+[0.104s][info][class,load     ] java.util.regex.ASCII source: jrt:/java.base
+[0.104s][info][class,load     ] java.util.regex.Pattern$GroupTail source: jrt:/java.base
+[0.104s][info][class,load     ] java.util.regex.Pattern$Curly source: jrt:/java.base
+[0.104s][info][class,load     ] java.util.regex.Pattern$BitClass source: jrt:/java.base
+[0.104s][info][jit,compilation]  171       3       java.util.regex.Pattern$BmpCharPropertyGreedy::match (89 bytes)   made not entrant: marked for deoptimization
+[0.105s][info][class,load     ] sun.util.resources.LocaleData source: jrt:/java.base
+[0.105s][info][class,load     ] java.util.ResourceBundle$Control source: jrt:/java.base
+[0.105s][info][jit,compilation]  191       1       java.lang.Class::getModule (5 bytes)
+[0.105s][info][jit,compilation]  192       1       jdk.internal.util.WeakReferenceKey::hashCode (5 bytes)
+[0.105s][info][jit,compilation]  193       3       jdk.internal.classfile.impl.SplitConstantPool::tryFindUtf8 (103 bytes)
+[0.105s][info][class,load     ] java.util.ResourceBundle source: jrt:/java.base
+[0.105s][info][jit,compilation]  194       3       jdk.internal.classfile.impl.AbstractPoolEntry::<init> (20 bytes)
+[0.105s][info][class,load     ] java.util.ResourceBundle$Control$$Lambda/0x000007e0000fcfd8 source: java.util.ResourceBundle
+[0.105s][info][class,load     ] sun.util.resources.Bundles$Strategy source: jrt:/java.base
+[0.105s][info][class,load     ] sun.util.resources.LocaleData$LocaleDataStrategy source: jrt:/java.base
+[0.105s][info][class,load     ] sun.util.resources.Bundles source: jrt:/java.base
+[0.105s][info][class,load     ] sun.util.resources.Bundles$1 source: jrt:/java.base
+[0.105s][info][class,load     ] jdk.internal.access.JavaUtilResourceBundleAccess source: jrt:/java.base
+[0.105s][info][class,load     ] java.util.ResourceBundle$1 source: jrt:/java.base
+[0.105s][info][jit,compilation]  190       4       java.lang.String::checkIndex (10 bytes)
+[0.105s][info][class,load     ] java.util.ResourceBundle$2 source: jrt:/java.base
+[0.105s][info][class,load     ] sun.util.resources.Bundles$CacheKey source: jrt:/java.base
+[0.106s][info][class,load     ] java.util.spi.ResourceBundleProvider source: jrt:/java.base
+[0.106s][info][class,load     ] sun.util.resources.LocaleData$LocaleDataResourceBundleProvider source: jrt:/java.base
+[0.106s][info][class,load     ] sun.util.resources.LocaleData$CommonResourceBundleProvider source: jrt:/java.base
+[0.106s][info][jit,compilation]  195       3       java.lang.ref.Reference::get (5 bytes)
+[0.106s][info][jit,compilation]  196     n 0       java.lang.Class::isHidden (native)   
+[0.106s][info][jit,compilation]  197       1       jdk.internal.classfile.impl.AbstractDirectBuilder::constantPool (5 bytes)
+[0.106s][info][jit,compilation]  198       3       jdk.internal.classfile.impl.RawBytecodeHelper::endBci (8 bytes)
+[0.106s][info][jit,compilation]  199       3       jdk.internal.classfile.impl.RawBytecodeHelper::next (81 bytes)
+[0.106s][info][class,load     ] sun.util.cldr.CLDRLocaleProviderAdapter$$Lambda/0x000007e0000fea78 source: sun.util.cldr.CLDRLocaleProviderAdapter
+[0.106s][info][jit,compilation]  200       1       java.lang.invoke.MethodHandle::type (5 bytes)
+[0.106s][info][class,load     ] java.util.ResourceBundle$SingleFormatControl source: jrt:/java.base
+[0.106s][info][class,load     ] java.util.ResourceBundle$NoFallbackControl source: jrt:/java.base
+[0.106s][info][jit,compilation]  201       3       java.lang.invoke.MethodType::parameterType (7 bytes)
+[0.106s][info][jit,compilation]  203       3       jdk.internal.classfile.impl.AbstractPoolEntry::maybeClone (26 bytes)
+[0.106s][info][jit,compilation]  204       3       jdk.internal.classfile.impl.SplitConstantPool::canWriteDirect (24 bytes)
+[0.106s][info][jit,compilation]  205       4       java.util.Objects::requireNonNull (14 bytes)
+[0.106s][info][class,load     ] java.util.ResourceBundle$Control$$Lambda/0x000007e0000ff160 source: java.util.ResourceBundle
+[0.106s][info][jit,compilation]  202       3       jdk.internal.classfile.impl.EntryMap::put (186 bytes)
+[0.107s][info][jit,compilation]    8       3       java.util.Objects::requireNonNull (14 bytes)   made not entrant: not used
+[0.107s][info][class,load     ] java.util.concurrent.ConcurrentHashMap$ForwardingNode source: jrt:/java.base
+[0.107s][info][jit,compilation]  206       3       jdk.internal.classfile.impl.RawBytecodeHelper::opcode (9 bytes)
+[0.107s][info][jit,compilation]  207       3       java.lang.invoke.MemberName::initResolved (53 bytes)
+[0.107s][info][class,load     ] sun.util.cldr.CLDRBaseLocaleDataMetaInfo$CLDRMapHolder source: jrt:/java.base
+[0.107s][info][jit,compilation]  208       4       java.util.HashMap::afterNodeInsertion (1 bytes)
+[0.107s][info][jit,compilation]   58       3       java.util.HashMap::afterNodeInsertion (1 bytes)   made not entrant: not used
+[0.108s][info][class,load     ] java.util.HashMap$EntrySpliterator source: jrt:/java.base
+[0.108s][info][jit,compilation]  210       3       jdk.internal.classfile.impl.SplitConstantPool::internalAdd (78 bytes)
+[0.108s][info][class,load     ] sun.util.cldr.CLDRLocaleProviderAdapter$$Lambda/0x000007e0000ffa90 source: sun.util.cldr.CLDRLocaleProviderAdapter
+[0.108s][info][jit,compilation]  211       3       jdk.internal.classfile.impl.AbstractPoolEntry$Utf8EntryImpl::hashCode (8 bytes)
+[0.108s][info][jit,compilation]  213     n 0       java.lang.invoke.MethodHandleNatives::resolve (native)   (static)
+[0.108s][info][jit,compilation]  209       3       java.lang.invoke.MethodType::methodType (69 bytes)
+[0.108s][info][class,load     ] java.util.stream.FindOps source: jrt:/java.base
+[0.108s][info][class,load     ] java.util.stream.FindOps$FindSink source: jrt:/java.base
+[0.108s][info][class,load     ] java.util.stream.FindOps$FindSink$OfRef source: jrt:/java.base
+[0.108s][info][jit,compilation]  212       1       java.util.ArrayList::size (5 bytes)
+[0.108s][info][jit,compilation]  214       3       java.lang.invoke.MethodTypeForm::canonicalize (74 bytes)
+[0.108s][info][jit,compilation]  217     n 0       java.lang.invoke.MethodHandle::linkToSpecial(LL)I (native)   (static)
+[0.109s][info][jit,compilation]  215       3       java.lang.invoke.MethodType::<init> (15 bytes)
+[0.109s][info][jit,compilation]  216       3       jdk.internal.util.ReferencedKeySet::get (27 bytes)
+[0.109s][info][class,load     ] java.util.stream.FindOps$FindSink$OfRef$$Lambda/0x000007e0000a0600 source: java.util.stream.FindOps
+[0.109s][info][jit,compilation]  218       3       jdk.internal.classfile.impl.AbstractPoolEntry$Utf8EntryImpl::<init> (49 bytes)
+[0.109s][info][class,load     ] java.util.stream.FindOps$FindSink$OfRef$$Lambda/0x000007e0000a0858 source: java.util.stream.FindOps
+[0.109s][info][jit,compilation]  220       3       jdk.internal.classfile.impl.AbstractPoolEntry$Utf8EntryImpl::writeTo (44 bytes)
+[0.109s][info][class,load     ] java.util.stream.FindOps$FindOp source: jrt:/java.base
+[0.109s][info][jit,compilation]  219       3       jdk.internal.classfile.impl.SplitConstantPool::utf8Entry (45 bytes)
+[0.109s][info][jit,compilation]  223       1       java.util.HashMap$Node::getValue (5 bytes)
+[0.109s][info][jit,compilation]  224     n 0       java.lang.invoke.MethodHandle::linkToInterface(LL)L (native)   (static)
+[0.109s][info][jit,compilation]  221       1       jdk.internal.classfile.impl.AbstractPoolEntry$ClassEntryImpl::tag (3 bytes)
+[0.109s][info][class,load     ] java.lang.IncompatibleClassChangeError source: jrt:/java.base
+[0.109s][info][jit,compilation]  222       1       java.lang.invoke.MethodTypeForm::erasedType (5 bytes)
+[0.109s][info][class,load     ] java.lang.NoSuchMethodError source: jrt:/java.base
+[0.110s][info][jit,compilation]  225       1       jdk.internal.constant.ClassOrInterfaceDescImpl::isClassOrInterface (2 bytes)
+[0.110s][info][class,load     ] java.lang.invoke.LambdaForm$DMH/0x000007e000081800 source: __JVM_LookupDefineClass__
+[0.110s][info][jit,compilation]  226       3       jdk.internal.misc.Unsafe::allocateUninitializedArray0 (90 bytes)
+[0.110s][info][jit,compilation]  227       3       jdk.internal.classfile.impl.AbstractPoolEntry::hash1 (10 bytes)
+[0.110s][info][class,load     ] sun.util.cldr.CLDRLocaleProviderAdapter$$Lambda/0x000007e0000a1198 source: sun.util.cldr.CLDRLocaleProviderAdapter
+[0.110s][info][jit,compilation]  228       1       java.lang.invoke.MethodHandles$Lookup::lookupClass (5 bytes)
+[0.110s][info][jit,compilation]  229       3       java.util.ImmutableCollections$AbstractImmutableCollection::<init> (5 bytes)
+[0.110s][info][class,load     ] sun.util.cldr.CLDRLocaleProviderAdapter$$Lambda/0x000007e0000a13e0 source: sun.util.cldr.CLDRLocaleProviderAdapter
+[0.110s][info][jit,compilation]  230     n 0       java.lang.Class::isAssignableFrom (native)   
+[0.111s][info][class,load     ] java.util.ListResourceBundle source: jrt:/java.base
+[0.111s][info][class,load     ] sun.text.resources.cldr.FormatData source: jrt:/java.base
+[0.111s][info][class,load     ] java.util.ResourceBundle$ResourceBundleProviderHelper source: jrt:/java.base
+[0.111s][info][class,load     ] sun.util.resources.Bundles$CacheKeyReference source: jrt:/java.base
+[0.111s][info][class,load     ] sun.util.resources.Bundles$BundleReference source: jrt:/java.base
+[0.111s][info][jit,compilation]  232       4       java.lang.String::length (11 bytes)
+[0.111s][info][jit,compilation]  231       3       java.lang.ref.Reference::reachabilityFence (1 bytes)
+[0.111s][info][class,load     ] sun.util.resources.provider.LocaleDataProvider source: jrt:/jdk.localedata
+[0.111s][info][jit,compilation]  233       3       java.lang.String::indexOf (41 bytes)
+[0.111s][info][class,load     ] java.lang.InstantiationException source: jrt:/java.base
+[0.111s][info][class,load     ] java.lang.IllegalAccessException source: jrt:/java.base
+[0.111s][info][jit,compilation]   26       3       java.lang.String::length (11 bytes)   made not entrant: not used
+[0.111s][info][jit,compilation]  234       3       java.nio.Buffer::session (20 bytes)
+[0.111s][info][jit,compilation]  235       3       java.nio.Buffer::checkIndex (12 bytes)
+[0.111s][info][jit,compilation]  236   !   3       java.nio.DirectByteBuffer::get (34 bytes)
+[0.111s][info][class,load     ] sun.text.resources.cldr.ext.FormatData_zh source: jrt:/jdk.localedata
+[0.112s][info][jit,compilation]  237       3       java.lang.ref.Reference::<init> (25 bytes)
+[0.112s][info][jit,compilation]  238       3       java.lang.StringBuilder::append (8 bytes)
+[0.112s][info][class,load     ] sun.text.resources.cldr.ext.FormatData_zh_Hans_SG source: jrt:/jdk.localedata
+[0.112s][info][jit,compilation]  239       3       java.lang.AbstractStringBuilder::append (100 bytes)
+[0.113s][info][class,load     ] sun.util.locale.provider.LocaleResources$ResourceReference source: jrt:/java.base
+[0.113s][info][class,load     ] java.lang.CharacterData00 source: jrt:/java.base
+[0.113s][info][jit,compilation]  240       3       java.lang.StringUTF16::getChar (60 bytes)
+[0.114s][info][jit,compilation]  241       4       java.lang.StringUTF16::getChar (60 bytes)
+[0.114s][info][jit,compilation]  240       3       java.lang.StringUTF16::getChar (60 bytes)   made not entrant: not used
+[0.114s][info][jit,compilation]  242       3       java.util.Objects::requireNonNull (15 bytes)
+[0.114s][info][jit,compilation]  244       3       java.lang.StringLatin1::lastIndexOf (40 bytes)
+[0.114s][info][class,load     ] org.example.jvminternals.ch31.CacheJourney$Add source: file:/Users/xiejinxin/Developer/Java/jvm-internals/chapters/ch31-aot-cache/target/cache.jar
+[0.114s][info][jit,compilation]  243       3       java.lang.Math::max (11 bytes)
+[0.115s][info][jit,compilation]  245       3       java.lang.AbstractStringBuilder::isLatin1 (16 bytes)
+[0.115s][info][jit,compilation]  246       3       org.example.jvminternals.ch31.CacheJourney::route (8 bytes)
+[0.115s][info][jit,compilation]  247       3       org.example.jvminternals.ch31.CacheJourney$Add::apply (6 bytes)
+[0.115s][info][jit,compilation]  248       4       org.example.jvminternals.ch31.CacheJourney::route (8 bytes)
+[0.115s][info][jit,compilation]  246       3       org.example.jvminternals.ch31.CacheJourney::route (8 bytes)   made not entrant: not used
+[0.116s][info][jit,compilation]  249       3       java.util.AbstractSet::<init> (5 bytes)
+[0.116s][info][jit,compilation]  250       3       java.util.Optional::<init> (10 bytes)
+[0.116s][info][class,load     ] java.util.IdentityHashMap$IdentityHashMapIterator source: jrt:/java.base
+[0.116s][info][class,load     ] java.util.IdentityHashMap$KeyIterator source: jrt:/java.base
+[0.116s][info][class,load     ] java.lang.Shutdown source: jrt:/java.base
+[0.116s][info][class,load     ] java.lang.Shutdown$Lock source: jrt:/java.base

@@ -1,0 +1,91 @@
+[INFO] Scanning for projects...
+[INFO] ------------------------------------------------------------------------
+[INFO] Reactor Build Order:
+[INFO] 
+[INFO] Java 虚拟机原理书配套源码                                                    [pom]
+[INFO] ch25-memory-model                                                  [jar]
+[INFO] ch26-platform-threads                                              [jar]
+[INFO] ch27-monitors                                                      [jar]
+[INFO] ch28-virtual-threads                                               [jar]
+[INFO] ch29-scoped-concurrency                                            [jar]
+[INFO] 
+[INFO] ---------------< org.example.jvminternals:jvm-internals >---------------
+[INFO] Building Java 虚拟机原理书配套源码 1.0-SNAPSHOT                              [1/6]
+[INFO]   from pom.xml
+[INFO] --------------------------------[ pom ]---------------------------------
+[INFO] 
+[INFO] -------------< org.example.jvminternals:ch25-memory-model >-------------
+[INFO] Building ch25-memory-model 1.0-SNAPSHOT                            [2/6]
+[INFO]   from chapters/ch25-memory-model/pom.xml
+[INFO] --------------------------------[ jar ]---------------------------------
+[INFO] Loaded 64 auto-discovered prefixes for remote repository apache.snapshots (prefixes-apache.snapshots.txt)
+[INFO] 
+[INFO] --- resources:3.3.1:resources (default-resources) @ ch25-memory-model ---
+[INFO] skip non existing resourceDirectory /Users/xiejinxin/Developer/Java/jvm-internals/chapters/ch25-memory-model/src/main/resources
+[INFO] 
+[INFO] --- compiler:3.14.1:compile (default-compile) @ ch25-memory-model ---
+[INFO] Recompiling the module because of changed source code.
+[INFO] Compiling 1 source file with javac [debug:lines,vars,source parameters release 25] to target/classes
+[INFO] 
+[INFO] -----------< org.example.jvminternals:ch26-platform-threads >-----------
+[INFO] Building ch26-platform-threads 1.0-SNAPSHOT                        [3/6]
+[INFO]   from chapters/ch26-platform-threads/pom.xml
+[INFO] --------------------------------[ jar ]---------------------------------
+[INFO] 
+[INFO] --- resources:3.3.1:resources (default-resources) @ ch26-platform-threads ---
+[INFO] skip non existing resourceDirectory /Users/xiejinxin/Developer/Java/jvm-internals/chapters/ch26-platform-threads/src/main/resources
+[INFO] 
+[INFO] --- compiler:3.14.1:compile (default-compile) @ ch26-platform-threads ---
+[INFO] Recompiling the module because of changed source code.
+[INFO] Compiling 1 source file with javac [debug:lines,vars,source parameters release 25] to target/classes
+[INFO] 
+[INFO] ---------------< org.example.jvminternals:ch27-monitors >---------------
+[INFO] Building ch27-monitors 1.0-SNAPSHOT                                [4/6]
+[INFO]   from chapters/ch27-monitors/pom.xml
+[INFO] --------------------------------[ jar ]---------------------------------
+[INFO] 
+[INFO] --- resources:3.3.1:resources (default-resources) @ ch27-monitors ---
+[INFO] skip non existing resourceDirectory /Users/xiejinxin/Developer/Java/jvm-internals/chapters/ch27-monitors/src/main/resources
+[INFO] 
+[INFO] --- compiler:3.14.1:compile (default-compile) @ ch27-monitors ---
+[INFO] Recompiling the module because of changed source code.
+[INFO] Compiling 1 source file with javac [debug:lines,vars,source parameters release 25] to target/classes
+[INFO] 
+[INFO] -----------< org.example.jvminternals:ch28-virtual-threads >------------
+[INFO] Building ch28-virtual-threads 1.0-SNAPSHOT                         [5/6]
+[INFO]   from chapters/ch28-virtual-threads/pom.xml
+[INFO] --------------------------------[ jar ]---------------------------------
+[INFO] 
+[INFO] --- resources:3.3.1:resources (default-resources) @ ch28-virtual-threads ---
+[INFO] skip non existing resourceDirectory /Users/xiejinxin/Developer/Java/jvm-internals/chapters/ch28-virtual-threads/src/main/resources
+[INFO] 
+[INFO] --- compiler:3.14.1:compile (default-compile) @ ch28-virtual-threads ---
+[INFO] Recompiling the module because of changed source code.
+[INFO] Compiling 1 source file with javac [debug:lines,vars,source parameters release 25] to target/classes
+[INFO] 
+[INFO] ----------< org.example.jvminternals:ch29-scoped-concurrency >----------
+[INFO] Building ch29-scoped-concurrency 1.0-SNAPSHOT                      [6/6]
+[INFO]   from chapters/ch29-scoped-concurrency/pom.xml
+[INFO] --------------------------------[ jar ]---------------------------------
+[INFO] 
+[INFO] --- resources:3.3.1:resources (default-resources) @ ch29-scoped-concurrency ---
+[INFO] skip non existing resourceDirectory /Users/xiejinxin/Developer/Java/jvm-internals/chapters/ch29-scoped-concurrency/src/main/resources
+[INFO] 
+[INFO] --- compiler:3.14.1:compile (default-compile) @ ch29-scoped-concurrency ---
+[INFO] Recompiling the module because of changed source code.
+[INFO] Compiling 1 source file with javac [debug:lines,vars,source parameters release 25] to target/classes
+[INFO] ------------------------------------------------------------------------
+[INFO] Reactor Summary for Java 虚拟机原理书配套源码 1.0-SNAPSHOT:
+[INFO] 
+[INFO] Java 虚拟机原理书配套源码 .................................... SUCCESS [  0.001 s]
+[INFO] ch25-memory-model .................................. SUCCESS [  0.932 s]
+[INFO] ch26-platform-threads .............................. SUCCESS [  0.102 s]
+[INFO] ch27-monitors ...................................... SUCCESS [  0.074 s]
+[INFO] ch28-virtual-threads ............................... SUCCESS [  0.077 s]
+[INFO] ch29-scoped-concurrency ............................ SUCCESS [  0.053 s]
+[INFO] ------------------------------------------------------------------------
+[INFO] BUILD SUCCESS
+[INFO] ------------------------------------------------------------------------
+[INFO] Total time:  1.401 s
+[INFO] Finished at: 2026-11-03T19:16:29+08:00
+[INFO] ------------------------------------------------------------------------

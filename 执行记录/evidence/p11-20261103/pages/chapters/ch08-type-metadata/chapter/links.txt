@@ -1,0 +1,38 @@
+全书目录	../../index.html
+类型与类镜像	#sec-8-1
+成员与常量池元数据	#sec-8-2
+子类型检查	#sec-8-3
+隐藏类	#sec-8-4
+持有与卸载	#sec-8-5
+源码与观察	#observe
+回顾与篇末问题	#review
+来源	#sources
+加载器身份	../ch06-classloaders-modules/chapter.html
+解析和初始化状态	../ch07-linking-initialization/chapter.html
+S01	#s01
+S02	#s02
+S03	#s03
+S04	#s04
+S05	#s05
+S06	#s06
+三份主程序和隔离 Disposable 的阅读页	sources.html
+运行说明	README.html
+本轮记录	evidence/runs/ch08-20261103-01/记录.md
+第 4 章 Code 与栈映射	../ch04-classfile/chapter.html#sec-4-3
+第 5 章调用、异常与同步	../ch05-bytecode-verification/chapter.html#sec-5-3
+定义者与身份	../ch06-classloaders-modules/chapter.html#sec-6-3
+验证类型	../ch05-bytecode-verification/chapter.html#sec-5-4
+固定二进制对照	../ch07-linking-initialization/chapter.html#sec-7-5
+来源索引	evidence/索引.md
+第 7 章解析入口	../ch07-linking-initialization/evidence/索引.md
+Java 平台标准版（Java Platform, Standard Edition，Java SE）25 语言规范 §4.10.3	https://docs.oracle.com/javase/specs/jls/se25/html/jls-4.html#jls-4.10.3
+Lookup.defineHiddenClass 契约	https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/invoke/MethodHandles.Lookup.html
+ClassOption	https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/invoke/MethodHandles.Lookup.ClassOption.html
+ClassFile API	https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/classfile/ClassFile.html
+语言规范卸载规则	https://docs.oracle.com/javase/specs/jls/se25/html/jls-12.html#jls-12.7
+System.gc 契约	https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/System.html#gc()
+管理统计和引用输出	evidence/runs/ch08-20261103-01/unloading.txt
+加载／卸载／收集日志	evidence/runs/ch08-20261103-01/unloading.log
+上一章：第 7 章	../ch07-linking-initialization/chapter.html
+返回全书目录	../../index.html
+下一章：第 9 章	../ch09-runtime-memory/chapter.html

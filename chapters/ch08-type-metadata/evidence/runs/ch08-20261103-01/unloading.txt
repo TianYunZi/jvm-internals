@@ -1,0 +1,13 @@
+11月 03, 2026 12:13:48 下午 org.example.jvminternals.ch08.UnloadingJourney main
+INFO: 开始有限加载器持有与释放观察
+before.load metaspace.used=1273048 committed=1441792
+retained.class=org.example.jvminternals.ch08.disposable.Disposable loader=disposable
+after.load metaspace.used=1314408 committed=1507328
+after.held.request loader.cleared=false
+after.held.request metaspace.used=1333944 committed=1507328
+11月 03, 2026 12:13:48 下午 org.example.jvminternals.ch08.UnloadingJourney main
+INFO: 已释放教学静态持有者，仅再请求一次回收
+after.release loader.cleared=true queue.event=true
+after.release metaspace.used=1359680 committed=1507328
+11月 03, 2026 12:13:48 下午 org.example.jvminternals.ch08.UnloadingJourney main
+INFO: 加载器持有与释放观察结束

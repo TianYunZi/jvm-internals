@@ -1,0 +1,33 @@
+第1章运行说明
+
+返回正文
+
+正文为第 1 章，浏览器可阅读完整源码。正式编译输入是 src/main/java/org/example/jvminternals/ch01/ProgramJourney.java；阅读副本从它生成，不手工维护另一套程序。
+
+身份、范围与资源
+
+CH01-E01 对应 1.1—1.5：读取小文本、创建普通对象、调用方法，启动并协调一个平台工作线程，最后输出正常关闭阶段。它是正常教学程序，没有测试断言、故障复现或基准负载。用户于 2026 年 11 月 3 日明确授权执行 P03。
+
+依赖 Java 开发工具包（Java Development Kit，JDK）25，普通配置无需预览或第三方依赖。本轮为 Homebrew 25.0.5.0.2、Maven 3.10.0、macOS AArch64，见公共基线。
+
+主线程和一个工作线程参与协作，另登记一个正常关闭钩子线程；工作对象含 1024 字节小数组。输入为本章固定文本。观察窗口必须在 0—60 秒，准备等待上限 5 秒，工作线程自身等待也有独立上限；退出时释放等待并有界 join，中断被正确传播或恢复。-Xmx128m 只是 Java 堆上限，不是进程总内存上限。正常运行自然结束，人工异常滞留可用终端中断键停止。
+
+编译与本次运行
+
+所有命令在项目根目录执行。选择已核对工具：
+
+CH01_JDK=/opt/homebrew/Cellar/openjdk@25/25.0.5.0.2/libexec/openjdk.jdk/Contents/Home
+JAVA_HOME="$CH01_JDK" mvn --offline --batch-mode --no-transfer-progress -pl chapters/ch01-architecture -am compile
+"$CH01_JDK/bin/java" -Xms32m -Xmx128m -Xlog:class+load=info:file=chapters/ch01-architecture/evidence/runs/ch01-20261103-01/class-load.log:uptime,level,tags -cp chapters/ch01-architecture/target/classes org.example.jvminternals.ch01.ProgramJourney chapters/ch01-architecture/src/main/resources/message.txt 0
+"$CH01_JDK/bin/javap" -c -p -classpath chapters/ch01-architecture/target/classes org.example.jvminternals.ch01.ProgramJourney 'org.example.jvminternals.ch01.ProgramJourney$Payload'
+
+
+上述为本次实际命令的同参数形式；实际程序标准输出和错误合并保存于 program.txt，反汇编保存于 program.javap.txt。重复命令会重写同名日志，另行留证时先选择新的记录目录，不覆盖本轮正式证据。首次无插件缓存可去掉 --offline 联网取得相同固定版本插件；本轮没有重新下载插件。
+
+实际结果：1 个源文件编译成功；进程退出 0，记录了 main、工作线程和关闭钩子阶段；本次日志加载了入口类、Payload 及任务相关生成类。相对时钟从本类初始化开始，不能直接当作启动器开始的进程启动耗时。
+
+后续复用
+
+CH02、CH03 直接复用本章源文件与编译产物，以非零观察窗口采集进程状态。各自记录启动选项与真实运行编号，不把本轮 0 秒运行冒充后续观察条件。复用不形成源码间的隐式依赖链：先按本页独立编译 CH01，再按对应章节说明执行。
+
+原始证据见 ch01-20261103-01，规范与实现定位见证据索引。

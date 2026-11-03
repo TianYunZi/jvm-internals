@@ -1,0 +1,9 @@
+23682:
+ClassLoader         Parent              CLD*               Classes   ChunkSz   BlockSz  Type
+0x000000e0001cd608  0x0000000000000000  0x00000078db4a7850       0         0         0  jdk.internal.loader.ClassLoaders$PlatformClassLoader
+0x0000000000000000  0x0000000000000000  0x00000078db4a7310    1249   4456448   1272000  <boot class loader>
+                                                                30     95232     56064   + hidden classes
+0x000000e0001cd0e8  0x000000e0001cd608  0x00000078db4a7910       3     14336     13536  jdk.internal.loader.ClassLoaders$AppClassLoader
+Total = 3                                                     1282   4566016   1341600  
+ChunkSz: Total size of all allocated metaspace chunks
+BlockSz: Total size of all allocated metaspace blocks (each chunk has several blocks)

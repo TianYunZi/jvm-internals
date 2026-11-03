@@ -1,0 +1,101 @@
+{
+  "version": "Chrome/156.0.8078.80",
+  "pages": [
+    {
+      "page": "chapters/ch25-memory-model/chapter.html",
+      "codeIds": [
+        "code-001"
+      ]
+    },
+    {
+      "page": "chapters/ch25-memory-model/sources.html",
+      "codeIds": [
+        "code-001",
+        "code-002"
+      ]
+    },
+    {
+      "page": "chapters/ch25-memory-model/README.html",
+      "codeIds": [
+        "code-001"
+      ]
+    },
+    {
+      "page": "chapters/ch26-platform-threads/chapter.html",
+      "codeIds": []
+    },
+    {
+      "page": "chapters/ch26-platform-threads/sources.html",
+      "codeIds": [
+        "code-001",
+        "code-002"
+      ]
+    },
+    {
+      "page": "chapters/ch26-platform-threads/README.html",
+      "codeIds": [
+        "code-001",
+        "code-002"
+      ]
+    },
+    {
+      "page": "chapters/ch27-monitors/chapter.html",
+      "codeIds": []
+    },
+    {
+      "page": "chapters/ch27-monitors/sources.html",
+      "codeIds": [
+        "code-001",
+        "code-002"
+      ]
+    },
+    {
+      "page": "chapters/ch27-monitors/README.html",
+      "codeIds": [
+        "code-001",
+        "code-002"
+      ]
+    },
+    {
+      "page": "chapters/ch28-virtual-threads/chapter.html",
+      "codeIds": []
+    },
+    {
+      "page": "chapters/ch28-virtual-threads/sources.html",
+      "codeIds": [
+        "code-001",
+        "code-002",
+        "code-003",
+        "code-004"
+      ]
+    },
+    {
+      "page": "chapters/ch28-virtual-threads/README.html",
+      "codeIds": [
+        "code-001",
+        "code-002"
+      ]
+    },
+    {
+      "page": "chapters/ch29-scoped-concurrency/chapter.html",
+      "codeIds": [
+        "code-001"
+      ]
+    },
+    {
+      "page": "chapters/ch29-scoped-concurrency/sources.html",
+      "codeIds": [
+        "code-001",
+        "code-002",
+        "code-003",
+        "code-004"
+      ]
+    },
+    {
+      "page": "chapters/ch29-scoped-concurrency/README.html",
+      "codeIds": [
+        "code-001"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,868 @@
+Classfile /Users/xiejinxin/Developer/Java/jvm-internals/chapters/ch05-bytecode-verification/target/classes/org/example/jvminternals/ch05/BytecodeCases.class
+  Last modified 2026年11月3日; size 4197 bytes
+  SHA-256 checksum 3229c6bd5c9165d517c4f6b46ff3ace4c965e31c5779e3c858d2477099755c5f
+  Compiled from "BytecodeCases.java"
+public final class org.example.jvminternals.ch05.BytecodeCases
+  minor version: 0
+  major version: 69
+  flags: (0x0031) ACC_PUBLIC, ACC_FINAL, ACC_SUPER
+  this_class: #11                         // org/example/jvminternals/ch05/BytecodeCases
+  super_class: #2                         // java/lang/Object
+  interfaces: 0, fields: 2, methods: 12, attributes: 4
+Constant pool:
+    #1 = Methodref          #2.#3         // java/lang/Object."<init>":()V
+    #2 = Class              #4            // java/lang/Object
+    #3 = NameAndType        #5:#6         // "<init>":()V
+    #4 = Utf8               java/lang/Object
+    #5 = Utf8               <init>
+    #6 = Utf8               ()V
+    #7 = Class              #8            // org/example/jvminternals/ch05/BytecodeCases$MonitorCell
+    #8 = Utf8               org/example/jvminternals/ch05/BytecodeCases$MonitorCell
+    #9 = Methodref          #7.#3         // org/example/jvminternals/ch05/BytecodeCases$MonitorCell."<init>":()V
+   #10 = Fieldref           #11.#12       // org/example/jvminternals/ch05/BytecodeCases.monitor:Lorg/example/jvminternals/ch05/BytecodeCases$MonitorCell;
+   #11 = Class              #13           // org/example/jvminternals/ch05/BytecodeCases
+   #12 = NameAndType        #14:#15       // monitor:Lorg/example/jvminternals/ch05/BytecodeCases$MonitorCell;
+   #13 = Utf8               org/example/jvminternals/ch05/BytecodeCases
+   #14 = Utf8               monitor
+   #15 = Utf8               Lorg/example/jvminternals/ch05/BytecodeCases$MonitorCell;
+   #16 = Fieldref           #7.#17        // org/example/jvminternals/ch05/BytecodeCases$MonitorCell.value:I
+   #17 = NameAndType        #18:#19       // value:I
+   #18 = Utf8               value
+   #19 = Utf8               I
+   #20 = Methodref          #7.#21        // org/example/jvminternals/ch05/BytecodeCases$MonitorCell.add:(I)I
+   #21 = NameAndType        #22:#23       // add:(I)I
+   #22 = Utf8               add
+   #23 = Utf8               (I)I
+   #24 = InterfaceMethodref #25.#26       // org/example/jvminternals/ch05/BytecodeCases$Unary.apply:(I)I
+   #25 = Class              #27           // org/example/jvminternals/ch05/BytecodeCases$Unary
+   #26 = NameAndType        #28:#23       // apply:(I)I
+   #27 = Utf8               org/example/jvminternals/ch05/BytecodeCases$Unary
+   #28 = Utf8               apply
+   #29 = Fieldref           #11.#30       // org/example/jvminternals/ch05/BytecodeCases.LOGGER:Ljava/lang/System$Logger;
+   #30 = NameAndType        #31:#32       // LOGGER:Ljava/lang/System$Logger;
+   #31 = Utf8               LOGGER
+   #32 = Utf8               Ljava/lang/System$Logger;
+   #33 = Fieldref           #34.#35       // java/lang/System$Logger$Level.INFO:Ljava/lang/System$Logger$Level;
+   #34 = Class              #36           // java/lang/System$Logger$Level
+   #35 = NameAndType        #37:#38       // INFO:Ljava/lang/System$Logger$Level;
+   #36 = Utf8               java/lang/System$Logger$Level
+   #37 = Utf8               INFO
+   #38 = Utf8               Ljava/lang/System$Logger$Level;
+   #39 = String             #40           // 开始执行字节码教学方法组
+   #40 = Utf8               开始执行字节码教学方法组
+   #41 = InterfaceMethodref #42.#43       // java/lang/System$Logger.log:(Ljava/lang/System$Logger$Level;Ljava/lang/String;)V
+   #42 = Class              #44           // java/lang/System$Logger
+   #43 = NameAndType        #45:#46       // log:(Ljava/lang/System$Logger$Level;Ljava/lang/String;)V
+   #44 = Utf8               java/lang/System$Logger
+   #45 = Utf8               log
+   #46 = Utf8               (Ljava/lang/System$Logger$Level;Ljava/lang/String;)V
+   #47 = Methodref          #11.#3        // org/example/jvminternals/ch05/BytecodeCases."<init>":()V
+   #48 = Fieldref           #49.#50       // java/lang/System.out:Ljava/io/PrintStream;
+   #49 = Class              #51           // java/lang/System
+   #50 = NameAndType        #52:#53       // out:Ljava/io/PrintStream;
+   #51 = Utf8               java/lang/System
+   #52 = Utf8               out
+   #53 = Utf8               Ljava/io/PrintStream;
+   #54 = Long               10l
+   #56 = Double             3.5d
+   #58 = Methodref          #11.#59       // org/example/jvminternals/ch05/BytecodeCases.widenAndAdd:(IJD)J
+   #59 = NameAndType        #60:#61       // widenAndAdd:(IJD)J
+   #60 = Utf8               widenAndAdd
+   #61 = Utf8               (IJD)J
+   #62 = InvokeDynamic      #0:#63        // #0:makeConcatWithConstants:(J)Ljava/lang/String;
+   #63 = NameAndType        #64:#65       // makeConcatWithConstants:(J)Ljava/lang/String;
+   #64 = Utf8               makeConcatWithConstants
+   #65 = Utf8               (J)Ljava/lang/String;
+   #66 = Methodref          #67.#68       // java/io/PrintStream.println:(Ljava/lang/String;)V
+   #67 = Class              #69           // java/io/PrintStream
+   #68 = NameAndType        #70:#71       // println:(Ljava/lang/String;)V
+   #69 = Utf8               java/io/PrintStream
+   #70 = Utf8               println
+   #71 = Utf8               (Ljava/lang/String;)V
+   #72 = Methodref          #11.#73       // org/example/jvminternals/ch05/BytecodeCases.reuseSlot:(I)I
+   #73 = NameAndType        #74:#23       // reuseSlot:(I)I
+   #74 = Utf8               reuseSlot
+   #75 = InvokeDynamic      #1:#76        // #1:makeConcatWithConstants:(I)Ljava/lang/String;
+   #76 = NameAndType        #64:#77       // makeConcatWithConstants:(I)Ljava/lang/String;
+   #77 = Utf8               (I)Ljava/lang/String;
+   #78 = Methodref          #11.#79       // org/example/jvminternals/ch05/BytecodeCases.branch:(I)I
+   #79 = NameAndType        #80:#23       // branch:(I)I
+   #80 = Utf8               branch
+   #81 = InvokeDynamic      #2:#76        // #2:makeConcatWithConstants:(I)Ljava/lang/String;
+   #82 = Methodref          #11.#83       // org/example/jvminternals/ch05/BytecodeCases.sum:([I)I
+   #83 = NameAndType        #84:#85       // sum:([I)I
+   #84 = Utf8               sum
+   #85 = Utf8               ([I)I
+   #86 = InvokeDynamic      #3:#76        // #3:makeConcatWithConstants:(I)Ljava/lang/String;
+   #87 = Methodref          #11.#88       // org/example/jvminternals/ch05/BytecodeCases.denseSwitch:(I)I
+   #88 = NameAndType        #89:#23       // denseSwitch:(I)I
+   #89 = Utf8               denseSwitch
+   #90 = Methodref          #11.#91       // org/example/jvminternals/ch05/BytecodeCases.sparseSwitch:(I)I
+   #91 = NameAndType        #92:#23       // sparseSwitch:(I)I
+   #92 = Utf8               sparseSwitch
+   #93 = InvokeDynamic      #4:#94        // #4:makeConcatWithConstants:(II)Ljava/lang/String;
+   #94 = NameAndType        #64:#95       // makeConcatWithConstants:(II)Ljava/lang/String;
+   #95 = Utf8               (II)Ljava/lang/String;
+   #96 = Methodref          #11.#97       // org/example/jvminternals/ch05/BytecodeCases.synchronizedBlock:(I)I
+   #97 = NameAndType        #98:#23       // synchronizedBlock:(I)I
+   #98 = Utf8               synchronizedBlock
+   #99 = InvokeDynamic      #5:#76        // #5:makeConcatWithConstants:(I)Ljava/lang/String;
+  #100 = Methodref          #11.#101      // org/example/jvminternals/ch05/BytecodeCases.synchronizedMethod:(I)I
+  #101 = NameAndType        #102:#23      // synchronizedMethod:(I)I
+  #102 = Utf8               synchronizedMethod
+  #103 = InvokeDynamic      #6:#76        // #6:makeConcatWithConstants:(I)Ljava/lang/String;
+  #104 = Class              #105          // org/example/jvminternals/ch05/BytecodeCases$Increment
+  #105 = Utf8               org/example/jvminternals/ch05/BytecodeCases$Increment
+  #106 = Methodref          #104.#3       // org/example/jvminternals/ch05/BytecodeCases$Increment."<init>":()V
+  #107 = Methodref          #11.#108      // org/example/jvminternals/ch05/BytecodeCases.invoke:(Lorg/example/jvminternals/ch05/BytecodeCases$Unary;I)I
+  #108 = NameAndType        #109:#110     // invoke:(Lorg/example/jvminternals/ch05/BytecodeCases$Unary;I)I
+  #109 = Utf8               invoke
+  #110 = Utf8               (Lorg/example/jvminternals/ch05/BytecodeCases$Unary;I)I
+  #111 = InvokeDynamic      #7:#76        // #7:makeConcatWithConstants:(I)Ljava/lang/String;
+  #112 = String             #113          // 字节码教学方法组结束
+  #113 = Utf8               字节码教学方法组结束
+  #114 = Methodref          #115.#116     // java/lang/Class.getName:()Ljava/lang/String;
+  #115 = Class              #117          // java/lang/Class
+  #116 = NameAndType        #118:#119     // getName:()Ljava/lang/String;
+  #117 = Utf8               java/lang/Class
+  #118 = Utf8               getName
+  #119 = Utf8               ()Ljava/lang/String;
+  #120 = Methodref          #49.#121      // java/lang/System.getLogger:(Ljava/lang/String;)Ljava/lang/System$Logger;
+  #121 = NameAndType        #122:#123     // getLogger:(Ljava/lang/String;)Ljava/lang/System$Logger;
+  #122 = Utf8               getLogger
+  #123 = Utf8               (Ljava/lang/String;)Ljava/lang/System$Logger;
+  #124 = Utf8               Code
+  #125 = Utf8               LineNumberTable
+  #126 = Utf8               LocalVariableTable
+  #127 = Utf8               this
+  #128 = Utf8               Lorg/example/jvminternals/ch05/BytecodeCases;
+  #129 = Utf8               count
+  #130 = Utf8               base
+  #131 = Utf8               J
+  #132 = Utf8               extra
+  #133 = Utf8               D
+  #134 = Utf8               partial
+  #135 = Utf8               MethodParameters
+  #136 = Utf8               first
+  #137 = Utf8               second
+  #138 = Utf8               result
+  #139 = Utf8               StackMapTable
+  #140 = Utf8               index
+  #141 = Utf8               values
+  #142 = Utf8               [I
+  #143 = Utf8               delta
+  #144 = Class              #145          // java/lang/Throwable
+  #145 = Utf8               java/lang/Throwable
+  #146 = Utf8               operation
+  #147 = Utf8               Lorg/example/jvminternals/ch05/BytecodeCases$Unary;
+  #148 = Utf8               main
+  #149 = Utf8               ([Ljava/lang/String;)V
+  #150 = Utf8               args
+  #151 = Utf8               [Ljava/lang/String;
+  #152 = Utf8               cases
+  #153 = Utf8               <clinit>
+  #154 = Utf8               SourceFile
+  #155 = Utf8               BytecodeCases.java
+  #156 = Utf8               NestMembers
+  #157 = Utf8               BootstrapMethods
+  #158 = String             #159          // widen=\u0001
+  #159 = Utf8               widen=\u0001
+  #160 = String             #161          // reuse=\u0001
+  #161 = Utf8               reuse=\u0001
+  #162 = String             #163          // branch=\u0001
+  #163 = Utf8               branch=\u0001
+  #164 = String             #165          // sum=\u0001
+  #165 = Utf8               sum=\u0001
+  #166 = String             #167          // dense=\u0001 sparse=\u0001
+  #167 = Utf8               dense=\u0001 sparse=\u0001
+  #168 = String             #169          // block=\u0001
+  #169 = Utf8               block=\u0001
+  #170 = String             #171          // method=\u0001
+  #171 = Utf8               method=\u0001
+  #172 = String             #173          // interface=\u0001
+  #173 = Utf8               interface=\u0001
+  #174 = MethodHandle       6:#175        // REF_invokeStatic java/lang/invoke/StringConcatFactory.makeConcatWithConstants:(Ljava/lang/invoke/MethodHandles$Lookup;Ljava/lang/String;Ljava/lang/invoke/MethodType;Ljava/lang/String;[Ljava/lang/Object;)Ljava/lang/invoke/CallSite;
+  #175 = Methodref          #176.#177     // java/lang/invoke/StringConcatFactory.makeConcatWithConstants:(Ljava/lang/invoke/MethodHandles$Lookup;Ljava/lang/String;Ljava/lang/invoke/MethodType;Ljava/lang/String;[Ljava/lang/Object;)Ljava/lang/invoke/CallSite;
+  #176 = Class              #178          // java/lang/invoke/StringConcatFactory
+  #177 = NameAndType        #64:#179      // makeConcatWithConstants:(Ljava/lang/invoke/MethodHandles$Lookup;Ljava/lang/String;Ljava/lang/invoke/MethodType;Ljava/lang/String;[Ljava/lang/Object;)Ljava/lang/invoke/CallSite;
+  #178 = Utf8               java/lang/invoke/StringConcatFactory
+  #179 = Utf8               (Ljava/lang/invoke/MethodHandles$Lookup;Ljava/lang/String;Ljava/lang/invoke/MethodType;Ljava/lang/String;[Ljava/lang/Object;)Ljava/lang/invoke/CallSite;
+  #180 = Utf8               InnerClasses
+  #181 = Utf8               MonitorCell
+  #182 = Utf8               Unary
+  #183 = Utf8               Logger
+  #184 = Utf8               Level
+  #185 = Utf8               Increment
+  #186 = Class              #187          // java/lang/invoke/MethodHandles$Lookup
+  #187 = Utf8               java/lang/invoke/MethodHandles$Lookup
+  #188 = Class              #189          // java/lang/invoke/MethodHandles
+  #189 = Utf8               java/lang/invoke/MethodHandles
+  #190 = Utf8               Lookup
+{
+  private static final java.lang.System$Logger LOGGER;
+    descriptor: Ljava/lang/System$Logger;
+    flags: (0x001a) ACC_PRIVATE, ACC_STATIC, ACC_FINAL
+
+  private final org.example.jvminternals.ch05.BytecodeCases$MonitorCell monitor;
+    descriptor: Lorg/example/jvminternals/ch05/BytecodeCases$MonitorCell;
+    flags: (0x0012) ACC_PRIVATE, ACC_FINAL
+
+  public org.example.jvminternals.ch05.BytecodeCases();
+    descriptor: ()V
+    flags: (0x0001) ACC_PUBLIC
+    Code:
+      stack=3, locals=1, args_size=1
+         0: aload_0
+         1: invokespecial #1                  // Method java/lang/Object."<init>":()V
+         4: aload_0
+         5: new           #7                  // class org/example/jvminternals/ch05/BytecodeCases$MonitorCell
+         8: dup
+         9: invokespecial #9                  // Method org/example/jvminternals/ch05/BytecodeCases$MonitorCell."<init>":()V
+        12: putfield      #10                 // Field monitor:Lorg/example/jvminternals/ch05/BytecodeCases$MonitorCell;
+        15: return
+      LineNumberTable:
+        line 4: 0
+        line 6: 4
+      LocalVariableTable:
+        Start  Length  Slot  Name   Signature
+            0      16     0  this   Lorg/example/jvminternals/ch05/BytecodeCases;
+
+  public static long widenAndAdd(int, long, double);
+    descriptor: (IJD)J
+    flags: (0x0009) ACC_PUBLIC, ACC_STATIC
+    Code:
+      stack=4, locals=7, args_size=3
+         0: iload_0
+         1: i2l
+         2: lload_1
+         3: ladd
+         4: lstore        5
+         6: lload         5
+         8: dload_3
+         9: d2l
+        10: ladd
+        11: lreturn
+      LineNumberTable:
+        line 10: 0
+        line 11: 6
+      LocalVariableTable:
+        Start  Length  Slot  Name   Signature
+            0      12     0 count   I
+            0      12     1  base   J
+            0      12     3 extra   D
+            6       6     5 partial   J
+    MethodParameters:
+      Name                           Flags
+      count
+      base
+      extra
+
+  public static int reuseSlot(int);
+    descriptor: (I)I
+    flags: (0x0009) ACC_PUBLIC, ACC_STATIC
+    Code:
+      stack=2, locals=3, args_size=1
+         0: iload_0
+         1: iconst_1
+         2: iadd
+         3: istore_2
+         4: iload_2
+         5: istore_1
+         6: iload_1
+         7: iconst_2
+         8: imul
+         9: istore_2
+        10: iload_2
+        11: ireturn
+      LineNumberTable:
+        line 18: 0
+        line 19: 4
+        line 22: 6
+        line 23: 10
+      LocalVariableTable:
+        Start  Length  Slot  Name   Signature
+            4       2     2 first   I
+           10       2     2 second   I
+            0      12     0 value   I
+            6       6     1 result   I
+    MethodParameters:
+      Name                           Flags
+      value
+
+  public static int branch(int);
+    descriptor: (I)I
+    flags: (0x0009) ACC_PUBLIC, ACC_STATIC
+    Code:
+      stack=2, locals=2, args_size=1
+         0: iload_0
+         1: iflt          11
+         4: iload_0
+         5: iconst_1
+         6: iadd
+         7: istore_1
+         8: goto          14
+        11: iload_0
+        12: ineg
+        13: istore_1
+        14: iload_1
+        15: iconst_2
+        16: imul
+        17: ireturn
+      LineNumberTable:
+        line 30: 0
+        line 31: 4
+        line 33: 11
+        line 35: 14
+      LocalVariableTable:
+        Start  Length  Slot  Name   Signature
+            8       3     1 result   I
+            0      18     0 value   I
+           14       4     1 result   I
+      StackMapTable: number_of_entries = 2
+        frame_type = 11 /* same */
+        frame_type = 252 /* append */
+          offset_delta = 2
+          locals = [ int ]
+    MethodParameters:
+      Name                           Flags
+      value
+
+  public static int sum(int[]);
+    descriptor: ([I)I
+    flags: (0x0009) ACC_PUBLIC, ACC_STATIC
+    Code:
+      stack=3, locals=3, args_size=1
+         0: iconst_0
+         1: istore_1
+         2: iconst_0
+         3: istore_2
+         4: iload_2
+         5: aload_0
+         6: arraylength
+         7: if_icmpge     22
+        10: iload_1
+        11: aload_0
+        12: iload_2
+        13: iaload
+        14: iadd
+        15: istore_1
+        16: iinc          2, 1
+        19: goto          4
+        22: iload_1
+        23: ireturn
+      LineNumberTable:
+        line 40: 0
+        line 41: 2
+        line 42: 10
+        line 41: 16
+        line 44: 22
+      LocalVariableTable:
+        Start  Length  Slot  Name   Signature
+            4      18     2 index   I
+            0      24     0 values   [I
+            2      22     1 result   I
+      StackMapTable: number_of_entries = 2
+        frame_type = 253 /* append */
+          offset_delta = 4
+          locals = [ int, int ]
+        frame_type = 250 /* chop */
+          offset_delta = 17
+    MethodParameters:
+      Name                           Flags
+      values
+
+  public static int denseSwitch(int);
+    descriptor: (I)I
+    flags: (0x0009) ACC_PUBLIC, ACC_STATIC
+    Code:
+      stack=1, locals=1, args_size=1
+         0: iload_0
+         1: tableswitch   { // 0 to 3
+                       0: 32
+                       1: 37
+                       2: 42
+                       3: 47
+                 default: 52
+            }
+        32: bipush        10
+        34: goto          53
+        37: bipush        20
+        39: goto          53
+        42: bipush        30
+        44: goto          53
+        47: bipush        40
+        49: goto          53
+        52: iconst_m1
+        53: ireturn
+      LineNumberTable:
+        line 49: 0
+        line 50: 32
+        line 51: 37
+        line 52: 42
+        line 53: 47
+        line 54: 52
+        line 49: 53
+      LocalVariableTable:
+        Start  Length  Slot  Name   Signature
+            0      54     0 value   I
+      StackMapTable: number_of_entries = 6
+        frame_type = 32 /* same */
+        frame_type = 4 /* same */
+        frame_type = 4 /* same */
+        frame_type = 4 /* same */
+        frame_type = 4 /* same */
+        frame_type = 64 /* same_locals_1_stack_item */
+          stack = [ int ]
+    MethodParameters:
+      Name                           Flags
+      value
+
+  public static int sparseSwitch(int);
+    descriptor: (I)I
+    flags: (0x0009) ACC_PUBLIC, ACC_STATIC
+    Code:
+      stack=1, locals=1, args_size=1
+         0: iload_0
+         1: lookupswitch  { // 3
+                   -1000: 36
+                       1: 41
+                   10000: 46
+                 default: 51
+            }
+        36: bipush        10
+        38: goto          52
+        41: bipush        20
+        43: goto          52
+        46: bipush        30
+        48: goto          52
+        51: iconst_m1
+        52: ireturn
+      LineNumberTable:
+        line 60: 0
+        line 61: 36
+        line 62: 41
+        line 63: 46
+        line 64: 51
+        line 60: 52
+      LocalVariableTable:
+        Start  Length  Slot  Name   Signature
+            0      53     0 value   I
+      StackMapTable: number_of_entries = 5
+        frame_type = 36 /* same */
+        frame_type = 4 /* same */
+        frame_type = 4 /* same */
+        frame_type = 4 /* same */
+        frame_type = 64 /* same_locals_1_stack_item */
+          stack = [ int ]
+    MethodParameters:
+      Name                           Flags
+      value
+
+  public int synchronizedBlock(int);
+    descriptor: (I)I
+    flags: (0x0001) ACC_PUBLIC
+    Code:
+      stack=3, locals=4, args_size=2
+         0: aload_0
+         1: getfield      #10                 // Field monitor:Lorg/example/jvminternals/ch05/BytecodeCases$MonitorCell;
+         4: dup
+         5: astore_2
+         6: monitorenter
+         7: aload_0
+         8: getfield      #10                 // Field monitor:Lorg/example/jvminternals/ch05/BytecodeCases$MonitorCell;
+        11: dup
+        12: getfield      #16                 // Field org/example/jvminternals/ch05/BytecodeCases$MonitorCell.value:I
+        15: iload_1
+        16: iadd
+        17: putfield      #16                 // Field org/example/jvminternals/ch05/BytecodeCases$MonitorCell.value:I
+        20: aload_0
+        21: getfield      #10                 // Field monitor:Lorg/example/jvminternals/ch05/BytecodeCases$MonitorCell;
+        24: getfield      #16                 // Field org/example/jvminternals/ch05/BytecodeCases$MonitorCell.value:I
+        27: aload_2
+        28: monitorexit
+        29: ireturn
+        30: astore_3
+        31: aload_2
+        32: monitorexit
+        33: aload_3
+        34: athrow
+      Exception table:
+         from    to  target type
+             7    29    30   any
+            30    33    30   any
+      LineNumberTable:
+        line 70: 0
+        line 71: 7
+        line 72: 20
+        line 73: 30
+      LocalVariableTable:
+        Start  Length  Slot  Name   Signature
+            0      35     0  this   Lorg/example/jvminternals/ch05/BytecodeCases;
+            0      35     1 delta   I
+      StackMapTable: number_of_entries = 1
+        frame_type = 255 /* full_frame */
+          offset_delta = 30
+          locals = [ class org/example/jvminternals/ch05/BytecodeCases, int, class java/lang/Object ]
+          stack = [ class java/lang/Throwable ]
+    MethodParameters:
+      Name                           Flags
+      delta
+
+  public int synchronizedMethod(int);
+    descriptor: (I)I
+    flags: (0x0001) ACC_PUBLIC
+    Code:
+      stack=2, locals=2, args_size=2
+         0: aload_0
+         1: getfield      #10                 // Field monitor:Lorg/example/jvminternals/ch05/BytecodeCases$MonitorCell;
+         4: iload_1
+         5: invokevirtual #20                 // Method org/example/jvminternals/ch05/BytecodeCases$MonitorCell.add:(I)I
+         8: ireturn
+      LineNumberTable:
+        line 78: 0
+      LocalVariableTable:
+        Start  Length  Slot  Name   Signature
+            0       9     0  this   Lorg/example/jvminternals/ch05/BytecodeCases;
+            0       9     1 delta   I
+    MethodParameters:
+      Name                           Flags
+      delta
+
+  private static int invoke(org.example.jvminternals.ch05.BytecodeCases$Unary, int);
+    descriptor: (Lorg/example/jvminternals/ch05/BytecodeCases$Unary;I)I
+    flags: (0x000a) ACC_PRIVATE, ACC_STATIC
+    Code:
+      stack=2, locals=2, args_size=2
+         0: aload_0
+         1: iload_1
+         2: invokeinterface #24,  2           // InterfaceMethod org/example/jvminternals/ch05/BytecodeCases$Unary.apply:(I)I
+         7: ireturn
+      LineNumberTable:
+        line 83: 0
+      LocalVariableTable:
+        Start  Length  Slot  Name   Signature
+            0       8     0 operation   Lorg/example/jvminternals/ch05/BytecodeCases$Unary;
+            0       8     1 value   I
+    MethodParameters:
+      Name                           Flags
+      operation
+      value
+
+  public static void main(java.lang.String[]);
+    descriptor: ([Ljava/lang/String;)V
+    flags: (0x0009) ACC_PUBLIC, ACC_STATIC
+    Code:
+      stack=6, locals=2, args_size=1
+         0: getstatic     #29                 // Field LOGGER:Ljava/lang/System$Logger;
+         3: getstatic     #33                 // Field java/lang/System$Logger$Level.INFO:Ljava/lang/System$Logger$Level;
+         6: ldc           #39                 // String 开始执行字节码教学方法组
+         8: invokeinterface #41,  3           // InterfaceMethod java/lang/System$Logger.log:(Ljava/lang/System$Logger$Level;Ljava/lang/String;)V
+        13: new           #11                 // class org/example/jvminternals/ch05/BytecodeCases
+        16: dup
+        17: invokespecial #47                 // Method "<init>":()V
+        20: astore_1
+        21: getstatic     #48                 // Field java/lang/System.out:Ljava/io/PrintStream;
+        24: iconst_2
+        25: ldc2_w        #54                 // long 10l
+        28: ldc2_w        #56                 // double 3.5d
+        31: invokestatic  #58                 // Method widenAndAdd:(IJD)J
+        34: invokedynamic #62,  0             // InvokeDynamic #0:makeConcatWithConstants:(J)Ljava/lang/String;
+        39: invokevirtual #66                 // Method java/io/PrintStream.println:(Ljava/lang/String;)V
+        42: getstatic     #48                 // Field java/lang/System.out:Ljava/io/PrintStream;
+        45: iconst_3
+        46: invokestatic  #72                 // Method reuseSlot:(I)I
+        49: invokedynamic #75,  0             // InvokeDynamic #1:makeConcatWithConstants:(I)Ljava/lang/String;
+        54: invokevirtual #66                 // Method java/io/PrintStream.println:(Ljava/lang/String;)V
+        57: getstatic     #48                 // Field java/lang/System.out:Ljava/io/PrintStream;
+        60: iconst_3
+        61: invokestatic  #78                 // Method branch:(I)I
+        64: invokedynamic #81,  0             // InvokeDynamic #2:makeConcatWithConstants:(I)Ljava/lang/String;
+        69: invokevirtual #66                 // Method java/io/PrintStream.println:(Ljava/lang/String;)V
+        72: getstatic     #48                 // Field java/lang/System.out:Ljava/io/PrintStream;
+        75: iconst_3
+        76: newarray       int
+        78: dup
+        79: iconst_0
+        80: iconst_2
+        81: iastore
+        82: dup
+        83: iconst_1
+        84: iconst_4
+        85: iastore
+        86: dup
+        87: iconst_2
+        88: bipush        6
+        90: iastore
+        91: invokestatic  #82                 // Method sum:([I)I
+        94: invokedynamic #86,  0             // InvokeDynamic #3:makeConcatWithConstants:(I)Ljava/lang/String;
+        99: invokevirtual #66                 // Method java/io/PrintStream.println:(Ljava/lang/String;)V
+       102: getstatic     #48                 // Field java/lang/System.out:Ljava/io/PrintStream;
+       105: iconst_2
+       106: invokestatic  #87                 // Method denseSwitch:(I)I
+       109: sipush        10000
+       112: invokestatic  #90                 // Method sparseSwitch:(I)I
+       115: invokedynamic #93,  0             // InvokeDynamic #4:makeConcatWithConstants:(II)Ljava/lang/String;
+       120: invokevirtual #66                 // Method java/io/PrintStream.println:(Ljava/lang/String;)V
+       123: getstatic     #48                 // Field java/lang/System.out:Ljava/io/PrintStream;
+       126: aload_1
+       127: iconst_2
+       128: invokevirtual #96                 // Method synchronizedBlock:(I)I
+       131: invokedynamic #99,  0             // InvokeDynamic #5:makeConcatWithConstants:(I)Ljava/lang/String;
+       136: invokevirtual #66                 // Method java/io/PrintStream.println:(Ljava/lang/String;)V
+       139: getstatic     #48                 // Field java/lang/System.out:Ljava/io/PrintStream;
+       142: aload_1
+       143: iconst_3
+       144: invokevirtual #100                // Method synchronizedMethod:(I)I
+       147: invokedynamic #103,  0            // InvokeDynamic #6:makeConcatWithConstants:(I)Ljava/lang/String;
+       152: invokevirtual #66                 // Method java/io/PrintStream.println:(Ljava/lang/String;)V
+       155: getstatic     #48                 // Field java/lang/System.out:Ljava/io/PrintStream;
+       158: new           #104                // class org/example/jvminternals/ch05/BytecodeCases$Increment
+       161: dup
+       162: invokespecial #106                // Method org/example/jvminternals/ch05/BytecodeCases$Increment."<init>":()V
+       165: bipush        7
+       167: invokestatic  #107                // Method invoke:(Lorg/example/jvminternals/ch05/BytecodeCases$Unary;I)I
+       170: invokedynamic #111,  0            // InvokeDynamic #7:makeConcatWithConstants:(I)Ljava/lang/String;
+       175: invokevirtual #66                 // Method java/io/PrintStream.println:(Ljava/lang/String;)V
+       178: getstatic     #29                 // Field LOGGER:Ljava/lang/System$Logger;
+       181: getstatic     #33                 // Field java/lang/System$Logger$Level.INFO:Ljava/lang/System$Logger$Level;
+       184: ldc           #112                // String 字节码教学方法组结束
+       186: invokeinterface #41,  3           // InterfaceMethod java/lang/System$Logger.log:(Ljava/lang/System$Logger$Level;Ljava/lang/String;)V
+       191: return
+      LineNumberTable:
+        line 88: 0
+        line 89: 13
+        line 90: 21
+        line 91: 42
+        line 92: 57
+        line 93: 72
+        line 94: 102
+        line 95: 123
+        line 96: 139
+        line 97: 155
+        line 98: 178
+        line 99: 191
+      LocalVariableTable:
+        Start  Length  Slot  Name   Signature
+            0     192     0  args   [Ljava/lang/String;
+           21     171     1 cases   Lorg/example/jvminternals/ch05/BytecodeCases;
+    MethodParameters:
+      Name                           Flags
+      args
+
+  static {};
+    descriptor: ()V
+    flags: (0x0008) ACC_STATIC
+    Code:
+      stack=1, locals=0, args_size=0
+         0: ldc           #11                 // class org/example/jvminternals/ch05/BytecodeCases
+         2: invokevirtual #114                // Method java/lang/Class.getName:()Ljava/lang/String;
+         5: invokestatic  #120                // Method java/lang/System.getLogger:(Ljava/lang/String;)Ljava/lang/System$Logger;
+         8: putstatic     #29                 // Field LOGGER:Ljava/lang/System$Logger;
+        11: return
+      LineNumberTable:
+        line 5: 0
+}
+SourceFile: "BytecodeCases.java"
+NestMembers:
+  org/example/jvminternals/ch05/BytecodeCases$MonitorCell
+  org/example/jvminternals/ch05/BytecodeCases$Increment
+  org/example/jvminternals/ch05/BytecodeCases$Unary
+BootstrapMethods:
+  0: #174 REF_invokeStatic java/lang/invoke/StringConcatFactory.makeConcatWithConstants:(Ljava/lang/invoke/MethodHandles$Lookup;Ljava/lang/String;Ljava/lang/invoke/MethodType;Ljava/lang/String;[Ljava/lang/Object;)Ljava/lang/invoke/CallSite;
+    Method arguments:
+      #158 widen=\u0001
+  1: #174 REF_invokeStatic java/lang/invoke/StringConcatFactory.makeConcatWithConstants:(Ljava/lang/invoke/MethodHandles$Lookup;Ljava/lang/String;Ljava/lang/invoke/MethodType;Ljava/lang/String;[Ljava/lang/Object;)Ljava/lang/invoke/CallSite;
+    Method arguments:
+      #160 reuse=\u0001
+  2: #174 REF_invokeStatic java/lang/invoke/StringConcatFactory.makeConcatWithConstants:(Ljava/lang/invoke/MethodHandles$Lookup;Ljava/lang/String;Ljava/lang/invoke/MethodType;Ljava/lang/String;[Ljava/lang/Object;)Ljava/lang/invoke/CallSite;
+    Method arguments:
+      #162 branch=\u0001
+  3: #174 REF_invokeStatic java/lang/invoke/StringConcatFactory.makeConcatWithConstants:(Ljava/lang/invoke/MethodHandles$Lookup;Ljava/lang/String;Ljava/lang/invoke/MethodType;Ljava/lang/String;[Ljava/lang/Object;)Ljava/lang/invoke/CallSite;
+    Method arguments:
+      #164 sum=\u0001
+  4: #174 REF_invokeStatic java/lang/invoke/StringConcatFactory.makeConcatWithConstants:(Ljava/lang/invoke/MethodHandles$Lookup;Ljava/lang/String;Ljava/lang/invoke/MethodType;Ljava/lang/String;[Ljava/lang/Object;)Ljava/lang/invoke/CallSite;
+    Method arguments:
+      #166 dense=\u0001 sparse=\u0001
+  5: #174 REF_invokeStatic java/lang/invoke/StringConcatFactory.makeConcatWithConstants:(Ljava/lang/invoke/MethodHandles$Lookup;Ljava/lang/String;Ljava/lang/invoke/MethodType;Ljava/lang/String;[Ljava/lang/Object;)Ljava/lang/invoke/CallSite;
+    Method arguments:
+      #168 block=\u0001
+  6: #174 REF_invokeStatic java/lang/invoke/StringConcatFactory.makeConcatWithConstants:(Ljava/lang/invoke/MethodHandles$Lookup;Ljava/lang/String;Ljava/lang/invoke/MethodType;Ljava/lang/String;[Ljava/lang/Object;)Ljava/lang/invoke/CallSite;
+    Method arguments:
+      #170 method=\u0001
+  7: #174 REF_invokeStatic java/lang/invoke/StringConcatFactory.makeConcatWithConstants:(Ljava/lang/invoke/MethodHandles$Lookup;Ljava/lang/String;Ljava/lang/invoke/MethodType;Ljava/lang/String;[Ljava/lang/Object;)Ljava/lang/invoke/CallSite;
+    Method arguments:
+      #172 interface=\u0001
+InnerClasses:
+  private static final #181= #7 of #11;   // MonitorCell=class org/example/jvminternals/ch05/BytecodeCases$MonitorCell of class org/example/jvminternals/ch05/BytecodeCases
+  private static #182= #25 of #11;        // Unary=class org/example/jvminternals/ch05/BytecodeCases$Unary of class org/example/jvminternals/ch05/BytecodeCases
+  public static #183= #42 of #49;         // Logger=class java/lang/System$Logger of class java/lang/System
+  public static final #184= #34 of #42;   // Level=class java/lang/System$Logger$Level of class java/lang/System$Logger
+  private static final #185= #104 of #11; // Increment=class org/example/jvminternals/ch05/BytecodeCases$Increment of class org/example/jvminternals/ch05/BytecodeCases
+  public static final #190= #186 of #188; // Lookup=class java/lang/invoke/MethodHandles$Lookup of class java/lang/invoke/MethodHandles
+Classfile /Users/xiejinxin/Developer/Java/jvm-internals/chapters/ch05-bytecode-verification/target/classes/org/example/jvminternals/ch05/BytecodeCases$MonitorCell.class
+  Last modified 2026年11月3日; size 627 bytes
+  SHA-256 checksum 9deecae7750db9612f36b352f0aa191b6c544f3d37365b36589d1a3b0317f08b
+  Compiled from "BytecodeCases.java"
+final class org.example.jvminternals.ch05.BytecodeCases$MonitorCell
+  minor version: 0
+  major version: 69
+  flags: (0x0030) ACC_FINAL, ACC_SUPER
+  this_class: #8                          // org/example/jvminternals/ch05/BytecodeCases$MonitorCell
+  super_class: #2                         // java/lang/Object
+  interfaces: 0, fields: 1, methods: 2, attributes: 3
+Constant pool:
+   #1 = Methodref          #2.#3          // java/lang/Object."<init>":()V
+   #2 = Class              #4             // java/lang/Object
+   #3 = NameAndType        #5:#6          // "<init>":()V
+   #4 = Utf8               java/lang/Object
+   #5 = Utf8               <init>
+   #6 = Utf8               ()V
+   #7 = Fieldref           #8.#9          // org/example/jvminternals/ch05/BytecodeCases$MonitorCell.value:I
+   #8 = Class              #10            // org/example/jvminternals/ch05/BytecodeCases$MonitorCell
+   #9 = NameAndType        #11:#12        // value:I
+  #10 = Utf8               org/example/jvminternals/ch05/BytecodeCases$MonitorCell
+  #11 = Utf8               value
+  #12 = Utf8               I
+  #13 = Utf8               Code
+  #14 = Utf8               LineNumberTable
+  #15 = Utf8               LocalVariableTable
+  #16 = Utf8               this
+  #17 = Utf8               Lorg/example/jvminternals/ch05/BytecodeCases$MonitorCell;
+  #18 = Utf8               add
+  #19 = Utf8               (I)I
+  #20 = Utf8               delta
+  #21 = Utf8               MethodParameters
+  #22 = Utf8               SourceFile
+  #23 = Utf8               BytecodeCases.java
+  #24 = Utf8               NestHost
+  #25 = Class              #26            // org/example/jvminternals/ch05/BytecodeCases
+  #26 = Utf8               org/example/jvminternals/ch05/BytecodeCases
+  #27 = Utf8               InnerClasses
+  #28 = Utf8               MonitorCell
+{
+  private int value;
+    descriptor: I
+    flags: (0x0002) ACC_PRIVATE
+
+  private org.example.jvminternals.ch05.BytecodeCases$MonitorCell();
+    descriptor: ()V
+    flags: (0x0002) ACC_PRIVATE
+    Code:
+      stack=1, locals=1, args_size=1
+         0: aload_0
+         1: invokespecial #1                  // Method java/lang/Object."<init>":()V
+         4: return
+      LineNumberTable:
+        line 113: 0
+      LocalVariableTable:
+        Start  Length  Slot  Name   Signature
+            0       5     0  this   Lorg/example/jvminternals/ch05/BytecodeCases$MonitorCell;
+
+  private synchronized int add(int);
+    descriptor: (I)I
+    flags: (0x0022) ACC_PRIVATE, ACC_SYNCHRONIZED
+    Code:
+      stack=3, locals=2, args_size=2
+         0: aload_0
+         1: dup
+         2: getfield      #7                  // Field value:I
+         5: iload_1
+         6: iadd
+         7: putfield      #7                  // Field value:I
+        10: aload_0
+        11: getfield      #7                  // Field value:I
+        14: ireturn
+      LineNumberTable:
+        line 117: 0
+        line 118: 10
+      LocalVariableTable:
+        Start  Length  Slot  Name   Signature
+            0      15     0  this   Lorg/example/jvminternals/ch05/BytecodeCases$MonitorCell;
+            0      15     1 delta   I
+    MethodParameters:
+      Name                           Flags
+      delta
+}
+SourceFile: "BytecodeCases.java"
+NestHost: class org/example/jvminternals/ch05/BytecodeCases
+InnerClasses:
+  private static final #28= #8 of #25;    // MonitorCell=class org/example/jvminternals/ch05/BytecodeCases$MonitorCell of class org/example/jvminternals/ch05/BytecodeCases
+Classfile /Users/xiejinxin/Developer/Java/jvm-internals/chapters/ch05-bytecode-verification/target/classes/org/example/jvminternals/ch05/BytecodeCases$Increment.class
+  Last modified 2026年11月3日; size 655 bytes
+  SHA-256 checksum 1697d088f9f556948e778bbe5c0996a9ce5ad3b82b89aedfdc29dc107cd98941
+  Compiled from "BytecodeCases.java"
+final class org.example.jvminternals.ch05.BytecodeCases$Increment implements org.example.jvminternals.ch05.BytecodeCases$Unary
+  minor version: 0
+  major version: 69
+  flags: (0x0030) ACC_FINAL, ACC_SUPER
+  this_class: #7                          // org/example/jvminternals/ch05/BytecodeCases$Increment
+  super_class: #2                         // java/lang/Object
+  interfaces: 1, fields: 0, methods: 2, attributes: 3
+Constant pool:
+   #1 = Methodref          #2.#3          // java/lang/Object."<init>":()V
+   #2 = Class              #4             // java/lang/Object
+   #3 = NameAndType        #5:#6          // "<init>":()V
+   #4 = Utf8               java/lang/Object
+   #5 = Utf8               <init>
+   #6 = Utf8               ()V
+   #7 = Class              #8             // org/example/jvminternals/ch05/BytecodeCases$Increment
+   #8 = Utf8               org/example/jvminternals/ch05/BytecodeCases$Increment
+   #9 = Class              #10            // org/example/jvminternals/ch05/BytecodeCases$Unary
+  #10 = Utf8               org/example/jvminternals/ch05/BytecodeCases$Unary
+  #11 = Utf8               Code
+  #12 = Utf8               LineNumberTable
+  #13 = Utf8               LocalVariableTable
+  #14 = Utf8               this
+  #15 = Utf8               Lorg/example/jvminternals/ch05/BytecodeCases$Increment;
+  #16 = Utf8               apply
+  #17 = Utf8               (I)I
+  #18 = Utf8               value
+  #19 = Utf8               I
+  #20 = Utf8               MethodParameters
+  #21 = Utf8               SourceFile
+  #22 = Utf8               BytecodeCases.java
+  #23 = Utf8               NestHost
+  #24 = Class              #25            // org/example/jvminternals/ch05/BytecodeCases
+  #25 = Utf8               org/example/jvminternals/ch05/BytecodeCases
+  #26 = Utf8               InnerClasses
+  #27 = Utf8               Increment
+  #28 = Utf8               Unary
+{
+  private org.example.jvminternals.ch05.BytecodeCases$Increment();
+    descriptor: ()V
+    flags: (0x0002) ACC_PRIVATE
+    Code:
+      stack=1, locals=1, args_size=1
+         0: aload_0
+         1: invokespecial #1                  // Method java/lang/Object."<init>":()V
+         4: return
+      LineNumberTable:
+        line 105: 0
+      LocalVariableTable:
+        Start  Length  Slot  Name   Signature
+            0       5     0  this   Lorg/example/jvminternals/ch05/BytecodeCases$Increment;
+
+  public int apply(int);
+    descriptor: (I)I
+    flags: (0x0001) ACC_PUBLIC
+    Code:
+      stack=2, locals=2, args_size=2
+         0: iload_1
+         1: iconst_1
+         2: iadd
+         3: ireturn
+      LineNumberTable:
+        line 108: 0
+      LocalVariableTable:
+        Start  Length  Slot  Name   Signature
+            0       4     0  this   Lorg/example/jvminternals/ch05/BytecodeCases$Increment;
+            0       4     1 value   I
+    MethodParameters:
+      Name                           Flags
+      value
+}
+SourceFile: "BytecodeCases.java"
+NestHost: class org/example/jvminternals/ch05/BytecodeCases
+InnerClasses:
+  private static final #27= #7 of #24;    // Increment=class org/example/jvminternals/ch05/BytecodeCases$Increment of class org/example/jvminternals/ch05/BytecodeCases
+  private static #28= #9 of #24;          // Unary=class org/example/jvminternals/ch05/BytecodeCases$Unary of class org/example/jvminternals/ch05/BytecodeCases

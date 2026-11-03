@@ -1,0 +1,6 @@
+6edd8e6c1f50fadcd382b9ed7a261e131080e44930e531a9d2fa0a4811a4036d  artifacts/p06-browser-copy/ch19-source.txt
+4aa927315d3266c2d73f582d6c11a9f14cb36ed75a2b9c8f9dff03e59549f5d4  artifacts/p06-browser-copy/ch20-source.txt
+88c83dc6ee2d2c867474bbeb7a245255ab1f0eba4284c70a47f1aea4adf30b9b  artifacts/p06-browser-copy/ch21-source.txt
+588cfca15a33e1e4d3113c516f4ba5e450b26dbb32cd0a9ee8c31d53daa37991  artifacts/p06-browser-copy/ch22-source.txt
+69667a7a3de3e878a78a70c1d4a88e7c166d15b4cab537aab3692821dff87969  artifacts/p06-browser-copy/ch23-source.txt
+69667a7a3de3e878a78a70c1d4a88e7c166d15b4cab537aab3692821dff87969  artifacts/p06-browser-copy/ch24-source.txt

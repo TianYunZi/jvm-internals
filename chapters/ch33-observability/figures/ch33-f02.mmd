@@ -1,0 +1,8 @@
+flowchart TD
+ A[jcmd] --> B[Attach诊断连接]
+ B --> C[目标诊断命令服务]
+ C --> D[日志 内存和线程等运行时服务]
+ E[Java代理 premain或agentmain] --> F[Instrumentation]
+ F --> G[JVMTI能力与类变换回调]
+ G --> H[类验证 安装与编译依赖更新]
+ H --> D

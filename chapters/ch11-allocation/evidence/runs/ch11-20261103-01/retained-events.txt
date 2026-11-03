@@ -1,0 +1,25 @@
+
+jdk.ObjectAllocationSample {
+  startTime = 13:09:32.007 (2026-11-03)
+  objectClass = org.example.jvminternals.ch11.AllocationJourney$Pair (classLoader = app)
+  weight = 279.4 kB
+  eventThread = "main" (javaThreadId = 3)
+  stackTrace = [
+    org.example.jvminternals.ch11.AllocationJourney.escapedSum(int) line: 67
+    org.example.jvminternals.ch11.AllocationJourney.observeEscaped(ThreadMXBean) line: 53
+    org.example.jvminternals.ch11.AllocationJourney.main(String[]) line: 29
+  ]
+}
+
+jdk.ObjectAllocationInNewTLAB {
+  startTime = 13:09:32.007 (2026-11-03)
+  objectClass = org.example.jvminternals.ch11.AllocationJourney$Pair (classLoader = app)
+  allocationSize = 24 bytes
+  tlabSize = 280.4 kB
+  eventThread = "main" (javaThreadId = 3)
+  stackTrace = [
+    org.example.jvminternals.ch11.AllocationJourney.escapedSum(int) line: 67
+    org.example.jvminternals.ch11.AllocationJourney.observeEscaped(ThreadMXBean) line: 53
+    org.example.jvminternals.ch11.AllocationJourney.main(String[]) line: 29
+  ]
+}

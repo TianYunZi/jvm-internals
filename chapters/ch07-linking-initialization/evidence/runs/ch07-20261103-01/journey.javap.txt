@@ -1,0 +1,695 @@
+Classfile /Users/xiejinxin/Developer/Java/jvm-internals/chapters/ch07-linking-initialization/target/classes/org/example/jvminternals/ch07/InitializationJourney.class
+  Last modified 2026年11月3日; size 3945 bytes
+  SHA-256 checksum c6f1263bb4a9b827bdfac1f7d5e96e644c7c605e7a917731960d1c7c062a2a4b
+  Compiled from "InitializationJourney.java"
+public final class org.example.jvminternals.ch07.InitializationJourney
+  minor version: 0
+  major version: 69
+  flags: (0x0031) ACC_PUBLIC, ACC_FINAL, ACC_SUPER
+  this_class: #24                         // org/example/jvminternals/ch07/InitializationJourney
+  super_class: #2                         // java/lang/Object
+  interfaces: 0, fields: 1, methods: 4, attributes: 4
+Constant pool:
+    #1 = Methodref          #2.#3         // java/lang/Object."<init>":()V
+    #2 = Class              #4            // java/lang/Object
+    #3 = NameAndType        #5:#6         // "<init>":()V
+    #4 = Utf8               java/lang/Object
+    #5 = Utf8               <init>
+    #6 = Utf8               ()V
+    #7 = Fieldref           #8.#9         // java/lang/System.out:Ljava/io/PrintStream;
+    #8 = Class              #10           // java/lang/System
+    #9 = NameAndType        #11:#12       // out:Ljava/io/PrintStream;
+   #10 = Utf8               java/lang/System
+   #11 = Utf8               out
+   #12 = Utf8               Ljava/io/PrintStream;
+   #13 = InvokeDynamic      #0:#14        // #0:makeConcatWithConstants:(Ljava/lang/String;I)Ljava/lang/String;
+   #14 = NameAndType        #15:#16       // makeConcatWithConstants:(Ljava/lang/String;I)Ljava/lang/String;
+   #15 = Utf8               makeConcatWithConstants
+   #16 = Utf8               (Ljava/lang/String;I)Ljava/lang/String;
+   #17 = Methodref          #18.#19       // java/io/PrintStream.println:(Ljava/lang/String;)V
+   #18 = Class              #20           // java/io/PrintStream
+   #19 = NameAndType        #21:#22       // println:(Ljava/lang/String;)V
+   #20 = Utf8               java/io/PrintStream
+   #21 = Utf8               println
+   #22 = Utf8               (Ljava/lang/String;)V
+   #23 = Fieldref           #24.#25       // org/example/jvminternals/ch07/InitializationJourney.LOG:Ljava/lang/System$Logger;
+   #24 = Class              #26           // org/example/jvminternals/ch07/InitializationJourney
+   #25 = NameAndType        #27:#28       // LOG:Ljava/lang/System$Logger;
+   #26 = Utf8               org/example/jvminternals/ch07/InitializationJourney
+   #27 = Utf8               LOG
+   #28 = Utf8               Ljava/lang/System$Logger;
+   #29 = Fieldref           #30.#31       // java/lang/System$Logger$Level.INFO:Ljava/lang/System$Logger$Level;
+   #30 = Class              #32           // java/lang/System$Logger$Level
+   #31 = NameAndType        #33:#34       // INFO:Ljava/lang/System$Logger$Level;
+   #32 = Utf8               java/lang/System$Logger$Level
+   #33 = Utf8               INFO
+   #34 = Utf8               Ljava/lang/System$Logger$Level;
+   #35 = String             #36           // 开始正常初始化观察
+   #36 = Utf8               开始正常初始化观察
+   #37 = InterfaceMethodref #38.#39       // java/lang/System$Logger.log:(Ljava/lang/System$Logger$Level;Ljava/lang/String;)V
+   #38 = Class              #40           // java/lang/System$Logger
+   #39 = NameAndType        #41:#42       // log:(Ljava/lang/System$Logger$Level;Ljava/lang/String;)V
+   #40 = Utf8               java/lang/System$Logger
+   #41 = Utf8               log
+   #42 = Utf8               (Ljava/lang/System$Logger$Level;Ljava/lang/String;)V
+   #43 = Class              #44           // org/example/jvminternals/ch07/InitializationJourney$Values
+   #44 = Utf8               org/example/jvminternals/ch07/InitializationJourney$Values
+   #45 = String             #46           // constant=41
+   #46 = Utf8               constant=41
+   #47 = String             #48           // before.runtime
+   #48 = Utf8               before.runtime
+   #49 = Fieldref           #43.#50       // org/example/jvminternals/ch07/InitializationJourney$Values.RUNTIME:I
+   #50 = NameAndType        #51:#52       // RUNTIME:I
+   #51 = Utf8               RUNTIME
+   #52 = Utf8               I
+   #53 = InvokeDynamic      #1:#54        // #1:makeConcatWithConstants:(I)Ljava/lang/String;
+   #54 = NameAndType        #15:#55       // makeConcatWithConstants:(I)Ljava/lang/String;
+   #55 = Utf8               (I)Ljava/lang/String;
+   #56 = Fieldref           #57.#58       // org/example/jvminternals/ch07/InitializationJourney$Child.VALUE:I
+   #57 = Class              #59           // org/example/jvminternals/ch07/InitializationJourney$Child
+   #58 = NameAndType        #60:#52       // VALUE:I
+   #59 = Utf8               org/example/jvminternals/ch07/InitializationJourney$Child
+   #60 = Utf8               VALUE
+   #61 = InvokeDynamic      #2:#54        // #2:makeConcatWithConstants:(I)Ljava/lang/String;
+   #62 = Fieldref           #63.#64       // org/example/jvminternals/ch07/InitializationJourney$Plain.TOKEN:I
+   #63 = Class              #65           // org/example/jvminternals/ch07/InitializationJourney$Plain
+   #64 = NameAndType        #66:#52       // TOKEN:I
+   #65 = Utf8               org/example/jvminternals/ch07/InitializationJourney$Plain
+   #66 = Utf8               TOKEN
+   #67 = InvokeDynamic      #3:#54        // #3:makeConcatWithConstants:(I)Ljava/lang/String;
+   #68 = Fieldref           #69.#70       // org/example/jvminternals/ch07/InitializationJourney$Recursive.FIRST:I
+   #69 = Class              #71           // org/example/jvminternals/ch07/InitializationJourney$Recursive
+   #70 = NameAndType        #72:#52       // FIRST:I
+   #71 = Utf8               org/example/jvminternals/ch07/InitializationJourney$Recursive
+   #72 = Utf8               FIRST
+   #73 = Fieldref           #69.#74       // org/example/jvminternals/ch07/InitializationJourney$Recursive.later:I
+   #74 = NameAndType        #75:#52       // later:I
+   #75 = Utf8               later
+   #76 = InvokeDynamic      #4:#77        // #4:makeConcatWithConstants:(II)Ljava/lang/String;
+   #77 = NameAndType        #15:#78       // makeConcatWithConstants:(II)Ljava/lang/String;
+   #78 = Utf8               (II)Ljava/lang/String;
+   #79 = Class              #80           // org/example/jvminternals/ch07/InitializationJourney$Lazy
+   #80 = Utf8               org/example/jvminternals/ch07/InitializationJourney$Lazy
+   #81 = Methodref          #82.#83       // java/lang/Class.getName:()Ljava/lang/String;
+   #82 = Class              #84           // java/lang/Class
+   #83 = NameAndType        #85:#86       // getName:()Ljava/lang/String;
+   #84 = Utf8               java/lang/Class
+   #85 = Utf8               getName
+   #86 = Utf8               ()Ljava/lang/String;
+   #87 = Methodref          #82.#88       // java/lang/Class.getClassLoader:()Ljava/lang/ClassLoader;
+   #88 = NameAndType        #89:#90       // getClassLoader:()Ljava/lang/ClassLoader;
+   #89 = Utf8               getClassLoader
+   #90 = Utf8               ()Ljava/lang/ClassLoader;
+   #91 = Methodref          #82.#92       // java/lang/Class.forName:(Ljava/lang/String;ZLjava/lang/ClassLoader;)Ljava/lang/Class;
+   #92 = NameAndType        #93:#94       // forName:(Ljava/lang/String;ZLjava/lang/ClassLoader;)Ljava/lang/Class;
+   #93 = Utf8               forName
+   #94 = Utf8               (Ljava/lang/String;ZLjava/lang/ClassLoader;)Ljava/lang/Class;
+   #95 = InvokeDynamic      #5:#96        // #5:makeConcatWithConstants:(Ljava/lang/String;)Ljava/lang/String;
+   #96 = NameAndType        #15:#97       // makeConcatWithConstants:(Ljava/lang/String;)Ljava/lang/String;
+   #97 = Utf8               (Ljava/lang/String;)Ljava/lang/String;
+   #98 = String             #99           // value
+   #99 = Utf8               value
+  #100 = Methodref          #82.#101      // java/lang/Class.getField:(Ljava/lang/String;)Ljava/lang/reflect/Field;
+  #101 = NameAndType        #102:#103     // getField:(Ljava/lang/String;)Ljava/lang/reflect/Field;
+  #102 = Utf8               getField
+  #103 = Utf8               (Ljava/lang/String;)Ljava/lang/reflect/Field;
+  #104 = Methodref          #105.#106     // java/lang/reflect/Field.get:(Ljava/lang/Object;)Ljava/lang/Object;
+  #105 = Class              #107          // java/lang/reflect/Field
+  #106 = NameAndType        #108:#109     // get:(Ljava/lang/Object;)Ljava/lang/Object;
+  #107 = Utf8               java/lang/reflect/Field
+  #108 = Utf8               get
+  #109 = Utf8               (Ljava/lang/Object;)Ljava/lang/Object;
+  #110 = Methodref          #111.#112     // java/lang/String.valueOf:(Ljava/lang/Object;)Ljava/lang/String;
+  #111 = Class              #113          // java/lang/String
+  #112 = NameAndType        #114:#115     // valueOf:(Ljava/lang/Object;)Ljava/lang/String;
+  #113 = Utf8               java/lang/String
+  #114 = Utf8               valueOf
+  #115 = Utf8               (Ljava/lang/Object;)Ljava/lang/String;
+  #116 = InvokeDynamic      #6:#96        // #6:makeConcatWithConstants:(Ljava/lang/String;)Ljava/lang/String;
+  #117 = Class              #118          // org/example/jvminternals/ch07/InitializationJourney$Derived
+  #118 = Utf8               org/example/jvminternals/ch07/InitializationJourney$Derived
+  #119 = Methodref          #117.#3       // org/example/jvminternals/ch07/InitializationJourney$Derived."<init>":()V
+  #120 = Fieldref           #121.#122     // org/example/jvminternals/ch07/InitializationJourney$Base.field:I
+  #121 = Class              #123          // org/example/jvminternals/ch07/InitializationJourney$Base
+  #122 = NameAndType        #124:#52      // field:I
+  #123 = Utf8               org/example/jvminternals/ch07/InitializationJourney$Base
+  #124 = Utf8               field
+  #125 = Methodref          #121.#126     // org/example/jvminternals/ch07/InitializationJourney$Base.number:()I
+  #126 = NameAndType        #127:#128     // number:()I
+  #127 = Utf8               number
+  #128 = Utf8               ()I
+  #129 = InvokeDynamic      #7:#77        // #7:makeConcatWithConstants:(II)Ljava/lang/String;
+  #130 = String             #131          // 正常初始化观察结束
+  #131 = Utf8               正常初始化观察结束
+  #132 = Methodref          #8.#133       // java/lang/System.getLogger:(Ljava/lang/String;)Ljava/lang/System$Logger;
+  #133 = NameAndType        #134:#135     // getLogger:(Ljava/lang/String;)Ljava/lang/System$Logger;
+  #134 = Utf8               getLogger
+  #135 = Utf8               (Ljava/lang/String;)Ljava/lang/System$Logger;
+  #136 = Utf8               Code
+  #137 = Utf8               LineNumberTable
+  #138 = Utf8               LocalVariableTable
+  #139 = Utf8               this
+  #140 = Utf8               Lorg/example/jvminternals/ch07/InitializationJourney;
+  #141 = Utf8               mark
+  #142 = Utf8               (Ljava/lang/String;I)I
+  #143 = Utf8               phase
+  #144 = Utf8               Ljava/lang/String;
+  #145 = Utf8               MethodParameters
+  #146 = Utf8               main
+  #147 = Utf8               ([Ljava/lang/String;)V
+  #148 = Utf8               args
+  #149 = Utf8               [Ljava/lang/String;
+  #150 = Utf8               discovered
+  #151 = Utf8               Ljava/lang/Class;
+  #152 = Utf8               receiver
+  #153 = Utf8               Lorg/example/jvminternals/ch07/InitializationJourney$Base;
+  #154 = Utf8               LocalVariableTypeTable
+  #155 = Utf8               Ljava/lang/Class<*>;
+  #156 = Utf8               Exceptions
+  #157 = Class              #158          // java/lang/ReflectiveOperationException
+  #158 = Utf8               java/lang/ReflectiveOperationException
+  #159 = Utf8               <clinit>
+  #160 = Utf8               SourceFile
+  #161 = Utf8               InitializationJourney.java
+  #162 = Utf8               NestMembers
+  #163 = Class              #164          // org/example/jvminternals/ch07/InitializationJourney$Parent
+  #164 = Utf8               org/example/jvminternals/ch07/InitializationJourney$Parent
+  #165 = Class              #166          // org/example/jvminternals/ch07/InitializationJourney$HasDefault
+  #166 = Utf8               org/example/jvminternals/ch07/InitializationJourney$HasDefault
+  #167 = Utf8               BootstrapMethods
+  #168 = String             #169          // initialize=\u0001 value=\u0001
+  #169 = Utf8               initialize=\u0001 value=\u0001
+  #170 = String             #171          // runtime=\u0001
+  #171 = Utf8               runtime=\u0001
+  #172 = String             #173          // child=\u0001
+  #173 = Utf8               child=\u0001
+  #174 = String             #175          // plain=\u0001
+  #175 = Utf8               plain=\u0001
+  #176 = String             #177          // recursive.first=\u0001 later=\u0001
+  #177 = Utf8               recursive.first=\u0001 later=\u0001
+  #178 = String             #179          // discovered=\u0001
+  #179 = Utf8               discovered=\u0001
+  #180 = String             #181          // reflect.value=\u0001
+  #181 = Utf8               reflect.value=\u0001
+  #182 = String             #183          // field=\u0001 virtual=\u0001
+  #183 = Utf8               field=\u0001 virtual=\u0001
+  #184 = MethodHandle       6:#185        // REF_invokeStatic java/lang/invoke/StringConcatFactory.makeConcatWithConstants:(Ljava/lang/invoke/MethodHandles$Lookup;Ljava/lang/String;Ljava/lang/invoke/MethodType;Ljava/lang/String;[Ljava/lang/Object;)Ljava/lang/invoke/CallSite;
+  #185 = Methodref          #186.#187     // java/lang/invoke/StringConcatFactory.makeConcatWithConstants:(Ljava/lang/invoke/MethodHandles$Lookup;Ljava/lang/String;Ljava/lang/invoke/MethodType;Ljava/lang/String;[Ljava/lang/Object;)Ljava/lang/invoke/CallSite;
+  #186 = Class              #188          // java/lang/invoke/StringConcatFactory
+  #187 = NameAndType        #15:#189      // makeConcatWithConstants:(Ljava/lang/invoke/MethodHandles$Lookup;Ljava/lang/String;Ljava/lang/invoke/MethodType;Ljava/lang/String;[Ljava/lang/Object;)Ljava/lang/invoke/CallSite;
+  #188 = Utf8               java/lang/invoke/StringConcatFactory
+  #189 = Utf8               (Ljava/lang/invoke/MethodHandles$Lookup;Ljava/lang/String;Ljava/lang/invoke/MethodType;Ljava/lang/String;[Ljava/lang/Object;)Ljava/lang/invoke/CallSite;
+  #190 = Utf8               InnerClasses
+  #191 = Utf8               Logger
+  #192 = Utf8               Level
+  #193 = Utf8               Values
+  #194 = Utf8               Child
+  #195 = Utf8               Plain
+  #196 = Utf8               Recursive
+  #197 = Utf8               Lazy
+  #198 = Utf8               Derived
+  #199 = Utf8               Base
+  #200 = Utf8               Parent
+  #201 = Utf8               HasDefault
+  #202 = Class              #203          // java/lang/invoke/MethodHandles$Lookup
+  #203 = Utf8               java/lang/invoke/MethodHandles$Lookup
+  #204 = Class              #205          // java/lang/invoke/MethodHandles
+  #205 = Utf8               java/lang/invoke/MethodHandles
+  #206 = Utf8               Lookup
+{
+  private static final java.lang.System$Logger LOG;
+    descriptor: Ljava/lang/System$Logger;
+    flags: (0x001a) ACC_PRIVATE, ACC_STATIC, ACC_FINAL
+
+  private org.example.jvminternals.ch07.InitializationJourney();
+    descriptor: ()V
+    flags: (0x0002) ACC_PRIVATE
+    Code:
+      stack=1, locals=1, args_size=1
+         0: aload_0
+         1: invokespecial #1                  // Method java/lang/Object."<init>":()V
+         4: return
+      LineNumberTable:
+        line 7: 0
+      LocalVariableTable:
+        Start  Length  Slot  Name   Signature
+            0       5     0  this   Lorg/example/jvminternals/ch07/InitializationJourney;
+
+  static int mark(java.lang.String, int);
+    descriptor: (Ljava/lang/String;I)I
+    flags: (0x0008) ACC_STATIC
+    Code:
+      stack=3, locals=2, args_size=2
+         0: getstatic     #7                  // Field java/lang/System.out:Ljava/io/PrintStream;
+         3: aload_0
+         4: iload_1
+         5: invokedynamic #13,  0             // InvokeDynamic #0:makeConcatWithConstants:(Ljava/lang/String;I)Ljava/lang/String;
+        10: invokevirtual #17                 // Method java/io/PrintStream.println:(Ljava/lang/String;)V
+        13: iload_1
+        14: ireturn
+      LineNumberTable:
+        line 10: 0
+        line 11: 13
+      LocalVariableTable:
+        Start  Length  Slot  Name   Signature
+            0      15     0 phase   Ljava/lang/String;
+            0      15     1 value   I
+    MethodParameters:
+      Name                           Flags
+      phase
+      value
+
+  public static void main(java.lang.String[]) throws java.lang.ReflectiveOperationException;
+    descriptor: ([Ljava/lang/String;)V
+    flags: (0x0009) ACC_PUBLIC, ACC_STATIC
+    Code:
+      stack=3, locals=3, args_size=1
+         0: getstatic     #23                 // Field LOG:Ljava/lang/System$Logger;
+         3: getstatic     #29                 // Field java/lang/System$Logger$Level.INFO:Ljava/lang/System$Logger$Level;
+         6: ldc           #35                 // String 开始正常初始化观察
+         8: invokeinterface #37,  3           // InterfaceMethod java/lang/System$Logger.log:(Ljava/lang/System$Logger$Level;Ljava/lang/String;)V
+        13: getstatic     #7                  // Field java/lang/System.out:Ljava/io/PrintStream;
+        16: ldc           #45                 // String constant=41
+        18: invokevirtual #17                 // Method java/io/PrintStream.println:(Ljava/lang/String;)V
+        21: getstatic     #7                  // Field java/lang/System.out:Ljava/io/PrintStream;
+        24: ldc           #47                 // String before.runtime
+        26: invokevirtual #17                 // Method java/io/PrintStream.println:(Ljava/lang/String;)V
+        29: getstatic     #7                  // Field java/lang/System.out:Ljava/io/PrintStream;
+        32: getstatic     #49                 // Field org/example/jvminternals/ch07/InitializationJourney$Values.RUNTIME:I
+        35: invokedynamic #53,  0             // InvokeDynamic #1:makeConcatWithConstants:(I)Ljava/lang/String;
+        40: invokevirtual #17                 // Method java/io/PrintStream.println:(Ljava/lang/String;)V
+        43: getstatic     #7                  // Field java/lang/System.out:Ljava/io/PrintStream;
+        46: getstatic     #56                 // Field org/example/jvminternals/ch07/InitializationJourney$Child.VALUE:I
+        49: invokedynamic #61,  0             // InvokeDynamic #2:makeConcatWithConstants:(I)Ljava/lang/String;
+        54: invokevirtual #17                 // Method java/io/PrintStream.println:(Ljava/lang/String;)V
+        57: getstatic     #7                  // Field java/lang/System.out:Ljava/io/PrintStream;
+        60: getstatic     #62                 // Field org/example/jvminternals/ch07/InitializationJourney$Plain.TOKEN:I
+        63: invokedynamic #67,  0             // InvokeDynamic #3:makeConcatWithConstants:(I)Ljava/lang/String;
+        68: invokevirtual #17                 // Method java/io/PrintStream.println:(Ljava/lang/String;)V
+        71: getstatic     #7                  // Field java/lang/System.out:Ljava/io/PrintStream;
+        74: getstatic     #68                 // Field org/example/jvminternals/ch07/InitializationJourney$Recursive.FIRST:I
+        77: getstatic     #73                 // Field org/example/jvminternals/ch07/InitializationJourney$Recursive.later:I
+        80: invokedynamic #76,  0             // InvokeDynamic #4:makeConcatWithConstants:(II)Ljava/lang/String;
+        85: invokevirtual #17                 // Method java/io/PrintStream.println:(Ljava/lang/String;)V
+        88: ldc           #79                 // class org/example/jvminternals/ch07/InitializationJourney$Lazy
+        90: invokevirtual #81                 // Method java/lang/Class.getName:()Ljava/lang/String;
+        93: iconst_0
+        94: ldc           #24                 // class org/example/jvminternals/ch07/InitializationJourney
+        96: invokevirtual #87                 // Method java/lang/Class.getClassLoader:()Ljava/lang/ClassLoader;
+        99: invokestatic  #91                 // Method java/lang/Class.forName:(Ljava/lang/String;ZLjava/lang/ClassLoader;)Ljava/lang/Class;
+       102: astore_1
+       103: getstatic     #7                  // Field java/lang/System.out:Ljava/io/PrintStream;
+       106: aload_1
+       107: invokevirtual #81                 // Method java/lang/Class.getName:()Ljava/lang/String;
+       110: invokedynamic #95,  0             // InvokeDynamic #5:makeConcatWithConstants:(Ljava/lang/String;)Ljava/lang/String;
+       115: invokevirtual #17                 // Method java/io/PrintStream.println:(Ljava/lang/String;)V
+       118: getstatic     #7                  // Field java/lang/System.out:Ljava/io/PrintStream;
+       121: aload_1
+       122: ldc           #98                 // String value
+       124: invokevirtual #100                // Method java/lang/Class.getField:(Ljava/lang/String;)Ljava/lang/reflect/Field;
+       127: aconst_null
+       128: invokevirtual #104                // Method java/lang/reflect/Field.get:(Ljava/lang/Object;)Ljava/lang/Object;
+       131: invokestatic  #110                // Method java/lang/String.valueOf:(Ljava/lang/Object;)Ljava/lang/String;
+       134: invokedynamic #116,  0            // InvokeDynamic #6:makeConcatWithConstants:(Ljava/lang/String;)Ljava/lang/String;
+       139: invokevirtual #17                 // Method java/io/PrintStream.println:(Ljava/lang/String;)V
+       142: new           #117                // class org/example/jvminternals/ch07/InitializationJourney$Derived
+       145: dup
+       146: invokespecial #119                // Method org/example/jvminternals/ch07/InitializationJourney$Derived."<init>":()V
+       149: astore_2
+       150: getstatic     #7                  // Field java/lang/System.out:Ljava/io/PrintStream;
+       153: aload_2
+       154: getfield      #120                // Field org/example/jvminternals/ch07/InitializationJourney$Base.field:I
+       157: aload_2
+       158: invokevirtual #125                // Method org/example/jvminternals/ch07/InitializationJourney$Base.number:()I
+       161: invokedynamic #129,  0            // InvokeDynamic #7:makeConcatWithConstants:(II)Ljava/lang/String;
+       166: invokevirtual #17                 // Method java/io/PrintStream.println:(Ljava/lang/String;)V
+       169: getstatic     #23                 // Field LOG:Ljava/lang/System$Logger;
+       172: getstatic     #29                 // Field java/lang/System$Logger$Level.INFO:Ljava/lang/System$Logger$Level;
+       175: ldc           #130                // String 正常初始化观察结束
+       177: invokeinterface #37,  3           // InterfaceMethod java/lang/System$Logger.log:(Ljava/lang/System$Logger$Level;Ljava/lang/String;)V
+       182: return
+      LineNumberTable:
+        line 63: 0
+        line 64: 13
+        line 65: 21
+        line 66: 29
+        line 67: 43
+        line 68: 57
+        line 69: 71
+        line 70: 88
+        line 71: 96
+        line 70: 99
+        line 72: 103
+        line 73: 118
+        line 74: 142
+        line 75: 150
+        line 76: 169
+        line 77: 182
+      LocalVariableTable:
+        Start  Length  Slot  Name   Signature
+            0     183     0  args   [Ljava/lang/String;
+          103      80     1 discovered   Ljava/lang/Class;
+          150      33     2 receiver   Lorg/example/jvminternals/ch07/InitializationJourney$Base;
+      LocalVariableTypeTable:
+        Start  Length  Slot  Name   Signature
+          103      80     1 discovered   Ljava/lang/Class<*>;
+    Exceptions:
+      throws java.lang.ReflectiveOperationException
+    MethodParameters:
+      Name                           Flags
+      args
+
+  static {};
+    descriptor: ()V
+    flags: (0x0008) ACC_STATIC
+    Code:
+      stack=1, locals=0, args_size=0
+         0: ldc           #24                 // class org/example/jvminternals/ch07/InitializationJourney
+         2: invokevirtual #81                 // Method java/lang/Class.getName:()Ljava/lang/String;
+         5: invokestatic  #132                // Method java/lang/System.getLogger:(Ljava/lang/String;)Ljava/lang/System$Logger;
+         8: putstatic     #23                 // Field LOG:Ljava/lang/System$Logger;
+        11: return
+      LineNumberTable:
+        line 5: 0
+}
+SourceFile: "InitializationJourney.java"
+NestMembers:
+  org/example/jvminternals/ch07/InitializationJourney$Derived
+  org/example/jvminternals/ch07/InitializationJourney$Base
+  org/example/jvminternals/ch07/InitializationJourney$Lazy
+  org/example/jvminternals/ch07/InitializationJourney$Recursive
+  org/example/jvminternals/ch07/InitializationJourney$Child
+  org/example/jvminternals/ch07/InitializationJourney$Parent
+  org/example/jvminternals/ch07/InitializationJourney$Plain
+  org/example/jvminternals/ch07/InitializationJourney$HasDefault
+  org/example/jvminternals/ch07/InitializationJourney$Values
+BootstrapMethods:
+  0: #184 REF_invokeStatic java/lang/invoke/StringConcatFactory.makeConcatWithConstants:(Ljava/lang/invoke/MethodHandles$Lookup;Ljava/lang/String;Ljava/lang/invoke/MethodType;Ljava/lang/String;[Ljava/lang/Object;)Ljava/lang/invoke/CallSite;
+    Method arguments:
+      #168 initialize=\u0001 value=\u0001
+  1: #184 REF_invokeStatic java/lang/invoke/StringConcatFactory.makeConcatWithConstants:(Ljava/lang/invoke/MethodHandles$Lookup;Ljava/lang/String;Ljava/lang/invoke/MethodType;Ljava/lang/String;[Ljava/lang/Object;)Ljava/lang/invoke/CallSite;
+    Method arguments:
+      #170 runtime=\u0001
+  2: #184 REF_invokeStatic java/lang/invoke/StringConcatFactory.makeConcatWithConstants:(Ljava/lang/invoke/MethodHandles$Lookup;Ljava/lang/String;Ljava/lang/invoke/MethodType;Ljava/lang/String;[Ljava/lang/Object;)Ljava/lang/invoke/CallSite;
+    Method arguments:
+      #172 child=\u0001
+  3: #184 REF_invokeStatic java/lang/invoke/StringConcatFactory.makeConcatWithConstants:(Ljava/lang/invoke/MethodHandles$Lookup;Ljava/lang/String;Ljava/lang/invoke/MethodType;Ljava/lang/String;[Ljava/lang/Object;)Ljava/lang/invoke/CallSite;
+    Method arguments:
+      #174 plain=\u0001
+  4: #184 REF_invokeStatic java/lang/invoke/StringConcatFactory.makeConcatWithConstants:(Ljava/lang/invoke/MethodHandles$Lookup;Ljava/lang/String;Ljava/lang/invoke/MethodType;Ljava/lang/String;[Ljava/lang/Object;)Ljava/lang/invoke/CallSite;
+    Method arguments:
+      #176 recursive.first=\u0001 later=\u0001
+  5: #184 REF_invokeStatic java/lang/invoke/StringConcatFactory.makeConcatWithConstants:(Ljava/lang/invoke/MethodHandles$Lookup;Ljava/lang/String;Ljava/lang/invoke/MethodType;Ljava/lang/String;[Ljava/lang/Object;)Ljava/lang/invoke/CallSite;
+    Method arguments:
+      #178 discovered=\u0001
+  6: #184 REF_invokeStatic java/lang/invoke/StringConcatFactory.makeConcatWithConstants:(Ljava/lang/invoke/MethodHandles$Lookup;Ljava/lang/String;Ljava/lang/invoke/MethodType;Ljava/lang/String;[Ljava/lang/Object;)Ljava/lang/invoke/CallSite;
+    Method arguments:
+      #180 reflect.value=\u0001
+  7: #184 REF_invokeStatic java/lang/invoke/StringConcatFactory.makeConcatWithConstants:(Ljava/lang/invoke/MethodHandles$Lookup;Ljava/lang/String;Ljava/lang/invoke/MethodType;Ljava/lang/String;[Ljava/lang/Object;)Ljava/lang/invoke/CallSite;
+    Method arguments:
+      #182 field=\u0001 virtual=\u0001
+InnerClasses:
+  public static #191= #38 of #8;          // Logger=class java/lang/System$Logger of class java/lang/System
+  public static final #192= #30 of #38;   // Level=class java/lang/System$Logger$Level of class java/lang/System$Logger
+  public static final #193= #43 of #24;   // Values=class org/example/jvminternals/ch07/InitializationJourney$Values of class org/example/jvminternals/ch07/InitializationJourney
+  static final #194= #57 of #24;          // Child=class org/example/jvminternals/ch07/InitializationJourney$Child of class org/example/jvminternals/ch07/InitializationJourney
+  static #195= #63 of #24;                // Plain=class org/example/jvminternals/ch07/InitializationJourney$Plain of class org/example/jvminternals/ch07/InitializationJourney
+  static final #196= #69 of #24;          // Recursive=class org/example/jvminternals/ch07/InitializationJourney$Recursive of class org/example/jvminternals/ch07/InitializationJourney
+  public static final #197= #79 of #24;   // Lazy=class org/example/jvminternals/ch07/InitializationJourney$Lazy of class org/example/jvminternals/ch07/InitializationJourney
+  static final #198= #117 of #24;         // Derived=class org/example/jvminternals/ch07/InitializationJourney$Derived of class org/example/jvminternals/ch07/InitializationJourney
+  static #199= #121 of #24;               // Base=class org/example/jvminternals/ch07/InitializationJourney$Base of class org/example/jvminternals/ch07/InitializationJourney
+  static #200= #163 of #24;               // Parent=class org/example/jvminternals/ch07/InitializationJourney$Parent of class org/example/jvminternals/ch07/InitializationJourney
+  static #201= #165 of #24;               // HasDefault=class org/example/jvminternals/ch07/InitializationJourney$HasDefault of class org/example/jvminternals/ch07/InitializationJourney
+  public static final #206= #202 of #204; // Lookup=class java/lang/invoke/MethodHandles$Lookup of class java/lang/invoke/MethodHandles
+Classfile /Users/xiejinxin/Developer/Java/jvm-internals/chapters/ch07-linking-initialization/target/classes/org/example/jvminternals/ch07/InitializationJourney$Values.class
+  Last modified 2026年11月3日; size 680 bytes
+  SHA-256 checksum 569a8b4c60982385a0a4d8cae98724ea378f19973902204855c869fd209b1a18
+  Compiled from "InitializationJourney.java"
+public final class org.example.jvminternals.ch07.InitializationJourney$Values
+  minor version: 0
+  major version: 69
+  flags: (0x0031) ACC_PUBLIC, ACC_FINAL, ACC_SUPER
+  this_class: #16                         // org/example/jvminternals/ch07/InitializationJourney$Values
+  super_class: #2                         // java/lang/Object
+  interfaces: 0, fields: 2, methods: 2, attributes: 3
+Constant pool:
+   #1 = Methodref          #2.#3          // java/lang/Object."<init>":()V
+   #2 = Class              #4             // java/lang/Object
+   #3 = NameAndType        #5:#6          // "<init>":()V
+   #4 = Utf8               java/lang/Object
+   #5 = Utf8               <init>
+   #6 = Utf8               ()V
+   #7 = String             #8             // Values.RUNTIME
+   #8 = Utf8               Values.RUNTIME
+   #9 = Methodref          #10.#11        // org/example/jvminternals/ch07/InitializationJourney.mark:(Ljava/lang/String;I)I
+  #10 = Class              #12            // org/example/jvminternals/ch07/InitializationJourney
+  #11 = NameAndType        #13:#14        // mark:(Ljava/lang/String;I)I
+  #12 = Utf8               org/example/jvminternals/ch07/InitializationJourney
+  #13 = Utf8               mark
+  #14 = Utf8               (Ljava/lang/String;I)I
+  #15 = Fieldref           #16.#17        // org/example/jvminternals/ch07/InitializationJourney$Values.RUNTIME:I
+  #16 = Class              #18            // org/example/jvminternals/ch07/InitializationJourney$Values
+  #17 = NameAndType        #19:#20        // RUNTIME:I
+  #18 = Utf8               org/example/jvminternals/ch07/InitializationJourney$Values
+  #19 = Utf8               RUNTIME
+  #20 = Utf8               I
+  #21 = Utf8               CONSTANT
+  #22 = Utf8               ConstantValue
+  #23 = Integer            41
+  #24 = Utf8               Code
+  #25 = Utf8               LineNumberTable
+  #26 = Utf8               LocalVariableTable
+  #27 = Utf8               this
+  #28 = Utf8               Lorg/example/jvminternals/ch07/InitializationJourney$Values;
+  #29 = Utf8               <clinit>
+  #30 = Utf8               SourceFile
+  #31 = Utf8               InitializationJourney.java
+  #32 = Utf8               NestHost
+  #33 = Utf8               InnerClasses
+  #34 = Utf8               Values
+{
+  public static final int CONSTANT;
+    descriptor: I
+    flags: (0x0019) ACC_PUBLIC, ACC_STATIC, ACC_FINAL
+    ConstantValue: int 41
+
+  public static final int RUNTIME;
+    descriptor: I
+    flags: (0x0019) ACC_PUBLIC, ACC_STATIC, ACC_FINAL
+
+  private org.example.jvminternals.ch07.InitializationJourney$Values();
+    descriptor: ()V
+    flags: (0x0002) ACC_PRIVATE
+    Code:
+      stack=1, locals=1, args_size=1
+         0: aload_0
+         1: invokespecial #1                  // Method java/lang/Object."<init>":()V
+         4: return
+      LineNumberTable:
+        line 17: 0
+      LocalVariableTable:
+        Start  Length  Slot  Name   Signature
+            0       5     0  this   Lorg/example/jvminternals/ch07/InitializationJourney$Values;
+
+  static {};
+    descriptor: ()V
+    flags: (0x0008) ACC_STATIC
+    Code:
+      stack=2, locals=0, args_size=0
+         0: ldc           #7                  // String Values.RUNTIME
+         2: bipush        42
+         4: invokestatic  #9                  // Method org/example/jvminternals/ch07/InitializationJourney.mark:(Ljava/lang/String;I)I
+         7: putstatic     #15                 // Field RUNTIME:I
+        10: return
+      LineNumberTable:
+        line 16: 0
+}
+SourceFile: "InitializationJourney.java"
+NestHost: class org/example/jvminternals/ch07/InitializationJourney
+InnerClasses:
+  public static final #34= #16 of #10;    // Values=class org/example/jvminternals/ch07/InitializationJourney$Values of class org/example/jvminternals/ch07/InitializationJourney
+Classfile /Users/xiejinxin/Developer/Java/jvm-internals/chapters/ch07-linking-initialization/target/classes/org/example/jvminternals/ch07/InitializationJourney$Recursive.class
+  Last modified 2026年11月3日; size 680 bytes
+  SHA-256 checksum bc30cc3c28a17051c9164742309c59bca9e96aae94e52d24f2ef6b473a170744
+  Compiled from "InitializationJourney.java"
+final class org.example.jvminternals.ch07.InitializationJourney$Recursive
+  minor version: 0
+  major version: 69
+  flags: (0x0030) ACC_FINAL, ACC_SUPER
+  this_class: #8                          // org/example/jvminternals/ch07/InitializationJourney$Recursive
+  super_class: #2                         // java/lang/Object
+  interfaces: 0, fields: 2, methods: 3, attributes: 3
+Constant pool:
+   #1 = Methodref          #2.#3          // java/lang/Object."<init>":()V
+   #2 = Class              #4             // java/lang/Object
+   #3 = NameAndType        #5:#6          // "<init>":()V
+   #4 = Utf8               java/lang/Object
+   #5 = Utf8               <init>
+   #6 = Utf8               ()V
+   #7 = Fieldref           #8.#9          // org/example/jvminternals/ch07/InitializationJourney$Recursive.later:I
+   #8 = Class              #10            // org/example/jvminternals/ch07/InitializationJourney$Recursive
+   #9 = NameAndType        #11:#12        // later:I
+  #10 = Utf8               org/example/jvminternals/ch07/InitializationJourney$Recursive
+  #11 = Utf8               later
+  #12 = Utf8               I
+  #13 = Methodref          #8.#14         // org/example/jvminternals/ch07/InitializationJourney$Recursive.readLater:()I
+  #14 = NameAndType        #15:#16        // readLater:()I
+  #15 = Utf8               readLater
+  #16 = Utf8               ()I
+  #17 = Fieldref           #8.#18         // org/example/jvminternals/ch07/InitializationJourney$Recursive.FIRST:I
+  #18 = NameAndType        #19:#12        // FIRST:I
+  #19 = Utf8               FIRST
+  #20 = Utf8               Code
+  #21 = Utf8               LineNumberTable
+  #22 = Utf8               LocalVariableTable
+  #23 = Utf8               this
+  #24 = Utf8               Lorg/example/jvminternals/ch07/InitializationJourney$Recursive;
+  #25 = Utf8               <clinit>
+  #26 = Utf8               SourceFile
+  #27 = Utf8               InitializationJourney.java
+  #28 = Utf8               NestHost
+  #29 = Class              #30            // org/example/jvminternals/ch07/InitializationJourney
+  #30 = Utf8               org/example/jvminternals/ch07/InitializationJourney
+  #31 = Utf8               InnerClasses
+  #32 = Utf8               Recursive
+{
+  static final int FIRST;
+    descriptor: I
+    flags: (0x0018) ACC_STATIC, ACC_FINAL
+
+  static int later;
+    descriptor: I
+    flags: (0x0008) ACC_STATIC
+
+  org.example.jvminternals.ch07.InitializationJourney$Recursive();
+    descriptor: ()V
+    flags: (0x0000)
+    Code:
+      stack=1, locals=1, args_size=1
+         0: aload_0
+         1: invokespecial #1                  // Method java/lang/Object."<init>":()V
+         4: return
+      LineNumberTable:
+        line 37: 0
+      LocalVariableTable:
+        Start  Length  Slot  Name   Signature
+            0       5     0  this   Lorg/example/jvminternals/ch07/InitializationJourney$Recursive;
+
+  private static int readLater();
+    descriptor: ()I
+    flags: (0x000a) ACC_PRIVATE, ACC_STATIC
+    Code:
+      stack=2, locals=0, args_size=0
+         0: getstatic     #7                  // Field later:I
+         3: iconst_1
+         4: iadd
+         5: ireturn
+      LineNumberTable:
+        line 43: 0
+
+  static {};
+    descriptor: ()V
+    flags: (0x0008) ACC_STATIC
+    Code:
+      stack=1, locals=0, args_size=0
+         0: invokestatic  #13                 // Method readLater:()I
+         3: putstatic     #17                 // Field FIRST:I
+         6: bipush        7
+         8: putstatic     #7                  // Field later:I
+        11: return
+      LineNumberTable:
+        line 38: 0
+        line 39: 6
+}
+SourceFile: "InitializationJourney.java"
+NestHost: class org/example/jvminternals/ch07/InitializationJourney
+InnerClasses:
+  static final #32= #8 of #29;            // Recursive=class org/example/jvminternals/ch07/InitializationJourney$Recursive of class org/example/jvminternals/ch07/InitializationJourney
+Classfile /Users/xiejinxin/Developer/Java/jvm-internals/chapters/ch07-linking-initialization/target/classes/org/example/jvminternals/ch07/InitializationJourney$Child.class
+  Last modified 2026年11月3日; size 841 bytes
+  SHA-256 checksum ad5d17696e4515c9c892ce03a2a98cb4de42430116869993ce63b48085dd237a
+  Compiled from "InitializationJourney.java"
+final class org.example.jvminternals.ch07.InitializationJourney$Child extends org.example.jvminternals.ch07.InitializationJourney$Parent implements org.example.jvminternals.ch07.InitializationJourney$HasDefault,org.example.jvminternals.ch07.InitializationJourney$Plain
+  minor version: 0
+  major version: 69
+  flags: (0x0030) ACC_FINAL, ACC_SUPER
+  this_class: #16                         // org/example/jvminternals/ch07/InitializationJourney$Child
+  super_class: #2                         // org/example/jvminternals/ch07/InitializationJourney$Parent
+  interfaces: 2, fields: 1, methods: 2, attributes: 3
+Constant pool:
+   #1 = Methodref          #2.#3          // org/example/jvminternals/ch07/InitializationJourney$Parent."<init>":()V
+   #2 = Class              #4             // org/example/jvminternals/ch07/InitializationJourney$Parent
+   #3 = NameAndType        #5:#6          // "<init>":()V
+   #4 = Utf8               org/example/jvminternals/ch07/InitializationJourney$Parent
+   #5 = Utf8               <init>
+   #6 = Utf8               ()V
+   #7 = String             #8             // Child
+   #8 = Utf8               Child
+   #9 = Methodref          #10.#11        // org/example/jvminternals/ch07/InitializationJourney.mark:(Ljava/lang/String;I)I
+  #10 = Class              #12            // org/example/jvminternals/ch07/InitializationJourney
+  #11 = NameAndType        #13:#14        // mark:(Ljava/lang/String;I)I
+  #12 = Utf8               org/example/jvminternals/ch07/InitializationJourney
+  #13 = Utf8               mark
+  #14 = Utf8               (Ljava/lang/String;I)I
+  #15 = Fieldref           #16.#17        // org/example/jvminternals/ch07/InitializationJourney$Child.VALUE:I
+  #16 = Class              #18            // org/example/jvminternals/ch07/InitializationJourney$Child
+  #17 = NameAndType        #19:#20        // VALUE:I
+  #18 = Utf8               org/example/jvminternals/ch07/InitializationJourney$Child
+  #19 = Utf8               VALUE
+  #20 = Utf8               I
+  #21 = Class              #22            // org/example/jvminternals/ch07/InitializationJourney$HasDefault
+  #22 = Utf8               org/example/jvminternals/ch07/InitializationJourney$HasDefault
+  #23 = Class              #24            // org/example/jvminternals/ch07/InitializationJourney$Plain
+  #24 = Utf8               org/example/jvminternals/ch07/InitializationJourney$Plain
+  #25 = Utf8               Code
+  #26 = Utf8               LineNumberTable
+  #27 = Utf8               LocalVariableTable
+  #28 = Utf8               this
+  #29 = Utf8               Lorg/example/jvminternals/ch07/InitializationJourney$Child;
+  #30 = Utf8               <clinit>
+  #31 = Utf8               SourceFile
+  #32 = Utf8               InitializationJourney.java
+  #33 = Utf8               NestHost
+  #34 = Utf8               InnerClasses
+  #35 = Utf8               Parent
+  #36 = Utf8               HasDefault
+  #37 = Utf8               Plain
+{
+  static final int VALUE;
+    descriptor: I
+    flags: (0x0018) ACC_STATIC, ACC_FINAL
+
+  org.example.jvminternals.ch07.InitializationJourney$Child();
+    descriptor: ()V
+    flags: (0x0000)
+    Code:
+      stack=1, locals=1, args_size=1
+         0: aload_0
+         1: invokespecial #1                  // Method org/example/jvminternals/ch07/InitializationJourney$Parent."<init>":()V
+         4: return
+      LineNumberTable:
+        line 33: 0
+      LocalVariableTable:
+        Start  Length  Slot  Name   Signature
+            0       5     0  this   Lorg/example/jvminternals/ch07/InitializationJourney$Child;
+
+  static {};
+    descriptor: ()V
+    flags: (0x0008) ACC_STATIC
+    Code:
+      stack=2, locals=0, args_size=0
+         0: ldc           #7                  // String Child
+         2: bipush        40
+         4: invokestatic  #9                  // Method org/example/jvminternals/ch07/InitializationJourney.mark:(Ljava/lang/String;I)I
+         7: putstatic     #15                 // Field VALUE:I
+        10: return
+      LineNumberTable:
+        line 34: 0
+}
+SourceFile: "InitializationJourney.java"
+NestHost: class org/example/jvminternals/ch07/InitializationJourney
+InnerClasses:
+  static #35= #2 of #10;                  // Parent=class org/example/jvminternals/ch07/InitializationJourney$Parent of class org/example/jvminternals/ch07/InitializationJourney
+  static final #8= #16 of #10;            // Child=class org/example/jvminternals/ch07/InitializationJourney$Child of class org/example/jvminternals/ch07/InitializationJourney
+  static #36= #21 of #10;                 // HasDefault=class org/example/jvminternals/ch07/InitializationJourney$HasDefault of class org/example/jvminternals/ch07/InitializationJourney
+  static #37= #23 of #10;                 // Plain=class org/example/jvminternals/ch07/InitializationJourney$Plain of class org/example/jvminternals/ch07/InitializationJourney

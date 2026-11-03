@@ -1,0 +1,4 @@
+e3545a6c7776d1d691971df2d4bec25507de4bb5a001b53dd444c0ec68beee41  chapters/ch24-shenandoah/evidence/browser/print/final-page-1.png
+3edb86d2b353396981068b3371c0824357842234c1500fc59af3d27d092329dc  chapters/ch24-shenandoah/evidence/browser/print/final-page-3.png
+3fe746b4b7d8988ae4cdc171d737b3e7fe23130d8ee280edc055cc45c00deb3f  chapters/ch24-shenandoah/evidence/browser/print/final-page-4.png
+f7d2dfac62a8ce77b558d6d4e16f30c52c3223dcf41fe7e00e3d9a95e5648501  chapters/ch24-shenandoah/evidence/browser/print/final-page-5.png

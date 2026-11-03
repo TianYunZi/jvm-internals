@@ -1,0 +1,39 @@
+<!doctype html><html lang="zh-CN"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="shiki-version" content="4.6.0"><title>第8章运行说明</title><link rel="stylesheet" href="../../assets/book.css"></head><body><main class="home" id="main"><h1>第8章运行说明</h1><p><a href="chapter.html">返回正文</a></p><p>Java 开发工具包（Java Development Kit，JDK）25.0.5.0.2、Maven 3.10.0，macOS AArch64。工作目录为项目根目录；普通编译无外部依赖或预览选项。教学源码与正常观测随 P03 授权，没有测试、断言、压力或故障输入。正文见 <a href="chapter.html">chapter.html</a>，实际源文件的阅读副本见 <a href="sources.html">sources.html</a>。</p>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+<th>编号</th>
+<th>入口／性质／对应节</th>
+<th>输入、边界与结束</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>CH08-E01</td>
+<td>TypeJourney；正常类型／反射观察；8.1—8.3</td>
+<td>固定一个 Item 与类型对象，描述项按名字排序；不推断字段物理偏移</td>
+</tr>
+<tr>
+<td>CH08-E02</td>
+<td>HiddenJourney；合法生成、隐藏定义及调用；8.4</td>
+<td>一个输出文件参数，一份类文件、一个隐藏类；NESTMATE，未指定 STRONG；不触发名字发现失败</td>
+</tr>
+<tr>
+<td>CH08-E03</td>
+<td>UnloadingJourney；正常持有／释放观察；8.5</td>
+<td>一个隔离目录参数，只创建一个加载器及一个 Disposable，关闭文件；静态实例先持有后清除；仅两次 System.gc，队列等待至多 2 秒</td>
+</tr>
+</tbody></table>
+</div><p>每次堆上限 128 MiB，下限 32 MiB；不创建教学工作线程、网络或持续分配。程序完成有限动作后退出。System.gc 不提供指定对象回收保证，未出现事件也应照实记录。提前结束只中断本任务进程，不终止其他 Java 程序。</p>
+<h2>完整命令</h2>
+<p>先创建输出记录目录（本项目已存在），再依次执行：</p>
+<pre data-shiki-version="4.6.0" class="shiki github-light" style="background-color:#fff;color:#24292e" tabindex="0"><code data-code-id="code-001" data-code-language="bash"><span class="line"><span style="color:#24292E">task_jdk</span><span style="color:#D73A49">=</span><span style="color:#032F62">/opt/homebrew/Cellar/openjdk@25/25.0.5.0.2/libexec/openjdk.jdk/Contents/Home</span></span>
+<span class="line"><span style="color:#24292E">JAVA_HOME</span><span style="color:#D73A49">=</span><span style="color:#032F62">"</span><span style="color:#24292E">$task_jdk</span><span style="color:#032F62">"</span><span style="color:#6F42C1"> mvn</span><span style="color:#005CC5"> -B</span><span style="color:#005CC5"> -ntp</span><span style="color:#005CC5"> -pl</span><span style="color:#032F62"> chapters/ch08-type-metadata</span><span style="color:#005CC5"> -am</span><span style="color:#032F62"> compile</span></span>
+<span class="line"><span style="color:#6F42C1">"</span><span style="color:#24292E">$task_jdk</span><span style="color:#6F42C1">/bin/javac"</span><span style="color:#005CC5"> --release</span><span style="color:#005CC5"> 25</span><span style="color:#005CC5"> -g</span><span style="color:#005CC5"> -parameters</span><span style="color:#005CC5"> -d</span><span style="color:#032F62"> chapters/ch08-type-metadata/target/disposable</span><span style="color:#032F62"> chapters/ch08-type-metadata/variants/disposable/org/example/jvminternals/ch08/disposable/Disposable.java</span></span>
+<span class="line"><span style="color:#6F42C1">"</span><span style="color:#24292E">$task_jdk</span><span style="color:#6F42C1">/bin/java"</span><span style="color:#005CC5"> -Xms32m</span><span style="color:#005CC5"> -Xmx128m</span><span style="color:#005CC5"> -cp</span><span style="color:#032F62"> chapters/ch08-type-metadata/target/classes</span><span style="color:#032F62"> org.example.jvminternals.ch08.TypeJourney</span></span>
+<span class="line"><span style="color:#6F42C1">"</span><span style="color:#24292E">$task_jdk</span><span style="color:#6F42C1">/bin/java"</span><span style="color:#005CC5"> -Xms32m</span><span style="color:#005CC5"> -Xmx128m</span><span style="color:#005CC5"> -Xlog:class+load=info:file=chapters/ch08-type-metadata/evidence/runs/ch08-20261103-01/hidden-class.log</span><span style="color:#005CC5"> -cp</span><span style="color:#032F62"> chapters/ch08-type-metadata/target/classes</span><span style="color:#032F62"> org.example.jvminternals.ch08.HiddenJourney</span><span style="color:#032F62"> chapters/ch08-type-metadata/evidence/runs/ch08-20261103-01/HiddenValue.class</span></span>
+<span class="line"><span style="color:#6F42C1">"</span><span style="color:#24292E">$task_jdk</span><span style="color:#6F42C1">/bin/java"</span><span style="color:#005CC5"> -Xms32m</span><span style="color:#005CC5"> -Xmx128m</span><span style="color:#005CC5"> -Xlog:class+load=info,class+unload=info,gc=info,gc+metaspace=info:file=chapters/ch08-type-metadata/evidence/runs/ch08-20261103-01/unloading.log</span><span style="color:#005CC5"> -cp</span><span style="color:#032F62"> chapters/ch08-type-metadata/target/classes</span><span style="color:#032F62"> org.example.jvminternals.ch08.UnloadingJourney</span><span style="color:#032F62"> chapters/ch08-type-metadata/target/disposable</span></span>
+<span class="line"><span style="color:#6F42C1">"</span><span style="color:#24292E">$task_jdk</span><span style="color:#6F42C1">/bin/javap"</span><span style="color:#005CC5"> -v</span><span style="color:#005CC5"> -p</span><span style="color:#005CC5"> -c</span><span style="color:#032F62"> chapters/ch08-type-metadata/evidence/runs/ch08-20261103-01/HiddenValue.class</span></span>
+<span class="line"><span style="color:#6F42C1">"</span><span style="color:#24292E">$task_jdk</span><span style="color:#6F42C1">/bin/javap"</span><span style="color:#005CC5"> -v</span><span style="color:#005CC5"> -p</span><span style="color:#005CC5"> -c</span><span style="color:#005CC5"> -classpath</span><span style="color:#032F62"> chapters/ch08-type-metadata/target/classes</span><span style="color:#032F62"> 'org.example.jvminternals.ch08.TypeJourney$Item'</span></span>
+<span class="line"></span></code></pre><p>Disposable 不在主输出，主程序仅用字符串请求子加载器定义。若把变体加入主路径或保留其他强引用，就改变了观察条件。隐藏类保存的是定义前输入，文件名和运行时隐藏名称分别解释；生成字节使用类文件应用程序编程接口（Application Programming Interface，API），没有手工伪造私有布局。</p>
+<p>实际命令将三程序的合并输出依次写入 types.txt、hidden.txt、unloading.txt，两个反汇编写入 hidden-template.javap.txt、item.javap.txt；日志参数已经给出真实保存路径。完整时间、退出与摘要见 <a href="evidence/runs/ch08-20261103-01/%E8%AE%B0%E5%BD%95.md">运行记录</a>。不要将本轮元空间总量或隐藏名称后缀写成跨运行固定预期。</p>
+</main></body></html>

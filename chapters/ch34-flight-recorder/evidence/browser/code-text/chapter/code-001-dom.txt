@@ -1,0 +1,4 @@
+jfr summary latency.jfr
+jfr metadata --events "book.*,jdk.MethodTrace,jdk.MethodTiming" latency.jfr
+jfr print --events "book.*,jdk.JavaMonitorEnter,jdk.MethodTrace,jdk.MethodTiming" latency.jfr
+jfr view hot-methods latency.jfr

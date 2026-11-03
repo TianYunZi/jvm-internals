@@ -1,0 +1,16 @@
+%% CH07-F02：规范职责与HotSpot实际提前填常量的时点分层。
+flowchart TB
+  subgraph S[规范层]
+    A["准备：建立静态存储与默认值<br/>int默认0，不执行源码赋值表达式"]
+    B["初始化流程：登记所有者<br/>处理ConstantValue，再初始化相关父类型"]
+    C["执行类初始化代码<br/>mark返回42；putstatic RUNTIME"]
+    A --> B --> C
+  end
+  subgraph I[锁定HotSpot实现]
+    D["镜像建立时<br/>initialize_mirror_fields<br/>initialize_static_field<br/>提前填入带初始值字段"]
+    E["普通运行期字段仍待赋值<br/>最终RUNTIME=42"]
+    D --> E
+  end
+  N["调用者ldc constant=41，不读取CONSTANT<br/>后续getstatic RUNTIME才触发本例初始化<br/>实现时点不改写规范阶段职责"]
+  C --- N
+  E --- N

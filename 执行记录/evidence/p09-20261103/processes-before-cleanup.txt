@@ -1,0 +1,2 @@
+84557 /Applications/JDK Mission Control.app/Contents/MacOS/jmc
+85149 /Library/Frameworks/Python.framework/Versions/3.15/Resources/Python.app/Contents/MacOS/Python -m http.server 8771 --bind 127.0.0.1 --directory /private/tmp/jvm-p09-reading

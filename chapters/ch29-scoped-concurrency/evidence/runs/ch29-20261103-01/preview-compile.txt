@@ -1,0 +1,22 @@
+[INFO] Scanning for projects...
+[INFO] 
+[INFO] ----------< org.example.jvminternals:ch29-structured-preview >----------
+[INFO] Building ch29-structured-preview 1.0-SNAPSHOT
+[INFO]   from pom.xml
+[INFO] --------------------------------[ jar ]---------------------------------
+[INFO] Loaded 64 auto-discovered prefixes for remote repository apache.snapshots (prefixes-apache.snapshots.txt)
+[INFO] 
+[INFO] --- resources:3.3.1:resources (default-resources) @ ch29-structured-preview ---
+[INFO] skip non existing resourceDirectory /Users/xiejinxin/Developer/Java/jvm-internals/chapters/ch29-scoped-concurrency/preview/src/main/resources
+[INFO] 
+[INFO] --- compiler:3.14.1:compile (default-compile) @ ch29-structured-preview ---
+[INFO] Recompiling the module because of changed source code.
+[INFO] Compiling 1 source file with javac [debug:lines,vars,source parameters preview release 25] to target/classes
+[INFO] /Users/xiejinxin/Developer/Java/jvm-internals/chapters/ch29-scoped-concurrency/preview/src/main/java/org/example/jvminternals/ch29/StructuredJourney.java: /Users/xiejinxin/Developer/Java/jvm-internals/chapters/ch29-scoped-concurrency/preview/src/main/java/org/example/jvminternals/ch29/StructuredJourney.java uses preview features of Java SE 25.
+[INFO] /Users/xiejinxin/Developer/Java/jvm-internals/chapters/ch29-scoped-concurrency/preview/src/main/java/org/example/jvminternals/ch29/StructuredJourney.java: Recompile with -Xlint:preview for details.
+[INFO] ------------------------------------------------------------------------
+[INFO] BUILD SUCCESS
+[INFO] ------------------------------------------------------------------------
+[INFO] Total time:  0.790 s
+[INFO] Finished at: 2026-11-03T19:16:45+08:00
+[INFO] ------------------------------------------------------------------------

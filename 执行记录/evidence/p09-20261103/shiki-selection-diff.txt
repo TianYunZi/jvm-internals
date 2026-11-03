@@ -1,0 +1,3 @@
+diff -r artifacts/p09-code-copy/input/chapters/ch33-observability/README/code-002.txt artifacts/p09-code-copy/selected/chapters/ch33-observability/README/code-002.txt
+5d4
+< 

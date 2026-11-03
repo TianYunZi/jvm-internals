@@ -1,0 +1,24 @@
+208:  if (active_generation()->is_young() && target_gen == YOUNG_GENERATION) {
+209-    markWord mark = p->mark();
+210-    if (mark.is_marked()) {
+211-      // Already forwarded.
+212-      return ShenandoahBarrierSet::resolve_forwarded(p);
+213-    }
+214-
+215-    if (mark.has_displaced_mark_helper()) {
+216-      // We don't want to deal with MT here just to ensure we read the right mark word.
+217-      // Skip the potential promotion attempt for this one.
+218-    } else if (age_census()->is_tenurable(r->age() + mark.age())) {
+219-      oop result = try_evacuate_object(p, thread, r, OLD_GENERATION);
+220-      if (result != nullptr) {
+221-        return result;
+222-      }
+223-      // If we failed to promote this aged object, we'll fall through to code below and evacuate to young-gen.
+224-    }
+225-  }
+226-  return try_evacuate_object(p, thread, r, target_gen);
+227-}
+228-
+229-// try_evacuate_object registers the object and dirties the associated remembered set information when evacuating
+230-// to OLD_GENERATION.
+231-oop ShenandoahGenerationalHeap::try_evacuate_object(oop p, Thread* thread, ShenandoahHeapRegion* from_region,

@@ -1,0 +1,2 @@
+bc7bbb7d5177ed9ecaee3f742bb991b73dd0f35af7843a2b138bf4bb3f361f65  chapters/ch25-memory-model/target/classes/org/example/jvminternals/ch25/PublicationJourney.class
+42ea29a83bebe9e5a691a86be4b71566c601dfbf348fb40a5785b05916585c2c  chapters/ch25-memory-model/target/classes/org/example/jvminternals/ch25/PublicationJourney$Message.class

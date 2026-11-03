@@ -1,0 +1,7 @@
+chapters/ch25-memory-model/sources.html	code-002	chapters/ch25-memory-model/src/main/java/org/example/jvminternals/ch25/PublicationJourney.java
+chapters/ch26-platform-threads/sources.html	code-002	chapters/ch26-platform-threads/src/main/java/org/example/jvminternals/ch26/PlatformJourney.java
+chapters/ch27-monitors/sources.html	code-002	chapters/ch27-monitors/src/main/java/org/example/jvminternals/ch27/MonitorJourney.java
+chapters/ch28-virtual-threads/sources.html	code-002	chapters/ch28-virtual-threads/src/main/java/org/example/jvminternals/ch28/VirtualJourney.java
+chapters/ch28-virtual-threads/sources.html	code-004	chapters/ch28-virtual-threads/native/carrierjourney.c
+chapters/ch29-scoped-concurrency/sources.html	code-002	chapters/ch29-scoped-concurrency/src/main/java/org/example/jvminternals/ch29/ContextJourney.java
+chapters/ch29-scoped-concurrency/sources.html	code-004	chapters/ch29-scoped-concurrency/preview/src/main/java/org/example/jvminternals/ch29/StructuredJourney.java

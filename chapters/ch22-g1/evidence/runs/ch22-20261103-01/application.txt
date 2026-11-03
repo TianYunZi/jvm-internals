@@ -1,0 +1,8 @@
+11月 03, 2026 6:09:20 下午 org.example.jvminternals.ch22.RegionJourney main
+INFO: 阶段=长期持有32 MiB，短命分配64 MiB
+11月 03, 2026 6:09:20 下午 org.example.jvminternals.ch22.RegionJourney main
+INFO: 阶段=释放一半长期持有，请求并发回收
+11月 03, 2026 6:09:20 下午 org.example.jvminternals.ch22.RegionJourney main
+INFO: 阶段=后续128 MiB短命分配，保留16 MiB
+11月 03, 2026 6:09:21 下午 org.example.jvminternals.ch22.RegionJourney main
+INFO: 阶段=正常退出，保留块=32,768，末块字节=63

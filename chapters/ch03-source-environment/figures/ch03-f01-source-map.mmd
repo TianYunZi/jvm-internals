@@ -1,0 +1,14 @@
+%% CH03-F01：实现归属图，不把目录边界当作调用边界。
+flowchart TB
+  R["外部openjdk/jdk25u固定提交<br/>本项目只保留导航、结论和精选证据"]
+  J["src/java.base<br/>share/classes：Java类库<br/>share/native：启动器与本地库"]
+  H["src/hotspot/share<br/>classfile、interpreter、runtime<br/>oops、memory、logging等"]
+  P["src/hotspot/os与cpu<br/>os/bsd：系统实现<br/>cpu/aarch64：模板与机器代码生成"]
+  X["src/hotspot/os_cpu/bsd_aarch64<br/>系统与架构组合约束"]
+  R --> J
+  R --> H
+  H --> P
+  H --> X
+  N["按归属找入口，再读数据、条件与下游<br/>同一功能可以跨多个目录"]
+  P --- N
+  X --- N

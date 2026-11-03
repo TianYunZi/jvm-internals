@@ -1,0 +1,15 @@
+11月 03, 2026 12:13:47 下午 org.example.jvminternals.ch08.TypeJourney main
+INFO: 开始类型和反射描述观察
+class=org.example.jvminternals.ch08.TypeJourney$Item mirror.class=java.lang.Class
+super=org.example.jvminternals.ch08.TypeJourney$Base interfaces=[interface org.example.jvminternals.ch08.TypeJourney$Named]
+declared.field=label type=java.lang.String
+declared.method=name returns=java.lang.String
+item.isBase=true item.isNamed=true
+Object[].from.Item[]=true
+Named[].from.Item[]=true
+Object[].from.int[]=false
+Object[].from.int[][]=true
+int[].isCloneable=true int[].isSerializable=true
+Item[].component=org.example.jvminternals.ch08.TypeJourney$Item int[].component=int
+11月 03, 2026 12:13:48 下午 org.example.jvminternals.ch08.TypeJourney main
+INFO: 类型和反射描述观察结束

@@ -1,0 +1,22 @@
+第22章运行说明
+
+返回正文 · 源码阅读
+
+容量单位采用兆二进制字节（mebibyte，MiB）和千二进制字节（kibibyte，KiB）。本章观察垃圾收集（Garbage Collection，GC）机制。
+
+Java开发工具包（Java Development Kit，JDK）25.0.5.0.2，HotSpot、macOS AArch64。CH22-E01 RegionJourney：32 MiB长期载荷，释放一半；64+128 MiB短命载荷，一次600 KiB数组，一次显式并发回收请求；128 MiB堆。用户“执行P06”授权普通教学源码及有界机制观察；没有测试、断言、压力、性能基准或主动资源耗尽。
+
+完整命令
+
+在项目根目录执行。编译只编译，不自动运行；结束后进程正常退出，必要时可用终端中断停止。
+
+export JAVA_HOME=/opt/homebrew/Cellar/openjdk@25/25.0.5.0.2/libexec/openjdk.jdk/Contents/Home
+export PATH="$JAVA_HOME/bin:/opt/homebrew/bin:$PATH"
+mvn -B -ntp -pl chapters/ch22-g1 -am compile
+java -Xms128m -Xmx128m -XX:ActiveProcessorCount=2 -XX:+UseG1GC -XX:G1HeapRegionSize=1m -XX:InitiatingHeapOccupancyPercent=20 -XX:-G1UseAdaptiveIHOP -XX:+ExplicitGCInvokesConcurrent '-Xlog:gc*,gc+ergo+cset=trace,gc+remset=debug:file=chapters/ch22-g1/evidence/runs/ch22-20261103-01/g1.log:uptimemillis,level,tags' -cp chapters/ch22-g1/target/classes org.example.jvminternals.ch22.RegionJourney
+
+实际记录与边界
+
+正常周期已实际记录；没有主动故障、性能对比或跨版本改善比例，失败分支与预算推理按固定实现解释。
+
+原始输入、实际观察与退出情况见evidence/runs/ch22-20261103-01/记录.md。正文、源码静态阅读与证据索引相互对应。软件交互、流程和状态图用Mermaid维护，空间布局用可缩放矢量图形（Scalable Vector Graphics，SVG）；导出工具与高亮版本沿用公共基线，图源修改后重新导出。

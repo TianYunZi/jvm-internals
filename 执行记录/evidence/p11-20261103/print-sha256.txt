@@ -1,0 +1,10 @@
+308e4fb39c0273a9df85ed45f109629151ccab6f9fb93f64b6df12970dafabdb  执行记录/evidence/p11-20261103/pages/chapters/ch01-architecture/chapter/print.pdf
+08ba69a7e3580b7903c4d67e7c779547a0aa68900c26c300da3192e3093e1cd7  执行记录/evidence/p11-20261103/pages/chapters/ch02-computer-basics/chapter/print.pdf
+9c5a585c7329ec03cfea9274e345ddcff5c9e986e968e7d72eab705e52f966a6  执行记录/evidence/p11-20261103/pages/chapters/ch03-source-environment/chapter/print.pdf
+c1c48185cb3a770c239c84c5b4567285b80decc04ef36d8b05ab3aa0756109ff  执行记录/evidence/p11-20261103/pages/chapters/ch05-bytecode-verification/chapter/print.pdf
+f68abf2348929dd4cd1fc70869887837dd5f51690293049087d679131826d40d  执行记录/evidence/p11-20261103/pages/chapters/ch06-classloaders-modules/chapter/print.pdf
+df29c0f93fc444a11a72cccb7d01bdaa94b846e48d422ad9d2ccc436faf9f25e  执行记录/evidence/p11-20261103/pages/chapters/ch07-linking-initialization/chapter/print.pdf
+a3575c6b046d1de75c195cc3f07ece0e525dd3f1afa4de0815eb0e75aadc01d2  执行记录/evidence/p11-20261103/pages/chapters/ch08-type-metadata/chapter/print.pdf
+93019e5cf4aec5c351a9149e78e0a510fbeb54621030ea222ca7946eb25bb0a3  执行记录/evidence/p11-20261103/pages/chapters/ch09-runtime-memory/chapter/print.pdf
+a5e15433abb95aefc9d0d344faa22cf9ffd3d35361c8c19871d66391c2334030  执行记录/evidence/p11-20261103/pages/chapters/ch11-allocation/chapter/print.pdf
+3f57f2f5953d01cad694894c47da66d9b1e389db076794635011f0325be677e0  执行记录/evidence/p11-20261103/pages/chapters/ch12-native-memory/chapter/print.pdf

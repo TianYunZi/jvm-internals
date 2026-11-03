@@ -1,0 +1,11 @@
+%% P05机制图：依据本章来源索引；本地导出后供离线阅读。
+flowchart TD
+  accTitle: 重载、方法解析与本次目标选择
+  A["Java编译期<br/>依据声明类型和实参选重载"] --> B["类文件符号引用<br/>持有类＋方法名＋描述符"]
+  B --> C["链接解析<br/>查找方法并进行访问检查"]
+  C --> D["已解析方法 resolved_method"]
+  D --> E["按指令语义与实际接收者选择<br/>selected_method"]
+  E --> F["执行选中的实现"]
+  X["本例 base.label<br/>解析Base.label，接收者First选择First.label"] -.实例.-> E
+  Y["First.label中的super.label<br/>按特殊调用规则进入Base实现"] -.另一条调用.-> F
+  N["运行时不会按实参对象类型<br/>重新进行Java源码重载选择"] -.边界.-> A

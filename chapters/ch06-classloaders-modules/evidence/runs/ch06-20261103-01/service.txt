@@ -1,0 +1,6 @@
+11月 03, 2026 11:42:52 上午 org.example.jvminternals.ch06.ServiceJourney main
+INFO: 开始使用上下文加载器发现服务提供者
+provider=org.example.jvminternals.ch06.provider.FriendlyGreeter loader=greeting-provider service.loader=app message=来自隔离提供者的问候
+context.restored=true
+11月 03, 2026 11:42:52 上午 org.example.jvminternals.ch06.ServiceJourney main
+INFO: 提供者资源关闭，上下文已恢复；未声称类已卸载

@@ -1,0 +1,8 @@
+Compiled from "Plugin.java"
+public final class org.example.jvminternals.ch06.isolated.Plugin {
+  public org.example.jvminternals.ch06.isolated.Plugin();
+    descriptor: ()V
+
+  public org.example.jvminternals.ch06.isolated.Plugin echo(org.example.jvminternals.ch06.isolated.Plugin);
+    descriptor: (Lorg/example/jvminternals/ch06/isolated/Plugin;)Lorg/example/jvminternals/ch06/isolated/Plugin;
+}

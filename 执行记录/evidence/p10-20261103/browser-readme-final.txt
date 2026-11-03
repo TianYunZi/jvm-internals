@@ -1,0 +1,12 @@
+出版：chapters/ch01-architecture/README.html
+出版：chapters/ch02-computer-basics/README.html
+出版：chapters/ch03-source-environment/README.html
+出版：chapters/ch04-classfile/README.html
+出版：chapters/ch05-bytecode-verification/README.html
+出版：chapters/ch06-classloaders-modules/README.html
+出版：chapters/ch07-linking-initialization/README.html
+出版：chapters/ch08-type-metadata/README.html
+出版：chapters/ch09-runtime-memory/README.html
+出版：chapters/ch10-object-layout/README.html
+出版：chapters/ch11-allocation/README.html
+出版：chapters/ch12-native-memory/README.html

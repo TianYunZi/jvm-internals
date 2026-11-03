@@ -1,0 +1,6 @@
+flowchart TB
+ J[语言允许执行与happens-before] --> C[编译器保留内存依赖与屏障节点]
+ C --> A[AArch64：可选ldar或stlr及dmb组合]
+ C --> X[x86-64：空编码及独立屏障]
+ A --> M[满足同一语言契约]
+ X --> M

@@ -1,0 +1,5 @@
+doc
+make/autoconf
+src/hotspot/share/classfile
+src/java.base/share/classes/java/lang/classfile
+src/java.base/share/classes/jdk/internal/classfile

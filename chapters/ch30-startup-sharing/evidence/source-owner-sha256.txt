@@ -1,0 +1,7 @@
+83739491aca4f2736fdc370ce4fe633fc5342bf4607673917c0113bac0c27724  /Users/xiejinxin/Developer/OpenJDK/jdk25u-25.0.5.0.2/src/java.base/share/native/libjli/java.c
+4e29c2889053ed19d19a4ec05deaa2c515cb3d753a64cde86544632782aebce8  /Users/xiejinxin/Developer/OpenJDK/jdk25u-25.0.5.0.2/src/java.base/share/classes/sun/launcher/LauncherHelper.java
+b94008d72fb4be373e8b74882cf126578a130108bbf2d2771990c1f5e6f46bd3  /Users/xiejinxin/Developer/OpenJDK/jdk25u-25.0.5.0.2/src/java.base/share/classes/jdk/internal/misc/MethodFinder.java
+706ecf0b5d9dba5300e5c5a478ae387e3038755a535defca0fdb62823a7ac530  /Users/xiejinxin/Developer/OpenJDK/jdk25u-25.0.5.0.2/src/hotspot/share/runtime/threads.cpp
+a4257a6dd9e91d71a9f2cd39633112fda3e927dff9ad86b58fb1f0c1f3440b58  /Users/xiejinxin/Developer/OpenJDK/jdk25u-25.0.5.0.2/src/hotspot/share/cds/filemap.cpp
+f6d39214b777b2fa7cf0a625f8350b3ecdcd01b190c4c4cda066d3ef85f64b66  /Users/xiejinxin/Developer/OpenJDK/jdk25u-25.0.5.0.2/src/java.base/share/classes/java/lang/Shutdown.java
+fe46f60f43545b4bf7458e106067136b079439158cf02625ddc1c49d5b5be083  /Users/xiejinxin/Developer/OpenJDK/jdk25u-25.0.5.0.2/src/java.base/share/classes/java/lang/ApplicationShutdownHooks.java

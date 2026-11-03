@@ -1,0 +1,10 @@
+sequenceDiagram
+ participant S as 采样线程
+ participant T as 被采样线程
+ participant R as 记录存储
+ S->>T: 建立请求并安装线程相关状态
+ S->>T: 武装轮询并恢复线程
+ Note over T: 安全轮询处协作处理
+ T->>T: 安全遍历栈
+ T->>R: 提交样本与时间信息
+ Note over S,R: 缓解位置偏差 不保证所有采样无偏

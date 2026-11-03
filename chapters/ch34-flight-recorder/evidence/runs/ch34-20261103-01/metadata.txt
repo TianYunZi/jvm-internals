@@ -1,0 +1,129 @@
+@Name("book.Holder")
+@Label("教学持锁区间")
+class Holder extends jdk.jfr.Event {
+  @Label("Start Time")
+  @Timestamp("TICKS")
+  long startTime;
+
+  @Label("Duration")
+  @Timespan("TICKS")
+  long duration;
+
+  @Label("Event Thread")
+  @Description("Thread in which event was committed in")
+  Thread eventThread;
+
+  @Label("Stack Trace")
+  @Description("Stack Trace starting from the method the event was committed in")
+  StackTrace stackTrace;
+}
+
+@Name("book.Request")
+@Label("教学请求")
+class Request extends jdk.jfr.Event {
+  @Label("Start Time")
+  @Timestamp("TICKS")
+  long startTime;
+
+  @Label("Duration")
+  @Timespan("TICKS")
+  long duration;
+
+  @Label("Event Thread")
+  @Description("Thread in which event was committed in")
+  Thread eventThread;
+
+  @Label("Stack Trace")
+  @Description("Stack Trace starting from the method the event was committed in")
+  StackTrace stackTrace;
+
+  @Label("请求编号")
+  int requestId;
+}
+
+@Name("jdk.CPUTimeSample")
+@Category({"Java Virtual Machine", "Profiling"})
+@Label("CPU Time Sample")
+@Description("Snapshot of a threads state from the CPU time sampler, both threads executing native and Java code are included. The throttle setting can be either an upper bound for the event emission rate, e.g. 100/s, or the cpu-time period, e.g. 10ms, with s, ms, us and ns supported as time units.")
+@Experimental
+class CPUTimeSample extends jdk.jfr.Event {
+  @Label("Start Time")
+  @Timestamp("TICKS")
+  long startTime;
+
+  @Label("Stack Trace")
+  StackTrace stackTrace;
+
+  @Label("Thread")
+  Thread eventThread;
+
+  @Label("Failed")
+  @Description("Failed to obtain the stack trace")
+  boolean failed;
+
+  @Unsigned
+  @Timespan("TICKS")
+  @Label("CPU Time Sampling Period")
+  long samplingPeriod;
+
+  @Label("Biased")
+  @Description("The sample is safepoint-biased")
+  boolean biased;
+}
+
+@Name("jdk.MethodTiming")
+@Label("Method Timing")
+@Category({"Java Virtual Machine", "Method Tracing"})
+@Description("Measures the approximate time it takes for a method to execute, including all delays, not just CPU processing time")
+class MethodTiming extends jdk.jfr.Event {
+  @Label("Start Time")
+  @Timestamp("TICKS")
+  long startTime;
+
+  @Label("Method")
+  Method method;
+
+  @Label("Invocations")
+  long invocations;
+
+  @Label("Minimum Time")
+  @Description("The value may be missing (Long.MIN_VALUE) if the clock-resolution is too low to establish a minimum time")
+  @Timespan("TICKS")
+  long minimum;
+
+  @Label("Average Time")
+  @Description("The value may be missing (Long.MIN_VALUE) if the clock-resolution is too low to establish an average time")
+  @Timespan("TICKS")
+  long average;
+
+  @Label("Maximum Time")
+  @Description("The value may be missing (Long.MIN_VALUE) if the clock-resolution is too low to establish a maximum time")
+  @Timespan("TICKS")
+  long maximum;
+}
+
+@Name("jdk.MethodTrace")
+@Label("Method Trace")
+@Category({"Java Virtual Machine", "Method Tracing"})
+class MethodTrace extends jdk.jfr.Event {
+  @Label("Start Time")
+  @Timestamp("TICKS")
+  long startTime;
+
+  @Label("Duration")
+  @Timespan("TICKS")
+  long duration;
+
+  @Label("Event Thread")
+  @Description("Thread in which event was committed in")
+  Thread eventThread;
+
+  @Label("Stack Trace")
+  @Description("Stack Trace starting from the method the event was committed in")
+  StackTrace stackTrace;
+
+  @Contextual
+  @Label("Method")
+  Method method;
+}
+

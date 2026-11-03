@@ -1,0 +1,27 @@
+第34章运行说明
+
+返回正文 · 源码阅读
+
+本章基于Java开发工具包（Java Development Kit，JDK）25.0.5.0.2、macOS AArch64。以下命令在项目根目录执行，环境变量只用于本任务，不改变系统默认Java。普通构建只编译，不自动启动教学进程。
+
+P09_JDK=/opt/homebrew/opt/openjdk@25
+
+CH34-E01 请求区间与持锁事件
+
+LatencyJourney是正式教学源；记录上限16兆字节，三次请求，持锁休眠180毫秒。JDK飞行记录器（JDK Flight Recorder，JFR）在程序内显式开始、停止并关闭，不依赖持续后台进程。方法插桩仅匹配service。
+
+JAVA_HOME="$P09_JDK" mvn -pl chapters/ch34-flight-recorder -am compile
+"$P09_JDK/bin/java" -Xmx64m -cp chapters/ch34-flight-recorder/target/classes org.example.jvminternals.ch34.LatencyJourney chapters/ch34-flight-recorder/target/latency.jfr
+"$P09_JDK/bin/jfr" summary chapters/ch34-flight-recorder/target/latency.jfr
+"$P09_JDK/bin/jfr" metadata --events 'book.*,jdk.MethodTrace,jdk.MethodTiming,jdk.CPUTimeSample' chapters/ch34-flight-recorder/target/latency.jfr
+"$P09_JDK/bin/jfr" print --events 'book.*,jdk.JavaMonitorEnter,jdk.MethodTrace,jdk.MethodTiming' chapters/ch34-flight-recorder/target/latency.jfr
+"$P09_JDK/bin/jfr" view hot-methods chapters/ch34-flight-recorder/target/latency.jfr
+
+
+首次方法追踪包含初始化成本；自定义事件边界在方法内部，不要求两者时间一致。处理器时间画像使用中央处理器（Central Processing Unit，CPU）时间；25版该实验特性限Linux，macOS普通执行采样不冒充它。
+
+图形分析
+
+JDK Mission Control（JMC）9.1.2通过文件打开本章原始latency.jfr。先读记录区间与自动分析，再到线程、锁、方法和事件浏览器确认时间、身份及栈；新事件可用通用字段阅读，不假设旧版规则有专用界面。升级及JDK选择记录归公共P09；本章JMC阅读记录在evidence/jmc。
+
+没有新增测试、断言、性能基准或持续监控部署。原始记录和精选输出不混为一份；不覆写本轮证据来反复练习命令。

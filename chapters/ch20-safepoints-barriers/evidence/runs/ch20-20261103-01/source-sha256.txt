@@ -1,0 +1,1 @@
+4aa927315d3266c2d73f582d6c11a9f14cb36ed75a2b9c8f9dff03e59549f5d4  chapters/ch20-safepoints-barriers/src/main/java/org/example/jvminternals/ch20/SafepointJourney.java

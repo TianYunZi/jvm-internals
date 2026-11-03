@@ -1,0 +1,7 @@
+flowchart TB
+ U[未绑定] --> O[where外层：绑定outer]
+ O --> I[where内层：绑定inner]
+ I --> R[内层退出：恢复outer]
+ R --> E[外层退出：恢复未绑定]
+ O --> C[在绑定内打开任务作用域]
+ C --> S[结构化子任务继承绑定快照]

@@ -1,0 +1,98 @@
+{
+  "version": "Chrome/156.0.8078.80",
+  "pages": [
+    {
+      "page": "chapters/ch33-observability/chapter.html",
+      "codeIds": []
+    },
+    {
+      "page": "chapters/ch33-observability/sources.html",
+      "codeIds": [
+        "code-001",
+        "code-002",
+        "code-003",
+        "code-004",
+        "code-005",
+        "code-006"
+      ]
+    },
+    {
+      "page": "chapters/ch33-observability/README.html",
+      "codeIds": [
+        "code-001",
+        "code-002",
+        "code-003",
+        "code-004",
+        "code-005"
+      ]
+    },
+    {
+      "page": "chapters/ch34-flight-recorder/chapter.html",
+      "codeIds": [
+        "code-001"
+      ]
+    },
+    {
+      "page": "chapters/ch34-flight-recorder/sources.html",
+      "codeIds": [
+        "code-001",
+        "code-002"
+      ]
+    },
+    {
+      "page": "chapters/ch34-flight-recorder/README.html",
+      "codeIds": [
+        "code-001",
+        "code-002"
+      ]
+    },
+    {
+      "page": "chapters/ch35-troubleshooting/chapter.html",
+      "codeIds": []
+    },
+    {
+      "page": "chapters/ch35-troubleshooting/sources.html",
+      "codeIds": [
+        "code-001",
+        "code-002"
+      ]
+    },
+    {
+      "page": "chapters/ch35-troubleshooting/README.html",
+      "codeIds": [
+        "code-001",
+        "code-002",
+        "code-003"
+      ]
+    },
+    {
+      "page": "chapters/ch36-performance-cases/chapter.html",
+      "codeIds": [
+        "code-001"
+      ]
+    },
+    {
+      "page": "chapters/ch36-performance-cases/sources.html",
+      "codeIds": [
+        "code-001",
+        "code-002",
+        "code-003",
+        "code-004",
+        "code-005",
+        "code-006"
+      ]
+    },
+    {
+      "page": "chapters/ch36-performance-cases/README.html",
+      "codeIds": [
+        "code-001",
+        "code-002",
+        "code-003",
+        "code-004",
+        "code-005",
+        "code-006",
+        "code-007"
+      ]
+    }
+  ]
+}

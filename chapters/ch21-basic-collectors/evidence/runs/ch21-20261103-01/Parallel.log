@@ -1,0 +1,84 @@
+[0.005s][info][gc,init] CardTable entry size: 512
+[0.005s][info][gc     ] Using Parallel
+[0.005s][info][gc,init] Version: 25.0.5.0.2 (release)
+[0.005s][info][gc,init] CPUs: 8 total, 2 available
+[0.005s][info][gc,init] Memory: 16384M
+[0.005s][info][gc,init] Large Page Support: Disabled
+[0.005s][info][gc,init] NUMA Support: Disabled
+[0.005s][info][gc,init] Compressed Oops: Enabled (Zero based)
+[0.005s][info][gc,init] Alignments: Space 512K, Generation 512K, Heap 8M
+[0.005s][info][gc,init] Heap Min Capacity: 128M
+[0.005s][info][gc,init] Heap Initial Capacity: 128M
+[0.005s][info][gc,init] Heap Max Capacity: 128M
+[0.005s][info][gc,init] Pre-touch: Disabled
+[0.005s][info][gc,init] Parallel Workers: 2
+[0.009s][info][gc,metaspace] CDS archive(s) mapped at: [0x0000400000000000-0x0000400000d98000-0x0000400000d98000), size 14254080, SharedBaseAddress: 0x0000400000000000, ArchiveRelocationMode: 1.
+[0.009s][info][gc,metaspace] Compressed class space mapped at: 0x0000400001000000-0x0000400041000000, reserved size: 1073741824
+[0.009s][info][gc,metaspace] UseCompressedClassPointers 1, UseCompactObjectHeaders 0
+[0.009s][info][gc,metaspace] Narrow klass pointer bits 32, Max shift 3
+[0.009s][info][gc,metaspace] Narrow klass base: 0x0000400000000000, Narrow klass shift: 0
+[0.009s][info][gc,metaspace] Encoding Range: [0x0000400000000000 - 0x0000400100000000), (4294967296 bytes)
+[0.009s][info][gc,metaspace] Klass Range:    [0x0000400000004000 - 0x0000400041000000), (1090502656 bytes)
+[0.009s][info][gc,metaspace] Klass ID Range:  [16384 - 1090519033) (1090502649)
+[0.009s][info][gc,metaspace] Protection zone: [0x0000400000000000 - 0x0000400000004000), (16384 bytes)
+[0.067s][info][gc,start    ] GC(0) Pause Young (Allocation Failure)
+[0.068s][trace][gc,ergo     ] GC(0) AdaptiveSizePolicy::minor_collection_end: minor gc cost: 0.015037  average: 0.015037
+[0.068s][trace][gc,ergo     ] GC(0)   minor pause: 0.947000 minor period 62.031000
+[0.068s][trace][gc,ergo     ] GC(0) AdaptiveSizePolicy::update_averages:  survived: 2065440  promoted: 0  overflow: false
+[0.068s][debug][gc,ergo     ] GC(0) AdaptiveSizeStart:  collection: 1 
+[0.068s][trace][gc,ergo     ] GC(0) old_gen_capacity: 89653248 young_gen_capacity: 39321600
+[0.068s][debug][gc,age      ] GC(0) Desired survivor size 5242880 bytes, new threshold 7 (max threshold 15)
+[0.068s][trace][gc,ergo     ] GC(0) PSAdaptiveSizePolicy::adjust_eden_for_throughput(is_full: 0, cur_eden: 34078720): mutator_cost 0.984963  major_gc_cost 0.000000 minor_gc_cost 0.015037
+[0.068s][trace][gc,ergo     ] GC(0) Scaled eden increment: 34078720 by 1.000000 down to 34078720
+[0.068s][trace][gc,ergo     ] GC(0) Adjusting eden for throughput (avg 0.984963 goal 0.990000). desired_eden_size 68157440 eden delta 34078720
+[0.068s][debug][gc,ergo     ] GC(0) PSAdaptiveSizePolicy::compute_eden_space_size limits: desired_eden_size: 68157440 old_eden_size: 34078720 eden_limit: 34078720 cur_eden: 34078720 max_eden_size: 34078720 avg_young_live: 2065440
+[0.068s][debug][gc,ergo     ] GC(0) PSAdaptiveSizePolicy::compute_eden_space_size: costs minor_time: 0.015037 major_cost: 0.000000 mutator_cost: 0.984963 throughput_goal: 0.990000
+[0.068s][trace][gc,ergo     ] GC(0) Minor_pause: 0.000947 major_pause: 0.000000 minor_interval: 0.062978 major_interval: 0.000000pause_goal: 18446744073709552.000000
+[0.068s][debug][gc,ergo     ] GC(0) Live_space: 2065440 free_space: 68157440
+[0.068s][trace][gc,ergo     ] GC(0) avg_young_live: 2065440 avg_old_live: 0
+[0.068s][debug][gc,ergo     ] GC(0) Old eden_size: 34078720 desired_eden_size: 34078720
+[0.068s][trace][gc,ergo     ] GC(0) PSYoungGen::resize_spaces(requested_eden_size: 34078720, requested_survivor_size: 5242880)
+[0.068s][trace][gc,ergo     ] GC(0)     eden: [0x0000000129d80000..0x000000012be00000) 34078720
+[0.068s][trace][gc,ergo     ] GC(0)     from: [0x000000012be00000..0x000000012c300000) 5242880
+[0.068s][trace][gc,ergo     ] GC(0)       to: [0x000000012c300000..0x000000012c800000) 5242880
+[0.068s][trace][gc,ergo     ] GC(0)     capacities are the right sizes, returning
+[0.068s][trace][gc,ergo     ] GC(0) Young generation size: desired eden: 34078720 survivor: 5242880 used: 2065440 capacity: 39321600 gen limits: 44564480 / 44564480
+[0.068s][debug][gc,ergo     ] GC(0) AdaptiveSizeStop: collection: 1 
+[0.068s][info ][gc,heap     ] GC(0) PSYoungGen: 33280K(38400K)->2017K(38400K) Eden: 33280K(33280K)->0K(33280K) From: 0K(5120K)->2017K(5120K)
+[0.068s][info ][gc,heap     ] GC(0) ParOldGen: 1150K(87552K)->1150K(87552K)
+[0.068s][info ][gc,metaspace] GC(0) Metaspace: 916K(1152K)->916K(1152K) NonClass: 839K(960K)->839K(960K) Class: 77K(192K)->77K(192K)
+[0.068s][info ][gc          ] GC(0) Pause Young (Allocation Failure) 33M->3M(123M) 1.172ms
+[0.068s][info ][gc,cpu      ] GC(0) User=0.00s Sys=0.00s Real=0.00s
+[0.280s][info ][gc,start    ] GC(1) Pause Young (Allocation Failure)
+[0.281s][trace][gc,ergo     ] GC(1) AdaptiveSizePolicy::minor_collection_end: minor gc cost: 0.004711  average: 0.009874
+[0.282s][trace][gc,ergo     ] GC(1)   minor pause: 1.004167 minor period 212.152833
+[0.282s][trace][gc,ergo     ] GC(1) AdaptiveSizePolicy::update_averages:  survived: 2106472  promoted: 0  overflow: false
+[0.282s][debug][gc,ergo     ] GC(1) AdaptiveSizeStart:  collection: 2 
+[0.282s][trace][gc,ergo     ] GC(1) old_gen_capacity: 89653248 young_gen_capacity: 39321600
+[0.282s][debug][gc,age      ] GC(1) Desired survivor size 5242880 bytes, new threshold 7 (max threshold 15)
+[0.282s][debug][gc,ergo     ] GC(1) PSAdaptiveSizePolicy::compute_eden_space_size: costs minor_time: 0.009874 major_cost: 0.000000 mutator_cost: 0.990126 throughput_goal: 0.990000
+[0.282s][trace][gc,ergo     ] GC(1) Minor_pause: 0.000990 major_pause: 0.000000 minor_interval: 0.138067 major_interval: 0.000000pause_goal: 18446744073709552.000000
+[0.282s][debug][gc,ergo     ] GC(1) Live_space: 2085956 free_space: 68157440
+[0.282s][trace][gc,ergo     ] GC(1) avg_young_live: 2085956 avg_old_live: 0
+[0.282s][debug][gc,ergo     ] GC(1) Old eden_size: 34078720 desired_eden_size: 34078720
+[0.282s][trace][gc,ergo     ] GC(1) PSYoungGen::resize_spaces(requested_eden_size: 34078720, requested_survivor_size: 5242880)
+[0.282s][trace][gc,ergo     ] GC(1)     eden: [0x0000000129d80000..0x000000012be00000) 34078720
+[0.282s][trace][gc,ergo     ] GC(1)     from: [0x000000012c300000..0x000000012c800000) 5242880
+[0.282s][trace][gc,ergo     ] GC(1)       to: [0x000000012be00000..0x000000012c300000) 5242880
+[0.282s][trace][gc,ergo     ] GC(1)     capacities are the right sizes, returning
+[0.282s][trace][gc,ergo     ] GC(1) Young generation size: desired eden: 34078720 survivor: 5242880 used: 2106472 capacity: 39321600 gen limits: 44564480 / 44564480
+[0.282s][debug][gc,ergo     ] GC(1) AdaptiveSizeStop: collection: 2 
+[0.282s][info ][gc,heap     ] GC(1) PSYoungGen: 35297K(38400K)->2057K(38400K) Eden: 33280K(33280K)->0K(33280K) From: 2017K(5120K)->2057K(5120K)
+[0.282s][info ][gc,heap     ] GC(1) ParOldGen: 1150K(87552K)->1150K(87552K)
+[0.282s][info ][gc,metaspace] GC(1) Metaspace: 1081K(1280K)->1081K(1280K) NonClass: 986K(1088K)->986K(1088K) Class: 95K(192K)->95K(192K)
+[0.282s][info ][gc          ] GC(1) Pause Young (Allocation Failure) 35M->3M(123M) 1.190ms
+[0.282s][info ][gc,cpu      ] GC(1) User=0.00s Sys=0.00s Real=0.00s
+[0.489s][info ][gc,exit     ] Heap
+[0.489s][info ][gc,exit     ]  PSYoungGen      total 38400K, used 6142K [0x0000000129d80000, 0x000000012c800000, 0x000000012c800000)
+[0.489s][info ][gc,exit     ]   eden space 33280K, 12% used [0x0000000129d80000,0x000000012a17d410,0x000000012be00000)
+[0.489s][info ][gc,exit     ]   from space 5120K, 40% used [0x000000012c300000,0x000000012c502468,0x000000012c800000)
+[0.489s][info ][gc,exit     ]   to   space 5120K, 0% used [0x000000012be00000,0x000000012be00000,0x000000012c300000)
+[0.489s][info ][gc,exit     ]  ParOldGen       total 87552K, used 1150K [0x0000000124800000, 0x0000000129d80000, 0x0000000129d80000)
+[0.489s][info ][gc,exit     ]   object space 87552K, 1% used [0x0000000124800000,0x000000012491f968,0x0000000129d80000)
+[0.489s][info ][gc,exit     ]  Metaspace       used 1085K, committed 1280K, reserved 1114112K
+[0.489s][info ][gc,exit     ]   class space    used 95K, committed 192K, reserved 1048576K
