@@ -1,0 +1,62 @@
+跳到正文
+Java虚拟机原理 · 全书目录
+D.1 固定版本再沿路径读
+D.2 入口、符号和阅读问题
+D.3 沿协作而不是文件夹补全
+来源与离线入口
+
+附录 D
+
+HotSpot 源码导航
+
+让源码入口回答具体问题：谁调用它，什么条件生效，与规范和观察怎样对应。
+
+D.1 固定版本再沿路径读
+
+Java开发工具包（Java Development Kit，JDK）25.0.5.0.2对应本书OpenJDK仓库jdk25u，标签jdk-25.0.5.0.2-ga，固定提交1775ea114f649f0314e4e43eb6c802ff16dfab7c。外部稀疏检出和发行版补丁差异见公共基线；上游文件与发行版二进制不声明逐字一致。
+
+每一行给出文件、稳定符号、阅读问题和本书解释位置。先核对当前条件和调用者，再展开实现；不要依赖漂移行号、默认分支或名字相似的其他版本。外链用于复查上游，离线解释和精选摘录随章节证据保留。
+
+APP-D-F01　源码阅读是分层定位过程，Mermaid图不表示每个Java调用都逐层经过普通本地函数。
+D.2 入口、符号和阅读问题
+HotSpot与类库导航
+主题	固定提交文件	符号与条件	问题／解释
+类文件	src/hotspot/share/classfile/classFileParser.cpp	ClassFileParser::parse_stream	先解析结构；验证器另行检查类型状态；第4章／CH04依据
+加载与字典	src/hotspot/share/classfile/systemDictionary.cpp	SystemDictionary::resolve_or_fail	加载器身份、查找与失败路径；第6章／CH06依据
+类型初始化	src/hotspot/share/oops/instanceKlass.cpp	InstanceKlass::initialize_impl	状态、初始化线程与错误传播；第7章／CH07依据
+对象状态	src/hotspot/share/oops/markWord.hpp	markWord、hash_shift、klass_bits	按普通／紧凑配置读布局，不跨状态套字段；第10章／CH10依据
+分配入口	src/hotspot/share/gc/shared/memAllocator.cpp	MemAllocator::allocate	快慢路径与初始化发布职责；第11章／CH11依据
+本地账本	src/hotspot/share/nmt/memTracker.hpp	MemTracker	跟踪入口和覆盖；不同于系统驻留统计；第12章／CH12依据
+解释执行	src/hotspot/share/interpreter/interpreterRuntime.cpp	InterpreterRuntime::_new	字节码慢路径协作；模板生成码另看机器目录；第13章／CH13依据
+调用解析	src/hotspot/share/interpreter/linkResolver.cpp	LinkResolver	符号解析与目标选择分开；第14章／CH14依据
+分层策略	src/hotspot/share/compiler/compilationPolicy.cpp	CompilationPolicy	计数、请求、层级；队列提交不等于完成；第16章／CH16依据
+分配消除	src/hotspot/share/opto/macro.cpp	PhaseMacroExpand	分配宏节点展开与可消除条件；第17章／CH17依据
+去优化	src/hotspot/share/runtime/deoptimization.cpp	Deoptimization::realloc_objects、reassign_fields	逻辑帧、对象重建和字段重赋；第18章／CH18依据
+安全点	src/hotspot/share/runtime/safepoint.cpp	SafepointSynchronize::begin / end	协调与暂停分段，非所有工作都需要全局暂停；第20章／CH20依据
+线程握手	src/hotspot/share/runtime/handshake.cpp	Handshake::execute、HandshakeState	定向请求、安全代办和完成边界；第20章／CH20依据
+优先回收写屏障	src/hotspot/share/gc/g1/g1BarrierSet.inline.hpp	write_ref_field_pre / post	起始快照旧引用与卡记录分工；第22章／CH22依据
+轻量同步	src/hotspot/share/runtime/lightweightSynchronizer.cpp	LightweightSynchronizer::enter	锁栈、重入、膨胀与监视器表；第27章／CH27依据
+监视器	src/hotspot/share/runtime/objectMonitor.cpp	ObjectMonitor::wait、notify_all、deflate_monitor	通知不直接转移所有权；收缩另有协议；第27章／CH27依据
+虚拟线程	src/java.base/share/classes/java/lang/VirtualThread.java	VirtualThread	调度、park与挂载状态；结合continuation实现；第28章／CH28依据
+结构化任务	src/java.base/share/classes/java/util/concurrent/StructuredTaskScopeImpl.java	open、cancel、join、close	策略结果、取消和关闭等待边界；第29章／CH29依据
+启动器	src/java.base/share/native/libjli/java.c	JLI_Launch、JavaMain、InitializeJVM	启动器与虚拟机创建层级分开；第30章／CH30依据
+共享映射	src/hotspot/share/cds/filemap.cpp	FileMapInfo::map_regions	文件校验与映射，不等于恢复应用可变状态；第30章／CH30依据
+缓存选项	src/hotspot/share/cds/cds_globals.hpp	AOTRecordTraining、AOTReplayTraining	产品／诊断／实验分组与默认值按定义查；第31章／CH31依据
+本地接口	src/hotspot/share/prims/jni.cpp	jni_NewGlobalRef / jni_DeleteGlobalRef	线程附加、局部／全局引用及异常边界；第32章／CH32依据
+诊断命令	src/hotspot/share/services/diagnosticCommand.cpp	DCmd::register_dcmds / ThreadDumpDCmd::execute	附加传输、命令派发和具体动作分开；第33章／CH33依据
+记录存储	src/hotspot/share/jfr/recorder/storage/jfrStorage.cpp	JfrStorage::flush / write	线程缓冲、存储和磁盘写出不是同一时点；第34章／CH34依据
+D.3 沿协作而不是文件夹补全
+
+垃圾收集（Garbage Collection，GC）先从第19章的根和可达性、第20章的安全点及引用映射入手，再分别沿第21章—第24章的收集器来源表进入策略、屏障和后备路径。路径存在不等于本机运行过全部分支。
+
+对象分配接到编译器时，应对照第11章的空间观察、第17章的消除条件和第18章的恢复元数据；非逃逸不保证一定消除，也不能把物化图当逐对象实测轨迹。线程路径要对照第25章的语义、第28章的栈块和第32章的本地在途调用，避免从一个枚举状态推导全部阻塞原因。
+
+机器相关实现位于src/hotspot/cpu/aarch64和cpu/x86，系统相关实现位于os下的目标目录。这里是阅读方向，不是跨平台实测声明；AArch64为本书真实主环境，x86-64按同提交源码规则对照。
+
+来源与离线入口
+
+各行归属章的evidence/索引.md保留精确源码条件、摘录与实际观察。首次定位后继续使用本章来源表，避免把本附录的选读集合误认为HotSpot全部路径。图源为本附录figures/source-route.mmd，本地显示图由同源导出。
+
+上一页
+附录目录
+下一页

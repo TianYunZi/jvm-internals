@@ -1,0 +1,598 @@
+CompileCommand: dontinline org/example/jvminternals/ch14/DispatchJourney.call bool dontinline = true
+CompileCommand: print org/example/jvminternals/ch14/DispatchJourney.call bool print = true
+18    1    b  3       java.lang.Object::<init> (1 bytes)
+19    2    b  3       java.lang.Byte::toUnsignedInt (6 bytes)
+19    3    b  3       java.lang.String::hashCode (60 bytes)
+                              @ 17   java.lang.String::isLatin1 (19 bytes)   inline
+                              @ 27   java.lang.StringLatin1::hashCode (9 bytes)   inline
+                                @ 5   jdk.internal.util.ArraysSupport::hashCodeOfUnsigned (55 bytes)   failed to inline: callee is too large
+                              @ 37  java/lang/StringUTF16::hashCode (not loaded)   failed to inline: not inlineable
+21    4     n 0       jdk.internal.misc.Unsafe::getReferenceVolatile (native)   
+21    5     n 0       jdk.internal.vm.Continuation::enterSpecial (native)   (static)
+21    6     n 0       jdk.internal.vm.Continuation::doYield (native)   (static)
+22    7    b  3       java.lang.String::coder (15 bytes)
+22    8    b  3       java.lang.String::isLatin1 (19 bytes)
+23    9    b  3       jdk.internal.util.Preconditions::checkIndex (18 bytes)
+                              @ 12   jdk.internal.util.Preconditions::outOfBoundsCheckIndex (25 bytes)   failed to inline: callee uses too much stack
+23   10    b  3       java.lang.String::length (11 bytes)
+                              @ 6   java.lang.String::coder (15 bytes)   inline
+23   11    b  3       java.lang.String::charAt (25 bytes)
+                              @ 1   java.lang.String::isLatin1 (19 bytes)   inline
+                              @ 12   java.lang.StringLatin1::charAt (15 bytes)   inline
+                                @ 3   java.lang.String::checkIndex (10 bytes)   inline
+                                  @ 5   jdk.internal.util.Preconditions::checkIndex (18 bytes)   intrinsic
+                              @ 21  java/lang/StringUTF16::charAt (not loaded)   failed to inline: not inlineable
+24   12     n 0       java.lang.System::arraycopy (native)   (static)
+25   13    b  4       java.lang.Byte::toUnsignedInt (6 bytes)
+25    2       3       java.lang.Byte::toUnsignedInt (6 bytes)   made not entrant: not used
+25   14     n 0       jdk.internal.misc.Unsafe::getLong (native)   
+26   15     n 0       java.lang.Object::hashCode (native)   
+26   16     n 0       java.lang.invoke.MethodHandle::linkToStatic(LLLLLL)L (native)   (static)
+27   17    b  3       java.util.Objects::requireNonNull (14 bytes)
+                              @ 8   java.lang.NullPointerException::<init> (5 bytes)   failed to inline: don't inline Throwable constructors
+27   18    b  1       java.lang.Enum::ordinal (5 bytes)
+27   19     n 0       java.lang.invoke.MethodHandle::invokeBasic(LLLLL)L (native)   
+27   20     n 0       java.lang.invoke.MethodHandle::linkToSpecial(LLLLLLL)L (native)   (static)
+28   21    b  3       java.util.concurrent.ConcurrentHashMap::tabAt (21 bytes)
+                              @ 14   jdk.internal.misc.Unsafe::getReferenceAcquire (7 bytes)   inline
+                                @ 3   jdk.internal.misc.Unsafe::getReferenceVolatile (0 bytes)   intrinsic
+28   22    b  1       java.lang.Class::isPrimitive (5 bytes)
+28   23    b  3       java.util.concurrent.ConcurrentHashMap::spread (10 bytes)
+29   24    b  4       java.lang.Object::<init> (1 bytes)
+29    1       3       java.lang.Object::<init> (1 bytes)   made not entrant: not used
+29   25    b  3       java.lang.Enum::<init> (15 bytes)
+                              @ 1   java.lang.Object::<init> (1 bytes)   inline
+30   26    b  1       jdk.internal.classfile.impl.AbstractPoolEntry::index (5 bytes)
+30   27    b  1       jdk.internal.classfile.impl.RawBytecodeHelper::bci (5 bytes)
+31   28    b  1       jdk.internal.classfile.impl.SplitConstantPool::size (5 bytes)
+31   29     n 0       java.lang.invoke.MethodHandle::linkToSpecial(LLL)V (native)   (static)
+31   30     n 0       java.lang.invoke.MethodHandle::linkToSpecial(LIIL)L (native)   (static)
+31   31     n 0       java.lang.invoke.MethodHandle::invokeBasic(L)L (native)   
+31   32     n 0       jdk.internal.misc.Unsafe::compareAndSetLong (native)   
+31   33    b  1       jdk.internal.util.StrongReferenceKey::get (5 bytes)
+32   34     n 0       java.lang.invoke.MethodHandle::linkToStatic(LLL)L (native)   (static)
+32   35     n 0       java.lang.invoke.MethodHandle::linkToStatic(LLLL)L (native)   (static)
+32   36     n 0       java.lang.Object::clone (native)   
+32   37     n 0       java.lang.invoke.MethodHandle::invokeBasic(LII)L (native)   
+32   38    b  1       java.lang.invoke.MethodType::returnType (5 bytes)
+32   39     n 0       java.lang.invoke.MethodHandle::linkToSpecial(LLIIL)L (native)   (static)
+32   40    b  3       java.lang.Math::min (11 bytes)
+33   41     n 0       jdk.internal.misc.Unsafe::compareAndSetReference (native)   
+33   42     n 0       java.lang.invoke.MethodHandle::linkToStatic(LLLLL)L (native)   (static)
+33   43     n 0       java.lang.invoke.MethodHandle::invokeBasic(LLLL)L (native)   
+33   44    b  3       jdk.internal.util.ArraysSupport::unsignedHashCode (36 bytes)
+                              @ 23   java.lang.Byte::toUnsignedInt (6 bytes)   inline
+33   45   !b  3       java.lang.ref.ReferenceQueue::poll (44 bytes)
+                              @ 9   jdk.internal.vm.ContinuationSupport::pinIfSupported (10 bytes)   inline
+                                @ 0   jdk.internal.vm.ContinuationSupport::isSupported (4 bytes)   inline
+                                @ 6   jdk.internal.vm.Continuation::pin (0 bytes)   failed to inline: native method
+                              @ 20   java.lang.ref.ReferenceQueue::poll0 (65 bytes)   failed to inline: callee is too large
+                              @ 38   jdk.internal.vm.ContinuationSupport::unpinIfSupported (10 bytes)   inline
+                                @ 0   jdk.internal.vm.ContinuationSupport::isSupported (4 bytes)   inline
+                                @ 6   jdk.internal.vm.Continuation::unpin (0 bytes)   failed to inline: native method
+                              @ 26   jdk.internal.vm.ContinuationSupport::unpinIfSupported (10 bytes)   inline
+                                @ 0   jdk.internal.vm.ContinuationSupport::isSupported (4 bytes)   inline
+                                @ 6   jdk.internal.vm.Continuation::unpin (0 bytes)   failed to inline: native method
+34   46    b  1       jdk.internal.classfile.impl.AbstractPoolEntry::width (2 bytes)
+35   47    b  3       jdk.internal.classfile.impl.BufWriterImpl::reserveSpace (22 bytes)
+                              @ 18   jdk.internal.classfile.impl.BufWriterImpl::grow (33 bytes)   inline
+                                @ 26   java.util.Arrays::copyOf (33 bytes)   failed to inline: callee is too large
+35   48     n 0       java.lang.invoke.MethodHandle::invokeBasic(II)L (native)   
+35   49    b  3       jdk.internal.util.ReferencedKeyMap::removeStaleReferences (30 bytes)
+               !m             @ 4   java.lang.ref.ReferenceQueue::poll (44 bytes)   failed to inline: callee is too large
+                              @ 20   java.util.Map::remove (0 bytes)   failed to inline: no static binding
+静态=10；虚调用=11
+阶段=单接收者
+36   50    b  3       org.example.jvminternals.ch14.DispatchJourney::call (8 bytes)
+                              @ 2   org.example.jvminternals.ch14.DispatchJourney$Operation::apply (0 bytes)   failed to inline: no static binding
+
+============================= C1-compiled nmethod ==============================
+----------------------------------- Assembly -----------------------------------
+[0.037s][warning][os] Loading hsdis library failed
+
+Compiled method (c1) 37   50       3       org.example.jvminternals.ch14.DispatchJourney::call (8 bytes)
+ total in heap  [0x000000011829bcc8,0x000000011829bf88] = 704
+ main code      [0x000000011829bdc0,0x000000011829bf30] = 368
+ stub code      [0x000000011829bf30,0x000000011829bf80] = 80
+ oops           [0x000000011829bf80,0x000000011829bf88] = 8
+ mutable data [0x000000794d041080,0x000000794d0410d8] = 88
+ relocation     [0x000000794d041080,0x000000794d0410c0] = 64
+ metadata       [0x000000794d0410c0,0x000000794d0410d8] = 24
+ immutable data [0x000000794d405180,0x000000794d405200] = 128
+ dependencies   [0x000000794d405180,0x000000794d405188] = 8
+ nul chk table  [0x000000794d405188,0x000000794d405198] = 16
+ scopes pcs     [0x000000794d405198,0x000000794d4051e8] = 80
+ scopes data    [0x000000794d4051e8,0x000000794d405200] = 24
+
+[Constant Pool (empty)]
+
+[MachCode]
+[Verified Entry Point]
+  # {method} {0x000000012e4008a0} 'call' '(Lorg/example/jvminternals/ch14/DispatchJourney$Operation;I)I' in 'org/example/jvminternals/ch14/DispatchJourney'
+  # parm0:    c_rarg1:c_rarg1 
+                        = 'org/example/jvminternals/ch14/DispatchJourney$Operation'
+  # parm1:    c_rarg2   = int
+  #           [sp+0x30]  (sp of caller)
+  0x000000011829bdc0: 1f20 03d5 | e953 40d1 | 3f01 00f9 | ffc3 00d1 | fd7b 02a9 | 2801 0018 | 8923 40b9 | 1f01 09eb 
+  0x000000011829bde0: e000 0054 
+
+  0x000000011829bde4: ;   {runtime_call Stub::method_entry_barrier}
+  0x000000011829bde4: 0830 88d2 | 28f0 a3f2 | 2800 c0f2 | 0001 3fd6 | 0200 0014 | 0000 0000 
+
+  0x000000011829bdfc: ;   {metadata(method data for {method} {0x000000012e4008a0} 'call' '(Lorg/example/jvminternals/ch14/DispatchJourney$Operation;I)I' in 'org/example/jvminternals/ch14/DispatchJourney')}
+  0x000000011829bdfc: 00d6 81d2 | 8020 a0f2 | e0ff c0f2 | 0390 40b9 | 6308 0011 | 0390 00b9 | 6324 1f12 | 7f00 0071 
+  0x000000011829be1c: 4006 0054 
+
+  0x000000011829be20: ; implicit exception: dispatches to 0x000000011829bf04
+  0x000000011829be20: 3f00 40f9 | e003 01aa 
+
+  0x000000011829be28: ;   {metadata(method data for {method} {0x000000012e4008a0} 'call' '(Lorg/example/jvminternals/ch14/DispatchJourney$Operation;I)I' in 'org/example/jvminternals/ch14/DispatchJourney')}
+  0x000000011829be28: 03d6 81d2 | 8320 a0f2 | e3ff c0f2 | 0008 40b9 | 0028 60d2 | 6870 40f9 | 1f00 08eb | a100 0054 
+  0x000000011829be48: 6874 40f9 | 0805 0091 | 6874 00f9 | 1700 0014 | 6878 40f9 | 1f00 08eb | a100 0054 | 687c 40f9 
+  0x000000011829be68: 0805 0091 | 687c 00f9 | 1000 0014 | 6870 40f9 | a800 00b5 | 6070 00f9 | e803 40b2 | 6874 00f9 
+  0x000000011829be88: 0a00 0014 | 6878 40f9 | a800 00b5 | 6078 00f9 | e803 40b2 | 687c 00f9 | 0400 0014 | 686c 40f9 
+  0x000000011829bea8: 0805 0091 | 686c 00f9 | 0956 94d2 | a9a1 a9f2 | 290f c0f2 
+
+  0x000000011829bebc: ; ImmutableOopMap {}
+                      ;*invokeinterface apply {reexecute=0 rethrow=0 return_oop=0}
+                      ; - org.example.jvminternals.ch14.DispatchJourney::call@2 (line 74)
+                      ;   {virtual_call}
+  0x000000011829bebc: 51be d595 
+
+  0x000000011829bec0: ;   {post_call_nop}
+  0x000000011829bec0: 1f20 03d5 | 1f3f 80f2 | 1f00 80f2 | fd7b 42a9 | ffc3 0091 
+
+  0x000000011829bed4: ;   {poll_return}
+  0x000000011829bed4: 8817 40f9 | ff63 28eb | 6801 0054 | c003 5fd6 
+
+  0x000000011829bee4: ;   {metadata({method} {0x000000012e4008a0} 'call' '(Lorg/example/jvminternals/ch14/DispatchJourney$Operation;I)I' in 'org/example/jvminternals/ch14/DispatchJourney')}
+  0x000000011829bee4: 0814 81d2 | 08c8 a5f2 | 2800 c0f2 | e807 00f9 | 0800 8092 | e803 00f9 
+
+  0x000000011829befc: ; ImmutableOopMap {c_rarg1=Oop }
+                      ;*synchronization entry
+                      ; - org.example.jvminternals.ch14.DispatchJourney::call@-1 (line 74)
+                      ;   {runtime_call C1 Runtime counter_overflow_blob}
+  0x000000011829befc: e10d d995 | c8ff ff17 
+
+  0x000000011829bf04: ; ImmutableOopMap {c_rarg1=Oop }
+                      ;*invokeinterface apply {reexecute=0 rethrow=0 return_oop=0}
+                      ; - org.example.jvminternals.ch14.DispatchJourney::call@2 (line 74)
+                      ;   {runtime_call C1 Runtime throw_null_pointer_exception_blob}
+  0x000000011829bf04: cf02 d995 
+
+  0x000000011829bf08: ;   {internal_word}
+  0x000000011829bf08: 68fe ff10 | 8863 02f9 
+
+  0x000000011829bf10: ;   {runtime_call SafepointBlob}
+  0x000000011829bf10: 5cc3 d515 | 80b7 42f9 | 9fb7 02f9 | 9fbb 02f9 | fd7b 42a9 | ffc3 0091 
+
+  0x000000011829bf28: ;   {runtime_call C1 Runtime unwind_exception_blob}
+  0x000000011829bf28: e600 d915 | 0000 0000 
+[Stub Code]
+  0x000000011829bf30: ;   {static_stub}
+  0x000000011829bf30: df3f 03d5 
+
+  0x000000011829bf34: ;   {metadata(nullptr)}
+  0x000000011829bf34: 0c00 80d2 | 0c00 a0f2 | 0c00 c0f2 | 0800 80d2 | 0800 a0f2 | 0800 c0f2 | 0001 1fd6 
+
+  0x000000011829bf50: ;   {trampoline_stub}
+  0x000000011829bf50: 4800 0058 | 0001 1fd6 | 00b8 801f | 0100 0000 
+[Exception Handler]
+  0x000000011829bf60: ;   {runtime_call C1 Runtime handle_exception_from_callee_blob}
+  0x000000011829bf60: 1807 d995 
+
+  0x000000011829bf64: ;   {external_word}
+  0x000000011829bf64: 00bc 95d2 | 00e3 a1f2 | 2000 c0f2 | c1d5 bbd4 
+[Deopt Handler Code]
+  0x000000011829bf74: 1e00 0010 
+
+  0x000000011829bf78: ;   {runtime_call DeoptimizationBlob}
+  0x000000011829bf78: c2c3 d515 | 0000 0000 
+[/MachCode]
+41   51    b  3       org.example.jvminternals.ch14.DispatchJourney$First::apply (4 bytes)
+41   52    b  4       org.example.jvminternals.ch14.DispatchJourney$First::apply (4 bytes)
+41   51       3       org.example.jvminternals.ch14.DispatchJourney$First::apply (4 bytes)   made not entrant: not used
+41   53    b  4       org.example.jvminternals.ch14.DispatchJourney::call (8 bytes)
+
+============================= C2-compiled nmethod ==============================
+41   50       3       org.example.jvminternals.ch14.DispatchJourney::call (8 bytes)   made not entrant: not used
+----------------------------------- Assembly -----------------------------------
+
+Compiled method (c2) 42   53       4       org.example.jvminternals.ch14.DispatchJourney::call (8 bytes)
+ total in heap  [0x000000011fd68088,0x000000011fd68248] = 448
+ main code      [0x000000011fd68180,0x000000011fd68230] = 176
+ stub code      [0x000000011fd68230,0x000000011fd68240] = 16
+ oops           [0x000000011fd68240,0x000000011fd68248] = 8
+ mutable data [0x000000794d08a280,0x000000794d08a2b8] = 56
+ relocation     [0x000000794d08a280,0x000000794d08a2a0] = 32
+ metadata       [0x000000794d08a2a0,0x000000794d08a2b8] = 24
+ immutable data [0x000000794d405200,0x000000794d405278] = 120
+ dependencies   [0x000000794d405200,0x000000794d405208] = 8
+ nul chk table  [0x000000794d405208,0x000000794d405218] = 16
+ scopes pcs     [0x000000794d405218,0x000000794d405258] = 64
+ scopes data    [0x000000794d405258,0x000000794d405278] = 32
+
+[Constant Pool (empty)]
+
+[MachCode]
+[Verified Entry Point]
+  # {method} {0x000000012e4008a0} 'call' '(Lorg/example/jvminternals/ch14/DispatchJourney$Operation;I)I' in 'org/example/jvminternals/ch14/DispatchJourney'
+  # parm0:    c_rarg1:c_rarg1 
+                        = 'org/example/jvminternals/ch14/DispatchJourney$Operation'
+  # parm1:    c_rarg2   = int
+  #           [sp+0x30]  (sp of caller)
+  0x000000011fd68180: 1f20 03d5 | e953 40d1 | 3f01 00f9 | ffc3 00d1 | fd7b 02a9 | a804 0018 | 8923 40b9 | 1f01 09eb 
+  0x000000011fd681a0: a103 0054 
+
+  0x000000011fd681a4: ; implicit exception: dispatches to 0x000000011fd681f0
+  0x000000011fd681a4: 2b08 40b9 
+
+  0x000000011fd681a8: ;   {metadata('org/example/jvminternals/ch14/DispatchJourney$First')}
+  0x000000011fd681a8: 8a20 a0d2 | 0ac6 80f2 | 7f01 0a6b | 0101 0054 | 4004 0011 | fd7b 42a9 | ffc3 0091 
+
+  0x000000011fd681c4: ;   {poll_return}
+  0x000000011fd681c4: 8817 40f9 | ff63 28eb | e801 0054 | c003 5fd6 | fd03 01aa | e203 00b9 | 2104 8012 
+
+  0x000000011fd681e0: ; ImmutableOopMap {rfp=Oop }
+                      ;*invokeinterface apply {reexecute=0 rethrow=0 return_oop=0}
+                      ; - org.example.jvminternals.ch14.DispatchJourney::call@2 (line 74)
+                      ;   {runtime_call UncommonTrapBlob}
+  0x000000011fd681e0: e8e2 ed97 
+
+  0x000000011fd681e4: ;   {post_call_nop}
+  0x000000011fd681e4: 1f20 03d5 | 9f2b 80f2 | 1f00 80f2 | 2101 8012 | fd03 022a 
+
+  0x000000011fd681f8: ; ImmutableOopMap {}
+                      ;*invokeinterface apply {reexecute=0 rethrow=0 return_oop=0}
+                      ; - org.example.jvminternals.ch14.DispatchJourney::call@2 (line 74)
+                      ;   {runtime_call UncommonTrapBlob}
+  0x000000011fd681f8: e2e2 ed97 
+
+  0x000000011fd681fc: ;   {post_call_nop}
+  0x000000011fd681fc: 1f20 03d5 | 9f2e 80f2 | 1f20 80f2 
+
+  0x000000011fd68208: ;   {internal_word}
+  0x000000011fd68208: e8fd ff10 | 8863 02f9 
+
+  0x000000011fd68210: ;   {runtime_call SafepointBlob}
+  0x000000011fd68210: 9c92 ea17 
+
+  0x000000011fd68214: ;   {runtime_call Stub::method_entry_barrier}
+  0x000000011fd68214: 0830 88d2 | 28f0 a3f2 | 2800 c0f2 | 0001 3fd6 | e0ff ff17 
+
+  0x000000011fd68228: ;   {entry_guard}
+  0x000000011fd68228: 0000 0000 | 0000 0000 
+[Exception Handler]
+  0x000000011fd68230: ;   {runtime_call ExceptionBlob}
+  0x000000011fd68230: 34e3 ed17 
+[Deopt Handler Code]
+  0x000000011fd68234: 1e00 0010 
+
+  0x000000011fd68238: ;   {runtime_call DeoptimizationBlob}
+  0x000000011fd68238: 1293 ea17 | 0000 0000 
+[/MachCode]
+                              @ 2   org.example.jvminternals.ch14.DispatchJourney$First::apply (4 bytes)   inline (hot)   callee changed to  org.example.jvminternals.ch14.DispatchJourney::call (8 bytes)    \-> TypeProfile (5119/5119 counts) = org/example/jvminternals/ch14/DispatchJourney$First
+45   54 %  b  3       org.example.jvminternals.ch14.DispatchJourney::main @ 84 (165 bytes)
+                              @ 10   org.example.jvminternals.ch14.DispatchJourney$First::<init> (5 bytes)   inline
+                                @ 1   org.example.jvminternals.ch14.DispatchJourney$Base::<init> (5 bytes)   inline
+                                  @ 1   java.lang.Object::<init> (1 bytes)   inline
+                              @ 20   org.example.jvminternals.ch14.DispatchJourney$Second::<init> (5 bytes)   inline
+                                @ 1   java.lang.Object::<init> (1 bytes)   inline
+                              @ 30   org.example.jvminternals.ch14.DispatchJourney$Third::<init> (5 bytes)   inline
+                                @ 1   java.lang.Object::<init> (1 bytes)   inline
+                              @ 40   org.example.jvminternals.ch14.DispatchJourney$Fourth::<init> (5 bytes)   inline
+                                @ 1   java.lang.Object::<init> (1 bytes)   inline
+                              @ 56   org.example.jvminternals.ch14.DispatchJourney::staticValue (4 bytes)   inline
+                              @ 60   org.example.jvminternals.ch14.DispatchJourney$First::label (7 bytes)   inline
+                                @ 1   org.example.jvminternals.ch14.DispatchJourney$Base::label (3 bytes)   inline
+                              @ 63   java.lang.invoke.Invokers$Holder::linkToTargetMethod (10 bytes)   force inline by annotation
+                                @ 6   java.lang.invoke.LambdaForm$MH/0x000007ff01041c00::invoke (28 bytes)   force inline by annotation
+                                  @ 24   java.lang.invoke.DirectMethodHandle$Holder::invokeSpecial (18 bytes)   force inline by annotation
+                                    @ 1   java.lang.invoke.DirectMethodHandle::internalMemberName (8 bytes)   force inline by annotation
+                                    @ 14   java.lang.String$$StringConcat/0x000007ff01041800::concat (66 bytes)   force inline by annotation
+                                      @ 12   java.lang.String$$StringConcat/0x000007ff01041800::length (10 bytes)   force inline by annotation
+                                        @ 2   java.lang.StringConcatHelper::stringSize (10 bytes)   inline
+                                          @ 2   jdk.internal.util.DecimalDigits::stringSize (47 bytes)   failed to inline: callee is too large
+                                          @ 6   java.lang.StringConcatHelper::checkOverflow (16 bytes)   force inline by annotation
+                                            @ 12   java.lang.OutOfMemoryError::<init> (6 bytes)   failed to inline: don't inline Throwable constructors
+                                        @ 6   java.lang.StringConcatHelper::stringSize (10 bytes)   inline
+                                          @ 2   jdk.internal.util.DecimalDigits::stringSize (47 bytes)   failed to inline: callee is too large
+                                          @ 6   java.lang.StringConcatHelper::checkOverflow (16 bytes)   force inline by annotation
+                                            @ 12   java.lang.OutOfMemoryError::<init> (6 bytes)   failed to inline: don't inline Throwable constructors
+                                      @ 27   java.lang.String::length (11 bytes)   inline
+                                        @ 6   java.lang.String::coder (15 bytes)   inline
+                                      @ 37   java.lang.StringConcatHelper::newArrayWithSuffix (35 bytes)   force inline by annotation
+                                        @ 2   java.lang.String::length (11 bytes)   inline
+                                          @ 6   java.lang.String::coder (15 bytes)   inline
+                                        @ 8   java.lang.StringConcatHelper::newArray (28 bytes)   force inline by annotation
+                                          @ 10   java.lang.OutOfMemoryError::<init> (6 bytes)   failed to inline: don't inline Throwable constructors
+                                          @ 21   jdk.internal.misc.Unsafe::allocateUninitializedArray (55 bytes)   failed to inline: callee is too large
+                                        @ 30   java.lang.String::getBytes (44 bytes)   failed to inline: callee is too large
+                                      @ 51   java.lang.String$$StringConcat/0x000007ff01041800::prepend (22 bytes)   force inline by annotation
+                                        @ 8   java.lang.StringConcatHelper::prepend (55 bytes)   failed to inline: callee is too large
+                                        @ 18   java.lang.StringConcatHelper::prepend (55 bytes)   failed to inline: callee is too large
+                                      @ 62   java.lang.String::<init> (15 bytes)   inline
+                                        @ 1   java.lang.Object::<init> (1 bytes)   inline
+               !m             @ 68   java.io.PrintStream::println (44 bytes)   failed to inline: callee is too large
+               !m             @ 78   java.io.PrintStream::println (44 bytes)   failed to inline: callee is too large
+                              @ 97   org.example.jvminternals.ch14.DispatchJourney::call (8 bytes)   failed to inline: disallowed by CompileCommand
+                              @ 113  java/lang/invoke/MethodHandle::invokeBasic (not loaded)   failed to inline: not inlineable
+               !m             @ 118   java.io.PrintStream::println (44 bytes)   failed to inline: callee is too large
+                              @ 140   org.example.jvminternals.ch14.DispatchJourney::call (8 bytes)   failed to inline: disallowed by CompileCommand
+                              @ 156  java/lang/invoke/MethodHandle::invokeBasic (not loaded)   failed to inline: not inlineable
+               !m             @ 161   java.io.PrintStream::println (44 bytes)   failed to inline: callee is too large
+48   55    b  3       org.example.jvminternals.ch14.DispatchJourney::main (165 bytes)
+                              @ 10   org.example.jvminternals.ch14.DispatchJourney$First::<init> (5 bytes)   inline
+                                @ 1   org.example.jvminternals.ch14.DispatchJourney$Base::<init> (5 bytes)   inline
+                                  @ 1   java.lang.Object::<init> (1 bytes)   inline
+                              @ 20   org.example.jvminternals.ch14.DispatchJourney$Second::<init> (5 bytes)   inline
+                                @ 1   java.lang.Object::<init> (1 bytes)   inline
+                              @ 30   org.example.jvminternals.ch14.DispatchJourney$Third::<init> (5 bytes)   inline
+                                @ 1   java.lang.Object::<init> (1 bytes)   inline
+                              @ 40   org.example.jvminternals.ch14.DispatchJourney$Fourth::<init> (5 bytes)   inline
+                                @ 1   java.lang.Object::<init> (1 bytes)   inline
+                              @ 56   org.example.jvminternals.ch14.DispatchJourney::staticValue (4 bytes)   inline
+                              @ 60   org.example.jvminternals.ch14.DispatchJourney$First::label (7 bytes)   inline
+                                @ 1   org.example.jvminternals.ch14.DispatchJourney$Base::label (3 bytes)   inline
+                              @ 63   java.lang.invoke.Invokers$Holder::linkToTargetMethod (10 bytes)   force inline by annotation
+                                @ 6   java.lang.invoke.LambdaForm$MH/0x000007ff01041c00::invoke (28 bytes)   force inline by annotation
+                                  @ 24   java.lang.invoke.DirectMethodHandle$Holder::invokeSpecial (18 bytes)   force inline by annotation
+                                    @ 1   java.lang.invoke.DirectMethodHandle::internalMemberName (8 bytes)   force inline by annotation
+                                    @ 14   java.lang.String$$StringConcat/0x000007ff01041800::concat (66 bytes)   force inline by annotation
+                                      @ 12   java.lang.String$$StringConcat/0x000007ff01041800::length (10 bytes)   force inline by annotation
+                                        @ 2   java.lang.StringConcatHelper::stringSize (10 bytes)   inline
+                                          @ 2   jdk.internal.util.DecimalDigits::stringSize (47 bytes)   failed to inline: callee is too large
+                                          @ 6   java.lang.StringConcatHelper::checkOverflow (16 bytes)   force inline by annotation
+                                            @ 12   java.lang.OutOfMemoryError::<init> (6 bytes)   failed to inline: don't inline Throwable constructors
+                                        @ 6   java.lang.StringConcatHelper::stringSize (10 bytes)   inline
+                                          @ 2   jdk.internal.util.DecimalDigits::stringSize (47 bytes)   failed to inline: callee is too large
+                                          @ 6   java.lang.StringConcatHelper::checkOverflow (16 bytes)   force inline by annotation
+                                            @ 12   java.lang.OutOfMemoryError::<init> (6 bytes)   failed to inline: don't inline Throwable constructors
+                                      @ 27   java.lang.String::length (11 bytes)   inline
+                                        @ 6   java.lang.String::coder (15 bytes)   inline
+                                      @ 37   java.lang.StringConcatHelper::newArrayWithSuffix (35 bytes)   force inline by annotation
+                                        @ 2   java.lang.String::length (11 bytes)   inline
+                                          @ 6   java.lang.String::coder (15 bytes)   inline
+                                        @ 8   java.lang.StringConcatHelper::newArray (28 bytes)   force inline by annotation
+                                          @ 10   java.lang.OutOfMemoryError::<init> (6 bytes)   failed to inline: don't inline Throwable constructors
+                                          @ 21   jdk.internal.misc.Unsafe::allocateUninitializedArray (55 bytes)   failed to inline: callee is too large
+                                        @ 30   java.lang.String::getBytes (44 bytes)   failed to inline: callee is too large
+                                      @ 51   java.lang.String$$StringConcat/0x000007ff01041800::prepend (22 bytes)   force inline by annotation
+                                        @ 8   java.lang.StringConcatHelper::prepend (55 bytes)   failed to inline: callee is too large
+                                        @ 18   java.lang.StringConcatHelper::prepend (55 bytes)   failed to inline: callee is too large
+                                      @ 62   java.lang.String::<init> (15 bytes)   inline
+                                        @ 1   java.lang.Object::<init> (1 bytes)   inline
+               !m             @ 68   java.io.PrintStream::println (44 bytes)   failed to inline: callee is too large
+               !m             @ 78   java.io.PrintStream::println (44 bytes)   failed to inline: callee is too large
+                              @ 97   org.example.jvminternals.ch14.DispatchJourney::call (8 bytes)   failed to inline: disallowed by CompileCommand
+                              @ 113  java/lang/invoke/MethodHandle::invokeBasic (not loaded)   failed to inline: not inlineable
+               !m             @ 118   java.io.PrintStream::println (44 bytes)   failed to inline: callee is too large
+                              @ 140   org.example.jvminternals.ch14.DispatchJourney::call (8 bytes)   failed to inline: disallowed by CompileCommand
+                              @ 156  java/lang/invoke/MethodHandle::invokeBasic (not loaded)   failed to inline: not inlineable
+               !m             @ 161   java.io.PrintStream::println (44 bytes)   failed to inline: callee is too large
+52   54 %     3       org.example.jvminternals.ch14.DispatchJourney::main @ 84 (165 bytes)   made not entrant: C1 deoptimize for patching
+52   56    b  3       java.util.concurrent.ConcurrentHashMap::get (162 bytes)
+                              @ 1   java.lang.Object::hashCode (0 bytes)   failed to inline: no static binding
+                              @ 4   java.util.concurrent.ConcurrentHashMap::spread (10 bytes)   inline
+                              @ 34   java.util.concurrent.ConcurrentHashMap::tabAt (21 bytes)   failed to inline: callee uses too much stack
+                              @ 73   java.lang.Object::equals (11 bytes)   failed to inline: no static binding
+                              @ 93   java.util.concurrent.ConcurrentHashMap$Node::find (52 bytes)   failed to inline: no static binding
+                              @ 149   java.lang.Object::equals (11 bytes)   failed to inline: no static binding
+53   57    b  3       java.lang.invoke.MethodTypeForm::canonicalize (74 bytes)
+                              @ 10   java.lang.Class::isPrimitive (5 bytes)   inline
+                              @ 45   sun.invoke.util.Wrapper::asPrimitiveType (20 bytes)   inline
+                                @ 1   sun.invoke.util.Wrapper::findWrapperType (102 bytes)   failed to inline: callee is too large
+                                @ 10   sun.invoke.util.Wrapper::primitiveType (5 bytes)   inline
+                                @ 14   sun.invoke.util.Wrapper::forceType (72 bytes)   failed to inline: callee is too large
+                              @ 68   sun.invoke.util.Wrapper::asWrapperType (18 bytes)   inline
+                                @ 1   java.lang.Class::isPrimitive (5 bytes)   inline
+                                @ 8   sun.invoke.util.Wrapper::forPrimitiveType (122 bytes)   failed to inline: callee is too large
+                                @ 12   sun.invoke.util.Wrapper::wrapperType (52 bytes)   failed to inline: callee is too large
+53   58     n 0       java.lang.invoke.MethodHandle::linkToSpecial(LJL)L (native)   (static)
+54   59     n 0       java.lang.invoke.MethodHandle::invokeBasic(LJ)L (native)   
+54   60     n 0       java.lang.invoke.MethodHandle::linkToSpecial(LLJL)L (native)   (static)
+54   61    b  1       java.lang.Class::getClassLoader (5 bytes)
+54   62    b  3       jdk.internal.classfile.impl.SplitConstantPool::map (161 bytes)
+                              @ 26   java.lang.Math::max (11 bytes)   inline
+                              @ 31   jdk.internal.classfile.impl.EntryMap::<init> (86 bytes)   failed to inline: callee is too large
+                              @ 76   java.lang.Object::hashCode (0 bytes)   failed to inline: no static binding
+                              @ 83   java.lang.classfile.constantpool.PoolEntry::index (0 bytes)   failed to inline: no static binding
+                              @ 88   jdk.internal.classfile.impl.EntryMap::put (186 bytes)   failed to inline: callee is too large
+                              @ 94   java.lang.classfile.constantpool.PoolEntry::width (0 bytes)   failed to inline: no static binding
+                              @ 106   java.lang.Math::max (11 bytes)   inline
+                              @ 131   java.lang.Object::hashCode (0 bytes)   failed to inline: no static binding
+                              @ 138   java.lang.classfile.constantpool.PoolEntry::index (0 bytes)   failed to inline: no static binding
+                              @ 143   jdk.internal.classfile.impl.EntryMap::put (186 bytes)   failed to inline: callee is too large
+                              @ 149   java.lang.classfile.constantpool.PoolEntry::width (0 bytes)   failed to inline: no static binding
+55   63    b  1       jdk.internal.classfile.impl.AbstractPoolEntry::constantPool (5 bytes)
+55   64     n 0       java.lang.invoke.MethodHandle::invokeBasic(J)L (native)   
+阶段=四接收者；前段结果=5000050000
+56   53       4       org.example.jvminternals.ch14.DispatchJourney::call (8 bytes)   made not entrant: uncommon trap
+56   65    b  4       org.example.jvminternals.ch14.DispatchJourney::call (8 bytes)
+
+============================= C2-compiled nmethod ==============================
+----------------------------------- Assembly -----------------------------------
+
+Compiled method (c2) 56   65       4       org.example.jvminternals.ch14.DispatchJourney::call (8 bytes)
+ total in heap  [0x000000011fd68c88,0x000000011fd68e68] = 480
+ main code      [0x000000011fd68d80,0x000000011fd68e40] = 192
+ stub code      [0x000000011fd68e40,0x000000011fd68e60] = 32
+ oops           [0x000000011fd68e60,0x000000011fd68e68] = 8
+ mutable data [0x000000794d08ae00,0x000000794d08ae40] = 64
+ relocation     [0x000000794d08ae00,0x000000794d08ae28] = 40
+ metadata       [0x000000794d08ae28,0x000000794d08ae40] = 24
+ immutable data [0x000000794d0795e0,0x000000794d079668] = 136
+ dependencies   [0x000000794d0795e0,0x000000794d0795e8] = 8
+ nul chk table  [0x000000794d0795e8,0x000000794d0795f8] = 16
+ handler table  [0x000000794d0795f8,0x000000794d079610] = 24
+ scopes pcs     [0x000000794d079610,0x000000794d079650] = 64
+ scopes data    [0x000000794d079650,0x000000794d079668] = 24
+
+[Constant Pool (empty)]
+
+[MachCode]
+[Verified Entry Point]
+  # {method} {0x000000012e4008a0} 'call' '(Lorg/example/jvminternals/ch14/DispatchJourney$Operation;I)I' in 'org/example/jvminternals/ch14/DispatchJourney'
+  # parm0:    c_rarg1:c_rarg1 
+                        = 'org/example/jvminternals/ch14/DispatchJourney$Operation'
+  # parm1:    c_rarg2   = int
+  #           [sp+0x20]  (sp of caller)
+  0x000000011fd68d80: 1f20 03d5 | e953 40d1 | 3f01 00f9 | ff83 00d1 | fd7b 01a9 | 4805 0018 | 8923 40b9 | 1f01 09eb 
+  0x000000011fd68da0: 4104 0054 
+
+  0x000000011fd68da4: ; implicit exception: dispatches to 0x000000011fd68df4
+  0x000000011fd68da4: 2a08 40b9 
+
+  0x000000011fd68da8: ;   {metadata('org/example/jvminternals/ch14/DispatchJourney$First')}
+  0x000000011fd68da8: 8c20 a0d2 | 0cc6 80f2 | 5f01 0c6b | 0101 0054 | 4004 0011 | fd7b 41a9 | ff83 0091 
+
+  0x000000011fd68dc4: ;   {poll_return}
+  0x000000011fd68dc4: 8817 40f9 | ff63 28eb | 8802 0054 | c003 5fd6 | 0998 94d2 | a9a1 a9f2 | 290f c0f2 
+
+  0x000000011fd68de0: ; ImmutableOopMap {}
+                      ;*invokeinterface apply {reexecute=0 rethrow=0 return_oop=0}
+                      ; - org.example.jvminternals.ch14.DispatchJourney::call@2 (line 74)
+                      ;   {virtual_call}
+  0x000000011fd68de0: 888a ea97 
+
+  0x000000011fd68de4: ;   {post_call_nop}
+  0x000000011fd68de4: 1f20 03d5 | 9f2b 80f2 | 1f00 80f2 | f3ff ff17 | 2101 8012 | fd03 022a 
+
+  0x000000011fd68dfc: ; ImmutableOopMap {}
+                      ;*invokeinterface apply {reexecute=0 rethrow=0 return_oop=0}
+                      ; - org.example.jvminternals.ch14.DispatchJourney::call@2 (line 74)
+                      ;   {runtime_call UncommonTrapBlob}
+  0x000000011fd68dfc: e1df ed97 
+
+  0x000000011fd68e00: ;   {post_call_nop}
+  0x000000011fd68e00: 1f20 03d5 | 1f2f 80f2 | 1f20 80f2 | e103 00aa | fd7b 41a9 | ff83 0091 
+
+  0x000000011fd68e18: ;   {runtime_call C2 Runtime rethrow}
+  0x000000011fd68e18: dafa ed17 
+
+  0x000000011fd68e1c: ;   {internal_word}
+  0x000000011fd68e1c: 48fd ff10 | 8863 02f9 
+
+  0x000000011fd68e24: ;   {runtime_call SafepointBlob}
+  0x000000011fd68e24: 978f ea17 
+
+  0x000000011fd68e28: ;   {runtime_call Stub::method_entry_barrier}
+  0x000000011fd68e28: 0830 88d2 | 28f0 a3f2 | 2800 c0f2 | 0001 3fd6 | dbff ff17 
+
+  0x000000011fd68e3c: ;   {entry_guard}
+  0x000000011fd68e3c: 0000 0000 
+[Stub Code]
+  0x000000011fd68e40: ;   {trampoline_stub}
+  0x000000011fd68e40: 4800 0058 | 0001 1fd6 | 00b8 801f | 0100 0000 
+[Exception Handler]
+  0x000000011fd68e50: ;   {runtime_call ExceptionBlob}
+  0x000000011fd68e50: 2ce0 ed17 
+[Deopt Handler Code]
+  0x000000011fd68e54: 1e00 0010 
+
+  0x000000011fd68e58: ;   {runtime_call DeoptimizationBlob}
+  0x000000011fd68e58: 0a90 ea17 | 0000 0000 
+[/MachCode]
+                              @ 2   org.example.jvminternals.ch14.DispatchJourney$First::apply (4 bytes)   inline (hot)   callee changed to  org.example.jvminternals.ch14.DispatchJourney::call (8 bytes)    \-> TypeProfile (5152/5251 counts) = org/example/jvminternals/ch14/DispatchJourney$First
+58   66 %  b  3       org.example.jvminternals.ch14.DispatchJourney::main @ 124 (165 bytes)
+                              @ 10   org.example.jvminternals.ch14.DispatchJourney$First::<init> (5 bytes)   inline
+                                @ 1   org.example.jvminternals.ch14.DispatchJourney$Base::<init> (5 bytes)   inline
+                                  @ 1   java.lang.Object::<init> (1 bytes)   inline
+                              @ 20   org.example.jvminternals.ch14.DispatchJourney$Second::<init> (5 bytes)   inline
+                                @ 1   java.lang.Object::<init> (1 bytes)   inline
+                              @ 30   org.example.jvminternals.ch14.DispatchJourney$Third::<init> (5 bytes)   inline
+                                @ 1   java.lang.Object::<init> (1 bytes)   inline
+                              @ 40   org.example.jvminternals.ch14.DispatchJourney$Fourth::<init> (5 bytes)   inline
+                                @ 1   java.lang.Object::<init> (1 bytes)   inline
+                              @ 56   org.example.jvminternals.ch14.DispatchJourney::staticValue (4 bytes)   inline
+                              @ 60   org.example.jvminternals.ch14.DispatchJourney$First::label (7 bytes)   inline
+                                @ 1   org.example.jvminternals.ch14.DispatchJourney$Base::label (3 bytes)   inline
+                              @ 63   java.lang.invoke.Invokers$Holder::linkToTargetMethod (10 bytes)   force inline by annotation
+                                @ 6   java.lang.invoke.LambdaForm$MH/0x000007ff01041c00::invoke (28 bytes)   force inline by annotation
+                                  @ 24   java.lang.invoke.DirectMethodHandle$Holder::invokeSpecial (18 bytes)   force inline by annotation
+                                    @ 1   java.lang.invoke.DirectMethodHandle::internalMemberName (8 bytes)   force inline by annotation
+                                    @ 14   java.lang.String$$StringConcat/0x000007ff01041800::concat (66 bytes)   force inline by annotation
+                                      @ 12   java.lang.String$$StringConcat/0x000007ff01041800::length (10 bytes)   force inline by annotation
+                                        @ 2   java.lang.StringConcatHelper::stringSize (10 bytes)   inline
+                                          @ 2   jdk.internal.util.DecimalDigits::stringSize (47 bytes)   failed to inline: callee is too large
+                                          @ 6   java.lang.StringConcatHelper::checkOverflow (16 bytes)   force inline by annotation
+                                            @ 12   java.lang.OutOfMemoryError::<init> (6 bytes)   failed to inline: don't inline Throwable constructors
+                                        @ 6   java.lang.StringConcatHelper::stringSize (10 bytes)   inline
+                                          @ 2   jdk.internal.util.DecimalDigits::stringSize (47 bytes)   failed to inline: callee is too large
+                                          @ 6   java.lang.StringConcatHelper::checkOverflow (16 bytes)   force inline by annotation
+                                            @ 12   java.lang.OutOfMemoryError::<init> (6 bytes)   failed to inline: don't inline Throwable constructors
+                                      @ 27   java.lang.String::length (11 bytes)   inline
+                                        @ 6   java.lang.String::coder (15 bytes)   inline
+                                      @ 37   java.lang.StringConcatHelper::newArrayWithSuffix (35 bytes)   force inline by annotation
+                                        @ 2   java.lang.String::length (11 bytes)   inline
+                                          @ 6   java.lang.String::coder (15 bytes)   inline
+                                        @ 8   java.lang.StringConcatHelper::newArray (28 bytes)   force inline by annotation
+                                          @ 10   java.lang.OutOfMemoryError::<init> (6 bytes)   failed to inline: don't inline Throwable constructors
+                                          @ 21   jdk.internal.misc.Unsafe::allocateUninitializedArray (55 bytes)   failed to inline: callee is too large
+                                        @ 30   java.lang.String::getBytes (44 bytes)   failed to inline: callee is too large
+                                      @ 51   java.lang.String$$StringConcat/0x000007ff01041800::prepend (22 bytes)   force inline by annotation
+                                        @ 8   java.lang.StringConcatHelper::prepend (55 bytes)   failed to inline: callee is too large
+                                        @ 18   java.lang.StringConcatHelper::prepend (55 bytes)   failed to inline: callee is too large
+                                      @ 62   java.lang.String::<init> (15 bytes)   inline
+                                        @ 1   java.lang.Object::<init> (1 bytes)   inline
+               !m             @ 68   java.io.PrintStream::println (44 bytes)   failed to inline: callee is too large
+               !m             @ 78   java.io.PrintStream::println (44 bytes)   failed to inline: callee is too large
+                              @ 97   org.example.jvminternals.ch14.DispatchJourney::call (8 bytes)   failed to inline: disallowed by CompileCommand
+                              @ 113   java.lang.invoke.Invokers$Holder::linkToTargetMethod (9 bytes)   force inline by annotation
+                                @ 5   java.lang.invoke.LambdaForm$MH/0x000007ff01042000::invoke (27 bytes)   force inline by annotation
+                                  @ 23   java.lang.invoke.DirectMethodHandle$Holder::invokeSpecial (17 bytes)   force inline by annotation
+                                    @ 1   java.lang.invoke.DirectMethodHandle::internalMemberName (8 bytes)   force inline by annotation
+                                    @ 13   java.lang.StringConcatHelper$Concat1::concat (69 bytes)   force inline by annotation
+                                      @ 5   java.lang.StringConcatHelper::stringSize (10 bytes)   inline
+                                        @ 2   jdk.internal.util.DecimalDigits::stringSize (55 bytes)   failed to inline: callee is too large
+                                        @ 6   java.lang.StringConcatHelper::checkOverflow (16 bytes)   force inline by annotation
+                                          @ 12   java.lang.OutOfMemoryError::<init> (6 bytes)   failed to inline: don't inline Throwable constructors
+                                      @ 20   java.lang.String::length (11 bytes)   inline
+                                        @ 6   java.lang.String::coder (15 bytes)   inline
+                                      @ 32   java.lang.StringConcatHelper::newArrayWithSuffix (35 bytes)   force inline by annotation
+                                        @ 2   java.lang.String::length (11 bytes)   inline
+                                          @ 6   java.lang.String::coder (15 bytes)   inline
+                                        @ 8   java.lang.StringConcatHelper::newArray (28 bytes)   force inline by annotation
+                                          @ 10   java.lang.OutOfMemoryError::<init> (6 bytes)   failed to inline: don't inline Throwable constructors
+                                          @ 21   jdk.internal.misc.Unsafe::allocateUninitializedArray (55 bytes)   failed to inline: callee is too large
+                                        @ 30   java.lang.String::getBytes (44 bytes)   failed to inline: callee is too large
+                                      @ 51   java.lang.StringConcatHelper::prepend (55 bytes)   failed to inline: callee is too large
+                                      @ 65   java.lang.String::<init> (15 bytes)   inline
+                                        @ 1   java.lang.Object::<init> (1 bytes)   inline
+               !m             @ 118   java.io.PrintStream::println (44 bytes)   failed to inline: callee is too large
+                              @ 140   org.example.jvminternals.ch14.DispatchJourney::call (8 bytes)   failed to inline: disallowed by CompileCommand
+                              @ 156  java/lang/invoke/MethodHandle::invokeBasic (not loaded)   failed to inline: not inlineable
+               !m             @ 161   java.io.PrintStream::println (44 bytes)   failed to inline: callee is too large
+64   67    b  3       org.example.jvminternals.ch14.DispatchJourney$Second::apply (4 bytes)
+64   68    b  3       org.example.jvminternals.ch14.DispatchJourney$Third::apply (4 bytes)
+64   69    b  3       org.example.jvminternals.ch14.DispatchJourney$Fourth::apply (4 bytes)
+64   70 %  b  4       org.example.jvminternals.ch14.DispatchJourney::main @ 124 (165 bytes)
+65   66 %     3       org.example.jvminternals.ch14.DispatchJourney::main @ 124 (165 bytes)   made not entrant: OSR invalidation of lower level
+                              @ 140   org.example.jvminternals.ch14.DispatchJourney::call (8 bytes)   failed to inline: disallowed by CompileCommand
+65   71    b  4       org.example.jvminternals.ch14.DispatchJourney$Second::apply (4 bytes)
+65   67       3       org.example.jvminternals.ch14.DispatchJourney$Second::apply (4 bytes)   made not entrant: not used
+65   72    b  4       org.example.jvminternals.ch14.DispatchJourney$Third::apply (4 bytes)
+65   68       3       org.example.jvminternals.ch14.DispatchJourney$Third::apply (4 bytes)   made not entrant: not used
+66   73    b  4       org.example.jvminternals.ch14.DispatchJourney$Fourth::apply (4 bytes)
+66   69       3       org.example.jvminternals.ch14.DispatchJourney$Fourth::apply (4 bytes)   made not entrant: not used
+67   70 %     4       org.example.jvminternals.ch14.DispatchJourney::main @ 124 (165 bytes)   made not entrant: uncommon trap
+67   74    b  3       java.lang.String::checkIndex (10 bytes)
+                              @ 5   jdk.internal.util.Preconditions::checkIndex (18 bytes)   intrinsic
+阶段=正常结束；结果=25000450000
+------------------------------------------------------------------------
+static org.example.jvminternals.ch14.DispatchJourney::call(Lorg/example/jvminternals/ch14/DispatchJourney$Operation;I)I
+  interpreter_invocation_count:        5504
+  invocation_counter:                  5504
+  backedge_counter:                       0
+  decompile_count:                        1
+  mdo size: 336 bytes
+
+   0 fast_aload_0
+   1 iload_1
+   2 invokeinterface 61 <org/example/jvminternals/ch14/DispatchJourney$Operation.apply(I)I> 
+  0    bci: 2    VirtualCallData    trap(class_check recompiled) count(66) entries(2)
+                                    'org/example/jvminternals/ch14/DispatchJourney$First'(5152 0.98)
+                                    'org/example/jvminternals/ch14/DispatchJourney$Second'(34 0.01)
+   7 ireturn
+------------------------------------------------------------------------
+Total MDO size: 336 bytes

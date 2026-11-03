@@ -1,0 +1,2 @@
+88c83dc6ee2d2c867474bbeb7a245255ab1f0eba4284c70a47f1aea4adf30b9b  chapters/ch21-basic-collectors/src/main/java/org/example/jvminternals/ch21/AllocationJourney.java
+6d1ca761f21ff683534cff950d74f2cc10a10ffb76128a3346551c75b090211f  chapters/ch21-basic-collectors/target/classes/org/example/jvminternals/ch21/AllocationJourney.class

@@ -1,0 +1,49 @@
+[0.005s][info][gc,init] CardTable entry size: 512
+[0.005s][info][gc     ] Using Serial
+[0.005s][info][gc,init] Version: 25.0.5.0.2 (release)
+[0.005s][info][gc,init] CPUs: 8 total, 2 available
+[0.006s][info][gc,init] Memory: 16384M
+[0.006s][info][gc,init] Large Page Support: Disabled
+[0.006s][info][gc,init] NUMA Support: Disabled
+[0.006s][info][gc,init] Compressed Oops: Enabled (Zero based)
+[0.006s][info][gc,init] Heap Min Capacity: 128M
+[0.006s][info][gc,init] Heap Initial Capacity: 128M
+[0.006s][info][gc,init] Heap Max Capacity: 128M
+[0.006s][info][gc,init] Pre-touch: Disabled
+[0.008s][info][gc,metaspace] CDS archive(s) mapped at: [0x0000380000000000-0x0000380000d98000-0x0000380000d98000), size 14254080, SharedBaseAddress: 0x0000380000000000, ArchiveRelocationMode: 1.
+[0.008s][info][gc,metaspace] Compressed class space mapped at: 0x0000380001000000-0x0000380041000000, reserved size: 1073741824
+[0.008s][info][gc,metaspace] UseCompressedClassPointers 1, UseCompactObjectHeaders 0
+[0.008s][info][gc,metaspace] Narrow klass pointer bits 32, Max shift 3
+[0.008s][info][gc,metaspace] Narrow klass base: 0x0000380000000000, Narrow klass shift: 0
+[0.008s][info][gc,metaspace] Encoding Range: [0x0000380000000000 - 0x0000380100000000), (4294967296 bytes)
+[0.008s][info][gc,metaspace] Klass Range:    [0x0000380000004000 - 0x0000380041000000), (1090502656 bytes)
+[0.008s][info][gc,metaspace] Klass ID Range:  [16384 - 1090519033) (1090502649)
+[0.008s][info][gc,metaspace] Protection zone: [0x0000380000000000 - 0x0000380000004000), (16384 bytes)
+[0.065s][info][gc,start    ] GC(0) Pause Young (Allocation Failure)
+[0.066s][debug][gc,age      ] GC(0) Desired survivor size 2228224 bytes, new threshold 15 (max threshold 15)
+[0.066s][trace][gc,age      ] GC(0) Age table:
+[0.066s][trace][gc,age      ] GC(0) - age   1:    2035848 bytes,    2035848 total
+[0.066s][info ][gc,heap     ] GC(0) DefNew: 34944K(39296K)->1988K(39296K) Eden: 34944K(34944K)->0K(34944K) From: 0K(4352K)->1988K(4352K)
+[0.066s][info ][gc,heap     ] GC(0) Tenured: 1150K(87424K)->1150K(87424K)
+[0.066s][info ][gc,metaspace] GC(0) Metaspace: 916K(1152K)->916K(1152K) NonClass: 839K(960K)->839K(960K) Class: 77K(192K)->77K(192K)
+[0.066s][info ][gc          ] GC(0) Pause Young (Allocation Failure) 35M->3M(123M) 1.495ms
+[0.066s][info ][gc,cpu      ] GC(0) User=0.00s Sys=0.00s Real=0.00s
+[0.280s][info ][gc,start    ] GC(1) Pause Young (Allocation Failure)
+[0.281s][debug][gc,age      ] GC(1) Desired survivor size 2228224 bytes, new threshold 15 (max threshold 15)
+[0.281s][trace][gc,age      ] GC(1) Age table:
+[0.281s][trace][gc,age      ] GC(1) - age   1:    1084616 bytes,    1084616 total
+[0.281s][trace][gc,age      ] GC(1) - age   2:     983272 bytes,    2067888 total
+[0.281s][info ][gc,heap     ] GC(1) DefNew: 36932K(39296K)->2019K(39296K) Eden: 34944K(34944K)->0K(34944K) From: 1988K(4352K)->2019K(4352K)
+[0.281s][info ][gc,heap     ] GC(1) Tenured: 1150K(87424K)->1150K(87424K)
+[0.281s][info ][gc,metaspace] GC(1) Metaspace: 1081K(1280K)->1081K(1280K) NonClass: 986K(1088K)->986K(1088K) Class: 95K(192K)->95K(192K)
+[0.281s][info ][gc          ] GC(1) Pause Young (Allocation Failure) 37M->3M(123M) 1.553ms
+[0.281s][info ][gc,cpu      ] GC(1) User=0.00s Sys=0.00s Real=0.00s
+[0.491s][info ][gc,exit     ] Heap
+[0.492s][info ][gc,exit     ]  DefNew     total 39296K, used 3434K [0x0000000124800000, 0x00000001272a0000, 0x00000001272a0000)
+[0.492s][info ][gc,exit     ]   eden space 34944K,   4% used [0x0000000124800000, 0x0000000124961cf8, 0x0000000126a20000)
+[0.492s][info ][gc,exit     ]   from space 4352K,  46% used [0x0000000126a20000, 0x0000000126c18db0, 0x0000000126e60000)
+[0.492s][info ][gc,exit     ]   to   space 4352K,   0% used [0x0000000126e60000, 0x0000000126e60000, 0x00000001272a0000)
+[0.492s][info ][gc,exit     ]  Tenured    total 87424K, used 1150K [0x00000001272a0000, 0x000000012c800000, 0x000000012c800000)
+[0.492s][info ][gc,exit     ]   the  space 87424K,   1% used [0x00000001272a0000, 0x00000001273bf968, 0x000000012c800000)
+[0.492s][info ][gc,exit     ]  Metaspace       used 1085K, committed 1280K, reserved 1114112K
+[0.492s][info ][gc,exit     ]   class space    used 95K, committed 192K, reserved 1048576K

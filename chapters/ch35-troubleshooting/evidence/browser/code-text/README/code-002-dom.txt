@@ -1,0 +1,4 @@
+JAVA_HOME="$P09_JDK" mvn -pl chapters/ch35-troubleshooting -am compile
+"$P09_JDK/bin/java" -Xmx64m -XX:+StartAttachListener -XX:NativeMemoryTracking=summary '-Xlog:gc*=info:file=chapters/ch35-troubleshooting/target/memory-gc.log' -cp chapters/ch35-troubleshooting/target/classes org.example.jvminternals.ch35.BoundedSymptoms memory
+"$P09_JDK/bin/java" -Xmx64m -XX:+StartAttachListener -XX:StartFlightRecording=settings=profile,filename=chapters/ch35-troubleshooting/target/cpu.jfr -cp chapters/ch35-troubleshooting/target/classes org.example.jvminternals.ch35.BoundedSymptoms cpu
+"$P09_JDK/bin/java" -Xmx64m -XX:+StartAttachListener -cp chapters/ch35-troubleshooting/target/classes org.example.jvminternals.ch35.BoundedSymptoms locks

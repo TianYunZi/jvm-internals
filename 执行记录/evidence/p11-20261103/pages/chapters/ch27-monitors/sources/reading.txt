@@ -1,0 +1,91 @@
+第27章源码阅读
+
+由正式源文件生成的静态阅读副本。返回正文 · 运行说明
+
+src/main/java/org/example/jvminternals/ch27/MonitorJourney.java
+package org.example.jvminternals.ch27;
+
+import java.util.concurrent.CountDownLatch;
+import java.util.concurrent.TimeUnit;
+import java.util.concurrent.locks.ReentrantLock;
+
+/** 让竞争和等待具有清楚的对象与阶段，不制造死锁或资源耗尽。 */
+public final class MonitorJourney {
+    private final Object monitor = new Object();
+    private final ReentrantLock libraryLock = new ReentrantLock();
+    private final CountDownLatch waiting = new CountDownLatch(1);
+    private final CountDownLatch holding = new CountDownLatch(1);
+    private boolean ready;
+    private int count;
+
+    private MonitorJourney() { }
+
+    /** 有界等待通知、竞争与类库重入对照。 */
+    public static void main(String[] args) throws InterruptedException {
+        new MonitorJourney().runJourney();
+    }
+
+    private void runJourney() throws InterruptedException {
+        Thread waiter = Thread.ofPlatform().name("monitor-waiter").start(this::awaitReady);
+        waiting.await(2, TimeUnit.SECONDS);
+        Thread holder = Thread.ofPlatform().name("monitor-holder").start(this::holdAndNotify);
+        holding.await(2, TimeUnit.SECONDS);
+        Thread contender = Thread.ofPlatform().name("monitor-contender").start(() -> {
+            synchronized (monitor) {
+                count++;
+                System.out.println("竞争者获得监视器");
+            }
+        });
+        System.out.printf("观察窗口：pid=%d%n", ProcessHandle.current().pid());
+        holder.join();
+        contender.join();
+        waiter.join();
+        libraryLock.lock();
+        try {
+            libraryLock.lock();
+            try {
+                System.out.printf("类库锁重入：holdCount=%d%n", libraryLock.getHoldCount());
+            } finally {
+                libraryLock.unlock();
+            }
+        } finally {
+            libraryLock.unlock();
+        }
+        System.out.printf("结束：count=%d hash=%d%n", count, System.identityHashCode(monitor));
+    }
+
+    private void awaitReady() {
+        synchronized (monitor) {
+            waiting.countDown();
+            long deadline = System.nanoTime() + 12_000_000_000L;
+            try {
+                while (!ready && System.nanoTime() < deadline) {
+                    monitor.wait(1_000L);
+                }
+                System.out.printf("等待者重新获取监视器：ready=%s%n", ready);
+            } catch (InterruptedException interrupted) {
+                Thread.currentThread().interrupt();
+                System.out.println("等待者被中断并退出");
+            }
+        }
+    }
+
+    private void holdAndNotify() {
+        synchronized (monitor) {
+            synchronized (monitor) {
+                System.out.println("监视器重入，持有6秒以便外部观察");
+                holding.countDown();
+                try {
+                    // sleep保留监视器，只用于留出教学观察窗口。
+                    Thread.sleep(6_000L);
+                } catch (InterruptedException interrupted) {
+                    Thread.currentThread().interrupt();
+                    System.out.println("持有者被中断，仍发布条件并释放锁");
+                }
+                ready = true;
+                monitor.notifyAll();
+                System.out.println("已notifyAll，当前仍持有监视器");
+            }
+        }
+    }
+}

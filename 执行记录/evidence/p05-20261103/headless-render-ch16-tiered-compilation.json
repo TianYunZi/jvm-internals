@@ -1,0 +1,21 @@
+{
+  "time": "2026-11-03T09:14:06.127Z",
+  "version": "Chrome/156.0.8078.80",
+  "profileMode": "独立临时配置；仅本地书稿",
+  "chapters": [
+    {
+      "folder": "ch16-tiered-compilation",
+      "figureIds": [
+        "fig-16-2",
+        "fig-16-1",
+        "fig-16-3"
+      ],
+      "paper": "A4",
+      "viewports": [
+        "1440×1000",
+        "768×1000",
+        "390×844"
+      ]
+    }
+  ]
+}

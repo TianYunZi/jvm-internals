@@ -1,0 +1,89 @@
+(lldb) target create "/opt/homebrew/Cellar/openjdk@25/25.0.5.0.2/libexec/openjdk.jdk/Contents/Home/bin/java"
+Current executable set to '/opt/homebrew/Cellar/openjdk@25/25.0.5.0.2/libexec/openjdk.jdk/Contents/Home/bin/java' (arm64).
+(lldb) settings set -- target.run-args  "-Xint" "-XX:-UseTLAB" "-Xms32m" "-Xmx128m" "-cp" "chapters/ch01-architecture/target/classes" "org.example.jvminternals.ch01.ProgramJourney" "chapters/ch01-architecture/src/main/resources/message.txt" "0"
+(lldb) settings set target.disable-aslr false
+(lldb) breakpoint set --name JNI_CreateJavaVM
+Breakpoint 1: where = libjli.dylib`JNI_CreateJavaVM, address = 0x0000000000007900
+(lldb) run
+1 location added to breakpoint 1
+Process 18371 launched: '/opt/homebrew/Cellar/openjdk@25/25.0.5.0.2/libexec/openjdk.jdk/Contents/Home/bin/java' (arm64)
+Process 18371 stopped
+* thread #3, stop reason = breakpoint 1.2
+       frame #0: 0x000000010c466df8 libjvm.dylib`JNI_CreateJavaVM
+libjvm.dylib`JNI_CreateJavaVM:
+->  0x10c466df8 <+0>:  sub    sp, sp, #0x80
+    0x10c466dfc <+4>:  stp    x24, x23, [sp, #0x40]
+    0x10c466e00 <+8>:  stp    x22, x21, [sp, #0x50]
+    0x10c466e04 <+12>: stp    x20, x19, [sp, #0x60]
+Target 0: (java) stopped.
+(lldb) bt 6
+* thread #3, stop reason = breakpoint 1.2
+   * frame #0: 0x000000010c466df8 libjvm.dylib`JNI_CreateJavaVM
+     frame #1: 0x0000000102189464 libjli.dylib`JavaMain + 256
+     frame #2: 0x000000010218c2e8 libjli.dylib`ThreadJavaMain + 12
+     frame #3: 0x000000019b4c8ce4 libsystem_pthread.dylib`_pthread_start + 136
+(lldb) breakpoint disable 1
+1 breakpoints disabled.
+(lldb) breakpoint set --name ClassFileParser::parse_stream
+Breakpoint 2: where = libjvm.dylib`ClassFileParser::parse_stream(ClassFileStream const*, JavaThread*), address = 0x000000010c202c70
+(lldb) continue
+Process 18371 resuming
+Process 18371 stopped
+* thread #3, stop reason = breakpoint 2.1
+       frame #0: 0x000000010c202c70 libjvm.dylib`ClassFileParser::parse_stream(ClassFileStream const*, JavaThread*)
+libjvm.dylib`ClassFileParser::parse_stream:
+->  0x10c202c70 <+0>:  sub    sp, sp, #0x140
+    0x10c202c74 <+4>:  stp    x28, x27, [sp, #0xf0]
+    0x10c202c78 <+8>:  stp    x24, x23, [sp, #0x100]
+    0x10c202c7c <+12>: stp    x22, x21, [sp, #0x110]
+Target 0: (java) stopped.
+(lldb) bt 6
+* thread #3, stop reason = breakpoint 2.1
+   * frame #0: 0x000000010c202c70 libjvm.dylib`ClassFileParser::parse_stream(ClassFileStream const*, JavaThread*)
+     frame #1: 0x000000010c202c44 libjvm.dylib`ClassFileParser::ClassFileParser(ClassFileStream*, Symbol*, ClassLoaderData*, ClassLoadInfo const*, ClassFileParser::Publicity, JavaThread*) + 240
+     frame #2: 0x000000010c59cb84 libjvm.dylib`KlassFactory::create_from_stream(ClassFileStream*, Symbol*, ClassLoaderData*, ClassLoadInfo const&, JavaThread*) + 460
+     frame #3: 0x000000010c20b07c libjvm.dylib`ClassLoader::load_class(Symbol*, PackageEntry*, bool, JavaThread*) + 424
+     frame #4: 0x000000010c859a50 libjvm.dylib`SystemDictionary::load_instance_class_impl(Symbol*, Handle, JavaThread*) + 828
+     frame #5: 0x000000010c85899c libjvm.dylib`SystemDictionary::load_instance_class(Symbol*, Handle, JavaThread*) + 28
+(lldb) breakpoint disable 2
+1 breakpoints disabled.
+(lldb) breakpoint set --name InterpreterRuntime::_new
+Breakpoint 3: where = libjvm.dylib`InterpreterRuntime::_new(JavaThread*, ConstantPool*, int), address = 0x000000010c3d96ac
+(lldb) continue
+Process 18371 resuming
+Process 18371 stopped
+* thread #3, stop reason = breakpoint 3.1
+       frame #0: 0x000000010c3d96ac libjvm.dylib`InterpreterRuntime::_new(JavaThread*, ConstantPool*, int)
+libjvm.dylib`InterpreterRuntime::_new:
+->  0x10c3d96ac <+0>:  sub    sp, sp, #0x40
+    0x10c3d96b0 <+4>:  stp    x22, x21, [sp, #0x10]
+    0x10c3d96b4 <+8>:  stp    x20, x19, [sp, #0x20]
+    0x10c3d96b8 <+12>: stp    x29, x30, [sp, #0x30]
+Target 0: (java) stopped.
+(lldb) bt 6
+* thread #3, stop reason = breakpoint 3.1
+   * frame #0: 0x000000010c3d96ac libjvm.dylib`InterpreterRuntime::_new(JavaThread*, ConstantPool*, int)
+     frame #1: 0x0000000115aa8a4c 
+     frame #2: 0x0000000115a9c8e0 
+     frame #3: 0x0000000115a9c700 
+     frame #4: 0x0000000115a9c700 
+     frame #5: 0x0000000115a9c700 
+(lldb) breakpoint disable 3
+1 breakpoints disabled.
+(lldb) continue
+11月 03, 2026 10:50:57 上午 org.example.jvminternals.ch01.ProgramJourney main
+INFO: 贯穿程序启动，观察窗口为 0 秒
+elapsed_ms=46 thread=main stage=main-enter
+elapsed_ms=48 thread=main stage=object-created
+elapsed_ms=51 thread=journey-worker stage=worker-enter
+payload=从源码出发，沿证据解释运行过程。 workspace_bytes=1024
+elapsed_ms=52 thread=journey-worker stage=worker-ready
+pid=18371 observation_seconds=0
+elapsed_ms=55 thread=main stage=observation-window
+elapsed_ms=55 thread=journey-worker stage=worker-return
+elapsed_ms=56 thread=main stage=main-return
+11月 03, 2026 10:50:57 上午 org.example.jvminternals.ch01.ProgramJourney main
+INFO: 贯穿程序结束，工作线程存活状态为 false
+elapsed_ms=56 thread=journey-shutdown stage=shutdown-hook
+Process 18371 resuming
+Process 18371 exited with status = 0 (0x00000000)

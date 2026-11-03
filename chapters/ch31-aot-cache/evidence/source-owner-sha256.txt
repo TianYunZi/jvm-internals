@@ -1,0 +1,5 @@
+f271ead5398d02762c50199313454a3e2cabb97cd50b31f7610fa63cc26fd968  /Users/xiejinxin/Developer/OpenJDK/jdk25u-25.0.5.0.2/src/hotspot/share/cds/cdsConfig.cpp
+4d8c758db031afb3ae30187817533aa92c109dba2c54056955410365fb1d3b93  /Users/xiejinxin/Developer/OpenJDK/jdk25u-25.0.5.0.2/src/hotspot/share/cds/cds_globals.hpp
+8e76e380937a2f34d5fc89eb2574198295721099d4f42d85caa1ec3afc18df8e  /Users/xiejinxin/Developer/OpenJDK/jdk25u-25.0.5.0.2/src/hotspot/share/oops/trainingData.cpp
+2466f4517eabd6c89c9be0c6dcf19219aa443eb6b8ef6cc52bee6b9430db06e3  /Users/xiejinxin/Developer/OpenJDK/jdk25u-25.0.5.0.2/src/hotspot/share/oops/methodData.cpp
+fcf6c92453abf3cb446bf71f30dbb086349a6abb9c0912b3a11669129063f8ff  /Users/xiejinxin/Developer/OpenJDK/jdk25u-25.0.5.0.2/src/hotspot/share/compiler/compilationPolicy.cpp

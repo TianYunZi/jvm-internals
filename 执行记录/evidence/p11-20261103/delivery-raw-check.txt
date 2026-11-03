@@ -1,0 +1,8 @@
+artifacts/p08-runs/ch31-20261103-01/assembly.log: OK
+artifacts/p08-runs/ch31-20261103-01/training.log: OK
+artifacts/ch18-20261103-01/compilation.xml: OK
+artifacts/ch18-20261103-01/stdout.txt: OK
+artifacts/ch11/ch11-20261103-01/allocation-events.txt: OK
+artifacts/ch11/ch11-20261103-01/allocation.jfr: OK
+artifacts/ch11/ch11-20261103-01/compilation.xml: OK
+artifacts/ch11/ch11-20261103-01/no-ea-compilation.xml: OK

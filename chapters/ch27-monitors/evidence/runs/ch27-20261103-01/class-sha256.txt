@@ -1,0 +1,1 @@
+2cd53629bdb9a318064af8b1c696dac5c35dd400958b783b50bf2751f0469073  chapters/ch27-monitors/target/classes/org/example/jvminternals/ch27/MonitorJourney.class

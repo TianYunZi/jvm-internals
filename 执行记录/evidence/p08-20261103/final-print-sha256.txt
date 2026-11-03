@@ -1,0 +1,5 @@
+2acb3eb0b30fdf11506d486c4fb874695618176fdf519ef3d32ce6a60434ba0c  chapters/ch30-startup-sharing/evidence/browser/print/chapter.pdf
+cfe0d5a38894665d57cbea463386dcdb2032f762c8844e31c0ba4584fe552f45  chapters/ch31-aot-cache/evidence/browser/print/README.pdf
+32de70866af09ad3c61a46763098c1489485d76df05cd055951399c31068ca1c  chapters/ch31-aot-cache/evidence/browser/print/chapter.pdf
+caba80280ce83a84cb36ae0dd9ef96f9de175960876474a8c3062da6baf81158  chapters/ch32-native-interop/evidence/browser/print/chapter.pdf
+a4c3c9d04c6e0c3eade9aee64b0d4af50c248e350308a8a22765298ab19dcafb  chapters/ch32-native-interop/evidence/browser/print/sources.pdf

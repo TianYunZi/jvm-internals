@@ -1,0 +1,4 @@
+baf9503cb519cdd8bbdb3d2c3a45c33b02592a275229ad1b9ceb2d3a6ab189ca  artifacts/ch11/ch11-20261103-01/allocation-events.txt
+f5360ae334dead4d90c4059d4bd00537578f643ee129850357bcefde2691a0b6  artifacts/ch11/ch11-20261103-01/allocation.jfr
+6e374ffd27b80dec91d9e575704eaa3dd72beff379c5ff32e56d0963e3158366  artifacts/ch11/ch11-20261103-01/compilation.xml
+7519b823bda15948f09a4c0f23047d54daaa3d600dfc7d1cb6302e9a9221221b  artifacts/ch11/ch11-20261103-01/no-ea-compilation.xml

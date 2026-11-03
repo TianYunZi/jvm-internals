@@ -1,0 +1,65 @@
+11月 03, 2026 9:44:57 上午 org.example.jvminternals.ch04.model.ClassfileExplorer main
+INFO: 开始读取类文件模型
+class=org/example/jvminternals/ch04/structure/ClassfileSubject version=69.0
+field=LABEL descriptor=Ljava/lang/String;
+field=value descriptor=Ljava/lang/Number;
+method=<init> descriptor=(Ljava/lang/Number;)V
+  code-element=LocalVariable[name=this, slot=0, type=Lorg/example/jvminternals/ch04/structure/ClassfileSubject;]
+  code-element=LocalVariable[name=value, slot=1, type=Ljava/lang/Number;]
+  code-element=LocalVariableType[name=this, slot=0, signature=Lorg/example/jvminternals/ch04/structure/ClassfileSubject<TT;>;]
+  code-element=LocalVariableType[name=value, slot=1, signature=TT;]
+  code-element=Label[context=CodeModel[id=1480010240], bci=0]
+  code-element=LineNumber[line=14]
+  code-element=Load[OP=ALOAD_0, slot=0]
+  code-element=Invoke[OP=INVOKESPECIAL, m=java/lang/Object.<init>()V]
+  code-element=LineNumber[line=15]
+  code-element=Load[OP=ALOAD_0, slot=0]
+  code-element=Load[OP=ALOAD_1, slot=1]
+  code-element=Field[OP=PUTFIELD, field=org/example/jvminternals/ch04/structure/ClassfileSubject.value:Ljava/lang/Number;]
+  code-element=LineNumber[line=16]
+  code-element=Return[OP=RETURN]
+  code-element=Label[context=CodeModel[id=1480010240], bci=10]
+method=value descriptor=()Ljava/lang/Number;
+  code-element=LocalVariable[name=this, slot=0, type=Lorg/example/jvminternals/ch04/structure/ClassfileSubject;]
+  code-element=LocalVariableType[name=this, slot=0, signature=Lorg/example/jvminternals/ch04/structure/ClassfileSubject<TT;>;]
+  code-element=Label[context=CodeModel[id=81628611], bci=0]
+  code-element=LineNumber[line=20]
+  code-element=Load[OP=ALOAD_0, slot=0]
+  code-element=Field[OP=GETFIELD, field=org/example/jvminternals/ch04/structure/ClassfileSubject.value:Ljava/lang/Number;]
+  code-element=Return[OP=ARETURN]
+  code-element=Label[context=CodeModel[id=81628611], bci=5]
+method=parseOrDefault descriptor=(Ljava/lang/String;)I
+  code-element=ExceptionCatch[catchType=java/lang/NumberFormatException]
+  code-element=LocalVariable[name=exception, slot=2, type=Ljava/lang/NumberFormatException;]
+  code-element=LocalVariable[name=this, slot=0, type=Lorg/example/jvminternals/ch04/structure/ClassfileSubject;]
+  code-element=LocalVariable[name=input, slot=1, type=Ljava/lang/String;]
+  code-element=LocalVariableType[name=this, slot=0, signature=Lorg/example/jvminternals/ch04/structure/ClassfileSubject<TT;>;]
+  code-element=Label[context=CodeModel[id=2129789493], bci=0]
+  code-element=LineNumber[line=28]
+  code-element=Load[OP=ALOAD_1, slot=1]
+  code-element=Branch[OP=IFNONNULL]
+  code-element=LineNumber[line=29]
+  code-element=Load[OP=ALOAD_0, slot=0]
+  code-element=Field[OP=GETFIELD, field=org/example/jvminternals/ch04/structure/ClassfileSubject.value:Ljava/lang/Number;]
+  code-element=Invoke[OP=INVOKEVIRTUAL, m=java/lang/Number.intValue()I]
+  code-element=Return[OP=IRETURN]
+  code-element=Label[context=CodeModel[id=2129789493], bci=12]
+  code-element=LineNumber[line=32]
+  code-element=Load[OP=ALOAD_1, slot=1]
+  code-element=Invoke[OP=INVOKESTATIC, m=java/lang/Integer.parseInt(Ljava/lang/String;)I]
+  code-element=Label[context=CodeModel[id=2129789493], bci=16]
+  code-element=Return[OP=IRETURN]
+  code-element=Label[context=CodeModel[id=2129789493], bci=17]
+  code-element=LineNumber[line=33]
+  code-element=Store[OP=ASTORE_2, slot=2]
+  code-element=Label[context=CodeModel[id=2129789493], bci=18]
+  code-element=LineNumber[line=35]
+  code-element=Load[OP=ALOAD_0, slot=0]
+  code-element=Field[OP=GETFIELD, field=org/example/jvminternals/ch04/structure/ClassfileSubject.value:Ljava/lang/Number;]
+  code-element=Invoke[OP=INVOKEVIRTUAL, m=java/lang/Number.intValue()I]
+  code-element=Return[OP=IRETURN]
+  code-element=Label[context=CodeModel[id=2129789493], bci=26]
+class-attribute=Signature
+class-attribute=SourceFile
+11月 03, 2026 9:44:57 上午 org.example.jvminternals.ch04.model.ClassfileExplorer main
+INFO: 类文件模型读取结束

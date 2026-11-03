@@ -1,0 +1,35 @@
+[INFO] Scanning for projects...
+[INFO] ------------------------------------------------------------------------
+[INFO] Reactor Build Order:
+[INFO] 
+[INFO] Java 虚拟机原理书配套源码                                                    [pom]
+[INFO] ch15-dynamic-invocation                                            [jar]
+[INFO] 
+[INFO] ---------------< org.example.jvminternals:jvm-internals >---------------
+[INFO] Building Java 虚拟机原理书配套源码 1.0-SNAPSHOT                              [1/2]
+[INFO]   from pom.xml
+[INFO] --------------------------------[ pom ]---------------------------------
+[INFO] 
+[INFO] ----------< org.example.jvminternals:ch15-dynamic-invocation >----------
+[INFO] Building ch15-dynamic-invocation 1.0-SNAPSHOT                      [2/2]
+[INFO]   from chapters/ch15-dynamic-invocation/pom.xml
+[INFO] --------------------------------[ jar ]---------------------------------
+[INFO] Loaded 64 auto-discovered prefixes for remote repository apache.snapshots (prefixes-apache.snapshots.txt)
+[INFO] 
+[INFO] --- resources:3.3.1:resources (default-resources) @ ch15-dynamic-invocation ---
+[INFO] skip non existing resourceDirectory /Users/xiejinxin/Developer/Java/jvm-internals/chapters/ch15-dynamic-invocation/src/main/resources
+[INFO] 
+[INFO] --- compiler:3.14.1:compile (default-compile) @ ch15-dynamic-invocation ---
+[INFO] Recompiling the module because of changed source code.
+[INFO] Compiling 1 source file with javac [debug:lines,vars,source parameters release 25] to target/classes
+[INFO] ------------------------------------------------------------------------
+[INFO] Reactor Summary for Java 虚拟机原理书配套源码 1.0-SNAPSHOT:
+[INFO] 
+[INFO] Java 虚拟机原理书配套源码 .................................... SUCCESS [  0.002 s]
+[INFO] ch15-dynamic-invocation ............................ SUCCESS [  1.102 s]
+[INFO] ------------------------------------------------------------------------
+[INFO] BUILD SUCCESS
+[INFO] ------------------------------------------------------------------------
+[INFO] Total time:  1.196 s
+[INFO] Finished at: 2026-11-03T15:39:01+08:00
+[INFO] ------------------------------------------------------------------------

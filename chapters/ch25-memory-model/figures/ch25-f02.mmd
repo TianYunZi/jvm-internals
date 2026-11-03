@@ -1,0 +1,10 @@
+sequenceDiagram
+ participant W as 发布者
+ participant H as 共享引用
+ participant R as 读取者
+ W->>W: 完成构造，this不逸出
+ W->>H: 写普通载荷与引用
+ W->>H: volatile写ready
+ R->>H: volatile读ready为true
+ R->>H: 读取载荷和对象
+ Note over W,R: 后续修改仍需另一个同步协议

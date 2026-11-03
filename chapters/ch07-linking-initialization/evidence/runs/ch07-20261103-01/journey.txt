@@ -1,0 +1,19 @@
+11月 03, 2026 12:06:52 下午 org.example.jvminternals.ch07.InitializationJourney main
+INFO: 开始正常初始化观察
+constant=41
+before.runtime
+initialize=Values.RUNTIME value=42
+runtime=42
+initialize=Parent value=10
+initialize=HasDefault value=20
+initialize=Child value=40
+child=40
+initialize=Plain value=30
+plain=30
+recursive.first=1 later=7
+discovered=org.example.jvminternals.ch07.InitializationJourney$Lazy
+initialize=Lazy value=50
+reflect.value=50
+field=1 virtual=2
+11月 03, 2026 12:06:52 下午 org.example.jvminternals.ch07.InitializationJourney main
+INFO: 正常初始化观察结束

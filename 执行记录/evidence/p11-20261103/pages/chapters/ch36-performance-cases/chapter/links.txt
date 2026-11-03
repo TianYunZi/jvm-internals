@@ -1,0 +1,21 @@
+跳到正文	#main
+Java 虚拟机原理图文书	../../index.html
+36.1 目标与测量口径	#sec-36-1
+36.2 运行阶段与环境控制	#sec-36-2
+36.3 微基准方法	#sec-36-3
+36.4 分配、存活与收集器选择	#sec-36-4
+36.5 容器资源与运行时配置	#sec-36-5
+36.6 综合案例组织	#sec-36-6
+观察与边界	#observe
+回顾与思考	#review
+来源与实现入口	#sources
+源码阅读	sources.html
+运行说明	README.html
+证据索引	evidence/索引.md
+JMH1.37官方源码与样例	https://github.com/openjdk/jmh/tree/1.37
+内核cgroup v2资源接口	https://docs.kernel.org/admin-guide/cgroup-v2.html
+证据索引	evidence/索引.md
+四组对照与JMH运行记录	evidence/runs/ch36-20261103-01/记录.md
+上一章：第35章	../ch35-troubleshooting/chapter.html
+返回全书目录	../../index.html#part-8
+下一页：附录 A	../../appendices/a-terms/appendix.html

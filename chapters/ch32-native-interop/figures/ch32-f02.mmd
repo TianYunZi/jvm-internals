@@ -1,0 +1,8 @@
+flowchart LR
+  A[当前线程局部句柄] --> O[可移动Java对象]
+  B[强全局句柄] --> O
+  C[弱全局句柄] -. 不保证对象存活 .-> O
+  C --> D[NewLocalRef尝试提升]
+  D --> E[非空局部强引用再使用]
+  B --> F[DeleteGlobalRef显式释放]
+  A --> G[返回本地方法或显式删除]

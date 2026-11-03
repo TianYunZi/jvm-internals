@@ -1,0 +1,42 @@
+跳到正文	#main
+Java虚拟机原理 · 全书目录	../../index.html
+C.1 先确认工具和目标	#sec-c-1
+C.2 类型、布局和内存	#sec-c-2
+C.3 回收、编译与启动	#sec-c-3
+C.4 线程、事件与本地调用	#sec-c-4
+来源与使用顺序	#sources
+CH03命令	../../chapters/ch03-source-environment/README.html
+第3章	../../chapters/ch03-source-environment/chapter.html
+第3章	../../chapters/ch03-source-environment/chapter.html
+CH33命令	../../chapters/ch33-observability/README.html
+CH04命令	../../chapters/ch04-classfile/README.html
+CH08命令	../../chapters/ch08-type-metadata/README.html
+CH06命令	../../chapters/ch06-classloaders-modules/README.html
+CH10命令	../../chapters/ch10-object-layout/README.html
+CH27命令	../../chapters/ch27-monitors/README.html
+CH09命令	../../chapters/ch09-runtime-memory/README.html
+CH12命令	../../chapters/ch12-native-memory/README.html
+CH12命令	../../chapters/ch12-native-memory/README.html
+CH35命令	../../chapters/ch35-troubleshooting/README.html
+CH21命令	../../chapters/ch21-basic-collectors/README.html
+CH23命令	../../chapters/ch23-zgc/README.html
+CH24命令	../../chapters/ch24-shenandoah/README.html
+CH21命令	../../chapters/ch21-basic-collectors/README.html
+CH20命令	../../chapters/ch20-safepoints-barriers/README.html
+CH22命令	../../chapters/ch22-g1/README.html
+CH16命令	../../chapters/ch16-tiered-compilation/README.html
+CH17依据	../../chapters/ch17-compiler-optimizations/evidence/索引.md
+CH30命令	../../chapters/ch30-startup-sharing/README.html
+CH31命令	../../chapters/ch31-aot-cache/README.html
+CH26命令	../../chapters/ch26-platform-threads/README.html
+CH28命令	../../chapters/ch28-virtual-threads/README.html
+CH29命令	../../chapters/ch29-scoped-concurrency/README.html
+CH32命令	../../chapters/ch32-native-interop/README.html
+CH34命令	../../chapters/ch34-flight-recorder/README.html
+CH34命令	../../chapters/ch34-flight-recorder/README.html
+第34章	../../chapters/ch34-flight-recorder/chapter.html
+25版java命令	https://docs.oracle.com/en/java/javase/25/docs/specs/man/java.html
+25版jcmd命令	https://docs.oracle.com/en/java/javase/25/docs/specs/man/jcmd.html
+上一页	../b-bytecode/appendix.html
+附录目录	../../index.html#appendices
+下一页	../d-source-map/appendix.html

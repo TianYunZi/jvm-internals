@@ -1,0 +1,6 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="900" height="470" viewBox="0 0 900 470" role="img" aria-labelledby="title"><title id="title">载体原生栈与堆中栈块</title><style>text{font-family:PingFang SC,sans-serif;font-size:20px;fill:#19324a} .box{fill:#e3eef7;stroke:#537c9e;stroke-width:2} .note{fill:#f2ede4;stroke:#91421f}</style><rect width="900" height="470" fill="white"/><text x="32" y="40" font-weight="bold">载体原生栈与堆中栈块</text>
+<rect class="box" x="40" y="80" width="350" height="235"/><text x="60" y="115">载体原生栈（挂载时）</text><text x="60" y="165">延续入口以上：Java帧</text><text x="60" y="210">解释帧／编译帧／引用位置</text><text x="60" y="265">入口以下：调度与载体帧</text>
+<rect class="box" x="510" y="80" width="350" height="235"/><text x="530" y="115">堆中StackChunk（卸载时）</text><text x="530" y="165">冻结的帧数据与元信息</text><text x="530" y="210">引用映射／前一栈块关联</text><text x="530" y="265">由延续与线程持有</text>
+<text x="415" y="165">冻结 →</text><text x="415" y="235">← 恢复</text>
+<rect class="note" x="40" y="350" width="820" height="80"/><text x="60" y="385">帧布局与恢复会受执行模式、去优化和收集器协议影响。</text><text x="60" y="414">不是整条操作系统栈搬到堆中；不表示本轮实际帧地址。</text>
+</svg>

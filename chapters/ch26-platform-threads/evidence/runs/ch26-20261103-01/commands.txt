@@ -1,0 +1,8 @@
+export JAVA_HOME=/opt/homebrew/Cellar/openjdk@25/25.0.5.0.2/libexec/openjdk.jdk/Contents/Home
+export PATH="$JAVA_HOME/bin:/opt/homebrew/bin:$PATH"
+java -Xmx128m -XX:+StartAttachListener -cp chapters/ch26-platform-threads/target/classes org.example.jvminternals.ch26.PlatformJourney
+
+jcmd 81735 Thread.print -l
+ps -M -p 81735
+jcmd 81735 Thread.print -l
+ps -M -p 81735

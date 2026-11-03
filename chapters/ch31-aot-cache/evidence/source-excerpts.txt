@@ -1,0 +1,489 @@
+
+FILE src/hotspot/share/cds/cdsConfig.cpp
+SYMBOLS check_aot_flags、setup_compiler_args
+397:   if (!FLAG_IS_DEFAULT(DumpLoadedClassList) ||
+398:       !FLAG_IS_DEFAULT(SharedClassListFile) ||
+399:       !FLAG_IS_DEFAULT(SharedArchiveFile)) {
+400:     _old_cds_flags_used = true;
+401:   }
+402: 
+403:   // "New" AOT flags must not be mixed with "classic" CDS flags such as -Xshare:dump
+404:   CHECK_NEW_FLAG(AOTCache);
+405:   CHECK_NEW_FLAG(AOTCacheOutput);
+406:   CHECK_NEW_FLAG(AOTConfiguration);
+407:   CHECK_NEW_FLAG(AOTMode);
+408: 
+409:   CHECK_SINGLE_PATH(AOTCache);
+410:   CHECK_SINGLE_PATH(AOTCacheOutput);
+411:   CHECK_SINGLE_PATH(AOTConfiguration);
+412: 
+413:   if (FLAG_IS_DEFAULT(AOTCache) && AOTAdapterCaching) {
+414:     log_debug(aot,codecache,init)("AOTCache is not specified - AOTAdapterCaching is ignored");
+415:   }
+416:   if (FLAG_IS_DEFAULT(AOTCache) && AOTStubCaching) {
+417:     log_debug(aot,codecache,init)("AOTCache is not specified - AOTStubCaching is ignored");
+418:   }
+419: 
+420:   bool has_cache = !FLAG_IS_DEFAULT(AOTCache);
+421:   bool has_cache_output = !FLAG_IS_DEFAULT(AOTCacheOutput);
+422:   bool has_config = !FLAG_IS_DEFAULT(AOTConfiguration);
+423:   bool has_mode = !FLAG_IS_DEFAULT(AOTMode);
+424: 
+425:   if (!has_cache && !has_cache_output && !has_config && !has_mode) {
+426:     // AOT flags are not used. Use classic CDS workflow
+427:     return;
+428:   }
+429: 
+430:   if (has_cache && has_cache_output) {
+431:     vm_exit_during_initialization("Only one of AOTCache or AOTCacheOutput can be specified");
+432:   }
+433: 
+434:   if (!has_cache && (!has_mode || strcmp(AOTMode, "auto") == 0)) {
+435:     if (has_cache_output) {
+436:       // If AOTCacheOutput has been set, effective mode is "record".
+437:       // Default value for AOTConfiguration, if necessary, will be assigned in check_aotmode_record().
+438:       log_info(aot)("Selected AOTMode=record because AOTCacheOutput is specified");
+439:       FLAG_SET_ERGO(AOTMode, "record");
+440:     }
+441:   }
+442: 
+443:   // At least one AOT flag has been used
+444:   _new_aot_flags_used = true;
+445: 
+446:   if (FLAG_IS_DEFAULT(AOTMode) || strcmp(AOTMode, "auto") == 0 || strcmp(AOTMode, "on") == 0) {
+447:     check_aotmode_auto_or_on();
+448:   } else if (strcmp(AOTMode, "off") == 0) {
+449:     check_aotmode_off();
+450:   } else if (strcmp(AOTMode, "record") == 0) {
+451:     check_aotmode_record();
+452:   } else {
+453:     assert(strcmp(AOTMode, "create") == 0, "checked by AOTModeConstraintFunc");
+454:     check_aotmode_create();
+455:   }
+456: 
+457:   // This is an old flag used by CDS regression testing only. It doesn't apply
+458:   // to the AOT workflow.
+459:   FLAG_SET_ERGO(AllowArchivingWithJavaAgent, false);
+460: }
+461: 
+462: void CDSConfig::check_aotmode_off() {
+463:   UseSharedSpaces = false;
+464:   RequireSharedSpaces = false;
+465: }
+466: 
+467: void CDSConfig::check_aotmode_auto_or_on() {
+468:   if (!FLAG_IS_DEFAULT(AOTConfiguration)) {
+469:     vm_exit_during_initialization(err_msg("AOTConfiguration can only be used with when AOTMode is record or create (selected AOTMode = %s)",
+470:                                           FLAG_IS_DEFAULT(AOTMode) ? "auto" : AOTMode));
+471:   }
+472: 
+473:   UseSharedSpaces = true;
+474:   if (FLAG_IS_DEFAULT(AOTMode) || (strcmp(AOTMode, "auto") == 0)) {
+475:     RequireSharedSpaces = false;
+476:   } else {
+477:     assert(strcmp(AOTMode, "on") == 0, "already checked");
+478:     RequireSharedSpaces = true;
+479:   }
+480: }
+695: void CDSConfig::setup_compiler_args() {
+696:   // AOT profiles are supported only in the JEP 483 workflow.
+697:   bool can_dump_profiles = AOTClassLinking && new_aot_flags_used();
+698: 
+699:   if (is_dumping_preimage_static_archive() && can_dump_profiles) {
+700:     // JEP 483 workflow -- training
+701:     FLAG_SET_ERGO_IF_DEFAULT(AOTRecordTraining, true);
+702:     FLAG_SET_ERGO(AOTReplayTraining, false);
+703:   } else if (is_dumping_final_static_archive() && can_dump_profiles) {
+704:     // JEP 483 workflow -- assembly
+705:     FLAG_SET_ERGO(AOTRecordTraining, false);
+706:     FLAG_SET_ERGO_IF_DEFAULT(AOTReplayTraining, true);
+707:   } else if (is_using_archive() && new_aot_flags_used()) {
+708:     // JEP 483 workflow -- production
+709:     FLAG_SET_ERGO(AOTRecordTraining, false);
+710:     FLAG_SET_ERGO_IF_DEFAULT(AOTReplayTraining, true);
+711:   } else {
+712:     FLAG_SET_ERGO(AOTReplayTraining, false);
+713:     FLAG_SET_ERGO(AOTRecordTraining, false);
+714:   }
+715: }
+716: 
+717: void CDSConfig::prepare_for_dumping() {
+718:   assert(CDSConfig::is_dumping_archive(), "sanity");
+
+FILE src/hotspot/share/cds/cds_globals.hpp
+SYMBOLS AOTRecordTraining、AOTReplayTraining、AOTCompileEagerly
+106:                                                                             \
+107:   product(ccstr, AOTMode, nullptr,                                          \
+108:           "Specifies how AOTCache should be created or used. Valid values " \
+109:           "are: off, record, create, auto, on; the default is auto")        \
+110:           constraint(AOTModeConstraintFunc, AtParse)                        \
+111:                                                                             \
+112:   product(ccstr, AOTConfiguration, nullptr,                                 \
+113:           "The configuration file written by -XX:AOTMode=record, and "      \
+114:           "loaded by -XX:AOTMode=create. This file contains profiling data "\
+115:           "for deciding what contents should be added to AOTCache. ")       \
+116:           constraint(AOTConfigurationConstraintFunc, AtParse)               \
+117:                                                                             \
+118:   product(ccstr, AOTCache, nullptr,                                         \
+119:           "Cache for improving start up and warm up")                       \
+120:           constraint(AOTCacheConstraintFunc, AtParse)                       \
+121:                                                                             \
+122:   product(ccstr, AOTCacheOutput, nullptr,                                   \
+123:           "Specifies the file name for writing the AOT cache")              \
+124:           constraint(AOTCacheOutputConstraintFunc, AtParse)                 \
+125:                                                                             \
+126:   product(bool, AOTInvokeDynamicLinking, false, DIAGNOSTIC,                 \
+127:           "AOT-link JVM_CONSTANT_InvokeDynamic entries in cached "          \
+128:           "ConstantPools")                                                  \
+129:                                                                             \
+130:   product(bool, AOTClassLinking, false,                                     \
+131:           "Load/link all archived classes for the boot/platform/app "       \
+132:           "loaders before application main")                                \
+133:                                                                             \
+134:   product(bool, AOTCacheParallelRelocation, true, DIAGNOSTIC,               \
+135:           "Use parallel relocation code to speed up startup.")              \
+136:                                                                             \
+137:   /* flags to control training and deployment modes  */                     \
+138:                                                                             \
+139:   product(bool, AOTRecordTraining, false, DIAGNOSTIC,                       \
+140:           "Request output of training data for improved deployment.")       \
+141:                                                                             \
+142:   product(bool, AOTReplayTraining, false, DIAGNOSTIC,                       \
+143:           "Read training data, if available, for use in this execution")    \
+144:                                                                             \
+145:   product(bool, AOTPrintTrainingInfo, false, DIAGNOSTIC,                    \
+146:           "Print additional information about training")                    \
+147:                                                                             \
+148:   product(bool, AOTVerifyTrainingData, trueInDebug, DIAGNOSTIC,             \
+149:           "Verify archived training data")                                  \
+150:                                                                             \
+151:   product(bool, AOTCompileEagerly, false, EXPERIMENTAL,                     \
+152:           "Compile methods as soon as possible")                            \
+153:                                                                             \
+154:   /* AOT Code flags */                                                      \
+155:                                                                             \
+156:   product(bool, AOTAdapterCaching, false, DIAGNOSTIC,                       \
+157:           "Enable saving and restoring i2c2i adapters in AOT cache")        \
+158:                                                                             \
+159:   product(bool, AOTStubCaching, false, DIAGNOSTIC,                          \
+160:           "Enable saving and restoring stubs and code blobs in AOT cache")  \
+161:                                                                             \
+162:   product(uint, AOTCodeMaxSize, 10*M, DIAGNOSTIC,                           \
+163:           "Buffer size in bytes for AOT code caching")                      \
+164:           range(1*M, max_jint)                                              \
+165:                                                                             \
+166:   product(bool, AbortVMOnAOTCodeFailure, false, DIAGNOSTIC,                 \
+167:           "Abort VM on the first occurrence of AOT code load or store "     \
+168:           "failure. By default VM will continue execute without AOT code.") \
+169:                                                                             \
+170:   develop(bool, TestAOTAdapterLinkFailure, false,                           \
+
+FILE src/hotspot/share/oops/trainingData.cpp
+SYMBOLS MethodTrainingData::make、prepare、TrainingData::dump_training_data
+108: MethodTrainingData* MethodTrainingData::make(const methodHandle& method, bool null_if_not_found, bool use_cache) {
+109:   MethodTrainingData* mtd = nullptr;
+110:   if (!have_data() && !need_data()) {
+111:     return mtd;
+112:   }
+113:   // Try grabbing the cached value first.
+114:   // Cache value is stored in MethodCounters and the following are the
+115:   // possible states:
+116:   // 1. Cached value is method_training_data_sentinel().
+117:   //    This is an initial state and needs a full lookup.
+118:   // 2. Cached value is null.
+119:   //    Lookup failed the last time, if we don't plan to create a new TD object,
+120:   //    i.e. null_if_no_found == true, then just return a null.
+121:   // 3. Cache value is not null.
+122:   //    Return it, the value of training_data_lookup_failed doesn't matter.
+123:   MethodCounters* mcs = method->method_counters();
+124:   if (mcs != nullptr) {
+125:     mtd = mcs->method_training_data();
+126:     if (mtd != nullptr && mtd != mcs->method_training_data_sentinel()) {
+127:       return mtd;
+128:     }
+129:     if (null_if_not_found && mtd == nullptr) {
+130:       assert(mtd == nullptr, "No training data found");
+131:       return nullptr;
+132:     }
+133:   } else if (use_cache) {
+134:     mcs = Method::build_method_counters(Thread::current(), method());
+135:   }
+136: 
+137:   TrainingData* td = nullptr;
+138: 
+139:   Key key(method());
+140:   if (have_data()) {
+141:     td = lookup_archived_training_data(&key);
+142:     if (td != nullptr) {
+143:       mtd = td->as_MethodTrainingData();
+144:     } else {
+145:       mtd = nullptr;
+146:     }
+147:     // Cache the pointer to MTD in MethodCounters for faster lookup (could be null if not found)
+148:     method->init_training_data(mtd);
+149:   }
+150: 
+151:   if (need_data()) {
+152:     TrainingDataLocker l;
+153:     td = training_data_set()->find(&key);
+154:     if (td == nullptr) {
+155:       if (!null_if_not_found) {
+156:         KlassTrainingData* ktd = KlassTrainingData::make(method->method_holder());
+157:         if (ktd == nullptr) {
+158:           return nullptr; // allocation failure
+159:         }
+160:         mtd = MethodTrainingData::allocate(method(), ktd);
+161:         if (mtd == nullptr) {
+162:           return nullptr; // allocation failure
+163:         }
+164:         td = training_data_set()->install(mtd);
+165:         assert(td == mtd, "");
+166:       } else {
+167:         mtd = nullptr;
+168:       }
+169:     } else {
+170:       mtd = td->as_MethodTrainingData();
+171:     }
+172:     // Cache the pointer to MTD in MethodCounters for faster lookup (could be null if not found)
+173:     method->init_training_data(mtd);
+174:   }
+341: void MethodTrainingData::prepare(Visitor& visitor) {
+342:   if (visitor.is_visited(this)) {
+343:     return;
+344:   }
+345:   visitor.visit(this);
+346:   klass()->prepare(visitor);
+347:   if (has_holder()) {
+348:     _final_counters = holder()->method_counters();
+349:     _final_profile  = holder()->method_data();
+350:     assert(_final_profile == nullptr || _final_profile->method() == holder(), "");
+351:   }
+352:   for (int i = 0; i < CompLevel_count - 1; i++) {
+353:     CompileTrainingData* ctd = _last_toplevel_compiles[i];
+354:     if (ctd != nullptr) {
+355:       ctd->prepare(visitor);
+356:     }
+357:   }
+358: }
+359: 
+495: void TrainingData::dump_training_data() {
+496:   if (_dumptime_training_data_dictionary != nullptr) {
+497:     CompactHashtableStats stats;
+498:     _archived_training_data_dictionary_for_dumping.reset();
+499:     CompactHashtableWriter writer(_dumptime_training_data_dictionary->length(), &stats);
+500:     for (int i = 0; i < _dumptime_training_data_dictionary->length(); i++) {
+501:       TrainingData* td = _dumptime_training_data_dictionary->at(i).training_data();
+502: #ifdef ASSERT
+503:       for (int j = i+1; j < _dumptime_training_data_dictionary->length(); j++) {
+504:         TrainingData* td1 = _dumptime_training_data_dictionary->at(j).training_data();
+505:         assert(!TrainingData::Key::equals(td1, td->key(), -1), "conflict");
+506:       }
+507: #endif // ASSERT
+508:       td = ArchiveBuilder::current()->get_buffered_addr(td);
+509:       uint hash = TrainingData::Key::cds_hash(td->key());
+510:       u4 delta = ArchiveBuilder::current()->buffer_to_offset_u4((address)td);
+511:       writer.add(hash, delta);
+512:     }
+513:     writer.dump(&_archived_training_data_dictionary_for_dumping, "training data dictionary");
+514:   }
+515: }
+516: 
+
+FILE src/hotspot/share/oops/methodData.cpp
+SYMBOLS MethodData::initialize、metaspace_pointers_do
+1332:   int empty_bc_count = 0;  // number of bytecodes lacking data
+1333:   _data[0] = 0;  // apparently not set below.
+1334:   BytecodeStream stream(methodHandle(thread, method()));
+1335:   Bytecodes::Code c;
+1336:   bool needs_speculative_traps = false;
+1337:   while ((c = stream.next()) >= 0) {
+1338:     int size_in_bytes = initialize_data(&stream, data_size);
+1339:     data_size += size_in_bytes;
+1340:     if (size_in_bytes == 0 JVMCI_ONLY(&& Bytecodes::can_trap(c)))  empty_bc_count += 1;
+1341:     needs_speculative_traps = needs_speculative_traps || is_speculative_trap_bytecode(c);
+1342:   }
+1343:   _data_size = data_size;
+1344:   int object_size = in_bytes(data_offset()) + data_size;
+1345: 
+1346:   // Add some extra DataLayout cells (at least one) to track stray traps.
+1347:   int extra_data_count = compute_extra_data_count(data_size, empty_bc_count, needs_speculative_traps);
+1348:   int extra_size = extra_data_count * DataLayout::compute_size_in_bytes(0);
+1349: 
+1350:   // Let's zero the space for the extra data
+1351:   if (extra_size > 0) {
+1352:     Copy::zero_to_bytes(((address)_data) + data_size, extra_size);
+1353:   }
+1354: 
+1355:   // Add a cell to record information about modified arguments.
+1356:   // Set up _args_modified array after traps cells so that
+1357:   // the code for traps cells works.
+1358:   DataLayout *dp = data_layout_at(data_size + extra_size);
+1359: 
+1360:   int arg_size = method()->size_of_parameters();
+1361:   dp->initialize(DataLayout::arg_info_data_tag, 0, arg_size+1);
+1362: 
+1363:   int arg_data_size = DataLayout::compute_size_in_bytes(arg_size+1);
+1364:   object_size += extra_size + arg_data_size;
+1780:   return profile_parameters_flag() == type_profile_all;
+1781: }
+1782: 
+1783: bool MethodData::profile_parameters_for_method(const methodHandle& m) {
+1784:   if (!profile_parameters()) {
+1785:     return false;
+1786:   }
+1787: 
+1788:   if (profile_all_parameters()) {
+1789:     return true;
+1790:   }
+1791: 
+1792:   assert(profile_parameters_jsr292_only(), "inconsistent");
+1793:   return m->is_compiled_lambda_form();
+1794: }
+1795: 
+1796: void MethodData::metaspace_pointers_do(MetaspaceClosure* it) {
+1797:   log_trace(aot, training)("Iter(MethodData): %p for %p %s", this, _method, _method->name_and_sig_as_C_string());
+1798:   it->push(&_method);
+1799:   if (_parameters_type_data_di != no_parameters) {
+1800:     parameters_type_data()->metaspace_pointers_do(it);
+1801:   }
+1802:   for (ProfileData* data = first_data(); is_valid(data); data = next_data(data)) {
+1803:     data->metaspace_pointers_do(it);
+1804:   }
+1805:   for (DataLayout* dp = extra_data_base();
+1806:                    dp < extra_data_limit();
+1807:                    dp = MethodData::next_extra(dp)) {
+1808:     if (dp->tag() == DataLayout::speculative_trap_data_tag) {
+1809:       ResourceMark rm;
+1810:       SpeculativeTrapData* data = new SpeculativeTrapData(dp);
+1811:       data->metaspace_pointers_do(it);
+1812:     } else if (dp->tag() == DataLayout::no_tag ||
+1813:                dp->tag() == DataLayout::arg_info_data_tag) {
+1814:       break;
+1815:     }
+1816:   }
+1817: }
+1818: 
+1819: void MethodData::clean_extra_data_helper(DataLayout* dp, int shift, bool reset) {
+1820:   check_extra_data_locked();
+1821: 
+1822:   if (shift == 0) {
+1823:     return;
+1824:   }
+1825:   if (!reset) {
+
+FILE src/hotspot/share/compiler/compilationPolicy.cpp
+SYMBOLS maybe_compile_early、replay_training_at_init、trained_transition_from_none
+86:          (AlwaysCompileLoopMethods && m->has_loops() && CompileBroker::should_compile_new_jobs()); // eagerly compile loop methods
+87: }
+88: 
+89: void CompilationPolicy::maybe_compile_early(const methodHandle& m, TRAPS) {
+90:   if (m->method_holder()->is_not_initialized()) {
+91:     // 'is_not_initialized' means not only '!is_initialized', but also that
+92:     // initialization has not been started yet ('!being_initialized')
+93:     // Do not force compilation of methods in uninitialized classes.
+94:     return;
+95:   }
+96:   if (!m->is_native() && MethodTrainingData::have_data()) {
+97:     MethodTrainingData* mtd = MethodTrainingData::find_fast(m);
+98:     if (mtd == nullptr) {
+99:       return;              // there is no training data recorded for m
+100:     }
+101:     CompLevel cur_level = static_cast<CompLevel>(m->highest_comp_level());
+102:     CompLevel next_level = trained_transition(m, cur_level, mtd, THREAD);
+103:     if (next_level != cur_level && can_be_compiled(m, next_level) && !CompileBroker::compilation_is_in_queue(m)) {
+104:       if (PrintTieredEvents) {
+105:         print_event(FORCE_COMPILE, m(), m(), InvocationEntryBci, next_level);
+106:       }
+107:       CompileBroker::compile_method(m, InvocationEntryBci, next_level, 0, CompileTask::Reason_MustBeCompiled, THREAD);
+108:       if (HAS_PENDING_EXCEPTION) {
+109:         CLEAR_PENDING_EXCEPTION;
+110:       }
+141: void CompilationPolicy::replay_training_at_init_impl(InstanceKlass* klass, TRAPS) {
+142:   if (!klass->has_init_deps_processed()) {
+143:     ResourceMark rm;
+144:     log_debug(training)("Replay training: %s", klass->external_name());
+145: 
+146:     KlassTrainingData* ktd = KlassTrainingData::find(klass);
+147:     if (ktd != nullptr) {
+148:       guarantee(ktd->has_holder(), "");
+149:       ktd->notice_fully_initialized(); // sets klass->has_init_deps_processed bit
+150:       assert(klass->has_init_deps_processed(), "");
+151:       if (AOTCompileEagerly) {
+152:         ktd->iterate_comp_deps([&](CompileTrainingData* ctd) {
+153:           if (ctd->init_deps_left() == 0) {
+154:             MethodTrainingData* mtd = ctd->method();
+155:             if (mtd->has_holder()) {
+156:               const methodHandle mh(THREAD, const_cast<Method*>(mtd->holder()));
+157:               CompilationPolicy::maybe_compile_early(mh, THREAD);
+158:             }
+159:           }
+160:         });
+161:       }
+162:     }
+163:   }
+164: }
+165: 
+166: void CompilationPolicy::replay_training_at_init(InstanceKlass* klass, TRAPS) {
+167:   assert(klass->is_initialized(), "");
+168:   if (TrainingData::have_data() && klass->is_shared()) {
+169:     _training_replay_queue.push(klass, TrainingReplayQueue_lock, THREAD);
+170:   }
+171: }
+172: 
+173: // For TrainingReplayQueue
+174: template<>
+1126: CompLevel CompilationPolicy::trained_transition_from_none(const methodHandle& method, CompLevel cur_level, MethodTrainingData* mtd, JavaThread* THREAD) {
+1127:   precond(mtd != nullptr);
+1128:   precond(cur_level == CompLevel_none);
+1129: 
+1130:   if (mtd->only_inlined() && !mtd->saw_level(CompLevel_full_optimization)) {
+1131:     return CompLevel_none;
+1132:   }
+1133: 
+1134:   bool training_has_profile = (mtd->final_profile() != nullptr);
+1135:   if (mtd->saw_level(CompLevel_full_optimization) && !training_has_profile) {
+1136:     return CompLevel_full_profile;
+1137:   }
+1138: 
+1139:   CompLevel highest_training_level = static_cast<CompLevel>(mtd->highest_top_level());
+1140:   switch (highest_training_level) {
+1141:     case CompLevel_limited_profile:
+1142:     case CompLevel_full_profile:
+1143:       return CompLevel_limited_profile;
+1144:     case CompLevel_simple:
+1145:       return CompLevel_simple;
+1146:     case CompLevel_none:
+1147:       return CompLevel_none;
+1148:     default:
+1149:       break;
+1150:   }
+1151: 
+1152:   // Now handle the case of level 4.
+1153:   assert(highest_training_level == CompLevel_full_optimization, "Unexpected compilation level: %d", highest_training_level);
+1154:   if (!training_has_profile) {
+1155:     // The method was a part of a level 4 compile, but don't have a stored profile,
+1156:     // we need to profile it.
+1157:     return CompLevel_full_profile;
+1158:   }
+1159:   const bool deopt = (static_cast<CompLevel>(method->highest_comp_level()) == CompLevel_full_optimization);
+1160:   // If we deopted, then we reprofile
+1161:   if (deopt && !is_method_profiled(method)) {
+1162:     return CompLevel_full_profile;
+1163:   }
+1164: 
+1165:   CompileTrainingData* ctd = mtd->last_toplevel_compile(CompLevel_full_optimization);
+1166:   assert(ctd != nullptr, "Should have CTD for CompLevel_full_optimization");
+1167:   // With SkipTier2IfPossible and all deps satisfied, go to level 4 immediately
+1168:   if (SkipTier2IfPossible && ctd->init_deps_left() == 0) {
+1169:     if (method->method_data() == nullptr) {
+1170:       create_mdo(method, THREAD);
+1171:     }
+1172:     return CompLevel_full_optimization;
+1173:   }
+1174: 
+1175:   // Otherwise go to level 2
+1176:   return CompLevel_limited_profile;
+1177: }
+1178: 
+1179: 
+1180: CompLevel CompilationPolicy::trained_transition_from_limited_profile(const methodHandle& method, CompLevel cur_level, MethodTrainingData* mtd, JavaThread* THREAD) {

@@ -1,0 +1,1914 @@
+15216:
+
+Native Memory Tracking:
+
+(Omitting categories weighting less than 1KB)
+
+Total: reserved=1614150KB, committed=112038KB
+       malloc: 20390KB #14820, peak=26498KB #14953
+       mmap:   reserved=1593760KB, committed=91648KB
+
+-                 Java Heap (reserved=139264KB, committed=34816KB)
+                            (mmap: reserved=139264KB, committed=34816KB, at peak)
+
+-                     Class (reserved=1048685KB, committed=301KB)
+                            (classes #1525)
+                            (  instance classes #1297, array classes #228)
+                            (malloc=109KB tag=Class #1986) (at peak)
+                            (mmap: reserved=1048576KB, committed=192KB, at peak)
+                            (  Metadata:   )
+                            (    reserved=65536KB, committed=1344KB)
+                            (    used=1249KB)
+                            (    waste=95KB =7.08%)
+                            (  Class space:)
+                            (    reserved=1048576KB, committed=192KB)
+                            (    used=122KB)
+                            (    waste=70KB =36.56%)
+
+-                    Thread (reserved=38969KB, committed=217KB)
+                            (threads #19)
+                            (stack: reserved=38912KB, committed=160KB, peak=160KB)
+                            (malloc=37KB tag=Thread #115) (peak=46KB #119)
+                            (arena=20KB #34) (peak=117KB #30)
+
+-                      Code (reserved=249936KB, committed=7920KB)
+                            (malloc=287KB tag=Code #3046) (at peak)
+                            (mmap: reserved=249648KB, committed=7632KB, at peak)
+                            (arena=1KB #1) (peak=34KB #2)
+
+-                        GC (reserved=52022KB, committed=50166KB)
+                            (malloc=16646KB tag=GC #459) (at peak)
+                            (mmap: reserved=35376KB, committed=33520KB, at peak)
+
+-                  Compiler (reserved=207KB, committed=207KB)
+                            (malloc=11KB tag=Compiler #50) (peak=11KB #53)
+                            (arena=196KB #6) (peak=7562KB #9)
+
+-                  Internal (reserved=1241KB, committed=1241KB)
+                            (malloc=1209KB tag=Internal #1353) (peak=1209KB #1353)
+                            (mmap: reserved=32KB, committed=32KB, at peak)
+
+-                     Other (reserved=2KB, committed=2KB)
+                            (malloc=2KB tag=Other #2) (at peak)
+
+-                    Symbol (reserved=1204KB, committed=1204KB)
+                            (malloc=844KB tag=Symbol #2255) (at peak)
+                            (arena=360KB #1) (at peak)
+
+-    Native Memory Tracking (reserved=434KB, committed=434KB)
+                            (malloc=173KB tag=Native Memory Tracking #2025) (at peak)
+                            (tracking overhead=261KB)
+
+-        Shared class space (reserved=16384KB, committed=13920KB, readonly=0KB)
+                            (mmap: reserved=16384KB, committed=13920KB, peak=14128KB)
+
+-               Arena Chunk (reserved=33KB, committed=33KB)
+                            (malloc=33KB tag=Arena Chunk #48) (peak=8011KB #290)
+
+-                   Tracing (reserved=5KB, committed=5KB)
+                            (malloc=5KB tag=Tracing #28) (at peak)
+
+-                    Module (reserved=40KB, committed=40KB)
+                            (malloc=40KB tag=Module #1264) (at peak)
+
+-                 Safepoint (reserved=32KB, committed=32KB)
+                            (mmap: reserved=32KB, committed=32KB, at peak)
+
+-           Synchronization (reserved=122KB, committed=122KB)
+                            (malloc=122KB tag=Synchronization #2134) (at peak)
+
+-            Serviceability (reserved=17KB, committed=17KB)
+                            (malloc=17KB tag=Serviceability #14) (peak=20KB #18)
+
+-                 Metaspace (reserved=65551KB, committed=1359KB)
+                            (malloc=15KB tag=Metaspace #18) (at peak)
+                            (mmap: reserved=65536KB, committed=1344KB, at peak)
+
+-      String Deduplication (reserved=1KB, committed=1KB)
+                            (malloc=1KB tag=String Deduplication #8) (at peak)
+
+-           Object Monitors (reserved=1KB, committed=1KB)
+                            (malloc=1KB tag=Object Monitors #3) (at peak)
+
+Virtual memory map:
+
+[0x00001fe001000000 - 0x00001fe041000000] reserved 1048576KB for Class from
+    [0x000000010ca58d8c]CompressedKlassPointers::reserve_address_space_for_compressed_classes(unsigned long, bool, bool)+0xd0
+    [0x000000010ce66ab0]Metaspace::reserve_address_space_for_compressed_classes(unsigned long, bool)+0x28
+    [0x000000010ce6df7c]MetaspaceShared::reserve_address_space_for_archives(FileMapInfo*, FileMapInfo*, bool, ReservedSpace&, ReservedSpace&, ReservedSpace&)+0x248
+    [0x000000010ce6da48]MetaspaceShared::map_archives(FileMapInfo*, FileMapInfo*, bool)+0x10c
+
+        [0x00001fe001000000 - 0x00001fe001010000] committed 64KB from
+            [0x000000010d0e5900]metaspace::VirtualSpaceNode::commit_range(MetaWordImpl**, unsigned long)+0xf8
+            [0x000000010ce65298]metaspace::Metachunk::commit_up_to(unsigned long)+0xa0
+            [0x000000010c9d26a4]metaspace::ChunkManager::get_chunk_locked(signed char, signed char, unsigned long)+0x12c
+            [0x000000010c9d2530]metaspace::ChunkManager::get_chunk(signed char, signed char, unsigned long)+0x50
+
+        [0x00001fe001010000 - 0x00001fe001020000] committed 64KB from
+            [0x000000010d0e5900]metaspace::VirtualSpaceNode::commit_range(MetaWordImpl**, unsigned long)+0xf8
+            [0x000000010ce65298]metaspace::Metachunk::commit_up_to(unsigned long)+0xa0
+            [0x000000010ce65300]metaspace::Metachunk::ensure_committed(unsigned long)+0x48
+            [0x000000010ce67e70]metaspace::MetaspaceArena::allocate_inner(unsigned long, metaspace::MetaBlock&)+0xac
+
+        [0x00001fe001040000 - 0x00001fe001050000] committed 64KB from
+            [0x000000010d0e5900]metaspace::VirtualSpaceNode::commit_range(MetaWordImpl**, unsigned long)+0xf8
+            [0x000000010ce65298]metaspace::Metachunk::commit_up_to(unsigned long)+0xa0
+            [0x000000010c9d26a4]metaspace::ChunkManager::get_chunk_locked(signed char, signed char, unsigned long)+0x12c
+            [0x000000010c9d2530]metaspace::ChunkManager::get_chunk(signed char, signed char, unsigned long)+0x50
+
+[0x00001fe000000000 - 0x00001fe001000000] reserved 16384KB for Shared class space from
+    [0x000000010ca58d8c]CompressedKlassPointers::reserve_address_space_for_compressed_classes(unsigned long, bool, bool)+0xd0
+    [0x000000010ce66ab0]Metaspace::reserve_address_space_for_compressed_classes(unsigned long, bool)+0x28
+    [0x000000010ce6df7c]MetaspaceShared::reserve_address_space_for_archives(FileMapInfo*, FileMapInfo*, bool, ReservedSpace&, ReservedSpace&, ReservedSpace&)+0x248
+    [0x000000010ce6da48]MetaspaceShared::map_archives(FileMapInfo*, FileMapInfo*, bool)+0x10c
+
+        [0x00001fe000000000 - 0x00001fe000004000] committed 16KB from
+            [0x000000010ce6db24]MetaspaceShared::map_archives(FileMapInfo*, FileMapInfo*, bool)+0x1e8
+            [0x000000010ce6d634]MetaspaceShared::initialize_runtime_shared_and_meta_spaces()+0xf4
+            [0x000000010ce66dd4]Metaspace::global_initialize()+0x88
+            [0x000000010d0b26f0]universe_init()+0x90
+
+        [0x00001fe000004000 - 0x00001fe000d98000] committed 13904KB from
+            [0x000000010cafb964]map_memory(int, char const*, unsigned long, char*, unsigned long, bool, bool, MemTag)+0x38
+            [0x000000010cafb3d4]FileMapInfo::map_region(int, long, char*, ReservedSpace)+0xbc
+            [0x000000010cafb210]FileMapInfo::map_regions(int*, int, char*, ReservedSpace)+0x78
+            [0x000000010ce6e120]MetaspaceShared::map_archive(FileMapInfo*, char*, ReservedSpace)+0x6c
+
+[0x000000016f7f8000 - 0x000000016f9f8000] reserved 2048KB for Thread Stack from
+    [0x000000010d08d5f8]Thread::call_run()+0x30
+    [0x000000010cec7ee8]thread_native_entry(Thread*)+0xcc
+    [0x000000019b4c8ce4]_pthread_start+0x88 in libsystem_pthread.dylib
+
+[0x000000016f5ec000 - 0x000000016f7ec000] reserved 2048KB for Thread Stack from
+    [0x000000010d08d5f8]Thread::call_run()+0x30
+    [0x000000010cec7ee8]thread_native_entry(Thread*)+0xcc
+    [0x000000019b4c8ce4]_pthread_start+0x88 in libsystem_pthread.dylib
+
+        [0x000000016f7d8000 - 0x000000016f7ec000] committed 80KB
+
+[0x000000016f3e0000 - 0x000000016f5e0000] reserved 2048KB for Thread Stack from
+    [0x000000010d08d5f8]Thread::call_run()+0x30
+    [0x000000010cec7ee8]thread_native_entry(Thread*)+0xcc
+    [0x000000019b4c8ce4]_pthread_start+0x88 in libsystem_pthread.dylib
+
+[0x000000016f1d4000 - 0x000000016f3d4000] reserved 2048KB for Thread Stack from
+    [0x000000010d08d5f8]Thread::call_run()+0x30
+    [0x000000010cec7ee8]thread_native_entry(Thread*)+0xcc
+    [0x000000019b4c8ce4]_pthread_start+0x88 in libsystem_pthread.dylib
+
+[0x000000016efc8000 - 0x000000016f1c8000] reserved 2048KB for Thread Stack from
+    [0x000000010d08d5f8]Thread::call_run()+0x30
+    [0x000000010cec7ee8]thread_native_entry(Thread*)+0xcc
+    [0x000000019b4c8ce4]_pthread_start+0x88 in libsystem_pthread.dylib
+
+[0x000000016edbc000 - 0x000000016efbc000] reserved 2048KB for Thread Stack from
+    [0x000000010d08d5f8]Thread::call_run()+0x30
+    [0x000000010cec7ee8]thread_native_entry(Thread*)+0xcc
+    [0x000000019b4c8ce4]_pthread_start+0x88 in libsystem_pthread.dylib
+
+[0x000000016ebb0000 - 0x000000016edb0000] reserved 2048KB for Thread Stack from
+    [0x000000010d08d5f8]Thread::call_run()+0x30
+    [0x000000010cec7ee8]thread_native_entry(Thread*)+0xcc
+    [0x000000019b4c8ce4]_pthread_start+0x88 in libsystem_pthread.dylib
+
+[0x000000016e9a4000 - 0x000000016eba4000] reserved 2048KB for Thread Stack from
+    [0x000000010d08d5f8]Thread::call_run()+0x30
+    [0x000000010cec7ee8]thread_native_entry(Thread*)+0xcc
+    [0x000000019b4c8ce4]_pthread_start+0x88 in libsystem_pthread.dylib
+
+[0x000000016e798000 - 0x000000016e998000] reserved 2048KB for Thread Stack from
+    [0x000000010d08d5f8]Thread::call_run()+0x30
+    [0x000000010cec7ee8]thread_native_entry(Thread*)+0xcc
+    [0x000000019b4c8ce4]_pthread_start+0x88 in libsystem_pthread.dylib
+
+        [0x000000016e984000 - 0x000000016e998000] committed 80KB
+
+[0x000000016e58c000 - 0x000000016e78c000] reserved 2048KB for Thread Stack from
+    [0x000000010d08d5f8]Thread::call_run()+0x30
+    [0x000000010cec7ee8]thread_native_entry(Thread*)+0xcc
+    [0x000000019b4c8ce4]_pthread_start+0x88 in libsystem_pthread.dylib
+
+[0x000000016e380000 - 0x000000016e580000] reserved 2048KB for Thread Stack from
+    [0x000000010d08d5f8]Thread::call_run()+0x30
+    [0x000000010cec7ee8]thread_native_entry(Thread*)+0xcc
+    [0x000000019b4c8ce4]_pthread_start+0x88 in libsystem_pthread.dylib
+
+[0x000000016e05c000 - 0x000000016e25c000] reserved 2048KB for Thread Stack from
+    [0x000000010d08d5f8]Thread::call_run()+0x30
+    [0x000000010cec7ee8]thread_native_entry(Thread*)+0xcc
+    [0x000000019b4c8ce4]_pthread_start+0x88 in libsystem_pthread.dylib
+
+[0x000000016de50000 - 0x000000016e050000] reserved 2048KB for Thread Stack from
+    [0x000000010d08d5f8]Thread::call_run()+0x30
+    [0x000000010cec7ee8]thread_native_entry(Thread*)+0xcc
+    [0x000000019b4c8ce4]_pthread_start+0x88 in libsystem_pthread.dylib
+
+[0x000000016dc44000 - 0x000000016de44000] reserved 2048KB for Thread Stack from
+    [0x000000010d08d5f8]Thread::call_run()+0x30
+    [0x000000010cec7ee8]thread_native_entry(Thread*)+0xcc
+    [0x000000019b4c8ce4]_pthread_start+0x88 in libsystem_pthread.dylib
+
+[0x000000016da38000 - 0x000000016dc38000] reserved 2048KB for Thread Stack from
+    [0x000000010d08d5f8]Thread::call_run()+0x30
+    [0x000000010cec7ee8]thread_native_entry(Thread*)+0xcc
+    [0x000000019b4c8ce4]_pthread_start+0x88 in libsystem_pthread.dylib
+
+[0x000000016d82c000 - 0x000000016da2c000] reserved 2048KB for Thread Stack from
+    [0x000000010d08d5f8]Thread::call_run()+0x30
+    [0x000000010cec7ee8]thread_native_entry(Thread*)+0xcc
+    [0x000000019b4c8ce4]_pthread_start+0x88 in libsystem_pthread.dylib
+
+[0x000000016d620000 - 0x000000016d820000] reserved 2048KB for Thread Stack from
+    [0x000000010d08d5f8]Thread::call_run()+0x30
+    [0x000000010cec7ee8]thread_native_entry(Thread*)+0xcc
+    [0x000000019b4c8ce4]_pthread_start+0x88 in libsystem_pthread.dylib
+
+[0x000000016d414000 - 0x000000016d614000] reserved 2048KB for Thread Stack from
+    [0x000000010d08d5f8]Thread::call_run()+0x30
+    [0x000000010cec7ee8]thread_native_entry(Thread*)+0xcc
+    [0x000000019b4c8ce4]_pthread_start+0x88 in libsystem_pthread.dylib
+
+[0x000000016d208000 - 0x000000016d408000] reserved 2048KB for Thread Stack from
+    [0x000000010d0988a4]Threads::create_vm(JavaVMInitArgs*, bool*)+0x230
+    [0x000000010cc66e6c]JNI_CreateJavaVM+0x74
+    [0x0000000102cb9464]JavaMain+0x100 in libjli.dylib
+    [0x0000000102cbc2e8]ThreadJavaMain+0xc in libjli.dylib
+
+[0x0000000130000000 - 0x0000000134000000] reserved 65536KB for Metaspace from
+    [0x000000010ce62328]MemoryReserver::reserve_memory(char*, unsigned long, unsigned long, unsigned long, bool, MemTag)+0x54
+    [0x000000010ce6267c]MemoryReserver::reserve(char*, unsigned long, unsigned long, unsigned long, bool, MemTag)+0x11c
+    [0x000000010d0e5df0]metaspace::VirtualSpaceNode::create_node(unsigned long, metaspace::CommitLimiter*, metaspace::AbstractCounter<unsigned long>*, metaspace::AbstractCounter<unsigned long>*)+0x48
+    [0x000000010d0e559c]metaspace::VirtualSpaceList::allocate_root_chunk()+0x50
+
+        [0x0000000130000000 - 0x0000000130010000] committed 64KB from
+            [0x000000010d0e5900]metaspace::VirtualSpaceNode::commit_range(MetaWordImpl**, unsigned long)+0xf8
+            [0x000000010ce65298]metaspace::Metachunk::commit_up_to(unsigned long)+0xa0
+            [0x000000010c9d26a4]metaspace::ChunkManager::get_chunk_locked(signed char, signed char, unsigned long)+0x12c
+            [0x000000010c9d2530]metaspace::ChunkManager::get_chunk(signed char, signed char, unsigned long)+0x50
+
+        [0x0000000130010000 - 0x0000000130130000] committed 1152KB from
+            [0x000000010d0e5900]metaspace::VirtualSpaceNode::commit_range(MetaWordImpl**, unsigned long)+0xf8
+            [0x000000010ce65298]metaspace::Metachunk::commit_up_to(unsigned long)+0xa0
+            [0x000000010ce65300]metaspace::Metachunk::ensure_committed(unsigned long)+0x48
+            [0x000000010ce67e70]metaspace::MetaspaceArena::allocate_inner(unsigned long, metaspace::MetaBlock&)+0xac
+
+        [0x0000000130400000 - 0x0000000130420000] committed 128KB from
+            [0x000000010d0e5900]metaspace::VirtualSpaceNode::commit_range(MetaWordImpl**, unsigned long)+0xf8
+            [0x000000010ce65298]metaspace::Metachunk::commit_up_to(unsigned long)+0xa0
+            [0x000000010c9d26a4]metaspace::ChunkManager::get_chunk_locked(signed char, signed char, unsigned long)+0x12c
+            [0x000000010c9d2530]metaspace::ChunkManager::get_chunk(signed char, signed char, unsigned long)+0x50
+
+[0x000000012e000000 - 0x0000000130000000] reserved and committed 32768KB for GC from
+    [0x000000010cb26420]MmapArrayAllocator<G1CMMarkStack::TaskQueueEntryChunk>::allocate_or_null(unsigned long, MemTag)+0x34
+    [0x000000010cb262b0]G1CMMarkStack::ChunkAllocator::reserve(unsigned long)+0xc0
+    [0x000000010cb25fd4]G1CMMarkStack::ChunkAllocator::initialize(unsigned long, unsigned long)+0x98
+    [0x000000010cb25f00]G1CMMarkStack::initialize()+0x154
+
+        [0x000000012e000000 - 0x0000000130000000] committed 32768KB from
+            [0x000000010cb26438]MmapArrayAllocator<G1CMMarkStack::TaskQueueEntryChunk>::allocate_or_null(unsigned long, MemTag)+0x4c
+            [0x000000010cb262b0]G1CMMarkStack::ChunkAllocator::reserve(unsigned long)+0xc0
+            [0x000000010cb25fd4]G1CMMarkStack::ChunkAllocator::initialize(unsigned long, unsigned long)+0x98
+            [0x000000010cb25f00]G1CMMarkStack::initialize()+0x154
+
+[0x0000000125800000 - 0x000000012e000000] reserved 139264KB for Java Heap from
+    [0x000000010ceccba4]os::reserve_memory_aligned(unsigned long, unsigned long, MemTag, bool)+0x24
+    [0x000000010ce62354]MemoryReserver::reserve_memory(char*, unsigned long, unsigned long, unsigned long, bool, MemTag)+0x80
+    [0x000000010ce6267c]MemoryReserver::reserve(char*, unsigned long, unsigned long, unsigned long, bool, MemTag)+0x11c
+    [0x000000010ce63090]HeapReserver::Instance::reserve_compressed_oops_heap(unsigned long, unsigned long, unsigned long)+0x374
+
+        [0x0000000126000000 - 0x0000000128000000] committed 32768KB from
+            [0x000000010cb59060]G1PageBasedVirtualSpace::commit_internal(unsigned long, unsigned long)+0x7c
+            [0x000000010cb591c0]G1PageBasedVirtualSpace::commit(unsigned long, unsigned long)+0xa8
+            [0x000000010cb6225c]G1RegionsLargerThanCommitSizeMapper::commit_regions(unsigned int, unsigned long, WorkerThreads*)+0x58
+            [0x000000010cb4c588]G1HeapRegionManager::commit_regions(unsigned int, unsigned long, WorkerThreads*)+0x5c
+
+        [0x000000012de00000 - 0x000000012df1f968] committed 1150KB from
+            [0x000000010cafb964]map_memory(int, char const*, unsigned long, char*, unsigned long, bool, bool, MemTag)+0x38
+            [0x000000010cafc414]FileMapInfo::map_heap_region_impl()+0x15c
+            [0x000000010cafbd34]FileMapInfo::map_or_load_heap_region()+0x4c
+            [0x000000010ce6dc80]MetaspaceShared::map_archives(FileMapInfo*, FileMapInfo*, bool)+0x344
+
+        [0x000000012df1f968 - 0x000000012e000000] committed 898KB from
+            [0x000000010cb59060]G1PageBasedVirtualSpace::commit_internal(unsigned long, unsigned long)+0x7c
+            [0x000000010cb591c0]G1PageBasedVirtualSpace::commit(unsigned long, unsigned long)+0xa8
+            [0x000000010cb6225c]G1RegionsLargerThanCommitSizeMapper::commit_regions(unsigned int, unsigned long, WorkerThreads*)+0x58
+            [0x000000010cb4c588]G1HeapRegionManager::commit_regions(unsigned int, unsigned long, WorkerThreads*)+0x5c
+
+[0x0000000116298000 - 0x000000012529c000] reserved 245776KB for Code from
+    [0x000000010ce62328]MemoryReserver::reserve_memory(char*, unsigned long, unsigned long, unsigned long, bool, MemTag)+0x54
+    [0x000000010ce6267c]MemoryReserver::reserve(char*, unsigned long, unsigned long, unsigned long, bool, MemTag)+0x11c
+    [0x000000010ca245ec]CodeCache::reserve_heap_memory(unsigned long, unsigned long)+0x5c
+    [0x000000010ca2421c]CodeCache::initialize_heaps()+0x5c0
+
+        [0x0000000116298000 - 0x0000000116508000] committed 2496KB from
+            [0x000000010d0e6900]commit_expanded(char*, unsigned long, unsigned long, bool, bool)+0x24
+            [0x000000010d0e6798]VirtualSpace::expand_by(unsigned long, bool)+0x100
+            [0x000000010d0e6680]VirtualSpace::initialize_with_granularity(ReservedSpace, unsigned long, unsigned long)+0x74
+            [0x000000010d0e65f8]VirtualSpace::initialize(ReservedSpace, unsigned long)+0x50
+
+        [0x000000011d7d0000 - 0x000000011da40000] committed 2496KB from
+            [0x000000010d0e6900]commit_expanded(char*, unsigned long, unsigned long, bool, bool)+0x24
+            [0x000000010d0e6798]VirtualSpace::expand_by(unsigned long, bool)+0x100
+            [0x000000010d0e6680]VirtualSpace::initialize_with_granularity(ReservedSpace, unsigned long, unsigned long)+0x74
+            [0x000000010d0e65f8]VirtualSpace::initialize(ReservedSpace, unsigned long)+0x50
+
+        [0x000000011dd64000 - 0x000000011dfd4000] committed 2496KB from
+            [0x000000010d0e6900]commit_expanded(char*, unsigned long, unsigned long, bool, bool)+0x24
+            [0x000000010d0e6798]VirtualSpace::expand_by(unsigned long, bool)+0x100
+            [0x000000010d0e6680]VirtualSpace::initialize_with_granularity(ReservedSpace, unsigned long, unsigned long)+0x74
+            [0x000000010d0e65f8]VirtualSpace::initialize(ReservedSpace, unsigned long)+0x50
+
+[0x000000010bbb0000 - 0x000000010bdb0000] reserved 2048KB for GC from
+    [0x000000010ce62328]MemoryReserver::reserve_memory(char*, unsigned long, unsigned long, unsigned long, bool, MemTag)+0x54
+    [0x000000010ce6267c]MemoryReserver::reserve(char*, unsigned long, unsigned long, unsigned long, bool, MemTag)+0x11c
+    [0x000000010cb1c5a8]G1CollectedHeap::create_aux_memory_mapper(char const*, unsigned long, unsigned long)+0x84
+    [0x000000010cb1c8c8]G1CollectedHeap::initialize()+0x21c
+
+        [0x000000010bbb0000 - 0x000000010bc30000] committed 512KB from
+            [0x000000010cb59060]G1PageBasedVirtualSpace::commit_internal(unsigned long, unsigned long)+0x7c
+            [0x000000010cb591c0]G1PageBasedVirtualSpace::commit(unsigned long, unsigned long)+0xa8
+            [0x000000010cb6225c]G1RegionsLargerThanCommitSizeMapper::commit_regions(unsigned int, unsigned long, WorkerThreads*)+0x58
+            [0x000000010cb4c5a4]G1HeapRegionManager::commit_regions(unsigned int, unsigned long, WorkerThreads*)+0x78
+
+        [0x000000010bda8000 - 0x000000010bdb0000] committed 32KB from
+            [0x000000010cb59060]G1PageBasedVirtualSpace::commit_internal(unsigned long, unsigned long)+0x7c
+            [0x000000010cb591c0]G1PageBasedVirtualSpace::commit(unsigned long, unsigned long)+0xa8
+            [0x000000010cb6225c]G1RegionsLargerThanCommitSizeMapper::commit_regions(unsigned int, unsigned long, WorkerThreads*)+0x58
+            [0x000000010cb4c5a4]G1HeapRegionManager::commit_regions(unsigned int, unsigned long, WorkerThreads*)+0x78
+
+[0x000000010b9d8000 - 0x000000010bbb0000] reserved 1888KB for Code from
+    [0x000000010ce62328]MemoryReserver::reserve_memory(char*, unsigned long, unsigned long, unsigned long, bool, MemTag)+0x54
+    [0x000000010ce6267c]MemoryReserver::reserve(char*, unsigned long, unsigned long, unsigned long, bool, MemTag)+0x11c
+    [0x000000010cba53f0]CodeHeap::reserve(ReservedSpace, unsigned long, unsigned long)+0x100
+    [0x000000010ca2471c]CodeCache::add_heap(ReservedSpace, char const*, CodeBlobType)+0xb8
+
+        [0x000000010b9d8000 - 0x000000010b9e4000] committed 48KB from
+            [0x000000010d0e6900]commit_expanded(char*, unsigned long, unsigned long, bool, bool)+0x24
+            [0x000000010d0e6798]VirtualSpace::expand_by(unsigned long, bool)+0x100
+            [0x000000010d0e6680]VirtualSpace::initialize_with_granularity(ReservedSpace, unsigned long, unsigned long)+0x74
+            [0x000000010d0e65f8]VirtualSpace::initialize(ReservedSpace, unsigned long)+0x50
+
+[0x000000010b800000 - 0x000000010b9d8000] reserved 1888KB for Code from
+    [0x000000010ce62328]MemoryReserver::reserve_memory(char*, unsigned long, unsigned long, unsigned long, bool, MemTag)+0x54
+    [0x000000010ce6267c]MemoryReserver::reserve(char*, unsigned long, unsigned long, unsigned long, bool, MemTag)+0x11c
+    [0x000000010cba53f0]CodeHeap::reserve(ReservedSpace, unsigned long, unsigned long)+0x100
+    [0x000000010ca2471c]CodeCache::add_heap(ReservedSpace, char const*, CodeBlobType)+0xb8
+
+        [0x000000010b800000 - 0x000000010b80c000] committed 48KB from
+            [0x000000010d0e6900]commit_expanded(char*, unsigned long, unsigned long, bool, bool)+0x24
+            [0x000000010d0e6798]VirtualSpace::expand_by(unsigned long, bool)+0x100
+            [0x000000010d0e6680]VirtualSpace::initialize_with_granularity(ReservedSpace, unsigned long, unsigned long)+0x74
+            [0x000000010d0e65f8]VirtualSpace::initialize(ReservedSpace, unsigned long)+0x50
+
+[0x000000010775c000 - 0x000000010779c000] reserved 256KB for GC from
+    [0x000000010ce62328]MemoryReserver::reserve_memory(char*, unsigned long, unsigned long, unsigned long, bool, MemTag)+0x54
+    [0x000000010ce6267c]MemoryReserver::reserve(char*, unsigned long, unsigned long, unsigned long, bool, MemTag)+0x11c
+    [0x000000010cb1c5a8]G1CollectedHeap::create_aux_memory_mapper(char const*, unsigned long, unsigned long)+0x84
+    [0x000000010cb1c8a0]G1CollectedHeap::initialize()+0x1f4
+
+        [0x000000010775c000 - 0x000000010776c000] committed 64KB from
+            [0x000000010cb59060]G1PageBasedVirtualSpace::commit_internal(unsigned long, unsigned long)+0x7c
+            [0x000000010cb591c0]G1PageBasedVirtualSpace::commit(unsigned long, unsigned long)+0xa8
+            [0x000000010cb62760]G1RegionsSmallerThanCommitSizeMapper::commit_regions(unsigned int, unsigned long, WorkerThreads*)+0xa8
+            [0x000000010cb4c460]G1HeapRegionManager::expand(unsigned int, unsigned int, WorkerThreads*)+0x30
+
+        [0x0000000107798000 - 0x000000010779c000] committed 16KB from
+            [0x000000010cb59060]G1PageBasedVirtualSpace::commit_internal(unsigned long, unsigned long)+0x7c
+            [0x000000010cb591c0]G1PageBasedVirtualSpace::commit(unsigned long, unsigned long)+0xa8
+            [0x000000010cb62760]G1RegionsSmallerThanCommitSizeMapper::commit_regions(unsigned int, unsigned long, WorkerThreads*)+0xa8
+            [0x000000010cb4c460]G1HeapRegionManager::expand(unsigned int, unsigned int, WorkerThreads*)+0x30
+
+[0x000000010771c000 - 0x000000010775c000] reserved 256KB for GC from
+    [0x000000010ce62328]MemoryReserver::reserve_memory(char*, unsigned long, unsigned long, unsigned long, bool, MemTag)+0x54
+    [0x000000010ce6267c]MemoryReserver::reserve(char*, unsigned long, unsigned long, unsigned long, bool, MemTag)+0x11c
+    [0x000000010cb1c5a8]G1CollectedHeap::create_aux_memory_mapper(char const*, unsigned long, unsigned long)+0x84
+    [0x000000010cb1c87c]G1CollectedHeap::initialize()+0x1d0
+
+        [0x000000010771c000 - 0x000000010772c000] committed 64KB from
+            [0x000000010cb59060]G1PageBasedVirtualSpace::commit_internal(unsigned long, unsigned long)+0x7c
+            [0x000000010cb591c0]G1PageBasedVirtualSpace::commit(unsigned long, unsigned long)+0xa8
+            [0x000000010cb62760]G1RegionsSmallerThanCommitSizeMapper::commit_regions(unsigned int, unsigned long, WorkerThreads*)+0xa8
+            [0x000000010cb4c5c0]G1HeapRegionManager::commit_regions(unsigned int, unsigned long, WorkerThreads*)+0x94
+
+        [0x0000000107758000 - 0x000000010775c000] committed 16KB from
+            [0x000000010cb59060]G1PageBasedVirtualSpace::commit_internal(unsigned long, unsigned long)+0x7c
+            [0x000000010cb591c0]G1PageBasedVirtualSpace::commit(unsigned long, unsigned long)+0xa8
+            [0x000000010cb62760]G1RegionsSmallerThanCommitSizeMapper::commit_regions(unsigned int, unsigned long, WorkerThreads*)+0xa8
+            [0x000000010cb4c5c0]G1HeapRegionManager::commit_regions(unsigned int, unsigned long, WorkerThreads*)+0x94
+
+[0x0000000103294000 - 0x00000001032a0000] reserved and committed 48KB for GC from
+    [0x000000010cb36910]MmapArrayAllocator<unsigned char>::allocate(unsigned long, MemTag)+0x34
+    [0x000000010cb36704]Padded2DArray<unsigned long, (MemTag)5, 128ul>::create_unfreeable(unsigned int, unsigned int, unsigned long*)+0x4c
+    [0x000000010cb36638]G1FromCardCache::initialize(unsigned int)+0x74
+    [0x000000010cb1c910]G1CollectedHeap::initialize()+0x264
+
+        [0x0000000103294000 - 0x00000001032a0000] committed 48KB from
+            [0x000000010cb3692c]MmapArrayAllocator<unsigned char>::allocate(unsigned long, MemTag)+0x50
+            [0x000000010cb36704]Padded2DArray<unsigned long, (MemTag)5, 128ul>::create_unfreeable(unsigned int, unsigned int, unsigned long*)+0x4c
+            [0x000000010cb36638]G1FromCardCache::initialize(unsigned int)+0x74
+            [0x000000010cb1c910]G1CollectedHeap::initialize()+0x264
+
+[0x0000000103138000 - 0x0000000103150000] reserved 96KB for Code from
+    [0x000000010ce62328]MemoryReserver::reserve_memory(char*, unsigned long, unsigned long, unsigned long, bool, MemTag)+0x54
+    [0x000000010ce6267c]MemoryReserver::reserve(char*, unsigned long, unsigned long, unsigned long, bool, MemTag)+0x11c
+    [0x000000010cba53f0]CodeHeap::reserve(ReservedSpace, unsigned long, unsigned long)+0x100
+    [0x000000010ca2471c]CodeCache::add_heap(ReservedSpace, char const*, CodeBlobType)+0xb8
+
+        [0x0000000103138000 - 0x0000000103144000] committed 48KB from
+            [0x000000010d0e6900]commit_expanded(char*, unsigned long, unsigned long, bool, bool)+0x24
+            [0x000000010d0e6798]VirtualSpace::expand_by(unsigned long, bool)+0x100
+            [0x000000010d0e6680]VirtualSpace::initialize_with_granularity(ReservedSpace, unsigned long, unsigned long)+0x74
+            [0x000000010d0e65f8]VirtualSpace::initialize(ReservedSpace, unsigned long)+0x50
+
+[0x00000001030d8000 - 0x00000001030e0000] reserved and committed 32KB for Internal from
+    [0x000000010cef0cdc]PerfMemory::create_memory_region(unsigned long)+0x3d8
+    [0x000000010cef04f8]PerfMemory::initialize()+0x74
+    [0x000000010cbc0638]vm_init_globals()+0x20
+    [0x000000010d0987f8]Threads::create_vm(JavaVMInitArgs*, bool*)+0x184
+
+[0x0000000102ca8000 - 0x0000000102cb0000] reserved and committed 32KB for Safepoint from
+    [0x000000010cf39694]SafepointMechanism::default_initialize()+0x4c
+    [0x000000010d0987bc]Threads::create_vm(JavaVMInitArgs*, bool*)+0x148
+    [0x000000010cc66e6c]JNI_CreateJavaVM+0x74
+    [0x0000000102cb9464]JavaMain+0x100 in libjli.dylib
+
+        [0x0000000102ca8000 - 0x0000000102cb0000] committed 32KB from
+            [0x000000010cf396ac]SafepointMechanism::default_initialize()+0x64
+            [0x000000010d0987bc]Threads::create_vm(JavaVMInitArgs*, bool*)+0x148
+            [0x000000010cc66e6c]JNI_CreateJavaVM+0x74
+            [0x0000000102cb9464]JavaMain+0x100 in libjli.dylib
+
+Memory file details
+
+Details:
+
+[0x000000010cb26dfc]G1ConcurrentMark::G1ConcurrentMark(G1CollectedHeap*, G1RegionToSpaceMapper*)+0x410
+[0x000000010cb1ca20]G1CollectedHeap::initialize()+0x374
+[0x000000010d0b26e0]universe_init()+0x80
+[0x000000010cbc06ac]init_globals()+0x68
+                             ((malloc=8192KB tag=GC #8) (at peak))
+
+[0x000000010cb1c470]G1CollectedHeap::G1CollectedHeap()+0x428
+[0x000000010d0b27fc]Universe::initialize_heap()+0x20
+[0x000000010d0b26e0]universe_init()+0x80
+[0x000000010cbc06ac]init_globals()+0x68
+                             ((malloc=8192KB tag=GC #8) (at peak))
+
+[0x000000010ced1984]bufferedStream::bufferedStream(unsigned long, unsigned long)+0x4c
+[0x000000010c92fd84]AttachListenerThread::thread_entry(JavaThread*, JavaThread*)+0x108
+[0x000000010cbf6180]JavaThread::thread_main_inner()+0x88
+[0x000000010cbf5fc4]JavaThread::run()+0x164
+                             ((malloc=1024KB tag=Internal #1) (at peak))
+
+[0x000000010d008634]ConcurrentHashTable<SymbolTableConfig, (MemTag)11>::ConcurrentHashTable(unsigned long, unsigned long, unsigned long, bool, Mutex::Rank, void*)+0xc0
+[0x000000010d0059a0]StringTable::create_table()+0x88
+[0x000000010d0b273c]universe_init()+0xdc
+[0x000000010cbc06ac]init_globals()+0x68
+                             ((malloc=512KB tag=Symbol #1) (at peak))
+
+[0x000000010c921520]Arena::Arena(MemTag, Arena::Tag, unsigned long)+0x40
+[0x000000010d050068]SymbolTable::create_table()+0xb4
+[0x000000010d0b2738]universe_init()+0xd8
+[0x000000010cbc06ac]init_globals()+0x68
+                             ((malloc=360KB tag=Arena Chunk #1) (at peak))
+
+[0x000000010d008634]ConcurrentHashTable<SymbolTableConfig, (MemTag)11>::ConcurrentHashTable(unsigned long, unsigned long, unsigned long, bool, Mutex::Rank, void*)+0xc0
+[0x000000010d05003c]SymbolTable::create_table()+0x88
+[0x000000010d0b2738]universe_init()+0xd8
+[0x000000010cbc06ac]init_globals()+0x68
+                             ((malloc=256KB tag=Symbol #1) (at peak))
+
+[0x000000010cb61930]G1RegionMarkStatsCache::G1RegionMarkStatsCache(G1RegionMarkStats*, unsigned int)+0x44
+[0x000000010cb2a588]G1CMTask::G1CMTask(unsigned int, G1ConcurrentMark*, GenericTaskQueue<G1TaskQueueEntry, (MemTag)5, 131072u>*, G1RegionMarkStats*)+0x4c
+[0x000000010cb26e34]G1ConcurrentMark::G1ConcurrentMark(G1CollectedHeap*, G1RegionToSpaceMapper*)+0x448
+[0x000000010cb1ca20]G1CollectedHeap::initialize()+0x374
+                             ((malloc=192KB tag=GC #8) (at peak))
+
+[0x000000010ce3a0cc]MallocSiteTable::new_entry(NativeCallStack const&, MemTag)+0x0
+[0x000000010ce39f3c]MallocSiteTable::lookup_or_add(NativeCallStack const&, unsigned int*, MemTag)+0x0
+[0x000000010ce39ee0]MallocSiteTable::allocation_at(NativeCallStack const&, unsigned long, unsigned int*, MemTag)+0x0
+                             ((malloc=169KB tag=Native Memory Tracking #1966) (at peak))
+
+[0x000000010ce4d550]LinkedListImpl<MallocSite, (AnyObj::allocation_type)2, (MemTag)12, (AllocFailStrategy::AllocFailEnum)1>::add(MallocSite const&)+0x2c
+[0x000000010ce4d4fc]MallocAllocationSiteWalker::do_malloc_site(MallocSite const*)+0x18
+[0x000000010ce3a17c]MallocSiteTable::walk_malloc_site(MallocSiteWalker*)+0x44
+[0x000000010ce4ca7c]MemBaseline::baseline_allocation_sites()+0x3c
+                             ((malloc=105KB tag=Native Memory Tracking #1342) (at peak))
+
+[0x000000010ce9c764]nmethod::new_nmethod(methodHandle const&, int, int, CodeOffsets*, int, DebugInformationRecorder*, Dependencies*, CodeBuffer*, int, OopMapSet*, ExceptionHandlerTable*, ImplicitExceptionTable*, AbstractCompiler*, CompLevel, char*, int, JVMCINMethodData*)+0x104
+[0x000000010c9d6f20]ciEnv::register_method(ciMethod*, int, CodeOffsets*, int, CodeBuffer*, int, OopMapSet*, ExceptionHandlerTable*, ImplicitExceptionTable*, AbstractCompiler*, bool, bool, bool, bool, int)+0x348
+[0x000000010c958018]Compilation::install_code(int)+0xb8
+[0x000000010c958130]Compilation::compile_method()+0xf8
+                             ((malloc=96KB tag=Code #259) (at peak))
+
+[0x000000010c9217e4]Arena::grow(unsigned long, AllocFailStrategy::AllocFailEnum)+0x10c
+[0x000000010c9dc568]ciInstanceKlass::compute_nonstatic_fields_impl(GrowableArray<ciField*>*)+0x150
+[0x000000010c9dc300]ciInstanceKlass::compute_nonstatic_fields()+0x78
+[0x000000010c9ea968]ciObjectFactory::init_shared_objects()+0x1178
+                             ((malloc=64KB tag=Arena Chunk #2) (at peak))
+
+[0x000000010ca1e800]CodeBlob::CodeBlob(char const*, CodeBlobKind, CodeBuffer*, int, unsigned short, short, int, OopMapSet*, bool, int)+0xd8
+[0x000000010ce9d244]nmethod::nmethod(Method*, CompilerType, int, int, int, int, int, unsigned char*, CodeOffsets*, int, DebugInformationRecorder*, Dependencies*, CodeBuffer*, int, OopMapSet*, ExceptionHandlerTable*, ImplicitExceptionTable*, AbstractCompiler*, CompLevel, char*, int, JVMCINMethodData*)+0x80
+[0x000000010ce9c89c]nmethod::new_nmethod(methodHandle const&, int, int, CodeOffsets*, int, DebugInformationRecorder*, Dependencies*, CodeBuffer*, int, OopMapSet*, ExceptionHandlerTable*, ImplicitExceptionTable*, AbstractCompiler*, CompLevel, char*, int, JVMCINMethodData*)+0x23c
+[0x000000010c9d6f20]ciEnv::register_method(ciMethod*, int, CodeOffsets*, int, CodeBuffer*, int, OopMapSet*, ExceptionHandlerTable*, ImplicitExceptionTable*, AbstractCompiler*, bool, bool, bool, bool, int)+0x348
+                             ((malloc=58KB tag=Code #281) (at peak))
+
+[0x000000010cebc69c]ImmutableOopMapBuilder::build()+0x28
+[0x000000010cebc74c]ImmutableOopMapSet::build_from(OopMapSet const*)+0x80
+[0x000000010ca1e814]CodeBlob::CodeBlob(char const*, CodeBlobKind, CodeBuffer*, int, unsigned short, short, int, OopMapSet*, bool, int)+0xec
+[0x000000010ce9d244]nmethod::nmethod(Method*, CompilerType, int, int, int, int, int, unsigned char*, CodeOffsets*, int, DebugInformationRecorder*, Dependencies*, CodeBuffer*, int, OopMapSet*, ExceptionHandlerTable*, ImplicitExceptionTable*, AbstractCompiler*, CompLevel, char*, int, JVMCINMethodData*)+0x80
+                             ((malloc=52KB tag=Code #281) (at peak))
+
+[0x000000010c9217e4]Arena::grow(unsigned long, AllocFailStrategy::AllocFailEnum)+0x10c
+[0x000000010ca20e44]CodeBuffer::initialize(int, int)+0xc4
+[0x000000010ca23240]CodeBuffer::CodeBuffer(char const*, int, int)+0xcc
+[0x000000010cf35b58]OptoRuntime::generate_uncommon_trap_blob()+0xac
+                             ((malloc=32KB tag=Arena Chunk #1) (at peak))
+
+[0x000000010c9217e4]Arena::grow(unsigned long, AllocFailStrategy::AllocFailEnum)+0x10c
+[0x000000010c9e9598]ciObjectFactory::ciObjectFactory(Arena*, int)+0x34
+[0x000000010c9d4bdc]ciEnv::ciEnv(Arena*)+0x90
+[0x000000010c9e9794]ciObjectFactory::initialize()+0x74
+                             ((malloc=32KB tag=Arena Chunk #1) (at peak))
+
+[0x000000010c9217e4]Arena::grow(unsigned long, AllocFailStrategy::AllocFailEnum)+0x10c
+[0x000000010c935b0c]LIR_List::move(LIR_Opr, LIR_Opr, CodeEmitInfo*)+0x34
+[0x000000010c97dbec]PhiResolver::~PhiResolver()+0xbc
+[0x000000010c98078c]LIRGenerator::move_to_phi(ValueStack*)+0x134
+                             ((malloc=32KB tag=Arena Chunk #1) (at peak))
+
+[0x000000010c9217e4]Arena::grow(unsigned long, AllocFailStrategy::AllocFailEnum)+0x10c
+[0x000000010c886814]GrowableArrayWithAllocator<Node*, GrowableArray<Node*>>::expand_to(int)+0x18
+[0x000000010c8867d8]GrowableArrayWithAllocator<Node*, GrowableArray<Node*>>::append(Node* const&)+0x4c
+[0x000000010cad1aa0]DCmdFactory::DCmd_list(DCmdSource)+0xa4
+                             ((malloc=32KB tag=Arena Chunk #1) (at peak))
+
+[0x000000010c9217e4]Arena::grow(unsigned long, AllocFailStrategy::AllocFailEnum)+0x10c
+[0x000000010c9e9834]ciObjectFactory::init_shared_objects()+0x44
+[0x000000010c9e97a4]ciObjectFactory::initialize()+0x84
+[0x000000010ca48e2c]CompileBroker::compiler_thread_loop()+0xa0
+                             ((malloc=32KB tag=Arena Chunk #1) (at peak))
+
+[0x000000010ceced80]PlatformMutex::PlatformMutex()+0x68
+[0x000000010cecee70]PlatformMonitor::PlatformMonitor()+0x14
+[0x000000010ce96078]Mutex::Mutex(Mutex::Rank, char const*, bool)+0x1c
+[0x000000010ce7c26c]MethodData::extra_data_lock()+0x3c
+                             ((malloc=29KB tag=Synchronization #408) (at peak))
+
+[0x000000010d008b5c]bool ConcurrentHashTable<StringTableConfig, (MemTag)11>::internal_insert_get<StringTableLookupOop, bool ConcurrentHashTable<StringTableConfig, (MemTag)11>::insert<StringTableLookupOop>(Thread*, StringTableLookupOop&, WeakHandle const&, bool*, bool*)::NOP>(Thread*, StringTableLookupOop&, WeakHandle const&, bool ConcurrentHashTable<StringTableConfig, (MemTag)11>::insert<StringTableLookupOop>(Thread*, StringTableLookupOop&, WeakHandle const&, bool*, bool*)::NOP&, bool*, bool*)+0x74
+[0x000000010d006708]StringTable::do_intern(StringWrapperInternal const&, unsigned long, JavaThread*)+0xc0
+[0x000000010d0064fc]StringTable::intern(StringWrapperInternal const&, JavaThread*)+0xdc
+[0x000000010d006404]StringTable::intern(Symbol*, JavaThread*)+0x34
+                             ((malloc=25KB tag=Symbol #1597) (at peak))
+
+[0x000000010ceceec4]PlatformMonitor::PlatformMonitor()+0x68
+[0x000000010ce96078]Mutex::Mutex(Mutex::Rank, char const*, bool)+0x1c
+[0x000000010ce7c26c]MethodData::extra_data_lock()+0x3c
+[0x000000010c9e4118]ciMethodData::load_remaining_extra_data()+0x28
+                             ((malloc=22KB tag=Synchronization #408) (at peak))
+
+[0x000000010ca30e5c]EventLogBase<GCLogMessage>::EventLogBase(char const*, char const*, int)+0x70
+[0x000000010ca2fe4c]CollectedHeap::CollectedHeap()+0x208
+[0x000000010cb1c070]G1CollectedHeap::G1CollectedHeap()+0x28
+[0x000000010d0b27fc]Universe::initialize_heap()+0x20
+                             ((malloc=20KB tag=Internal #1) (at peak))
+
+[0x000000010ca30e5c]EventLogBase<GCLogMessage>::EventLogBase(char const*, char const*, int)+0x70
+[0x000000010ca2fe14]CollectedHeap::CollectedHeap()+0x1d0
+[0x000000010cb1c070]G1CollectedHeap::G1CollectedHeap()+0x28
+[0x000000010d0b27fc]Universe::initialize_heap()+0x20
+                             ((malloc=20KB tag=Internal #1) (at peak))
+
+[0x000000010ceced80]PlatformMutex::PlatformMutex()+0x68
+[0x000000010d053a5c]ObjectSynchronizer::initialize()+0x1c
+[0x000000010d0988ec]Threads::create_vm(JavaVMInitArgs*, bool*)+0x278
+[0x000000010cc66e6c]JNI_CreateJavaVM+0x74
+                             ((malloc=18KB tag=Synchronization #256) (at peak))
+
+[0x000000010cf4b798]AdapterHandlerLibrary::create_adapter(AdapterBlob*&, int, BasicType*, bool)+0x4c
+[0x000000010cf4bb30]AdapterHandlerLibrary::get_adapter(methodHandle const&)+0x104
+[0x000000010ce745c0]Method::make_adapters(methodHandle const&, JavaThread*)+0x58
+[0x000000010ce74550]Method::link_method(methodHandle const&, JavaThread*)+0x168
+                             ((malloc=17KB tag=Code #371) (at peak))
+
+[0x000000010cad39cc]bool ConcurrentHashTable<Dictionary::Config, (MemTag)1>::internal_insert_get<DictionaryLookup, bool ConcurrentHashTable<Dictionary::Config, (MemTag)1>::insert<DictionaryLookup>(Thread*, DictionaryLookup&, InstanceKlass* const&, bool*, bool*)::NOP>(Thread*, DictionaryLookup&, InstanceKlass* const&, bool ConcurrentHashTable<Dictionary::Config, (MemTag)1>::insert<DictionaryLookup>(Thread*, DictionaryLookup&, InstanceKlass* const&, bool*, bool*)::NOP&, bool*, bool*)+0x6c
+[0x000000010cad2f5c]Dictionary::add_klass(JavaThread*, Symbol*, InstanceKlass*)+0x50
+[0x000000010d059e00]SystemDictionary::update_dictionary(JavaThread*, InstanceKlass*, ClassLoaderData*)+0x68
+[0x000000010d059104]SystemDictionary::define_instance_class(InstanceKlass*, Handle, JavaThread*)+0x1b0
+                             ((malloc=17KB tag=Class #1101) (at peak))
+
+[0x000000010ce87790]ResourceHashtableBase<FixedResourceHashtableStorage<109u, SymbolHandleBase<false>, PackageEntry*>, SymbolHandleBase<false>, PackageEntry*, (AnyObj::allocation_type)2, (MemTag)20, &SymbolHandleBase<false>::compute_hash(SymbolHandleBase<false> const&), &bool primitive_equals<SymbolHandleBase<false>>(SymbolHandleBase<false> const&, SymbolHandleBase<false> const&)>::put(SymbolHandleBase<false> const&, PackageEntry* const&)+0xac
+[0x000000010ced89d8]PackageEntryTable::load_archived_entries(Array<PackageEntry*>*)+0x6c
+[0x000000010ca11734]ArchivedClassLoaderData::restore(ClassLoaderData*, bool, bool)+0x9c
+[0x000000010ca11a88]ClassLoaderDataShared::serialize(SerializeClosure*)+0xf4
+                             ((malloc=17KB tag=Module #542) (at peak))
+
+[0x000000010cebfad0]OopStorage::Block::new_block(OopStorage const*)+0x20
+[0x000000010cec0234]OopStorage::try_add_block()+0x2c
+[0x000000010cebfd70]OopStorage::block_for_allocation()+0x30
+[0x000000010cebfc0c]OopStorage::allocate()+0x30
+                             ((malloc=16KB tag=Symbol #26) (at peak))
+
+[0x000000010caff004]FinalizerService::init()+0xa4
+[0x000000010cbc0654]init_globals()+0x10
+[0x000000010d0988f0]Threads::create_vm(JavaVMInitArgs*, bool*)+0x27c
+[0x000000010cc66e6c]JNI_CreateJavaVM+0x74
+                             ((malloc=16KB tag=Serviceability #1) (at peak))
+
+[0x000000010ce7c258]MethodData::extra_data_lock()+0x28
+[0x000000010c9e4118]ciMethodData::load_remaining_extra_data()+0x28
+[0x000000010c9e4a88]ciMethodData::load_data()+0x520
+[0x000000010c9e1208]ciMethod::ensure_method_data()+0xd4
+                             ((malloc=13KB tag=Synchronization #408) (at peak))
+
+[0x000000010cf4c018]ResourceHashtableBase<FixedResourceHashtableStorage<293u, AdapterFingerPrint*, AdapterHandlerEntry*>, AdapterFingerPrint*, AdapterHandlerEntry*, (AnyObj::allocation_type)2, (MemTag)4, &AdapterFingerPrint::compute_hash(AdapterFingerPrint* const&), &AdapterFingerPrint::equals(AdapterFingerPrint* const&, AdapterFingerPrint* const&)>::put(AdapterFingerPrint* const&, AdapterHandlerEntry* const&)+0x8c
+[0x000000010cf4b7f0]AdapterHandlerLibrary::create_adapter(AdapterBlob*&, int, BasicType*, bool)+0xa4
+[0x000000010cf4bb30]AdapterHandlerLibrary::get_adapter(methodHandle const&)+0x104
+[0x000000010ce745c0]Method::make_adapters(methodHandle const&, JavaThread*)+0x58
+                             ((malloc=12KB tag=Code #371) (at peak))
+
+[0x000000010caf32fc]EventLogBase<FormatStringLogMessage<512ul>>::EventLogBase(char const*, char const*, int)+0xac
+[0x000000010caf2ca8]Events::init()+0x170
+[0x000000010cbc062c]vm_init_globals()+0x14
+[0x000000010d0987f8]Threads::create_vm(JavaVMInitArgs*, bool*)+0x184
+                             ((malloc=10KB tag=Internal #1) (at peak))
+
+[0x000000010d0528b0]bool ConcurrentHashTable<SymbolTableConfig, (MemTag)11>::internal_insert_get<SymbolTableLookup, bool ConcurrentHashTable<SymbolTableConfig, (MemTag)11>::insert<SymbolTableLookup>(Thread*, SymbolTableLookup&, Symbol const&, bool*, bool*)::NOP>(Thread*, SymbolTableLookup&, Symbol const&, bool ConcurrentHashTable<SymbolTableConfig, (MemTag)11>::insert<SymbolTableLookup>(Thread*, SymbolTableLookup&, Symbol const&, bool*, bool*)::NOP&, bool*, bool*)+0x70
+[0x000000010d050cf8]SymbolTable::do_add_if_needed(char const*, int, unsigned long, bool)+0xe8
+[0x000000010d0512ac]SymbolTable::new_symbols(ClassLoaderData*, constantPoolHandle const&, int, char const**, int*, int*, unsigned int*)+0x68
+[0x000000010c9f91fc]ClassFileParser::parse_constant_pool_entries(ClassFileStream const*, ConstantPool*, int, JavaThread*)+0x758
+                             ((malloc=9KB tag=Symbol #304) (at peak))
+
+[0x000000010ca0d210]ClassLoaderData::ChunkedHandleList::add(oopDesc*)+0x44
+[0x000000010ca0daf4]ClassLoaderData::add_handle(Handle)+0x50
+[0x000000010cd9975c]Klass::set_java_mirror(Handle)+0x20
+[0x000000010cbe7bd0]java_lang_Class::restore_archived_mirror(Klass*, Handle, Handle, Handle, JavaThread*)+0x13c
+                             ((malloc=9KB tag=Class #34) (at peak))
+
+[0x000000010c9d2230]metaspace::ChunkHeaderPool::allocate_new_slab()+0x24
+[0x000000010cf2f5d8]metaspace::ChunkHeaderPool::allocate_chunk_header()+0x58
+[0x000000010cf2f550]metaspace::RootChunkArea::alloc_root_chunk_header(metaspace::VirtualSpaceNode*)+0x24
+[0x000000010d0e60d4]metaspace::VirtualSpaceNode::allocate_root_chunk()+0x54
+                             ((malloc=9KB tag=Metaspace #1) (at peak))
+
+[0x000000010cad28ac]Dictionary::Dictionary(ClassLoaderData*, unsigned long)+0xf8
+[0x000000010ca0d1a4]ClassLoaderData::ClassLoaderData(Handle, bool)+0x160
+[0x000000010ca10410]ClassLoaderDataGraph::add_to_graph(Handle, bool)+0x68
+[0x000000010ca10570]ClassLoaderDataGraph::add(Handle, bool)+0x3c
+                             ((malloc=9KB tag=Class #2) (at peak))
+
+[0x000000010d0528b0]bool ConcurrentHashTable<SymbolTableConfig, (MemTag)11>::internal_insert_get<SymbolTableLookup, bool ConcurrentHashTable<SymbolTableConfig, (MemTag)11>::insert<SymbolTableLookup>(Thread*, SymbolTableLookup&, Symbol const&, bool*, bool*)::NOP>(Thread*, SymbolTableLookup&, Symbol const&, bool ConcurrentHashTable<SymbolTableConfig, (MemTag)11>::insert<SymbolTableLookup>(Thread*, SymbolTableLookup&, Symbol const&, bool*, bool*)::NOP&, bool*, bool*)+0x70
+[0x000000010d050cf8]SymbolTable::do_add_if_needed(char const*, int, unsigned long, bool)+0xe8
+[0x000000010d0512ac]SymbolTable::new_symbols(ClassLoaderData*, constantPoolHandle const&, int, char const**, int*, int*, unsigned int*)+0x68
+[0x000000010c9f9254]ClassFileParser::parse_constant_pool_entries(ClassFileStream const*, ConstantPool*, int, JavaThread*)+0x7b0
+                             ((malloc=9KB tag=Symbol #24) (at peak))
+
+[0x000000010cebc69c]ImmutableOopMapBuilder::build()+0x28
+[0x000000010cebc74c]ImmutableOopMapSet::build_from(OopMapSet const*)+0x80
+[0x000000010ca1e814]CodeBlob::CodeBlob(char const*, CodeBlobKind, CodeBuffer*, int, unsigned short, short, int, OopMapSet*, bool, int)+0xec
+[0x000000010ca1ed74]RuntimeBlob::RuntimeBlob(char const*, CodeBlobKind, CodeBuffer*, int, unsigned short, short, int, OopMapSet*, bool)+0x88
+                             ((malloc=8KB tag=Code #66) (at peak))
+
+[0x000000010ce9d56c]nmethod::nmethod(Method*, CompilerType, int, int, int, int, int, unsigned char*, CodeOffsets*, int, DebugInformationRecorder*, Dependencies*, CodeBuffer*, int, OopMapSet*, ExceptionHandlerTable*, ImplicitExceptionTable*, AbstractCompiler*, CompLevel, char*, int, JVMCINMethodData*)+0x3a8
+[0x000000010ce9c89c]nmethod::new_nmethod(methodHandle const&, int, int, CodeOffsets*, int, DebugInformationRecorder*, Dependencies*, CodeBuffer*, int, OopMapSet*, ExceptionHandlerTable*, ImplicitExceptionTable*, AbstractCompiler*, CompLevel, char*, int, JVMCINMethodData*)+0x23c
+[0x000000010c9d6f20]ciEnv::register_method(ciMethod*, int, CodeOffsets*, int, CodeBuffer*, int, OopMapSet*, ExceptionHandlerTable*, ImplicitExceptionTable*, AbstractCompiler*, bool, bool, bool, bool, int)+0x348
+[0x000000010c958018]Compilation::install_code(int)+0xb8
+                             ((malloc=8KB tag=Code #259) (at peak))
+
+[0x000000010cb62c30]G1RemSetScanState::initialize(unsigned long)+0x44
+[0x000000010cb1c938]G1CollectedHeap::initialize()+0x28c
+[0x000000010d0b26e0]universe_init()+0x80
+[0x000000010cbc06ac]init_globals()+0x68
+                             ((malloc=8KB tag=GC #1) (at peak))
+
+[0x000000010cf2b7ac]ResolvedMethodTable::create_table()+0xa8
+[0x000000010d0b2758]universe_init()+0xf8
+[0x000000010cbc06ac]init_globals()+0x68
+[0x000000010d0988f0]Threads::create_vm(JavaVMInitArgs*, bool*)+0x27c
+                             ((malloc=8KB tag=Class #1) (at peak))
+
+[0x000000010cc9c97c]JVM_StartThread+0x248
+[0x000000011d7d86b8]
+                             ((malloc=8KB tag=Thread #4) (at peak))
+
+[0x000000010cad28ac]Dictionary::Dictionary(ClassLoaderData*, unsigned long)+0xf8
+[0x000000010ca0d1a4]ClassLoaderData::ClassLoaderData(Handle, bool)+0x160
+[0x000000010ca0cd70]ClassLoaderData::init_null_class_loader_data()+0x44
+[0x000000010d0b2704]universe_init()+0xa4
+                             ((malloc=8KB tag=Class #1) (at peak))
+
+[0x000000010cec2b5c]os::strdup(char const*, MemTag)+0x2c
+[0x000000010ce96084]Mutex::Mutex(Mutex::Rank, char const*, bool)+0x28
+[0x000000010ce7c26c]MethodData::extra_data_lock()+0x3c
+[0x000000010c9e4118]ciMethodData::load_remaining_extra_data()+0x28
+                             ((malloc=7KB tag=Internal #408) (at peak))
+
+[0x000000010ce9c764]nmethod::new_nmethod(methodHandle const&, int, int, CodeOffsets*, int, DebugInformationRecorder*, Dependencies*, CodeBuffer*, int, OopMapSet*, ExceptionHandlerTable*, ImplicitExceptionTable*, AbstractCompiler*, CompLevel, char*, int, JVMCINMethodData*)+0x104
+[0x000000010c9d6f20]ciEnv::register_method(ciMethod*, int, CodeOffsets*, int, CodeBuffer*, int, OopMapSet*, ExceptionHandlerTable*, ImplicitExceptionTable*, AbstractCompiler*, bool, bool, bool, bool, int)+0x348
+[0x000000010ced7d20]PhaseOutput::install_code(ciMethod*, int, AbstractCompiler*, bool, bool)+0xf4
+[0x000000010ca3d544]Compile::Code_Gen()+0x2e0
+                             ((malloc=7KB tag=Code #22) (at peak))
+
+[0x000000010ca0d210]ClassLoaderData::ChunkedHandleList::add(oopDesc*)+0x44
+[0x000000010ca0daf4]ClassLoaderData::add_handle(Handle)+0x50
+[0x000000010ca5ca1c]ConstantPool::restore_unshareable_info(JavaThread*)+0x170
+[0x000000010cbc71ec]InstanceKlass::restore_unshareable_info(ClassLoaderData*, Handle, PackageEntry*, JavaThread*)+0xec
+                             ((malloc=7KB tag=Class #26) (at peak))
+
+[0x000000010c921520]Arena::Arena(MemTag, Arena::Tag, unsigned long)+0x40
+[0x000000010d08d224]Thread::Thread(MemTag)+0xa8
+[0x000000010cbf5778]JavaThread::JavaThread(MemTag)+0x14
+[0x000000010cbf5c74]JavaThread::JavaThread(void (*)(JavaThread*, JavaThread*), unsigned long, MemTag)+0x24
+                             ((malloc=7KB tag=Arena Chunk #7) (at peak))
+
+[0x000000010ca0d210]ClassLoaderData::ChunkedHandleList::add(oopDesc*)+0x44
+[0x000000010ca0daf4]ClassLoaderData::add_handle(Handle)+0x50
+[0x000000010cd9975c]Klass::set_java_mirror(Handle)+0x20
+[0x000000010cbe7d94]java_lang_Class::create_mirror(Klass*, Handle, Handle, Handle, Handle, JavaThread*)+0xe0
+                             ((malloc=6KB tag=Class #23) (at peak))
+
+[0x000000010ca1e800]CodeBlob::CodeBlob(char const*, CodeBlobKind, CodeBuffer*, int, unsigned short, short, int, OopMapSet*, bool, int)+0xd8
+[0x000000010ca1ed74]RuntimeBlob::RuntimeBlob(char const*, CodeBlobKind, CodeBuffer*, int, unsigned short, short, int, OopMapSet*, bool)+0x88
+[0x000000010ca1f3a8]AdapterBlob::create(CodeBuffer*)+0x98
+[0x000000010cf4be30]AdapterHandlerLibrary::generate_adapter_code(AdapterBlob*&, AdapterHandlerEntry*, int, BasicType*, bool)+0x10c
+                             ((malloc=6KB tag=Code #376) (at peak))
+
+[0x000000010cb17e78]G1CodeRootSet::G1CodeRootSet()+0x20
+[0x000000010cb4e048]G1HeapRegionRemSet::G1HeapRegionRemSet(G1HeapRegion*)+0x14
+[0x000000010cb48b54]G1HeapRegion::G1HeapRegion(unsigned int, G1BlockOffsetTable*, MemRegion, G1CardSetConfiguration*)+0x70
+[0x000000010cb4c4b8]G1HeapRegionManager::expand(unsigned int, unsigned int, WorkerThreads*)+0x88
+                             ((malloc=6KB tag=GC #34) (at peak))
+
+[0x000000010cb1c44c]G1CollectedHeap::G1CollectedHeap()+0x404
+[0x000000010d0b27fc]Universe::initialize_heap()+0x20
+[0x000000010d0b26e0]universe_init()+0x80
+[0x000000010cbc06ac]init_globals()+0x68
+                             ((malloc=6KB tag=GC #8) (at peak))
+
+[0x000000010d0528b0]bool ConcurrentHashTable<SymbolTableConfig, (MemTag)11>::internal_insert_get<SymbolTableLookup, bool ConcurrentHashTable<SymbolTableConfig, (MemTag)11>::insert<SymbolTableLookup>(Thread*, SymbolTableLookup&, Symbol const&, bool*, bool*)::NOP>(Thread*, SymbolTableLookup&, Symbol const&, bool ConcurrentHashTable<SymbolTableConfig, (MemTag)11>::insert<SymbolTableLookup>(Thread*, SymbolTableLookup&, Symbol const&, bool*, bool*)::NOP&, bool*, bool*)+0x70
+[0x000000010d050cf8]SymbolTable::do_add_if_needed(char const*, int, unsigned long, bool)+0xe8
+[0x000000010ca095a8]ClassPathImageEntry::open_stream_for_loader(JavaThread*, char const*, ClassLoaderData*)+0x88
+[0x000000010ca0afe4]ClassLoader::load_class(Symbol*, PackageEntry*, bool, JavaThread*)+0x110
+                             ((malloc=6KB tag=Symbol #97) (at peak))
+
+[0x000000010ca33684]EventLogBase<FormatStringLogMessage<256ul>>::EventLogBase(char const*, char const*, int)+0x70
+[0x000000010caf2dbc]Events::init()+0x284
+[0x000000010cbc062c]vm_init_globals()+0x14
+[0x000000010d0987f8]Threads::create_vm(JavaVMInitArgs*, bool*)+0x184
+                             ((malloc=5KB tag=Internal #1) (at peak))
+
+[0x000000010ca33684]EventLogBase<FormatStringLogMessage<256ul>>::EventLogBase(char const*, char const*, int)+0x70
+[0x000000010caf2d88]Events::init()+0x250
+[0x000000010cbc062c]vm_init_globals()+0x14
+[0x000000010d0987f8]Threads::create_vm(JavaVMInitArgs*, bool*)+0x184
+                             ((malloc=5KB tag=Internal #1) (at peak))
+
+[0x000000010ca33684]EventLogBase<FormatStringLogMessage<256ul>>::EventLogBase(char const*, char const*, int)+0x70
+[0x000000010caf2d54]Events::init()+0x21c
+[0x000000010cbc062c]vm_init_globals()+0x14
+[0x000000010d0987f8]Threads::create_vm(JavaVMInitArgs*, bool*)+0x184
+                             ((malloc=5KB tag=Internal #1) (at peak))
+
+[0x000000010ca33684]EventLogBase<FormatStringLogMessage<256ul>>::EventLogBase(char const*, char const*, int)+0x70
+[0x000000010caf2d18]Events::init()+0x1e0
+[0x000000010cbc062c]vm_init_globals()+0x14
+[0x000000010d0987f8]Threads::create_vm(JavaVMInitArgs*, bool*)+0x184
+                             ((malloc=5KB tag=Internal #1) (at peak))
+
+[0x000000010ca33684]EventLogBase<FormatStringLogMessage<256ul>>::EventLogBase(char const*, char const*, int)+0x70
+[0x000000010caf2ce4]Events::init()+0x1ac
+[0x000000010cbc062c]vm_init_globals()+0x14
+[0x000000010d0987f8]Threads::create_vm(JavaVMInitArgs*, bool*)+0x184
+                             ((malloc=5KB tag=Internal #1) (at peak))
+
+[0x000000010ca33684]EventLogBase<FormatStringLogMessage<256ul>>::EventLogBase(char const*, char const*, int)+0x70
+[0x000000010caf2c2c]Events::init()+0xf4
+[0x000000010cbc062c]vm_init_globals()+0x14
+[0x000000010d0987f8]Threads::create_vm(JavaVMInitArgs*, bool*)+0x184
+                             ((malloc=5KB tag=Internal #1) (at peak))
+
+[0x000000010ca33684]EventLogBase<FormatStringLogMessage<256ul>>::EventLogBase(char const*, char const*, int)+0x70
+[0x000000010caf2bf8]Events::init()+0xc0
+[0x000000010cbc062c]vm_init_globals()+0x14
+[0x000000010d0987f8]Threads::create_vm(JavaVMInitArgs*, bool*)+0x184
+                             ((malloc=5KB tag=Internal #1) (at peak))
+
+[0x000000010ca33684]EventLogBase<FormatStringLogMessage<256ul>>::EventLogBase(char const*, char const*, int)+0x70
+[0x000000010caf2bc4]Events::init()+0x8c
+[0x000000010cbc062c]vm_init_globals()+0x14
+[0x000000010d0987f8]Threads::create_vm(JavaVMInitArgs*, bool*)+0x184
+                             ((malloc=5KB tag=Internal #1) (at peak))
+
+[0x000000010ca33684]EventLogBase<FormatStringLogMessage<256ul>>::EventLogBase(char const*, char const*, int)+0x70
+[0x000000010caf2b88]Events::init()+0x50
+[0x000000010cbc062c]vm_init_globals()+0x14
+[0x000000010d0987f8]Threads::create_vm(JavaVMInitArgs*, bool*)+0x184
+                             ((malloc=5KB tag=Internal #1) (at peak))
+
+[0x000000010ca33684]EventLogBase<FormatStringLogMessage<256ul>>::EventLogBase(char const*, char const*, int)+0x70
+[0x000000010ca334d0]CompilationLog::init()+0x38
+[0x000000010ca456f4]compileBroker_init()+0x20
+[0x000000010cbc072c]init_globals2()+0x34
+                             ((malloc=5KB tag=Internal #1) (at peak))
+
+[0x000000010cb26de0]G1ConcurrentMark::G1ConcurrentMark(G1CollectedHeap*, G1RegionToSpaceMapper*)+0x3f4
+[0x000000010cb1ca20]G1CollectedHeap::initialize()+0x374
+[0x000000010d0b26e0]universe_init()+0x80
+[0x000000010cbc06ac]init_globals()+0x68
+                             ((malloc=5KB tag=GC #8) (at peak))
+
+[0x000000010ce87790]ResourceHashtableBase<FixedResourceHashtableStorage<109u, SymbolHandleBase<false>, PackageEntry*>, SymbolHandleBase<false>, PackageEntry*, (AnyObj::allocation_type)2, (MemTag)20, &SymbolHandleBase<false>::compute_hash(SymbolHandleBase<false> const&), &bool primitive_equals<SymbolHandleBase<false>>(SymbolHandleBase<false> const&, SymbolHandleBase<false> const&)>::put(SymbolHandleBase<false> const&, PackageEntry* const&)+0xac
+[0x000000010ced89d8]PackageEntryTable::load_archived_entries(Array<PackageEntry*>*)+0x6c
+[0x000000010ca11734]ArchivedClassLoaderData::restore(ClassLoaderData*, bool, bool)+0x9c
+[0x000000010ca11b9c]ClassLoaderDataShared::restore_java_system_loader_from_archive(ClassLoaderData*)+0x28
+                             ((malloc=5KB tag=Module #152) (at peak))
+
+[0x000000010cedd7ec]ParkEvent::Allocate(Thread*)+0x78
+[0x000000010d08d330]Thread::Thread(MemTag)+0x1b4
+[0x000000010cbf5778]JavaThread::JavaThread(MemTag)+0x14
+[0x000000010cbf5c74]JavaThread::JavaThread(void (*)(JavaThread*, JavaThread*), unsigned long, MemTag)+0x24
+                             ((malloc=5KB tag=Internal #11) (at peak))
+
+[0x000000010cb19e54]G1CollectedHeap::new_heap_region(unsigned int, MemRegion)+0x30
+[0x000000010cb4c4b8]G1HeapRegionManager::expand(unsigned int, unsigned int, WorkerThreads*)+0x88
+[0x000000010cb4cc4c]G1HeapRegionManager::expand_any(unsigned int, WorkerThreads*)+0x60
+[0x000000010cb4cca8]G1HeapRegionManager::expand_by(unsigned int, WorkerThreads*)+0x38
+                             ((malloc=5KB tag=GC #32) (at peak))
+
+[0x000000010d0528b0]bool ConcurrentHashTable<SymbolTableConfig, (MemTag)11>::internal_insert_get<SymbolTableLookup, bool ConcurrentHashTable<SymbolTableConfig, (MemTag)11>::insert<SymbolTableLookup>(Thread*, SymbolTableLookup&, Symbol const&, bool*, bool*)::NOP>(Thread*, SymbolTableLookup&, Symbol const&, bool ConcurrentHashTable<SymbolTableConfig, (MemTag)11>::insert<SymbolTableLookup>(Thread*, SymbolTableLookup&, Symbol const&, bool*, bool*)::NOP&, bool*, bool*)+0x70
+[0x000000010d050cf8]SymbolTable::do_add_if_needed(char const*, int, unsigned long, bool)+0xe8
+[0x000000010ca80db8]MethodFamily::generate_method_message(Symbol*, Method*) const+0xc0
+[0x000000010ca82c64]MethodFamily::generate_and_set_exception_message(InstanceKlass*, int, int)+0x13c
+                             ((malloc=4KB tag=Symbol #46) (at peak))
+
+[0x000000010c949008]BufferNode::Allocator::allocate()+0x18
+[0x000000010cf188c8]PtrQueueSet::exchange_buffer_with_new(PtrQueue&)+0x2c
+[0x000000010cb349e0]G1DirtyCardQueueSet::handle_zero_index(G1DirtyCardQueue&)+0x18
+[0x000000010cb349ac]G1DirtyCardQueueSet::enqueue(G1DirtyCardQueue&, unsigned char volatile*)+0x40
+                             ((malloc=4KB tag=GC #2) (at peak))
+
+[0x000000010cef7e94]PlaceholderTable::initialize()+0x18
+[0x000000010d05a478]SystemDictionary::initialize(JavaThread*)+0x6c
+[0x000000010d0b1094]Universe::genesis(JavaThread*)+0x80
+[0x000000010d0b303c]universe2_init()+0x24
+                             ((malloc=4KB tag=Class #1) (at peak))
+
+[0x000000010ce87790]ResourceHashtableBase<FixedResourceHashtableStorage<109u, SymbolHandleBase<false>, PackageEntry*>, SymbolHandleBase<false>, PackageEntry*, (AnyObj::allocation_type)2, (MemTag)20, &SymbolHandleBase<false>::compute_hash(SymbolHandleBase<false> const&), &bool primitive_equals<SymbolHandleBase<false>>(SymbolHandleBase<false> const&, SymbolHandleBase<false> const&)>::put(SymbolHandleBase<false> const&, PackageEntry* const&)+0xac
+[0x000000010ced89d8]PackageEntryTable::load_archived_entries(Array<PackageEntry*>*)+0x6c
+[0x000000010ca11734]ArchivedClassLoaderData::restore(ClassLoaderData*, bool, bool)+0x9c
+[0x000000010ce89fa4]Modules::define_archived_modules(Handle, Handle, JavaThread*)+0x90
+                             ((malloc=4KB tag=Module #112) (at peak))
+
+[0x000000010cf4b444]AdapterFingerPrint::allocate(int, BasicType*)+0x4c
+[0x000000010cf4b780]AdapterHandlerLibrary::create_adapter(AdapterBlob*&, int, BasicType*, bool)+0x34
+[0x000000010cf4bb30]AdapterHandlerLibrary::get_adapter(methodHandle const&)+0x104
+[0x000000010ce745c0]Method::make_adapters(methodHandle const&, JavaThread*)+0x58
+                             ((malloc=3KB tag=Code #371) (at peak))
+
+[0x000000010ca836b0]Deoptimization::UnrollBlock::UnrollBlock(int, int, int, int, long*, unsigned char**, BasicType, int)+0x3c
+[0x000000010ca841a4]Deoptimization::fetch_unroll_info_helper(JavaThread*, int)+0x7ec
+[0x000000010ca88170]Deoptimization::uncommon_trap(JavaThread*, int, int)+0x64
+                             ((malloc=3KB tag=Compiler #1) (at peak))
+
+[0x000000010cbc639c]InstanceKlass::get_jmethod_id(methodHandle const&)+0xfc
+[0x000000010ce7606c]Method::jmethod_id()+0x54
+[0x000000010cc511c0]get_method_id(JNIEnv_*, _jclass*, char const*, char const*, bool, JavaThread*)+0x3b4
+[0x000000010cc50d68]jni_GetMethodID+0xac
+                             ((malloc=3KB tag=Class #3) (at peak))
+
+[0x000000010cc8b234]JNIHandleBlock::allocate_block(JavaThread*, AllocFailStrategy::AllocFailEnum)+0x50
+[0x000000010cbf5f80]JavaThread::run()+0x120
+[0x000000010d08d654]Thread::call_run()+0x8c
+[0x000000010cec7ee8]thread_native_entry(Thread*)+0xcc
+                             ((malloc=3KB tag=Internal #11) (at peak))
+
+[0x000000010ce9cd20]nmethod::finalize_relocations()+0x200
+[0x000000010ce9cad0]nmethod::post_init()+0x28
+[0x000000010ce9d614]nmethod::nmethod(Method*, CompilerType, int, int, int, int, int, unsigned char*, CodeOffsets*, int, DebugInformationRecorder*, Dependencies*, CodeBuffer*, int, OopMapSet*, ExceptionHandlerTable*, ImplicitExceptionTable*, AbstractCompiler*, CompLevel, char*, int, JVMCINMethodData*)+0x450
+[0x000000010ce9c89c]nmethod::new_nmethod(methodHandle const&, int, int, CodeOffsets*, int, DebugInformationRecorder*, Dependencies*, CodeBuffer*, int, OopMapSet*, ExceptionHandlerTable*, ImplicitExceptionTable*, AbstractCompiler*, CompLevel, char*, int, JVMCINMethodData*)+0x23c
+                             ((malloc=3KB tag=Code #40) (at peak))
+
+[0x000000010cf2c9a0]bool ConcurrentHashTable<ResolvedMethodTableConfig, (MemTag)1>::internal_insert_get<ResolvedMethodTableLookup, bool ConcurrentHashTable<ResolvedMethodTableConfig, (MemTag)1>::insert<ResolvedMethodTableLookup>(Thread*, ResolvedMethodTableLookup&, WeakHandle const&, bool*, bool*)::NOP>(Thread*, ResolvedMethodTableLookup&, WeakHandle const&, bool ConcurrentHashTable<ResolvedMethodTableConfig, (MemTag)1>::insert<ResolvedMethodTableLookup>(Thread*, ResolvedMethodTableLookup&, WeakHandle const&, bool*, bool*)::NOP&, bool*, bool*)+0x74
+[0x000000010cf2be04]ResolvedMethodTable::add_method(Method const*, Handle)+0x130
+[0x000000010cdce060]CallInfo::set_resolved_method_name(JavaThread*)+0x20
+[0x000000010ce7f044]MethodHandles::resolve_MemberName(Handle, Klass*, int, bool, JavaThread*)+0x690
+                             ((malloc=3KB tag=Class #190) (at peak))
+
+[0x000000010ca4c6d0]CompileTask::allocate()+0x50
+[0x000000010ca4797c]CompileBroker::compile_method_base(methodHandle const&, int, int, int, CompileTask::CompileReason, bool, Thread*)+0x248
+[0x000000010ca482f4]CompileBroker::compile_method(methodHandle const&, int, int, int, CompileTask::CompileReason, DirectiveSet*, JavaThread*)+0x26c
+[0x000000010ca48058]CompileBroker::compile_method(methodHandle const&, int, int, int, CompileTask::CompileReason, JavaThread*)+0x9c
+                             ((malloc=3KB tag=Compiler #18) (at peak))
+
+[0x000000010c921520]Arena::Arena(MemTag, Arena::Tag, unsigned long)+0x40
+[0x000000010d08d224]Thread::Thread(MemTag)+0xa8
+[0x000000010cea7644]NamedThread::NamedThread()+0x10
+[0x000000010c920a9c]ArchiveWorkerThread::ArchiveWorkerThread(ArchiveWorkers*)+0x18
+                             ((malloc=3KB tag=Arena Chunk #3) (at peak))
+
+[0x000000010c921520]Arena::Arena(MemTag, Arena::Tag, unsigned long)+0x40
+[0x000000010d08d224]Thread::Thread(MemTag)+0xa8
+[0x000000010cea7644]NamedThread::NamedThread()+0x10
+[0x000000010ca59e18]ConcurrentGCThread::ConcurrentGCThread()+0xc
+                             ((malloc=3KB tag=Arena Chunk #3) (at peak))
+
+[0x000000010cb26e20]G1ConcurrentMark::G1ConcurrentMark(G1CollectedHeap*, G1RegionToSpaceMapper*)+0x434
+[0x000000010cb1ca20]G1CollectedHeap::initialize()+0x374
+[0x000000010d0b26e0]universe_init()+0x80
+[0x000000010cbc06ac]init_globals()+0x68
+                             ((malloc=3KB tag=Internal #8) (at peak))
+
+[0x000000010cc3e75c]JfrThreadLocal::JfrThreadLocal()+0x28
+[0x000000010d08d1ec]Thread::Thread(MemTag)+0x70
+[0x000000010cbf5778]JavaThread::JavaThread(MemTag)+0x14
+[0x000000010cbf5c74]JavaThread::JavaThread(void (*)(JavaThread*, JavaThread*), unsigned long, MemTag)+0x24
+                             ((malloc=3KB tag=Tracing #11) (at peak))
+
+[0x000000010ca10400]ClassLoaderDataGraph::add_to_graph(Handle, bool)+0x58
+[0x000000010ca10570]ClassLoaderDataGraph::add(Handle, bool)+0x3c
+[0x000000010d058c40]SystemDictionary::resolve_hidden_class_from_stream(ClassFileStream*, Symbol*, Handle, ClassLoadInfo const&, JavaThread*)+0x60
+[0x000000010cc914b8]JVM_LookupDefineClass+0x678
+                             ((malloc=3KB tag=Class #17) (at peak))
+
+[0x000000010cf36978]SafepointSynchronize::init(Thread*)+0x20
+[0x000000010d100374]VMThread::loop()+0x20
+[0x000000010d100244]VMThread::run()+0x84
+[0x000000010d08d654]Thread::call_run()+0x8c
+                             ((malloc=3KB tag=Internal #1) (at peak))
+
+[0x000000010cc8b234]JNIHandleBlock::allocate_block(JavaThread*, AllocFailStrategy::AllocFailEnum)+0x50
+[0x000000010cbe3fb4]JavaCallWrapper::JavaCallWrapper(methodHandle const&, Handle, JavaValue*, JavaThread*)+0x6c
+[0x000000010cbe4e64]JavaCalls::call_helper(JavaValue*, methodHandle const&, JavaCallArguments*, JavaThread*)+0x188
+[0x000000010cbc3f9c]InstanceKlass::call_class_initializer(JavaThread*)+0x250
+                             ((malloc=3KB tag=Internal #9) (at peak))
+
+[0x000000010ce678e4]metaspace::MetaspaceArena::add_allocation_to_fbl(metaspace::MetaBlock)+0x34
+[0x000000010ce68090]metaspace::MetaspaceArena::deallocate(metaspace::MetaBlock)+0x24
+[0x000000010ca1343c]ClassLoaderMetaspace::allocate(unsigned long, Metaspace::MetadataType)+0x68
+[0x000000010ce67064]Metaspace::allocate(ClassLoaderData*, unsigned long, MetaspaceObj::Type)+0x40
+                             ((malloc=3KB tag=Metaspace #9) (at peak))
+
+[0x000000010cb1c7ac]G1CollectedHeap::initialize()+0x100
+[0x000000010d0b26e0]universe_init()+0x80
+[0x000000010cbc06ac]init_globals()+0x68
+[0x000000010d0988f0]Threads::create_vm(JavaVMInitArgs*, bool*)+0x27c
+                             ((malloc=3KB tag=GC #1) (at peak))
+
+[0x000000010cb174ac]G1CardSetMemoryManager::G1CardSetMemoryManager(G1CardSetConfiguration*, G1MonotonicArenaFreePool*)+0x3c
+[0x000000010cb235c0]G1CSetCandidateGroup::G1CSetCandidateGroup(G1CardSetConfiguration*, G1MonotonicArenaFreePool*, unsigned int)+0x74
+[0x000000010cb1c2c8]G1CollectedHeap::G1CollectedHeap()+0x280
+[0x000000010d0b27fc]Universe::initialize_heap()+0x20
+                             ((malloc=3KB tag=GC #1) (at peak))
+
+[0x000000010cebfad0]OopStorage::Block::new_block(OopStorage const*)+0x20
+[0x000000010cec0234]OopStorage::try_add_block()+0x2c
+[0x000000010cebfd70]OopStorage::block_for_allocation()+0x30
+[0x000000010cebfc0c]OopStorage::allocate()+0x30
+                             ((malloc=2KB tag=Class #4) (at peak))
+
+[0x000000010c921520]Arena::Arena(MemTag, Arena::Tag, unsigned long)+0x40
+[0x000000010d08d248]Thread::Thread(MemTag)+0xcc
+[0x000000010cbf5778]JavaThread::JavaThread(MemTag)+0x14
+[0x000000010cbf5c74]JavaThread::JavaThread(void (*)(JavaThread*, JavaThread*), unsigned long, MemTag)+0x24
+                             ((malloc=2KB tag=Arena Chunk #10) (at peak))
+
+[0x000000010ceced80]PlatformMutex::PlatformMutex()+0x68
+[0x000000010cecee70]PlatformMonitor::PlatformMonitor()+0x14
+[0x000000010ce96078]Mutex::Mutex(Mutex::Rank, char const*, bool)+0x1c
+[0x000000010cb18878]G1CodeRootSetHashTable::G1CodeRootSetHashTable()+0x68
+                             ((malloc=2KB tag=Synchronization #33) (at peak))
+
+[0x000000010cf47c50]AdapterHandlerLibrary::initialize()+0x78
+[0x000000010cbc06e8]init_globals()+0xa4
+[0x000000010d0988f0]Threads::create_vm(JavaVMInitArgs*, bool*)+0x27c
+[0x000000010cc66e6c]JNI_CreateJavaVM+0x74
+                             ((malloc=2KB tag=Code #1) (at peak))
+
+[0x000000010c944188]GrowableBitMap<CHeapBitMap>::resize(unsigned long, bool)+0x6c
+[0x000000010c9429e8]CHeapBitMap::CHeapBitMap(unsigned long, MemTag, bool)+0x20
+[0x000000010ca31a04]metaspace::CommitMask::CommitMask(MetaWordImpl* const*, unsigned long)+0x24
+[0x000000010d0e5d2c]metaspace::VirtualSpaceNode::VirtualSpaceNode(ReservedSpace, bool, metaspace::CommitLimiter*, metaspace::AbstractCounter<unsigned long>*, metaspace::AbstractCounter<unsigned long>*)+0x70
+                             ((malloc=2KB tag=Metaspace #2) (at peak))
+
+[0x000000010ceced80]PlatformMutex::PlatformMutex()+0x68
+[0x000000010cecee70]PlatformMonitor::PlatformMonitor()+0x14
+[0x000000010ce96078]Mutex::Mutex(Mutex::Rank, char const*, bool)+0x1c
+[0x000000010cec0a30]make_oopstorage_mutex(char const*, char const*, Mutex::Rank)+0x60
+                             ((malloc=2KB tag=Synchronization #30) (at peak))
+
+[0x000000010ca46d7c]CompileBroker::make_thread(CompileBroker::ThreadType, _jobject*, CompileQueue*, AbstractCompiler*, JavaThread*)+0x130
+[0x000000010ca46b08]CompileBroker::init_compiler_threads()+0x324
+[0x000000010ca4636c]CompileBroker::compilation_init(JavaThread*)+0x1ac
+[0x000000010d098c7c]Threads::create_vm(JavaVMInitArgs*, bool*)+0x608
+                             ((malloc=2KB tag=Thread #1) (at peak))
+
+[0x000000010ca46d7c]CompileBroker::make_thread(CompileBroker::ThreadType, _jobject*, CompileQueue*, AbstractCompiler*, JavaThread*)+0x130
+[0x000000010ca469bc]CompileBroker::init_compiler_threads()+0x1d8
+[0x000000010ca4636c]CompileBroker::compilation_init(JavaThread*)+0x1ac
+[0x000000010d098c7c]Threads::create_vm(JavaVMInitArgs*, bool*)+0x608
+                             ((malloc=2KB tag=Thread #1) (at peak))
+
+[0x000000010ce87074]ModuleEntry::restore_growable_array(Array<ModuleEntry*>*)+0x34
+[0x000000010ced89a8]PackageEntryTable::load_archived_entries(Array<PackageEntry*>*)+0x3c
+[0x000000010ca11734]ArchivedClassLoaderData::restore(ClassLoaderData*, bool, bool)+0x9c
+[0x000000010ca11a88]ClassLoaderDataShared::serialize(SerializeClosure*)+0xf4
+                             ((malloc=2KB tag=Module #88) (at peak))
+
+[0x000000010cb5e5ec]G1Policy::G1Policy(STWGCTimer*)+0x64
+[0x000000010cb1c284]G1CollectedHeap::G1CollectedHeap()+0x23c
+[0x000000010d0b27fc]Universe::initialize_heap()+0x20
+[0x000000010d0b26e0]universe_init()+0x80
+                             ((malloc=2KB tag=GC #1) (at peak))
+
+[0x000000011d7d86b8]
+                             ((malloc=2KB tag=Other #2) (at peak))
+
+[0x000000010d0e1978]vframeArray::allocate(JavaThread*, int, GrowableArray<compiledVFrame*>*, RegisterMap*, frame, frame, frame, bool)+0x50
+[0x000000010ca84afc]Deoptimization::create_vframeArray(JavaThread*, frame, RegisterMap*, GrowableArray<compiledVFrame*>*, bool)+0xe8
+[0x000000010ca83d40]Deoptimization::fetch_unroll_info_helper(JavaThread*, int)+0x388
+[0x000000010ca88170]Deoptimization::uncommon_trap(JavaThread*, int, int)+0x64
+                             ((malloc=2KB tag=Compiler #1) (at peak))
+
+[0x000000010ce8b774]MonitorDeflationThread::initialize()+0x4c
+[0x000000010d098bd4]Threads::create_vm(JavaVMInitArgs*, bool*)+0x560
+[0x000000010cc66e6c]JNI_CreateJavaVM+0x74
+[0x0000000102cb9464]JavaMain+0x100 in libjli.dylib
+                             ((malloc=2KB tag=Thread #1) (at peak))
+
+[0x000000010cb26c58]G1ConcurrentMark::G1ConcurrentMark(G1CollectedHeap*, G1RegionToSpaceMapper*)+0x26c
+[0x000000010cb1ca20]G1CollectedHeap::initialize()+0x374
+[0x000000010d0b26e0]universe_init()+0x80
+[0x000000010cbc06ac]init_globals()+0x68
+                             ((malloc=2KB tag=GC #1) (at peak))
+
+[0x000000010c9301c0]AttachListener::init()+0x5c
+[0x000000010c93272c]AttachListener::is_init_trigger()+0x120
+[0x000000010cec272c]signal_thread_entry(JavaThread*, JavaThread*)+0x258
+[0x000000010cbf6180]JavaThread::thread_main_inner()+0x88
+                             ((malloc=2KB tag=Thread #1) (at peak))
+
+[0x000000010d098868]Threads::create_vm(JavaVMInitArgs*, bool*)+0x1f4
+[0x000000010cc66e6c]JNI_CreateJavaVM+0x74
+[0x0000000102cb9464]JavaMain+0x100 in libjli.dylib
+[0x0000000102cbc2e8]ThreadJavaMain+0xc in libjli.dylib
+                             ((malloc=2KB tag=Thread #1) (at peak))
+
+[0x000000010cec2498]os::initialize_jdk_signal_support(JavaThread*)+0x60
+[0x000000010d098b84]Threads::create_vm(JavaVMInitArgs*, bool*)+0x510
+[0x000000010cc66e6c]JNI_CreateJavaVM+0x74
+[0x0000000102cb9464]JavaMain+0x100 in libjli.dylib
+                             ((malloc=2KB tag=Thread #1) (at peak))
+
+[0x000000010cf4653c]ServiceThread::initialize()+0x4c
+[0x000000010d098bd0]Threads::create_vm(JavaVMInitArgs*, bool*)+0x55c
+[0x000000010cc66e6c]JNI_CreateJavaVM+0x74
+[0x0000000102cb9464]JavaMain+0x100 in libjli.dylib
+                             ((malloc=2KB tag=Thread #1) (at peak))
+
+[0x000000010cea7e40]NotificationThread::initialize()+0x4c
+[0x000000010ce3b6bc]Management::initialize(JavaThread*)+0x1c
+[0x000000010d098de8]Threads::create_vm(JavaVMInitArgs*, bool*)+0x774
+[0x000000010cc66e6c]JNI_CreateJavaVM+0x74
+                             ((malloc=2KB tag=Thread #1) (at peak))
+
+[0x000000010ce51440]MemRegion::create_array(unsigned long, MemTag)+0x24
+[0x000000010cb26a58]G1ConcurrentMark::G1ConcurrentMark(G1CollectedHeap*, G1RegionToSpaceMapper*)+0x6c
+[0x000000010cb1ca20]G1CollectedHeap::initialize()+0x374
+[0x000000010d0b26e0]universe_init()+0x80
+                             ((malloc=2KB tag=GC #1) (at peak))
+
+[0x000000010d0528b0]bool ConcurrentHashTable<SymbolTableConfig, (MemTag)11>::internal_insert_get<SymbolTableLookup, bool ConcurrentHashTable<SymbolTableConfig, (MemTag)11>::insert<SymbolTableLookup>(Thread*, SymbolTableLookup&, Symbol const&, bool*, bool*)::NOP>(Thread*, SymbolTableLookup&, Symbol const&, bool ConcurrentHashTable<SymbolTableConfig, (MemTag)11>::insert<SymbolTableLookup>(Thread*, SymbolTableLookup&, Symbol const&, bool*, bool*)::NOP&, bool*, bool*)+0x70
+[0x000000010d050cf8]SymbolTable::do_add_if_needed(char const*, int, unsigned long, bool)+0xe8
+[0x000000010ca01f54]ClassFileParser::mangle_hidden_class_name(InstanceKlass*)+0x140
+[0x000000010ca01ddc]ClassFileParser::create_instance_klass(bool, ClassInstanceInfo const&, JavaThread*)+0x64
+                             ((malloc=2KB tag=Symbol #28) (at peak))
+
+[0x000000010cebfad0]OopStorage::Block::new_block(OopStorage const*)+0x20
+[0x000000010cec0234]OopStorage::try_add_block()+0x2c
+[0x000000010cebfd70]OopStorage::block_for_allocation()+0x30
+[0x000000010cebfc0c]OopStorage::allocate()+0x30
+                             ((malloc=2KB tag=Internal #3) (at peak))
+
+[0x000000010ceceec4]PlatformMonitor::PlatformMonitor()+0x68
+[0x000000010ce96078]Mutex::Mutex(Mutex::Rank, char const*, bool)+0x1c
+[0x000000010cb18878]G1CodeRootSetHashTable::G1CodeRootSetHashTable()+0x68
+[0x000000010cb17e7c]G1CodeRootSet::G1CodeRootSet()+0x24
+                             ((malloc=2KB tag=Synchronization #33) (at peak))
+
+[0x000000010cedd7ec]ParkEvent::Allocate(Thread*)+0x78
+[0x000000010cbf58c4]JavaThread::JavaThread(MemTag)+0x160
+[0x000000010cbf5c74]JavaThread::JavaThread(void (*)(JavaThread*, JavaThread*), unsigned long, MemTag)+0x24
+[0x000000010cc9c994]JVM_StartThread+0x260
+                             ((malloc=2KB tag=Internal #4) (at peak))
+
+[0x000000010d05af00]ResourceHashtableBase<FixedResourceHashtableStorage<139u, InvokeMethodKey, Method*>, InvokeMethodKey, Method*, (AnyObj::allocation_type)2, (MemTag)1, &InvokeMethodKey::compute_hash(InvokeMethodKey const&), &InvokeMethodKey::key_comparison(InvokeMethodKey const&, InvokeMethodKey const&)>::put_if_absent(InvokeMethodKey const&, bool*)+0xac
+[0x000000010d05acc4]SystemDictionary::find_method_handle_intrinsic(vmIntrinsicID, Symbol*, JavaThread*)+0x64
+[0x000000010cdce894]LinkResolver::lookup_polymorphic_method(LinkInfo const&, Handle*, JavaThread*)+0x210
+[0x000000010cdcf1f8]LinkResolver::resolve_method(LinkInfo const&, Bytecodes::Code, JavaThread*)+0x37c
+                             ((malloc=2KB tag=Class #44) (at peak))
+
+[0x000000010cad39cc]bool ConcurrentHashTable<Dictionary::Config, (MemTag)1>::internal_insert_get<DictionaryLookup, bool ConcurrentHashTable<Dictionary::Config, (MemTag)1>::insert<DictionaryLookup>(Thread*, DictionaryLookup&, InstanceKlass* const&, bool*, bool*)::NOP>(Thread*, DictionaryLookup&, InstanceKlass* const&, bool ConcurrentHashTable<Dictionary::Config, (MemTag)1>::insert<DictionaryLookup>(Thread*, DictionaryLookup&, InstanceKlass* const&, bool*, bool*)::NOP&, bool*, bool*)+0x6c
+[0x000000010cad2f5c]Dictionary::add_klass(JavaThread*, Symbol*, InstanceKlass*)+0x50
+[0x000000010d0e6cac]vmClasses::resolve_shared_class(InstanceKlass*, ClassLoaderData*, Handle, JavaThread*)+0xd4
+[0x000000010d0e6b5c]vmClasses::resolve(vmClassID, JavaThread*)+0x58
+                             ((malloc=2KB tag=Class #109) (at peak))
+
+[0x000000010cb0c8cc]G1Arguments::create_heap()+0x18
+[0x000000010d0b27fc]Universe::initialize_heap()+0x20
+[0x000000010d0b26e0]universe_init()+0x80
+[0x000000010cbc06ac]init_globals()+0x68
+                             ((malloc=2KB tag=GC #1) (at peak))
+
+[0x000000010ce4da1c]LinkedListImpl<ReservedMemoryRegion, (AnyObj::allocation_type)2, (MemTag)12, (AllocFailStrategy::AllocFailEnum)1>::new_node(ReservedMemoryRegion const&) const+0x24
+[0x000000010d0e51a4]SortedLinkedList<ReservedMemoryRegion, &compare_reserved_region_base(ReservedMemoryRegion const&, ReservedMemoryRegion const&), (AnyObj::allocation_type)2, (MemTag)12, (AllocFailStrategy::AllocFailEnum)1>::add(ReservedMemoryRegion const&)+0x14
+[0x000000010d0e42c4]VirtualMemoryTracker::add_reserved_region(unsigned char*, unsigned long, NativeCallStack const&, MemTag)+0x178
+[0x000000010d097d14]ThreadStackTracker::new_thread_stack(void*, unsigned long, NativeCallStack const&)+0xac
+                             ((malloc=2KB tag=Native Memory Tracking #19) (at peak))
+
+[0x000000010cb1ca14]G1CollectedHeap::initialize()+0x368
+[0x000000010d0b26e0]universe_init()+0x80
+[0x000000010cbc06ac]init_globals()+0x68
+[0x000000010d0988f0]Threads::create_vm(JavaVMInitArgs*, bool*)+0x27c
+                             ((malloc=2KB tag=GC #1) (at peak))
+
+[0x000000010ceced80]PlatformMutex::PlatformMutex()+0x68
+[0x000000010cecee70]PlatformMonitor::PlatformMonitor()+0x14
+[0x000000010ce96078]Mutex::Mutex(Mutex::Rank, char const*, bool)+0x1c
+[0x000000010cec7260]OSThread::OSThread()+0x5c
+                             ((malloc=2KB tag=Synchronization #22) (at peak))
+
+[0x000000010ceced80]PlatformMutex::PlatformMutex()+0x68
+[0x000000010cecee70]PlatformMonitor::PlatformMonitor()+0x14
+[0x000000010ce96078]Mutex::Mutex(Mutex::Rank, char const*, bool)+0x1c
+[0x000000010cc3e7a8]JfrThreadLocal::JfrThreadLocal()+0x74
+                             ((malloc=2KB tag=Synchronization #22) (at peak))
+
+[0x000000010ce8708c]ModuleEntry::restore_growable_array(Array<ModuleEntry*>*)+0x4c
+[0x000000010ced89a8]PackageEntryTable::load_archived_entries(Array<PackageEntry*>*)+0x3c
+[0x000000010ca11734]ArchivedClassLoaderData::restore(ClassLoaderData*, bool, bool)+0x9c
+[0x000000010ca11a88]ClassLoaderDataShared::serialize(SerializeClosure*)+0xf4
+                             ((malloc=2KB tag=Module #88) (at peak))
+
+[0x000000010cb18378]bool ConcurrentHashTable<G1CodeRootSetHashTableConfig, (MemTag)5>::internal_insert_get<G1CodeRootSetHashTable::HashTableLookUp, bool ConcurrentHashTable<G1CodeRootSetHashTableConfig, (MemTag)5>::insert<G1CodeRootSetHashTable::HashTableLookUp>(Thread*, G1CodeRootSetHashTable::HashTableLookUp&, nmethod* const&, bool*, bool*)::NOP>(Thread*, G1CodeRootSetHashTable::HashTableLookUp&, nmethod* const&, bool ConcurrentHashTable<G1CodeRootSetHashTableConfig, (MemTag)5>::insert<G1CodeRootSetHashTable::HashTableLookUp>(Thread*, G1CodeRootSetHashTable::HashTableLookUp&, nmethod* const&, bool*, bool*)::NOP&, bool*, bool*)+0x6c
+[0x000000010cb17dc0]G1CodeRootSetHashTable::insert(nmethod*)+0x54
+[0x000000010ce9f1d4]nmethod::oops_do(OopClosure*, bool)+0x50
+[0x000000010cb209ec]G1CollectedHeap::register_nmethod(nmethod*)+0x34
+                             ((malloc=2KB tag=GC #97) (at peak))
+
+[0x000000010ceefea0]PerfDataList::PerfDataList(int)+0x3c
+[0x000000010ceef42c]PerfDataManager::add_item(PerfData*)+0x54
+[0x000000010ceef8cc]PerfDataManager::create_long_variable(CounterNS, char const*, PerfData::Units, long, JavaThread*)+0x70
+[0x000000010ce3b5e8]Management::init()+0x38
+                             ((malloc=1KB tag=Internal #1) (at peak))
+
+[0x000000010cc8b234]JNIHandleBlock::allocate_block(JavaThread*, AllocFailStrategy::AllocFailEnum)+0x50
+[0x000000010cbe3fb4]JavaCallWrapper::JavaCallWrapper(methodHandle const&, Handle, JavaValue*, JavaThread*)+0x6c
+[0x000000010cbe4e64]JavaCalls::call_helper(JavaValue*, methodHandle const&, JavaCallArguments*, JavaThread*)+0x188
+[0x000000010cbe42fc]JavaCalls::call_virtual(JavaValue*, Klass*, Symbol*, Symbol*, JavaCallArguments*, JavaThread*)+0x118
+                             ((malloc=1KB tag=Internal #5) (at peak))
+
+[0x000000010ceced80]PlatformMutex::PlatformMutex()+0x68
+[0x000000010cecee70]PlatformMonitor::PlatformMonitor()+0x14
+[0x000000010ce96078]Mutex::Mutex(Mutex::Rank, char const*, bool)+0x1c
+[0x000000010ca0d09c]ClassLoaderData::ClassLoaderData(Handle, bool)+0x58
+                             ((malloc=1KB tag=Synchronization #19) (at peak))
+
+[0x000000010cedd7ec]ParkEvent::Allocate(Thread*)+0x78
+[0x000000010cbf58c4]JavaThread::JavaThread(MemTag)+0x160
+[0x000000010cbf5c74]JavaThread::JavaThread(void (*)(JavaThread*, JavaThread*), unsigned long, MemTag)+0x24
+[0x000000010ca5804c]CompilerThread::CompilerThread(CompileQueue*, CompilerCounters*)+0x28
+                             ((malloc=1KB tag=Internal #3) (at peak))
+
+[0x000000010cedd7ec]ParkEvent::Allocate(Thread*)+0x78
+[0x000000010d08d330]Thread::Thread(MemTag)+0x1b4
+[0x000000010cea7644]NamedThread::NamedThread()+0x10
+[0x000000010c920a9c]ArchiveWorkerThread::ArchiveWorkerThread(ArchiveWorkers*)+0x18
+                             ((malloc=1KB tag=Internal #3) (at peak))
+
+[0x000000010cedd7ec]ParkEvent::Allocate(Thread*)+0x78
+[0x000000010d08d330]Thread::Thread(MemTag)+0x1b4
+[0x000000010cea7644]NamedThread::NamedThread()+0x10
+[0x000000010ca59e18]ConcurrentGCThread::ConcurrentGCThread()+0xc
+                             ((malloc=1KB tag=Internal #3) (at peak))
+
+[0x000000010cbc639c]InstanceKlass::get_jmethod_id(methodHandle const&)+0xfc
+[0x000000010ce7606c]Method::jmethod_id()+0x54
+[0x000000010cc511c0]get_method_id(JNIEnv_*, _jclass*, char const*, char const*, bool, JavaThread*)+0x3b4
+[0x000000010cc51278]jni_GetStaticMethodID+0xac
+                             ((malloc=1KB tag=Class #5) (at peak))
+
+[0x000000010ca132c4]ClassLoaderMetaspace::ClassLoaderMetaspace(Mutex*, Metaspace::MetaspaceType, metaspace::MetaspaceContext*, metaspace::MetaspaceContext*, unsigned long)+0x8c
+[0x000000010ca0e390]ClassLoaderData::metaspace_non_null()+0x9c
+[0x000000010ce67058]Metaspace::allocate(ClassLoaderData*, unsigned long, MetaspaceObj::Type)+0x34
+[0x000000010ce670ec]Metaspace::allocate(ClassLoaderData*, unsigned long, MetaspaceObj::Type, JavaThread*)+0x3c
+                             ((malloc=1KB tag=Class #20) (at peak))
+
+[0x000000010ca13280]ClassLoaderMetaspace::ClassLoaderMetaspace(Mutex*, Metaspace::MetaspaceType, metaspace::MetaspaceContext*, metaspace::MetaspaceContext*, unsigned long)+0x48
+[0x000000010ca0e390]ClassLoaderData::metaspace_non_null()+0x9c
+[0x000000010ce67058]Metaspace::allocate(ClassLoaderData*, unsigned long, MetaspaceObj::Type)+0x34
+[0x000000010ce670ec]Metaspace::allocate(ClassLoaderData*, unsigned long, MetaspaceObj::Type, JavaThread*)+0x3c
+                             ((malloc=1KB tag=Class #20) (at peak))
+
+[0x000000010ceceec4]PlatformMonitor::PlatformMonitor()+0x68
+[0x000000010ce96078]Mutex::Mutex(Mutex::Rank, char const*, bool)+0x1c
+[0x000000010cc3e7a8]JfrThreadLocal::JfrThreadLocal()+0x74
+[0x000000010d08d1ec]Thread::Thread(MemTag)+0x70
+                             ((malloc=1KB tag=Synchronization #22) (at peak))
+
+[0x000000010cec4ae4]os::read_image_release_file()+0xc8
+[0x000000010d09a320]ReadReleaseFileTask::task()+0x14
+[0x000000010d061764]PeriodicTask::real_time_tick(int)+0x88
+[0x000000010cea7980]WatcherThread::run()+0x4c
+                             ((malloc=1KB tag=Internal #1) (at peak))
+
+[0x000000010ceceec4]PlatformMonitor::PlatformMonitor()+0x68
+[0x000000010ce96078]Mutex::Mutex(Mutex::Rank, char const*, bool)+0x1c
+[0x000000010cec7260]OSThread::OSThread()+0x5c
+[0x000000010cec7b24]os::create_thread(Thread*, os::ThreadType, unsigned long)+0x5c
+                             ((malloc=1KB tag=Synchronization #21) (at peak))
+
+[0x000000010cb13cec]G1BiasedMappedArrayBase::create_new_base_array(unsigned long, unsigned long)+0x2c
+[0x000000010cb4bde0]G1BiasedMappedArray<G1HeapRegion*>::initialize(MemRegion, unsigned long)+0x30
+[0x000000010cb4bd9c]G1HeapRegionManager::initialize(G1RegionToSpaceMapper*, G1RegionToSpaceMapper*, G1RegionToSpaceMapper*, G1RegionToSpaceMapper*)+0x44
+[0x000000010cb1c8e4]G1CollectedHeap::initialize()+0x238
+                             ((malloc=1KB tag=GC #1) (at peak))
+
+[0x000000010cb344a0]G1ConcurrentRefineThread::create(G1ConcurrentRefine*, unsigned int)+0x28
+[0x000000010cb32cc0]G1ConcurrentRefineThreadControl::create_refinement_thread(unsigned int, bool)+0x40
+[0x000000010cb32ea0]G1ConcurrentRefineThreadControl::initialize(G1ConcurrentRefine*)+0x2c
+[0x000000010cb33134]G1ConcurrentRefine::create(G1Policy*, int*)+0x40
+                             ((malloc=1KB tag=Thread #1) (at peak))
+
+[0x000000010cb18864]G1CodeRootSetHashTable::G1CodeRootSetHashTable()+0x54
+[0x000000010cb17e7c]G1CodeRootSet::G1CodeRootSet()+0x24
+[0x000000010cb4e048]G1HeapRegionRemSet::G1HeapRegionRemSet(G1HeapRegion*)+0x14
+[0x000000010cb48b54]G1HeapRegion::G1HeapRegion(unsigned int, G1BlockOffsetTable*, MemRegion, G1CardSetConfiguration*)+0x70
+                             ((malloc=1KB tag=Synchronization #35) (at peak))
+
+[0x000000010d05a450]SystemDictionary::initialize(JavaThread*)+0x44
+[0x000000010d0b1094]Universe::genesis(JavaThread*)+0x80
+[0x000000010d0b303c]universe2_init()+0x24
+[0x000000010cbc0704]init_globals2()+0xc
+                             ((malloc=1KB tag=Class #1) (at peak))
+
+[0x000000010d05a428]SystemDictionary::initialize(JavaThread*)+0x1c
+[0x000000010d0b1094]Universe::genesis(JavaThread*)+0x80
+[0x000000010d0b303c]universe2_init()+0x24
+[0x000000010cbc0704]init_globals2()+0xc
+                             ((malloc=1KB tag=Class #1) (at peak))
+
+[0x000000010cb1c674]G1CollectedHeap::initialize_service_thread()+0x20
+[0x000000010cb1ca78]G1CollectedHeap::initialize()+0x3cc
+[0x000000010d0b26e0]universe_init()+0x80
+[0x000000010cbc06ac]init_globals()+0x68
+                             ((malloc=1KB tag=Thread #1) (at peak))
+
+[0x000000010ced0218]stringStream::grow(unsigned long)+0x38
+[0x000000010ced0360]stringStream::write(char const*, unsigned long)+0x84
+[0x000000010cecf9c4]outputStream::do_vsnprintf_and_write(char const*, char*, bool)+0xf4
+[0x000000010cecfae0]outputStream::print_cr(char const*, ...)+0x20
+                             ((malloc=1KB tag=Internal #1) (at peak))
+
+[0x000000010cec2b5c]os::strdup(char const*, MemTag)+0x2c
+[0x000000010ce96084]Mutex::Mutex(Mutex::Rank, char const*, bool)+0x28
+[0x000000010cb18878]G1CodeRootSetHashTable::G1CodeRootSetHashTable()+0x68
+[0x000000010cb17e7c]G1CodeRootSet::G1CodeRootSet()+0x24
+                             ((malloc=1KB tag=Internal #35) (at peak))
+
+[0x000000010ceceec4]PlatformMonitor::PlatformMonitor()+0x68
+[0x000000010ce96078]Mutex::Mutex(Mutex::Rank, char const*, bool)+0x1c
+[0x000000010ca0d09c]ClassLoaderData::ClassLoaderData(Handle, bool)+0x58
+[0x000000010ca10410]ClassLoaderDataGraph::add_to_graph(Handle, bool)+0x68
+                             ((malloc=1KB tag=Synchronization #19) (at peak))
+
+[0x000000010cb188b4]G1CodeRootSetHashTable::G1CodeRootSetHashTable()+0xa4
+[0x000000010cb17e7c]G1CodeRootSet::G1CodeRootSet()+0x24
+[0x000000010cb4e048]G1HeapRegionRemSet::G1HeapRegionRemSet(G1HeapRegion*)+0x14
+[0x000000010cb48b54]G1HeapRegion::G1HeapRegion(unsigned int, G1BlockOffsetTable*, MemRegion, G1CardSetConfiguration*)+0x70
+                             ((malloc=1KB tag=GC #33) (peak=1KB #35))
+
+[0x000000010cb26ccc]G1ConcurrentMark::G1ConcurrentMark(G1CollectedHeap*, G1RegionToSpaceMapper*)+0x2e0
+[0x000000010cb1ca20]G1CollectedHeap::initialize()+0x374
+[0x000000010d0b26e0]universe_init()+0x80
+[0x000000010cbc06ac]init_globals()+0x68
+                             ((malloc=1KB tag=Thread #1) (at peak))
+
+[0x000000010cb1888c]G1CodeRootSetHashTable::G1CodeRootSetHashTable()+0x7c
+[0x000000010cb17e7c]G1CodeRootSet::G1CodeRootSet()+0x24
+[0x000000010cb4e048]G1HeapRegionRemSet::G1HeapRegionRemSet(G1HeapRegion*)+0x14
+[0x000000010cb48b54]G1HeapRegion::G1HeapRegion(unsigned int, G1BlockOffsetTable*, MemRegion, G1CardSetConfiguration*)+0x70
+                             ((malloc=1KB tag=GC #33) (peak=1KB #35))
+
+[0x000000010c944188]GrowableBitMap<CHeapBitMap>::resize(unsigned long, bool)+0x6c
+[0x000000010cb58c18]G1PageBasedVirtualSpace::initialize_with_page_size(ReservedSpace, unsigned long, unsigned long)+0x88
+[0x000000010cb58b7c]G1PageBasedVirtualSpace::G1PageBasedVirtualSpace(ReservedSpace, unsigned long, unsigned long)+0x4c
+[0x000000010cb61ec4]G1RegionToSpaceMapper::G1RegionToSpaceMapper(ReservedSpace, unsigned long, unsigned long, unsigned long, unsigned long, MemTag)+0x54
+                             ((malloc=1KB tag=GC #4) (at peak))
+
+[0x000000010cb5e608]G1Policy::G1Policy(STWGCTimer*)+0x80
+[0x000000010cb1c284]G1CollectedHeap::G1CollectedHeap()+0x23c
+[0x000000010d0b27fc]Universe::initialize_heap()+0x20
+[0x000000010d0b26e0]universe_init()+0x80
+                             ((malloc=1KB tag=GC #1) (at peak))
+
+[0x000000010cdd4cc4]LoaderConstraint::LoaderConstraint(InstanceKlass*, ClassLoaderData*, ClassLoaderData*)+0x48
+[0x000000010cdd3e10]LoaderConstraintTable::add_loader_constraint(Symbol*, InstanceKlass*, ClassLoaderData*, ClassLoaderData*)+0x4c
+[0x000000010cdd4198]LoaderConstraintTable::add_entry(Symbol*, InstanceKlass*, ClassLoaderData*, InstanceKlass*, ClassLoaderData*)+0xb4
+[0x000000010d05a814]SystemDictionary::add_loader_constraint(Symbol*, Klass*, Handle, Handle)+0x170
+                             ((malloc=1KB tag=Class #13) (at peak))
+
+[0x000000010d124694]WorkerThreads::create_worker(unsigned int)+0x48
+[0x000000010d1245c8]WorkerThreads::set_active_workers(unsigned int)+0x2c
+[0x000000010d12457c]WorkerThreads::initialize_workers()+0x30
+[0x000000010cb26d60]G1ConcurrentMark::G1ConcurrentMark(G1CollectedHeap*, G1RegionToSpaceMapper*)+0x374
+                             ((malloc=1KB tag=Thread #1) (at peak))
+
+[0x000000010d124694]WorkerThreads::create_worker(unsigned int)+0x48
+[0x000000010d1245c8]WorkerThreads::set_active_workers(unsigned int)+0x2c
+[0x000000010d12457c]WorkerThreads::initialize_workers()+0x30
+[0x000000010cb1c9f4]G1CollectedHeap::initialize()+0x348
+                             ((malloc=1KB tag=Thread #1) (at peak))
+
+[0x000000010d100008]VMThread::create()+0x1c
+[0x000000010d0989ec]Threads::create_vm(JavaVMInitArgs*, bool*)+0x378
+[0x000000010cc66e6c]JNI_CreateJavaVM+0x74
+[0x0000000102cb9464]JavaMain+0x100 in libjli.dylib
+                             ((malloc=1KB tag=Thread #1) (at peak))
+
+[0x000000010cb26c90]G1ConcurrentMark::G1ConcurrentMark(G1CollectedHeap*, G1RegionToSpaceMapper*)+0x2a4
+[0x000000010cb1ca20]G1CollectedHeap::initialize()+0x374
+[0x000000010d0b26e0]universe_init()+0x80
+[0x000000010cbc06ac]init_globals()+0x68
+                             ((malloc=1KB tag=GC #1) (at peak))
+
+[0x000000010cb26c74]G1ConcurrentMark::G1ConcurrentMark(G1CollectedHeap*, G1RegionToSpaceMapper*)+0x288
+[0x000000010cb1ca20]G1CollectedHeap::initialize()+0x374
+[0x000000010d0b26e0]universe_init()+0x80
+[0x000000010cbc06ac]init_globals()+0x68
+                             ((malloc=1KB tag=GC #1) (at peak))
+
+[0x000000010cb62c68]G1RemSetScanState::initialize(unsigned long)+0x7c
+[0x000000010cb1c938]G1CollectedHeap::initialize()+0x28c
+[0x000000010d0b26e0]universe_init()+0x80
+[0x000000010cbc06ac]init_globals()+0x68
+                             ((malloc=1KB tag=GC #1) (at peak))
+
+[0x000000010cf2fd7c]metaspace::RootChunkAreaLUT::RootChunkAreaLUT(MetaWordImpl* const*, unsigned long)+0x30
+[0x000000010d0e5d3c]metaspace::VirtualSpaceNode::VirtualSpaceNode(ReservedSpace, bool, metaspace::CommitLimiter*, metaspace::AbstractCounter<unsigned long>*, metaspace::AbstractCounter<unsigned long>*)+0x80
+[0x000000010d0e5f64]metaspace::VirtualSpaceNode::create_node(ReservedSpace, metaspace::CommitLimiter*, metaspace::AbstractCounter<unsigned long>*, metaspace::AbstractCounter<unsigned long>*)+0x70
+[0x000000010d0e545c]metaspace::VirtualSpaceList::VirtualSpaceList(char const*, ReservedSpace, metaspace::CommitLimiter*)+0x64
+                             ((malloc=1KB tag=Class #1) (at peak))
+
+[0x000000010c886814]GrowableArrayWithAllocator<Node*, GrowableArray<Node*>>::expand_to(int)+0x18
+[0x000000010c8867d8]GrowableArrayWithAllocator<Node*, GrowableArray<Node*>>::append(Node* const&)+0x4c
+[0x000000010cbdde64]SignatureHandlerLibrary::add(methodHandle const&)+0x290
+[0x000000010cbddf88]InterpreterRuntime::prepare_native_call(JavaThread*, Method*)+0x94
+                             ((malloc=1KB tag=Code #1) (peak=2KB #2))
+
+[0x000000010c886814]GrowableArrayWithAllocator<Node*, GrowableArray<Node*>>::expand_to(int)+0x18
+[0x000000010c8867d8]GrowableArrayWithAllocator<Node*, GrowableArray<Node*>>::append(Node* const&)+0x4c
+[0x000000010cbdde58]SignatureHandlerLibrary::add(methodHandle const&)+0x284
+[0x000000010cbddf88]InterpreterRuntime::prepare_native_call(JavaThread*, Method*)+0x94
+                             ((malloc=1KB tag=Code #1) (peak=2KB #2))
+
+[0x000000010cb48b4c]G1HeapRegion::G1HeapRegion(unsigned int, G1BlockOffsetTable*, MemRegion, G1CardSetConfiguration*)+0x68
+[0x000000010cb4c4b8]G1HeapRegionManager::expand(unsigned int, unsigned int, WorkerThreads*)+0x88
+[0x000000010cb4cc4c]G1HeapRegionManager::expand_any(unsigned int, WorkerThreads*)+0x60
+[0x000000010cb4cca8]G1HeapRegionManager::expand_by(unsigned int, WorkerThreads*)+0x38
+                             ((malloc=1KB tag=GC #32) (at peak))
+
+[0x000000010c921520]Arena::Arena(MemTag, Arena::Tag, unsigned long)+0x40
+[0x000000010d08d224]Thread::Thread(MemTag)+0xa8
+[0x000000010cea7644]NamedThread::NamedThread()+0x10
+[0x000000010d1246a4]WorkerThreads::create_worker(unsigned int)+0x58
+                             ((malloc=1KB tag=Arena Chunk #1) (at peak))
+
+[0x000000010c921520]Arena::Arena(MemTag, Arena::Tag, unsigned long)+0x40
+[0x000000010ca21434]CodeBuffer::create_patch_overflow()+0x3c
+[0x000000010c92e8ec]Label::add_patch_at(CodeBuffer*, int, char const*, int)+0x48
+[0x000000010c92f4c8]Assembler::br(Assembler::Condition, Label&)+0x64
+                             ((malloc=1KB tag=Arena Chunk #1) (peak=2KB #2))
+
+[0x000000010c921520]Arena::Arena(MemTag, Arena::Tag, unsigned long)+0x40
+[0x000000010d08d224]Thread::Thread(MemTag)+0xa8
+[0x000000010cbf5778]JavaThread::JavaThread(MemTag)+0x14
+[0x000000010d098874]Threads::create_vm(JavaVMInitArgs*, bool*)+0x200
+                             ((malloc=1KB tag=Arena Chunk #1) (at peak))
+
+[0x000000010c921520]Arena::Arena(MemTag, Arena::Tag, unsigned long)+0x40
+[0x000000010cef59a8]PhaseCCP::analyze()+0x9c
+[0x000000010cef58fc]PhaseCCP::PhaseCCP(PhaseIterGVN*)+0xb0
+[0x000000010ca3cf9c]Compile::Optimize()+0x788
+                             ((malloc=1KB tag=Arena Chunk #1) (peak=3KB #3))
+
+[0x000000010c921520]Arena::Arena(MemTag, Arena::Tag, unsigned long)+0x40
+[0x000000010d0a031c]Type::Initialize_shared(Compile*)+0x50
+[0x000000010d0a2330]Type::Initialize(Compile*)+0x28
+[0x000000010ca3b5bc]CompileWrapper::CompileWrapper(Compile*)+0x7c
+                             ((malloc=1KB tag=Arena Chunk #1) (at peak))
+
+[0x000000010c921520]Arena::Arena(MemTag, Arena::Tag, unsigned long)+0x40
+[0x000000010c9d4b74]ciEnv::ciEnv(Arena*)+0x28
+[0x000000010c9e9794]ciObjectFactory::initialize()+0x74
+[0x000000010ca48e2c]CompileBroker::compiler_thread_loop()+0xa0
+                             ((malloc=1KB tag=Arena Chunk #1) (at peak))
+
+[0x000000010c921520]Arena::Arena(MemTag, Arena::Tag, unsigned long)+0x40
+[0x000000010c9e9788]ciObjectFactory::initialize()+0x68
+[0x000000010ca48e2c]CompileBroker::compiler_thread_loop()+0xa0
+[0x000000010cbf6180]JavaThread::thread_main_inner()+0x88
+                             ((malloc=1KB tag=Arena Chunk #1) (at peak))
+
+[0x000000010c921520]Arena::Arena(MemTag, Arena::Tag, unsigned long)+0x40
+[0x000000010cebf298]ExternalsRecorder::initialize()+0x28
+[0x000000010d0987f8]Threads::create_vm(JavaVMInitArgs*, bool*)+0x184
+[0x000000010cc66e6c]JNI_CreateJavaVM+0x74
+                             ((malloc=1KB tag=Arena Chunk #1) (at peak))
+
+[0x000000010c921520]Arena::Arena(MemTag, Arena::Tag, unsigned long)+0x40
+[0x000000010ca3d7fc]Compile::Compile(ciEnv*, TypeFunc const* (*)(), unsigned char*, char const*, int, int, bool, bool, DirectiveSet*)+0x274
+[0x000000010cf31da8]OptoRuntime::generate_stub(ciEnv*, TypeFunc const* (*)(), unsigned char*, char const*, int, int, bool, bool)+0xcc
+[0x000000010cf318c4]OptoRuntime::generate(ciEnv*)+0x60
+                             ((malloc=1KB tag=Arena Chunk #1) (at peak))
+
+[0x000000010cea7ac8]WatcherThread::start()+0x3c
+[0x000000010d098958]Threads::create_vm(JavaVMInitArgs*, bool*)+0x2e4
+[0x000000010cc66e6c]JNI_CreateJavaVM+0x74
+[0x0000000102cb9464]JavaMain+0x100 in libjli.dylib
+                             ((malloc=1KB tag=Thread #1) (at peak))
+
+[0x000000010caf9ab4]FileMapInfo::init_from_file(int)+0x168
+[0x000000010cafc920]FileMapInfo::open_as_input()+0x50
+[0x000000010ce6d85c]MetaspaceShared::open_static_archive()+0x40
+[0x000000010ce6d560]MetaspaceShared::initialize_runtime_shared_and_meta_spaces()+0x20
+                             ((malloc=1KB tag=Internal #1) (at peak))
+
+[0x000000010ce4da1c]LinkedListImpl<ReservedMemoryRegion, (AnyObj::allocation_type)2, (MemTag)12, (AllocFailStrategy::AllocFailEnum)1>::new_node(ReservedMemoryRegion const&) const+0x24
+[0x000000010d0e51a4]SortedLinkedList<ReservedMemoryRegion, &compare_reserved_region_base(ReservedMemoryRegion const&, ReservedMemoryRegion const&), (AnyObj::allocation_type)2, (MemTag)12, (AllocFailStrategy::AllocFailEnum)1>::add(ReservedMemoryRegion const&)+0x14
+[0x000000010d0e42c4]VirtualMemoryTracker::add_reserved_region(unsigned char*, unsigned long, NativeCallStack const&, MemTag)+0x178
+[0x000000010cec5524]os::reserve_memory(unsigned long, MemTag, bool)+0xd0
+                             ((malloc=1KB tag=Native Memory Tracking #11) (at peak))
+
+[0x000000010cbf58a0]JavaThread::JavaThread(MemTag)+0x13c
+[0x000000010cbf5c74]JavaThread::JavaThread(void (*)(JavaThread*, JavaThread*), unsigned long, MemTag)+0x24
+[0x000000010cc9c994]JVM_StartThread+0x260
+[0x000000011d7d86b8]
+                             ((malloc=1KB tag=Internal #4) (at peak))
+
+[0x000000010d08d274]Thread::Thread(MemTag)+0xf8
+[0x000000010cbf5778]JavaThread::JavaThread(MemTag)+0x14
+[0x000000010cbf5c74]JavaThread::JavaThread(void (*)(JavaThread*, JavaThread*), unsigned long, MemTag)+0x24
+[0x000000010cc9c994]JVM_StartThread+0x260
+                             ((malloc=1KB tag=Class #4) (at peak))
+
+[0x000000010d0528b0]bool ConcurrentHashTable<SymbolTableConfig, (MemTag)11>::internal_insert_get<SymbolTableLookup, bool ConcurrentHashTable<SymbolTableConfig, (MemTag)11>::insert<SymbolTableLookup>(Thread*, SymbolTableLookup&, Symbol const&, bool*, bool*)::NOP>(Thread*, SymbolTableLookup&, Symbol const&, bool ConcurrentHashTable<SymbolTableConfig, (MemTag)11>::insert<SymbolTableLookup>(Thread*, SymbolTableLookup&, Symbol const&, bool*, bool*)::NOP&, bool*, bool*)+0x70
+[0x000000010d050cf8]SymbolTable::do_add_if_needed(char const*, int, unsigned long, bool)+0xe8
+[0x000000010cea8c28]ObjArrayKlass::allocate_objArray_klass(ClassLoaderData*, int, Klass*, JavaThread*)+0x18c
+[0x000000010cbc4a5c]InstanceKlass::array_klass(int, JavaThread*)+0x8c
+                             ((malloc=1KB tag=Symbol #19) (at peak))
+
+[0x000000010ce87074]ModuleEntry::restore_growable_array(Array<ModuleEntry*>*)+0x34
+[0x000000010ced89a8]PackageEntryTable::load_archived_entries(Array<PackageEntry*>*)+0x3c
+[0x000000010ca11734]ArchivedClassLoaderData::restore(ClassLoaderData*, bool, bool)+0x9c
+[0x000000010ca11b9c]ClassLoaderDataShared::restore_java_system_loader_from_archive(ClassLoaderData*)+0x28
+                             ((malloc=1KB tag=Module #37) (at peak))
+
+[0x000000010ca0d17c]ClassLoaderData::ClassLoaderData(Handle, bool)+0x138
+[0x000000010ca0cd70]ClassLoaderData::init_null_class_loader_data()+0x44
+[0x000000010d0b2704]universe_init()+0xa4
+[0x000000010cbc06ac]init_globals()+0x68
+                             ((malloc=1KB tag=Module #1) (at peak))
+
+[0x000000010cedd7ec]ParkEvent::Allocate(Thread*)+0x78
+[0x000000010d08d330]Thread::Thread(MemTag)+0x1b4
+[0x000000010cea7644]NamedThread::NamedThread()+0x10
+[0x000000010d1246a4]WorkerThreads::create_worker(unsigned int)+0x58
+                             ((malloc=1KB tag=Internal #2) (at peak))
+
+[0x000000010ca0dfcc]ClassLoaderData::modules()+0x50
+[0x000000010ca116d0]ArchivedClassLoaderData::restore(ClassLoaderData*, bool, bool)+0x38
+[0x000000010ca11b9c]ClassLoaderDataShared::restore_java_system_loader_from_archive(ClassLoaderData*)+0x28
+[0x000000010cc92604]JVM_DefineArchivedModules+0x17c
+                             ((malloc=1KB tag=Module #1) (at peak))
+
+[0x000000010ca0d17c]ClassLoaderData::ClassLoaderData(Handle, bool)+0x138
+[0x000000010ca10410]ClassLoaderDataGraph::add_to_graph(Handle, bool)+0x68
+[0x000000010ca10570]ClassLoaderDataGraph::add(Handle, bool)+0x3c
+[0x000000010ce89fb0]Modules::define_archived_modules(Handle, Handle, JavaThread*)+0x9c
+                             ((malloc=1KB tag=Module #1) (at peak))
+
+[0x000000010ca0d17c]ClassLoaderData::ClassLoaderData(Handle, bool)+0x138
+[0x000000010ca10410]ClassLoaderDataGraph::add_to_graph(Handle, bool)+0x68
+[0x000000010ca10570]ClassLoaderDataGraph::add(Handle, bool)+0x3c
+[0x000000010ce89f94]Modules::define_archived_modules(Handle, Handle, JavaThread*)+0x80
+                             ((malloc=1KB tag=Module #1) (at peak))
+
+[0x000000010ca0dfcc]ClassLoaderData::modules()+0x50
+[0x000000010ca116d0]ArchivedClassLoaderData::restore(ClassLoaderData*, bool, bool)+0x38
+[0x000000010ca11a88]ClassLoaderDataShared::serialize(SerializeClosure*)+0xf4
+[0x000000010ce6b668]MetaspaceShared::serialize(SerializeClosure*)+0x1bc
+                             ((malloc=1KB tag=Module #1) (at peak))
+
+[0x000000010ca0dfcc]ClassLoaderData::modules()+0x50
+[0x000000010ca116d0]ArchivedClassLoaderData::restore(ClassLoaderData*, bool, bool)+0x38
+[0x000000010ce89fa4]Modules::define_archived_modules(Handle, Handle, JavaThread*)+0x90
+[0x000000010cc92604]JVM_DefineArchivedModules+0x17c
+                             ((malloc=1KB tag=Module #1) (at peak))
+
+[0x000000010ceced80]PlatformMutex::PlatformMutex()+0x68
+[0x000000010cecee70]PlatformMonitor::PlatformMonitor()+0x14
+[0x000000010ce96078]Mutex::Mutex(Mutex::Rank, char const*, bool)+0x1c
+[0x000000010cba362c]HandshakeState::HandshakeState(JavaThread*)+0x28
+                             ((malloc=1KB tag=Synchronization #12) (at peak))
+
+[0x000000010cf2a858]ResolutionErrorTable::initialize()+0x18
+[0x000000010d05a470]SystemDictionary::initialize(JavaThread*)+0x64
+[0x000000010d0b1094]Universe::genesis(JavaThread*)+0x80
+[0x000000010d0b303c]universe2_init()+0x24
+                             ((malloc=1KB tag=Class #1) (at peak))
+
+[0x000000010cdd3c24]LoaderConstraintTable::initialize()+0x18
+[0x000000010d05a474]SystemDictionary::initialize(JavaThread*)+0x68
+[0x000000010d0b1094]Universe::genesis(JavaThread*)+0x80
+[0x000000010d0b303c]universe2_init()+0x24
+                             ((malloc=1KB tag=Class #1) (at peak))
+
+[0x000000010d008b5c]bool ConcurrentHashTable<StringTableConfig, (MemTag)11>::internal_insert_get<StringTableLookupOop, bool ConcurrentHashTable<StringTableConfig, (MemTag)11>::insert<StringTableLookupOop>(Thread*, StringTableLookupOop&, WeakHandle const&, bool*, bool*)::NOP>(Thread*, StringTableLookupOop&, WeakHandle const&, bool ConcurrentHashTable<StringTableConfig, (MemTag)11>::insert<StringTableLookupOop>(Thread*, StringTableLookupOop&, WeakHandle const&, bool*, bool*)::NOP&, bool*, bool*)+0x74
+[0x000000010d006708]StringTable::do_intern(StringWrapperInternal const&, unsigned long, JavaThread*)+0xc0
+[0x000000010d0064fc]StringTable::intern(StringWrapperInternal const&, JavaThread*)+0xdc
+[0x000000010d00662c]StringTable::intern(char const*, JavaThread*)+0x3c
+                             ((malloc=1KB tag=Symbol #53) (at peak))
+
+[0x000000010ceceec4]PlatformMonitor::PlatformMonitor()+0x68
+[0x000000010ce96078]Mutex::Mutex(Mutex::Rank, char const*, bool)+0x1c
+[0x000000010cec0a30]make_oopstorage_mutex(char const*, char const*, Mutex::Rank)+0x60
+[0x000000010cec098c]OopStorage::OopStorage(char const*, MemTag)+0x74
+                             ((malloc=1KB tag=Synchronization #15) (at peak))
+
+[0x000000010ceceec4]PlatformMonitor::PlatformMonitor()+0x68
+[0x000000010ce96078]Mutex::Mutex(Mutex::Rank, char const*, bool)+0x1c
+[0x000000010cec0a30]make_oopstorage_mutex(char const*, char const*, Mutex::Rank)+0x60
+[0x000000010cec0974]OopStorage::OopStorage(char const*, MemTag)+0x5c
+                             ((malloc=1KB tag=Synchronization #15) (at peak))
+
+[0x000000010ca0e508]ClassLoaderData::add_to_deallocate_list(Metadata*)+0x7c
+[0x000000010ca81bac]DefaultMethods::generate_default_methods(InstanceKlass*, GrowableArray<Method*> const*, JavaThread*)+0xb48
+[0x000000010ca026d0]ClassFileParser::fill_instance_klass(InstanceKlass*, bool, ClassInstanceInfo const&, JavaThread*)+0x6d4
+[0x000000010ca01df4]ClassFileParser::create_instance_klass(bool, ClassInstanceInfo const&, JavaThread*)+0x7c
+                             ((malloc=1KB tag=Class #1) (at peak))
+
+[0x000000010ca52d54]CompilerEvent::PhaseEvent::get_phase_id(char const*, bool, bool, bool)+0xac
+[0x000000010ca467b8]register_jfr_phasetype_serializer(CompilerType)+0x94
+[0x000000010ca46348]CompileBroker::compilation_init(JavaThread*)+0x188
+[0x000000010d098c7c]Threads::create_vm(JavaVMInitArgs*, bool*)+0x608
+                             ((malloc=1KB tag=Compiler #1) (at peak))
+
+[0x000000010cebc69c]ImmutableOopMapBuilder::build()+0x28
+[0x000000010cebc74c]ImmutableOopMapSet::build_from(OopMapSet const*)+0x80
+[0x000000010ca1e814]CodeBlob::CodeBlob(char const*, CodeBlobKind, CodeBuffer*, int, unsigned short, short, int, OopMapSet*, bool, int)+0xec
+[0x000000010ce9ce24]nmethod::nmethod(Method*, CompilerType, int, int, CodeOffsets*, CodeBuffer*, int, ByteSize, ByteSize, OopMapSet*, int)+0x6c
+                             ((malloc=1KB tag=Code #23) (at peak))
+
+[0x000000010ceeee04]PerfData::PerfData(CounterNS, char const*, PerfData::Units, PerfData::Variability)+0x70
+[0x000000010ceef270]PerfString::PerfString(CounterNS, char const*, PerfData::Variability, int, char const*)+0x28
+[0x000000010ceef22c]PerfStringConstant::PerfStringConstant(CounterNS, char const*, char const*)+0x68
+[0x000000010ceef670]PerfDataManager::create_string_constant(CounterNS, char const*, char const*, JavaThread*)+0x48
+                             ((malloc=1KB tag=Internal #28) (at peak))
+
+[0x000000010cc3e75c]JfrThreadLocal::JfrThreadLocal()+0x28
+[0x000000010d08d1ec]Thread::Thread(MemTag)+0x70
+[0x000000010cea7644]NamedThread::NamedThread()+0x10
+[0x000000010ca59e18]ConcurrentGCThread::ConcurrentGCThread()+0xc
+                             ((malloc=1KB tag=Tracing #3) (at peak))
+
+[0x000000010ce60fb8]GCStatInfo::GCStatInfo(int)+0x40
+[0x000000010ce6130c]GCMemoryManager::initialize_gc_stat_info()+0x54
+[0x000000010ce63494]MemoryService::set_universe_heap(CollectedHeap*)+0xe0
+[0x000000010d0b3404]universe_post_init()+0x384
+                             ((malloc=1KB tag=Internal #3) (at peak))
+
+[0x000000010ce60fa4]GCStatInfo::GCStatInfo(int)+0x2c
+[0x000000010ce6130c]GCMemoryManager::initialize_gc_stat_info()+0x54
+[0x000000010ce63494]MemoryService::set_universe_heap(CollectedHeap*)+0xe0
+[0x000000010d0b3404]universe_post_init()+0x384
+                             ((malloc=1KB tag=Internal #3) (at peak))
+
+[0x000000010ce60fb8]GCStatInfo::GCStatInfo(int)+0x40
+[0x000000010ce612ec]GCMemoryManager::initialize_gc_stat_info()+0x34
+[0x000000010ce63494]MemoryService::set_universe_heap(CollectedHeap*)+0xe0
+[0x000000010d0b3404]universe_post_init()+0x384
+                             ((malloc=1KB tag=Internal #3) (at peak))
+
+[0x000000010ce60fa4]GCStatInfo::GCStatInfo(int)+0x2c
+[0x000000010ce612ec]GCMemoryManager::initialize_gc_stat_info()+0x34
+[0x000000010ce63494]MemoryService::set_universe_heap(CollectedHeap*)+0xe0
+[0x000000010d0b3404]universe_post_init()+0x384
+                             ((malloc=1KB tag=Internal #3) (at peak))
+
+[0x000000010cf18e10]ReferenceProcessor::ReferenceProcessor(BoolObjectClosure*, unsigned int, unsigned int, bool, BoolObjectClosure*)+0x64
+[0x000000010cb1ce1c]G1CollectedHeap::ref_processing_init()+0x88
+[0x000000010d0b33f8]universe_post_init()+0x378
+[0x000000010cbc0770]init_globals2()+0x78
+                             ((malloc=1KB tag=GC #1) (at peak))
+
+[0x000000010cf18e10]ReferenceProcessor::ReferenceProcessor(BoolObjectClosure*, unsigned int, unsigned int, bool, BoolObjectClosure*)+0x64
+[0x000000010cb1cdf0]G1CollectedHeap::ref_processing_init()+0x5c
+[0x000000010d0b33f8]universe_post_init()+0x378
+[0x000000010cbc0770]init_globals2()+0x78
+                             ((malloc=1KB tag=GC #1) (at peak))
+
+[0x000000010ceef894]PerfDataManager::create_long_variable(CounterNS, char const*, PerfData::Units, long, JavaThread*)+0x38
+[0x000000010c9019c0]AgeTable::AgeTable(bool)+0x100
+[0x000000010cb5e720]G1Policy::G1Policy(STWGCTimer*)+0x198
+[0x000000010cb1c284]G1CollectedHeap::G1CollectedHeap()+0x23c
+                             ((malloc=1KB tag=Internal #16) (at peak))
+
+[0x000000010cb1cb28]G1CollectedHeap::initialize()+0x47c
+[0x000000010d0b26e0]universe_init()+0x80
+[0x000000010cbc06ac]init_globals()+0x68
+[0x000000010d0988f0]Threads::create_vm(JavaVMInitArgs*, bool*)+0x27c
+                             ((malloc=1KB tag=GC #1) (at peak))
+
+[0x000000010c921520]Arena::Arena(MemTag, Arena::Tag, unsigned long)+0x40
+[0x000000010d08d248]Thread::Thread(MemTag)+0xcc
+[0x000000010cea7644]NamedThread::NamedThread()+0x10
+[0x000000010c920a9c]ArchiveWorkerThread::ArchiveWorkerThread(ArchiveWorkers*)+0x18
+                             ((malloc=1KB tag=Arena Chunk #3) (at peak))
+
+[0x000000010c921520]Arena::Arena(MemTag, Arena::Tag, unsigned long)+0x40
+[0x000000010d08d248]Thread::Thread(MemTag)+0xcc
+[0x000000010cea7644]NamedThread::NamedThread()+0x10
+[0x000000010ca59e18]ConcurrentGCThread::ConcurrentGCThread()+0xc
+                             ((malloc=1KB tag=Arena Chunk #3) (at peak))
+
+[0x000000010ceced80]PlatformMutex::PlatformMutex()+0x68
+[0x000000010cecee70]PlatformMonitor::PlatformMonitor()+0x14
+[0x000000010ce96078]Mutex::Mutex(Mutex::Rank, char const*, bool)+0x1c
+[0x000000010ca33654]EventLogBase<FormatStringLogMessage<256ul>>::EventLogBase(char const*, char const*, int)+0x40
+                             ((malloc=1KB tag=Synchronization #10) (at peak))
+
+[0x000000010ce9d56c]nmethod::nmethod(Method*, CompilerType, int, int, int, int, int, unsigned char*, CodeOffsets*, int, DebugInformationRecorder*, Dependencies*, CodeBuffer*, int, OopMapSet*, ExceptionHandlerTable*, ImplicitExceptionTable*, AbstractCompiler*, CompLevel, char*, int, JVMCINMethodData*)+0x3a8
+[0x000000010ce9c89c]nmethod::new_nmethod(methodHandle const&, int, int, CodeOffsets*, int, DebugInformationRecorder*, Dependencies*, CodeBuffer*, int, OopMapSet*, ExceptionHandlerTable*, ImplicitExceptionTable*, AbstractCompiler*, CompLevel, char*, int, JVMCINMethodData*)+0x23c
+[0x000000010c9d6f20]ciEnv::register_method(ciMethod*, int, CodeOffsets*, int, CodeBuffer*, int, OopMapSet*, ExceptionHandlerTable*, ImplicitExceptionTable*, AbstractCompiler*, bool, bool, bool, bool, int)+0x348
+[0x000000010ced7d20]PhaseOutput::install_code(ciMethod*, int, AbstractCompiler*, bool, bool)+0xf4
+                             ((malloc=1KB tag=Code #22) (at peak))
+
+[0x000000010ca8f4b0]DependencyContext::add_dependent_nmethod(nmethod*)+0x44
+[0x000000010cbc6590]InstanceKlass::add_dependent_nmethod(nmethod*)+0x20
+[0x000000010ce9c8ec]nmethod::new_nmethod(methodHandle const&, int, int, CodeOffsets*, int, DebugInformationRecorder*, Dependencies*, CodeBuffer*, int, OopMapSet*, ExceptionHandlerTable*, ImplicitExceptionTable*, AbstractCompiler*, CompLevel, char*, int, JVMCINMethodData*)+0x28c
+[0x000000010c9d6f20]ciEnv::register_method(ciMethod*, int, CodeOffsets*, int, CodeBuffer*, int, OopMapSet*, ExceptionHandlerTable*, ImplicitExceptionTable*, AbstractCompiler*, bool, bool, bool, bool, int)+0x348
+                             ((malloc=1KB tag=Class #29) (at peak))
+
+[0x000000010ce87790]ResourceHashtableBase<FixedResourceHashtableStorage<109u, SymbolHandleBase<false>, PackageEntry*>, SymbolHandleBase<false>, PackageEntry*, (AnyObj::allocation_type)2, (MemTag)20, &SymbolHandleBase<false>::compute_hash(SymbolHandleBase<false> const&), &bool primitive_equals<SymbolHandleBase<false>>(SymbolHandleBase<false> const&, SymbolHandleBase<false> const&)>::put(SymbolHandleBase<false> const&, PackageEntry* const&)+0xac
+[0x000000010ce876ac]ModuleEntryTable::load_archived_entries(ClassLoaderData*, Array<ModuleEntry*>*)+0x78
+[0x000000010ca11728]ArchivedClassLoaderData::restore(ClassLoaderData*, bool, bool)+0x90
+[0x000000010ca11a88]ClassLoaderDataShared::serialize(SerializeClosure*)+0xf4
+                             ((malloc=1KB tag=Module #21) (at peak))
+
+[0x000000010ce87790]ResourceHashtableBase<FixedResourceHashtableStorage<109u, SymbolHandleBase<false>, PackageEntry*>, SymbolHandleBase<false>, PackageEntry*, (AnyObj::allocation_type)2, (MemTag)20, &SymbolHandleBase<false>::compute_hash(SymbolHandleBase<false> const&), &bool primitive_equals<SymbolHandleBase<false>>(SymbolHandleBase<false> const&, SymbolHandleBase<false> const&)>::put(SymbolHandleBase<false> const&, PackageEntry* const&)+0xac
+[0x000000010ce876ac]ModuleEntryTable::load_archived_entries(ClassLoaderData*, Array<ModuleEntry*>*)+0x78
+[0x000000010ca11728]ArchivedClassLoaderData::restore(ClassLoaderData*, bool, bool)+0x90
+[0x000000010ce89fa4]Modules::define_archived_modules(Handle, Handle, JavaThread*)+0x90
+                             ((malloc=1KB tag=Module #21) (at peak))
+
+[0x000000010ceceec4]PlatformMonitor::PlatformMonitor()+0x68
+[0x000000010ce96078]Mutex::Mutex(Mutex::Rank, char const*, bool)+0x1c
+[0x000000010cba362c]HandshakeState::HandshakeState(JavaThread*)+0x28
+[0x000000010cbf587c]JavaThread::JavaThread(MemTag)+0x118
+                             ((malloc=1KB tag=Synchronization #12) (at peak))
+
+[0x000000010cea851c]TruncatedSeq::TruncatedSeq(int, double)+0x40
+[0x000000010cb2a5c8]G1CMTask::G1CMTask(unsigned int, G1ConcurrentMark*, GenericTaskQueue<G1TaskQueueEntry, (MemTag)5, 131072u>*, G1RegionMarkStats*)+0x8c
+[0x000000010cb26e34]G1ConcurrentMark::G1ConcurrentMark(G1CollectedHeap*, G1RegionToSpaceMapper*)+0x448
+[0x000000010cb1ca20]G1CollectedHeap::initialize()+0x374
+                             ((malloc=1KB tag=Internal #8) (at peak))
+
+[0x000000010cad39cc]bool ConcurrentHashTable<Dictionary::Config, (MemTag)1>::internal_insert_get<DictionaryLookup, bool ConcurrentHashTable<Dictionary::Config, (MemTag)1>::insert<DictionaryLookup>(Thread*, DictionaryLookup&, InstanceKlass* const&, bool*, bool*)::NOP>(Thread*, DictionaryLookup&, InstanceKlass* const&, bool ConcurrentHashTable<Dictionary::Config, (MemTag)1>::insert<DictionaryLookup>(Thread*, DictionaryLookup&, InstanceKlass* const&, bool*, bool*)::NOP&, bool*, bool*)+0x6c
+[0x000000010cad2f5c]Dictionary::add_klass(JavaThread*, Symbol*, InstanceKlass*)+0x50
+[0x000000010d059e00]SystemDictionary::update_dictionary(JavaThread*, InstanceKlass*, ClassLoaderData*)+0x68
+[0x000000010d058a58]SystemDictionary::load_instance_class(Symbol*, Handle, JavaThread*)+0xd8
+                             ((malloc=1KB tag=Class #40) (at peak))
+
+[0x000000010cebfad0]OopStorage::Block::new_block(OopStorage const*)+0x20
+[0x000000010cec0234]OopStorage::try_add_block()+0x2c
+[0x000000010cebfd70]OopStorage::block_for_allocation()+0x30
+[0x000000010cebfc0c]OopStorage::allocate()+0x30
+                             ((malloc=1KB tag=Synchronization #1) (at peak))
+
+[0x000000010cebfad0]OopStorage::Block::new_block(OopStorage const*)+0x20
+[0x000000010cec0234]OopStorage::try_add_block()+0x2c
+[0x000000010cebfd70]OopStorage::block_for_allocation()+0x30
+[0x000000010cebfc0c]OopStorage::allocate()+0x30
+                             ((malloc=1KB tag=Thread #1) (at peak))
+
+[0x000000010ce87790]ResourceHashtableBase<FixedResourceHashtableStorage<109u, SymbolHandleBase<false>, PackageEntry*>, SymbolHandleBase<false>, PackageEntry*, (AnyObj::allocation_type)2, (MemTag)20, &SymbolHandleBase<false>::compute_hash(SymbolHandleBase<false> const&), &bool primitive_equals<SymbolHandleBase<false>>(SymbolHandleBase<false> const&, SymbolHandleBase<false> const&)>::put(SymbolHandleBase<false> const&, PackageEntry* const&)+0xac
+[0x000000010ce876ac]ModuleEntryTable::load_archived_entries(ClassLoaderData*, Array<ModuleEntry*>*)+0x78
+[0x000000010ca11728]ArchivedClassLoaderData::restore(ClassLoaderData*, bool, bool)+0x90
+[0x000000010ca11b9c]ClassLoaderDataShared::restore_java_system_loader_from_archive(ClassLoaderData*)+0x28
+                             ((malloc=1KB tag=Module #19) (at peak))
+
+[0x000000010ca0e350]ClassLoaderData::metaspace_non_null()+0x5c
+[0x000000010ce67058]Metaspace::allocate(ClassLoaderData*, unsigned long, MetaspaceObj::Type)+0x34
+[0x000000010ce670ec]Metaspace::allocate(ClassLoaderData*, unsigned long, MetaspaceObj::Type, JavaThread*)+0x3c
+[0x000000010ca5b81c]Array<unsigned char>* MetadataFactory::new_array<unsigned char>(ClassLoaderData*, int, unsigned char, JavaThread*)+0x34
+                             ((malloc=1KB tag=Class #19) (at peak))
+
+[0x000000010ceeee04]PerfData::PerfData(CounterNS, char const*, PerfData::Units, PerfData::Variability)+0x70
+[0x000000010cef0178]PerfLongVariant::PerfLongVariant(CounterNS, char const*, PerfData::Units, PerfData::Variability, long)+0x18
+[0x000000010ceef8b0]PerfDataManager::create_long_variable(CounterNS, char const*, PerfData::Units, long, JavaThread*)+0x54
+[0x000000010c9019c0]AgeTable::AgeTable(bool)+0x100
+                             ((malloc=1KB tag=Internal #16) (at peak))
+
+[0x000000010d05af00]ResourceHashtableBase<FixedResourceHashtableStorage<139u, InvokeMethodKey, Method*>, InvokeMethodKey, Method*, (AnyObj::allocation_type)2, (MemTag)1, &InvokeMethodKey::compute_hash(InvokeMethodKey const&), &InvokeMethodKey::key_comparison(InvokeMethodKey const&, InvokeMethodKey const&)>::put_if_absent(InvokeMethodKey const&, bool*)+0xac
+[0x000000010d05acc4]SystemDictionary::find_method_handle_intrinsic(vmIntrinsicID, Symbol*, JavaThread*)+0x64
+[0x000000010cdce894]LinkResolver::lookup_polymorphic_method(LinkInfo const&, Handle*, JavaThread*)+0x210
+[0x000000010cdd2b84]LinkResolver::resolve_handle_call(CallInfo&, LinkInfo const&, JavaThread*)+0x34
+                             ((malloc=1KB tag=Class #15) (at peak))
+
+[0x000000010cc8b234]JNIHandleBlock::allocate_block(JavaThread*, AllocFailStrategy::AllocFailEnum)+0x50
+[0x000000010cbf75b0]JavaThread::push_jni_handle_block()+0x1c
+[0x000000010ca493c8]CompileBroker::invoke_compiler_on_method(CompileTask*)+0x288
+[0x000000010ca48fa0]CompileBroker::compiler_thread_loop()+0x214
+                             ((malloc=1KB tag=Internal #2) (peak=1KB #3))
+
+[0x000000010ce8708c]ModuleEntry::restore_growable_array(Array<ModuleEntry*>*)+0x4c
+[0x000000010ce8767c]ModuleEntryTable::load_archived_entries(ClassLoaderData*, Array<ModuleEntry*>*)+0x48
+[0x000000010ca11728]ArchivedClassLoaderData::restore(ClassLoaderData*, bool, bool)+0x90
+[0x000000010ca11b9c]ClassLoaderDataShared::restore_java_system_loader_from_archive(ClassLoaderData*)+0x28
+                             ((malloc=1KB tag=Module #19) (at peak))
+
+[0x000000010cb7ecb4]TimePartitions::TimePartitions()+0x50
+[0x000000010cb1c20c]G1CollectedHeap::G1CollectedHeap()+0x1c4
+[0x000000010d0b27fc]Universe::initialize_heap()+0x20
+[0x000000010d0b26e0]universe_init()+0x80
+                             ((malloc=1KB tag=GC #1) (at peak))
+
+[0x000000010cb7ecb4]TimePartitions::TimePartitions()+0x50
+[0x000000010cb26bb0]G1ConcurrentMark::G1ConcurrentMark(G1CollectedHeap*, G1RegionToSpaceMapper*)+0x1c4
+[0x000000010cb1ca20]G1CollectedHeap::initialize()+0x374
+[0x000000010d0b26e0]universe_init()+0x80
+                             ((malloc=1KB tag=GC #1) (at peak))
+
+[0x000000010cb1c278]G1CollectedHeap::G1CollectedHeap()+0x230
+[0x000000010d0b27fc]Universe::initialize_heap()+0x20
+[0x000000010d0b26e0]universe_init()+0x80
+[0x000000010cbc06ac]init_globals()+0x68
+                             ((malloc=1KB tag=GC #1) (at peak))
+
+[0x000000010ca0d080]ClassLoaderData::ClassLoaderData(Handle, bool)+0x3c
+[0x000000010ca10410]ClassLoaderDataGraph::add_to_graph(Handle, bool)+0x68
+[0x000000010ca10570]ClassLoaderDataGraph::add(Handle, bool)+0x3c
+[0x000000010d058c40]SystemDictionary::resolve_hidden_class_from_stream(ClassFileStream*, Symbol*, Handle, ClassLoadInfo const&, JavaThread*)+0x60
+                             ((malloc=1KB tag=Synchronization #17) (at peak))
+
+[0x000000010ca0d210]ClassLoaderData::ChunkedHandleList::add(oopDesc*)+0x44
+[0x000000010ca0d0f0]ClassLoaderData::ClassLoaderData(Handle, bool)+0xac
+[0x000000010ca10410]ClassLoaderDataGraph::add_to_graph(Handle, bool)+0x68
+[0x000000010ca10570]ClassLoaderDataGraph::add(Handle, bool)+0x3c
+                             ((malloc=1KB tag=Class #2) (at peak))
+
+[0x000000010d0528b0]bool ConcurrentHashTable<SymbolTableConfig, (MemTag)11>::internal_insert_get<SymbolTableLookup, bool ConcurrentHashTable<SymbolTableConfig, (MemTag)11>::insert<SymbolTableLookup>(Thread*, SymbolTableLookup&, Symbol const&, bool*, bool*)::NOP>(Thread*, SymbolTableLookup&, Symbol const&, bool ConcurrentHashTable<SymbolTableConfig, (MemTag)11>::insert<SymbolTableLookup>(Thread*, SymbolTableLookup&, Symbol const&, bool*, bool*)::NOP&, bool*, bool*)+0x70
+[0x000000010d050cf8]SymbolTable::do_add_if_needed(char const*, int, unsigned long, bool)+0xe8
+[0x000000010cc911ac]JVM_LookupDefineClass+0x36c
+[0x00000001076f30b4]Java_java_lang_ClassLoader_defineClass0+0x158 in libjava.dylib
+                             ((malloc=1KB tag=Symbol #10) (at peak))
+
+[0x000000010ce8708c]ModuleEntry::restore_growable_array(Array<ModuleEntry*>*)+0x4c
+[0x000000010ced89a8]PackageEntryTable::load_archived_entries(Array<PackageEntry*>*)+0x3c
+[0x000000010ca11734]ArchivedClassLoaderData::restore(ClassLoaderData*, bool, bool)+0x9c
+[0x000000010ca11b9c]ClassLoaderDataShared::restore_java_system_loader_from_archive(ClassLoaderData*)+0x28
+                             ((malloc=1KB tag=Module #37) (at peak))
+
+[0x000000010cdd3fd8]ConstraintSet::initialize(LoaderConstraint*)+0x3c
+[0x000000010cdd3e60]LoaderConstraintTable::add_loader_constraint(Symbol*, InstanceKlass*, ClassLoaderData*, ClassLoaderData*)+0x9c
+[0x000000010cdd4198]LoaderConstraintTable::add_entry(Symbol*, InstanceKlass*, ClassLoaderData*, InstanceKlass*, ClassLoaderData*)+0xb4
+[0x000000010d05a814]SystemDictionary::add_loader_constraint(Symbol*, Klass*, Handle, Handle)+0x170
+                             ((malloc=1KB tag=Class #13) (at peak))
+
+[0x000000010ca1e800]CodeBlob::CodeBlob(char const*, CodeBlobKind, CodeBuffer*, int, unsigned short, short, int, OopMapSet*, bool, int)+0xd8
+[0x000000010ce9ce24]nmethod::nmethod(Method*, CompilerType, int, int, CodeOffsets*, CodeBuffer*, int, ByteSize, ByteSize, OopMapSet*, int)+0x6c
+[0x000000010ce9c2b4]nmethod::new_native_nmethod(methodHandle const&, int, CodeBuffer*, int, int, int, ByteSize, ByteSize, OopMapSet*, int)+0xf4
+[0x000000010cf550c8]SharedRuntime::generate_native_wrapper(MacroAssembler*, methodHandle const&, int, BasicType*, VMRegPair*, BasicType)+0x25dc
+                             ((malloc=1KB tag=Code #21) (at peak))
+
+[0x000000010cb62c14]G1RemSetScanState::initialize(unsigned long)+0x28
+[0x000000010cb1c938]G1CollectedHeap::initialize()+0x28c
+[0x000000010d0b26e0]universe_init()+0x80
+[0x000000010cbc06ac]init_globals()+0x68
+                             ((malloc=1KB tag=GC #1) (at peak))
+
+[0x000000010cb13cec]G1BiasedMappedArrayBase::create_new_base_array(unsigned long, unsigned long)+0x2c
+[0x000000010cb1cc88]G1BiasedMappedArray<G1HeapRegionAttr>::initialize(MemRegion, unsigned long)+0x30
+[0x000000010cb1c9c0]G1CollectedHeap::initialize()+0x314
+[0x000000010d0b26e0]universe_init()+0x80
+                             ((malloc=1KB tag=GC #1) (at peak))
+
+[0x000000010cc3e75c]JfrThreadLocal::JfrThreadLocal()+0x28
+[0x000000010d08d1ec]Thread::Thread(MemTag)+0x70
+[0x000000010cea7644]NamedThread::NamedThread()+0x10
+[0x000000010d1246a4]WorkerThreads::create_worker(unsigned int)+0x58
+                             ((malloc=1KB tag=Tracing #2) (at peak))
+
+[0x000000010cb21f9c]G1CollectionSet::initialize(unsigned int)+0x30
+[0x000000010cb1cb40]G1CollectedHeap::initialize()+0x494
+[0x000000010d0b26e0]universe_init()+0x80
+[0x000000010cbc06ac]init_globals()+0x68
+                             ((malloc=1KB tag=GC #1) (at peak))
+
+[0x000000010cbf58a0]JavaThread::JavaThread(MemTag)+0x13c
+[0x000000010cbf5c74]JavaThread::JavaThread(void (*)(JavaThread*, JavaThread*), unsigned long, MemTag)+0x24
+[0x000000010ca5804c]CompilerThread::CompilerThread(CompileQueue*, CompilerCounters*)+0x28
+[0x000000010ca46d8c]CompileBroker::make_thread(CompileBroker::ThreadType, _jobject*, CompileQueue*, AbstractCompiler*, JavaThread*)+0x140
+                             ((malloc=0KB tag=Internal #2) (peak=1KB #3))
+
+[0x000000010d08d274]Thread::Thread(MemTag)+0xf8
+[0x000000010cbf5778]JavaThread::JavaThread(MemTag)+0x14
+[0x000000010cbf5c74]JavaThread::JavaThread(void (*)(JavaThread*, JavaThread*), unsigned long, MemTag)+0x24
+[0x000000010ca5804c]CompilerThread::CompilerThread(CompileQueue*, CompilerCounters*)+0x28
+                             ((malloc=0KB tag=Class #2) (peak=1KB #3))
+
+[0x000000010ca58d8c]CompressedKlassPointers::reserve_address_space_for_compressed_classes(unsigned long, bool, bool)+0xd0
+[0x000000010ce66ab0]Metaspace::reserve_address_space_for_compressed_classes(unsigned long, bool)+0x28
+[0x000000010ce6df7c]MetaspaceShared::reserve_address_space_for_archives(FileMapInfo*, FileMapInfo*, bool, ReservedSpace&, ReservedSpace&, ReservedSpace&)+0x248
+[0x000000010ce6da48]MetaspaceShared::map_archives(FileMapInfo*, FileMapInfo*, bool)+0x10c
+                             (reserved=1064960KB, committed=14112KB Tag=Class)
+
+[0x000000010ce62328]MemoryReserver::reserve_memory(char*, unsigned long, unsigned long, unsigned long, bool, MemTag)+0x54
+[0x000000010ce6267c]MemoryReserver::reserve(char*, unsigned long, unsigned long, unsigned long, bool, MemTag)+0x11c
+[0x000000010ca245ec]CodeCache::reserve_heap_memory(unsigned long, unsigned long)+0x5c
+[0x000000010ca2421c]CodeCache::initialize_heaps()+0x5c0
+                             (reserved=245776KB, committed=7488KB Tag=Code)
+
+[0x000000010ceccba4]os::reserve_memory_aligned(unsigned long, unsigned long, MemTag, bool)+0x24
+[0x000000010ce62354]MemoryReserver::reserve_memory(char*, unsigned long, unsigned long, unsigned long, bool, MemTag)+0x80
+[0x000000010ce6267c]MemoryReserver::reserve(char*, unsigned long, unsigned long, unsigned long, bool, MemTag)+0x11c
+[0x000000010ce63090]HeapReserver::Instance::reserve_compressed_oops_heap(unsigned long, unsigned long, unsigned long)+0x374
+                             (reserved=139264KB, committed=34816KB Tag=Java Heap)
+
+[0x000000010ce62328]MemoryReserver::reserve_memory(char*, unsigned long, unsigned long, unsigned long, bool, MemTag)+0x54
+[0x000000010ce6267c]MemoryReserver::reserve(char*, unsigned long, unsigned long, unsigned long, bool, MemTag)+0x11c
+[0x000000010d0e5df0]metaspace::VirtualSpaceNode::create_node(unsigned long, metaspace::CommitLimiter*, metaspace::AbstractCounter<unsigned long>*, metaspace::AbstractCounter<unsigned long>*)+0x48
+[0x000000010d0e559c]metaspace::VirtualSpaceList::allocate_root_chunk()+0x50
+                             (reserved=65536KB, committed=1344KB Tag=Metaspace)
+
+[0x000000010d08d5f8]Thread::call_run()+0x30
+[0x000000010cec7ee8]thread_native_entry(Thread*)+0xcc
+[0x000000019b4c8ce4]_pthread_start+0x88 in libsystem_pthread.dylib
+                             (reserved=36864KB, committed=160KB Tag=Thread Stack)
+
+[0x000000010cb26420]MmapArrayAllocator<G1CMMarkStack::TaskQueueEntryChunk>::allocate_or_null(unsigned long, MemTag)+0x34
+[0x000000010cb262b0]G1CMMarkStack::ChunkAllocator::reserve(unsigned long)+0xc0
+[0x000000010cb25fd4]G1CMMarkStack::ChunkAllocator::initialize(unsigned long, unsigned long)+0x98
+[0x000000010cb25f00]G1CMMarkStack::initialize()+0x154
+                             (reserved=32768KB, committed=32768KB Tag=GC)
+
+[0x000000010ce62328]MemoryReserver::reserve_memory(char*, unsigned long, unsigned long, unsigned long, bool, MemTag)+0x54
+[0x000000010ce6267c]MemoryReserver::reserve(char*, unsigned long, unsigned long, unsigned long, bool, MemTag)+0x11c
+[0x000000010cba53f0]CodeHeap::reserve(ReservedSpace, unsigned long, unsigned long)+0x100
+[0x000000010ca2471c]CodeCache::add_heap(ReservedSpace, char const*, CodeBlobType)+0xb8
+                             (reserved=3872KB, committed=144KB Tag=Code)
+
+[0x000000010d0988a4]Threads::create_vm(JavaVMInitArgs*, bool*)+0x230
+[0x000000010cc66e6c]JNI_CreateJavaVM+0x74
+[0x0000000102cb9464]JavaMain+0x100 in libjli.dylib
+[0x0000000102cbc2e8]ThreadJavaMain+0xc in libjli.dylib
+                             (reserved=2048KB, committed=0KB Tag=Thread Stack)
+
+[0x000000010ce62328]MemoryReserver::reserve_memory(char*, unsigned long, unsigned long, unsigned long, bool, MemTag)+0x54
+[0x000000010ce6267c]MemoryReserver::reserve(char*, unsigned long, unsigned long, unsigned long, bool, MemTag)+0x11c
+[0x000000010cb1c5a8]G1CollectedHeap::create_aux_memory_mapper(char const*, unsigned long, unsigned long)+0x84
+[0x000000010cb1c8c8]G1CollectedHeap::initialize()+0x21c
+                             (reserved=2048KB, committed=544KB Tag=GC)
+
+[0x000000010ce62328]MemoryReserver::reserve_memory(char*, unsigned long, unsigned long, unsigned long, bool, MemTag)+0x54
+[0x000000010ce6267c]MemoryReserver::reserve(char*, unsigned long, unsigned long, unsigned long, bool, MemTag)+0x11c
+[0x000000010cb1c5a8]G1CollectedHeap::create_aux_memory_mapper(char const*, unsigned long, unsigned long)+0x84
+[0x000000010cb1c8a0]G1CollectedHeap::initialize()+0x1f4
+                             (reserved=256KB, committed=80KB Tag=GC)
+
+[0x000000010ce62328]MemoryReserver::reserve_memory(char*, unsigned long, unsigned long, unsigned long, bool, MemTag)+0x54
+[0x000000010ce6267c]MemoryReserver::reserve(char*, unsigned long, unsigned long, unsigned long, bool, MemTag)+0x11c
+[0x000000010cb1c5a8]G1CollectedHeap::create_aux_memory_mapper(char const*, unsigned long, unsigned long)+0x84
+[0x000000010cb1c87c]G1CollectedHeap::initialize()+0x1d0
+                             (reserved=256KB, committed=80KB Tag=GC)
+
+[0x000000010cb36910]MmapArrayAllocator<unsigned char>::allocate(unsigned long, MemTag)+0x34
+[0x000000010cb36704]Padded2DArray<unsigned long, (MemTag)5, 128ul>::create_unfreeable(unsigned int, unsigned int, unsigned long*)+0x4c
+[0x000000010cb36638]G1FromCardCache::initialize(unsigned int)+0x74
+[0x000000010cb1c910]G1CollectedHeap::initialize()+0x264
+                             (reserved=48KB, committed=48KB Tag=GC)
+
+[0x000000010cef0cdc]PerfMemory::create_memory_region(unsigned long)+0x3d8
+[0x000000010cef04f8]PerfMemory::initialize()+0x74
+[0x000000010cbc0638]vm_init_globals()+0x20
+[0x000000010d0987f8]Threads::create_vm(JavaVMInitArgs*, bool*)+0x184
+                             (reserved=32KB, committed=32KB Tag=Internal)
+
+[0x000000010cf39694]SafepointMechanism::default_initialize()+0x4c
+[0x000000010d0987bc]Threads::create_vm(JavaVMInitArgs*, bool*)+0x148
+[0x000000010cc66e6c]JNI_CreateJavaVM+0x74
+[0x0000000102cb9464]JavaMain+0x100 in libjli.dylib
+                             (reserved=32KB, committed=32KB Tag=Safepoint)
+
+(1426 call sites weighting less than 1KB each omitted.)
+

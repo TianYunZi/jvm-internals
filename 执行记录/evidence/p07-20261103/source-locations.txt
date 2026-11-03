@@ -1,0 +1,147 @@
+/Users/xiejinxin/Developer/OpenJDK/jdk25u-25.0.5.0.2/src/hotspot/cpu/x86/x86_64.ad:5898:instruct membar_acquire()
+/Users/xiejinxin/Developer/OpenJDK/jdk25u-25.0.5.0.2/src/hotspot/cpu/x86/x86_64.ad:5910:instruct membar_acquire_lock()
+/Users/xiejinxin/Developer/OpenJDK/jdk25u-25.0.5.0.2/src/hotspot/cpu/x86/x86_64.ad:5921:instruct membar_release()
+/Users/xiejinxin/Developer/OpenJDK/jdk25u-25.0.5.0.2/src/hotspot/cpu/x86/x86_64.ad:5933:instruct membar_release_lock()
+/Users/xiejinxin/Developer/OpenJDK/jdk25u-25.0.5.0.2/src/hotspot/cpu/x86/x86_64.ad:5944:instruct membar_volatile(rFlagsReg cr) %{
+/Users/xiejinxin/Developer/OpenJDK/jdk25u-25.0.5.0.2/src/hotspot/cpu/x86/x86_64.ad:5951:    $$emit$$"lock addl [rsp + #0], 0\t! membar_volatile"
+/Users/xiejinxin/Developer/OpenJDK/jdk25u-25.0.5.0.2/src/hotspot/cpu/x86/x86_64.ad:5959:instruct unnecessary_membar_volatile()
+/Users/xiejinxin/Developer/OpenJDK/jdk25u-25.0.5.0.2/src/hotspot/cpu/aarch64/aarch64.ad:1179:  // predicates controlling emit of ldr<x>/ldar<x> and associated dmb
+/Users/xiejinxin/Developer/OpenJDK/jdk25u-25.0.5.0.2/src/hotspot/cpu/aarch64/aarch64.ad:1184:  // predicates controlling emit of str<x>/stlr<x> and associated dmbs
+/Users/xiejinxin/Developer/OpenJDK/jdk25u-25.0.5.0.2/src/hotspot/cpu/aarch64/aarch64.ad:1267:  // AArch64 has ldar<x> and stlr<x> instructions which we can safely
+/Users/xiejinxin/Developer/OpenJDK/jdk25u-25.0.5.0.2/src/hotspot/cpu/aarch64/aarch64.ad:1271:  //   ldar<x>
+/Users/xiejinxin/Developer/OpenJDK/jdk25u-25.0.5.0.2/src/hotspot/cpu/aarch64/aarch64.ad:1275:  //   stlr<x>
+/Users/xiejinxin/Developer/OpenJDK/jdk25u-25.0.5.0.2/src/hotspot/cpu/aarch64/aarch64.ad:1373:  // be able to implement them using either ldar<x>/stlr<x> or some
+/Users/xiejinxin/Developer/OpenJDK/jdk25u-25.0.5.0.2/src/hotspot/cpu/aarch64/aarch64.ad:1374:  // combination of ldr<x>/stlr<x> and dmb instructions.
+/Users/xiejinxin/Developer/OpenJDK/jdk25u-25.0.5.0.2/src/hotspot/cpu/aarch64/aarch64.ad:1428:  // inhibit planting of the ldr<x>, instead planting an ldar<x>.
+/Users/xiejinxin/Developer/OpenJDK/jdk25u-25.0.5.0.2/src/hotspot/cpu/aarch64/aarch64.ad:1434:  // and MemBarVolatile and instead plant a simple stlr<x>
+/Users/xiejinxin/Developer/OpenJDK/jdk25u-25.0.5.0.2/src/hotspot/cpu/aarch64/aarch64.ad:1455:  // volatile signatures and insert ldar<x> or stlr<x> are failsafe.
+/Users/xiejinxin/Developer/OpenJDK/jdk25u-25.0.5.0.2/src/hotspot/cpu/aarch64/aarch64.ad:1512:// predicates controlling emit of ldr<x>/ldar<x>
+/Users/xiejinxin/Developer/OpenJDK/jdk25u-25.0.5.0.2/src/hotspot/cpu/aarch64/aarch64.ad:1588:// predicates controlling emit of str<x>/stlr<x>
+/Users/xiejinxin/Developer/OpenJDK/jdk25u-25.0.5.0.2/src/hotspot/cpu/aarch64/aarch64.ad:3109:  enc_class aarch64_enc_stlrb(iRegI src, memory mem) %{
+/Users/xiejinxin/Developer/OpenJDK/jdk25u-25.0.5.0.2/src/hotspot/cpu/aarch64/aarch64.ad:3111:                 rscratch1, stlrb);
+/Users/xiejinxin/Developer/OpenJDK/jdk25u-25.0.5.0.2/src/hotspot/cpu/aarch64/aarch64.ad:3114:  enc_class aarch64_enc_stlrb0(memory mem) %{
+/Users/xiejinxin/Developer/OpenJDK/jdk25u-25.0.5.0.2/src/hotspot/cpu/aarch64/aarch64.ad:3116:                 rscratch1, stlrb);
+/Users/xiejinxin/Developer/OpenJDK/jdk25u-25.0.5.0.2/src/hotspot/cpu/aarch64/aarch64.ad:3119:  enc_class aarch64_enc_stlrh(iRegI src, memory mem) %{
+/Users/xiejinxin/Developer/OpenJDK/jdk25u-25.0.5.0.2/src/hotspot/cpu/aarch64/aarch64.ad:3121:                 rscratch1, stlrh);
+/Users/xiejinxin/Developer/OpenJDK/jdk25u-25.0.5.0.2/src/hotspot/cpu/aarch64/aarch64.ad:3124:  enc_class aarch64_enc_stlrh0(memory mem) %{
+/Users/xiejinxin/Developer/OpenJDK/jdk25u-25.0.5.0.2/src/hotspot/cpu/aarch64/aarch64.ad:3126:                 rscratch1, stlrh);
+/Users/xiejinxin/Developer/OpenJDK/jdk25u-25.0.5.0.2/src/hotspot/cpu/aarch64/aarch64.ad:3129:  enc_class aarch64_enc_stlrw(iRegI src, memory mem) %{
+/Users/xiejinxin/Developer/OpenJDK/jdk25u-25.0.5.0.2/src/hotspot/cpu/aarch64/aarch64.ad:3131:                 rscratch1, stlrw);
+/Users/xiejinxin/Developer/OpenJDK/jdk25u-25.0.5.0.2/src/hotspot/cpu/aarch64/aarch64.ad:3134:  enc_class aarch64_enc_stlrw0(memory mem) %{
+/Users/xiejinxin/Developer/OpenJDK/jdk25u-25.0.5.0.2/src/hotspot/cpu/aarch64/aarch64.ad:3136:                 rscratch1, stlrw);
+/Users/xiejinxin/Developer/OpenJDK/jdk25u-25.0.5.0.2/src/hotspot/cpu/aarch64/aarch64.ad:3139:  enc_class aarch64_enc_ldarsbw(iRegI dst, memory mem) %{
+/Users/xiejinxin/Developer/OpenJDK/jdk25u-25.0.5.0.2/src/hotspot/cpu/aarch64/aarch64.ad:3142:             rscratch1, ldarb);
+/Users/xiejinxin/Developer/OpenJDK/jdk25u-25.0.5.0.2/src/hotspot/cpu/aarch64/aarch64.ad:3146:  enc_class aarch64_enc_ldarsb(iRegL dst, memory mem) %{
+/Users/xiejinxin/Developer/OpenJDK/jdk25u-25.0.5.0.2/src/hotspot/cpu/aarch64/aarch64.ad:3149:             rscratch1, ldarb);
+/Users/xiejinxin/Developer/OpenJDK/jdk25u-25.0.5.0.2/src/hotspot/cpu/aarch64/aarch64.ad:3153:  enc_class aarch64_enc_ldarbw(iRegI dst, memory mem) %{
+/Users/xiejinxin/Developer/OpenJDK/jdk25u-25.0.5.0.2/src/hotspot/cpu/aarch64/aarch64.ad:3155:             rscratch1, ldarb);
+/Users/xiejinxin/Developer/OpenJDK/jdk25u-25.0.5.0.2/src/hotspot/cpu/aarch64/aarch64.ad:3158:  enc_class aarch64_enc_ldarb(iRegL dst, memory mem) %{
+/Users/xiejinxin/Developer/OpenJDK/jdk25u-25.0.5.0.2/src/hotspot/cpu/aarch64/aarch64.ad:3160:             rscratch1, ldarb);
+/Users/xiejinxin/Developer/OpenJDK/jdk25u-25.0.5.0.2/src/hotspot/cpu/aarch64/aarch64.ad:3163:  enc_class aarch64_enc_ldarshw(iRegI dst, memory mem) %{
+/Users/xiejinxin/Developer/OpenJDK/jdk25u-25.0.5.0.2/src/hotspot/cpu/aarch64/aarch64.ad:3166:             rscratch1, ldarh);
+/Users/xiejinxin/Developer/OpenJDK/jdk25u-25.0.5.0.2/src/hotspot/cpu/aarch64/aarch64.ad:3170:  enc_class aarch64_enc_ldarsh(iRegL dst, memory mem) %{
+/Users/xiejinxin/Developer/OpenJDK/jdk25u-25.0.5.0.2/src/hotspot/cpu/aarch64/aarch64.ad:3173:             rscratch1, ldarh);
+/Users/xiejinxin/Developer/OpenJDK/jdk25u-25.0.5.0.2/src/hotspot/cpu/aarch64/aarch64.ad:3177:  enc_class aarch64_enc_ldarhw(iRegI dst, memory mem) %{
+/Users/xiejinxin/Developer/OpenJDK/jdk25u-25.0.5.0.2/src/hotspot/cpu/aarch64/aarch64.ad:3179:             rscratch1, ldarh);
+/Users/xiejinxin/Developer/OpenJDK/jdk25u-25.0.5.0.2/src/hotspot/cpu/aarch64/aarch64.ad:3182:  enc_class aarch64_enc_ldarh(iRegL dst, memory mem) %{
+/Users/xiejinxin/Developer/OpenJDK/jdk25u-25.0.5.0.2/src/hotspot/cpu/aarch64/aarch64.ad:3184:             rscratch1, ldarh);
+/Users/xiejinxin/Developer/OpenJDK/jdk25u-25.0.5.0.2/src/hotspot/cpu/aarch64/aarch64.ad:3187:  enc_class aarch64_enc_ldarw(iRegI dst, memory mem) %{
+/Users/xiejinxin/Developer/OpenJDK/jdk25u-25.0.5.0.2/src/hotspot/cpu/aarch64/aarch64.ad:3189:             rscratch1, ldarw);
+/Users/xiejinxin/Developer/OpenJDK/jdk25u-25.0.5.0.2/src/hotspot/cpu/aarch64/aarch64.ad:3192:  enc_class aarch64_enc_ldarw(iRegL dst, memory mem) %{
+/Users/xiejinxin/Developer/OpenJDK/jdk25u-25.0.5.0.2/src/hotspot/cpu/aarch64/aarch64.ad:3194:             rscratch1, ldarw);
+/Users/xiejinxin/Developer/OpenJDK/jdk25u-25.0.5.0.2/src/hotspot/cpu/aarch64/aarch64.ad:3197:  enc_class aarch64_enc_ldar(iRegL dst, memory mem) %{
+/Users/xiejinxin/Developer/OpenJDK/jdk25u-25.0.5.0.2/src/hotspot/cpu/aarch64/aarch64.ad:3199:             rscratch1, ldar);
+/Users/xiejinxin/Developer/OpenJDK/jdk25u-25.0.5.0.2/src/hotspot/cpu/aarch64/aarch64.ad:3202:  enc_class aarch64_enc_fldars(vRegF dst, memory mem) %{
+/Users/xiejinxin/Developer/OpenJDK/jdk25u-25.0.5.0.2/src/hotspot/cpu/aarch64/aarch64.ad:3204:             rscratch1, ldarw);
+/Users/xiejinxin/Developer/OpenJDK/jdk25u-25.0.5.0.2/src/hotspot/cpu/aarch64/aarch64.ad:3208:  enc_class aarch64_enc_fldard(vRegD dst, memory mem) %{
+/Users/xiejinxin/Developer/OpenJDK/jdk25u-25.0.5.0.2/src/hotspot/cpu/aarch64/aarch64.ad:3210:             rscratch1, ldar);
+/Users/xiejinxin/Developer/OpenJDK/jdk25u-25.0.5.0.2/src/hotspot/cpu/aarch64/aarch64.ad:3214:  enc_class aarch64_enc_stlr(iRegL src, memory mem) %{
+/Users/xiejinxin/Developer/OpenJDK/jdk25u-25.0.5.0.2/src/hotspot/cpu/aarch64/aarch64.ad:3224:                 rscratch1, stlr);
+/Users/xiejinxin/Developer/OpenJDK/jdk25u-25.0.5.0.2/src/hotspot/cpu/aarch64/aarch64.ad:3227:  enc_class aarch64_enc_stlr0(memory mem) %{
+/Users/xiejinxin/Developer/OpenJDK/jdk25u-25.0.5.0.2/src/hotspot/cpu/aarch64/aarch64.ad:3229:                 rscratch1, stlr);
+/Users/xiejinxin/Developer/OpenJDK/jdk25u-25.0.5.0.2/src/hotspot/cpu/aarch64/aarch64.ad:3232:  enc_class aarch64_enc_fstlrs(vRegF src, memory mem) %{
+/Users/xiejinxin/Developer/OpenJDK/jdk25u-25.0.5.0.2/src/hotspot/cpu/aarch64/aarch64.ad:3238:                 rscratch1, stlrw);
+/Users/xiejinxin/Developer/OpenJDK/jdk25u-25.0.5.0.2/src/hotspot/cpu/aarch64/aarch64.ad:3241:  enc_class aarch64_enc_fstlrd(vRegD src, memory mem) %{
+/Users/xiejinxin/Developer/OpenJDK/jdk25u-25.0.5.0.2/src/hotspot/cpu/aarch64/aarch64.ad:3247:                 rscratch1, stlr);
+/Users/xiejinxin/Developer/OpenJDK/jdk25u-25.0.5.0.2/src/hotspot/cpu/aarch64/aarch64.ad:7195:  format %{ "ldarsb  $dst, $mem\t# byte" %}
+/Users/xiejinxin/Developer/OpenJDK/jdk25u-25.0.5.0.2/src/hotspot/cpu/aarch64/aarch64.ad:7197:  ins_encode(aarch64_enc_ldarsb(dst, mem));
+/Users/xiejinxin/Developer/OpenJDK/jdk25u-25.0.5.0.2/src/hotspot/cpu/aarch64/aarch64.ad:7208:  format %{ "ldarsb  $dst, $mem\t# byte" %}
+/Users/xiejinxin/Developer/OpenJDK/jdk25u-25.0.5.0.2/src/hotspot/cpu/aarch64/aarch64.ad:7210:  ins_encode(aarch64_enc_ldarsb(dst, mem));
+/Users/xiejinxin/Developer/OpenJDK/jdk25u-25.0.5.0.2/src/hotspot/cpu/aarch64/aarch64.ad:7221:  format %{ "ldarb  $dst, $mem\t# byte" %}
+/Users/xiejinxin/Developer/OpenJDK/jdk25u-25.0.5.0.2/src/hotspot/cpu/aarch64/aarch64.ad:7223:  ins_encode(aarch64_enc_ldarb(dst, mem));
+/Users/xiejinxin/Developer/OpenJDK/jdk25u-25.0.5.0.2/src/hotspot/cpu/aarch64/aarch64.ad:7234:  format %{ "ldarb  $dst, $mem\t# byte" %}
+/Users/xiejinxin/Developer/OpenJDK/jdk25u-25.0.5.0.2/src/hotspot/cpu/aarch64/aarch64.ad:7236:  ins_encode(aarch64_enc_ldarb(dst, mem));
+/Users/xiejinxin/Developer/OpenJDK/jdk25u-25.0.5.0.2/src/hotspot/cpu/aarch64/aarch64.ad:7247:  format %{ "ldarshw  $dst, $mem\t# short" %}
+/Users/xiejinxin/Developer/OpenJDK/jdk25u-25.0.5.0.2/src/hotspot/cpu/aarch64/aarch64.ad:7249:  ins_encode(aarch64_enc_ldarshw(dst, mem));
+/Users/xiejinxin/Developer/OpenJDK/jdk25u-25.0.5.0.2/src/hotspot/cpu/aarch64/aarch64.ad:7259:  format %{ "ldarhw  $dst, $mem\t# short" %}
+/Users/xiejinxin/Developer/OpenJDK/jdk25u-25.0.5.0.2/src/hotspot/cpu/aarch64/aarch64.ad:7261:  ins_encode(aarch64_enc_ldarhw(dst, mem));
+/Users/xiejinxin/Developer/OpenJDK/jdk25u-25.0.5.0.2/src/hotspot/cpu/aarch64/aarch64.ad:7272:  format %{ "ldarh  $dst, $mem\t# short" %}
+/Users/xiejinxin/Developer/OpenJDK/jdk25u-25.0.5.0.2/src/hotspot/cpu/aarch64/aarch64.ad:7274:  ins_encode(aarch64_enc_ldarh(dst, mem));
+/Users/xiejinxin/Developer/OpenJDK/jdk25u-25.0.5.0.2/src/hotspot/cpu/aarch64/aarch64.ad:7285:  format %{ "ldarh  $dst, $mem\t# short" %}
+/Users/xiejinxin/Developer/OpenJDK/jdk25u-25.0.5.0.2/src/hotspot/cpu/aarch64/aarch64.ad:7287:  ins_encode(aarch64_enc_ldarsh(dst, mem));
+/Users/xiejinxin/Developer/OpenJDK/jdk25u-25.0.5.0.2/src/hotspot/cpu/aarch64/aarch64.ad:7298:  format %{ "ldarw  $dst, $mem\t# int" %}
+/Users/xiejinxin/Developer/OpenJDK/jdk25u-25.0.5.0.2/src/hotspot/cpu/aarch64/aarch64.ad:7300:  ins_encode(aarch64_enc_ldarw(dst, mem));
+/Users/xiejinxin/Developer/OpenJDK/jdk25u-25.0.5.0.2/src/hotspot/cpu/aarch64/aarch64.ad:7311:  format %{ "ldarw  $dst, $mem\t# int" %}
+/Users/xiejinxin/Developer/OpenJDK/jdk25u-25.0.5.0.2/src/hotspot/cpu/aarch64/aarch64.ad:7313:  ins_encode(aarch64_enc_ldarw(dst, mem));
+/Users/xiejinxin/Developer/OpenJDK/jdk25u-25.0.5.0.2/src/hotspot/cpu/aarch64/aarch64.ad:7324:  format %{ "ldar  $dst, $mem\t# int" %}
+/Users/xiejinxin/Developer/OpenJDK/jdk25u-25.0.5.0.2/src/hotspot/cpu/aarch64/aarch64.ad:7326:  ins_encode(aarch64_enc_ldar(dst, mem));
+/Users/xiejinxin/Developer/OpenJDK/jdk25u-25.0.5.0.2/src/hotspot/cpu/aarch64/aarch64.ad:7338:  format %{ "ldar  $dst, $mem\t# ptr" %}
+/Users/xiejinxin/Developer/OpenJDK/jdk25u-25.0.5.0.2/src/hotspot/cpu/aarch64/aarch64.ad:7340:  ins_encode(aarch64_enc_ldar(dst, mem));
+/Users/xiejinxin/Developer/OpenJDK/jdk25u-25.0.5.0.2/src/hotspot/cpu/aarch64/aarch64.ad:7352:  format %{ "ldarw  $dst, $mem\t# compressed ptr" %}
+/Users/xiejinxin/Developer/OpenJDK/jdk25u-25.0.5.0.2/src/hotspot/cpu/aarch64/aarch64.ad:7354:  ins_encode(aarch64_enc_ldarw(dst, mem));
+/Users/xiejinxin/Developer/OpenJDK/jdk25u-25.0.5.0.2/src/hotspot/cpu/aarch64/aarch64.ad:7365:  format %{ "ldars  $dst, $mem\t# float" %}
+/Users/xiejinxin/Developer/OpenJDK/jdk25u-25.0.5.0.2/src/hotspot/cpu/aarch64/aarch64.ad:7367:  ins_encode( aarch64_enc_fldars(dst, mem) );
+/Users/xiejinxin/Developer/OpenJDK/jdk25u-25.0.5.0.2/src/hotspot/cpu/aarch64/aarch64.ad:7378:  format %{ "ldard  $dst, $mem\t# double" %}
+/Users/xiejinxin/Developer/OpenJDK/jdk25u-25.0.5.0.2/src/hotspot/cpu/aarch64/aarch64.ad:7380:  ins_encode( aarch64_enc_fldard(dst, mem) );
+/Users/xiejinxin/Developer/OpenJDK/jdk25u-25.0.5.0.2/src/hotspot/cpu/aarch64/aarch64.ad:7391:  format %{ "stlrb  $src, $mem\t# byte" %}
+/Users/xiejinxin/Developer/OpenJDK/jdk25u-25.0.5.0.2/src/hotspot/cpu/aarch64/aarch64.ad:7393:  ins_encode(aarch64_enc_stlrb(src, mem));
+/Users/xiejinxin/Developer/OpenJDK/jdk25u-25.0.5.0.2/src/hotspot/cpu/aarch64/aarch64.ad:7403:  format %{ "stlrb  zr, $mem\t# byte" %}
+/Users/xiejinxin/Developer/OpenJDK/jdk25u-25.0.5.0.2/src/hotspot/cpu/aarch64/aarch64.ad:7405:  ins_encode(aarch64_enc_stlrb0(mem));
+/Users/xiejinxin/Developer/OpenJDK/jdk25u-25.0.5.0.2/src/hotspot/cpu/aarch64/aarch64.ad:7416:  format %{ "stlrh  $src, $mem\t# short" %}
+/Users/xiejinxin/Developer/OpenJDK/jdk25u-25.0.5.0.2/src/hotspot/cpu/aarch64/aarch64.ad:7418:  ins_encode(aarch64_enc_stlrh(src, mem));
+/Users/xiejinxin/Developer/OpenJDK/jdk25u-25.0.5.0.2/src/hotspot/cpu/aarch64/aarch64.ad:7428:  format %{ "stlrh  zr, $mem\t# short" %}
+/Users/xiejinxin/Developer/OpenJDK/jdk25u-25.0.5.0.2/src/hotspot/cpu/aarch64/aarch64.ad:7430:  ins_encode(aarch64_enc_stlrh0(mem));
+/Users/xiejinxin/Developer/OpenJDK/jdk25u-25.0.5.0.2/src/hotspot/cpu/aarch64/aarch64.ad:7442:  format %{ "stlrw  $src, $mem\t# int" %}
+/Users/xiejinxin/Developer/OpenJDK/jdk25u-25.0.5.0.2/src/hotspot/cpu/aarch64/aarch64.ad:7444:  ins_encode(aarch64_enc_stlrw(src, mem));
+/Users/xiejinxin/Developer/OpenJDK/jdk25u-25.0.5.0.2/src/hotspot/cpu/aarch64/aarch64.ad:7454:  format %{ "stlrw  zr, $mem\t# int" %}
+/Users/xiejinxin/Developer/OpenJDK/jdk25u-25.0.5.0.2/src/hotspot/cpu/aarch64/aarch64.ad:7456:  ins_encode(aarch64_enc_stlrw0(mem));
+/Users/xiejinxin/Developer/OpenJDK/jdk25u-25.0.5.0.2/src/hotspot/cpu/aarch64/aarch64.ad:7467:  format %{ "stlr  $src, $mem\t# int" %}
+/Users/xiejinxin/Developer/OpenJDK/jdk25u-25.0.5.0.2/src/hotspot/cpu/aarch64/aarch64.ad:7469:  ins_encode(aarch64_enc_stlr(src, mem));
+/Users/xiejinxin/Developer/OpenJDK/jdk25u-25.0.5.0.2/src/hotspot/cpu/aarch64/aarch64.ad:7479:  format %{ "stlr  zr, $mem\t# int" %}
+/Users/xiejinxin/Developer/OpenJDK/jdk25u-25.0.5.0.2/src/hotspot/cpu/aarch64/aarch64.ad:7481:  ins_encode(aarch64_enc_stlr0(mem));
+/Users/xiejinxin/Developer/OpenJDK/jdk25u-25.0.5.0.2/src/hotspot/cpu/aarch64/aarch64.ad:7493:  format %{ "stlr  $src, $mem\t# ptr" %}
+/Users/xiejinxin/Developer/OpenJDK/jdk25u-25.0.5.0.2/src/hotspot/cpu/aarch64/aarch64.ad:7495:  ins_encode(aarch64_enc_stlr(src, mem));
+/Users/xiejinxin/Developer/OpenJDK/jdk25u-25.0.5.0.2/src/hotspot/cpu/aarch64/aarch64.ad:7506:  format %{ "stlr  zr, $mem\t# ptr" %}
+/Users/xiejinxin/Developer/OpenJDK/jdk25u-25.0.5.0.2/src/hotspot/cpu/aarch64/aarch64.ad:7508:  ins_encode(aarch64_enc_stlr0(mem));
+/Users/xiejinxin/Developer/OpenJDK/jdk25u-25.0.5.0.2/src/hotspot/cpu/aarch64/aarch64.ad:7520:  format %{ "stlrw  $src, $mem\t# compressed ptr" %}
+/Users/xiejinxin/Developer/OpenJDK/jdk25u-25.0.5.0.2/src/hotspot/cpu/aarch64/aarch64.ad:7522:  ins_encode(aarch64_enc_stlrw(src, mem));
+/Users/xiejinxin/Developer/OpenJDK/jdk25u-25.0.5.0.2/src/hotspot/cpu/aarch64/aarch64.ad:7533:  format %{ "stlrw  zr, $mem\t# compressed ptr" %}
+/Users/xiejinxin/Developer/OpenJDK/jdk25u-25.0.5.0.2/src/hotspot/cpu/aarch64/aarch64.ad:7535:  ins_encode(aarch64_enc_stlrw0(mem));
+/Users/xiejinxin/Developer/OpenJDK/jdk25u-25.0.5.0.2/src/hotspot/cpu/aarch64/aarch64.ad:7546:  format %{ "stlrs  $src, $mem\t# float" %}
+/Users/xiejinxin/Developer/OpenJDK/jdk25u-25.0.5.0.2/src/hotspot/cpu/aarch64/aarch64.ad:7548:  ins_encode( aarch64_enc_fstlrs(src, mem) );
+/Users/xiejinxin/Developer/OpenJDK/jdk25u-25.0.5.0.2/src/hotspot/cpu/aarch64/aarch64.ad:7562:  format %{ "stlrd  $src, $mem\t# double" %}
+/Users/xiejinxin/Developer/OpenJDK/jdk25u-25.0.5.0.2/src/hotspot/cpu/aarch64/aarch64.ad:7564:  ins_encode( aarch64_enc_fstlrd(src, mem) );
+/Users/xiejinxin/Developer/OpenJDK/jdk25u-25.0.5.0.2/src/hotspot/cpu/aarch64/aarch64.ad:7842:instruct unnecessary_membar_acquire() %{
+/Users/xiejinxin/Developer/OpenJDK/jdk25u-25.0.5.0.2/src/hotspot/cpu/aarch64/aarch64.ad:7847:  format %{ "membar_acquire (elided)" %}
+/Users/xiejinxin/Developer/OpenJDK/jdk25u-25.0.5.0.2/src/hotspot/cpu/aarch64/aarch64.ad:7850:    __ block_comment("membar_acquire (elided)");
+/Users/xiejinxin/Developer/OpenJDK/jdk25u-25.0.5.0.2/src/hotspot/cpu/aarch64/aarch64.ad:7856:instruct membar_acquire() %{
+/Users/xiejinxin/Developer/OpenJDK/jdk25u-25.0.5.0.2/src/hotspot/cpu/aarch64/aarch64.ad:7860:  format %{ "membar_acquire\n\t"
+/Users/xiejinxin/Developer/OpenJDK/jdk25u-25.0.5.0.2/src/hotspot/cpu/aarch64/aarch64.ad:7864:    __ block_comment("membar_acquire");
+/Users/xiejinxin/Developer/OpenJDK/jdk25u-25.0.5.0.2/src/hotspot/cpu/aarch64/aarch64.ad:7872:instruct membar_acquire_lock() %{
+/Users/xiejinxin/Developer/OpenJDK/jdk25u-25.0.5.0.2/src/hotspot/cpu/aarch64/aarch64.ad:7876:  format %{ "membar_acquire_lock (elided)" %}
+/Users/xiejinxin/Developer/OpenJDK/jdk25u-25.0.5.0.2/src/hotspot/cpu/aarch64/aarch64.ad:7879:    __ block_comment("membar_acquire_lock (elided)");
+/Users/xiejinxin/Developer/OpenJDK/jdk25u-25.0.5.0.2/src/hotspot/cpu/aarch64/aarch64.ad:7897:instruct unnecessary_membar_release() %{
+/Users/xiejinxin/Developer/OpenJDK/jdk25u-25.0.5.0.2/src/hotspot/cpu/aarch64/aarch64.ad:7902:  format %{ "membar_release (elided)" %}
+/Users/xiejinxin/Developer/OpenJDK/jdk25u-25.0.5.0.2/src/hotspot/cpu/aarch64/aarch64.ad:7905:    __ block_comment("membar_release (elided)");
+/Users/xiejinxin/Developer/OpenJDK/jdk25u-25.0.5.0.2/src/hotspot/cpu/aarch64/aarch64.ad:7910:instruct membar_release() %{
+/Users/xiejinxin/Developer/OpenJDK/jdk25u-25.0.5.0.2/src/hotspot/cpu/aarch64/aarch64.ad:7914:  format %{ "membar_release\n\t"
+/Users/xiejinxin/Developer/OpenJDK/jdk25u-25.0.5.0.2/src/hotspot/cpu/aarch64/aarch64.ad:7918:    __ block_comment("membar_release");
+/Users/xiejinxin/Developer/OpenJDK/jdk25u-25.0.5.0.2/src/hotspot/cpu/aarch64/aarch64.ad:7939:instruct membar_release_lock() %{
+/Users/xiejinxin/Developer/OpenJDK/jdk25u-25.0.5.0.2/src/hotspot/cpu/aarch64/aarch64.ad:7943:  format %{ "membar_release_lock (elided)" %}
+/Users/xiejinxin/Developer/OpenJDK/jdk25u-25.0.5.0.2/src/hotspot/cpu/aarch64/aarch64.ad:7946:    __ block_comment("membar_release_lock (elided)");
+/Users/xiejinxin/Developer/OpenJDK/jdk25u-25.0.5.0.2/src/hotspot/cpu/aarch64/aarch64.ad:7952:instruct unnecessary_membar_volatile() %{
+/Users/xiejinxin/Developer/OpenJDK/jdk25u-25.0.5.0.2/src/hotspot/cpu/aarch64/aarch64.ad:7957:  format %{ "membar_volatile (elided)" %}
+/Users/xiejinxin/Developer/OpenJDK/jdk25u-25.0.5.0.2/src/hotspot/cpu/aarch64/aarch64.ad:7960:    __ block_comment("membar_volatile (elided)");
+/Users/xiejinxin/Developer/OpenJDK/jdk25u-25.0.5.0.2/src/hotspot/cpu/aarch64/aarch64.ad:7966:instruct membar_volatile() %{
+/Users/xiejinxin/Developer/OpenJDK/jdk25u-25.0.5.0.2/src/hotspot/cpu/aarch64/aarch64.ad:7970:  format %{ "membar_volatile\n\t"
+/Users/xiejinxin/Developer/OpenJDK/jdk25u-25.0.5.0.2/src/hotspot/cpu/aarch64/aarch64.ad:7974:    __ block_comment("membar_volatile");

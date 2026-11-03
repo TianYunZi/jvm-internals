@@ -1,0 +1,2 @@
+  PID    RSS      VSZ ELAPSED COMMAND
+23682  67648 490639856   01:01 /opt/homebrew/Cellar/openjdk@25/25.0.5.0.2/libexec/openjdk.jdk/Contents/Home/bin/java -Xms32m -Xmx128m -Xss512k -XX:MaxDirectMemorySize=16m -XX:NativeMemoryTracking=summary -Xlog:class+unload=info,gc+metaspace=info,gc=info:file=chapters/ch12-native-memory/evidence/runs/ch12-20261103-02/lifecycle.log -cp chapters/ch12-native-memory/target/classes org.example.jvminternals.ch12.NativeJourney chapters/ch12-native-memory/target/disposable

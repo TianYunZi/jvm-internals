@@ -1,0 +1,23 @@
+跳到正文	#main
+Java 虚拟机原理图文书	../../index.html
+从现象开始	#problem
+16.1 即时编译的收益与成本	#sec-16-1
+16.2 两类HotSpot编译器	#sec-16-2
+16.3 热点计数与运行画像	#sec-16-3
+16.4 编译调度与层级转换	#sec-16-4
+16.5 启动、预热与稳定阶段	#sec-16-5
+证据与复做	#observe
+回顾与边界	#review
+来源	#sources
+CH16-F01	#fig-16-1
+CH16-F02	#fig-16-2
+CH16-F01	#fig-16-1
+CH16-F02	#fig-16-2
+CH16-F03	#fig-16-3
+运行说明	README.html
+源码阅读	sources.html
+证据索引	evidence/索引.md
+HotSpot性能说明的分层编译部分	https://docs.oracle.com/en/java/javase/25/vm/java-hotspot-virtual-machine-performance-enhancements.html
+上一章	../ch15-dynamic-invocation/chapter.html
+下一章	../ch17-compiler-optimizations/chapter.html
+全书目录	../../index.html

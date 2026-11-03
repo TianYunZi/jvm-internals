@@ -1,0 +1,55 @@
+跳到本章正文	#chapter
+Java 虚拟机原理 / 第二篇	../../index.html
+从一个泛型字段开始	#question
+4.1 总体结构与版本	#sec-4-1
+4.2 常量池、描述符与成员	#sec-4-2
+4.3 方法代码与属性	#sec-4-3
+4.4 现代语言结构	#sec-4-4
+4.5 类文件处理接口	#sec-4-5
+实现阅读路线	#source-route
+观察与边界	#observations
+回顾与思考	#review
+来源与材料	#sources
+ClassfileSubject.java	sources.html#ch04-e01
+S01 §4.1	#s01
+S01 §4.7	#s01
+文件头记录	evidence/runs/ch04-20261103-01/header.hex.txt
+S01 §4.1	#s01
+S04	#s04
+S01 §4.4	#s01
+S01 §4.7.9	#s01
+S06	#s06
+S01 §4.6、§4.7.3	#s01
+S01 §4.7.4、§4.10.1	#s01
+ModernShapes.java	sources.html#ch04-e02
+S01 §4.7.16—4.7.31	#s01
+S02 §5.4.4	#s02
+S07	#s07
+S03	#s03
+ClassfileExplorer.java	sources.html#ch04-e03
+ClassfileWorkshop.java	sources.html#ch04-e04
+S03	#s03
+S05	#s05
+证据索引	evidence/索引.md
+环境基线	../../执行记录/基线与约定.md
+ch04-20261103-01	evidence/runs/ch04-20261103-01/记录.md
+运行说明	README.html
+Java SE 25 虚拟机规范第 4 章	https://docs.oracle.com/javase/specs/jvms/se25/html/jvms-4.html
+第 5 章	https://docs.oracle.com/javase/specs/jvms/se25/html/jvms-5.html
+Java SE 25 java.lang.classfile	https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/classfile/package-summary.html
+ClassFile 与处理选项	https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/classfile/ClassFile.html
+锁定提交的 classFileParser.cpp	https://github.com/openjdk/jdk25u/blob/1775ea114f649f0314e4e43eb6c802ff16dfab7c/src/hotspot/share/classfile/classFileParser.cpp
+ClassFileImpl.java	https://github.com/openjdk/jdk25u/blob/1775ea114f649f0314e4e43eb6c802ff16dfab7c/src/java.base/share/classes/jdk/internal/classfile/impl/ClassFileImpl.java
+ClassFile.java	https://github.com/openjdk/jdk25u/blob/1775ea114f649f0314e4e43eb6c802ff16dfab7c/src/java.base/share/classes/java/lang/classfile/ClassFile.java
+Java SE 25 语言规范 §4.6 类型擦除	https://docs.oracle.com/javase/specs/jls/se25/html/jls-4.html#jls-4.6
+Class 文档	https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Class.html
+E01 反汇编	evidence/runs/ch04-20261103-01/subject.javap.txt
+E02 反汇编	evidence/runs/ch04-20261103-01/modern.javap.txt
+反射输出	evidence/runs/ch04-20261103-01/reflection.txt
+E03 模型输出	evidence/runs/ch04-20261103-01/model.txt
+E04 原始	evidence/runs/ch04-20261103-01/generated-original.javap.txt
+变换后反汇编	evidence/runs/ch04-20261103-01/generated-transformed.javap.txt
+证据索引	evidence/索引.md
+上一章：第 3 章	../ch03-source-environment/chapter.html
+返回全书目录	../../index.html
+下一章：第 5 章	../ch05-bytecode-verification/chapter.html

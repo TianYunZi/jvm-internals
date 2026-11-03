@@ -1,0 +1,44 @@
+package org.example.jvminternals.ch16;
+
+import java.lang.management.ManagementFactory;
+
+/** 以业务阶段和运行时间关联编译任务，不把观察窗口当性能基准。 */
+public final class TieredJourney {
+    private TieredJourney() {
+    }
+
+    /** 固定调用规模，两段有限暂停只为外部工具保留采集窗口。 */
+    public static void main(String[] args) throws InterruptedException {
+        System.out.println("进程=" + ProcessHandle.current().pid());
+        long result = 0;
+        mark("初始少量调用");
+        for (int i = 0; i < 100; i++) {
+            result += hot(i);
+        }
+        mark("初始观察窗；结果=" + result);
+        Thread.sleep(10_000);
+        mark("画像与编译活动开始");
+        for (int i = 0; i < 200_000; i++) {
+            result += hot(i);
+        }
+        mark("重复调用观察窗；结果=" + result);
+        Thread.sleep(10_000);
+        mark("后续固定调用开始");
+        for (int i = 0; i < 200_000; i++) {
+            result += hot(i);
+        }
+        mark("正常结束；结果=" + result);
+    }
+
+    private static int hot(int seed) {
+        int value = seed;
+        for (int i = 0; i < 64; i++) {
+            value = (value * 1_664_525 + 1_013_904_223) ^ i;
+        }
+        return value;
+    }
+
+    private static void mark(String stage) {
+        System.out.println("阶段=" + stage + "；进程存活毫秒=" + ManagementFactory.getRuntimeMXBean().getUptime());
+    }
+}

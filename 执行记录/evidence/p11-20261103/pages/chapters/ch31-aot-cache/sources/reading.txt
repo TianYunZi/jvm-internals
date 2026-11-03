@@ -1,0 +1,55 @@
+第31章源码阅读
+
+由正式源文件生成的静态阅读副本。返回正文 · 运行说明
+
+src/main/java/org/example/jvminternals/ch31/CacheJourney.java
+package org.example.jvminternals.ch31;
+
+import java.lang.management.ManagementFactory;
+
+/** 有限请求流让训练画像与部署新路径可见，不作性能基准。 */
+public final class CacheJourney {
+    private interface Operation {
+        long apply(long value);
+    }
+
+    private static final class Add implements Operation {
+        @Override
+        public long apply(long value) {
+            return value + 7;
+        }
+    }
+
+    private static final class Multiply implements Operation {
+        @Override
+        public long apply(long value) {
+            return value * 3;
+        }
+    }
+
+    private CacheJourney() {
+    }
+
+    /** 输入只选择两条正常业务路径；循环上限固定，不计算吞吐或稳定期。 */
+    public static void main(String[] args) {
+        String mode = args.length == 0 ? "add" : args[0];
+        mark("入口 mode=" + mode);
+        Operation operation = "multiply".equals(mode) ? new Multiply() : new Add();
+        mark("就绪");
+        long result = 0;
+        for (int request = 0; request < 60_000; request++) {
+            result += route(operation, request);
+        }
+        System.out.printf("CH31 请求流结束 result=%d%n", result);
+        mark("结束");
+    }
+
+    private static long route(Operation operation, long value) {
+        return operation.apply(value);
+    }
+
+    private static void mark(String phase) {
+        System.out.printf("CH31 %s uptimeMs=%d%n", phase,
+                ManagementFactory.getRuntimeMXBean().getUptime());
+    }
+}

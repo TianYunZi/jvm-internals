@@ -1,0 +1,141 @@
+jdk.JavaMonitorEnter {
+  startTime = 21:33:46.657 (2026-11-03)
+  duration = 6.81 ms
+  monitorClass = jdk.jfr.internal.PlatformRecorder (classLoader = bootstrap)
+  previousOwner = "main" (javaThreadId = 3)
+  address = 0x7B60E14540
+  eventThread = "JFR Periodic Tasks" (javaThreadId = 26)
+  stackTrace = [
+    jdk.jfr.internal.PlatformRecorder.periodicTask() line: 495
+    jdk.jfr.internal.PlatformRecorder.lambda$startDiskMonitor$0() line: 428
+    java.lang.Thread.run() line: 1474
+    ...
+  ]
+}
+
+jdk.JavaMonitorEnter {
+  startTime = 21:33:46.664 (2026-11-03)
+  duration = 32.9 ms
+  monitorClass = jdk.jfr.internal.MetadataRepository (classLoader = bootstrap)
+  previousOwner = "main" (javaThreadId = 3)
+  address = 0x7B60E14620
+  eventThread = "JFR Periodic Tasks" (javaThreadId = 26)
+  stackTrace = [
+    jdk.jfr.internal.tracing.PlatformTracer.emitTiming() line: 136
+    jdk.jfr.internal.JDKEvents.emitMethodTiming() line: 240
+    jdk.jfr.internal.periodic.JavaEventTask.execute(long, PeriodicType) line: 53
+    jdk.jfr.internal.periodic.PeriodicTask.run(long, PeriodicType) line: 125
+    jdk.jfr.internal.periodic.PeriodicEvents.doPeriodic() line: 147
+  ]
+}
+
+jdk.MethodTiming {
+  startTime = 21:33:46.697 (2026-11-03)
+  method = org.example.jvminternals.ch34.LatencyJourney.service(int)
+  invocations = 0
+  minimum = N/A
+  average = N/A
+  maximum = N/A
+}
+
+book.Request {
+  Context: MethodTrace.method = org.example.jvminternals.ch34.LatencyJourney.service(int)
+  startTime = 21:33:46.697 (2026-11-03)
+  duration = 2.75 ms
+  requestId = 1
+  eventThread = "main" (javaThreadId = 3)
+  stackTrace = [
+    org.example.jvminternals.ch34.LatencyJourney.service(int) line: 71
+    org.example.jvminternals.ch34.LatencyJourney.main(String[]) line: 46
+  ]
+}
+
+jdk.MethodTrace {
+  startTime = 21:33:46.663 (2026-11-03)
+  duration = 38.7 ms
+  method = org.example.jvminternals.ch34.LatencyJourney.service(int)
+  eventThread = "main" (javaThreadId = 3)
+  stackTrace = [
+    org.example.jvminternals.ch34.LatencyJourney.main(String[]) line: 46
+  ]
+}
+
+jdk.MethodTiming {
+  startTime = 21:33:46.800 (2026-11-03)
+  method = org.example.jvminternals.ch34.LatencyJourney.service(int)
+  invocations = 1
+  minimum = 38.7 ms
+  average = 38.7 ms
+  maximum = 38.7 ms
+}
+
+book.Holder {
+  startTime = 21:33:46.706 (2026-11-03)
+  duration = 183 ms
+  eventThread = "latency-holder" (javaThreadId = 29)
+  stackTrace = [
+    org.example.jvminternals.ch34.LatencyJourney.hold(CountDownLatch) line: 87
+    org.example.jvminternals.ch34.LatencyJourney.lambda$main$0(CountDownLatch) line: 48
+    java.lang.Thread.run() line: 1474
+    ...
+  ]
+}
+
+jdk.JavaMonitorEnter {
+  Context: MethodTrace.method = org.example.jvminternals.ch34.LatencyJourney.service(int)
+  startTime = 21:33:46.706 (2026-11-03)
+  duration = 183 ms
+  monitorClass = java.lang.Object (classLoader = bootstrap)
+  previousOwner = "latency-holder" (javaThreadId = 29)
+  address = 0x7B60E14B60
+  eventThread = "main" (javaThreadId = 3)
+  stackTrace = [
+    org.example.jvminternals.ch34.LatencyJourney.service(int) line: 64
+    org.example.jvminternals.ch34.LatencyJourney.main(String[]) line: 50
+  ]
+}
+
+book.Request {
+  Context: MethodTrace.method = org.example.jvminternals.ch34.LatencyJourney.service(int)
+  startTime = 21:33:46.706 (2026-11-03)
+  duration = 183 ms
+  requestId = 2
+  eventThread = "main" (javaThreadId = 3)
+  stackTrace = [
+    org.example.jvminternals.ch34.LatencyJourney.service(int) line: 71
+    org.example.jvminternals.ch34.LatencyJourney.main(String[]) line: 50
+  ]
+}
+
+jdk.MethodTrace {
+  startTime = 21:33:46.706 (2026-11-03)
+  duration = 183 ms
+  method = org.example.jvminternals.ch34.LatencyJourney.service(int)
+  eventThread = "main" (javaThreadId = 3)
+  stackTrace = [
+    org.example.jvminternals.ch34.LatencyJourney.main(String[]) line: 50
+  ]
+}
+
+book.Request {
+  Context: MethodTrace.method = org.example.jvminternals.ch34.LatencyJourney.service(int)
+  startTime = 21:33:46.889 (2026-11-03)
+  duration = 1.12 ms
+  requestId = 3
+  eventThread = "main" (javaThreadId = 3)
+  stackTrace = [
+    org.example.jvminternals.ch34.LatencyJourney.service(int) line: 71
+    org.example.jvminternals.ch34.LatencyJourney.main(String[]) line: 52
+  ]
+}
+
+jdk.MethodTrace {
+  startTime = 21:33:46.889 (2026-11-03)
+  duration = 1.18 ms
+  method = org.example.jvminternals.ch34.LatencyJourney.service(int)
+  eventThread = "main" (javaThreadId = 3)
+  stackTrace = [
+    org.example.jvminternals.ch34.LatencyJourney.main(String[]) line: 52
+  ]
+}
+

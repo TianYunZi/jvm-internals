@@ -1,0 +1,12 @@
+11月 03, 2026 11:23:09 上午 org.example.jvminternals.ch05.BytecodeCases main
+INFO: 开始执行字节码教学方法组
+widen=15
+reuse=8
+branch=8
+sum=12
+dense=30 sparse=30
+block=2
+method=5
+interface=8
+11月 03, 2026 11:23:09 上午 org.example.jvminternals.ch05.BytecodeCases main
+INFO: 字节码教学方法组结束

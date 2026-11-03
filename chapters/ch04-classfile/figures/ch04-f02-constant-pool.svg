@@ -1,0 +1,25 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="900" height="545" viewBox="0 0 900 545" role="img" aria-labelledby="title desc">
+<title id="title">CH04-F02 字段符号引用的常量池索引</title>
+<desc id="desc">getfield 的操作数 7 引用 Fieldref 7，后者关联 Class 8 和 NameAndType 9。类名经 Utf8 10 表达，成员名和描述符分别经 Utf8 11、12 表达。</desc>
+<defs><marker id="arrow" markerWidth="8" markerHeight="8" refX="7" refY="4" orient="auto"><path d="M0 0L8 4L0 8" fill="#526271"/></marker></defs>
+<rect width="900" height="545" fill="white"/>
+<g font-family="-apple-system, PingFang SC, sans-serif" font-size="18" fill="#24313c">
+<text x="30" y="37" font-size="23" font-weight="600">CH04-F02 · 从指令操作数走到字段的名字与类型</text>
+<text x="30" y="67" fill="#526271">CH04-E01 的实际索引；箭头表示类文件内索引引用</text>
+<g fill="#edf1f3" stroke="#b5c3cc">
+<rect x="35" y="106" width="205" height="57" rx="5"/><rect x="300" y="106" width="265" height="57" rx="5"/>
+<rect x="35" y="218" width="235" height="57" rx="5"/><rect x="330" y="218" width="325" height="57" rx="5"/>
+<rect x="35" y="331" width="305" height="57" rx="5"/><rect x="400" y="331" width="230" height="57" rx="5"/>
+<rect x="400" y="430" width="450" height="57" rx="5"/>
+</g>
+<text x="51" y="142">getfield #7</text><text x="316" y="142">#7 Fieldref  #8.#9</text>
+<text x="51" y="254">#8 Class  #10</text><text x="346" y="254">#9 NameAndType  #11:#12</text>
+<text x="51" y="367">#10 Utf8  类的内部名称</text><text x="416" y="367">#11 Utf8  value</text>
+<text x="416" y="466">#12 Utf8  Ljava/lang/Number;</text>
+<g fill="none" stroke="#526271" stroke-width="2" marker-end="url(#arrow)">
+<path d="M240 134H294"/><path d="M350 163V191H153V212"/><path d="M485 163V212"/>
+<path d="M153 275V325"/><path d="M486 275V325"/><path d="M655 248H877V459H856"/>
+</g>
+<text x="35" y="420" font-size="16" fill="#526271">内部名使用 /，不是运行期内存地址。</text>
+<text x="35" y="519" fill="#91421f">常量池索引固定本次文件内的关系；解析再将符号关联到运行时。</text>
+</g></svg>

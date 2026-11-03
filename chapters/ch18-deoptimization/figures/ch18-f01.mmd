@@ -1,0 +1,16 @@
+%% P05机制图：依据本章来源索引；本地导出后供离线阅读。
+sequenceDiagram
+  accTitle: 本轮类型变化与去优化时序
+  participant J as 教学主线程
+  participant O as 编译版本1488
+  participant R as 恢复运行时
+  participant C as 编译系统
+  Note over J,C: 两种接收者类事先都已创建
+  C-->>O: 按LocalOperation画像内联并消除Pair分配
+  J->>O: 更换为PublishingOperation
+  O->>R: 字节码位置14的class_check<br/>动作maybe_recompile
+  R-->>J: 恢复可继续的逻辑调用状态
+  Note over O,R: 本轮记录4次该陷阱<br/>随后版本1488标记不可进入
+  R->>C: 更新画像与编译决策输入
+  C-->>J: 新版1498纳入两种接收者
+  Note over J,C: 证据用同一编译号关联<br/>不能归因为新类加载，也不能只看not entrant文字

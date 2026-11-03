@@ -1,0 +1,68 @@
+跳到正文
+Java虚拟机原理 · 全书目录
+C.1 先确认工具和目标
+C.2 类型、布局和内存
+C.3 回收、编译与启动
+C.4 线程、事件与本地调用
+来源与使用顺序
+
+附录 C
+
+参数与诊断命令索引
+
+按要回答的问题找参数和诊断命令，同时看到类型、平台、默认值以及观察本身的代价。
+
+C.1 先确认工具和目标
+
+基线为Java开发工具包（Java Development Kit，JDK）25.0.5.0.2、macOS AArch64、release构建。product表示产品参数，不等于默认打开；diagnostic需诊断解锁，experimental需实验解锁，develop通常不在release中可用。参数类型与来源标签以本次PrintFlagsFinal、固定源码和目标help为据；编译期、启动期和运行期命令分别使用。
+
+下表给出索引而非一组推荐调参组合。命令开销随堆、线程和事件量变化；“低”不等于零。完整路径、输入、输出、目标进程及停止方法回链到实际运行说明，不照抄历史进程号。
+
+诊断前提
+问题	参数／命令	条件、代价与入口
+工具／有效选项	java -version; java -Xlog:help	独立进程查询，无需附加；CH03命令
+当前参数	-XX:+PrintFlagsFinal	产品打印开关；区分{default}、{ergonomic}、{command line}，不是全部编译器内部开关；第3章
+诊断／实验解锁	-XX:+UnlockDiagnosticVMOptions / -XX:+UnlockExperimentalVMOptions	只解锁对应参数，不开启全部功能；第3章
+目标支持	jcmd … help / VM.version / VM.flags / VM.command_line	省略号仅示意目标位置；使用当次目标进程，先读目标help。需同机及匹配权限；CH33命令
+C.2 类型、布局和内存
+类型与内存索引
+问题	入口与类别	默认、条件与开销
+类结构	javap -v -c -p	离线工具，不改类文件；命令与文件见CH04命令
+加载／卸载	-Xlog:class+load=info,class+unload=info	统一日志选择，输出与锁开销随事件量增长；CH08命令
+模块访问	--add-reads / --add-exports / --add-opens	启动器选项；读取、导出和深反射权限分别处理；CH06命令
+对象头	-XX:+UseCompactObjectHeaders	25版product，64位构建条件；本机默认false，显式开启观察，不需实验解锁；CH10命令
+锁模式	-XX:LockingMode / -XX:+UseObjectMonitorTable	前者product、后者诊断选项；当前模式2，紧凑头适配可调整表配置，不抄旧锁升级图；CH27命令
+堆／栈预算	-Xms / -Xmx / -Xss	启动选项；堆上限不等于进程上限，栈大小不等于实际驻留；CH09命令
+本地分类	-XX:NativeMemoryTracking=summary	product，默认off；启动时启用。跟踪有持续开销，且不覆盖所有第三方本地分配；CH12命令
+同窗口差分	jcmd … VM.native_memory baseline / summary.diff	先基线后差分，只比较同进程跟踪账本；系统驻留另采集；CH12命令
+堆信息／对象直方图	jcmd … GC.heap_info / GC.class_histogram	前者查看概览；后者可能扫描大堆及触发回收，按目标help评估，不能连续无界采集；CH35命令
+C.3 回收、编译与启动
+回收、编译和跨次复用
+问题	入口与类别	默认、边界及示例
+回收器选择	-XX:+UseSerialGC / UseParallelGC / UseG1GC / UseZGC	均product选择项，不能组合启用；本机普通查询Garbage-First（G1）由环境自适应选择，非所有机器保证；CH21命令、CH23命令
+Shenandoah	-XX:+UseShenandoahGC; -XX:ShenandoahGCMode=generational	25版分代模式为product，默认模式satb；本机发行版含此实现，别的包另核；CH24命令
+Epsilon	-XX:+UnlockExperimentalVMOptions -XX:+UseEpsilonGC	实验性不回收器；只在有界教学进程使用，不能当生产建议；CH21命令
+回收与安全点	-Xlog:gc*,safepoint=info	启动统一日志；时点和标签各有含义，暂停目标不是上限；CH20命令、CH22命令
+编译记录	-XX:+PrintCompilation; -XX:+LogCompilation	前者product；后者diagnostic需解锁，文件量和编译观察有代价；CH16命令
+内部优化图	-XX:+PrintIdeal	develop，当前release拒绝；机制图不冒充工具原图；CH17依据
+共享归档	-Xshare / -XX:ArchiveClassesAtExit	启用／关闭与生成分开，文件和类路径约束见CH30命令
+提前处理	-XX:AOTMode=record/create/on; -XX:AOTCacheOutput	Ahead-of-Time（AOT）产品选项；显式三阶段与自动装配分开，不能当进程快照；CH31命令
+C.4 线程、事件与本地调用
+
+Java本地接口（Java Native Interface，JNI）和外部函数及内存（Foreign Function & Memory，FFM）的本地访问许可不检查任意C函数是否安全。JDK飞行记录器（JDK Flight Recorder，JFR）的连续记录与方法插桩也有不同开销。
+
+线程、事件和本地边界
+问题	入口	条件与代价
+线程栈与锁	jcmd … Thread.print -l; Thread.dump_to_file	线程转储有停顿／遍历成本；虚拟线程使用支持它的转储形态，平台nid不替代虚拟线程身份；CH26命令、CH28命令
+预览类库	javac --enable-preview --release 25; java --enable-preview	标准工具选项；仅CH29独立预览模块启用，普通聚合不启用；CH29命令
+本地访问	--enable-native-access=ALL-UNNAMED	启动器选项；仅为本章未命名模块授予访问，不证明函数、布局与生命周期安全；CH32命令
+记录事件	-XX:StartFlightRecording; jcmd … JFR.start / JFR.dump	产品启动／诊断命令；记录类型、阈值、栈及磁盘上限显式指定；CH34命令
+离线阅读	jfr summary / print / view	读取既有记录；处理器时间（Central Processing Unit，CPU time）画像25版限Linux实验特性，本机未实测；CH34命令
+方法计时／追踪	jfr configure; jdk.MethodTiming / jdk.MethodTrace	事件设置与类变换会改变运行；不能套用普通采样的低开销表述；第34章
+来源与使用顺序
+
+25版java命令和25版jcmd命令已实际访问；本书各章命令与原始结果是当前发行版可用性的依据。先读目标help，再取得最小窗口证据；使用高开销转储、主动故障和基准前，先按相应章节确认环境、隔离和停止办法。
+
+上一页
+附录目录
+下一页

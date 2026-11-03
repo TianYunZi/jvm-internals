@@ -1,0 +1,12 @@
+阶段=解释模式异常观察开始
+阶段=中层finally；模式=0
+阶段=外层捕获；类型=IllegalArgumentException
+创建时栈=org.example.jvminternals.ch13.ExceptionJourney.leaf(ExceptionJourney.java:38)
+创建时栈=org.example.jvminternals.ch13.ExceptionJourney.middle(ExceptionJourney.java:29)
+创建时栈=org.example.jvminternals.ch13.ExceptionJourney.main(ExceptionJourney.java:13)
+阶段=中层finally；模式=1
+阶段=外层捕获；类型=ArithmeticException
+创建时栈=org.example.jvminternals.ch13.ExceptionJourney.leaf(ExceptionJourney.java:41)
+创建时栈=org.example.jvminternals.ch13.ExceptionJourney.middle(ExceptionJourney.java:29)
+创建时栈=org.example.jvminternals.ch13.ExceptionJourney.main(ExceptionJourney.java:13)
+阶段=正常结束

@@ -1,0 +1,10 @@
+11月 03, 2026 6:11:32 下午 org.example.jvminternals.ch23.ConcurrentCycleJourney mark
+INFO: 阶段=建立长期持有12 MiB，uptimeMs=71，累计载荷MiB=12，已提交字节=134,217,728，已用字节=16,777,216，最大堆字节=134,217,728
+11月 03, 2026 6:11:33 下午 org.example.jvminternals.ch23.ConcurrentCycleJourney mark
+INFO: 阶段=分配阶段0结束，uptimeMs=714，累计载荷MiB=108，已提交字节=134,217,728，已用字节=37,748,736，最大堆字节=134,217,728
+11月 03, 2026 6:11:33 下午 org.example.jvminternals.ch23.ConcurrentCycleJourney mark
+INFO: 阶段=长期持有降至6 MiB，请求全代观察，uptimeMs=717，累计载荷MiB=108，已提交字节=134,217,728，已用字节=37,748,736，最大堆字节=134,217,728
+11月 03, 2026 6:11:33 下午 org.example.jvminternals.ch23.ConcurrentCycleJourney mark
+INFO: 阶段=分配阶段1结束，uptimeMs=1,327，累计载荷MiB=204，已提交字节=134,217,728，已用字节=115,343,360，最大堆字节=134,217,728
+11月 03, 2026 6:11:33 下午 org.example.jvminternals.ch23.ConcurrentCycleJourney main
+INFO: 阶段=正常退出，存活块长度=32,768，最近标记=23

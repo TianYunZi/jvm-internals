@@ -1,0 +1,23 @@
+跳到正文	#main
+Java 虚拟机原理图文书	../../index.html
+24.1 标记、转移与引用更新	#sec-24-1
+24.2 屏障与空间保障	#sec-24-2
+24.3 分代模式	#sec-24-3
+24.4 退化与完整堆回收	#sec-24-4
+24.5 25版的模式与可用性	#sec-24-5
+观察与边界	#observe
+来源与回顾	#sources
+源码阅读	sources.html
+运行说明	README.html
+证据索引	evidence/索引.md
+ShenandoahConcurrentGC	https://github.com/openjdk/jdk25u/blob/1775ea114f649f0314e4e43eb6c802ff16dfab7c/src/hotspot/share/gc/shenandoah/shenandoahConcurrentGC.cpp
+load_reference_barrier_mutator；write_ref_field_post	https://github.com/openjdk/jdk25u/blob/1775ea114f649f0314e4e43eb6c802ff16dfab7c/src/hotspot/share/gc/shenandoah/shenandoahBarrierSet.inline.hpp
+promote_regions_in_place；evacuate_object	https://github.com/openjdk/jdk25u/blob/1775ea114f649f0314e4e43eb6c802ff16dfab7c/src/hotspot/share/gc/shenandoah/shenandoahGenerationalHeap.cpp
+ShenandoahDegenGC::op_degenerated	https://github.com/openjdk/jdk25u/blob/1775ea114f649f0314e4e43eb6c802ff16dfab7c/src/hotspot/share/gc/shenandoah/shenandoahDegeneratedGC.cpp
+is_experimental=false	https://github.com/openjdk/jdk25u/blob/1775ea114f649f0314e4e43eb6c802ff16dfab7c/src/hotspot/share/gc/shenandoah/mode/shenandoahGenerationalMode.hpp
+ShenandoahGCMode=satb	https://github.com/openjdk/jdk25u/blob/1775ea114f649f0314e4e43eb6c802ff16dfab7c/src/hotspot/share/gc/shenandoah/shenandoah_globals.hpp
+JVM_FEATURES_CHECK_SHENANDOAHGC	https://github.com/openjdk/jdk25u/blob/1775ea114f649f0314e4e43eb6c802ff16dfab7c/make/autoconf/jvm-features.m4
+ShenandoahForwarding::get_forwardee / try_update_forwardee	https://github.com/openjdk/jdk25u/blob/1775ea114f649f0314e4e43eb6c802ff16dfab7c/src/hotspot/share/gc/shenandoah/shenandoahForwarding.inline.hpp
+上一章	../ch23-zgc/chapter.html
+全书目录	../../index.html
+下一章：Java 内存模型	../ch25-memory-model/chapter.html

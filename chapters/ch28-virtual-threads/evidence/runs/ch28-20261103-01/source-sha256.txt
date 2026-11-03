@@ -1,0 +1,2 @@
+397c33f8917b13606d80683485cb99fd4c92c4a933802e6025a1132e5099feca  chapters/ch28-virtual-threads/native/carrierjourney.c
+f07d1e17573ada4d49803e9c9249037fb04b9deee137ea577727cc63838c412f  chapters/ch28-virtual-threads/src/main/java/org/example/jvminternals/ch28/VirtualJourney.java

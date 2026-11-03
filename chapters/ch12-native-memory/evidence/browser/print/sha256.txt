@@ -1,0 +1,9 @@
+085e0c3631d404750562890d509ddc9a60c535612368ee30eee8da1f9c23a99e  chapters/ch12-native-memory/chapter.html
+21dcf4a270c4b788c5039fc26e3a3318e2cae923a79107e2dee9cfee8b6d9c38  chapters/ch12-native-memory/figures/ch12-f01-metaspace.svg
+3c24dd5d581e86818a9f00cc303750d82fb2dc3fca985ff14803f00d7a436940  chapters/ch12-native-memory/figures/ch12-f02-ownership.svg
+219780b968cf2b1c58c3f9574bd2c1ab3220c2c09e5ceee6698f4d87fee6a255  chapters/ch12-native-memory/figures/ch12-f03-accounting.svg
+4b5e9ee9740e196f2a7323cd8d851635a145a3ca9051f9fc3f8c0c5cdc71a40e  assets/book.css
+aed5f120e553c0a651fb0ea0453effd9405c3af879b3ee14e00eca8284fd9af6  chapters/ch12-native-memory/evidence/browser/print/print.pdf
+5662ccec9a07c2ef5631c6ca9f273453ae9bcb05b86c5996198f0df45347d879  chapters/ch12-native-memory/evidence/browser/print/pdfinfo.txt
+7bbceff0ac336962ff68ab50823959d1417ac8eff08171449cca8521bc00897e  chapters/ch12-native-memory/evidence/browser/print/selected-page.png
+1ae724683c90ab06d510fb8834fa97995e6fa4760fd1981a8ad5d62a3dc1533a  chapters/ch12-native-memory/evidence/browser/print/记录.md

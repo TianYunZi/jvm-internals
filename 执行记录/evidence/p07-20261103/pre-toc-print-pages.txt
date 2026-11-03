@@ -1,0 +1,15 @@
+6d47c8d51223c61d0b661dc88719ca5bb43d1d0c659fc23ea421b8004ed5688f  chapters/ch28-virtual-threads/evidence/browser/print/chapter-1.png
+6846ba0283d5753d88c76497b51ea13d884043a11de5080664a283f47313e5ac  chapters/ch28-virtual-threads/evidence/browser/print/chapter-2.png
+b01429793fc9bba2cb08b254dc6fd0055ca880493cdac5502ec5c64e5ca50cbf  chapters/ch28-virtual-threads/evidence/browser/print/chapter-3.png
+a0763c51d83f8ccdad9b435926f1e7443995dc5f9f0bd842cc1d867ae3604a86  chapters/ch28-virtual-threads/evidence/browser/print/chapter-4.png
+89aeac8504148c259d946505840a76a5b17ebfcb47b03b4a907aeb32bc9cdc6c  chapters/ch28-virtual-threads/evidence/browser/print/chapter-5.png
+c5a8b0ddefe335efd2bef9c95b01de8d7e485029767bafbec4cbf57f3f80a547  chapters/ch28-virtual-threads/evidence/browser/print/chapter-6.png
+3e0c58f3d84414a09be78e095f999b019c5627f15ba31747afddaf3aa41f0c07  chapters/ch28-virtual-threads/evidence/browser/print/chapter-7.png
+7dd72d9c33c6d979b967f86ed2403f87c4f1e2bc32bd4525aa55ed2c5bb96cc1  chapters/ch29-scoped-concurrency/evidence/browser/print/chapter-1.png
+28bca91e13fb04f08e1cf48a058733376ca7a1126246204e1caeca610cfe8cc3  chapters/ch29-scoped-concurrency/evidence/browser/print/chapter-2.png
+832d07ebc119959f84c9eec09b00112c1b96d0302df226e72095c344715b8e31  chapters/ch29-scoped-concurrency/evidence/browser/print/chapter-3.png
+32662369f5a9e76f0996af50c9065c37248e190047df289f166daacc3d3d4ced  chapters/ch29-scoped-concurrency/evidence/browser/print/chapter-4.png
+0a61dc720823b4b2e473698d75649f0e36b7eaaef37ca7060f3e427545f04dc9  chapters/ch29-scoped-concurrency/evidence/browser/print/chapter-5.png
+aae3e325ed9bbf783c882a49fa1d747bb115a56f209e8d699d20de191cfb79f3  chapters/ch29-scoped-concurrency/evidence/browser/print/chapter-6.png
+ce9526b8bf7a7946a485bf1fa9755d0c7165e244ab5a11dfb46053957d2b86ec  chapters/ch29-scoped-concurrency/evidence/browser/print/chapter-7.png
+b9cbf1a3ac84d21ec82cb94cc047f61eb48787265da7f8bd6b1de1901b38aeec  chapters/ch29-scoped-concurrency/evidence/browser/print/chapter-8.png

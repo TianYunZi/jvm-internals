@@ -1,0 +1,3 @@
+for P09_MODE in locked narrow platform-budget virtual-budget; do
+  /usr/bin/time -p "$P09_JDK/bin/java" -Xms32m -Xmx32m -Djdk.virtualThreadScheduler.parallelism=2 -Djdk.virtualThreadScheduler.maxPoolSize=2 -cp chapters/ch36-performance-cases/target/classes org.example.jvminternals.ch36.CaseWorkload "$P09_MODE"
+done

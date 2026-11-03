@@ -1,0 +1,44 @@
+<!doctype html><html lang="zh-CN"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="shiki-version" content="4.6.0"><title>第13章源码阅读</title><link rel="stylesheet" href="../../assets/book.css"></head><body><main class="home" id="main"><h1>第13章源码阅读</h1><p>由正式源文件生成的静态阅读副本。<a href="chapter.html">返回正文</a> · <a href="README.html">运行说明</a></p><h2><code class="shiki-inline" data-shiki-version="4.6.0" data-code-id="code-001" data-code-language="text"><span>src/main/java/org/example/jvminternals/ch13/ExceptionJourney.java</span></code></h2><pre data-shiki-version="4.6.0" class="shiki github-light" style="background-color:#fff;color:#24292e" tabindex="0"><code data-code-id="code-002" data-code-language="java" data-source-file="chapters/ch13-interpreter/src/main/java/org/example/jvminternals/ch13/ExceptionJourney.java"><span class="line"><span style="color:#D73A49">package</span><span style="color:#24292E"> org.example.jvminternals.ch13;</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#6A737D">/** 用已捕获的异常连接字节码异常表、创建时栈和逐层展开。 */</span></span>
+<span class="line"><span style="color:#D73A49">public</span><span style="color:#D73A49"> final</span><span style="color:#D73A49"> class</span><span style="color:#6F42C1"> ExceptionJourney</span><span style="color:#24292E"> {</span></span>
+<span class="line"><span style="color:#D73A49">    private</span><span style="color:#6F42C1"> ExceptionJourney</span><span style="color:#24292E">() {</span></span>
+<span class="line"><span style="color:#24292E">    }</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#6A737D">    /** 两种语言机制均在main中完成处理，正常结束进程。 */</span></span>
+<span class="line"><span style="color:#D73A49">    public</span><span style="color:#D73A49"> static</span><span style="color:#D73A49"> void</span><span style="color:#6F42C1"> main</span><span style="color:#24292E">(</span><span style="color:#D73A49">String</span><span style="color:#24292E">[] </span><span style="color:#E36209">args</span><span style="color:#24292E">) {</span></span>
+<span class="line"><span style="color:#24292E">        System.out.</span><span style="color:#6F42C1">println</span><span style="color:#24292E">(</span><span style="color:#032F62">"阶段=解释模式异常观察开始"</span><span style="color:#24292E">);</span></span>
+<span class="line"><span style="color:#D73A49">        for</span><span style="color:#24292E"> (</span><span style="color:#D73A49">int</span><span style="color:#24292E"> mode </span><span style="color:#D73A49">=</span><span style="color:#005CC5"> 0</span><span style="color:#24292E">; mode </span><span style="color:#D73A49">&#x3C;</span><span style="color:#005CC5"> 2</span><span style="color:#24292E">; mode</span><span style="color:#D73A49">++</span><span style="color:#24292E">) {</span></span>
+<span class="line"><span style="color:#D73A49">            try</span><span style="color:#24292E"> {</span></span>
+<span class="line"><span style="color:#6F42C1">                middle</span><span style="color:#24292E">(mode);</span></span>
+<span class="line"><span style="color:#24292E">            } </span><span style="color:#D73A49">catch</span><span style="color:#24292E"> (IllegalArgumentException | ArithmeticException </span><span style="color:#E36209">failure</span><span style="color:#24292E">) {</span></span>
+<span class="line"><span style="color:#24292E">                System.out.</span><span style="color:#6F42C1">println</span><span style="color:#24292E">(</span><span style="color:#032F62">"阶段=外层捕获；类型="</span><span style="color:#D73A49"> +</span><span style="color:#24292E"> failure.</span><span style="color:#6F42C1">getClass</span><span style="color:#24292E">().</span><span style="color:#6F42C1">getSimpleName</span><span style="color:#24292E">());</span></span>
+<span class="line"><span style="color:#6A737D">                // 输出Throwable创建时的栈，不把它误称为捕获时仍活动的物理帧。</span></span>
+<span class="line"><span style="color:#D73A49">                for</span><span style="color:#24292E"> (StackTraceElement frame </span><span style="color:#D73A49">:</span><span style="color:#24292E"> failure.</span><span style="color:#6F42C1">getStackTrace</span><span style="color:#24292E">()) {</span></span>
+<span class="line"><span style="color:#D73A49">                    if</span><span style="color:#24292E"> (frame.</span><span style="color:#6F42C1">getClassName</span><span style="color:#24292E">().</span><span style="color:#6F42C1">equals</span><span style="color:#24292E">(ExceptionJourney.class.</span><span style="color:#6F42C1">getName</span><span style="color:#24292E">())) {</span></span>
+<span class="line"><span style="color:#24292E">                        System.out.</span><span style="color:#6F42C1">println</span><span style="color:#24292E">(</span><span style="color:#032F62">"创建时栈="</span><span style="color:#D73A49"> +</span><span style="color:#24292E"> frame);</span></span>
+<span class="line"><span style="color:#24292E">                    }</span></span>
+<span class="line"><span style="color:#24292E">                }</span></span>
+<span class="line"><span style="color:#24292E">            }</span></span>
+<span class="line"><span style="color:#24292E">        }</span></span>
+<span class="line"><span style="color:#24292E">        System.out.</span><span style="color:#6F42C1">println</span><span style="color:#24292E">(</span><span style="color:#032F62">"阶段=正常结束"</span><span style="color:#24292E">);</span></span>
+<span class="line"><span style="color:#24292E">    }</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#D73A49">    private</span><span style="color:#D73A49"> static</span><span style="color:#D73A49"> void</span><span style="color:#6F42C1"> middle</span><span style="color:#24292E">(</span><span style="color:#D73A49">int</span><span style="color:#E36209"> mode</span><span style="color:#24292E">) {</span></span>
+<span class="line"><span style="color:#D73A49">        try</span><span style="color:#24292E"> {</span></span>
+<span class="line"><span style="color:#6F42C1">            leaf</span><span style="color:#24292E">(mode);</span></span>
+<span class="line"><span style="color:#24292E">        } </span><span style="color:#D73A49">finally</span><span style="color:#24292E"> {</span></span>
+<span class="line"><span style="color:#6A737D">            // finally由编译器展开；其异常表也是本章的观察对象。</span></span>
+<span class="line"><span style="color:#24292E">            System.out.</span><span style="color:#6F42C1">println</span><span style="color:#24292E">(</span><span style="color:#032F62">"阶段=中层finally；模式="</span><span style="color:#D73A49"> +</span><span style="color:#24292E"> mode);</span></span>
+<span class="line"><span style="color:#24292E">        }</span></span>
+<span class="line"><span style="color:#24292E">    }</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#D73A49">    private</span><span style="color:#D73A49"> static</span><span style="color:#D73A49"> void</span><span style="color:#6F42C1"> leaf</span><span style="color:#24292E">(</span><span style="color:#D73A49">int</span><span style="color:#E36209"> mode</span><span style="color:#24292E">) {</span></span>
+<span class="line"><span style="color:#D73A49">        if</span><span style="color:#24292E"> (mode </span><span style="color:#D73A49">==</span><span style="color:#005CC5"> 0</span><span style="color:#24292E">) {</span></span>
+<span class="line"><span style="color:#D73A49">            throw</span><span style="color:#D73A49"> new</span><span style="color:#6F42C1"> IllegalArgumentException</span><span style="color:#24292E">(</span><span style="color:#032F62">"教学显式抛出"</span><span style="color:#24292E">);</span></span>
+<span class="line"><span style="color:#24292E">        }</span></span>
+<span class="line"><span style="color:#D73A49">        int</span><span style="color:#24292E"> divisor </span><span style="color:#D73A49">=</span><span style="color:#24292E"> mode </span><span style="color:#D73A49">-</span><span style="color:#005CC5"> 1</span><span style="color:#24292E">;</span></span>
+<span class="line"><span style="color:#24292E">        System.out.</span><span style="color:#6F42C1">println</span><span style="color:#24292E">(</span><span style="color:#032F62">"商="</span><span style="color:#D73A49"> +</span><span style="color:#005CC5"> 12</span><span style="color:#D73A49"> /</span><span style="color:#24292E"> divisor);</span></span>
+<span class="line"><span style="color:#24292E">    }</span></span>
+<span class="line"><span style="color:#24292E">}</span></span>
+<span class="line"></span></code></pre></main></body></html>

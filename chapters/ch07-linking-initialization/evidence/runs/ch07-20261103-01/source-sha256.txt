@@ -1,0 +1,10 @@
+ef4ba170ad24e36d1de3c6fc68644cebfb23aae9082b548e8fa3b3a2aad8b624  chapters/ch07-linking-initialization/src/main/java/org/example/jvminternals/ch07/InitializationFailure.java
+cff3c7d18d7fa70b40a712946c2f77a39b08e0bade1b2669f3a7564eade1f658  chapters/ch07-linking-initialization/src/main/java/org/example/jvminternals/ch07/InitializationJourney.java
+240d12c09a10f5d3228cac8950a770e9ac0e4dad0ce21fd439a9f39455ed96f0  chapters/ch07-linking-initialization/src/main/java/org/example/jvminternals/ch07/InitializationRace.java
+fb94fa63fb6d54acc648b5478766d68c20eaa5d69af34377061a8078cb929130  chapters/ch07-linking-initialization/variants/binary/client/org/example/jvminternals/ch07/client/BinaryClient.java
+600042a02fa720468b1f191c7368d548cae51874a9fbc1f1b84032c26a800505  chapters/ch07-linking-initialization/variants/binary/instance-method/org/example/jvminternals/ch07/library/Api.java
+185abb0c41058c380ee714e7464747daaf2b7cc0c1584880f5dc4b818f0abcc4  chapters/ch07-linking-initialization/variants/binary/missing-method/org/example/jvminternals/ch07/library/Api.java
+ea2b2d41b7664c34b3292296a436e0984e95b13c7111863b1e85f630ac3f15a0  chapters/ch07-linking-initialization/variants/binary/private-method/org/example/jvminternals/ch07/library/Api.java
+dd8260b36fbe74e36bbd24e2ef9f4f2f130a575f0572c5421c01e0b1966cc0f4  chapters/ch07-linking-initialization/variants/binary/v1/org/example/jvminternals/ch07/library/Api.java
+d9722266ce73615957e2b8243c8a619a720e5a314c538074bff6d4a28d90939c  chapters/ch07-linking-initialization/pom.xml
+eda1f15c51f0d7d7b0bdeee637c03590d38ba9a25336691ec9d899d2a5a6d98f  chapters/ch07-linking-initialization/evidence/runs/ch07-20261103-01/parent-pom.xml

@@ -1,0 +1,12 @@
+代理启动 retransform=true redefine=true
+[0.235s][info][jfr,startup] Started recording 1. No limit specified, using maxsize=250MB as default.
+[0.235s][info][jfr,startup] 
+[0.235s][info][jfr,startup] Use jcmd 84499 JFR.dump name=1 to copy recording data to file.
+变换回调 phase=load inputBytes=414 replacement=load
+目标 pid=84499 time=2026-11-03T13:43:22.904953Z value=load
+变换回调 phase=existing inputBytes=414 replacement=retransform
+重转换 value=retransform
+变换回调 phase=existing inputBytes=414 replacement=redefine
+重定义 value=redefine
+诊断窗口开始
+诊断窗口结束

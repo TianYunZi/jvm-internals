@@ -1,0 +1,4 @@
+f221aba03a2dc3c51b1becdc9de50200904a45b6d4ea8ee770630a1c03a4a873  chapters/ch05-bytecode-verification/src/main/java/org/example/jvminternals/ch05/BytecodeCases.java
+aa0f52bf046fcf08df19d49ca771866340d3c31729ab64cb91529a2ad1beebcc  chapters/ch05-bytecode-verification/src/main/java/org/example/jvminternals/ch05/FlexibleConstruction.java
+0a70d54f3e9ad6b37c52453b79ef5088f444baf444f3c812240319599f8f52ac  chapters/ch05-bytecode-verification/pom.xml
+cdba225c643cc42c3be8dfac9f7a060ae7b598f31af76350e5208fb0e6c9b020  chapters/ch05-bytecode-verification/evidence/runs/ch05-20261103-01/parent-pom.xml

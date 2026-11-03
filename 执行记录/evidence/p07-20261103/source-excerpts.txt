@@ -1,0 +1,617 @@
+/Users/xiejinxin/Developer/OpenJDK/jdk25u-25.0.5.0.2/src/hotspot/share/runtime/lightweightSynchronizer.cpp-423-  assert(UseObjectMonitorTable, "must be");
+/Users/xiejinxin/Developer/OpenJDK/jdk25u-25.0.5.0.2/src/hotspot/share/runtime/lightweightSynchronizer.cpp-424-
+/Users/xiejinxin/Developer/OpenJDK/jdk25u-25.0.5.0.2/src/hotspot/share/runtime/lightweightSynchronizer.cpp:425:  markWord mark = obj->mark_acquire();
+/Users/xiejinxin/Developer/OpenJDK/jdk25u-25.0.5.0.2/src/hotspot/share/runtime/lightweightSynchronizer.cpp-426-  assert(!mark.has_no_hash(), "obj with inflated monitor must have had a hash");
+/Users/xiejinxin/Developer/OpenJDK/jdk25u-25.0.5.0.2/src/hotspot/share/runtime/lightweightSynchronizer.cpp-427-
+/Users/xiejinxin/Developer/OpenJDK/jdk25u-25.0.5.0.2/src/hotspot/share/runtime/lightweightSynchronizer.cpp-428-  while (mark.has_monitor()) {
+/Users/xiejinxin/Developer/OpenJDK/jdk25u-25.0.5.0.2/src/hotspot/share/runtime/lightweightSynchronizer.cpp-429-    const markWord new_mark = mark.clear_lock_bits().set_unlocked();
+/Users/xiejinxin/Developer/OpenJDK/jdk25u-25.0.5.0.2/src/hotspot/share/runtime/lightweightSynchronizer.cpp-430-    mark = obj->cas_set_mark(new_mark, mark);
+/Users/xiejinxin/Developer/OpenJDK/jdk25u-25.0.5.0.2/src/hotspot/share/runtime/lightweightSynchronizer.cpp-431-  }
+/Users/xiejinxin/Developer/OpenJDK/jdk25u-25.0.5.0.2/src/hotspot/share/runtime/lightweightSynchronizer.cpp-432-}
+/Users/xiejinxin/Developer/OpenJDK/jdk25u-25.0.5.0.2/src/hotspot/share/runtime/lightweightSynchronizer.cpp-433-
+--
+/Users/xiejinxin/Developer/OpenJDK/jdk25u-25.0.5.0.2/src/hotspot/share/runtime/lightweightSynchronizer.cpp-460-  void do_oop(oop* o) final {
+/Users/xiejinxin/Developer/OpenJDK/jdk25u-25.0.5.0.2/src/hotspot/share/runtime/lightweightSynchronizer.cpp-461-    oop obj = *o;
+/Users/xiejinxin/Developer/OpenJDK/jdk25u-25.0.5.0.2/src/hotspot/share/runtime/lightweightSynchronizer.cpp:462:    if (obj->mark_acquire().has_monitor()) {
+/Users/xiejinxin/Developer/OpenJDK/jdk25u-25.0.5.0.2/src/hotspot/share/runtime/lightweightSynchronizer.cpp-463-      if (_length > 0 && _contended_oops[_length - 1] == obj) {
+/Users/xiejinxin/Developer/OpenJDK/jdk25u-25.0.5.0.2/src/hotspot/share/runtime/lightweightSynchronizer.cpp-464-        // Recursive
+/Users/xiejinxin/Developer/OpenJDK/jdk25u-25.0.5.0.2/src/hotspot/share/runtime/lightweightSynchronizer.cpp-465-        return;
+/Users/xiejinxin/Developer/OpenJDK/jdk25u-25.0.5.0.2/src/hotspot/share/runtime/lightweightSynchronizer.cpp-466-      }
+/Users/xiejinxin/Developer/OpenJDK/jdk25u-25.0.5.0.2/src/hotspot/share/runtime/lightweightSynchronizer.cpp-467-      _contended_oops[_length++] = obj;
+/Users/xiejinxin/Developer/OpenJDK/jdk25u-25.0.5.0.2/src/hotspot/share/runtime/lightweightSynchronizer.cpp-468-    }
+/Users/xiejinxin/Developer/OpenJDK/jdk25u-25.0.5.0.2/src/hotspot/share/runtime/lightweightSynchronizer.cpp-469-  }
+/Users/xiejinxin/Developer/OpenJDK/jdk25u-25.0.5.0.2/src/hotspot/share/runtime/lightweightSynchronizer.cpp-470-
+--
+/Users/xiejinxin/Developer/OpenJDK/jdk25u-25.0.5.0.2/src/hotspot/share/runtime/lightweightSynchronizer.cpp-567-};
+/Users/xiejinxin/Developer/OpenJDK/jdk25u-25.0.5.0.2/src/hotspot/share/runtime/lightweightSynchronizer.cpp-568-
+/Users/xiejinxin/Developer/OpenJDK/jdk25u-25.0.5.0.2/src/hotspot/share/runtime/lightweightSynchronizer.cpp:569:inline bool LightweightSynchronizer::fast_lock_try_enter(oop obj, LockStack& lock_stack, JavaThread* current) {
+/Users/xiejinxin/Developer/OpenJDK/jdk25u-25.0.5.0.2/src/hotspot/share/runtime/lightweightSynchronizer.cpp-570-  markWord mark = obj->mark();
+/Users/xiejinxin/Developer/OpenJDK/jdk25u-25.0.5.0.2/src/hotspot/share/runtime/lightweightSynchronizer.cpp-571-  while (mark.is_unlocked()) {
+/Users/xiejinxin/Developer/OpenJDK/jdk25u-25.0.5.0.2/src/hotspot/share/runtime/lightweightSynchronizer.cpp-572-    ensure_lock_stack_space(current);
+/Users/xiejinxin/Developer/OpenJDK/jdk25u-25.0.5.0.2/src/hotspot/share/runtime/lightweightSynchronizer.cpp-573-    assert(!lock_stack.is_full(), "must have made room on the lock stack");
+/Users/xiejinxin/Developer/OpenJDK/jdk25u-25.0.5.0.2/src/hotspot/share/runtime/lightweightSynchronizer.cpp-574-    assert(!lock_stack.contains(obj), "thread must not already hold the lock");
+/Users/xiejinxin/Developer/OpenJDK/jdk25u-25.0.5.0.2/src/hotspot/share/runtime/lightweightSynchronizer.cpp-575-    // Try to swing into 'fast-locked' state.
+/Users/xiejinxin/Developer/OpenJDK/jdk25u-25.0.5.0.2/src/hotspot/share/runtime/lightweightSynchronizer.cpp-576-    markWord locked_mark = mark.set_fast_locked();
+/Users/xiejinxin/Developer/OpenJDK/jdk25u-25.0.5.0.2/src/hotspot/share/runtime/lightweightSynchronizer.cpp-577-    markWord old_mark = mark;
+--
+/Users/xiejinxin/Developer/OpenJDK/jdk25u-25.0.5.0.2/src/hotspot/share/runtime/lightweightSynchronizer.cpp-623-    }
+/Users/xiejinxin/Developer/OpenJDK/jdk25u-25.0.5.0.2/src/hotspot/share/runtime/lightweightSynchronizer.cpp-624-
+/Users/xiejinxin/Developer/OpenJDK/jdk25u-25.0.5.0.2/src/hotspot/share/runtime/lightweightSynchronizer.cpp:625:    if (fast_lock_try_enter(obj, lock_stack, current)) return true;
+/Users/xiejinxin/Developer/OpenJDK/jdk25u-25.0.5.0.2/src/hotspot/share/runtime/lightweightSynchronizer.cpp-626-  }
+/Users/xiejinxin/Developer/OpenJDK/jdk25u-25.0.5.0.2/src/hotspot/share/runtime/lightweightSynchronizer.cpp-627-  return false;
+/Users/xiejinxin/Developer/OpenJDK/jdk25u-25.0.5.0.2/src/hotspot/share/runtime/lightweightSynchronizer.cpp-628-}
+/Users/xiejinxin/Developer/OpenJDK/jdk25u-25.0.5.0.2/src/hotspot/share/runtime/lightweightSynchronizer.cpp-629-
+/Users/xiejinxin/Developer/OpenJDK/jdk25u-25.0.5.0.2/src/hotspot/share/runtime/lightweightSynchronizer.cpp-630-void LightweightSynchronizer::enter_for(Handle obj, BasicLock* lock, JavaThread* locking_thread) {
+/Users/xiejinxin/Developer/OpenJDK/jdk25u-25.0.5.0.2/src/hotspot/share/runtime/lightweightSynchronizer.cpp-631-  assert(LockingMode == LM_LIGHTWEIGHT, "must be");
+/Users/xiejinxin/Developer/OpenJDK/jdk25u-25.0.5.0.2/src/hotspot/share/runtime/lightweightSynchronizer.cpp-632-  assert(!UseObjectMonitorTable || lock->object_monitor_cache() == nullptr, "must be cleared");
+/Users/xiejinxin/Developer/OpenJDK/jdk25u-25.0.5.0.2/src/hotspot/share/runtime/lightweightSynchronizer.cpp-633-  JavaThread* current = JavaThread::current();
+--
+/Users/xiejinxin/Developer/OpenJDK/jdk25u-25.0.5.0.2/src/hotspot/share/runtime/lightweightSynchronizer.cpp-694-    // is worth it.
+/Users/xiejinxin/Developer/OpenJDK/jdk25u-25.0.5.0.2/src/hotspot/share/runtime/lightweightSynchronizer.cpp-695-    // If deflation has been observed we also spin while deflation is ongoing.
+/Users/xiejinxin/Developer/OpenJDK/jdk25u-25.0.5.0.2/src/hotspot/share/runtime/lightweightSynchronizer.cpp:696:    if (fast_lock_try_enter(obj(), lock_stack, current)) {
+/Users/xiejinxin/Developer/OpenJDK/jdk25u-25.0.5.0.2/src/hotspot/share/runtime/lightweightSynchronizer.cpp-697-      return;
+/Users/xiejinxin/Developer/OpenJDK/jdk25u-25.0.5.0.2/src/hotspot/share/runtime/lightweightSynchronizer.cpp-698-    } else if (UseObjectMonitorTable && fast_lock_spin_enter(obj(), lock_stack, current, observed_deflation)) {
+/Users/xiejinxin/Developer/OpenJDK/jdk25u-25.0.5.0.2/src/hotspot/share/runtime/lightweightSynchronizer.cpp-699-      return;
+/Users/xiejinxin/Developer/OpenJDK/jdk25u-25.0.5.0.2/src/hotspot/share/runtime/lightweightSynchronizer.cpp-700-    }
+/Users/xiejinxin/Developer/OpenJDK/jdk25u-25.0.5.0.2/src/hotspot/share/runtime/lightweightSynchronizer.cpp-701-
+/Users/xiejinxin/Developer/OpenJDK/jdk25u-25.0.5.0.2/src/hotspot/share/runtime/lightweightSynchronizer.cpp-702-    if (observed_deflation) {
+/Users/xiejinxin/Developer/OpenJDK/jdk25u-25.0.5.0.2/src/hotspot/share/runtime/lightweightSynchronizer.cpp-703-      spin_yield.wait();
+/Users/xiejinxin/Developer/OpenJDK/jdk25u-25.0.5.0.2/src/hotspot/share/runtime/lightweightSynchronizer.cpp-704-    }
+--
+/Users/xiejinxin/Developer/OpenJDK/jdk25u-25.0.5.0.2/src/hotspot/share/runtime/lightweightSynchronizer.cpp-786-
+/Users/xiejinxin/Developer/OpenJDK/jdk25u-25.0.5.0.2/src/hotspot/share/runtime/lightweightSynchronizer.cpp-787-  for (;;) {
+/Users/xiejinxin/Developer/OpenJDK/jdk25u-25.0.5.0.2/src/hotspot/share/runtime/lightweightSynchronizer.cpp:788:    markWord mark = obj->mark_acquire();
+/Users/xiejinxin/Developer/OpenJDK/jdk25u-25.0.5.0.2/src/hotspot/share/runtime/lightweightSynchronizer.cpp-789-    if (mark.is_unlocked()) {
+/Users/xiejinxin/Developer/OpenJDK/jdk25u-25.0.5.0.2/src/hotspot/share/runtime/lightweightSynchronizer.cpp-790-      // No lock, IMSE.
+/Users/xiejinxin/Developer/OpenJDK/jdk25u-25.0.5.0.2/src/hotspot/share/runtime/lightweightSynchronizer.cpp-791-      THROW_MSG_(vmSymbols::java_lang_IllegalMonitorStateException(),
+/Users/xiejinxin/Developer/OpenJDK/jdk25u-25.0.5.0.2/src/hotspot/share/runtime/lightweightSynchronizer.cpp-792-                 "current thread is not owner", nullptr);
+/Users/xiejinxin/Developer/OpenJDK/jdk25u-25.0.5.0.2/src/hotspot/share/runtime/lightweightSynchronizer.cpp-793-    }
+/Users/xiejinxin/Developer/OpenJDK/jdk25u-25.0.5.0.2/src/hotspot/share/runtime/lightweightSynchronizer.cpp-794-
+/Users/xiejinxin/Developer/OpenJDK/jdk25u-25.0.5.0.2/src/hotspot/share/runtime/lightweightSynchronizer.cpp-795-    if (mark.is_fast_locked()) {
+/Users/xiejinxin/Developer/OpenJDK/jdk25u-25.0.5.0.2/src/hotspot/share/runtime/lightweightSynchronizer.cpp-796-      if (!current->lock_stack().contains(obj)) {
+--
+/Users/xiejinxin/Developer/OpenJDK/jdk25u-25.0.5.0.2/src/hotspot/share/runtime/lightweightSynchronizer.cpp-838-
+/Users/xiejinxin/Developer/OpenJDK/jdk25u-25.0.5.0.2/src/hotspot/share/runtime/lightweightSynchronizer.cpp-839-  for (;;) {
+/Users/xiejinxin/Developer/OpenJDK/jdk25u-25.0.5.0.2/src/hotspot/share/runtime/lightweightSynchronizer.cpp:840:    const markWord mark = object->mark_acquire();
+/Users/xiejinxin/Developer/OpenJDK/jdk25u-25.0.5.0.2/src/hotspot/share/runtime/lightweightSynchronizer.cpp-841-
+/Users/xiejinxin/Developer/OpenJDK/jdk25u-25.0.5.0.2/src/hotspot/share/runtime/lightweightSynchronizer.cpp-842-    // The mark can be in one of the following states:
+/Users/xiejinxin/Developer/OpenJDK/jdk25u-25.0.5.0.2/src/hotspot/share/runtime/lightweightSynchronizer.cpp-843-    // *  inflated     - Just return if using stack-locking.
+/Users/xiejinxin/Developer/OpenJDK/jdk25u-25.0.5.0.2/src/hotspot/share/runtime/lightweightSynchronizer.cpp-844-    //                   If using fast-locking and the ObjectMonitor owner
+/Users/xiejinxin/Developer/OpenJDK/jdk25u-25.0.5.0.2/src/hotspot/share/runtime/lightweightSynchronizer.cpp-845-    //                   is anonymous and the locking_thread owns the
+/Users/xiejinxin/Developer/OpenJDK/jdk25u-25.0.5.0.2/src/hotspot/share/runtime/lightweightSynchronizer.cpp-846-    //                   object lock, then we make the locking_thread
+/Users/xiejinxin/Developer/OpenJDK/jdk25u-25.0.5.0.2/src/hotspot/share/runtime/lightweightSynchronizer.cpp-847-    //                   the ObjectMonitor owner and remove the lock from
+/Users/xiejinxin/Developer/OpenJDK/jdk25u-25.0.5.0.2/src/hotspot/share/runtime/lightweightSynchronizer.cpp-848-    //                   the locking_thread's lock stack.
+--
+/Users/xiejinxin/Developer/OpenJDK/jdk25u-25.0.5.0.2/src/hotspot/share/runtime/lightweightSynchronizer.cpp-957-  ObjectSynchronizer::FastHashCode(current, object);
+/Users/xiejinxin/Developer/OpenJDK/jdk25u-25.0.5.0.2/src/hotspot/share/runtime/lightweightSynchronizer.cpp-958-
+/Users/xiejinxin/Developer/OpenJDK/jdk25u-25.0.5.0.2/src/hotspot/share/runtime/lightweightSynchronizer.cpp:959:  markWord mark = object->mark_acquire();
+/Users/xiejinxin/Developer/OpenJDK/jdk25u-25.0.5.0.2/src/hotspot/share/runtime/lightweightSynchronizer.cpp-960-  assert(!mark.is_unlocked(), "Cannot be unlocked");
+/Users/xiejinxin/Developer/OpenJDK/jdk25u-25.0.5.0.2/src/hotspot/share/runtime/lightweightSynchronizer.cpp-961-
+/Users/xiejinxin/Developer/OpenJDK/jdk25u-25.0.5.0.2/src/hotspot/share/runtime/lightweightSynchronizer.cpp-962-  for (;;) {
+/Users/xiejinxin/Developer/OpenJDK/jdk25u-25.0.5.0.2/src/hotspot/share/runtime/lightweightSynchronizer.cpp-963-    // Fetch the monitor from the table
+/Users/xiejinxin/Developer/OpenJDK/jdk25u-25.0.5.0.2/src/hotspot/share/runtime/lightweightSynchronizer.cpp-964-    monitor = get_or_insert_monitor(object, current, cause);
+/Users/xiejinxin/Developer/OpenJDK/jdk25u-25.0.5.0.2/src/hotspot/share/runtime/lightweightSynchronizer.cpp-965-
+/Users/xiejinxin/Developer/OpenJDK/jdk25u-25.0.5.0.2/src/hotspot/share/runtime/lightweightSynchronizer.cpp-966-    // ObjectMonitors are always inserted as anonymously owned, this thread is
+/Users/xiejinxin/Developer/OpenJDK/jdk25u-25.0.5.0.2/src/hotspot/share/runtime/lightweightSynchronizer.cpp-967-    // the current holder of the monitor. So unless the entry is stale and
+--
+/Users/xiejinxin/Developer/OpenJDK/jdk25u-25.0.5.0.2/src/hotspot/share/runtime/lightweightSynchronizer.cpp-1055-    lock->clear_object_monitor_cache();
+/Users/xiejinxin/Developer/OpenJDK/jdk25u-25.0.5.0.2/src/hotspot/share/runtime/lightweightSynchronizer.cpp-1056-
+/Users/xiejinxin/Developer/OpenJDK/jdk25u-25.0.5.0.2/src/hotspot/share/runtime/lightweightSynchronizer.cpp:1057:    const markWord mark = object->mark_acquire();
+/Users/xiejinxin/Developer/OpenJDK/jdk25u-25.0.5.0.2/src/hotspot/share/runtime/lightweightSynchronizer.cpp-1058-
+/Users/xiejinxin/Developer/OpenJDK/jdk25u-25.0.5.0.2/src/hotspot/share/runtime/lightweightSynchronizer.cpp-1059-    if (mark.has_monitor()) {
+/Users/xiejinxin/Developer/OpenJDK/jdk25u-25.0.5.0.2/src/hotspot/share/runtime/lightweightSynchronizer.cpp-1060-      // Waiting on the deflation thread to remove the deflated monitor from the table.
+/Users/xiejinxin/Developer/OpenJDK/jdk25u-25.0.5.0.2/src/hotspot/share/runtime/lightweightSynchronizer.cpp-1061-      os::naked_yield();
+/Users/xiejinxin/Developer/OpenJDK/jdk25u-25.0.5.0.2/src/hotspot/share/runtime/lightweightSynchronizer.cpp-1062-
+/Users/xiejinxin/Developer/OpenJDK/jdk25u-25.0.5.0.2/src/hotspot/share/runtime/lightweightSynchronizer.cpp-1063-    } else if (mark.is_fast_locked()) {
+/Users/xiejinxin/Developer/OpenJDK/jdk25u-25.0.5.0.2/src/hotspot/share/runtime/lightweightSynchronizer.cpp-1064-      // Some other thread managed to fast-lock the lock, or this is a
+/Users/xiejinxin/Developer/OpenJDK/jdk25u-25.0.5.0.2/src/hotspot/share/runtime/lightweightSynchronizer.cpp-1065-      // recursive lock from the same thread; yield for the deflation
+--
+/Users/xiejinxin/Developer/OpenJDK/jdk25u-25.0.5.0.2/src/hotspot/share/runtime/lightweightSynchronizer.cpp-1077-
+/Users/xiejinxin/Developer/OpenJDK/jdk25u-25.0.5.0.2/src/hotspot/share/runtime/lightweightSynchronizer.cpp-1078-  for (;;) {
+/Users/xiejinxin/Developer/OpenJDK/jdk25u-25.0.5.0.2/src/hotspot/share/runtime/lightweightSynchronizer.cpp:1079:    const markWord mark = object->mark_acquire();
+/Users/xiejinxin/Developer/OpenJDK/jdk25u-25.0.5.0.2/src/hotspot/share/runtime/lightweightSynchronizer.cpp-1080-    // The mark can be in one of the following states:
+/Users/xiejinxin/Developer/OpenJDK/jdk25u-25.0.5.0.2/src/hotspot/share/runtime/lightweightSynchronizer.cpp-1081-    // *  inflated     - If the ObjectMonitor owner is anonymous
+/Users/xiejinxin/Developer/OpenJDK/jdk25u-25.0.5.0.2/src/hotspot/share/runtime/lightweightSynchronizer.cpp-1082-    //                   and the locking_thread owns the object
+/Users/xiejinxin/Developer/OpenJDK/jdk25u-25.0.5.0.2/src/hotspot/share/runtime/lightweightSynchronizer.cpp-1083-    //                   lock, then we make the locking_thread
+/Users/xiejinxin/Developer/OpenJDK/jdk25u-25.0.5.0.2/src/hotspot/share/runtime/lightweightSynchronizer.cpp-1084-    //                   the ObjectMonitor owner and remove the
+/Users/xiejinxin/Developer/OpenJDK/jdk25u-25.0.5.0.2/src/hotspot/share/runtime/lightweightSynchronizer.cpp-1085-    //                   lock from the locking_thread's lock stack.
+/Users/xiejinxin/Developer/OpenJDK/jdk25u-25.0.5.0.2/src/hotspot/share/runtime/lightweightSynchronizer.cpp-1086-    // *  fast-locked  - Coerce it to inflated from fast-locked.
+/Users/xiejinxin/Developer/OpenJDK/jdk25u-25.0.5.0.2/src/hotspot/share/runtime/lightweightSynchronizer.cpp-1087-    // *  neutral      - Inflate the object. Successful CAS is locked
+--
+/Users/xiejinxin/Developer/OpenJDK/jdk25u-25.0.5.0.2/src/hotspot/share/runtime/lightweightSynchronizer.cpp-1162-}
+/Users/xiejinxin/Developer/OpenJDK/jdk25u-25.0.5.0.2/src/hotspot/share/runtime/lightweightSynchronizer.cpp-1163-
+/Users/xiejinxin/Developer/OpenJDK/jdk25u-25.0.5.0.2/src/hotspot/share/runtime/lightweightSynchronizer.cpp:1164:void LightweightSynchronizer::deflate_monitor(Thread* current, oop obj, ObjectMonitor* monitor) {
+/Users/xiejinxin/Developer/OpenJDK/jdk25u-25.0.5.0.2/src/hotspot/share/runtime/lightweightSynchronizer.cpp-1165-  if (obj != nullptr) {
+/Users/xiejinxin/Developer/OpenJDK/jdk25u-25.0.5.0.2/src/hotspot/share/runtime/lightweightSynchronizer.cpp-1166-    deflate_mark_word(obj);
+/Users/xiejinxin/Developer/OpenJDK/jdk25u-25.0.5.0.2/src/hotspot/share/runtime/lightweightSynchronizer.cpp-1167-  }
+/Users/xiejinxin/Developer/OpenJDK/jdk25u-25.0.5.0.2/src/hotspot/share/runtime/lightweightSynchronizer.cpp-1168-  bool removed = remove_monitor(current, monitor, obj);
+/Users/xiejinxin/Developer/OpenJDK/jdk25u-25.0.5.0.2/src/hotspot/share/runtime/lightweightSynchronizer.cpp-1169-  if (obj != nullptr) {
+/Users/xiejinxin/Developer/OpenJDK/jdk25u-25.0.5.0.2/src/hotspot/share/runtime/lightweightSynchronizer.cpp-1170-    assert(removed, "Should have removed the entry if obj was alive");
+/Users/xiejinxin/Developer/OpenJDK/jdk25u-25.0.5.0.2/src/hotspot/share/runtime/lightweightSynchronizer.cpp-1171-  }
+/Users/xiejinxin/Developer/OpenJDK/jdk25u-25.0.5.0.2/src/hotspot/share/runtime/lightweightSynchronizer.cpp-1172-}
+--
+/Users/xiejinxin/Developer/OpenJDK/jdk25u-25.0.5.0.2/src/hotspot/share/runtime/orderAccess.hpp-106-// acquire.
+/Users/xiejinxin/Developer/OpenJDK/jdk25u-25.0.5.0.2/src/hotspot/share/runtime/orderAccess.hpp-107-//
+/Users/xiejinxin/Developer/OpenJDK/jdk25u-25.0.5.0.2/src/hotspot/share/runtime/orderAccess.hpp:108:// The API offers both stand-alone acquire() and release() as well as bound
+/Users/xiejinxin/Developer/OpenJDK/jdk25u-25.0.5.0.2/src/hotspot/share/runtime/orderAccess.hpp:109:// load_acquire() and release_store(). It is guaranteed that these are
+/Users/xiejinxin/Developer/OpenJDK/jdk25u-25.0.5.0.2/src/hotspot/share/runtime/orderAccess.hpp-110-// semantically equivalent w.r.t. the defined model. However, since
+/Users/xiejinxin/Developer/OpenJDK/jdk25u-25.0.5.0.2/src/hotspot/share/runtime/orderAccess.hpp:111:// stand-alone acquire()/release() does not know which previous
+/Users/xiejinxin/Developer/OpenJDK/jdk25u-25.0.5.0.2/src/hotspot/share/runtime/orderAccess.hpp-112-// load/subsequent store is considered the synchronizing load/store, they
+/Users/xiejinxin/Developer/OpenJDK/jdk25u-25.0.5.0.2/src/hotspot/share/runtime/orderAccess.hpp-113-// may be more conservative in implementations. We advise using the bound
+/Users/xiejinxin/Developer/OpenJDK/jdk25u-25.0.5.0.2/src/hotspot/share/runtime/orderAccess.hpp-114-// variants whenever possible.
+/Users/xiejinxin/Developer/OpenJDK/jdk25u-25.0.5.0.2/src/hotspot/share/runtime/orderAccess.hpp-115-//
+/Users/xiejinxin/Developer/OpenJDK/jdk25u-25.0.5.0.2/src/hotspot/share/runtime/orderAccess.hpp-116-// We define a "fence" operation, as a bidirectional barrier.
+/Users/xiejinxin/Developer/OpenJDK/jdk25u-25.0.5.0.2/src/hotspot/share/runtime/orderAccess.hpp-117-// It guarantees that any memory access preceding the fence is not
+/Users/xiejinxin/Developer/OpenJDK/jdk25u-25.0.5.0.2/src/hotspot/share/runtime/orderAccess.hpp-118-// reordered w.r.t. any memory accesses subsequent to the fence in program
+/Users/xiejinxin/Developer/OpenJDK/jdk25u-25.0.5.0.2/src/hotspot/share/runtime/orderAccess.hpp-119-// order. This may be used to prevent sequences of loads from floating up
+--
+/Users/xiejinxin/Developer/OpenJDK/jdk25u-25.0.5.0.2/src/hotspot/share/runtime/orderAccess.hpp-244-  static void     storeload();
+/Users/xiejinxin/Developer/OpenJDK/jdk25u-25.0.5.0.2/src/hotspot/share/runtime/orderAccess.hpp-245-
+/Users/xiejinxin/Developer/OpenJDK/jdk25u-25.0.5.0.2/src/hotspot/share/runtime/orderAccess.hpp:246:  static void     acquire();
+/Users/xiejinxin/Developer/OpenJDK/jdk25u-25.0.5.0.2/src/hotspot/share/runtime/orderAccess.hpp:247:  static void     release();
+/Users/xiejinxin/Developer/OpenJDK/jdk25u-25.0.5.0.2/src/hotspot/share/runtime/orderAccess.hpp-248-  static void     fence();
+/Users/xiejinxin/Developer/OpenJDK/jdk25u-25.0.5.0.2/src/hotspot/share/runtime/orderAccess.hpp-249-
+/Users/xiejinxin/Developer/OpenJDK/jdk25u-25.0.5.0.2/src/hotspot/share/runtime/orderAccess.hpp-250-  static void     cross_modify_fence() {
+/Users/xiejinxin/Developer/OpenJDK/jdk25u-25.0.5.0.2/src/hotspot/share/runtime/orderAccess.hpp-251-    cross_modify_fence_impl();
+/Users/xiejinxin/Developer/OpenJDK/jdk25u-25.0.5.0.2/src/hotspot/share/runtime/orderAccess.hpp-252-    cross_modify_fence_verify();
+/Users/xiejinxin/Developer/OpenJDK/jdk25u-25.0.5.0.2/src/hotspot/share/runtime/orderAccess.hpp-253-  }
+/Users/xiejinxin/Developer/OpenJDK/jdk25u-25.0.5.0.2/src/hotspot/share/runtime/orderAccess.hpp-254-
+/Users/xiejinxin/Developer/OpenJDK/jdk25u-25.0.5.0.2/src/hotspot/share/runtime/orderAccess.hpp-255-  // Processors which are not multi-copy-atomic require a full fence
+--
+/Users/xiejinxin/Developer/OpenJDK/jdk25u-25.0.5.0.2/src/hotspot/share/runtime/continuationFreezeThaw.cpp-205-
+/Users/xiejinxin/Developer/OpenJDK/jdk25u-25.0.5.0.2/src/hotspot/share/runtime/continuationFreezeThaw.cpp-206-static freeze_result is_pinned0(JavaThread* thread, oop cont_scope, bool safepoint);
+/Users/xiejinxin/Developer/OpenJDK/jdk25u-25.0.5.0.2/src/hotspot/share/runtime/continuationFreezeThaw.cpp:207:template<typename ConfigT, bool preempt> static inline freeze_result freeze_internal(JavaThread* current, intptr_t* const sp);
+/Users/xiejinxin/Developer/OpenJDK/jdk25u-25.0.5.0.2/src/hotspot/share/runtime/continuationFreezeThaw.cpp-208-
+/Users/xiejinxin/Developer/OpenJDK/jdk25u-25.0.5.0.2/src/hotspot/share/runtime/continuationFreezeThaw.cpp:209:static inline int prepare_thaw_internal(JavaThread* thread, bool return_barrier);
+/Users/xiejinxin/Developer/OpenJDK/jdk25u-25.0.5.0.2/src/hotspot/share/runtime/continuationFreezeThaw.cpp:210:template<typename ConfigT> static inline intptr_t* thaw_internal(JavaThread* thread, const Continuation::thaw_kind kind);
+/Users/xiejinxin/Developer/OpenJDK/jdk25u-25.0.5.0.2/src/hotspot/share/runtime/continuationFreezeThaw.cpp-211-
+/Users/xiejinxin/Developer/OpenJDK/jdk25u-25.0.5.0.2/src/hotspot/share/runtime/continuationFreezeThaw.cpp-212-
+/Users/xiejinxin/Developer/OpenJDK/jdk25u-25.0.5.0.2/src/hotspot/share/runtime/continuationFreezeThaw.cpp-213-// Entry point to freeze. Transitions are handled manually
+/Users/xiejinxin/Developer/OpenJDK/jdk25u-25.0.5.0.2/src/hotspot/share/runtime/continuationFreezeThaw.cpp-214-// Called from gen_continuation_yield() in sharedRuntime_<cpu>.cpp through Continuation::freeze_entry();
+/Users/xiejinxin/Developer/OpenJDK/jdk25u-25.0.5.0.2/src/hotspot/share/runtime/continuationFreezeThaw.cpp-215-template<typename ConfigT>
+/Users/xiejinxin/Developer/OpenJDK/jdk25u-25.0.5.0.2/src/hotspot/share/runtime/continuationFreezeThaw.cpp-216-static JRT_BLOCK_ENTRY(int, freeze(JavaThread* current, intptr_t* sp))
+/Users/xiejinxin/Developer/OpenJDK/jdk25u-25.0.5.0.2/src/hotspot/share/runtime/continuationFreezeThaw.cpp-217-  assert(sp == current->frame_anchor()->last_Java_sp(), "");
+/Users/xiejinxin/Developer/OpenJDK/jdk25u-25.0.5.0.2/src/hotspot/share/runtime/continuationFreezeThaw.cpp-218-
+--
+/Users/xiejinxin/Developer/OpenJDK/jdk25u-25.0.5.0.2/src/hotspot/share/runtime/continuationFreezeThaw.cpp-225-
+/Users/xiejinxin/Developer/OpenJDK/jdk25u-25.0.5.0.2/src/hotspot/share/runtime/continuationFreezeThaw.cpp-226-JRT_LEAF(int, Continuation::prepare_thaw(JavaThread* thread, bool return_barrier))
+/Users/xiejinxin/Developer/OpenJDK/jdk25u-25.0.5.0.2/src/hotspot/share/runtime/continuationFreezeThaw.cpp:227:  return prepare_thaw_internal(thread, return_barrier);
+/Users/xiejinxin/Developer/OpenJDK/jdk25u-25.0.5.0.2/src/hotspot/share/runtime/continuationFreezeThaw.cpp-228-JRT_END
+/Users/xiejinxin/Developer/OpenJDK/jdk25u-25.0.5.0.2/src/hotspot/share/runtime/continuationFreezeThaw.cpp-229-
+/Users/xiejinxin/Developer/OpenJDK/jdk25u-25.0.5.0.2/src/hotspot/share/runtime/continuationFreezeThaw.cpp-230-template<typename ConfigT>
+/Users/xiejinxin/Developer/OpenJDK/jdk25u-25.0.5.0.2/src/hotspot/share/runtime/continuationFreezeThaw.cpp-231-static JRT_LEAF(intptr_t*, thaw(JavaThread* thread, int kind))
+/Users/xiejinxin/Developer/OpenJDK/jdk25u-25.0.5.0.2/src/hotspot/share/runtime/continuationFreezeThaw.cpp-232-  // TODO: JRT_LEAF and NoHandleMark is problematic for JFR events.
+/Users/xiejinxin/Developer/OpenJDK/jdk25u-25.0.5.0.2/src/hotspot/share/runtime/continuationFreezeThaw.cpp-233-  // vFrameStreamCommon allocates Handles in RegisterMap for continuations.
+/Users/xiejinxin/Developer/OpenJDK/jdk25u-25.0.5.0.2/src/hotspot/share/runtime/continuationFreezeThaw.cpp-234-  // Also the preemption case with JVMTI events enabled might safepoint so
+/Users/xiejinxin/Developer/OpenJDK/jdk25u-25.0.5.0.2/src/hotspot/share/runtime/continuationFreezeThaw.cpp-235-  // undo the NoSafepointVerifier here and rely on handling by ContinuationWrapper.
+--
+/Users/xiejinxin/Developer/OpenJDK/jdk25u-25.0.5.0.2/src/hotspot/share/runtime/continuationFreezeThaw.cpp-1719-
+/Users/xiejinxin/Developer/OpenJDK/jdk25u-25.0.5.0.2/src/hotspot/share/runtime/continuationFreezeThaw.cpp-1720-template<typename ConfigT, bool preempt>
+/Users/xiejinxin/Developer/OpenJDK/jdk25u-25.0.5.0.2/src/hotspot/share/runtime/continuationFreezeThaw.cpp:1721:static inline freeze_result freeze_internal(JavaThread* current, intptr_t* const sp) {
+/Users/xiejinxin/Developer/OpenJDK/jdk25u-25.0.5.0.2/src/hotspot/share/runtime/continuationFreezeThaw.cpp-1722-  assert(!current->has_pending_exception(), "");
+/Users/xiejinxin/Developer/OpenJDK/jdk25u-25.0.5.0.2/src/hotspot/share/runtime/continuationFreezeThaw.cpp-1723-
+/Users/xiejinxin/Developer/OpenJDK/jdk25u-25.0.5.0.2/src/hotspot/share/runtime/continuationFreezeThaw.cpp-1724-#ifdef ASSERT
+/Users/xiejinxin/Developer/OpenJDK/jdk25u-25.0.5.0.2/src/hotspot/share/runtime/continuationFreezeThaw.cpp-1725-  log_trace(continuations)("~~~~ freeze sp: " INTPTR_FORMAT "JavaThread: " INTPTR_FORMAT, p2i(current->last_continuation()->entry_sp()), p2i(current));
+/Users/xiejinxin/Developer/OpenJDK/jdk25u-25.0.5.0.2/src/hotspot/share/runtime/continuationFreezeThaw.cpp-1726-  log_frames(current);
+/Users/xiejinxin/Developer/OpenJDK/jdk25u-25.0.5.0.2/src/hotspot/share/runtime/continuationFreezeThaw.cpp-1727-#endif
+/Users/xiejinxin/Developer/OpenJDK/jdk25u-25.0.5.0.2/src/hotspot/share/runtime/continuationFreezeThaw.cpp-1728-
+/Users/xiejinxin/Developer/OpenJDK/jdk25u-25.0.5.0.2/src/hotspot/share/runtime/continuationFreezeThaw.cpp-1729-  CONT_JFR_ONLY(EventContinuationFreeze event;)
+--
+/Users/xiejinxin/Developer/OpenJDK/jdk25u-25.0.5.0.2/src/hotspot/share/runtime/continuationFreezeThaw.cpp-1867-// make room on the stack for thaw
+/Users/xiejinxin/Developer/OpenJDK/jdk25u-25.0.5.0.2/src/hotspot/share/runtime/continuationFreezeThaw.cpp-1868-// returns the size in bytes, or 0 on failure
+/Users/xiejinxin/Developer/OpenJDK/jdk25u-25.0.5.0.2/src/hotspot/share/runtime/continuationFreezeThaw.cpp:1869:static inline int prepare_thaw_internal(JavaThread* thread, bool return_barrier) {
+/Users/xiejinxin/Developer/OpenJDK/jdk25u-25.0.5.0.2/src/hotspot/share/runtime/continuationFreezeThaw.cpp-1870-  log_develop_trace(continuations)("~~~~ prepare_thaw return_barrier: %d", return_barrier);
+/Users/xiejinxin/Developer/OpenJDK/jdk25u-25.0.5.0.2/src/hotspot/share/runtime/continuationFreezeThaw.cpp-1871-
+/Users/xiejinxin/Developer/OpenJDK/jdk25u-25.0.5.0.2/src/hotspot/share/runtime/continuationFreezeThaw.cpp-1872-  assert(thread == JavaThread::current(), "");
+/Users/xiejinxin/Developer/OpenJDK/jdk25u-25.0.5.0.2/src/hotspot/share/runtime/continuationFreezeThaw.cpp-1873-
+/Users/xiejinxin/Developer/OpenJDK/jdk25u-25.0.5.0.2/src/hotspot/share/runtime/continuationFreezeThaw.cpp-1874-  ContinuationEntry* ce = thread->last_continuation();
+/Users/xiejinxin/Developer/OpenJDK/jdk25u-25.0.5.0.2/src/hotspot/share/runtime/continuationFreezeThaw.cpp-1875-  assert(ce != nullptr, "");
+/Users/xiejinxin/Developer/OpenJDK/jdk25u-25.0.5.0.2/src/hotspot/share/runtime/continuationFreezeThaw.cpp-1876-  oop continuation = ce->cont_oop(thread);
+/Users/xiejinxin/Developer/OpenJDK/jdk25u-25.0.5.0.2/src/hotspot/share/runtime/continuationFreezeThaw.cpp-1877-  assert(continuation == get_continuation(thread), "");
+--
+/Users/xiejinxin/Developer/OpenJDK/jdk25u-25.0.5.0.2/src/hotspot/share/runtime/continuationFreezeThaw.cpp-2807-// called after preparations (stack overflow check and making room)
+/Users/xiejinxin/Developer/OpenJDK/jdk25u-25.0.5.0.2/src/hotspot/share/runtime/continuationFreezeThaw.cpp-2808-template<typename ConfigT>
+/Users/xiejinxin/Developer/OpenJDK/jdk25u-25.0.5.0.2/src/hotspot/share/runtime/continuationFreezeThaw.cpp:2809:static inline intptr_t* thaw_internal(JavaThread* thread, const Continuation::thaw_kind kind) {
+/Users/xiejinxin/Developer/OpenJDK/jdk25u-25.0.5.0.2/src/hotspot/share/runtime/continuationFreezeThaw.cpp-2810-  assert(thread == JavaThread::current(), "Must be current thread");
+/Users/xiejinxin/Developer/OpenJDK/jdk25u-25.0.5.0.2/src/hotspot/share/runtime/continuationFreezeThaw.cpp-2811-
+/Users/xiejinxin/Developer/OpenJDK/jdk25u-25.0.5.0.2/src/hotspot/share/runtime/continuationFreezeThaw.cpp-2812-  CONT_JFR_ONLY(EventContinuationThaw event;)
+/Users/xiejinxin/Developer/OpenJDK/jdk25u-25.0.5.0.2/src/hotspot/share/runtime/continuationFreezeThaw.cpp-2813-
+/Users/xiejinxin/Developer/OpenJDK/jdk25u-25.0.5.0.2/src/hotspot/share/runtime/continuationFreezeThaw.cpp-2814-  log_develop_trace(continuations)("~~~~ thaw kind: %d sp: " INTPTR_FORMAT, kind, p2i(thread->last_continuation()->entry_sp()));
+/Users/xiejinxin/Developer/OpenJDK/jdk25u-25.0.5.0.2/src/hotspot/share/runtime/continuationFreezeThaw.cpp-2815-
+/Users/xiejinxin/Developer/OpenJDK/jdk25u-25.0.5.0.2/src/hotspot/share/runtime/continuationFreezeThaw.cpp-2816-  ContinuationEntry* entry = thread->last_continuation();
+/Users/xiejinxin/Developer/OpenJDK/jdk25u-25.0.5.0.2/src/hotspot/share/runtime/continuationFreezeThaw.cpp-2817-  assert(entry != nullptr, "");
+--
+/Users/xiejinxin/Developer/OpenJDK/jdk25u-25.0.5.0.2/src/hotspot/share/runtime/javaThread.cpp-672-
+/Users/xiejinxin/Developer/OpenJDK/jdk25u-25.0.5.0.2/src/hotspot/share/runtime/javaThread.cpp-673-  // Enqueue OopHandles for release by the service thread.
+/Users/xiejinxin/Developer/OpenJDK/jdk25u-25.0.5.0.2/src/hotspot/share/runtime/javaThread.cpp:674:  add_oop_handles_for_release();
+/Users/xiejinxin/Developer/OpenJDK/jdk25u-25.0.5.0.2/src/hotspot/share/runtime/javaThread.cpp-675-
+/Users/xiejinxin/Developer/OpenJDK/jdk25u-25.0.5.0.2/src/hotspot/share/runtime/javaThread.cpp-676-  // Return the sleep event to the free list
+/Users/xiejinxin/Developer/OpenJDK/jdk25u-25.0.5.0.2/src/hotspot/share/runtime/javaThread.cpp-677-  ParkEvent::Release(_SleepEvent);
+/Users/xiejinxin/Developer/OpenJDK/jdk25u-25.0.5.0.2/src/hotspot/share/runtime/javaThread.cpp-678-  _SleepEvent = nullptr;
+/Users/xiejinxin/Developer/OpenJDK/jdk25u-25.0.5.0.2/src/hotspot/share/runtime/javaThread.cpp-679-
+/Users/xiejinxin/Developer/OpenJDK/jdk25u-25.0.5.0.2/src/hotspot/share/runtime/javaThread.cpp-680-  // Free any remaining  previous UnrollBlock
+/Users/xiejinxin/Developer/OpenJDK/jdk25u-25.0.5.0.2/src/hotspot/share/runtime/javaThread.cpp-681-  vframeArray* old_array = vframe_array_last();
+/Users/xiejinxin/Developer/OpenJDK/jdk25u-25.0.5.0.2/src/hotspot/share/runtime/javaThread.cpp-682-
+--
+/Users/xiejinxin/Developer/OpenJDK/jdk25u-25.0.5.0.2/src/hotspot/share/runtime/javaThread.cpp-797-  java_lang_Thread::set_thread_status(threadObj(), JavaThreadStatus::TERMINATED);
+/Users/xiejinxin/Developer/OpenJDK/jdk25u-25.0.5.0.2/src/hotspot/share/runtime/javaThread.cpp-798-  // Clear the native thread instance - this makes isAlive return false and allows the join()
+/Users/xiejinxin/Developer/OpenJDK/jdk25u-25.0.5.0.2/src/hotspot/share/runtime/javaThread.cpp:799:  // to complete once we've done the notify_all below. Needs a release() to obey Java Memory Model
+/Users/xiejinxin/Developer/OpenJDK/jdk25u-25.0.5.0.2/src/hotspot/share/runtime/javaThread.cpp-800-  // requirements.
+/Users/xiejinxin/Developer/OpenJDK/jdk25u-25.0.5.0.2/src/hotspot/share/runtime/javaThread.cpp-801-  assert(java_lang_Thread::thread(threadObj()) == thread, "must be alive");
+/Users/xiejinxin/Developer/OpenJDK/jdk25u-25.0.5.0.2/src/hotspot/share/runtime/javaThread.cpp-802-  java_lang_Thread::release_set_thread(threadObj(), nullptr);
+/Users/xiejinxin/Developer/OpenJDK/jdk25u-25.0.5.0.2/src/hotspot/share/runtime/javaThread.cpp-803-  lock.notify_all(thread);
+/Users/xiejinxin/Developer/OpenJDK/jdk25u-25.0.5.0.2/src/hotspot/share/runtime/javaThread.cpp-804-  // Ignore pending exception, since we are exiting anyway
+/Users/xiejinxin/Developer/OpenJDK/jdk25u-25.0.5.0.2/src/hotspot/share/runtime/javaThread.cpp-805-  thread->clear_pending_exception();
+/Users/xiejinxin/Developer/OpenJDK/jdk25u-25.0.5.0.2/src/hotspot/share/runtime/javaThread.cpp-806-}
+/Users/xiejinxin/Developer/OpenJDK/jdk25u-25.0.5.0.2/src/hotspot/share/runtime/javaThread.cpp-807-
+--
+/Users/xiejinxin/Developer/OpenJDK/jdk25u-25.0.5.0.2/src/hotspot/share/runtime/javaThread.cpp-812-// For any new cleanup additions, please check to see if they need to be applied to
+/Users/xiejinxin/Developer/OpenJDK/jdk25u-25.0.5.0.2/src/hotspot/share/runtime/javaThread.cpp-813-// cleanup_failed_attach_current_thread as well.
+/Users/xiejinxin/Developer/OpenJDK/jdk25u-25.0.5.0.2/src/hotspot/share/runtime/javaThread.cpp:814:void JavaThread::exit(bool destroy_vm, ExitType exit_type) {
+/Users/xiejinxin/Developer/OpenJDK/jdk25u-25.0.5.0.2/src/hotspot/share/runtime/javaThread.cpp-815-  assert(this == JavaThread::current(), "thread consistency check");
+/Users/xiejinxin/Developer/OpenJDK/jdk25u-25.0.5.0.2/src/hotspot/share/runtime/javaThread.cpp-816-  assert(!is_exiting(), "should not be exiting or terminated already");
+/Users/xiejinxin/Developer/OpenJDK/jdk25u-25.0.5.0.2/src/hotspot/share/runtime/javaThread.cpp-817-
+/Users/xiejinxin/Developer/OpenJDK/jdk25u-25.0.5.0.2/src/hotspot/share/runtime/javaThread.cpp-818-  elapsedTimer _timer_exit_phase1;
+/Users/xiejinxin/Developer/OpenJDK/jdk25u-25.0.5.0.2/src/hotspot/share/runtime/javaThread.cpp-819-  elapsedTimer _timer_exit_phase2;
+/Users/xiejinxin/Developer/OpenJDK/jdk25u-25.0.5.0.2/src/hotspot/share/runtime/javaThread.cpp-820-  elapsedTimer _timer_exit_phase3;
+/Users/xiejinxin/Developer/OpenJDK/jdk25u-25.0.5.0.2/src/hotspot/share/runtime/javaThread.cpp-821-  elapsedTimer _timer_exit_phase4;
+/Users/xiejinxin/Developer/OpenJDK/jdk25u-25.0.5.0.2/src/hotspot/share/runtime/javaThread.cpp-822-
+--
+/Users/xiejinxin/Developer/OpenJDK/jdk25u-25.0.5.0.2/src/hotspot/share/runtime/javaThread.cpp-1504-
+/Users/xiejinxin/Developer/OpenJDK/jdk25u-25.0.5.0.2/src/hotspot/share/runtime/javaThread.cpp-1505-// Printing
+/Users/xiejinxin/Developer/OpenJDK/jdk25u-25.0.5.0.2/src/hotspot/share/runtime/javaThread.cpp:1506:static const char* _get_thread_state_name(JavaThreadState _thread_state) {
+/Users/xiejinxin/Developer/OpenJDK/jdk25u-25.0.5.0.2/src/hotspot/share/runtime/javaThread.cpp-1507-  switch (_thread_state) {
+/Users/xiejinxin/Developer/OpenJDK/jdk25u-25.0.5.0.2/src/hotspot/share/runtime/javaThread.cpp-1508-  case _thread_uninitialized:     return "_thread_uninitialized";
+/Users/xiejinxin/Developer/OpenJDK/jdk25u-25.0.5.0.2/src/hotspot/share/runtime/javaThread.cpp-1509-  case _thread_new:               return "_thread_new";
+/Users/xiejinxin/Developer/OpenJDK/jdk25u-25.0.5.0.2/src/hotspot/share/runtime/javaThread.cpp-1510-  case _thread_new_trans:         return "_thread_new_trans";
+/Users/xiejinxin/Developer/OpenJDK/jdk25u-25.0.5.0.2/src/hotspot/share/runtime/javaThread.cpp-1511-  case _thread_in_native:         return "_thread_in_native";
+/Users/xiejinxin/Developer/OpenJDK/jdk25u-25.0.5.0.2/src/hotspot/share/runtime/javaThread.cpp-1512-  case _thread_in_native_trans:   return "_thread_in_native_trans";
+/Users/xiejinxin/Developer/OpenJDK/jdk25u-25.0.5.0.2/src/hotspot/share/runtime/javaThread.cpp-1513-  case _thread_in_vm:             return "_thread_in_vm";
+/Users/xiejinxin/Developer/OpenJDK/jdk25u-25.0.5.0.2/src/hotspot/share/runtime/javaThread.cpp-1514-  case _thread_in_vm_trans:       return "_thread_in_vm_trans";
+--
+/Users/xiejinxin/Developer/OpenJDK/jdk25u-25.0.5.0.2/src/hotspot/share/runtime/javaThread.cpp-1522-
+/Users/xiejinxin/Developer/OpenJDK/jdk25u-25.0.5.0.2/src/hotspot/share/runtime/javaThread.cpp-1523-void JavaThread::print_thread_state_on(outputStream *st) const {
+/Users/xiejinxin/Developer/OpenJDK/jdk25u-25.0.5.0.2/src/hotspot/share/runtime/javaThread.cpp:1524:  st->print_cr("   JavaThread state: %s", _get_thread_state_name(_thread_state));
+/Users/xiejinxin/Developer/OpenJDK/jdk25u-25.0.5.0.2/src/hotspot/share/runtime/javaThread.cpp-1525-}
+/Users/xiejinxin/Developer/OpenJDK/jdk25u-25.0.5.0.2/src/hotspot/share/runtime/javaThread.cpp-1526-
+/Users/xiejinxin/Developer/OpenJDK/jdk25u-25.0.5.0.2/src/hotspot/share/runtime/javaThread.cpp-1527-// Called by Threads::print() for VM_PrintThreads operation
+/Users/xiejinxin/Developer/OpenJDK/jdk25u-25.0.5.0.2/src/hotspot/share/runtime/javaThread.cpp-1528-void JavaThread::print_on(outputStream *st, bool print_extended_info) const {
+/Users/xiejinxin/Developer/OpenJDK/jdk25u-25.0.5.0.2/src/hotspot/share/runtime/javaThread.cpp-1529-  st->print_raw("\"");
+/Users/xiejinxin/Developer/OpenJDK/jdk25u-25.0.5.0.2/src/hotspot/share/runtime/javaThread.cpp-1530-  st->print_raw(name());
+/Users/xiejinxin/Developer/OpenJDK/jdk25u-25.0.5.0.2/src/hotspot/share/runtime/javaThread.cpp-1531-  st->print_raw("\" ");
+/Users/xiejinxin/Developer/OpenJDK/jdk25u-25.0.5.0.2/src/hotspot/share/runtime/javaThread.cpp-1532-  oop thread_oop = threadObj();
+--
+/Users/xiejinxin/Developer/OpenJDK/jdk25u-25.0.5.0.2/src/hotspot/share/runtime/javaThread.cpp-1583-  }
+/Users/xiejinxin/Developer/OpenJDK/jdk25u-25.0.5.0.2/src/hotspot/share/runtime/javaThread.cpp-1584-  st->print(" [");
+/Users/xiejinxin/Developer/OpenJDK/jdk25u-25.0.5.0.2/src/hotspot/share/runtime/javaThread.cpp:1585:  st->print("%s", _get_thread_state_name(_thread_state));
+/Users/xiejinxin/Developer/OpenJDK/jdk25u-25.0.5.0.2/src/hotspot/share/runtime/javaThread.cpp-1586-  if (osthread()) {
+/Users/xiejinxin/Developer/OpenJDK/jdk25u-25.0.5.0.2/src/hotspot/share/runtime/javaThread.cpp-1587-    st->print(", id=%d", osthread()->thread_id());
+/Users/xiejinxin/Developer/OpenJDK/jdk25u-25.0.5.0.2/src/hotspot/share/runtime/javaThread.cpp-1588-  }
+/Users/xiejinxin/Developer/OpenJDK/jdk25u-25.0.5.0.2/src/hotspot/share/runtime/javaThread.cpp-1589-  // Use raw field members for stack base/size as this could be
+/Users/xiejinxin/Developer/OpenJDK/jdk25u-25.0.5.0.2/src/hotspot/share/runtime/javaThread.cpp-1590-  // called before a thread has run enough to initialize them.
+/Users/xiejinxin/Developer/OpenJDK/jdk25u-25.0.5.0.2/src/hotspot/share/runtime/javaThread.cpp-1591-  st->print(", stack(" PTR_FORMAT "," PTR_FORMAT ") (" PROPERFMT ")",
+/Users/xiejinxin/Developer/OpenJDK/jdk25u-25.0.5.0.2/src/hotspot/share/runtime/javaThread.cpp-1592-            p2i(_stack_base - _stack_size), p2i(_stack_base),
+/Users/xiejinxin/Developer/OpenJDK/jdk25u-25.0.5.0.2/src/hotspot/share/runtime/javaThread.cpp-1593-            PROPERFMTARGS(_stack_size));
+--
+/Users/xiejinxin/Developer/OpenJDK/jdk25u-25.0.5.0.2/src/hotspot/share/runtime/javaThread.cpp-2285-    assert(_index == _count, "usage error");
+/Users/xiejinxin/Developer/OpenJDK/jdk25u-25.0.5.0.2/src/hotspot/share/runtime/javaThread.cpp-2286-    for (int i = 0; i < _index; i++) {
+/Users/xiejinxin/Developer/OpenJDK/jdk25u-25.0.5.0.2/src/hotspot/share/runtime/javaThread.cpp:2287:      _handles[i].release(JavaThread::thread_oop_storage());
+/Users/xiejinxin/Developer/OpenJDK/jdk25u-25.0.5.0.2/src/hotspot/share/runtime/javaThread.cpp-2288-    }
+/Users/xiejinxin/Developer/OpenJDK/jdk25u-25.0.5.0.2/src/hotspot/share/runtime/javaThread.cpp-2289-  }
+/Users/xiejinxin/Developer/OpenJDK/jdk25u-25.0.5.0.2/src/hotspot/share/runtime/javaThread.cpp-2290-  OopHandleList* next() const { return _next; }
+/Users/xiejinxin/Developer/OpenJDK/jdk25u-25.0.5.0.2/src/hotspot/share/runtime/javaThread.cpp-2291-};
+/Users/xiejinxin/Developer/OpenJDK/jdk25u-25.0.5.0.2/src/hotspot/share/runtime/javaThread.cpp-2292-
+/Users/xiejinxin/Developer/OpenJDK/jdk25u-25.0.5.0.2/src/hotspot/share/runtime/javaThread.cpp-2293-OopHandleList* JavaThread::_oop_handle_list = nullptr;
+/Users/xiejinxin/Developer/OpenJDK/jdk25u-25.0.5.0.2/src/hotspot/share/runtime/javaThread.cpp-2294-
+/Users/xiejinxin/Developer/OpenJDK/jdk25u-25.0.5.0.2/src/hotspot/share/runtime/javaThread.cpp-2295-// Called by the ServiceThread to do the work of releasing
+--
+/Users/xiejinxin/Developer/OpenJDK/jdk25u-25.0.5.0.2/src/hotspot/share/runtime/javaThread.cpp-2312-
+/Users/xiejinxin/Developer/OpenJDK/jdk25u-25.0.5.0.2/src/hotspot/share/runtime/javaThread.cpp-2313-// Add our OopHandles for later release.
+/Users/xiejinxin/Developer/OpenJDK/jdk25u-25.0.5.0.2/src/hotspot/share/runtime/javaThread.cpp:2314:void JavaThread::add_oop_handles_for_release() {
+/Users/xiejinxin/Developer/OpenJDK/jdk25u-25.0.5.0.2/src/hotspot/share/runtime/javaThread.cpp-2315-  MutexLocker ml(Service_lock, Mutex::_no_safepoint_check_flag);
+/Users/xiejinxin/Developer/OpenJDK/jdk25u-25.0.5.0.2/src/hotspot/share/runtime/javaThread.cpp-2316-  OopHandleList* new_head = new OopHandleList(_oop_handle_list);
+/Users/xiejinxin/Developer/OpenJDK/jdk25u-25.0.5.0.2/src/hotspot/share/runtime/javaThread.cpp-2317-  new_head->add(_threadObj);
+/Users/xiejinxin/Developer/OpenJDK/jdk25u-25.0.5.0.2/src/hotspot/share/runtime/javaThread.cpp-2318-  new_head->add(_vthread);
+/Users/xiejinxin/Developer/OpenJDK/jdk25u-25.0.5.0.2/src/hotspot/share/runtime/javaThread.cpp-2319-  new_head->add(_jvmti_vthread);
+/Users/xiejinxin/Developer/OpenJDK/jdk25u-25.0.5.0.2/src/hotspot/share/runtime/javaThread.cpp-2320-  new_head->add(_scopedValueCache);
+/Users/xiejinxin/Developer/OpenJDK/jdk25u-25.0.5.0.2/src/hotspot/share/runtime/javaThread.cpp-2321-  _oop_handle_list = new_head;
+/Users/xiejinxin/Developer/OpenJDK/jdk25u-25.0.5.0.2/src/hotspot/share/runtime/javaThread.cpp-2322-  Service_lock->notify_all();
+--
+/Users/xiejinxin/Developer/OpenJDK/jdk25u-25.0.5.0.2/src/hotspot/share/runtime/objectMonitor.cpp-303-
+/Users/xiejinxin/Developer/OpenJDK/jdk25u-25.0.5.0.2/src/hotspot/share/runtime/objectMonitor.cpp-304-ObjectMonitor::~ObjectMonitor() {
+/Users/xiejinxin/Developer/OpenJDK/jdk25u-25.0.5.0.2/src/hotspot/share/runtime/objectMonitor.cpp:305:  _object.release(_oop_storage);
+/Users/xiejinxin/Developer/OpenJDK/jdk25u-25.0.5.0.2/src/hotspot/share/runtime/objectMonitor.cpp-306-}
+/Users/xiejinxin/Developer/OpenJDK/jdk25u-25.0.5.0.2/src/hotspot/share/runtime/objectMonitor.cpp-307-
+/Users/xiejinxin/Developer/OpenJDK/jdk25u-25.0.5.0.2/src/hotspot/share/runtime/objectMonitor.cpp-308-oop ObjectMonitor::object() const {
+/Users/xiejinxin/Developer/OpenJDK/jdk25u-25.0.5.0.2/src/hotspot/share/runtime/objectMonitor.cpp-309-  check_object_context();
+/Users/xiejinxin/Developer/OpenJDK/jdk25u-25.0.5.0.2/src/hotspot/share/runtime/objectMonitor.cpp-310-  return _object.resolve();
+/Users/xiejinxin/Developer/OpenJDK/jdk25u-25.0.5.0.2/src/hotspot/share/runtime/objectMonitor.cpp-311-}
+/Users/xiejinxin/Developer/OpenJDK/jdk25u-25.0.5.0.2/src/hotspot/share/runtime/objectMonitor.cpp-312-
+/Users/xiejinxin/Developer/OpenJDK/jdk25u-25.0.5.0.2/src/hotspot/share/runtime/objectMonitor.cpp-313-void ObjectMonitor::ExitOnSuspend::operator()(JavaThread* current) {
+--
+/Users/xiejinxin/Developer/OpenJDK/jdk25u-25.0.5.0.2/src/hotspot/share/runtime/objectMonitor.cpp-380-      // the 2-part async deflation protocol after the regular
+/Users/xiejinxin/Developer/OpenJDK/jdk25u-25.0.5.0.2/src/hotspot/share/runtime/objectMonitor.cpp-381-      // decrement occurs when the contention_mark goes out of
+/Users/xiejinxin/Developer/OpenJDK/jdk25u-25.0.5.0.2/src/hotspot/share/runtime/objectMonitor.cpp:382:      // scope. ObjectMonitor::deflate_monitor() which is called by
+/Users/xiejinxin/Developer/OpenJDK/jdk25u-25.0.5.0.2/src/hotspot/share/runtime/objectMonitor.cpp-383-      // the deflater thread will decrement contentions after it
+/Users/xiejinxin/Developer/OpenJDK/jdk25u-25.0.5.0.2/src/hotspot/share/runtime/objectMonitor.cpp-384-      // recognizes that the async deflation was cancelled.
+/Users/xiejinxin/Developer/OpenJDK/jdk25u-25.0.5.0.2/src/hotspot/share/runtime/objectMonitor.cpp-385-      contention_mark.extend();
+/Users/xiejinxin/Developer/OpenJDK/jdk25u-25.0.5.0.2/src/hotspot/share/runtime/objectMonitor.cpp-386-      success = true;
+/Users/xiejinxin/Developer/OpenJDK/jdk25u-25.0.5.0.2/src/hotspot/share/runtime/objectMonitor.cpp-387-    } else if (prev_owner == NO_OWNER) {
+/Users/xiejinxin/Developer/OpenJDK/jdk25u-25.0.5.0.2/src/hotspot/share/runtime/objectMonitor.cpp-388-      // At this point we cannot race with deflation as we have both incremented
+/Users/xiejinxin/Developer/OpenJDK/jdk25u-25.0.5.0.2/src/hotspot/share/runtime/objectMonitor.cpp-389-      // contentions, seen contention > 0 and seen a DEFLATER_MARKER.
+/Users/xiejinxin/Developer/OpenJDK/jdk25u-25.0.5.0.2/src/hotspot/share/runtime/objectMonitor.cpp-390-      // success will only be false if this races with something other than
+--
+/Users/xiejinxin/Developer/OpenJDK/jdk25u-25.0.5.0.2/src/hotspot/share/runtime/objectMonitor.cpp-764-// Contending threads that see that condition know to retry their operation.
+/Users/xiejinxin/Developer/OpenJDK/jdk25u-25.0.5.0.2/src/hotspot/share/runtime/objectMonitor.cpp-765-//
+/Users/xiejinxin/Developer/OpenJDK/jdk25u-25.0.5.0.2/src/hotspot/share/runtime/objectMonitor.cpp:766:bool ObjectMonitor::deflate_monitor(Thread* current) {
+/Users/xiejinxin/Developer/OpenJDK/jdk25u-25.0.5.0.2/src/hotspot/share/runtime/objectMonitor.cpp-767-  if (is_busy()) {
+/Users/xiejinxin/Developer/OpenJDK/jdk25u-25.0.5.0.2/src/hotspot/share/runtime/objectMonitor.cpp-768-    // Easy checks are first - the ObjectMonitor is busy so no deflation.
+/Users/xiejinxin/Developer/OpenJDK/jdk25u-25.0.5.0.2/src/hotspot/share/runtime/objectMonitor.cpp-769-    return false;
+/Users/xiejinxin/Developer/OpenJDK/jdk25u-25.0.5.0.2/src/hotspot/share/runtime/objectMonitor.cpp-770-  }
+/Users/xiejinxin/Developer/OpenJDK/jdk25u-25.0.5.0.2/src/hotspot/share/runtime/objectMonitor.cpp-771-
+/Users/xiejinxin/Developer/OpenJDK/jdk25u-25.0.5.0.2/src/hotspot/share/runtime/objectMonitor.cpp-772-  EventJavaMonitorDeflate event;
+/Users/xiejinxin/Developer/OpenJDK/jdk25u-25.0.5.0.2/src/hotspot/share/runtime/objectMonitor.cpp-773-
+/Users/xiejinxin/Developer/OpenJDK/jdk25u-25.0.5.0.2/src/hotspot/share/runtime/objectMonitor.cpp-774-  const oop obj = object_peek();
+--
+/Users/xiejinxin/Developer/OpenJDK/jdk25u-25.0.5.0.2/src/hotspot/share/runtime/objectMonitor.cpp-839-
+/Users/xiejinxin/Developer/OpenJDK/jdk25u-25.0.5.0.2/src/hotspot/share/runtime/objectMonitor.cpp-840-  if (UseObjectMonitorTable) {
+/Users/xiejinxin/Developer/OpenJDK/jdk25u-25.0.5.0.2/src/hotspot/share/runtime/objectMonitor.cpp:841:    LightweightSynchronizer::deflate_monitor(current, obj, this);
+/Users/xiejinxin/Developer/OpenJDK/jdk25u-25.0.5.0.2/src/hotspot/share/runtime/objectMonitor.cpp-842-  } else if (obj != nullptr) {
+/Users/xiejinxin/Developer/OpenJDK/jdk25u-25.0.5.0.2/src/hotspot/share/runtime/objectMonitor.cpp-843-    // Install the old mark word if nobody else has already done it.
+/Users/xiejinxin/Developer/OpenJDK/jdk25u-25.0.5.0.2/src/hotspot/share/runtime/objectMonitor.cpp-844-    install_displaced_markword_in_object(obj);
+/Users/xiejinxin/Developer/OpenJDK/jdk25u-25.0.5.0.2/src/hotspot/share/runtime/objectMonitor.cpp-845-  }
+/Users/xiejinxin/Developer/OpenJDK/jdk25u-25.0.5.0.2/src/hotspot/share/runtime/objectMonitor.cpp-846-
+/Users/xiejinxin/Developer/OpenJDK/jdk25u-25.0.5.0.2/src/hotspot/share/runtime/objectMonitor.cpp-847-  if (event.should_commit()) {
+/Users/xiejinxin/Developer/OpenJDK/jdk25u-25.0.5.0.2/src/hotspot/share/runtime/objectMonitor.cpp-848-    post_monitor_deflate_event(&event, obj);
+/Users/xiejinxin/Developer/OpenJDK/jdk25u-25.0.5.0.2/src/hotspot/share/runtime/objectMonitor.cpp-849-  }
+--
+/Users/xiejinxin/Developer/OpenJDK/jdk25u-25.0.5.0.2/src/hotspot/share/runtime/objectMonitor.cpp-1045-  // Egress :
+/Users/xiejinxin/Developer/OpenJDK/jdk25u-25.0.5.0.2/src/hotspot/share/runtime/objectMonitor.cpp-1046-  // Current has acquired the lock -- Unlink current from the _entry_list.
+/Users/xiejinxin/Developer/OpenJDK/jdk25u-25.0.5.0.2/src/hotspot/share/runtime/objectMonitor.cpp:1047:  unlink_after_acquire(current, &node);
+/Users/xiejinxin/Developer/OpenJDK/jdk25u-25.0.5.0.2/src/hotspot/share/runtime/objectMonitor.cpp-1048-  if (has_successor(current)) {
+/Users/xiejinxin/Developer/OpenJDK/jdk25u-25.0.5.0.2/src/hotspot/share/runtime/objectMonitor.cpp-1049-    clear_successor();
+/Users/xiejinxin/Developer/OpenJDK/jdk25u-25.0.5.0.2/src/hotspot/share/runtime/objectMonitor.cpp-1050-    // Note that we don't need to do OrderAccess::fence() after clearing
+/Users/xiejinxin/Developer/OpenJDK/jdk25u-25.0.5.0.2/src/hotspot/share/runtime/objectMonitor.cpp-1051-    // _succ here, since we own the lock.
+/Users/xiejinxin/Developer/OpenJDK/jdk25u-25.0.5.0.2/src/hotspot/share/runtime/objectMonitor.cpp-1052-  }
+/Users/xiejinxin/Developer/OpenJDK/jdk25u-25.0.5.0.2/src/hotspot/share/runtime/objectMonitor.cpp-1053-
+/Users/xiejinxin/Developer/OpenJDK/jdk25u-25.0.5.0.2/src/hotspot/share/runtime/objectMonitor.cpp-1054-  // We've acquired ownership with CAS().
+/Users/xiejinxin/Developer/OpenJDK/jdk25u-25.0.5.0.2/src/hotspot/share/runtime/objectMonitor.cpp-1055-  // CAS is serializing -- it has MEMBAR/FENCE-equivalent semantics.
+--
+/Users/xiejinxin/Developer/OpenJDK/jdk25u-25.0.5.0.2/src/hotspot/share/runtime/objectMonitor.cpp-1140-  assert(has_owner(current), "invariant");
+/Users/xiejinxin/Developer/OpenJDK/jdk25u-25.0.5.0.2/src/hotspot/share/runtime/objectMonitor.cpp-1141-  assert_mark_word_consistency();
+/Users/xiejinxin/Developer/OpenJDK/jdk25u-25.0.5.0.2/src/hotspot/share/runtime/objectMonitor.cpp:1142:  unlink_after_acquire(current, currentNode);
+/Users/xiejinxin/Developer/OpenJDK/jdk25u-25.0.5.0.2/src/hotspot/share/runtime/objectMonitor.cpp-1143-  if (has_successor(current)) clear_successor();
+/Users/xiejinxin/Developer/OpenJDK/jdk25u-25.0.5.0.2/src/hotspot/share/runtime/objectMonitor.cpp-1144-  assert(!has_successor(current), "invariant");
+/Users/xiejinxin/Developer/OpenJDK/jdk25u-25.0.5.0.2/src/hotspot/share/runtime/objectMonitor.cpp-1145-  currentNode->TState = ObjectWaiter::TS_RUN;
+/Users/xiejinxin/Developer/OpenJDK/jdk25u-25.0.5.0.2/src/hotspot/share/runtime/objectMonitor.cpp-1146-  OrderAccess::fence();      // see comments at the end of enter_internal()
+/Users/xiejinxin/Developer/OpenJDK/jdk25u-25.0.5.0.2/src/hotspot/share/runtime/objectMonitor.cpp-1147-}
+/Users/xiejinxin/Developer/OpenJDK/jdk25u-25.0.5.0.2/src/hotspot/share/runtime/objectMonitor.cpp-1148-
+/Users/xiejinxin/Developer/OpenJDK/jdk25u-25.0.5.0.2/src/hotspot/share/runtime/objectMonitor.cpp-1149-// This method is called from two places:
+/Users/xiejinxin/Developer/OpenJDK/jdk25u-25.0.5.0.2/src/hotspot/share/runtime/objectMonitor.cpp-1150-// - On monitorenter contention with a null waiter.
+--
+/Users/xiejinxin/Developer/OpenJDK/jdk25u-25.0.5.0.2/src/hotspot/share/runtime/objectMonitor.cpp-1173-  if (try_lock(current) == TryLockResult::Success) {
+/Users/xiejinxin/Developer/OpenJDK/jdk25u-25.0.5.0.2/src/hotspot/share/runtime/objectMonitor.cpp-1174-    assert(has_owner(current), "invariant");
+/Users/xiejinxin/Developer/OpenJDK/jdk25u-25.0.5.0.2/src/hotspot/share/runtime/objectMonitor.cpp:1175:    unlink_after_acquire(current, node);
+/Users/xiejinxin/Developer/OpenJDK/jdk25u-25.0.5.0.2/src/hotspot/share/runtime/objectMonitor.cpp-1176-    if (has_successor(current)) clear_successor();
+/Users/xiejinxin/Developer/OpenJDK/jdk25u-25.0.5.0.2/src/hotspot/share/runtime/objectMonitor.cpp-1177-    if (waiter == nullptr) delete node;  // for Object.wait() don't delete yet
+/Users/xiejinxin/Developer/OpenJDK/jdk25u-25.0.5.0.2/src/hotspot/share/runtime/objectMonitor.cpp-1178-    return true;
+/Users/xiejinxin/Developer/OpenJDK/jdk25u-25.0.5.0.2/src/hotspot/share/runtime/objectMonitor.cpp-1179-  }
+/Users/xiejinxin/Developer/OpenJDK/jdk25u-25.0.5.0.2/src/hotspot/share/runtime/objectMonitor.cpp-1180-
+/Users/xiejinxin/Developer/OpenJDK/jdk25u-25.0.5.0.2/src/hotspot/share/runtime/objectMonitor.cpp-1181-  assert(java_lang_VirtualThread::state(vthread) == java_lang_VirtualThread::RUNNING, "wrong state for vthread");
+/Users/xiejinxin/Developer/OpenJDK/jdk25u-25.0.5.0.2/src/hotspot/share/runtime/objectMonitor.cpp-1182-  java_lang_VirtualThread::set_state(vthread, java_lang_VirtualThread::BLOCKING);
+/Users/xiejinxin/Developer/OpenJDK/jdk25u-25.0.5.0.2/src/hotspot/share/runtime/objectMonitor.cpp-1183-
+--
+/Users/xiejinxin/Developer/OpenJDK/jdk25u-25.0.5.0.2/src/hotspot/share/runtime/objectMonitor.cpp-1246-  }
+/Users/xiejinxin/Developer/OpenJDK/jdk25u-25.0.5.0.2/src/hotspot/share/runtime/objectMonitor.cpp-1247-
+/Users/xiejinxin/Developer/OpenJDK/jdk25u-25.0.5.0.2/src/hotspot/share/runtime/objectMonitor.cpp:1248:  unlink_after_acquire(current, node);
+/Users/xiejinxin/Developer/OpenJDK/jdk25u-25.0.5.0.2/src/hotspot/share/runtime/objectMonitor.cpp-1249-  delete node;
+/Users/xiejinxin/Developer/OpenJDK/jdk25u-25.0.5.0.2/src/hotspot/share/runtime/objectMonitor.cpp-1250-
+/Users/xiejinxin/Developer/OpenJDK/jdk25u-25.0.5.0.2/src/hotspot/share/runtime/objectMonitor.cpp-1251-  // Clear the ObjectWaiter* from the vthread.
+/Users/xiejinxin/Developer/OpenJDK/jdk25u-25.0.5.0.2/src/hotspot/share/runtime/objectMonitor.cpp-1252-  java_lang_VirtualThread::set_objectWaiter(current->vthread(), nullptr);
+/Users/xiejinxin/Developer/OpenJDK/jdk25u-25.0.5.0.2/src/hotspot/share/runtime/objectMonitor.cpp-1253-
+/Users/xiejinxin/Developer/OpenJDK/jdk25u-25.0.5.0.2/src/hotspot/share/runtime/objectMonitor.cpp-1254-  if (JvmtiExport::should_post_monitor_contended_entered()) {
+/Users/xiejinxin/Developer/OpenJDK/jdk25u-25.0.5.0.2/src/hotspot/share/runtime/objectMonitor.cpp-1255-    // We are going to call thaw again after this and finish the VMTS
+/Users/xiejinxin/Developer/OpenJDK/jdk25u-25.0.5.0.2/src/hotspot/share/runtime/objectMonitor.cpp-1256-    // transition so no need to do it here. We will post the event there.
+--
+/Users/xiejinxin/Developer/OpenJDK/jdk25u-25.0.5.0.2/src/hotspot/share/runtime/objectMonitor.cpp-1270-  // Need acquire here to match the implicit release of the cmpxchg
+/Users/xiejinxin/Developer/OpenJDK/jdk25u-25.0.5.0.2/src/hotspot/share/runtime/objectMonitor.cpp-1271-  // that updated entry_list, so we can access w->prev().
+/Users/xiejinxin/Developer/OpenJDK/jdk25u-25.0.5.0.2/src/hotspot/share/runtime/objectMonitor.cpp:1272:  ObjectWaiter* w = Atomic::load_acquire(&_entry_list);
+/Users/xiejinxin/Developer/OpenJDK/jdk25u-25.0.5.0.2/src/hotspot/share/runtime/objectMonitor.cpp-1273-  assert(w != nullptr, "should only be called when entry list is not empty");
+/Users/xiejinxin/Developer/OpenJDK/jdk25u-25.0.5.0.2/src/hotspot/share/runtime/objectMonitor.cpp-1274-  while (w != nullptr) {
+/Users/xiejinxin/Developer/OpenJDK/jdk25u-25.0.5.0.2/src/hotspot/share/runtime/objectMonitor.cpp-1275-    assert(w->TState == ObjectWaiter::TS_ENTER, "invariant");
+/Users/xiejinxin/Developer/OpenJDK/jdk25u-25.0.5.0.2/src/hotspot/share/runtime/objectMonitor.cpp-1276-    assert(w->prev() == nullptr || w->prev() == prev, "invariant");
+/Users/xiejinxin/Developer/OpenJDK/jdk25u-25.0.5.0.2/src/hotspot/share/runtime/objectMonitor.cpp-1277-    if (w->prev() != nullptr) {
+/Users/xiejinxin/Developer/OpenJDK/jdk25u-25.0.5.0.2/src/hotspot/share/runtime/objectMonitor.cpp-1278-      break;
+/Users/xiejinxin/Developer/OpenJDK/jdk25u-25.0.5.0.2/src/hotspot/share/runtime/objectMonitor.cpp-1279-    }
+/Users/xiejinxin/Developer/OpenJDK/jdk25u-25.0.5.0.2/src/hotspot/share/runtime/objectMonitor.cpp-1280-    w->_prev = prev;
+--
+/Users/xiejinxin/Developer/OpenJDK/jdk25u-25.0.5.0.2/src/hotspot/share/runtime/objectMonitor.cpp-1329-// In addition, current.TState is stable.
+/Users/xiejinxin/Developer/OpenJDK/jdk25u-25.0.5.0.2/src/hotspot/share/runtime/objectMonitor.cpp-1330-
+/Users/xiejinxin/Developer/OpenJDK/jdk25u-25.0.5.0.2/src/hotspot/share/runtime/objectMonitor.cpp:1331:void ObjectMonitor::unlink_after_acquire(JavaThread* current, ObjectWaiter* currentNode) {
+/Users/xiejinxin/Developer/OpenJDK/jdk25u-25.0.5.0.2/src/hotspot/share/runtime/objectMonitor.cpp-1332-  assert(has_owner(current), "invariant");
+/Users/xiejinxin/Developer/OpenJDK/jdk25u-25.0.5.0.2/src/hotspot/share/runtime/objectMonitor.cpp-1333-  assert((!currentNode->is_vthread() && currentNode->thread() == current) ||
+/Users/xiejinxin/Developer/OpenJDK/jdk25u-25.0.5.0.2/src/hotspot/share/runtime/objectMonitor.cpp-1334-         (currentNode->is_vthread() && currentNode->vthread() == current->vthread()), "invariant");
+/Users/xiejinxin/Developer/OpenJDK/jdk25u-25.0.5.0.2/src/hotspot/share/runtime/objectMonitor.cpp-1335-
+/Users/xiejinxin/Developer/OpenJDK/jdk25u-25.0.5.0.2/src/hotspot/share/runtime/objectMonitor.cpp-1336-  // Check if we are unlinking the last element in the _entry_list.
+/Users/xiejinxin/Developer/OpenJDK/jdk25u-25.0.5.0.2/src/hotspot/share/runtime/objectMonitor.cpp-1337-  // This is by far the most common case.
+/Users/xiejinxin/Developer/OpenJDK/jdk25u-25.0.5.0.2/src/hotspot/share/runtime/objectMonitor.cpp-1338-  if (currentNode->next() == nullptr) {
+/Users/xiejinxin/Developer/OpenJDK/jdk25u-25.0.5.0.2/src/hotspot/share/runtime/objectMonitor.cpp-1339-    assert(_entry_list_tail == nullptr || _entry_list_tail == currentNode, "invariant");
+--
+/Users/xiejinxin/Developer/OpenJDK/jdk25u-25.0.5.0.2/src/hotspot/share/runtime/objectMonitor.cpp-2473-  if (is_vthread()) {
+/Users/xiejinxin/Developer/OpenJDK/jdk25u-25.0.5.0.2/src/hotspot/share/runtime/objectMonitor.cpp-2474-    assert(vthread() != nullptr, "");
+/Users/xiejinxin/Developer/OpenJDK/jdk25u-25.0.5.0.2/src/hotspot/share/runtime/objectMonitor.cpp:2475:    _vthread.release(JavaThread::thread_oop_storage());
+/Users/xiejinxin/Developer/OpenJDK/jdk25u-25.0.5.0.2/src/hotspot/share/runtime/objectMonitor.cpp-2476-  }
+/Users/xiejinxin/Developer/OpenJDK/jdk25u-25.0.5.0.2/src/hotspot/share/runtime/objectMonitor.cpp-2477-}
+/Users/xiejinxin/Developer/OpenJDK/jdk25u-25.0.5.0.2/src/hotspot/share/runtime/objectMonitor.cpp-2478-
+/Users/xiejinxin/Developer/OpenJDK/jdk25u-25.0.5.0.2/src/hotspot/share/runtime/objectMonitor.cpp-2479-oop ObjectWaiter::vthread() const {
+/Users/xiejinxin/Developer/OpenJDK/jdk25u-25.0.5.0.2/src/hotspot/share/runtime/objectMonitor.cpp-2480-  return _vthread.resolve();
+/Users/xiejinxin/Developer/OpenJDK/jdk25u-25.0.5.0.2/src/hotspot/share/runtime/objectMonitor.cpp-2481-}
+/Users/xiejinxin/Developer/OpenJDK/jdk25u-25.0.5.0.2/src/hotspot/share/runtime/objectMonitor.cpp-2482-
+/Users/xiejinxin/Developer/OpenJDK/jdk25u-25.0.5.0.2/src/hotspot/share/runtime/objectMonitor.cpp-2483-void ObjectWaiter::wait_reenter_begin(ObjectMonitor * const mon) {
+--
+/Users/xiejinxin/Developer/OpenJDK/jdk25u-25.0.5.0.2/src/hotspot/share/runtime/arguments.cpp-393-  PropertyList_add(&_system_properties, new SystemProperty("java.vm.specification.name",
+/Users/xiejinxin/Developer/OpenJDK/jdk25u-25.0.5.0.2/src/hotspot/share/runtime/arguments.cpp-394-                                                           "Java Virtual Machine Specification",  false));
+/Users/xiejinxin/Developer/OpenJDK/jdk25u-25.0.5.0.2/src/hotspot/share/runtime/arguments.cpp:395:  PropertyList_add(&_system_properties, new SystemProperty("java.vm.version", VM_Version::vm_release(),  false));
+/Users/xiejinxin/Developer/OpenJDK/jdk25u-25.0.5.0.2/src/hotspot/share/runtime/arguments.cpp-396-  PropertyList_add(&_system_properties, new SystemProperty("java.vm.name", VM_Version::vm_name(),  false));
+/Users/xiejinxin/Developer/OpenJDK/jdk25u-25.0.5.0.2/src/hotspot/share/runtime/arguments.cpp-397-  PropertyList_add(&_system_properties, new SystemProperty("jdk.debug", VM_Version::jdk_debug_level(),  false));
+/Users/xiejinxin/Developer/OpenJDK/jdk25u-25.0.5.0.2/src/hotspot/share/runtime/arguments.cpp-398-
+/Users/xiejinxin/Developer/OpenJDK/jdk25u-25.0.5.0.2/src/hotspot/share/runtime/arguments.cpp-399-  // Initialize the vm.info now, but it will need updating after argument parsing.
+/Users/xiejinxin/Developer/OpenJDK/jdk25u-25.0.5.0.2/src/hotspot/share/runtime/arguments.cpp-400-  _vm_info = new SystemProperty("java.vm.info", VM_Version::vm_info_string(), true);
+/Users/xiejinxin/Developer/OpenJDK/jdk25u-25.0.5.0.2/src/hotspot/share/runtime/arguments.cpp-401-
+/Users/xiejinxin/Developer/OpenJDK/jdk25u-25.0.5.0.2/src/hotspot/share/runtime/arguments.cpp-402-  // Following are JVMTI agent writable properties.
+/Users/xiejinxin/Developer/OpenJDK/jdk25u-25.0.5.0.2/src/hotspot/share/runtime/arguments.cpp-403-  // Properties values are set to nullptr and they are
+--
+/Users/xiejinxin/Developer/OpenJDK/jdk25u-25.0.5.0.2/src/hotspot/share/runtime/arguments.cpp-3755-}
+/Users/xiejinxin/Developer/OpenJDK/jdk25u-25.0.5.0.2/src/hotspot/share/runtime/arguments.cpp-3756-
+/Users/xiejinxin/Developer/OpenJDK/jdk25u-25.0.5.0.2/src/hotspot/share/runtime/arguments.cpp:3757:void Arguments::set_compact_headers_flags() {
+/Users/xiejinxin/Developer/OpenJDK/jdk25u-25.0.5.0.2/src/hotspot/share/runtime/arguments.cpp-3758-#ifdef _LP64
+/Users/xiejinxin/Developer/OpenJDK/jdk25u-25.0.5.0.2/src/hotspot/share/runtime/arguments.cpp-3759-  if (UseCompactObjectHeaders && FLAG_IS_CMDLINE(UseCompressedClassPointers) && !UseCompressedClassPointers) {
+/Users/xiejinxin/Developer/OpenJDK/jdk25u-25.0.5.0.2/src/hotspot/share/runtime/arguments.cpp-3760-    warning("Compact object headers require compressed class pointers. Disabling compact object headers.");
+/Users/xiejinxin/Developer/OpenJDK/jdk25u-25.0.5.0.2/src/hotspot/share/runtime/arguments.cpp-3761-    FLAG_SET_DEFAULT(UseCompactObjectHeaders, false);
+/Users/xiejinxin/Developer/OpenJDK/jdk25u-25.0.5.0.2/src/hotspot/share/runtime/arguments.cpp-3762-  }
+/Users/xiejinxin/Developer/OpenJDK/jdk25u-25.0.5.0.2/src/hotspot/share/runtime/arguments.cpp-3763-  if (UseCompactObjectHeaders && !UseObjectMonitorTable) {
+/Users/xiejinxin/Developer/OpenJDK/jdk25u-25.0.5.0.2/src/hotspot/share/runtime/arguments.cpp-3764-    // If UseCompactObjectHeaders is on the command line, turn on UseObjectMonitorTable.
+/Users/xiejinxin/Developer/OpenJDK/jdk25u-25.0.5.0.2/src/hotspot/share/runtime/arguments.cpp-3765-    if (FLAG_IS_CMDLINE(UseCompactObjectHeaders)) {
+--
+/Users/xiejinxin/Developer/OpenJDK/jdk25u-25.0.5.0.2/src/hotspot/share/runtime/arguments.cpp-3793-  GCConfig::arguments()->initialize();
+/Users/xiejinxin/Developer/OpenJDK/jdk25u-25.0.5.0.2/src/hotspot/share/runtime/arguments.cpp-3794-
+/Users/xiejinxin/Developer/OpenJDK/jdk25u-25.0.5.0.2/src/hotspot/share/runtime/arguments.cpp:3795:  set_compact_headers_flags();
+/Users/xiejinxin/Developer/OpenJDK/jdk25u-25.0.5.0.2/src/hotspot/share/runtime/arguments.cpp-3796-
+/Users/xiejinxin/Developer/OpenJDK/jdk25u-25.0.5.0.2/src/hotspot/share/runtime/arguments.cpp-3797-  if (UseCompressedClassPointers) {
+/Users/xiejinxin/Developer/OpenJDK/jdk25u-25.0.5.0.2/src/hotspot/share/runtime/arguments.cpp-3798-    CompressedKlassPointers::pre_initialize();
+/Users/xiejinxin/Developer/OpenJDK/jdk25u-25.0.5.0.2/src/hotspot/share/runtime/arguments.cpp-3799-  }
+/Users/xiejinxin/Developer/OpenJDK/jdk25u-25.0.5.0.2/src/hotspot/share/runtime/arguments.cpp-3800-
+/Users/xiejinxin/Developer/OpenJDK/jdk25u-25.0.5.0.2/src/hotspot/share/runtime/arguments.cpp-3801-  CDSConfig::ergo_initialize();
+/Users/xiejinxin/Developer/OpenJDK/jdk25u-25.0.5.0.2/src/hotspot/share/runtime/arguments.cpp-3802-
+/Users/xiejinxin/Developer/OpenJDK/jdk25u-25.0.5.0.2/src/hotspot/share/runtime/arguments.cpp-3803-  // Initialize Metaspace flags and alignments
+/Users/xiejinxin/Developer/OpenJDK/jdk25u-25.0.5.0.2/src/java.base/share/classes/jdk/internal/vm/ScopedValueContainer.java-86-     * Returns the scoped value bindings for the current thread.
+/Users/xiejinxin/Developer/OpenJDK/jdk25u-25.0.5.0.2/src/java.base/share/classes/jdk/internal/vm/ScopedValueContainer.java-87-     */
+/Users/xiejinxin/Developer/OpenJDK/jdk25u-25.0.5.0.2/src/java.base/share/classes/jdk/internal/vm/ScopedValueContainer.java:88:    public static BindingsSnapshot captureBindings() {
+/Users/xiejinxin/Developer/OpenJDK/jdk25u-25.0.5.0.2/src/java.base/share/classes/jdk/internal/vm/ScopedValueContainer.java-89-        return new BindingsSnapshot(JLA.scopedValueBindings(), latest());
+/Users/xiejinxin/Developer/OpenJDK/jdk25u-25.0.5.0.2/src/java.base/share/classes/jdk/internal/vm/ScopedValueContainer.java-90-    }
+/Users/xiejinxin/Developer/OpenJDK/jdk25u-25.0.5.0.2/src/java.base/share/classes/jdk/internal/vm/ScopedValueContainer.java-91-
+/Users/xiejinxin/Developer/OpenJDK/jdk25u-25.0.5.0.2/src/java.base/share/classes/jdk/internal/vm/ScopedValueContainer.java-92-    /**
+/Users/xiejinxin/Developer/OpenJDK/jdk25u-25.0.5.0.2/src/java.base/share/classes/jdk/internal/vm/ScopedValueContainer.java-93-     * For use by ScopedValue to run an operation in a structured context.
+/Users/xiejinxin/Developer/OpenJDK/jdk25u-25.0.5.0.2/src/java.base/share/classes/jdk/internal/vm/ScopedValueContainer.java-94-     */
+/Users/xiejinxin/Developer/OpenJDK/jdk25u-25.0.5.0.2/src/java.base/share/classes/jdk/internal/vm/ScopedValueContainer.java-95-    public static void run(Runnable op) {
+/Users/xiejinxin/Developer/OpenJDK/jdk25u-25.0.5.0.2/src/java.base/share/classes/jdk/internal/vm/ScopedValueContainer.java-96-        if (head() == null) {
+--
+/Users/xiejinxin/Developer/OpenJDK/jdk25u-25.0.5.0.2/src/java.base/share/classes/java/util/concurrent/StructuredTaskScopeImpl.java-145-     * Cancel the scope if not already cancelled.
+/Users/xiejinxin/Developer/OpenJDK/jdk25u-25.0.5.0.2/src/java.base/share/classes/java/util/concurrent/StructuredTaskScopeImpl.java-146-     */
+/Users/xiejinxin/Developer/OpenJDK/jdk25u-25.0.5.0.2/src/java.base/share/classes/java/util/concurrent/StructuredTaskScopeImpl.java:147:    private void cancel() {
+/Users/xiejinxin/Developer/OpenJDK/jdk25u-25.0.5.0.2/src/java.base/share/classes/java/util/concurrent/StructuredTaskScopeImpl.java-148-        if (!cancelled && CANCELLED.compareAndSet(this, false, true)) {
+/Users/xiejinxin/Developer/OpenJDK/jdk25u-25.0.5.0.2/src/java.base/share/classes/java/util/concurrent/StructuredTaskScopeImpl.java-149-            // prevent new threads from starting
+/Users/xiejinxin/Developer/OpenJDK/jdk25u-25.0.5.0.2/src/java.base/share/classes/java/util/concurrent/StructuredTaskScopeImpl.java-150-            flock.shutdown();
+/Users/xiejinxin/Developer/OpenJDK/jdk25u-25.0.5.0.2/src/java.base/share/classes/java/util/concurrent/StructuredTaskScopeImpl.java-151-
+/Users/xiejinxin/Developer/OpenJDK/jdk25u-25.0.5.0.2/src/java.base/share/classes/java/util/concurrent/StructuredTaskScopeImpl.java-152-            // interrupt all unfinished threads
+/Users/xiejinxin/Developer/OpenJDK/jdk25u-25.0.5.0.2/src/java.base/share/classes/java/util/concurrent/StructuredTaskScopeImpl.java-153-            interruptAll();
+/Users/xiejinxin/Developer/OpenJDK/jdk25u-25.0.5.0.2/src/java.base/share/classes/java/util/concurrent/StructuredTaskScopeImpl.java-154-
+/Users/xiejinxin/Developer/OpenJDK/jdk25u-25.0.5.0.2/src/java.base/share/classes/java/util/concurrent/StructuredTaskScopeImpl.java-155-            // wakeup join
+--
+/Users/xiejinxin/Developer/OpenJDK/jdk25u-25.0.5.0.2/src/java.base/share/classes/java/util/concurrent/StructuredTaskScopeImpl.java-233-
+/Users/xiejinxin/Developer/OpenJDK/jdk25u-25.0.5.0.2/src/java.base/share/classes/java/util/concurrent/StructuredTaskScopeImpl.java-234-    @Override
+/Users/xiejinxin/Developer/OpenJDK/jdk25u-25.0.5.0.2/src/java.base/share/classes/java/util/concurrent/StructuredTaskScopeImpl.java:235:    public R join() throws InterruptedException {
+/Users/xiejinxin/Developer/OpenJDK/jdk25u-25.0.5.0.2/src/java.base/share/classes/java/util/concurrent/StructuredTaskScopeImpl.java-236-        ensureOwner();
+/Users/xiejinxin/Developer/OpenJDK/jdk25u-25.0.5.0.2/src/java.base/share/classes/java/util/concurrent/StructuredTaskScopeImpl.java-237-        ensureNotJoined();
+/Users/xiejinxin/Developer/OpenJDK/jdk25u-25.0.5.0.2/src/java.base/share/classes/java/util/concurrent/StructuredTaskScopeImpl.java-238-
+/Users/xiejinxin/Developer/OpenJDK/jdk25u-25.0.5.0.2/src/java.base/share/classes/java/util/concurrent/StructuredTaskScopeImpl.java-239-        // join started
+/Users/xiejinxin/Developer/OpenJDK/jdk25u-25.0.5.0.2/src/java.base/share/classes/java/util/concurrent/StructuredTaskScopeImpl.java-240-        state = ST_JOIN_STARTED;
+/Users/xiejinxin/Developer/OpenJDK/jdk25u-25.0.5.0.2/src/java.base/share/classes/java/util/concurrent/StructuredTaskScopeImpl.java-241-
+/Users/xiejinxin/Developer/OpenJDK/jdk25u-25.0.5.0.2/src/java.base/share/classes/java/util/concurrent/StructuredTaskScopeImpl.java-242-        // wait for all subtasks, the scope to be cancelled, or interrupt
+/Users/xiejinxin/Developer/OpenJDK/jdk25u-25.0.5.0.2/src/java.base/share/classes/java/util/concurrent/StructuredTaskScopeImpl.java-243-        flock.awaitAll();
+--
+/Users/xiejinxin/Developer/OpenJDK/jdk25u-25.0.5.0.2/src/java.base/share/classes/java/util/concurrent/StructuredTaskScopeImpl.java-266-
+/Users/xiejinxin/Developer/OpenJDK/jdk25u-25.0.5.0.2/src/java.base/share/classes/java/util/concurrent/StructuredTaskScopeImpl.java-267-    @Override
+/Users/xiejinxin/Developer/OpenJDK/jdk25u-25.0.5.0.2/src/java.base/share/classes/java/util/concurrent/StructuredTaskScopeImpl.java:268:    public void close() {
+/Users/xiejinxin/Developer/OpenJDK/jdk25u-25.0.5.0.2/src/java.base/share/classes/java/util/concurrent/StructuredTaskScopeImpl.java-269-        ensureOwner();
+/Users/xiejinxin/Developer/OpenJDK/jdk25u-25.0.5.0.2/src/java.base/share/classes/java/util/concurrent/StructuredTaskScopeImpl.java-270-        int s = state;
+/Users/xiejinxin/Developer/OpenJDK/jdk25u-25.0.5.0.2/src/java.base/share/classes/java/util/concurrent/StructuredTaskScopeImpl.java-271-        if (s == ST_CLOSED) {
+/Users/xiejinxin/Developer/OpenJDK/jdk25u-25.0.5.0.2/src/java.base/share/classes/java/util/concurrent/StructuredTaskScopeImpl.java-272-            return;
+/Users/xiejinxin/Developer/OpenJDK/jdk25u-25.0.5.0.2/src/java.base/share/classes/java/util/concurrent/StructuredTaskScopeImpl.java-273-        }
+/Users/xiejinxin/Developer/OpenJDK/jdk25u-25.0.5.0.2/src/java.base/share/classes/java/util/concurrent/StructuredTaskScopeImpl.java-274-
+/Users/xiejinxin/Developer/OpenJDK/jdk25u-25.0.5.0.2/src/java.base/share/classes/java/util/concurrent/StructuredTaskScopeImpl.java-275-        // cancel the scope if join did not complete
+/Users/xiejinxin/Developer/OpenJDK/jdk25u-25.0.5.0.2/src/java.base/share/classes/java/util/concurrent/StructuredTaskScopeImpl.java-276-        if (s < ST_JOIN_COMPLETED) {
+--
+/Users/xiejinxin/Developer/OpenJDK/jdk25u-25.0.5.0.2/src/java.base/share/classes/jdk/internal/misc/ThreadFlock.java-109-    ThreadFlock(String name) {
+/Users/xiejinxin/Developer/OpenJDK/jdk25u-25.0.5.0.2/src/java.base/share/classes/jdk/internal/misc/ThreadFlock.java-110-        this.name = name;
+/Users/xiejinxin/Developer/OpenJDK/jdk25u-25.0.5.0.2/src/java.base/share/classes/jdk/internal/misc/ThreadFlock.java:111:        this.scopedValueBindings = ScopedValueContainer.captureBindings();
+/Users/xiejinxin/Developer/OpenJDK/jdk25u-25.0.5.0.2/src/java.base/share/classes/jdk/internal/misc/ThreadFlock.java-112-        this.container = new ThreadContainerImpl(this);
+/Users/xiejinxin/Developer/OpenJDK/jdk25u-25.0.5.0.2/src/java.base/share/classes/jdk/internal/misc/ThreadFlock.java-113-    }
+/Users/xiejinxin/Developer/OpenJDK/jdk25u-25.0.5.0.2/src/java.base/share/classes/jdk/internal/misc/ThreadFlock.java-114-
+/Users/xiejinxin/Developer/OpenJDK/jdk25u-25.0.5.0.2/src/java.base/share/classes/jdk/internal/misc/ThreadFlock.java-115-    private long threadCount() {
+/Users/xiejinxin/Developer/OpenJDK/jdk25u-25.0.5.0.2/src/java.base/share/classes/jdk/internal/misc/ThreadFlock.java-116-        return threadCount;
+/Users/xiejinxin/Developer/OpenJDK/jdk25u-25.0.5.0.2/src/java.base/share/classes/jdk/internal/misc/ThreadFlock.java-117-    }
+/Users/xiejinxin/Developer/OpenJDK/jdk25u-25.0.5.0.2/src/java.base/share/classes/jdk/internal/misc/ThreadFlock.java-118-
+/Users/xiejinxin/Developer/OpenJDK/jdk25u-25.0.5.0.2/src/java.base/share/classes/jdk/internal/misc/ThreadFlock.java-119-    private ScopedValueContainer.BindingsSnapshot scopedValueBindings() {
+--
+/Users/xiejinxin/Developer/OpenJDK/jdk25u-25.0.5.0.2/src/java.base/share/classes/jdk/internal/misc/ThreadFlock.java-394-     * @throws StructureViolationException if a structure violation was detected
+/Users/xiejinxin/Developer/OpenJDK/jdk25u-25.0.5.0.2/src/java.base/share/classes/jdk/internal/misc/ThreadFlock.java-395-     */
+/Users/xiejinxin/Developer/OpenJDK/jdk25u-25.0.5.0.2/src/java.base/share/classes/jdk/internal/misc/ThreadFlock.java:396:    public void close() {
+/Users/xiejinxin/Developer/OpenJDK/jdk25u-25.0.5.0.2/src/java.base/share/classes/jdk/internal/misc/ThreadFlock.java-397-        ensureOwner();
+/Users/xiejinxin/Developer/OpenJDK/jdk25u-25.0.5.0.2/src/java.base/share/classes/jdk/internal/misc/ThreadFlock.java-398-        if (closed)
+/Users/xiejinxin/Developer/OpenJDK/jdk25u-25.0.5.0.2/src/java.base/share/classes/jdk/internal/misc/ThreadFlock.java-399-            return;
+/Users/xiejinxin/Developer/OpenJDK/jdk25u-25.0.5.0.2/src/java.base/share/classes/jdk/internal/misc/ThreadFlock.java-400-
+/Users/xiejinxin/Developer/OpenJDK/jdk25u-25.0.5.0.2/src/java.base/share/classes/jdk/internal/misc/ThreadFlock.java-401-        // shutdown, if not already shutdown
+/Users/xiejinxin/Developer/OpenJDK/jdk25u-25.0.5.0.2/src/java.base/share/classes/jdk/internal/misc/ThreadFlock.java-402-        if (!shutdown)
+/Users/xiejinxin/Developer/OpenJDK/jdk25u-25.0.5.0.2/src/java.base/share/classes/jdk/internal/misc/ThreadFlock.java-403-            shutdown = true;
+/Users/xiejinxin/Developer/OpenJDK/jdk25u-25.0.5.0.2/src/java.base/share/classes/jdk/internal/misc/ThreadFlock.java-404-
+--
+/Users/xiejinxin/Developer/OpenJDK/jdk25u-25.0.5.0.2/src/java.base/share/classes/jdk/internal/misc/ThreadFlock.java-516-         * container from the current thread's scope stack.
+/Users/xiejinxin/Developer/OpenJDK/jdk25u-25.0.5.0.2/src/java.base/share/classes/jdk/internal/misc/ThreadFlock.java-517-         */
+/Users/xiejinxin/Developer/OpenJDK/jdk25u-25.0.5.0.2/src/java.base/share/classes/jdk/internal/misc/ThreadFlock.java:518:        void close() {
+/Users/xiejinxin/Developer/OpenJDK/jdk25u-25.0.5.0.2/src/java.base/share/classes/jdk/internal/misc/ThreadFlock.java-519-            assert Thread.currentThread() == owner();
+/Users/xiejinxin/Developer/OpenJDK/jdk25u-25.0.5.0.2/src/java.base/share/classes/jdk/internal/misc/ThreadFlock.java-520-            if (!closing) {
+/Users/xiejinxin/Developer/OpenJDK/jdk25u-25.0.5.0.2/src/java.base/share/classes/jdk/internal/misc/ThreadFlock.java-521-                closing = true;
+/Users/xiejinxin/Developer/OpenJDK/jdk25u-25.0.5.0.2/src/java.base/share/classes/jdk/internal/misc/ThreadFlock.java-522-                boolean atTop = popForcefully(); // may block
+/Users/xiejinxin/Developer/OpenJDK/jdk25u-25.0.5.0.2/src/java.base/share/classes/jdk/internal/misc/ThreadFlock.java-523-                Object key = this.key;
+/Users/xiejinxin/Developer/OpenJDK/jdk25u-25.0.5.0.2/src/java.base/share/classes/jdk/internal/misc/ThreadFlock.java-524-                if (key != null)
+/Users/xiejinxin/Developer/OpenJDK/jdk25u-25.0.5.0.2/src/java.base/share/classes/jdk/internal/misc/ThreadFlock.java-525-                    ThreadContainers.deregisterContainer(key);
+/Users/xiejinxin/Developer/OpenJDK/jdk25u-25.0.5.0.2/src/java.base/share/classes/jdk/internal/misc/ThreadFlock.java-526-                if (!atTop)
+--
+/Users/xiejinxin/Developer/OpenJDK/jdk25u-25.0.5.0.2/src/java.base/share/classes/java/lang/ThreadLocal.java-366-         * as "stale entries" in the code that follows.
+/Users/xiejinxin/Developer/OpenJDK/jdk25u-25.0.5.0.2/src/java.base/share/classes/java/lang/ThreadLocal.java-367-         */
+/Users/xiejinxin/Developer/OpenJDK/jdk25u-25.0.5.0.2/src/java.base/share/classes/java/lang/ThreadLocal.java:368:        static class Entry extends WeakReference<ThreadLocal<?>> {
+/Users/xiejinxin/Developer/OpenJDK/jdk25u-25.0.5.0.2/src/java.base/share/classes/java/lang/ThreadLocal.java-369-            /** The value associated with this ThreadLocal. */
+/Users/xiejinxin/Developer/OpenJDK/jdk25u-25.0.5.0.2/src/java.base/share/classes/java/lang/ThreadLocal.java-370-            Object value;
+/Users/xiejinxin/Developer/OpenJDK/jdk25u-25.0.5.0.2/src/java.base/share/classes/java/lang/ThreadLocal.java-371-
+/Users/xiejinxin/Developer/OpenJDK/jdk25u-25.0.5.0.2/src/java.base/share/classes/java/lang/ThreadLocal.java-372-            Entry(ThreadLocal<?> k, Object v) {
+/Users/xiejinxin/Developer/OpenJDK/jdk25u-25.0.5.0.2/src/java.base/share/classes/java/lang/ThreadLocal.java-373-                super(k);
+/Users/xiejinxin/Developer/OpenJDK/jdk25u-25.0.5.0.2/src/java.base/share/classes/java/lang/ThreadLocal.java-374-                value = v;
+/Users/xiejinxin/Developer/OpenJDK/jdk25u-25.0.5.0.2/src/java.base/share/classes/java/lang/ThreadLocal.java-375-            }
+/Users/xiejinxin/Developer/OpenJDK/jdk25u-25.0.5.0.2/src/java.base/share/classes/java/lang/ThreadLocal.java-376-        }
+--
+/Users/xiejinxin/Developer/OpenJDK/jdk25u-25.0.5.0.2/src/java.base/share/classes/java/lang/VirtualThread.java-480-    @ChangesCurrentThread
+/Users/xiejinxin/Developer/OpenJDK/jdk25u-25.0.5.0.2/src/java.base/share/classes/java/lang/VirtualThread.java-481-    @ReservedStackAccess
+/Users/xiejinxin/Developer/OpenJDK/jdk25u-25.0.5.0.2/src/java.base/share/classes/java/lang/VirtualThread.java:482:    private void mount() {
+/Users/xiejinxin/Developer/OpenJDK/jdk25u-25.0.5.0.2/src/java.base/share/classes/java/lang/VirtualThread.java-483-        // notify JVMTI before mount
+/Users/xiejinxin/Developer/OpenJDK/jdk25u-25.0.5.0.2/src/java.base/share/classes/java/lang/VirtualThread.java-484-        notifyJvmtiMount(/*hide*/true);
+/Users/xiejinxin/Developer/OpenJDK/jdk25u-25.0.5.0.2/src/java.base/share/classes/java/lang/VirtualThread.java-485-
+/Users/xiejinxin/Developer/OpenJDK/jdk25u-25.0.5.0.2/src/java.base/share/classes/java/lang/VirtualThread.java-486-        // sets the carrier thread
+/Users/xiejinxin/Developer/OpenJDK/jdk25u-25.0.5.0.2/src/java.base/share/classes/java/lang/VirtualThread.java-487-        Thread carrier = Thread.currentCarrierThread();
+/Users/xiejinxin/Developer/OpenJDK/jdk25u-25.0.5.0.2/src/java.base/share/classes/java/lang/VirtualThread.java-488-        setCarrierThread(carrier);
+/Users/xiejinxin/Developer/OpenJDK/jdk25u-25.0.5.0.2/src/java.base/share/classes/java/lang/VirtualThread.java-489-
+/Users/xiejinxin/Developer/OpenJDK/jdk25u-25.0.5.0.2/src/java.base/share/classes/java/lang/VirtualThread.java-490-        // sync up carrier thread interrupt status if needed
+--
+/Users/xiejinxin/Developer/OpenJDK/jdk25u-25.0.5.0.2/src/java.base/share/classes/java/lang/VirtualThread.java-510-    @ChangesCurrentThread
+/Users/xiejinxin/Developer/OpenJDK/jdk25u-25.0.5.0.2/src/java.base/share/classes/java/lang/VirtualThread.java-511-    @ReservedStackAccess
+/Users/xiejinxin/Developer/OpenJDK/jdk25u-25.0.5.0.2/src/java.base/share/classes/java/lang/VirtualThread.java:512:    private void unmount() {
+/Users/xiejinxin/Developer/OpenJDK/jdk25u-25.0.5.0.2/src/java.base/share/classes/java/lang/VirtualThread.java-513-        assert !Thread.holdsLock(interruptLock);
+/Users/xiejinxin/Developer/OpenJDK/jdk25u-25.0.5.0.2/src/java.base/share/classes/java/lang/VirtualThread.java-514-
+/Users/xiejinxin/Developer/OpenJDK/jdk25u-25.0.5.0.2/src/java.base/share/classes/java/lang/VirtualThread.java-515-        // set Thread.currentThread() to return the platform thread
+/Users/xiejinxin/Developer/OpenJDK/jdk25u-25.0.5.0.2/src/java.base/share/classes/java/lang/VirtualThread.java-516-        Thread carrier = this.carrierThread;
+/Users/xiejinxin/Developer/OpenJDK/jdk25u-25.0.5.0.2/src/java.base/share/classes/java/lang/VirtualThread.java-517-        carrier.setCurrentThread(carrier);
+/Users/xiejinxin/Developer/OpenJDK/jdk25u-25.0.5.0.2/src/java.base/share/classes/java/lang/VirtualThread.java-518-
+/Users/xiejinxin/Developer/OpenJDK/jdk25u-25.0.5.0.2/src/java.base/share/classes/java/lang/VirtualThread.java-519-        // break connection to carrier thread, synchronized with interrupt
+/Users/xiejinxin/Developer/OpenJDK/jdk25u-25.0.5.0.2/src/java.base/share/classes/java/lang/VirtualThread.java-520-        synchronized (interruptLock) {
+--
+/Users/xiejinxin/Developer/OpenJDK/jdk25u-25.0.5.0.2/src/java.base/share/classes/java/lang/VirtualThread.java-811-     * @param nanos the waiting time in nanoseconds
+/Users/xiejinxin/Developer/OpenJDK/jdk25u-25.0.5.0.2/src/java.base/share/classes/java/lang/VirtualThread.java-812-     */
+/Users/xiejinxin/Developer/OpenJDK/jdk25u-25.0.5.0.2/src/java.base/share/classes/java/lang/VirtualThread.java:813:    private void parkOnCarrierThread(boolean timed, long nanos) {
+/Users/xiejinxin/Developer/OpenJDK/jdk25u-25.0.5.0.2/src/java.base/share/classes/java/lang/VirtualThread.java-814-        assert state() == RUNNING;
+/Users/xiejinxin/Developer/OpenJDK/jdk25u-25.0.5.0.2/src/java.base/share/classes/java/lang/VirtualThread.java-815-
+/Users/xiejinxin/Developer/OpenJDK/jdk25u-25.0.5.0.2/src/java.base/share/classes/java/lang/VirtualThread.java-816-        setState(timed ? TIMED_PINNED : PINNED);
+/Users/xiejinxin/Developer/OpenJDK/jdk25u-25.0.5.0.2/src/java.base/share/classes/java/lang/VirtualThread.java-817-        try {
+/Users/xiejinxin/Developer/OpenJDK/jdk25u-25.0.5.0.2/src/java.base/share/classes/java/lang/VirtualThread.java-818-            if (!parkPermit) {
+/Users/xiejinxin/Developer/OpenJDK/jdk25u-25.0.5.0.2/src/java.base/share/classes/java/lang/VirtualThread.java-819-                if (!timed) {
+/Users/xiejinxin/Developer/OpenJDK/jdk25u-25.0.5.0.2/src/java.base/share/classes/java/lang/VirtualThread.java-820-                    U.park(false, 0);
+/Users/xiejinxin/Developer/OpenJDK/jdk25u-25.0.5.0.2/src/java.base/share/classes/java/lang/VirtualThread.java-821-                } else if (nanos > 0) {

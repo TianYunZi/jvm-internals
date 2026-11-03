@@ -1,0 +1,176 @@
+Compiled from "AllocationJourney.java"
+public final class org.example.jvminternals.ch11.AllocationJourney {
+  private static volatile org.example.jvminternals.ch11.AllocationJourney$Pair publishedPair;
+
+  private org.example.jvminternals.ch11.AllocationJourney();
+    Code:
+         0: aload_0
+         1: invokespecial #1                  // Method java/lang/Object."<init>":()V
+         4: return
+
+  public static void main(java.lang.String[]);
+    Code:
+         0: ldc           #7                  // class com/sun/management/ThreadMXBean
+         2: invokestatic  #9                  // Method java/lang/management/ManagementFactory.getPlatformMXBean:(Ljava/lang/Class;)Ljava/lang/management/PlatformManagedObject;
+         5: checkcast     #7                  // class com/sun/management/ThreadMXBean
+         8: astore_1
+         9: aload_1
+        10: ifnull        22
+        13: aload_1
+        14: invokeinterface #15,  1           // InterfaceMethod com/sun/management/ThreadMXBean.isThreadAllocatedMemorySupported:()Z
+        19: ifne          31
+        22: getstatic     #19                 // Field java/lang/System.out:Ljava/io/PrintStream;
+        25: ldc           #25                 // String 本环境不支持线程分配字节，结束观察
+        27: invokevirtual #27                 // Method java/io/PrintStream.println:(Ljava/lang/String;)V
+        30: return
+        31: aload_1
+        32: invokeinterface #33,  1           // InterfaceMethod com/sun/management/ThreadMXBean.isThreadAllocatedMemoryEnabled:()Z
+        37: ifne          47
+        40: aload_1
+        41: iconst_1
+        42: invokeinterface #36,  2           // InterfaceMethod com/sun/management/ThreadMXBean.setThreadAllocatedMemoryEnabled:(Z)V
+        47: lconst_0
+        48: lstore_2
+        49: iconst_0
+        50: istore        4
+        52: iload         4
+        54: sipush        20000
+        57: if_icmpge     81
+        60: lload_2
+        61: iload         4
+        63: invokestatic  #40                 // Method localSum:(I)I
+        66: iload         4
+        68: invokestatic  #46                 // Method escapedSum:(I)I
+        71: iadd
+        72: i2l
+        73: ladd
+        74: lstore_2
+        75: iinc          4, 1
+        78: goto          52
+        81: getstatic     #19                 // Field java/lang/System.out:Ljava/io/PrintStream;
+        84: lload_2
+        85: invokedynamic #49,  0             // InvokeDynamic #0:makeConcatWithConstants:(J)Ljava/lang/String;
+        90: invokevirtual #27                 // Method java/io/PrintStream.println:(Ljava/lang/String;)V
+        93: aload_1
+        94: invokestatic  #53                 // Method observeLocal:(Lcom/sun/management/ThreadMXBean;)V
+        97: aload_1
+        98: invokestatic  #57                 // Method observeEscaped:(Lcom/sun/management/ThreadMXBean;)V
+       101: getstatic     #19                 // Field java/lang/System.out:Ljava/io/PrintStream;
+       104: getstatic     #60                 // Field publishedPair:Lorg/example/jvminternals/ch11/AllocationJourney$Pair;
+       107: getfield      #64                 // Field org/example/jvminternals/ch11/AllocationJourney$Pair.left:I
+       110: invokedynamic #70,  0             // InvokeDynamic #1:makeConcatWithConstants:(I)Ljava/lang/String;
+       115: invokevirtual #27                 // Method java/io/PrintStream.println:(Ljava/lang/String;)V
+       118: aconst_null
+       119: putstatic     #60                 // Field publishedPair:Lorg/example/jvminternals/ch11/AllocationJourney$Pair;
+       122: invokestatic  #73                 // Method java/lang/System.gc:()V
+       125: getstatic     #19                 // Field java/lang/System.out:Ljava/io/PrintStream;
+       128: ldc           #76                 // String 阶段=结束；回收仅为请求
+       130: invokevirtual #27                 // Method java/io/PrintStream.println:(Ljava/lang/String;)V
+       133: return
+
+  private static void observeLocal(com.sun.management.ThreadMXBean);
+    Code:
+         0: getstatic     #19                 // Field java/lang/System.out:Ljava/io/PrintStream;
+         3: ldc           #78                 // String 阶段=局部对象开始；次数=200000
+         5: invokevirtual #27                 // Method java/io/PrintStream.println:(Ljava/lang/String;)V
+         8: aload_0
+         9: invokeinterface #80,  1           // InterfaceMethod com/sun/management/ThreadMXBean.getCurrentThreadAllocatedBytes:()J
+        14: lstore_1
+        15: lconst_0
+        16: lstore_3
+        17: iconst_0
+        18: istore        5
+        20: iload         5
+        22: ldc           #84                 // int 200000
+        24: if_icmpge     42
+        27: lload_3
+        28: iload         5
+        30: invokestatic  #40                 // Method localSum:(I)I
+        33: i2l
+        34: ladd
+        35: lstore_3
+        36: iinc          5, 1
+        39: goto          20
+        42: aload_0
+        43: invokeinterface #80,  1           // InterfaceMethod com/sun/management/ThreadMXBean.getCurrentThreadAllocatedBytes:()J
+        48: lload_1
+        49: lsub
+        50: lstore        5
+        52: getstatic     #19                 // Field java/lang/System.out:Ljava/io/PrintStream;
+        55: lload_3
+        56: lload         5
+        58: invokedynamic #85,  0             // InvokeDynamic #2:makeConcatWithConstants:(JJ)Ljava/lang/String;
+        63: invokevirtual #27                 // Method java/io/PrintStream.println:(Ljava/lang/String;)V
+        66: return
+
+  private static void observeEscaped(com.sun.management.ThreadMXBean);
+    Code:
+         0: getstatic     #19                 // Field java/lang/System.out:Ljava/io/PrintStream;
+         3: ldc           #88                 // String 阶段=保留对象开始；次数=200000
+         5: invokevirtual #27                 // Method java/io/PrintStream.println:(Ljava/lang/String;)V
+         8: aload_0
+         9: invokeinterface #80,  1           // InterfaceMethod com/sun/management/ThreadMXBean.getCurrentThreadAllocatedBytes:()J
+        14: lstore_1
+        15: lconst_0
+        16: lstore_3
+        17: iconst_0
+        18: istore        5
+        20: iload         5
+        22: ldc           #84                 // int 200000
+        24: if_icmpge     42
+        27: lload_3
+        28: iload         5
+        30: invokestatic  #46                 // Method escapedSum:(I)I
+        33: i2l
+        34: ladd
+        35: lstore_3
+        36: iinc          5, 1
+        39: goto          20
+        42: aload_0
+        43: invokeinterface #80,  1           // InterfaceMethod com/sun/management/ThreadMXBean.getCurrentThreadAllocatedBytes:()J
+        48: lload_1
+        49: lsub
+        50: lstore        5
+        52: getstatic     #19                 // Field java/lang/System.out:Ljava/io/PrintStream;
+        55: lload_3
+        56: lload         5
+        58: invokedynamic #90,  0             // InvokeDynamic #3:makeConcatWithConstants:(JJ)Ljava/lang/String;
+        63: invokevirtual #27                 // Method java/io/PrintStream.println:(Ljava/lang/String;)V
+        66: return
+
+  private static int localSum(int);
+    Code:
+         0: new           #65                 // class org/example/jvminternals/ch11/AllocationJourney$Pair
+         3: dup
+         4: iload_0
+         5: iload_0
+         6: iconst_1
+         7: iadd
+         8: invokespecial #91                 // Method org/example/jvminternals/ch11/AllocationJourney$Pair."<init>":(II)V
+        11: astore_1
+        12: aload_1
+        13: getfield      #64                 // Field org/example/jvminternals/ch11/AllocationJourney$Pair.left:I
+        16: aload_1
+        17: getfield      #94                 // Field org/example/jvminternals/ch11/AllocationJourney$Pair.right:I
+        20: iadd
+        21: ireturn
+
+  private static int escapedSum(int);
+    Code:
+         0: new           #65                 // class org/example/jvminternals/ch11/AllocationJourney$Pair
+         3: dup
+         4: iload_0
+         5: iload_0
+         6: iconst_1
+         7: iadd
+         8: invokespecial #91                 // Method org/example/jvminternals/ch11/AllocationJourney$Pair."<init>":(II)V
+        11: astore_1
+        12: aload_1
+        13: putstatic     #60                 // Field publishedPair:Lorg/example/jvminternals/ch11/AllocationJourney$Pair;
+        16: aload_1
+        17: getfield      #64                 // Field org/example/jvminternals/ch11/AllocationJourney$Pair.left:I
+        20: aload_1
+        21: getfield      #94                 // Field org/example/jvminternals/ch11/AllocationJourney$Pair.right:I
+        24: iadd
+        25: ireturn
+}

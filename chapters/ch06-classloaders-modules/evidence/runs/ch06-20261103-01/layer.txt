@@ -1,0 +1,10 @@
+11月 03, 2026 11:42:52 上午 org.example.jvminternals.ch06.LayerJourney main
+INFO: 开始创建一个本地子模块层
+caller.named=false
+library.in.boot=false
+library.in.child=true
+class.module=lesson.library
+class.loader.type=jdk.internal.loader.Loader
+public.result=公开包调用成功
+11月 03, 2026 11:42:52 上午 org.example.jvminternals.ch06.LayerJourney main
+INFO: 子层观察结束

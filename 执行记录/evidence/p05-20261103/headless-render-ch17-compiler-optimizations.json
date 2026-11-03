@@ -1,0 +1,22 @@
+{
+  "time": "2026-11-03T09:15:46.025Z",
+  "version": "Chrome/156.0.8078.80",
+  "profileMode": "独立临时配置；仅本地书稿",
+  "chapters": [
+    {
+      "folder": "ch17-compiler-optimizations",
+      "figureIds": [
+        "fig-17-1",
+        "fig-17-2",
+        "fig-17-3",
+        "fig-17-4"
+      ],
+      "paper": "A4",
+      "viewports": [
+        "1440×1000",
+        "768×1000",
+        "390×844"
+      ]
+    }
+  ]
+}

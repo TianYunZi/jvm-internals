@@ -1,0 +1,5 @@
+11月 03, 2026 11:23:09 上午 org.example.jvminternals.ch05.FlexibleConstruction main
+INFO: 开始执行灵活构造器体示例
+original=7 normalized=7
+11月 03, 2026 11:23:10 上午 org.example.jvminternals.ch05.FlexibleConstruction main
+INFO: 灵活构造器体示例结束

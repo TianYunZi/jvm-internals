@@ -1,0 +1,6 @@
+
+                       Java Methods that Execute the Most
+
+Method                                                          Samples Percent
+--------------------------------------------------------------- ------- -------
+org.example.jvminternals.ch35.BoundedSymptoms.cpu()                 432 100.00%

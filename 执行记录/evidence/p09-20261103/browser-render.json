@@ -1,0 +1,44 @@
+{
+  "time": "2026-11-03T14:09:01.801Z",
+  "version": "Chrome/156.0.8078.80",
+  "origin": "http://127.0.0.1:8771",
+  "profileMode": "独立临时配置；仅访问本机书稿",
+  "chapters": [
+    {
+      "folder": "ch33-observability",
+      "paper": "A4",
+      "viewports": [
+        "1440×1000",
+        "768×1000",
+        "390×844"
+      ]
+    },
+    {
+      "folder": "ch34-flight-recorder",
+      "paper": "A4",
+      "viewports": [
+        "1440×1000",
+        "768×1000",
+        "390×844"
+      ]
+    },
+    {
+      "folder": "ch35-troubleshooting",
+      "paper": "A4",
+      "viewports": [
+        "1440×1000",
+        "768×1000",
+        "390×844"
+      ]
+    },
+    {
+      "folder": "ch36-performance-cases",
+      "paper": "A4",
+      "viewports": [
+        "1440×1000",
+        "768×1000",
+        "390×844"
+      ]
+    }
+  ]
+}

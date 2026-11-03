@@ -1,0 +1,9 @@
+CompileCommand: dontinline org/example/jvminternals/ch11/AllocationJourney.localSum bool dontinline = true
+CompileCommand: dontinline org/example/jvminternals/ch11/AllocationJourney.escapedSum bool dontinline = true
+阶段=预备结束；结果=800000000
+阶段=局部对象开始；次数=200000
+阶段=局部对象结束；结果=40000000000；近似分配字节=4800000
+阶段=保留对象开始；次数=200000
+阶段=保留对象结束；结果=40000000000；近似分配字节=4800000
+阶段=保留对象；值=199999
+阶段=结束；回收仅为请求

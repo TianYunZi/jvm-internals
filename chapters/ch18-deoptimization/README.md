@@ -1,0 +1,40 @@
+# 第18章 推测优化、去优化与代码生命周期：源码与运行
+
+Java开发工具包（Java Development Kit，JDK）25.0.5.0.2、HotSpot、macOS AArch64；工具显式选用下列目录。源码为本章src/main/java，页面阅读副本为[sources.html](sources.html)。
+
+## 示例与授权
+
+CH18-E01 RecoveryJourney.evaluate：100000次局部接收者后50000次发布接收者；CH18-E02 longLoop：单次3000000轮；均单线程、64兆二进制字节（mebibyte，MiB）堆，无计时、测试或故障耗尽。
+
+用户“执行P05”授权普通教学源码与有界机制观察；不包含测试框架、断言、故障耗尽或性能基准。只打印阶段与必要结果，不在热点内打印。所有命令在项目根目录执行；编译不自动运行进程。
+
+## 完整命令
+
+```sh
+export JAVA_HOME=/opt/homebrew/Cellar/openjdk@25/25.0.5.0.2/libexec/openjdk.jdk/Contents/Home
+export PATH="$JAVA_HOME/bin:/opt/homebrew/bin:$PATH"
+mvn -B -ntp -pl chapters/ch18-deoptimization -am compile
+java -Xms16m -Xmx64m -Xbatch -XX:+UnlockDiagnosticVMOptions -XX:+LogCompilation -XX:LogFile=chapters/ch18-deoptimization/evidence/runs/ch18-20261103-01/compilation.xml -XX:+PrintCompilation -XX:+PrintInlining '-XX:CompileCommand=dontinline,org.example.jvminternals.ch18.RecoveryJourney::evaluate' '-XX:CompileCommand=dontinline,org.example.jvminternals.ch18.RecoveryJourney::longLoop' -XX:StartFlightRecording=filename=chapters/ch18-deoptimization/evidence/runs/ch18-20261103-01/recovery.jfr,settings=profile,dumponexit=true -cp chapters/ch18-deoptimization/target/classes org.example.jvminternals.ch18.RecoveryJourney
+jfr print --events jdk.Deoptimization chapters/ch18-deoptimization/evidence/runs/ch18-20261103-01/recovery.jfr
+javap -c -v -p -classpath chapters/ch18-deoptimization/target/classes org.example.jvminternals.ch18.RecoveryJourney
+```
+
+## 实际观察与边界
+
+普通编译及所有工具退出0。1488 Server Compiler（C2）按LocalOperation画像内联且消除Pair分配；4次实际class_check，字节码索引（Bytecode Index，BCI）为14，action=maybe_recompile，随后not entrant。1498重编译见两类画像；longLoop的On-Stack Replacement（OSR） 1508（3）→1510（4），另有普通1509；1510退出分支unstable_if。阶段结果14999950000、发布字段49999／50000、最终1176801470940024216。
+
+完整编译日志原输出为本目录compilation.xml（约7MiB）及stdout.txt（约2.1MiB），采集后原样移入项目artifacts/ch18-20261103-01；当前精选为compilation-selected.txt与stdout-selected.txt，原始文件和飞行记录摘要见input-sha256.txt。逐对象物化未直接追踪，正文明确以源码解释；未主动填满代码缓存，未实测purge时刻。两实现预先创建，不能归因新类加载。
+
+原始文本及退出情况见[evidence/runs/ch18-20261103-01/记录.md](evidence/runs/ch18-20261103-01/记录.md)。观察是具体配置的结果，不提供性能排名或跨平台保证。正式正文、本章配图、源码与相应编号在[正文](chapter.html)对照。
+
+## 配图源与本地导出
+
+软件流程、交互、状态和协作图以figures中的Mermaid源文件维护，帧布局使用可缩放矢量图形（Scalable Vector Graphics，SVG）；逐节分类见TASK.md。当前本机Mermaid命令行接口（Command-Line Interface，CLI）工具为12.2.0。下面在项目根目录只重新导出当前章节图源，不启动教学进程或测试；需要可启动本地离屏渲染器的权限。
+
+```sh
+for p05_diagram in chapters/ch18-deoptimization/figures/*.mmd; do
+  mmdc -i "$p05_diagram" -o "${p05_diagram%.mmd}.svg" -c assets/mermaid.json -b '#f7fafc' -I "$(basename "${p05_diagram%.mmd}")" --no-font-embed
+done
+```
+
+图源修订后必须重新导出；正文图片的自然宽度与打印宽度按新viewBox同步，相关尺寸记录见公共P05证据。截图只作验收证据，不替代绘制的图。

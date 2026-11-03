@@ -1,0 +1,28 @@
+[0.021s][info][exceptions] Exception <a 'java/lang/IllegalArgumentException'{0x000000011d717ec0}: 教学显式抛出>
+[                        ]  thrown in interpreter method <{method} {0x0000000123400958} 'leaf' '(I)V' in 'org/example/jvminternals/ch13/ExceptionJourney'>
+[                        ]  at bci 13 for thread 0x000000010576be70 (main)
+[0.021s][info][exceptions] Exception <a 'java/lang/IllegalArgumentException'{0x000000011d717ec0}: 教学显式抛出>
+[                        ]  thrown in interpreter method <{method} {0x0000000123400868} 'middle' '(I)V' in 'org/example/jvminternals/ch13/ExceptionJourney'>
+[                        ]  at bci 1 for thread 0x000000010576be70 (main)
+[0.021s][info][exceptions] Found catch-all handler for exception of type "java.lang.IllegalArgumentException" in method "middle" at BCI: 19
+[0.025s][info][exceptions] Exception <a 'java/lang/IllegalArgumentException'{0x000000011d717ec0}: 教学显式抛出>
+[                        ]  thrown in interpreter method <{method} {0x0000000123400868} 'middle' '(I)V' in 'org/example/jvminternals/ch13/ExceptionJourney'>
+[                        ]  at bci 33 for thread 0x000000010576be70 (main)
+[0.025s][info][exceptions] Exception <a 'java/lang/IllegalArgumentException'{0x000000011d717ec0}: 教学显式抛出>
+[                        ]  thrown in interpreter method <{method} {0x0000000123400750} 'main' '([Ljava/lang/String;)V' in 'org/example/jvminternals/ch13/ExceptionJourney'>
+[                        ]  at bci 16 for thread 0x000000010576be70 (main)
+[0.025s][info][exceptions] Found matching handler for exception of type "java.lang.IllegalArgumentException" in method "main" at BCI: 22
+[0.025s][info][exceptions] Exception <a 'java/lang/ArithmeticException'{0x000000011d766b00}: / by zero>
+[                        ]  thrown in interpreter method <{method} {0x0000000123400958} 'leaf' '(I)V' in 'org/example/jvminternals/ch13/ExceptionJourney'>
+[                        ]  at bci 24 for thread 0x000000010576be70 (main)
+[0.025s][info][exceptions] Exception <a 'java/lang/ArithmeticException'{0x000000011d766b00}: / by zero>
+[                        ]  thrown in interpreter method <{method} {0x0000000123400868} 'middle' '(I)V' in 'org/example/jvminternals/ch13/ExceptionJourney'>
+[                        ]  at bci 1 for thread 0x000000010576be70 (main)
+[0.026s][info][exceptions] Found catch-all handler for exception of type "java.lang.ArithmeticException" in method "middle" at BCI: 19
+[0.026s][info][exceptions] Exception <a 'java/lang/ArithmeticException'{0x000000011d766b00}: / by zero>
+[                        ]  thrown in interpreter method <{method} {0x0000000123400868} 'middle' '(I)V' in 'org/example/jvminternals/ch13/ExceptionJourney'>
+[                        ]  at bci 33 for thread 0x000000010576be70 (main)
+[0.026s][info][exceptions] Exception <a 'java/lang/ArithmeticException'{0x000000011d766b00}: / by zero>
+[                        ]  thrown in interpreter method <{method} {0x0000000123400750} 'main' '([Ljava/lang/String;)V' in 'org/example/jvminternals/ch13/ExceptionJourney'>
+[                        ]  at bci 16 for thread 0x000000010576be70 (main)
+[0.026s][info][exceptions] Found matching handler for exception of type "java.lang.ArithmeticException" in method "main" at BCI: 22

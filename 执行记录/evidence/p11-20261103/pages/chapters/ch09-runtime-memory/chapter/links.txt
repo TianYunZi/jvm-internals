@@ -1,0 +1,30 @@
+跳到正文	#main
+Java 虚拟机原理图文书	../../index.html
+堆以外的账	#problem
+9.1 规范数据区	#sec-9-1
+9.2 实现组成	#sec-9-2
+9.3 三种空间口径	#sec-9-3
+9.4 容量预算	#sec-9-4
+9.5 异常分类	#sec-9-5
+观察与源码	#observe
+回顾与思考	#review
+来源	#sources
+进程地址空间	../ch02-computer-basics/chapter.html
+镜像与类型元数据	../ch08-type-metadata/chapter.html
+S01	#s01
+S02	#s02
+S03	#s03
+S04	#s04
+S05	#s05
+复用源码阅读页	../ch01-architecture/sources.html
+运行说明	README.html
+复核记录	evidence/runs/ch09-20261103-01/记录.md
+来源索引	evidence/索引.md
+Java 虚拟机规范 25，§2.5—§2.7	https://docs.oracle.com/javase/specs/jvms/se25/html/jvms-2.html#jvms-2.5
+JDK 25 NMT 说明	https://docs.oracle.com/en/java/javase/25/vm/native-memory-tracking.html
+路径和关键分支	evidence/索引.md
+CH02-O02 原始记录	../ch02-computer-basics/evidence/runs/ch02-20261103-02/记录.md
+Linux cgroup v2 内存接口	https://docs.kernel.org/admin-guide/cgroup-v2.html#memory-interface-files
+上一章：第 8 章	../ch08-type-metadata/chapter.html
+返回全书目录	../../index.html
+下一章：第 10 章	../ch10-object-layout/chapter.html

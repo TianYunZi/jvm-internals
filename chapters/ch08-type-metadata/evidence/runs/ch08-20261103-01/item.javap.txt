@@ -1,0 +1,88 @@
+Classfile /Users/xiejinxin/Developer/Java/jvm-internals/chapters/ch08-type-metadata/target/classes/org/example/jvminternals/ch08/TypeJourney$Item.class
+  Last modified 2026年11月3日; size 728 bytes
+  SHA-256 checksum af2c85d4c62597e6f194dc09154236248cf086ad81948b6ec86ed87287c4113e
+  Compiled from "TypeJourney.java"
+final class org.example.jvminternals.ch08.TypeJourney$Item extends org.example.jvminternals.ch08.TypeJourney$Base implements org.example.jvminternals.ch08.TypeJourney$Named
+  minor version: 0
+  major version: 69
+  flags: (0x0030) ACC_FINAL, ACC_SUPER
+  this_class: #10                         // org/example/jvminternals/ch08/TypeJourney$Item
+  super_class: #2                         // org/example/jvminternals/ch08/TypeJourney$Base
+  interfaces: 1, fields: 1, methods: 2, attributes: 3
+Constant pool:
+   #1 = Methodref          #2.#3          // org/example/jvminternals/ch08/TypeJourney$Base."<init>":()V
+   #2 = Class              #4             // org/example/jvminternals/ch08/TypeJourney$Base
+   #3 = NameAndType        #5:#6          // "<init>":()V
+   #4 = Utf8               org/example/jvminternals/ch08/TypeJourney$Base
+   #5 = Utf8               <init>
+   #6 = Utf8               ()V
+   #7 = String             #8             // item
+   #8 = Utf8               item
+   #9 = Fieldref           #10.#11        // org/example/jvminternals/ch08/TypeJourney$Item.label:Ljava/lang/String;
+  #10 = Class              #12            // org/example/jvminternals/ch08/TypeJourney$Item
+  #11 = NameAndType        #13:#14        // label:Ljava/lang/String;
+  #12 = Utf8               org/example/jvminternals/ch08/TypeJourney$Item
+  #13 = Utf8               label
+  #14 = Utf8               Ljava/lang/String;
+  #15 = Class              #16            // org/example/jvminternals/ch08/TypeJourney$Named
+  #16 = Utf8               org/example/jvminternals/ch08/TypeJourney$Named
+  #17 = Utf8               ConstantValue
+  #18 = Utf8               Code
+  #19 = Utf8               LineNumberTable
+  #20 = Utf8               LocalVariableTable
+  #21 = Utf8               this
+  #22 = Utf8               Lorg/example/jvminternals/ch08/TypeJourney$Item;
+  #23 = Utf8               name
+  #24 = Utf8               ()Ljava/lang/String;
+  #25 = Utf8               SourceFile
+  #26 = Utf8               TypeJourney.java
+  #27 = Utf8               NestHost
+  #28 = Class              #29            // org/example/jvminternals/ch08/TypeJourney
+  #29 = Utf8               org/example/jvminternals/ch08/TypeJourney
+  #30 = Utf8               InnerClasses
+  #31 = Utf8               Base
+  #32 = Utf8               Item
+  #33 = Utf8               Named
+{
+  private final java.lang.String label;
+    descriptor: Ljava/lang/String;
+    flags: (0x0012) ACC_PRIVATE, ACC_FINAL
+    ConstantValue: String item
+
+  org.example.jvminternals.ch08.TypeJourney$Item();
+    descriptor: ()V
+    flags: (0x0000)
+    Code:
+      stack=2, locals=1, args_size=1
+         0: aload_0
+         1: invokespecial #1                  // Method org/example/jvminternals/ch08/TypeJourney$Base."<init>":()V
+         4: aload_0
+         5: ldc           #7                  // String item
+         7: putfield      #9                  // Field label:Ljava/lang/String;
+        10: return
+      LineNumberTable:
+        line 16: 0
+        line 17: 4
+      LocalVariableTable:
+        Start  Length  Slot  Name   Signature
+            0      11     0  this   Lorg/example/jvminternals/ch08/TypeJourney$Item;
+
+  public java.lang.String name();
+    descriptor: ()Ljava/lang/String;
+    flags: (0x0001) ACC_PUBLIC
+    Code:
+      stack=1, locals=1, args_size=1
+         0: ldc           #7                  // String item
+         2: areturn
+      LineNumberTable:
+        line 18: 0
+      LocalVariableTable:
+        Start  Length  Slot  Name   Signature
+            0       3     0  this   Lorg/example/jvminternals/ch08/TypeJourney$Item;
+}
+SourceFile: "TypeJourney.java"
+NestHost: class org/example/jvminternals/ch08/TypeJourney
+InnerClasses:
+  static #31= #2 of #28;                  // Base=class org/example/jvminternals/ch08/TypeJourney$Base of class org/example/jvminternals/ch08/TypeJourney
+  static final #32= #10 of #28;           // Item=class org/example/jvminternals/ch08/TypeJourney$Item of class org/example/jvminternals/ch08/TypeJourney
+  static #33= #15 of #28;                 // Named=class org/example/jvminternals/ch08/TypeJourney$Named of class org/example/jvminternals/ch08/TypeJourney

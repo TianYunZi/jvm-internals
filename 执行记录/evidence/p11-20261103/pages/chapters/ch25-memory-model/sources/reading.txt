@@ -1,0 +1,61 @@
+第25章源码阅读
+
+由正式源文件生成的静态阅读副本。返回正文 · 运行说明
+
+src/main/java/org/example/jvminternals/ch25/PublicationJourney.java
+package org.example.jvminternals.ch25;
+
+import java.util.concurrent.locks.LockSupport;
+
+/** 用有限发布过程说明同步边；不以运行次数证明所有允许执行。 */
+public final class PublicationJourney {
+    private final Object monitor = new Object();
+    private int payload;
+    private volatile boolean ready;
+    private int count;
+    private Message message;
+
+    /** 构造期间不逸出；final只约束本字段的初始化语义。 */
+    private record Message(int value) { }
+
+    private PublicationJourney() { }
+
+    /** 启动两个教学线程，结束后读取join所发布的结果。 */
+    public static void main(String[] args) throws InterruptedException {
+        new PublicationJourney().runJourney();
+    }
+
+    private void runJourney() throws InterruptedException {
+        Thread reader = Thread.ofPlatform().name("publication-reader").unstarted(() -> {
+            long deadline = System.nanoTime() + 2_000_000_000L;
+            // park只减少忙等；发布保证来自ready的volatile写读。
+            while (!ready && System.nanoTime() < deadline) {
+                LockSupport.parkNanos(100_000L);
+            }
+            if (ready) {
+                System.out.printf("读取：payload=%d final=%d%n", payload, message.value());
+            } else {
+                System.out.println("读取：观察窗口结束，未见ready");
+            }
+            increment();
+        });
+        Thread writer = Thread.ofPlatform().name("publication-writer").unstarted(() -> {
+            payload = 42;
+            message = new Message(7);
+            ready = true;
+            increment();
+        });
+        reader.start();
+        writer.start();
+        reader.join();
+        writer.join();
+        System.out.printf("结束：count=%d ready=%s%n", count, ready);
+    }
+
+    private void increment() {
+        // 读改写整体置于同一监视器下，volatile不能独自替代这段互斥。
+        synchronized (monitor) {
+            count++;
+        }
+    }
+}

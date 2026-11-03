@@ -1,0 +1,247 @@
+{
+  "version": "4.6.0",
+  "theme": "github-light",
+  "languages": [
+    "java",
+    "bash",
+    "xml",
+    "json",
+    "cpp",
+    "c",
+    "asm"
+  ],
+  "plainTextLanguage": "text",
+  "records": [
+    {
+      "page": "chapters/ch30-startup-sharing/chapter.html",
+      "id": "code-001",
+      "language": "java",
+      "kind": "block",
+      "sha256": "0bff331fdbdebd696cd73a5acd03da359ae681d4c83369fd2c92b68a23688d76"
+    },
+    {
+      "page": "chapters/ch30-startup-sharing/chapter.html",
+      "id": "code-002",
+      "language": "bash",
+      "kind": "block",
+      "sha256": "411f32a4f8d0e5743903398e3f8b6f56d260d412f70dadaf2ac9cc77750bbe29"
+    },
+    {
+      "page": "chapters/ch30-startup-sharing/sources.html",
+      "id": "code-001",
+      "language": "text",
+      "kind": "inline",
+      "sha256": "c5f94cde01b974f768486a6ce28a13e4fa6f38520cfcf3e7f1a7caab701b6e43"
+    },
+    {
+      "page": "chapters/ch30-startup-sharing/sources.html",
+      "id": "code-002",
+      "language": "java",
+      "kind": "block",
+      "sourceFile": "chapters/ch30-startup-sharing/src/main/java/org/example/jvminternals/ch30/InstanceEntry.java",
+      "sha256": "3a8a1413a9d046ff27faaea85a5636d6371f9339d0509d37758919640fc63ea8"
+    },
+    {
+      "page": "chapters/ch30-startup-sharing/sources.html",
+      "id": "code-003",
+      "language": "text",
+      "kind": "inline",
+      "sha256": "7735ff59413385fb939cbab564f2aab9e83eee0d68a763f0d20a24f5ac5ee64a"
+    },
+    {
+      "page": "chapters/ch30-startup-sharing/sources.html",
+      "id": "code-004",
+      "language": "java",
+      "kind": "block",
+      "sourceFile": "chapters/ch30-startup-sharing/src/main/java/org/example/jvminternals/ch30/StartupJourney.java",
+      "sha256": "33eb88b47bfffd8c82c82c7b00a0cfffbacd0d4352d7fcff0f47ebf695ba1034"
+    },
+    {
+      "page": "chapters/ch30-startup-sharing/sources.html",
+      "id": "code-005",
+      "language": "text",
+      "kind": "inline",
+      "sha256": "bd5da3cc903533b263ee903726029409965b3000ab4d56864321f2cc43c8f337"
+    },
+    {
+      "page": "chapters/ch30-startup-sharing/sources.html",
+      "id": "code-006",
+      "language": "java",
+      "kind": "block",
+      "sourceFile": "chapters/ch30-startup-sharing/compact/CompactEntry.java",
+      "sha256": "9363a9793acaba4249979eb037741db0ae62957af227c3bde3a3b00d58beaa31"
+    },
+    {
+      "page": "chapters/ch30-startup-sharing/README.html",
+      "id": "code-001",
+      "language": "bash",
+      "kind": "block",
+      "sha256": "0ee24b0d5c1800dc40ecf266c328ff243bc663e2bb54b4a7c630bff3153c2aed"
+    },
+    {
+      "page": "chapters/ch30-startup-sharing/README.html",
+      "id": "code-002",
+      "language": "bash",
+      "kind": "block",
+      "sha256": "9f09d40eedc61608b5d8a94756240ad20adb26d4dcb2027579f5a517ae7dfc88"
+    },
+    {
+      "page": "chapters/ch30-startup-sharing/README.html",
+      "id": "code-003",
+      "language": "bash",
+      "kind": "block",
+      "sha256": "0fa76e151077ba77f5b9aec2848e0c856022c72fd5e5f8ae1f4c4a26017d6242"
+    },
+    {
+      "page": "chapters/ch30-startup-sharing/README.html",
+      "id": "code-004",
+      "language": "bash",
+      "kind": "block",
+      "sha256": "980448a08df7fc0989ca46562c209149e6a6ea96ee9dc99e55fa34ffc9df7df8"
+    },
+    {
+      "page": "chapters/ch30-startup-sharing/README.html",
+      "id": "code-005",
+      "language": "bash",
+      "kind": "block",
+      "sha256": "2f8ced6d26bf9bb4aca0cc455680cbc4c88f8e7933f38173486272765ebdf11d"
+    },
+    {
+      "page": "chapters/ch31-aot-cache/chapter.html",
+      "id": "code-001",
+      "language": "bash",
+      "kind": "block",
+      "sha256": "c1a17949948b802e3e9fd20bb5957b4d1fa2ff24aa39814b71a7558350aafd08"
+    },
+    {
+      "page": "chapters/ch31-aot-cache/sources.html",
+      "id": "code-001",
+      "language": "text",
+      "kind": "inline",
+      "sha256": "8c450b8726b0abd2d5c937236983940150878948d451ac8ea4f4c31a812dd3e1"
+    },
+    {
+      "page": "chapters/ch31-aot-cache/sources.html",
+      "id": "code-002",
+      "language": "java",
+      "kind": "block",
+      "sourceFile": "chapters/ch31-aot-cache/src/main/java/org/example/jvminternals/ch31/CacheJourney.java",
+      "sha256": "6e77e5f6f99edfd95f4348b74fd1dd45f07cf2947cd130b6ba66c4f73ba34683"
+    },
+    {
+      "page": "chapters/ch31-aot-cache/README.html",
+      "id": "code-001",
+      "language": "bash",
+      "kind": "block",
+      "sha256": "0ee24b0d5c1800dc40ecf266c328ff243bc663e2bb54b4a7c630bff3153c2aed"
+    },
+    {
+      "page": "chapters/ch31-aot-cache/README.html",
+      "id": "code-002",
+      "language": "bash",
+      "kind": "block",
+      "sha256": "aed967c337e8319fe41f0f10385e17eeaf8de29954ea92df74111a4945a143ff"
+    },
+    {
+      "page": "chapters/ch31-aot-cache/README.html",
+      "id": "code-003",
+      "language": "bash",
+      "kind": "block",
+      "sha256": "3ecce6fce5b78f5e1fa57de93970319ee9e18990ca697c298e303487568c0337"
+    },
+    {
+      "page": "chapters/ch31-aot-cache/README.html",
+      "id": "code-004",
+      "language": "bash",
+      "kind": "block",
+      "sha256": "abf53dab6193f6694a6ba4e49b3ce264b020f9b6de1c54c5abfe955ce0fee5a3"
+    },
+    {
+      "page": "chapters/ch31-aot-cache/README.html",
+      "id": "code-005",
+      "language": "bash",
+      "kind": "block",
+      "sha256": "f8c26f4d55d762cf6d4a70a344190f244fc318048ecfa0e96e2a013c125184ee"
+    },
+    {
+      "page": "chapters/ch32-native-interop/chapter.html",
+      "id": "code-001",
+      "language": "c",
+      "kind": "block",
+      "sha256": "eb079a3af3f102eb2eb2312593865a7c2f861e0885219f2eb29308674d8cfb13"
+    },
+    {
+      "page": "chapters/ch32-native-interop/sources.html",
+      "id": "code-001",
+      "language": "text",
+      "kind": "inline",
+      "sha256": "e61a6e67d2ca51e0a0aab6d162404fcdaab993b36a07f2962e993ee17c73e65c"
+    },
+    {
+      "page": "chapters/ch32-native-interop/sources.html",
+      "id": "code-002",
+      "language": "java",
+      "kind": "block",
+      "sourceFile": "chapters/ch32-native-interop/src/main/java/org/example/jvminternals/ch32/ForeignJourney.java",
+      "sha256": "69b292edfeef115165c4485c695de46ec656992cd18022c77d28816102ae8855"
+    },
+    {
+      "page": "chapters/ch32-native-interop/sources.html",
+      "id": "code-003",
+      "language": "text",
+      "kind": "inline",
+      "sha256": "5869c3732f580a7e58a4164fb70b9f6dbfb81fb627a8f7f6bb8944602bb797bb"
+    },
+    {
+      "page": "chapters/ch32-native-interop/sources.html",
+      "id": "code-004",
+      "language": "java",
+      "kind": "block",
+      "sourceFile": "chapters/ch32-native-interop/src/main/java/org/example/jvminternals/ch32/NativeJourney.java",
+      "sha256": "1aa371cd40d8d9007388042927eb6dd1eff2b01636031168718190017fc76f2e"
+    },
+    {
+      "page": "chapters/ch32-native-interop/sources.html",
+      "id": "code-005",
+      "language": "text",
+      "kind": "inline",
+      "sha256": "df09470e09eddfeef63cc3b974e59640dcd422b4585d2b264a2e1899bde063c0"
+    },
+    {
+      "page": "chapters/ch32-native-interop/sources.html",
+      "id": "code-006",
+      "language": "c",
+      "kind": "block",
+      "sourceFile": "chapters/ch32-native-interop/native/interop.c",
+      "sha256": "8bf593d68af739570a83bf4c4bc33c3e00651f3dcd52d80c7bdd8ee4531c9af0"
+    },
+    {
+      "page": "chapters/ch32-native-interop/README.html",
+      "id": "code-001",
+      "language": "bash",
+      "kind": "block",
+      "sha256": "0ee24b0d5c1800dc40ecf266c328ff243bc663e2bb54b4a7c630bff3153c2aed"
+    },
+    {
+      "page": "chapters/ch32-native-interop/README.html",
+      "id": "code-002",
+      "language": "bash",
+      "kind": "block",
+      "sha256": "a11b9d6e1471617113cba4665fbc6198ff5614daf641a4ad74fb190a8bffa3bf"
+    },
+    {
+      "page": "chapters/ch32-native-interop/README.html",
+      "id": "code-003",
+      "language": "bash",
+      "kind": "block",
+      "sha256": "28106893e3f51386aed044a7bdb47f0d06737255e0b81ae53d954cc7497959bb"
+    },
+    {
+      "page": "chapters/ch32-native-interop/README.html",
+      "id": "code-004",
+      "language": "bash",
+      "kind": "block",
+      "sha256": "0d714aea1803b1cf5291746a7d7b04e3ca9d96532a9003dfe189d3a15e30a2e5"
+    }
+  ]
+}

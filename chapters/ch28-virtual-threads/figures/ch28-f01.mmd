@@ -1,0 +1,11 @@
+sequenceDiagram
+ participant V as 虚拟线程
+ participant C as 载体
+ participant S as 调度器与就绪通知
+ S->>C: 提交runContinuation
+ C->>V: 挂载，恢复执行
+ V->>V: 适配的阻塞，冻结栈
+ V-->>C: 卸载，释放载体
+ Note over C: 可运行其他虚拟线程
+ S->>C: 就绪后重新提交
+ C->>V: 挂载并恢复，载体可不同

@@ -1,0 +1,5 @@
+案例 pid=84043 mode=narrow time=2026-11-03T13:40:09.031503Z processors=8
+测量 count=64 wallNs=21340792 p50Ns=14306167 p99Ns=19831334 maxNs=19831334 completed=64
+real 0.09
+user 0.08
+sys 0.02

@@ -1,0 +1,24 @@
+跳到正文	#main
+Java 虚拟机原理图文书	../../index.html
+29.1 线程局部数据	#sec-29-1
+29.2 作用域值	#sec-29-2
+29.3 结构化任务生命周期	#sec-29-3
+29.4 类库与运行时支持	#sec-29-4
+29.5 25版接口形态与状态	#sec-29-5
+观察与边界	#observe
+回顾与思考	#review
+来源	#sources
+源码阅读	sources.html
+运行说明	README.html
+证据索引	evidence/索引.md
+S1	#s1
+S2	#s2
+ScopedValue 25文档	https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/ScopedValue.html
+StructuredTaskScope 25文档	https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/util/concurrent/StructuredTaskScope.html
+ThreadLocal实现	https://github.com/openjdk/jdk25u/blob/1775ea114f649f0314e4e43eb6c802ff16dfab7c/src/java.base/share/classes/java/lang/ThreadLocal.java
+作用域实现	https://github.com/openjdk/jdk25u/blob/1775ea114f649f0314e4e43eb6c802ff16dfab7c/src/java.base/share/classes/java/util/concurrent/StructuredTaskScopeImpl.java
+绑定与线程群	https://github.com/openjdk/jdk25u/blob/1775ea114f649f0314e4e43eb6c802ff16dfab7c/src/java.base/share/classes/jdk/internal/misc/ThreadFlock.java
+来源索引	evidence/索引.md
+上一章	../ch28-virtual-threads/chapter.html
+第六篇目录	../../index.html#part-6
+下一章：第30章	../ch30-startup-sharing/chapter.html

@@ -1,0 +1,2 @@
+==> Fetching jdk-mission-control from homebrew/cask
+✔︎ Cask jdk-mission-control (9.1.2,05)

@@ -1,0 +1,77 @@
+<!doctype html><html lang="zh-CN"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="shiki-version" content="4.6.0"><title>第14章源码阅读</title><link rel="stylesheet" href="../../assets/book.css"></head><body><main class="home" id="main"><h1>第14章源码阅读</h1><p>由正式源文件生成的静态阅读副本。<a href="chapter.html">返回正文</a> · <a href="README.html">运行说明</a></p><h2><code class="shiki-inline" data-shiki-version="4.6.0" data-code-id="code-001" data-code-language="text"><span>src/main/java/org/example/jvminternals/ch14/DispatchJourney.java</span></code></h2><pre data-shiki-version="4.6.0" class="shiki github-light" style="background-color:#fff;color:#24292e" tabindex="0"><code data-code-id="code-002" data-code-language="java" data-source-file="chapters/ch14-dispatch/src/main/java/org/example/jvminternals/ch14/DispatchJourney.java"><span class="line"><span style="color:#D73A49">package</span><span style="color:#24292E"> org.example.jvminternals.ch14;</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#6A737D">/** 同一调用点先遇到一种再遇到多种合法接收者，不测调用性能。 */</span></span>
+<span class="line"><span style="color:#D73A49">public</span><span style="color:#D73A49"> final</span><span style="color:#D73A49"> class</span><span style="color:#6F42C1"> DispatchJourney</span><span style="color:#24292E"> {</span></span>
+<span class="line"><span style="color:#D73A49">    private</span><span style="color:#6F42C1"> DispatchJourney</span><span style="color:#24292E">() {</span></span>
+<span class="line"><span style="color:#24292E">    }</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#D73A49">    interface</span><span style="color:#6F42C1"> Operation</span><span style="color:#24292E"> {</span></span>
+<span class="line"><span style="color:#D73A49">        int</span><span style="color:#6F42C1"> apply</span><span style="color:#24292E">(</span><span style="color:#D73A49">int</span><span style="color:#E36209"> value</span><span style="color:#24292E">);</span></span>
+<span class="line"><span style="color:#24292E">    }</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#D73A49">    static</span><span style="color:#D73A49"> class</span><span style="color:#6F42C1"> Base</span><span style="color:#24292E"> {</span></span>
+<span class="line"><span style="color:#D73A49">        int</span><span style="color:#6F42C1"> label</span><span style="color:#24292E">() {</span></span>
+<span class="line"><span style="color:#D73A49">            return</span><span style="color:#005CC5"> 10</span><span style="color:#24292E">;</span></span>
+<span class="line"><span style="color:#24292E">        }</span></span>
+<span class="line"><span style="color:#24292E">    }</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#D73A49">    static</span><span style="color:#D73A49"> final</span><span style="color:#D73A49"> class</span><span style="color:#6F42C1"> First</span><span style="color:#D73A49"> extends</span><span style="color:#6F42C1"> Base</span><span style="color:#D73A49"> implements</span><span style="color:#6F42C1"> Operation</span><span style="color:#24292E"> {</span></span>
+<span class="line"><span style="color:#24292E">        @</span><span style="color:#D73A49">Override</span></span>
+<span class="line"><span style="color:#D73A49">        int</span><span style="color:#6F42C1"> label</span><span style="color:#24292E">() {</span></span>
+<span class="line"><span style="color:#D73A49">            return</span><span style="color:#005CC5"> super</span><span style="color:#24292E">.</span><span style="color:#6F42C1">label</span><span style="color:#24292E">() </span><span style="color:#D73A49">+</span><span style="color:#005CC5"> 1</span><span style="color:#24292E">;</span></span>
+<span class="line"><span style="color:#24292E">        }</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#24292E">        @</span><span style="color:#D73A49">Override</span></span>
+<span class="line"><span style="color:#D73A49">        public</span><span style="color:#D73A49"> int</span><span style="color:#6F42C1"> apply</span><span style="color:#24292E">(</span><span style="color:#D73A49">int</span><span style="color:#E36209"> value</span><span style="color:#24292E">) {</span></span>
+<span class="line"><span style="color:#D73A49">            return</span><span style="color:#24292E"> value </span><span style="color:#D73A49">+</span><span style="color:#005CC5"> 1</span><span style="color:#24292E">;</span></span>
+<span class="line"><span style="color:#24292E">        }</span></span>
+<span class="line"><span style="color:#24292E">    }</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#D73A49">    static</span><span style="color:#D73A49"> final</span><span style="color:#D73A49"> class</span><span style="color:#6F42C1"> Second</span><span style="color:#D73A49"> implements</span><span style="color:#6F42C1"> Operation</span><span style="color:#24292E"> {</span></span>
+<span class="line"><span style="color:#24292E">        @</span><span style="color:#D73A49">Override</span></span>
+<span class="line"><span style="color:#D73A49">        public</span><span style="color:#D73A49"> int</span><span style="color:#6F42C1"> apply</span><span style="color:#24292E">(</span><span style="color:#D73A49">int</span><span style="color:#E36209"> value</span><span style="color:#24292E">) {</span></span>
+<span class="line"><span style="color:#D73A49">            return</span><span style="color:#24292E"> value </span><span style="color:#D73A49">+</span><span style="color:#005CC5"> 2</span><span style="color:#24292E">;</span></span>
+<span class="line"><span style="color:#24292E">        }</span></span>
+<span class="line"><span style="color:#24292E">    }</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#D73A49">    static</span><span style="color:#D73A49"> final</span><span style="color:#D73A49"> class</span><span style="color:#6F42C1"> Third</span><span style="color:#D73A49"> implements</span><span style="color:#6F42C1"> Operation</span><span style="color:#24292E"> {</span></span>
+<span class="line"><span style="color:#24292E">        @</span><span style="color:#D73A49">Override</span></span>
+<span class="line"><span style="color:#D73A49">        public</span><span style="color:#D73A49"> int</span><span style="color:#6F42C1"> apply</span><span style="color:#24292E">(</span><span style="color:#D73A49">int</span><span style="color:#E36209"> value</span><span style="color:#24292E">) {</span></span>
+<span class="line"><span style="color:#D73A49">            return</span><span style="color:#24292E"> value </span><span style="color:#D73A49">+</span><span style="color:#005CC5"> 3</span><span style="color:#24292E">;</span></span>
+<span class="line"><span style="color:#24292E">        }</span></span>
+<span class="line"><span style="color:#24292E">    }</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#D73A49">    static</span><span style="color:#D73A49"> final</span><span style="color:#D73A49"> class</span><span style="color:#6F42C1"> Fourth</span><span style="color:#D73A49"> implements</span><span style="color:#6F42C1"> Operation</span><span style="color:#24292E"> {</span></span>
+<span class="line"><span style="color:#24292E">        @</span><span style="color:#D73A49">Override</span></span>
+<span class="line"><span style="color:#D73A49">        public</span><span style="color:#D73A49"> int</span><span style="color:#6F42C1"> apply</span><span style="color:#24292E">(</span><span style="color:#D73A49">int</span><span style="color:#E36209"> value</span><span style="color:#24292E">) {</span></span>
+<span class="line"><span style="color:#D73A49">            return</span><span style="color:#24292E"> value </span><span style="color:#D73A49">+</span><span style="color:#005CC5"> 4</span><span style="color:#24292E">;</span></span>
+<span class="line"><span style="color:#24292E">        }</span></span>
+<span class="line"><span style="color:#24292E">    }</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#6A737D">    /** 保留具体阶段边界；结果使全部调用具有可观察用途。 */</span></span>
+<span class="line"><span style="color:#D73A49">    public</span><span style="color:#D73A49"> static</span><span style="color:#D73A49"> void</span><span style="color:#6F42C1"> main</span><span style="color:#24292E">(</span><span style="color:#D73A49">String</span><span style="color:#24292E">[] </span><span style="color:#E36209">args</span><span style="color:#24292E">) {</span></span>
+<span class="line"><span style="color:#6A737D">        // 所有类型先创建，后续变化只改变画像，不声称由新类加载触发。</span></span>
+<span class="line"><span style="color:#D73A49">        Operation</span><span style="color:#24292E">[] receivers </span><span style="color:#D73A49">=</span><span style="color:#24292E"> {</span><span style="color:#D73A49">new</span><span style="color:#6F42C1"> First</span><span style="color:#24292E">(), </span><span style="color:#D73A49">new</span><span style="color:#6F42C1"> Second</span><span style="color:#24292E">(), </span><span style="color:#D73A49">new</span><span style="color:#6F42C1"> Third</span><span style="color:#24292E">(), </span><span style="color:#D73A49">new</span><span style="color:#6F42C1"> Fourth</span><span style="color:#24292E">()};</span></span>
+<span class="line"><span style="color:#24292E">        Base base </span><span style="color:#D73A49">=</span><span style="color:#24292E"> (First) receivers[</span><span style="color:#005CC5">0</span><span style="color:#24292E">];</span></span>
+<span class="line"><span style="color:#24292E">        System.out.</span><span style="color:#6F42C1">println</span><span style="color:#24292E">(</span><span style="color:#032F62">"静态="</span><span style="color:#D73A49"> +</span><span style="color:#6F42C1"> staticValue</span><span style="color:#24292E">(</span><span style="color:#005CC5">5</span><span style="color:#24292E">) </span><span style="color:#D73A49">+</span><span style="color:#032F62"> "；虚调用="</span><span style="color:#D73A49"> +</span><span style="color:#24292E"> base.</span><span style="color:#6F42C1">label</span><span style="color:#24292E">());</span></span>
+<span class="line"><span style="color:#D73A49">        long</span><span style="color:#24292E"> sum </span><span style="color:#D73A49">=</span><span style="color:#005CC5"> 0</span><span style="color:#24292E">;</span></span>
+<span class="line"><span style="color:#24292E">        System.out.</span><span style="color:#6F42C1">println</span><span style="color:#24292E">(</span><span style="color:#032F62">"阶段=单接收者"</span><span style="color:#24292E">);</span></span>
+<span class="line"><span style="color:#D73A49">        for</span><span style="color:#24292E"> (</span><span style="color:#D73A49">int</span><span style="color:#24292E"> i </span><span style="color:#D73A49">=</span><span style="color:#005CC5"> 0</span><span style="color:#24292E">; i </span><span style="color:#D73A49">&#x3C;</span><span style="color:#005CC5"> 100_000</span><span style="color:#24292E">; i</span><span style="color:#D73A49">++</span><span style="color:#24292E">) {</span></span>
+<span class="line"><span style="color:#24292E">            sum </span><span style="color:#D73A49">+=</span><span style="color:#6F42C1"> call</span><span style="color:#24292E">(receivers[</span><span style="color:#005CC5">0</span><span style="color:#24292E">], i);</span></span>
+<span class="line"><span style="color:#24292E">        }</span></span>
+<span class="line"><span style="color:#24292E">        System.out.</span><span style="color:#6F42C1">println</span><span style="color:#24292E">(</span><span style="color:#032F62">"阶段=四接收者；前段结果="</span><span style="color:#D73A49"> +</span><span style="color:#24292E"> sum);</span></span>
+<span class="line"><span style="color:#D73A49">        for</span><span style="color:#24292E"> (</span><span style="color:#D73A49">int</span><span style="color:#24292E"> i </span><span style="color:#D73A49">=</span><span style="color:#005CC5"> 0</span><span style="color:#24292E">; i </span><span style="color:#D73A49">&#x3C;</span><span style="color:#005CC5"> 200_000</span><span style="color:#24292E">; i</span><span style="color:#D73A49">++</span><span style="color:#24292E">) {</span></span>
+<span class="line"><span style="color:#24292E">            sum </span><span style="color:#D73A49">+=</span><span style="color:#6F42C1"> call</span><span style="color:#24292E">(receivers[i </span><span style="color:#D73A49">&#x26;</span><span style="color:#005CC5"> 3</span><span style="color:#24292E">], i);</span></span>
+<span class="line"><span style="color:#24292E">        }</span></span>
+<span class="line"><span style="color:#24292E">        System.out.</span><span style="color:#6F42C1">println</span><span style="color:#24292E">(</span><span style="color:#032F62">"阶段=正常结束；结果="</span><span style="color:#D73A49"> +</span><span style="color:#24292E"> sum);</span></span>
+<span class="line"><span style="color:#24292E">    }</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#D73A49">    private</span><span style="color:#D73A49"> static</span><span style="color:#D73A49"> int</span><span style="color:#6F42C1"> staticValue</span><span style="color:#24292E">(</span><span style="color:#D73A49">int</span><span style="color:#E36209"> value</span><span style="color:#24292E">) {</span></span>
+<span class="line"><span style="color:#D73A49">        return</span><span style="color:#24292E"> value </span><span style="color:#D73A49">*</span><span style="color:#005CC5"> 2</span><span style="color:#24292E">;</span></span>
+<span class="line"><span style="color:#24292E">    }</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#D73A49">    private</span><span style="color:#D73A49"> static</span><span style="color:#D73A49"> int</span><span style="color:#6F42C1"> call</span><span style="color:#24292E">(Operation </span><span style="color:#E36209">receiver</span><span style="color:#24292E">, </span><span style="color:#D73A49">int</span><span style="color:#E36209"> value</span><span style="color:#24292E">) {</span></span>
+<span class="line"><span style="color:#D73A49">        return</span><span style="color:#24292E"> receiver.</span><span style="color:#6F42C1">apply</span><span style="color:#24292E">(value);</span></span>
+<span class="line"><span style="color:#24292E">    }</span></span>
+<span class="line"><span style="color:#24292E">}</span></span>
+<span class="line"></span></code></pre></main></body></html>

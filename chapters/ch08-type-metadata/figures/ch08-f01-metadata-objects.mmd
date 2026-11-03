@@ -1,0 +1,9 @@
+%% CH08-F01：逻辑关联图；不表示对象头编码或普通强引用。
+flowchart TB
+  I["Java堆：Item实例"] -->|逻辑类型| K["本地元数据：InstanceKlass Item<br/>字段、方法、父类型"]
+  M["Java堆：表示Item的Class镜像<br/>也是java.lang.Class实例"] -->|所代表类型| K
+  K -->|_java_mirror句柄| M
+  M -->|镜像自身类型| MK["InstanceMirrorKlass<br/>java.lang.Class自身的类型元数据"]
+  A["Java堆：Item数组或int数组"] -->|逻辑类型| AK["ObjArrayKlass或TypeArrayKlass"]
+  N["常规元数据分配受元空间管理<br/>省略编码、句柄屏障和共享归档差异"]
+  AK --- N

@@ -1,0 +1,1 @@
+d2e7fb3b2d49c96ff919389afe6714c41bde32b0a067b61e07d2706cb238f832  chapters/ch32-native-interop/target/libch32.dylib

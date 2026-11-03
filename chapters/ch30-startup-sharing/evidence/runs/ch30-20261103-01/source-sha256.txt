@@ -1,0 +1,3 @@
+3a8a1413a9d046ff27faaea85a5636d6371f9339d0509d37758919640fc63ea8  chapters/ch30-startup-sharing/src/main/java/org/example/jvminternals/ch30/InstanceEntry.java
+33eb88b47bfffd8c82c82c7b00a0cfffbacd0d4352d7fcff0f47ebf695ba1034  chapters/ch30-startup-sharing/src/main/java/org/example/jvminternals/ch30/StartupJourney.java
+9363a9793acaba4249979eb037741db0ae62957af227c3bde3a3b00d58beaa31  chapters/ch30-startup-sharing/compact/CompactEntry.java

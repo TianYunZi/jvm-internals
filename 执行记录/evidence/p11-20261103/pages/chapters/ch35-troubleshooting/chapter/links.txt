@@ -1,0 +1,22 @@
+跳到正文	#main
+Java 虚拟机原理图文书	../../index.html
+35.1 不同区域的内存增长	#sec-35-1
+35.2 处理器高占用与编译异常	#sec-35-2
+35.3 死锁、锁竞争与线程资源	#sec-35-3
+35.4 暂停、分配停顿与容器终止	#sec-35-4
+35.5 崩溃日志与本地线索	#sec-35-5
+35.6 从假设到原因定位	#sec-35-6
+观察与边界	#observe
+回顾与思考	#review
+来源与实现入口	#sources
+源码阅读	sources.html
+运行说明	README.html
+证据索引	evidence/索引.md
+实现阅读	evidence/实现摘录.md
+Linux内核cgroup v2接口文档	https://docs.kernel.org/admin-guide/cgroup-v2.html
+25版故障日志说明	https://docs.oracle.com/en/java/javase/25/troubleshoot/location-fatal-error-log.html
+崩溃诊断历史案例	https://docs.oracle.com/en/java/javase/25/troubleshoot/troubleshoot-system-crashes.html
+本轮三案例	evidence/runs/ch35-20261103-01/记录.md
+上一章：第34章	../ch34-flight-recorder/chapter.html
+下一章：第36章	../ch36-performance-cases/chapter.html
+返回全书目录	../../index.html#part-8

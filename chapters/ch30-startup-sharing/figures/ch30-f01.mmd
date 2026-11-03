@@ -1,0 +1,16 @@
+sequenceDiagram
+  participant L as 启动器
+  participant V as HotSpot
+  participant C as 初始类
+  participant M as 入口执行
+  L->>L: 展开参数并选模式
+  L->>V: JNI_CreateJavaVM
+  V->>V: 准备基础运行时
+  V-->>L: JavaVM与当前线程环境
+  L->>C: 加载、连接与初始化
+  L->>L: 优先选带参数候选
+  opt 实例入口
+    L->>C: 无参数构造得到接收者
+  end
+  L->>M: 调用所选main
+  Note over V,M: 依赖顺序示意，不是完整函数调用树

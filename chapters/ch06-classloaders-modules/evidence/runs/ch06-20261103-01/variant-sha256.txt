@@ -1,0 +1,4 @@
+836ec84011a8501a492fb98077351e76c754a42d7e085c44b0220c8b52cb4b01  chapters/ch06-classloaders-modules/target/plugin/org/example/jvminternals/ch06/isolated/Plugin.class
+0763944a3614f86495abe68dd5da47e0f40ab1424a85c56afa06f6c0572e149c  chapters/ch06-classloaders-modules/target/service-provider/org/example/jvminternals/ch06/provider/FriendlyGreeter.class
+522d0a94d2c66698587654e2f8a3edb5b95b403255c448614ba80062da427bfb  chapters/ch06-classloaders-modules/target/modules/lesson.client/module-info.class
+5eafff2482407a0ce339bf635163235e079f6f2a0246a070524860b9d675e572  chapters/ch06-classloaders-modules/target/modules/lesson.library/module-info.class

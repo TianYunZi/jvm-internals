@@ -1,0 +1,354 @@
+Classfile /Users/xiejinxin/Developer/Java/jvm-internals/chapters/ch13-interpreter/target/classes/org/example/jvminternals/ch13/ExceptionJourney.class
+  Last modified 2026年11月3日; size 2575 bytes
+  SHA-256 checksum 49d2cf759719625bf0b90f1694731c3a796bf73205bd772f90193b15601eeae8
+  Compiled from "ExceptionJourney.java"
+public final class org.example.jvminternals.ch13.ExceptionJourney
+  minor version: 0
+  major version: 69
+  flags: (0x0031) ACC_PUBLIC, ACC_FINAL, ACC_SUPER
+  this_class: #22                         // org/example/jvminternals/ch13/ExceptionJourney
+  super_class: #2                         // java/lang/Object
+  interfaces: 0, fields: 0, methods: 4, attributes: 3
+Constant pool:
+    #1 = Methodref          #2.#3         // java/lang/Object."<init>":()V
+    #2 = Class              #4            // java/lang/Object
+    #3 = NameAndType        #5:#6         // "<init>":()V
+    #4 = Utf8               java/lang/Object
+    #5 = Utf8               <init>
+    #6 = Utf8               ()V
+    #7 = Fieldref           #8.#9         // java/lang/System.out:Ljava/io/PrintStream;
+    #8 = Class              #10           // java/lang/System
+    #9 = NameAndType        #11:#12       // out:Ljava/io/PrintStream;
+   #10 = Utf8               java/lang/System
+   #11 = Utf8               out
+   #12 = Utf8               Ljava/io/PrintStream;
+   #13 = String             #14           // 阶段=解释模式异常观察开始
+   #14 = Utf8               阶段=解释模式异常观察开始
+   #15 = Methodref          #16.#17       // java/io/PrintStream.println:(Ljava/lang/String;)V
+   #16 = Class              #18           // java/io/PrintStream
+   #17 = NameAndType        #19:#20       // println:(Ljava/lang/String;)V
+   #18 = Utf8               java/io/PrintStream
+   #19 = Utf8               println
+   #20 = Utf8               (Ljava/lang/String;)V
+   #21 = Methodref          #22.#23       // org/example/jvminternals/ch13/ExceptionJourney.middle:(I)V
+   #22 = Class              #24           // org/example/jvminternals/ch13/ExceptionJourney
+   #23 = NameAndType        #25:#26       // middle:(I)V
+   #24 = Utf8               org/example/jvminternals/ch13/ExceptionJourney
+   #25 = Utf8               middle
+   #26 = Utf8               (I)V
+   #27 = Class              #28           // java/lang/IllegalArgumentException
+   #28 = Utf8               java/lang/IllegalArgumentException
+   #29 = Class              #30           // java/lang/ArithmeticException
+   #30 = Utf8               java/lang/ArithmeticException
+   #31 = Methodref          #2.#32        // java/lang/Object.getClass:()Ljava/lang/Class;
+   #32 = NameAndType        #33:#34       // getClass:()Ljava/lang/Class;
+   #33 = Utf8               getClass
+   #34 = Utf8               ()Ljava/lang/Class;
+   #35 = Methodref          #36.#37       // java/lang/Class.getSimpleName:()Ljava/lang/String;
+   #36 = Class              #38           // java/lang/Class
+   #37 = NameAndType        #39:#40       // getSimpleName:()Ljava/lang/String;
+   #38 = Utf8               java/lang/Class
+   #39 = Utf8               getSimpleName
+   #40 = Utf8               ()Ljava/lang/String;
+   #41 = InvokeDynamic      #0:#42        // #0:makeConcatWithConstants:(Ljava/lang/String;)Ljava/lang/String;
+   #42 = NameAndType        #43:#44       // makeConcatWithConstants:(Ljava/lang/String;)Ljava/lang/String;
+   #43 = Utf8               makeConcatWithConstants
+   #44 = Utf8               (Ljava/lang/String;)Ljava/lang/String;
+   #45 = Methodref          #46.#47       // java/lang/RuntimeException.getStackTrace:()[Ljava/lang/StackTraceElement;
+   #46 = Class              #48           // java/lang/RuntimeException
+   #47 = NameAndType        #49:#50       // getStackTrace:()[Ljava/lang/StackTraceElement;
+   #48 = Utf8               java/lang/RuntimeException
+   #49 = Utf8               getStackTrace
+   #50 = Utf8               ()[Ljava/lang/StackTraceElement;
+   #51 = Methodref          #52.#53       // java/lang/StackTraceElement.getClassName:()Ljava/lang/String;
+   #52 = Class              #54           // java/lang/StackTraceElement
+   #53 = NameAndType        #55:#40       // getClassName:()Ljava/lang/String;
+   #54 = Utf8               java/lang/StackTraceElement
+   #55 = Utf8               getClassName
+   #56 = Methodref          #36.#57       // java/lang/Class.getName:()Ljava/lang/String;
+   #57 = NameAndType        #58:#40       // getName:()Ljava/lang/String;
+   #58 = Utf8               getName
+   #59 = Methodref          #60.#61       // java/lang/String.equals:(Ljava/lang/Object;)Z
+   #60 = Class              #62           // java/lang/String
+   #61 = NameAndType        #63:#64       // equals:(Ljava/lang/Object;)Z
+   #62 = Utf8               java/lang/String
+   #63 = Utf8               equals
+   #64 = Utf8               (Ljava/lang/Object;)Z
+   #65 = Methodref          #60.#66       // java/lang/String.valueOf:(Ljava/lang/Object;)Ljava/lang/String;
+   #66 = NameAndType        #67:#68       // valueOf:(Ljava/lang/Object;)Ljava/lang/String;
+   #67 = Utf8               valueOf
+   #68 = Utf8               (Ljava/lang/Object;)Ljava/lang/String;
+   #69 = InvokeDynamic      #1:#42        // #1:makeConcatWithConstants:(Ljava/lang/String;)Ljava/lang/String;
+   #70 = String             #71           // 阶段=正常结束
+   #71 = Utf8               阶段=正常结束
+   #72 = Methodref          #22.#73       // org/example/jvminternals/ch13/ExceptionJourney.leaf:(I)V
+   #73 = NameAndType        #74:#26       // leaf:(I)V
+   #74 = Utf8               leaf
+   #75 = InvokeDynamic      #2:#76        // #2:makeConcatWithConstants:(I)Ljava/lang/String;
+   #76 = NameAndType        #43:#77       // makeConcatWithConstants:(I)Ljava/lang/String;
+   #77 = Utf8               (I)Ljava/lang/String;
+   #78 = String             #79           // 教学显式抛出
+   #79 = Utf8               教学显式抛出
+   #80 = Methodref          #27.#81       // java/lang/IllegalArgumentException."<init>":(Ljava/lang/String;)V
+   #81 = NameAndType        #5:#20        // "<init>":(Ljava/lang/String;)V
+   #82 = InvokeDynamic      #3:#76        // #3:makeConcatWithConstants:(I)Ljava/lang/String;
+   #83 = Utf8               Code
+   #84 = Utf8               LineNumberTable
+   #85 = Utf8               LocalVariableTable
+   #86 = Utf8               this
+   #87 = Utf8               Lorg/example/jvminternals/ch13/ExceptionJourney;
+   #88 = Utf8               main
+   #89 = Utf8               ([Ljava/lang/String;)V
+   #90 = Utf8               frame
+   #91 = Utf8               Ljava/lang/StackTraceElement;
+   #92 = Utf8               failure
+   #93 = Utf8               Ljava/lang/RuntimeException;
+   #94 = Utf8               mode
+   #95 = Utf8               I
+   #96 = Utf8               args
+   #97 = Utf8               [Ljava/lang/String;
+   #98 = Utf8               StackMapTable
+   #99 = Class              #97           // "[Ljava/lang/String;"
+  #100 = Class              #101          // "[Ljava/lang/StackTraceElement;"
+  #101 = Utf8               [Ljava/lang/StackTraceElement;
+  #102 = Utf8               MethodParameters
+  #103 = Class              #104          // java/lang/Throwable
+  #104 = Utf8               java/lang/Throwable
+  #105 = Utf8               divisor
+  #106 = Utf8               SourceFile
+  #107 = Utf8               ExceptionJourney.java
+  #108 = Utf8               BootstrapMethods
+  #109 = String             #110          // 阶段=外层捕获；类型=\u0001
+  #110 = Utf8               阶段=外层捕获；类型=\u0001
+  #111 = String             #112          // 创建时栈=\u0001
+  #112 = Utf8               创建时栈=\u0001
+  #113 = String             #114          // 阶段=中层finally；模式=\u0001
+  #114 = Utf8               阶段=中层finally；模式=\u0001
+  #115 = String             #116          // 商=\u0001
+  #116 = Utf8               商=\u0001
+  #117 = MethodHandle       6:#118        // REF_invokeStatic java/lang/invoke/StringConcatFactory.makeConcatWithConstants:(Ljava/lang/invoke/MethodHandles$Lookup;Ljava/lang/String;Ljava/lang/invoke/MethodType;Ljava/lang/String;[Ljava/lang/Object;)Ljava/lang/invoke/CallSite;
+  #118 = Methodref          #119.#120     // java/lang/invoke/StringConcatFactory.makeConcatWithConstants:(Ljava/lang/invoke/MethodHandles$Lookup;Ljava/lang/String;Ljava/lang/invoke/MethodType;Ljava/lang/String;[Ljava/lang/Object;)Ljava/lang/invoke/CallSite;
+  #119 = Class              #121          // java/lang/invoke/StringConcatFactory
+  #120 = NameAndType        #43:#122      // makeConcatWithConstants:(Ljava/lang/invoke/MethodHandles$Lookup;Ljava/lang/String;Ljava/lang/invoke/MethodType;Ljava/lang/String;[Ljava/lang/Object;)Ljava/lang/invoke/CallSite;
+  #121 = Utf8               java/lang/invoke/StringConcatFactory
+  #122 = Utf8               (Ljava/lang/invoke/MethodHandles$Lookup;Ljava/lang/String;Ljava/lang/invoke/MethodType;Ljava/lang/String;[Ljava/lang/Object;)Ljava/lang/invoke/CallSite;
+  #123 = Utf8               InnerClasses
+  #124 = Class              #125          // java/lang/invoke/MethodHandles$Lookup
+  #125 = Utf8               java/lang/invoke/MethodHandles$Lookup
+  #126 = Class              #127          // java/lang/invoke/MethodHandles
+  #127 = Utf8               java/lang/invoke/MethodHandles
+  #128 = Utf8               Lookup
+{
+  private org.example.jvminternals.ch13.ExceptionJourney();
+    descriptor: ()V
+    flags: (0x0002) ACC_PRIVATE
+    Code:
+      stack=1, locals=1, args_size=1
+         0: aload_0
+         1: invokespecial #1                  // Method java/lang/Object."<init>":()V
+         4: return
+      LineNumberTable:
+        line 5: 0
+        line 6: 4
+      LocalVariableTable:
+        Start  Length  Slot  Name   Signature
+            0       5     0  this   Lorg/example/jvminternals/ch13/ExceptionJourney;
+
+  public static void main(java.lang.String[]);
+    descriptor: ([Ljava/lang/String;)V
+    flags: (0x0009) ACC_PUBLIC, ACC_STATIC
+    Code:
+      stack=2, locals=7, args_size=1
+         0: getstatic     #7                  // Field java/lang/System.out:Ljava/io/PrintStream;
+         3: ldc           #13                 // String 阶段=解释模式异常观察开始
+         5: invokevirtual #15                 // Method java/io/PrintStream.println:(Ljava/lang/String;)V
+         8: iconst_0
+         9: istore_1
+        10: iload_1
+        11: iconst_2
+        12: if_icmpge     110
+        15: iload_1
+        16: invokestatic  #21                 // Method middle:(I)V
+        19: goto          104
+        22: astore_2
+        23: getstatic     #7                  // Field java/lang/System.out:Ljava/io/PrintStream;
+        26: aload_2
+        27: invokevirtual #31                 // Method java/lang/Object.getClass:()Ljava/lang/Class;
+        30: invokevirtual #35                 // Method java/lang/Class.getSimpleName:()Ljava/lang/String;
+        33: invokedynamic #41,  0             // InvokeDynamic #0:makeConcatWithConstants:(Ljava/lang/String;)Ljava/lang/String;
+        38: invokevirtual #15                 // Method java/io/PrintStream.println:(Ljava/lang/String;)V
+        41: aload_2
+        42: invokevirtual #45                 // Method java/lang/RuntimeException.getStackTrace:()[Ljava/lang/StackTraceElement;
+        45: astore_3
+        46: aload_3
+        47: arraylength
+        48: istore        4
+        50: iconst_0
+        51: istore        5
+        53: iload         5
+        55: iload         4
+        57: if_icmpge     104
+        60: aload_3
+        61: iload         5
+        63: aaload
+        64: astore        6
+        66: aload         6
+        68: invokevirtual #51                 // Method java/lang/StackTraceElement.getClassName:()Ljava/lang/String;
+        71: ldc           #22                 // class org/example/jvminternals/ch13/ExceptionJourney
+        73: invokevirtual #56                 // Method java/lang/Class.getName:()Ljava/lang/String;
+        76: invokevirtual #59                 // Method java/lang/String.equals:(Ljava/lang/Object;)Z
+        79: ifeq          98
+        82: getstatic     #7                  // Field java/lang/System.out:Ljava/io/PrintStream;
+        85: aload         6
+        87: invokestatic  #65                 // Method java/lang/String.valueOf:(Ljava/lang/Object;)Ljava/lang/String;
+        90: invokedynamic #69,  0             // InvokeDynamic #1:makeConcatWithConstants:(Ljava/lang/String;)Ljava/lang/String;
+        95: invokevirtual #15                 // Method java/io/PrintStream.println:(Ljava/lang/String;)V
+        98: iinc          5, 1
+       101: goto          53
+       104: iinc          1, 1
+       107: goto          10
+       110: getstatic     #7                  // Field java/lang/System.out:Ljava/io/PrintStream;
+       113: ldc           #70                 // String 阶段=正常结束
+       115: invokevirtual #15                 // Method java/io/PrintStream.println:(Ljava/lang/String;)V
+       118: return
+      Exception table:
+         from    to  target type
+            15    19    22   Class java/lang/IllegalArgumentException
+            15    19    22   Class java/lang/ArithmeticException
+      LineNumberTable:
+        line 10: 0
+        line 11: 8
+        line 13: 15
+        line 22: 19
+        line 14: 22
+        line 15: 23
+        line 17: 41
+        line 18: 66
+        line 19: 82
+        line 17: 98
+        line 11: 104
+        line 24: 110
+        line 25: 118
+      LocalVariableTable:
+        Start  Length  Slot  Name   Signature
+           66      32     6 frame   Ljava/lang/StackTraceElement;
+           23      81     2 failure   Ljava/lang/RuntimeException;
+           10     100     1  mode   I
+            0     119     0  args   [Ljava/lang/String;
+      StackMapTable: number_of_entries = 6
+        frame_type = 252 /* append */
+          offset_delta = 10
+          locals = [ int ]
+        frame_type = 75 /* same_locals_1_stack_item */
+          stack = [ class java/lang/RuntimeException ]
+        frame_type = 255 /* full_frame */
+          offset_delta = 30
+          locals = [ class "[Ljava/lang/String;", int, class java/lang/RuntimeException, class "[Ljava/lang/StackTraceElement;", int, int ]
+          stack = []
+        frame_type = 44 /* same */
+        frame_type = 255 /* full_frame */
+          offset_delta = 5
+          locals = [ class "[Ljava/lang/String;", int ]
+          stack = []
+        frame_type = 250 /* chop */
+          offset_delta = 5
+    MethodParameters:
+      Name                           Flags
+      args
+
+  private static void middle(int);
+    descriptor: (I)V
+    flags: (0x000a) ACC_PRIVATE, ACC_STATIC
+    Code:
+      stack=2, locals=2, args_size=1
+         0: iload_0
+         1: invokestatic  #72                 // Method leaf:(I)V
+         4: getstatic     #7                  // Field java/lang/System.out:Ljava/io/PrintStream;
+         7: iload_0
+         8: invokedynamic #75,  0             // InvokeDynamic #2:makeConcatWithConstants:(I)Ljava/lang/String;
+        13: invokevirtual #15                 // Method java/io/PrintStream.println:(Ljava/lang/String;)V
+        16: goto          34
+        19: astore_1
+        20: getstatic     #7                  // Field java/lang/System.out:Ljava/io/PrintStream;
+        23: iload_0
+        24: invokedynamic #75,  0             // InvokeDynamic #2:makeConcatWithConstants:(I)Ljava/lang/String;
+        29: invokevirtual #15                 // Method java/io/PrintStream.println:(Ljava/lang/String;)V
+        32: aload_1
+        33: athrow
+        34: return
+      Exception table:
+         from    to  target type
+             0     4    19   any
+      LineNumberTable:
+        line 29: 0
+        line 32: 4
+        line 33: 16
+        line 32: 19
+        line 33: 32
+        line 34: 34
+      LocalVariableTable:
+        Start  Length  Slot  Name   Signature
+            0      35     0  mode   I
+      StackMapTable: number_of_entries = 2
+        frame_type = 83 /* same_locals_1_stack_item */
+          stack = [ class java/lang/Throwable ]
+        frame_type = 14 /* same */
+    MethodParameters:
+      Name                           Flags
+      mode
+
+  private static void leaf(int);
+    descriptor: (I)V
+    flags: (0x000a) ACC_PRIVATE, ACC_STATIC
+    Code:
+      stack=3, locals=2, args_size=1
+         0: iload_0
+         1: ifne          14
+         4: new           #27                 // class java/lang/IllegalArgumentException
+         7: dup
+         8: ldc           #78                 // String 教学显式抛出
+        10: invokespecial #80                 // Method java/lang/IllegalArgumentException."<init>":(Ljava/lang/String;)V
+        13: athrow
+        14: iload_0
+        15: iconst_1
+        16: isub
+        17: istore_1
+        18: getstatic     #7                  // Field java/lang/System.out:Ljava/io/PrintStream;
+        21: bipush        12
+        23: iload_1
+        24: idiv
+        25: invokedynamic #82,  0             // InvokeDynamic #3:makeConcatWithConstants:(I)Ljava/lang/String;
+        30: invokevirtual #15                 // Method java/io/PrintStream.println:(Ljava/lang/String;)V
+        33: return
+      LineNumberTable:
+        line 37: 0
+        line 38: 4
+        line 40: 14
+        line 41: 18
+        line 42: 33
+      LocalVariableTable:
+        Start  Length  Slot  Name   Signature
+            0      34     0  mode   I
+           18      16     1 divisor   I
+      StackMapTable: number_of_entries = 1
+        frame_type = 14 /* same */
+    MethodParameters:
+      Name                           Flags
+      mode
+}
+SourceFile: "ExceptionJourney.java"
+BootstrapMethods:
+  0: #117 REF_invokeStatic java/lang/invoke/StringConcatFactory.makeConcatWithConstants:(Ljava/lang/invoke/MethodHandles$Lookup;Ljava/lang/String;Ljava/lang/invoke/MethodType;Ljava/lang/String;[Ljava/lang/Object;)Ljava/lang/invoke/CallSite;
+    Method arguments:
+      #109 阶段=外层捕获；类型=\u0001
+  1: #117 REF_invokeStatic java/lang/invoke/StringConcatFactory.makeConcatWithConstants:(Ljava/lang/invoke/MethodHandles$Lookup;Ljava/lang/String;Ljava/lang/invoke/MethodType;Ljava/lang/String;[Ljava/lang/Object;)Ljava/lang/invoke/CallSite;
+    Method arguments:
+      #111 创建时栈=\u0001
+  2: #117 REF_invokeStatic java/lang/invoke/StringConcatFactory.makeConcatWithConstants:(Ljava/lang/invoke/MethodHandles$Lookup;Ljava/lang/String;Ljava/lang/invoke/MethodType;Ljava/lang/String;[Ljava/lang/Object;)Ljava/lang/invoke/CallSite;
+    Method arguments:
+      #113 阶段=中层finally；模式=\u0001
+  3: #117 REF_invokeStatic java/lang/invoke/StringConcatFactory.makeConcatWithConstants:(Ljava/lang/invoke/MethodHandles$Lookup;Ljava/lang/String;Ljava/lang/invoke/MethodType;Ljava/lang/String;[Ljava/lang/Object;)Ljava/lang/invoke/CallSite;
+    Method arguments:
+      #115 商=\u0001
+InnerClasses:
+  public static final #128= #124 of #126; // Lookup=class java/lang/invoke/MethodHandles$Lookup of class java/lang/invoke/MethodHandles

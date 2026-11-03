@@ -1,0 +1,53 @@
+# 第 7 章运行说明
+
+Java 开发工具包（Java Development Kit，JDK）25.0.5.0.2、Maven 3.10.0、macOS AArch64。命令均在项目根目录执行；本机工具路径按公共基线明确给出。正式正文为 [chapter.html](chapter.html)，源码阅读副本为 [sources.html](sources.html)。
+
+| 示例 | 性质、入口及对应节 | 输入、上限与结束 |
+| --- | --- | --- |
+| CH07-E01 | 正常教学，InitializationJourney；7.2—7.4 | 无输入，一个主线程，阶段日志、递归与反射、字段与虚方法结果后退出 |
+| CH07-E02 | 并发观察，InitializationRace；7.4 | 0—30 秒参数，默认 0；两个工作线程，初始化等待上限为窗口+5 秒；finally 释放门闩、有界 join 与必要中断 |
+| CH07-E03 | 已授权故障，InitializationFailure；7.1、7.4 | 固定两次读取同一 Broken，限定错误捕获与三层原因，随后退出 |
+| CH07-E04 | 已授权二进制故障，variants/binary；7.5 | 同一客户端，五组独立短进程；四种错误未捕获，退出 1 是证据 |
+
+普通聚合只编译三份主源，不运行程序。每次 Java 进程堆为 32—128 MiB，无网络、无压力输入或测试断言。E02 可先用参数 0 普通运行；需要外部观察时用 25，看到 observe.pid 后，在第二个终端执行 jcmd Thread.print -l。主进程窗口自动结束，不依赖工具附加才释放。若需提前停止，对该进程按 Ctrl-C；不要寻找或终止其他 Java 进程。
+
+## 主编译与三组执行
+
+```sh
+task_jdk=/opt/homebrew/Cellar/openjdk@25/25.0.5.0.2/libexec/openjdk.jdk/Contents/Home
+JAVA_HOME="$task_jdk" mvn -B -ntp -pl chapters/ch07-linking-initialization -am compile
+"$task_jdk/bin/java" -Xms32m -Xmx128m -Xlog:class+load=info,class+init=debug:file=chapters/ch07-linking-initialization/evidence/runs/ch07-20261103-01/journey-class.log -cp chapters/ch07-linking-initialization/target/classes org.example.jvminternals.ch07.InitializationJourney
+"$task_jdk/bin/java" -Xms32m -Xmx128m -Xlog:class+load=info,class+init=debug:file=chapters/ch07-linking-initialization/evidence/runs/ch07-20261103-01/failure-class.log -cp chapters/ch07-linking-initialization/target/classes org.example.jvminternals.ch07.InitializationFailure
+"$task_jdk/bin/java" -Xms32m -Xmx128m -Xlog:class+init=debug:file=chapters/ch07-linking-initialization/evidence/runs/ch07-20261103-01/race-class.log -cp chapters/ch07-linking-initialization/target/classes org.example.jvminternals.ch07.InitializationRace 25
+```
+
+E02 本轮进程号 21261；它只是历史身份，不可直接用于新运行。实际窗口内执行 `"$task_jdk/bin/jcmd" 21261 Thread.print -l` 并保存快照。沙箱内启动会限制附加所需本机套接字，本轮启动与只读附加都在批准的本机权限下进行，没有改系统配置。
+
+## 隔离库的编译与执行
+
+同名 Api 分别输出，客户端只针对 v1 编译一次。按顺序运行下列五条命令，每条是新进程；缺类组故意不放库目录，不创建“空库”夹具。
+
+```sh
+task_jdk=/opt/homebrew/Cellar/openjdk@25/25.0.5.0.2/libexec/openjdk.jdk/Contents/Home
+for variant in v1 missing-method private-method instance-method; do
+  "$task_jdk/bin/javac" --release 25 -g -parameters -d "chapters/ch07-linking-initialization/target/binary/$variant" "chapters/ch07-linking-initialization/variants/binary/$variant/org/example/jvminternals/ch07/library/Api.java"
+done
+"$task_jdk/bin/javac" --release 25 -g -parameters -cp chapters/ch07-linking-initialization/target/binary/v1 -d chapters/ch07-linking-initialization/target/binary/client chapters/ch07-linking-initialization/variants/binary/client/org/example/jvminternals/ch07/client/BinaryClient.java
+
+"$task_jdk/bin/java" -Xms32m -Xmx128m -cp chapters/ch07-linking-initialization/target/binary/client:chapters/ch07-linking-initialization/target/binary/v1 org.example.jvminternals.ch07.client.BinaryClient
+"$task_jdk/bin/java" -Xms32m -Xmx128m -cp chapters/ch07-linking-initialization/target/binary/client org.example.jvminternals.ch07.client.BinaryClient
+"$task_jdk/bin/java" -Xms32m -Xmx128m -cp chapters/ch07-linking-initialization/target/binary/client:chapters/ch07-linking-initialization/target/binary/missing-method org.example.jvminternals.ch07.client.BinaryClient
+"$task_jdk/bin/java" -Xms32m -Xmx128m -cp chapters/ch07-linking-initialization/target/binary/client:chapters/ch07-linking-initialization/target/binary/private-method org.example.jvminternals.ch07.client.BinaryClient
+"$task_jdk/bin/java" -Xms32m -Xmx128m -cp chapters/ch07-linking-initialization/target/binary/client:chapters/ch07-linking-initialization/target/binary/instance-method org.example.jvminternals.ch07.client.BinaryClient 
+```
+
+这些是用户明确授权的故障教学输入，不用于自动通过／失败判断，不要把四条非零退出改成断言。库方法和客户端未加入默认类路径。
+
+## 反汇编与实际记录
+
+```sh
+"$task_jdk/bin/javap" -v -p -c -classpath chapters/ch07-linking-initialization/target/classes org.example.jvminternals.ch07.InitializationJourney 'org.example.jvminternals.ch07.InitializationJourney$Values' 'org.example.jvminternals.ch07.InitializationJourney$Recursive' 'org.example.jvminternals.ch07.InitializationJourney$Child'
+"$task_jdk/bin/javap" -v -p -c -classpath chapters/ch07-linking-initialization/target/binary/client org.example.jvminternals.ch07.client.BinaryClient
+```
+
+本轮命令重定向、时间、退出及摘要见 [ch07-20261103-01](evidence/runs/ch07-20261103-01/记录.md)。原始类加载／初始化日志保留在该目录。预期关注常量没有 getstatic、非恒定值触发、相关父类型、递归默认值及同类失败状态；实际结果按记录读取，不以源码排列猜测线程打印顺序。

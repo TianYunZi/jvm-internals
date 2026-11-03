@@ -1,0 +1,22 @@
+跳到正文	#main
+Java 虚拟机原理图文书	../../index.html
+22.1 区域与代际角色	#sec-22-1
+22.2 完整回收周期	#sec-22-2
+22.3 跨区域引用维护	#sec-22-3
+22.4 暂停预测与回收集合	#sec-22-4
+22.5 25版的实现变化	#sec-22-5
+观察与边界	#observe
+来源与回顾	#sources
+源码阅读	sources.html
+运行说明	README.html
+证据索引	evidence/索引.md
+JDK-8343782	https://www.oracle.com/java/technologies/javase/25-relnote-issues.html
+JDK-8351405；经Inside Java链接	https://tschatzl.github.io/2025/08/12/jdk25-g1-serial-parallel-gc-changes.html
+set_candidates_from_marking；G1CSetCandidateGroup	https://github.com/openjdk/jdk25u/blob/1775ea114f649f0314e4e43eb6c802ff16dfab7c/src/hotspot/share/gc/g1/g1CollectionSetCandidates.cpp
+G1Policy::predict_gc_efficiency	https://github.com/openjdk/jdk25u/blob/1775ea114f649f0314e4e43eb6c802ff16dfab7c/src/hotspot/share/gc/g1/g1Policy.cpp
+select_candidates_from_marking	https://github.com/openjdk/jdk25u/blob/1775ea114f649f0314e4e43eb6c802ff16dfab7c/src/hotspot/share/gc/g1/g1CollectionSet.cpp
+G1BarrierSet::write_ref_field_post_slow	https://github.com/openjdk/jdk25u/blob/1775ea114f649f0314e4e43eb6c802ff16dfab7c/src/hotspot/share/gc/g1/g1BarrierSet.cpp
+G1CollectedHeap::is_humongous	https://github.com/openjdk/jdk25u/blob/1775ea114f649f0314e4e43eb6c802ff16dfab7c/src/hotspot/share/gc/g1/g1CollectedHeap.hpp
+上一章	../ch21-basic-collectors/chapter.html
+全书目录	../../index.html
+下一章	../ch23-zgc/chapter.html

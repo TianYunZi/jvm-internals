@@ -1,0 +1,8 @@
+chapters/ch19-gc-foundations/evidence/browser/print/chapter.pdf: OK
+chapters/ch20-safepoints-barriers/evidence/browser/print/chapter.pdf: OK
+chapters/ch21-basic-collectors/evidence/browser/print/chapter.pdf: OK
+chapters/ch22-g1/evidence/browser/print/chapter.pdf: OK
+chapters/ch23-zgc/evidence/browser/print/chapter.pdf: OK
+chapters/ch24-shenandoah/evidence/browser/print/chapter.pdf: OK
+chapters/ch20-safepoints-barriers/evidence/browser/print/sources.pdf: OK
+chapters/ch21-basic-collectors/evidence/browser/print/README.pdf: OK

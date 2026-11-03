@@ -1,0 +1,29 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="960" height="470" viewBox="0 0 960 470" role="img" aria-labelledby="title desc">
+  <title id="title">CH05-F01 局部槽与双单位栈容量</title>
+  <desc id="desc">widenAndAdd的七个局部槽。偏移2执行后操作数栈有两个long值，共四个容量单位；类别2值不表示两个独立可拆操作数。</desc>
+  <rect width="960" height="470" fill="#fff"/>
+  <g font-family="-apple-system,BlinkMacSystemFont,PingFang SC,sans-serif" fill="#24313c">
+    <text x="30" y="40" font-size="25" font-weight="600">CH05-F01 · 槽容量与值的类别分别计算</text>
+    <text x="30" y="85" font-size="19">widenAndAdd(2, 10L, 3.5)：局部变量容量为7，静态方法无接收者槽</text>
+    <g stroke="#537c9e" fill="#e3eef7">
+      <rect x="40" y="115" width="120" height="70"/><rect x="160" y="115" width="240" height="70"/>
+      <rect x="400" y="115" width="240" height="70"/><rect x="640" y="115" width="240" height="70"/>
+    </g>
+    <g font-size="20" text-anchor="middle">
+      <text x="100" y="144">count:int</text><text x="100" y="171">槽0</text>
+      <text x="280" y="144">base:long</text><text x="280" y="171">槽1—2</text>
+      <text x="520" y="144">extra:double</text><text x="520" y="171">槽3—4</text>
+      <text x="760" y="144">partial:long</text><text x="760" y="171">槽5—6（稍后写入）</text>
+    </g>
+    <text x="30" y="235" font-size="20">0:iload_0 → 1:i2l → 2:lload_1 后，栈底在左、栈顶在右</text>
+    <g stroke="#537c9e" fill="#f2ede4">
+      <rect x="80" y="265" width="320" height="70"/><rect x="400" y="265" width="320" height="70"/>
+    </g>
+    <g font-size="21" text-anchor="middle">
+      <text x="240" y="295">long值2</text><text x="240" y="323">占2容量单位</text>
+      <text x="560" y="295">long值10</text><text x="560" y="323">占2容量单位</text>
+    </g>
+    <text x="30" y="380" font-size="20">两个类别2值，共4单位，等于本方法max_stack；不能用dup拆开long。</text>
+    <text x="30" y="421" font-size="17">依据CH05-E01反汇编与规范帧语义推演；不是物理寄存器布局或逐步运行采样。</text>
+  </g>
+</svg>

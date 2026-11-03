@@ -1,0 +1,22 @@
+跳到正文	#main
+Java 虚拟机原理图文书	../../index.html
+20.1 全局暂停的过程	#sec-20-1
+20.2 轮询与到达安全点	#sec-20-2
+20.3 线程局部握手	#sec-20-3
+20.4 根扫描与执行引擎	#sec-20-4
+20.5 屏障、卡表与记忆集	#sec-20-5
+20.6 两类屏障的边界	#sec-20-6
+观察与边界	#observe
+来源与回顾	#sources
+源码阅读	sources.html
+运行说明	README.html
+证据索引	evidence/索引.md
+第19章图19-1	../ch19-gc-foundations/chapter.html#fig-19-1
+SafepointSynchronize::begin / end；SafepointTracing::end	https://github.com/openjdk/jdk25u/blob/1775ea114f649f0314e4e43eb6c802ff16dfab7c/src/hotspot/share/runtime/safepoint.cpp
+Handshake::execute；HandshakeState::process_by_self / try_process	https://github.com/openjdk/jdk25u/blob/1775ea114f649f0314e4e43eb6c802ff16dfab7c/src/hotspot/share/runtime/handshake.cpp
+frame::oops_do_internal；InterpreterOopMap；OopMap	https://github.com/openjdk/jdk25u/blob/1775ea114f649f0314e4e43eb6c802ff16dfab7c/src/hotspot/share/runtime/frame.cpp
+write_ref_field_pre / post；enqueue	https://github.com/openjdk/jdk25u/blob/1775ea114f649f0314e4e43eb6c802ff16dfab7c/src/hotspot/share/gc/g1/g1BarrierSet.inline.hpp
+语言规范17.4.5	https://docs.oracle.com/javase/specs/jls/se25/html/jls-17.html
+上一章	../ch19-gc-foundations/chapter.html
+全书目录	../../index.html
+下一章	../ch21-basic-collectors/chapter.html

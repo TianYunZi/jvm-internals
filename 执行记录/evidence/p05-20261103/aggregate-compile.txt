@@ -1,0 +1,99 @@
+[INFO] Scanning for projects...
+[INFO] ------------------------------------------------------------------------
+[INFO] Reactor Build Order:
+[INFO] 
+[INFO] Java 虚拟机原理书配套源码                                                    [pom]
+[INFO] ch13-interpreter                                                   [jar]
+[INFO] ch14-dispatch                                                      [jar]
+[INFO] ch15-dynamic-invocation                                            [jar]
+[INFO] ch16-tiered-compilation                                            [jar]
+[INFO] ch17-compiler-optimizations                                        [jar]
+[INFO] ch18-deoptimization                                                [jar]
+[INFO] 
+[INFO] ---------------< org.example.jvminternals:jvm-internals >---------------
+[INFO] Building Java 虚拟机原理书配套源码 1.0-SNAPSHOT                              [1/7]
+[INFO]   from pom.xml
+[INFO] --------------------------------[ pom ]---------------------------------
+[INFO] 
+[INFO] -------------< org.example.jvminternals:ch13-interpreter >--------------
+[INFO] Building ch13-interpreter 1.0-SNAPSHOT                             [2/7]
+[INFO]   from chapters/ch13-interpreter/pom.xml
+[INFO] --------------------------------[ jar ]---------------------------------
+[INFO] Loaded 64 auto-discovered prefixes for remote repository apache.snapshots (prefixes-apache.snapshots.txt)
+[INFO] 
+[INFO] --- resources:3.3.1:resources (default-resources) @ ch13-interpreter ---
+[INFO] skip non existing resourceDirectory /Users/xiejinxin/Developer/Java/jvm-internals/chapters/ch13-interpreter/src/main/resources
+[INFO] 
+[INFO] --- compiler:3.14.1:compile (default-compile) @ ch13-interpreter ---
+[INFO] Nothing to compile - all classes are up to date.
+[INFO] 
+[INFO] ---------------< org.example.jvminternals:ch14-dispatch >---------------
+[INFO] Building ch14-dispatch 1.0-SNAPSHOT                                [3/7]
+[INFO]   from chapters/ch14-dispatch/pom.xml
+[INFO] --------------------------------[ jar ]---------------------------------
+[INFO] 
+[INFO] --- resources:3.3.1:resources (default-resources) @ ch14-dispatch ---
+[INFO] skip non existing resourceDirectory /Users/xiejinxin/Developer/Java/jvm-internals/chapters/ch14-dispatch/src/main/resources
+[INFO] 
+[INFO] --- compiler:3.14.1:compile (default-compile) @ ch14-dispatch ---
+[INFO] Nothing to compile - all classes are up to date.
+[INFO] 
+[INFO] ----------< org.example.jvminternals:ch15-dynamic-invocation >----------
+[INFO] Building ch15-dynamic-invocation 1.0-SNAPSHOT                      [4/7]
+[INFO]   from chapters/ch15-dynamic-invocation/pom.xml
+[INFO] --------------------------------[ jar ]---------------------------------
+[INFO] 
+[INFO] --- resources:3.3.1:resources (default-resources) @ ch15-dynamic-invocation ---
+[INFO] skip non existing resourceDirectory /Users/xiejinxin/Developer/Java/jvm-internals/chapters/ch15-dynamic-invocation/src/main/resources
+[INFO] 
+[INFO] --- compiler:3.14.1:compile (default-compile) @ ch15-dynamic-invocation ---
+[INFO] Nothing to compile - all classes are up to date.
+[INFO] 
+[INFO] ----------< org.example.jvminternals:ch16-tiered-compilation >----------
+[INFO] Building ch16-tiered-compilation 1.0-SNAPSHOT                      [5/7]
+[INFO]   from chapters/ch16-tiered-compilation/pom.xml
+[INFO] --------------------------------[ jar ]---------------------------------
+[INFO] 
+[INFO] --- resources:3.3.1:resources (default-resources) @ ch16-tiered-compilation ---
+[INFO] skip non existing resourceDirectory /Users/xiejinxin/Developer/Java/jvm-internals/chapters/ch16-tiered-compilation/src/main/resources
+[INFO] 
+[INFO] --- compiler:3.14.1:compile (default-compile) @ ch16-tiered-compilation ---
+[INFO] Nothing to compile - all classes are up to date.
+[INFO] 
+[INFO] --------< org.example.jvminternals:ch17-compiler-optimizations >--------
+[INFO] Building ch17-compiler-optimizations 1.0-SNAPSHOT                  [6/7]
+[INFO]   from chapters/ch17-compiler-optimizations/pom.xml
+[INFO] --------------------------------[ jar ]---------------------------------
+[INFO] 
+[INFO] --- resources:3.3.1:resources (default-resources) @ ch17-compiler-optimizations ---
+[INFO] skip non existing resourceDirectory /Users/xiejinxin/Developer/Java/jvm-internals/chapters/ch17-compiler-optimizations/src/main/resources
+[INFO] 
+[INFO] --- compiler:3.14.1:compile (default-compile) @ ch17-compiler-optimizations ---
+[INFO] Nothing to compile - all classes are up to date.
+[INFO] 
+[INFO] ------------< org.example.jvminternals:ch18-deoptimization >------------
+[INFO] Building ch18-deoptimization 1.0-SNAPSHOT                          [7/7]
+[INFO]   from chapters/ch18-deoptimization/pom.xml
+[INFO] --------------------------------[ jar ]---------------------------------
+[INFO] 
+[INFO] --- resources:3.3.1:resources (default-resources) @ ch18-deoptimization ---
+[INFO] skip non existing resourceDirectory /Users/xiejinxin/Developer/Java/jvm-internals/chapters/ch18-deoptimization/src/main/resources
+[INFO] 
+[INFO] --- compiler:3.14.1:compile (default-compile) @ ch18-deoptimization ---
+[INFO] Nothing to compile - all classes are up to date.
+[INFO] ------------------------------------------------------------------------
+[INFO] Reactor Summary for Java 虚拟机原理书配套源码 1.0-SNAPSHOT:
+[INFO] 
+[INFO] Java 虚拟机原理书配套源码 .................................... SUCCESS [  0.001 s]
+[INFO] ch13-interpreter ................................... SUCCESS [  0.338 s]
+[INFO] ch14-dispatch ...................................... SUCCESS [  0.007 s]
+[INFO] ch15-dynamic-invocation ............................ SUCCESS [  0.005 s]
+[INFO] ch16-tiered-compilation ............................ SUCCESS [  0.006 s]
+[INFO] ch17-compiler-optimizations ........................ SUCCESS [  0.004 s]
+[INFO] ch18-deoptimization ................................ SUCCESS [  0.004 s]
+[INFO] ------------------------------------------------------------------------
+[INFO] BUILD SUCCESS
+[INFO] ------------------------------------------------------------------------
+[INFO] Total time:  0.456 s
+[INFO] Finished at: 2026-11-03T15:54:48+08:00
+[INFO] ------------------------------------------------------------------------

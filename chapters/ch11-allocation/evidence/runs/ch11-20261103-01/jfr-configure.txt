@@ -1,0 +1,2 @@
+Configuration written successfully to:
+/Users/xiejinxin/Developer/Java/jvm-internals/chapters/ch11-allocation/evidence/runs/ch11-20261103-01/allocation.jfc

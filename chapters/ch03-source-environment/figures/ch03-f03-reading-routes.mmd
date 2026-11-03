@@ -1,0 +1,19 @@
+%% CH03-F03：实际断点与源码关系分层，不补造未采集栈帧。
+flowchart TB
+  subgraph L[加载：启动阶段断点栈]
+    A["SystemDictionary::load_instance_class"] --> B["ClassLoader::load_class"]
+    B --> C["KlassFactory::create_from_stream"]
+    C --> D["ClassFileParser::parse_stream<br/>本次断点2实际命中"]
+  end
+  subgraph R[分配：生成与运行分开]
+    E["TemplateTable::_new<br/>C++模板生成解释器机器码"]
+    F["执行new的生成代码<br/>本轮-Xint、UseTLAB=false"]
+    G["InterpreterRuntime::_new<br/>本次断点3实际命中"]
+    H["InstanceKlass::allocate_instance<br/>下游分配关系据锁定源码"]
+    E -.->|生成，非每次new调用| F
+    F -->|运行时调用| G
+    G --> H
+  end
+  N["两断点都在main-enter之前<br/>未识别为特定Payload事件；不是精确时间图"]
+  D --- N
+  H --- N

@@ -1,0 +1,159 @@
+[0.003s][info][os,thread] Thread attached (tid: 4355, pthread id: 6159020032, stack: 0x000000016f1b3000 - 0x000000016efb0000 (2060K) ).
+[0.005s][info][os,thread] Thread "GC Thread#0" started (pthread id: 6161166336, attributes: stacksize: 2048k, guardsize: 16k, detached). 
+[0.005s][info][os,thread] Thread is alive (tid: 15875, pthread id: 6161166336).
+[0.005s][info][os,thread] Thread "G1 Main Marker" started (pthread id: 6163312640, attributes: stacksize: 2048k, guardsize: 16k, detached). 
+[0.005s][info][os,thread] Thread is alive (tid: 12547, pthread id: 6163312640).
+[0.005s][info][os,thread] Thread "G1 Conc#0" started (pthread id: 6165458944, attributes: stacksize: 2048k, guardsize: 16k, detached). 
+[0.005s][info][os,thread] Thread is alive (tid: 13315, pthread id: 6165458944).
+[0.005s][info][os,thread] Thread "G1 Refine#0" started (pthread id: 6167605248, attributes: stacksize: 2048k, guardsize: 16k, detached). 
+[0.005s][info][os,thread] Thread is alive (tid: 15107, pthread id: 6167605248).
+[0.005s][info][os,thread] Thread "G1 Service" started (pthread id: 6169751552, attributes: stacksize: 2048k, guardsize: 16k, detached). 
+[0.005s][info][os,thread] Thread is alive (tid: 14851, pthread id: 6169751552).
+[0.005s][info][os,thread] Thread "ArchiveWorkerThread" started (pthread id: 6171897856, attributes: stacksize: 2048k, guardsize: 16k, detached). 
+[0.005s][info][os,thread] Thread is alive (tid: 14083, pthread id: 6171897856).
+[0.005s][info][os,thread] Thread "ArchiveWorkerThread" started (pthread id: 6174044160, attributes: stacksize: 2048k, guardsize: 16k, detached). 
+[0.005s][info][os,thread] Thread "ArchiveWorkerThread" started (pthread id: 6176190464, attributes: stacksize: 2048k, guardsize: 16k, detached). 
+[0.005s][info][os,thread] Thread is alive (tid: 16387, pthread id: 6174044160).
+[0.006s][info][os,thread] Thread is alive (tid: 21507, pthread id: 6176190464).
+[0.008s][info][os,thread] Thread finished (tid: 21507, pthread id: 6176190464).
+[0.008s][info][os,thread] Thread finished (tid: 14083, pthread id: 6171897856).
+[0.008s][info][os,thread] Thread finished (tid: 16387, pthread id: 6174044160).
+[0.009s][info][os,thread] Thread "VM Periodic Task Thread" started (pthread id: 6171897856, attributes: stacksize: 2048k, guardsize: 16k, detached). 
+[0.009s][info][os,thread] Thread is alive (tid: 14599, pthread id: 6171897856).
+[0.011s][info][os,thread] Thread "VM Thread" started (pthread id: 6174044160, attributes: stacksize: 2048k, guardsize: 16k, detached). 
+[0.011s][info][os,thread] Thread is alive (tid: 17411, pthread id: 6174044160).
+[0.019s][info][os,thread] Thread "Unknown thread" started (pthread id: 6177337344, attributes: stacksize: 2048k, guardsize: 16k, detached). 
+[0.019s][info][os,thread] Thread is alive (tid: 22795, pthread id: 6177337344).
+[0.019s][info][os,thread] Thread "Unknown thread" started (pthread id: 6179483648, attributes: stacksize: 2048k, guardsize: 16k, detached). 
+[0.019s][info][os,thread] Thread is alive (tid: 23555, pthread id: 6179483648).
+[0.019s][info][os,thread] Thread "Unknown thread" started (pthread id: 6181629952, attributes: stacksize: 2048k, guardsize: 16k, detached). 
+[0.019s][info][os,thread] Thread is alive (tid: 23811, pthread id: 6181629952).
+[0.019s][info][os,thread] Thread "Unknown thread" started (pthread id: 6183776256, attributes: stacksize: 2048k, guardsize: 16k, detached). 
+[0.019s][info][os,thread] Thread "Unknown thread" started (pthread id: 6185922560, attributes: stacksize: 2048k, guardsize: 16k, detached). 
+[0.019s][info][os,thread] Thread is alive (tid: 24323, pthread id: 6183776256).
+[0.019s][info][os,thread] Thread is alive (tid: 29699, pthread id: 6185922560).
+[0.020s][info][os,thread] Thread "Unknown thread" started (pthread id: 6188068864, attributes: stacksize: 2048k, guardsize: 16k, detached). 
+[0.020s][info][os,thread] Thread is alive (tid: 24579, pthread id: 6188068864).
+[0.020s][info][os,thread] Thread "Unknown thread" started (pthread id: 6190215168, attributes: stacksize: 2048k, guardsize: 16k, detached). 
+[0.020s][info][os,thread] Thread is alive (tid: 24835, pthread id: 6190215168).
+[0.022s][info][os,thread] Thread "Unknown thread" started (pthread id: 6192361472, attributes: stacksize: 2048k, guardsize: 16k, detached). 
+[0.022s][info][os,thread] Thread is alive (tid: 25091, pthread id: 6192361472).
+[0.023s][info][os,thread] Thread "Unknown thread" started (pthread id: 6194507776, attributes: stacksize: 2048k, guardsize: 16k, detached). 
+[0.023s][info][os,thread] Thread is alive (tid: 28675, pthread id: 6194507776).
+[0.048s][info][os,thread] Thread "Unknown thread" started (pthread id: 6196654080, attributes: stacksize: 2048k, guardsize: 16k, detached). 
+[0.048s][info][os,thread] Thread is alive (tid: 25603, pthread id: 6196654080).
+[0.075s][info][os,thread] Thread "Unknown thread" started (pthread id: 6198800384, attributes: stacksize: 2048k, guardsize: 16k, detached). 
+[0.075s][info][os,thread] Thread is alive (tid: 28163, pthread id: 6198800384).
+[5.088s][info][os,thread] JavaThread exiting (name: "C2 CompilerThread1", tid: 25603).
+[5.089s][info][os,thread] Thread finished (tid: 25603, pthread id: 6196654080).
+[18.325s][info][os,thread] Thread "Unknown thread" started (pthread id: 6196654080, attributes: stacksize: 2048k, guardsize: 16k, detached). 
+[18.325s][info][os,thread] Thread is alive (tid: 30983, pthread id: 6196654080).
+[18.326s][info][os,thread] JavaThread exiting (name: "Attach Listener", tid: 30983).
+[18.326s][info][os,thread] Thread finished (tid: 30983, pthread id: 6196654080).
+[23.885s][info][os,thread] Thread "Unknown thread" started (pthread id: 6196654080, attributes: stacksize: 2048k, guardsize: 16k, detached). 
+[23.885s][info][os,thread] Thread is alive (tid: 30987, pthread id: 6196654080).
+[23.885s][info][os,thread] JavaThread exiting (name: "Attach Listener", tid: 30987).
+[23.885s][info][os,thread] Thread finished (tid: 30987, pthread id: 6196654080).
+[24.993s][info][os,thread] Thread "Unknown thread" started (pthread id: 6196654080, attributes: stacksize: 2048k, guardsize: 16k, detached). 
+[24.993s][info][os,thread] Thread is alive (tid: 30991, pthread id: 6196654080).
+[24.993s][info][os,thread] JavaThread exiting (name: "Attach Listener", tid: 30991).
+[24.993s][info][os,thread] Thread finished (tid: 30991, pthread id: 6196654080).
+[26.201s][info][os,thread] Thread "Unknown thread" started (pthread id: 6196654080, attributes: stacksize: 2048k, guardsize: 16k, detached). 
+[26.202s][info][os,thread] Thread is alive (tid: 30995, pthread id: 6196654080).
+[26.202s][info][os,thread] JavaThread exiting (name: "Attach Listener", tid: 30995).
+[26.202s][info][os,thread] Thread finished (tid: 30995, pthread id: 6196654080).
+[27.510s][info][os,thread] Thread "Unknown thread" started (pthread id: 6196654080, attributes: stacksize: 2048k, guardsize: 16k, detached). 
+[27.510s][info][os,thread] Thread is alive (tid: 30999, pthread id: 6196654080).
+[27.510s][info][os,thread] JavaThread exiting (name: "Attach Listener", tid: 30999).
+[27.510s][info][os,thread] Thread finished (tid: 30999, pthread id: 6196654080).
+[28.922s][info][os,thread] Thread "Unknown thread" started (pthread id: 6196654080, attributes: stacksize: 2048k, guardsize: 16k, detached). 
+[28.922s][info][os,thread] Thread is alive (tid: 31003, pthread id: 6196654080).
+[28.923s][info][os,thread] JavaThread exiting (name: "Attach Listener", tid: 31003).
+[28.923s][info][os,thread] Thread finished (tid: 31003, pthread id: 6196654080).
+[29.019s][info][os,thread] Thread "Unknown thread" started (pthread id: 6196654080, attributes: stacksize: 2048k, guardsize: 16k, detached). 
+[29.019s][info][os,thread] Thread is alive (tid: 31007, pthread id: 6196654080).
+[29.019s][info][os,thread] JavaThread exiting (name: "Attach Listener", tid: 31007).
+[29.019s][info][os,thread] Thread finished (tid: 31007, pthread id: 6196654080).
+[34.607s][info][os,thread] Thread "Unknown thread" started (pthread id: 6196654080, attributes: stacksize: 2048k, guardsize: 16k, detached). 
+[34.608s][info][os,thread] Thread is alive (tid: 31011, pthread id: 6196654080).
+[34.608s][info][os,thread] JavaThread exiting (name: "Attach Listener", tid: 31011).
+[34.608s][info][os,thread] Thread finished (tid: 31011, pthread id: 6196654080).
+[35.717s][info][os,thread] Thread "Unknown thread" started (pthread id: 6196654080, attributes: stacksize: 2048k, guardsize: 16k, detached). 
+[35.717s][info][os,thread] Thread is alive (tid: 31015, pthread id: 6196654080).
+[35.717s][info][os,thread] JavaThread exiting (name: "Attach Listener", tid: 31015).
+[35.717s][info][os,thread] Thread finished (tid: 31015, pthread id: 6196654080).
+[36.923s][info][os,thread] Thread "Unknown thread" started (pthread id: 6196654080, attributes: stacksize: 2048k, guardsize: 16k, detached). 
+[36.923s][info][os,thread] Thread is alive (tid: 31019, pthread id: 6196654080).
+[36.924s][info][os,thread] JavaThread exiting (name: "Attach Listener", tid: 31019).
+[36.924s][info][os,thread] Thread finished (tid: 31019, pthread id: 6196654080).
+[38.233s][info][os,thread] Thread "Unknown thread" started (pthread id: 6196654080, attributes: stacksize: 2048k, guardsize: 16k, detached). 
+[38.233s][info][os,thread] Thread is alive (tid: 31023, pthread id: 6196654080).
+[38.234s][info][os,thread] JavaThread exiting (name: "Attach Listener", tid: 31023).
+[38.234s][info][os,thread] Thread finished (tid: 31023, pthread id: 6196654080).
+[39.643s][info][os,thread] Thread "Unknown thread" started (pthread id: 6196654080, attributes: stacksize: 2048k, guardsize: 16k, detached). 
+[39.643s][info][os,thread] Thread is alive (tid: 31027, pthread id: 6196654080).
+[39.643s][info][os,thread] JavaThread exiting (name: "Attach Listener", tid: 31027).
+[39.643s][info][os,thread] Thread finished (tid: 31027, pthread id: 6196654080).
+[39.744s][info][os,thread] Thread "Unknown thread" started (pthread id: 6196654080, attributes: stacksize: 2048k, guardsize: 16k, detached). 
+[39.744s][info][os,thread] Thread is alive (tid: 31031, pthread id: 6196654080).
+[39.745s][info][os,thread] JavaThread exiting (name: "Attach Listener", tid: 31031).
+[39.745s][info][os,thread] Thread finished (tid: 31031, pthread id: 6196654080).
+[45.330s][info][os,thread] Thread "Unknown thread" started (pthread id: 6196654080, attributes: stacksize: 2048k, guardsize: 16k, detached). 
+[45.330s][info][os,thread] Thread is alive (tid: 31035, pthread id: 6196654080).
+[45.331s][info][os,thread] JavaThread exiting (name: "Attach Listener", tid: 31035).
+[45.331s][info][os,thread] Thread finished (tid: 31035, pthread id: 6196654080).
+[46.439s][info][os,thread] Thread "Unknown thread" started (pthread id: 6196654080, attributes: stacksize: 2048k, guardsize: 16k, detached). 
+[46.439s][info][os,thread] Thread is alive (tid: 31039, pthread id: 6196654080).
+[46.439s][info][os,thread] JavaThread exiting (name: "Attach Listener", tid: 31039).
+[46.439s][info][os,thread] Thread finished (tid: 31039, pthread id: 6196654080).
+[47.653s][info][os,thread] Thread "Unknown thread" started (pthread id: 6196654080, attributes: stacksize: 2048k, guardsize: 16k, detached). 
+[47.653s][info][os,thread] Thread is alive (tid: 31043, pthread id: 6196654080).
+[47.653s][info][os,thread] JavaThread exiting (name: "Attach Listener", tid: 31043).
+[47.653s][info][os,thread] Thread finished (tid: 31043, pthread id: 6196654080).
+[48.961s][info][os,thread] Thread "Unknown thread" started (pthread id: 6196654080, attributes: stacksize: 2048k, guardsize: 16k, detached). 
+[48.961s][info][os,thread] Thread is alive (tid: 31047, pthread id: 6196654080).
+[48.961s][info][os,thread] JavaThread exiting (name: "Attach Listener", tid: 31047).
+[48.961s][info][os,thread] Thread finished (tid: 31047, pthread id: 6196654080).
+[50.369s][info][os,thread] Thread "Unknown thread" started (pthread id: 6196654080, attributes: stacksize: 2048k, guardsize: 16k, detached). 
+[50.369s][info][os,thread] Thread is alive (tid: 31051, pthread id: 6196654080).
+[50.370s][info][os,thread] JavaThread exiting (name: "Attach Listener", tid: 31051).
+[50.370s][info][os,thread] Thread finished (tid: 31051, pthread id: 6196654080).
+[50.471s][info][os,thread] Thread "Unknown thread" started (pthread id: 6196654080, attributes: stacksize: 2048k, guardsize: 16k, detached). 
+[50.471s][info][os,thread] Thread is alive (tid: 31055, pthread id: 6196654080).
+[50.471s][info][os,thread] JavaThread exiting (name: "Attach Listener", tid: 31055).
+[50.471s][info][os,thread] Thread finished (tid: 31055, pthread id: 6196654080).
+[56.043s][info][os,thread] Thread "Unknown thread" started (pthread id: 6196654080, attributes: stacksize: 2048k, guardsize: 16k, detached). 
+[56.043s][info][os,thread] Thread is alive (tid: 31059, pthread id: 6196654080).
+[56.043s][info][os,thread] JavaThread exiting (name: "Attach Listener", tid: 31059).
+[56.043s][info][os,thread] Thread finished (tid: 31059, pthread id: 6196654080).
+[57.146s][info][os,thread] Thread "Unknown thread" started (pthread id: 6196654080, attributes: stacksize: 2048k, guardsize: 16k, detached). 
+[57.146s][info][os,thread] Thread is alive (tid: 31063, pthread id: 6196654080).
+[57.147s][info][os,thread] JavaThread exiting (name: "Attach Listener", tid: 31063).
+[57.147s][info][os,thread] Thread finished (tid: 31063, pthread id: 6196654080).
+[58.347s][info][os,thread] Thread "Unknown thread" started (pthread id: 6196654080, attributes: stacksize: 2048k, guardsize: 16k, detached). 
+[58.347s][info][os,thread] Thread is alive (tid: 31067, pthread id: 6196654080).
+[58.348s][info][os,thread] JavaThread exiting (name: "Attach Listener", tid: 31067).
+[58.348s][info][os,thread] Thread finished (tid: 31067, pthread id: 6196654080).
+[59.657s][info][os,thread] Thread "Unknown thread" started (pthread id: 6196654080, attributes: stacksize: 2048k, guardsize: 16k, detached). 
+[59.657s][info][os,thread] Thread is alive (tid: 31071, pthread id: 6196654080).
+[59.657s][info][os,thread] JavaThread exiting (name: "Attach Listener", tid: 31071).
+[59.657s][info][os,thread] Thread finished (tid: 31071, pthread id: 6196654080).
+[60.091s][info][os,thread] JavaThread exiting (name: "journey-worker", tid: 28163).
+[60.091s][info][os,thread] Thread finished (tid: 28163, pthread id: 6198800384).
+[60.092s][info][os,thread] JavaThread detaching (name: "main", tid: 4355).
+[60.093s][info][os,thread] Thread attached (tid: 4355, pthread id: 6159020032, stack: 0x000000016f1b3000 - 0x000000016efb0000 (2060K) ).
+[60.093s][info][os,thread] Thread "Unknown thread" started (pthread id: 6196654080, attributes: stacksize: 2048k, guardsize: 16k, detached). 
+[60.093s][info][os,thread] Thread is alive (tid: 28167, pthread id: 6196654080).
+[60.093s][info][os,thread] Thread "Unknown thread" started (pthread id: 6198800384, attributes: stacksize: 2048k, guardsize: 16k, detached). 
+[60.093s][info][os,thread] Thread is alive (tid: 31075, pthread id: 6198800384).
+[60.093s][info][os,thread] JavaThread exiting (name: "Logging-Cleaner", tid: 31075).
+[60.093s][info][os,thread] Thread finished (tid: 31075, pthread id: 6198800384).
+[60.093s][info][os,thread] JavaThread exiting (name: "journey-shutdown", tid: 28167).
+[60.093s][info][os,thread] Thread finished (tid: 28167, pthread id: 6196654080).
+[60.093s][info][os,thread] Thread finished (tid: 14599, pthread id: 6171897856).
+[60.093s][info][os,thread] Thread finished (tid: 15107, pthread id: 6167605248).
+[60.093s][info][os,thread] Thread finished (tid: 14851, pthread id: 6169751552).
+[60.093s][info][os,thread] Thread finished (tid: 12547, pthread id: 6163312640).
+[60.094s][info][os,thread] JavaThread exiting (name: "DestroyJavaVM", tid: 4355).
+[60.094s][info][os,thread] JavaThread exiting (name: "Signal Dispatcher", tid: 23811).
+[60.094s][info][os,thread] Thread finished (tid: 17411, pthread id: 6174044160).

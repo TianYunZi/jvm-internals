@@ -1,0 +1,12 @@
+%% CH06-F03：本例反射访问，不能推广为所有Java访问的统一流程。
+flowchart TB
+  A["client已读library且已找到Secret<br/>不同模块、不同类；包初始不导出且不开放"]
+  B["公开类的公开message方法<br/>普通反射调用检查运行期导出条件"]
+  C["private hidden方法<br/>本例深反射需要包向调用方开放"]
+  D["基线IllegalAccessException<br/>加exports后调用成功"]
+  E["基线或仅exports不可启用<br/>加opens后深反射成功"]
+  A --> B --> D
+  A --> C --> E
+  N["普通Java访问另需可读性等条件<br/>反射检查假定可读；开放包的运行期视图也为导出"]
+  D --- N
+  E --- N

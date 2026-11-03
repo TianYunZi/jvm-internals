@@ -1,0 +1,9 @@
+export JAVA_HOME=/opt/homebrew/Cellar/openjdk@25/25.0.5.0.2/libexec/openjdk.jdk/Contents/Home
+export PATH="$JAVA_HOME/bin:/opt/homebrew/bin:$PATH"
+mvn -B -ntp -pl chapters/ch27-monitors -am compile
+jfr configure --input profile --output chapters/ch27-monitors/target/monitors.jfc 'jdk.JavaMonitorEnter#enabled=true' 'jdk.JavaMonitorEnter#threshold=0ms' 'jdk.JavaMonitorWait#enabled=true' 'jdk.JavaMonitorWait#threshold=0ms' 'jdk.JavaMonitorInflate#enabled=true'
+java -Xmx128m -XX:+StartAttachListener -XX:StartFlightRecording=settings=chapters/ch27-monitors/target/monitors.jfc,filename=chapters/ch27-monitors/target/monitors.jfr,dumponexit=true '-Xlog:monitorinflation=trace:file=chapters/ch27-monitors/target/monitorinflation.log:uptimemillis,level,tags' -cp chapters/ch27-monitors/target/classes org.example.jvminternals.ch27.MonitorJourney
+jfr print --events jdk.JavaMonitorEnter,jdk.JavaMonitorWait,jdk.JavaMonitorInflate chapters/ch27-monitors/target/monitors.jfr
+javap -c -p -classpath chapters/ch27-monitors/target/classes org.example.jvminternals.ch27.MonitorJourney
+java -Xmx128m -XX:+UnlockDiagnosticVMOptions -XX:+PrintFlagsFinal -version
+java -Xmx128m -XX:+UnlockDiagnosticVMOptions -XX:+UseCompactObjectHeaders -XX:+PrintFlagsFinal -version

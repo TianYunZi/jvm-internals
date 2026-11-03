@@ -1,0 +1,269 @@
+{
+  "version": "4.6.0",
+  "theme": "github-light",
+  "languages": [
+    "java",
+    "bash",
+    "xml",
+    "json",
+    "cpp",
+    "c",
+    "asm"
+  ],
+  "plainTextLanguage": "text",
+  "records": [
+    {
+      "page": "chapters/ch33-observability/sources.html",
+      "id": "code-001",
+      "language": "text",
+      "kind": "inline",
+      "sha256": "02c54579012f044fb576ee5495b086e74672a3da4f550309c0c08a436af14611"
+    },
+    {
+      "page": "chapters/ch33-observability/sources.html",
+      "id": "code-002",
+      "language": "java",
+      "kind": "block",
+      "sourceFile": "chapters/ch33-observability/src/main/java/org/example/jvminternals/ch33/ObservationAgent.java",
+      "sha256": "53a0cba776d8bf75143999235df03ff739d89b8a6524589e549b71ef0d6d7836"
+    },
+    {
+      "page": "chapters/ch33-observability/sources.html",
+      "id": "code-003",
+      "language": "text",
+      "kind": "inline",
+      "sha256": "8051e4f41ceff828464554e26f64f88422630cee354ddd92a8e07e44be97b4e4"
+    },
+    {
+      "page": "chapters/ch33-observability/sources.html",
+      "id": "code-004",
+      "language": "java",
+      "kind": "block",
+      "sourceFile": "chapters/ch33-observability/src/main/java/org/example/jvminternals/ch33/ObservationJourney.java",
+      "sha256": "da602209925584f8d7d16494d77022fad484df3cd81b78244a1138a43156606d"
+    },
+    {
+      "page": "chapters/ch33-observability/sources.html",
+      "id": "code-005",
+      "language": "text",
+      "kind": "inline",
+      "sha256": "2f1b646f3e7eca8f30653465a9fb87ac7c275b89aad4d66f0d4d8fa47671a8bc"
+    },
+    {
+      "page": "chapters/ch33-observability/sources.html",
+      "id": "code-006",
+      "language": "java",
+      "kind": "block",
+      "sourceFile": "chapters/ch33-observability/src/main/java/org/example/jvminternals/ch33/ObservedValue.java",
+      "sha256": "3f71e520ec4a1375c037b037c4bcb40d92eecc52d1a3876a24181e560fdba268"
+    },
+    {
+      "page": "chapters/ch33-observability/README.html",
+      "id": "code-001",
+      "language": "bash",
+      "kind": "block",
+      "sha256": "f2158e294e2693a481d05d91a1b8f2360a5db370bd769d9d22ea25cd5446a566"
+    },
+    {
+      "page": "chapters/ch33-observability/README.html",
+      "id": "code-002",
+      "language": "bash",
+      "kind": "block",
+      "sha256": "3faa359a5de337167b591c5655390afead3255f4d66fac8c010f09317a728304"
+    },
+    {
+      "page": "chapters/ch33-observability/README.html",
+      "id": "code-003",
+      "language": "bash",
+      "kind": "block",
+      "sha256": "5fb5c6297d51c6ad3db2fad4412263266ef374ed881f824e224c681bad4dcc59"
+    },
+    {
+      "page": "chapters/ch33-observability/README.html",
+      "id": "code-004",
+      "language": "bash",
+      "kind": "block",
+      "sha256": "5875af6c25b0f8cb27cb475c00b67eae506e3b5f0c0b7bdf2671eb6c37b48c5b"
+    },
+    {
+      "page": "chapters/ch33-observability/README.html",
+      "id": "code-005",
+      "language": "bash",
+      "kind": "block",
+      "sha256": "2f5a37972dff5d126044b12f047c1365cf7073e32def6e80968a30c5000cb410"
+    },
+    {
+      "page": "chapters/ch34-flight-recorder/chapter.html",
+      "id": "code-001",
+      "language": "bash",
+      "kind": "block",
+      "sha256": "a5519a4f20fad14c6dca017a96eb9c0c21cf809b1d333998e4818317f0c27869"
+    },
+    {
+      "page": "chapters/ch34-flight-recorder/sources.html",
+      "id": "code-001",
+      "language": "text",
+      "kind": "inline",
+      "sha256": "e4058121d7e589cc638992efcbbf253620473d00a2124fc12b5fd390dfcf51a6"
+    },
+    {
+      "page": "chapters/ch34-flight-recorder/sources.html",
+      "id": "code-002",
+      "language": "java",
+      "kind": "block",
+      "sourceFile": "chapters/ch34-flight-recorder/src/main/java/org/example/jvminternals/ch34/LatencyJourney.java",
+      "sha256": "cc488d8be3f21e72580cb7400f08e5afc295df4fe80a104a763da996d958874f"
+    },
+    {
+      "page": "chapters/ch34-flight-recorder/README.html",
+      "id": "code-001",
+      "language": "bash",
+      "kind": "block",
+      "sha256": "f2158e294e2693a481d05d91a1b8f2360a5db370bd769d9d22ea25cd5446a566"
+    },
+    {
+      "page": "chapters/ch34-flight-recorder/README.html",
+      "id": "code-002",
+      "language": "bash",
+      "kind": "block",
+      "sha256": "b3f4349ecb531344186684fb3fee70fb742350dc21e0e6c9321b8b452a3d6cba"
+    },
+    {
+      "page": "chapters/ch35-troubleshooting/sources.html",
+      "id": "code-001",
+      "language": "text",
+      "kind": "inline",
+      "sha256": "1cd2dadac3936baecd637b064be59ded3ae4b90a06e2f0eb8d39c12921fb254b"
+    },
+    {
+      "page": "chapters/ch35-troubleshooting/sources.html",
+      "id": "code-002",
+      "language": "java",
+      "kind": "block",
+      "sourceFile": "chapters/ch35-troubleshooting/src/main/java/org/example/jvminternals/ch35/BoundedSymptoms.java",
+      "sha256": "dc34ed8943d82fff88fa8b39027100e18ff7d67958d1ebd85ba8e4c7ddabbe6a"
+    },
+    {
+      "page": "chapters/ch35-troubleshooting/README.html",
+      "id": "code-001",
+      "language": "bash",
+      "kind": "block",
+      "sha256": "f2158e294e2693a481d05d91a1b8f2360a5db370bd769d9d22ea25cd5446a566"
+    },
+    {
+      "page": "chapters/ch35-troubleshooting/README.html",
+      "id": "code-002",
+      "language": "bash",
+      "kind": "block",
+      "sha256": "7f18982f53268ab09e375e21d4bcbb775e7dfc3d02d88415c699ebbe8f44ec28"
+    },
+    {
+      "page": "chapters/ch35-troubleshooting/README.html",
+      "id": "code-003",
+      "language": "bash",
+      "kind": "block",
+      "sha256": "b6df21471b4d34271946c763e73cf241ade04b5be4cf92f3bdea84ea6306e931"
+    },
+    {
+      "page": "chapters/ch36-performance-cases/chapter.html",
+      "id": "code-001",
+      "language": "bash",
+      "kind": "block",
+      "sha256": "456f4fefeeec29e0d64353b19b5b4241cb25e40d4ef9a94990e9df7bb0049511"
+    },
+    {
+      "page": "chapters/ch36-performance-cases/sources.html",
+      "id": "code-001",
+      "language": "text",
+      "kind": "inline",
+      "sha256": "0cad22f0a05f62ab480383b8826d49b25c0d01f527bf869128f7b153a87b0c54"
+    },
+    {
+      "page": "chapters/ch36-performance-cases/sources.html",
+      "id": "code-002",
+      "language": "java",
+      "kind": "block",
+      "sourceFile": "chapters/ch36-performance-cases/src/main/java/org/example/jvminternals/ch36/CaseWorkload.java",
+      "sha256": "4f0ef99354e3258d7b2e3ec3d5b50637a264c5f8563f284a846ba3742a7500b9"
+    },
+    {
+      "page": "chapters/ch36-performance-cases/sources.html",
+      "id": "code-003",
+      "language": "text",
+      "kind": "inline",
+      "sha256": "e7dbf1e577acea91077e561fdbae113b490667b9721483730a6e32cceed03c73"
+    },
+    {
+      "page": "chapters/ch36-performance-cases/sources.html",
+      "id": "code-004",
+      "language": "java",
+      "kind": "block",
+      "sourceFile": "chapters/ch36-performance-cases/benchmarks/src/main/java/org/example/jvminternals/ch36/WorkBenchmark.java",
+      "sha256": "f906d29197f6c10bcdcbd90ccbc502ed8c2b816a11091977128ec5159fb1c9d8"
+    },
+    {
+      "page": "chapters/ch36-performance-cases/sources.html",
+      "id": "code-005",
+      "language": "text",
+      "kind": "inline",
+      "sha256": "7a3858270d2f38aa9473af7453431c36ac99a59a99f125b844f85619810fade9"
+    },
+    {
+      "page": "chapters/ch36-performance-cases/sources.html",
+      "id": "code-006",
+      "language": "java",
+      "kind": "block",
+      "sourceFile": "chapters/ch31-aot-cache/src/main/java/org/example/jvminternals/ch31/CacheJourney.java",
+      "sha256": "6e77e5f6f99edfd95f4348b74fd1dd45f07cf2947cd130b6ba66c4f73ba34683"
+    },
+    {
+      "page": "chapters/ch36-performance-cases/README.html",
+      "id": "code-001",
+      "language": "bash",
+      "kind": "block",
+      "sha256": "950995d57dbfbc6554ebb280f1d18dfd6fe1c0e044ed10e1d54b2bf3e47db4c9"
+    },
+    {
+      "page": "chapters/ch36-performance-cases/README.html",
+      "id": "code-002",
+      "language": "bash",
+      "kind": "block",
+      "sha256": "452d4d6219b2c0c9ce17e388b7b040c0353835d8a8fee4e024c3d2db4bd60598"
+    },
+    {
+      "page": "chapters/ch36-performance-cases/README.html",
+      "id": "code-003",
+      "language": "bash",
+      "kind": "block",
+      "sha256": "3be6d7e3bd8bfe87ca82630d0cfd68e1f3b88f7e1cee9d423529f813f1348f59"
+    },
+    {
+      "page": "chapters/ch36-performance-cases/README.html",
+      "id": "code-004",
+      "language": "bash",
+      "kind": "block",
+      "sha256": "1c3b79996cf7c7f928fe0d025046f0334c8d1eb85f13dcc2dd085ac12d1accf3"
+    },
+    {
+      "page": "chapters/ch36-performance-cases/README.html",
+      "id": "code-005",
+      "language": "bash",
+      "kind": "block",
+      "sha256": "42f8599f0e48ff3375007f051c12708c7345a6a100ab89f999490807a6536993"
+    },
+    {
+      "page": "chapters/ch36-performance-cases/README.html",
+      "id": "code-006",
+      "language": "bash",
+      "kind": "block",
+      "sha256": "a8ef062d501457c7ab464d327e638033c4a771f1406940ed91c2a6048929563b"
+    },
+    {
+      "page": "chapters/ch36-performance-cases/README.html",
+      "id": "code-007",
+      "language": "bash",
+      "kind": "block",
+      "sha256": "74f7a9eb740876611538e3fb100768ea75f1ac91ef7008410d7776e405bd46c2"
+    }
+  ]
+}

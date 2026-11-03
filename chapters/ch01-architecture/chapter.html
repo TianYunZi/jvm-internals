@@ -1,0 +1,81 @@
+<!doctype html>
+<html lang="zh-CN"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><title>第 1 章 Java 虚拟机的职责与整体架构</title><link rel="stylesheet" href="../../assets/book.css"></head><body>
+<a class="skip-link" href="#chapter">跳到正文</a><header class="book-header"><a href="../../index.html">Java 虚拟机原理 / 第一篇</a></header><div class="book-layout">
+<nav class="toc" aria-label="本章目录"><strong>第 1 章 · 运行主线</strong><ol><li><a href="#question">从贯穿程序出发</a></li><li><a href="#sec-1-1">1.1 从源码到机器指令</a></li><li><a href="#sec-1-2">1.2 运行环境的分工</a></li><li><a href="#sec-1-3">1.3 子系统协作</a></li><li><a href="#sec-1-4">1.4 规范与可移植性</a></li><li><a href="#sec-1-5">1.5 启动到退出</a></li><li><a href="#review">回顾与思考</a></li><li><a href="#sources">来源与证据</a></li></ol></nav>
+<main id="chapter"><p class="eyebrow">第一篇 · 第 1 章 · Java Virtual Machine（JVM）</p><h1>JVM 的职责与整体架构</h1>
+<p class="lead">一份 Java 源码经过哪些环节，最终成为处理器执行的指令？先建立运行主线，再逐步拆开其中的机制。</p>
+<p>JVM 定义了一台执行类文件的抽象机器。Java 开发工具包（Java Development Kit，JDK）还包含编译器、启动器、标准类库和诊断工具。理解这两个名称的边界，是把源码、运行现象与操作系统联系起来的第一步。</p>
+<p>本章以 Java 平台标准版（Java Platform, Standard Edition，Java SE）25 为规范，以锁定版本的 OpenJDK HotSpot 为实现对象。本次观察来自 Homebrew OpenJDK 25.0.5.0.2、macOS AArch64；不是对其他实现、平台或所有调度顺序的实测。窄屏中的图、表和长代码可在各自区域横向滚动。</p>
+<section id="question"><h2>先看一次正常程序的生命周期</h2>
+<p>CH01-E01 的 <a href="sources.html#ch01-e01">ProgramJourney</a> 读取一份小文本，创建 Payload 对象，把它交给一个平台工作线程，再等待工作线程结束。它还提供最长 60 秒的观察窗口，供后续两章使用诊断工具；默认观察运行不需要制造错误或堆积负载。</p>
+<pre data-shiki-version="4.6.0" class="shiki github-light" style="background-color:#fff;color:#24292e" tabindex="0"><code data-code-id="code-001" data-code-language="java"><span class="line"><span style="color:#6A737D">// CH01-E01，摘录；完整文件包含退出上限和中断处理。</span></span>
+<span class="line"><span style="color:#24292E">String text </span><span style="color:#D73A49">=</span><span style="color:#24292E"> Files.</span><span style="color:#6F42C1">readString</span><span style="color:#24292E">(Path.</span><span style="color:#6F42C1">of</span><span style="color:#24292E">(args[</span><span style="color:#005CC5">0</span><span style="color:#24292E">]), StandardCharsets.UTF_8);</span></span>
+<span class="line"><span style="color:#24292E">Payload payload </span><span style="color:#D73A49">=</span><span style="color:#D73A49"> new</span><span style="color:#6F42C1"> Payload</span><span style="color:#24292E">(text);</span></span>
+<span class="line"><span style="color:#24292E">Thread worker </span><span style="color:#D73A49">=</span><span style="color:#24292E"> Thread.</span><span style="color:#6F42C1">ofPlatform</span><span style="color:#24292E">().</span><span style="color:#6F42C1">name</span><span style="color:#24292E">(</span><span style="color:#032F62">"journey-worker"</span><span style="color:#24292E">)</span></span>
+<span class="line"><span style="color:#24292E">        .</span><span style="color:#6F42C1">unstarted</span><span style="color:#24292E">(() </span><span style="color:#D73A49">-></span><span style="color:#6F42C1"> process</span><span style="color:#24292E">(payload, ready, release, observationSeconds));</span></span>
+<span class="line"><span style="color:#24292E">worker.</span><span style="color:#6F42C1">start</span><span style="color:#24292E">();</span></span></code></pre>
+<p>源码只有几个动作，却涉及文件系统、对象分配、类加载、线程创建、方法调用与退出。没有一个单独的“Java 执行函数”包办所有工作。下面把这些协作放回不同层次。</p></section>
+<section id="sec-1-1"><h2>1.1 Java 源码、类文件、解释执行与机器码</h2>
+<h3 id="sec-1-1-1">1.1.1 三种语言层次承载不同信息</h3>
+<p>源码用类、表达式、异常处理和线程调用描述程序。<code class="shiki-inline" data-shiki-version="4.6.0" data-code-id="code-004" data-code-language="text"><span>javac</span></code> 根据语言规则生成类文件，保存成员、类型描述、符号引用和字节码。字节码规定抽象操作数栈上的行为，不包含“把这个对象放到本机某个固定地址”这样的承诺。处理器最终执行的仍是本机指令；两层指令集之间需要具体运行时完成转换。[<a href="#s01">S01 §2.1、§2.11</a>]</p>
+<figure><div class="figure-scroll"><img src="figures/ch01-f01-execution-layers.svg" alt="源码、类文件、HotSpot 执行机制与处理器操作系统四层关系" class="mermaid-diagram" style="--diagram-width:384.0px;--diagram-print-width:345.7px" width="384.0" height="677.6"></div><figcaption>CH01-F01：机制示意，区分可移植表示与平台执行。本图不把某条字节码固定对应到唯一机器指令序列。</figcaption></figure>
+<p>本例反汇编中，创建 Payload 的位置为：</p><pre data-shiki-version="4.6.0" class="shiki github-light" style="background-color:#fff;color:#24292e" tabindex="0"><code data-code-id="code-002" data-code-language="text"><span class="line"><span>// 本次 javap 的实际输出片段</span></span>
+<span class="line"><span>115: new           #103  // ProgramJourney$Payload</span></span>
+<span class="line"><span>118: dup</span></span>
+<span class="line"><span>119: aload_2</span></span>
+<span class="line"><span>120: invokespecial #105  // Payload.&#x3C;init>:(Ljava/lang/String;)V</span></span>
+<span class="line"><span>123: astore_3</span></span></code></pre>
+<p>这里的 #103、#105 是这份类文件的常量池索引，不是本机函数地址。<code class="shiki-inline" data-shiki-version="4.6.0" data-code-id="code-005" data-code-language="text"><span>new</span></code>、构造器调用与引用保存也不是一个不可再分的抽象动作。第 4、5、11 章分别解释这些信息的格式、类型状态与分配过程。</p>
+<h3 id="sec-1-1-2">1.1.2 同一个方法可能有多种执行形态</h3>
+<p>解释执行也由处理器执行机器码：处理器执行的是解释器实现字节码语义的代码。即时编译（Just-in-Time Compilation，JIT）则把方法或循环的中间表示转换为专用机器码，后续可以直接进入这些代码。解析、检查、异常处理和运行时辅助仍可能参与，两条路径并非互不相干。</p>
+<p>HotSpot 可以根据计数、类型画像与资源条件选择编译；一个方法还可能失去旧优化假设并恢复到其他执行形态。不能把“编译器存在”写成“每个方法必定编译”，也不能要求全部方法依次经过相同层级。本章的短程序没有为触发某种编译结果而反复运行，编译策略在第 16—18 章用专门证据解释。</p></section>
+<section id="sec-1-2"><h2>1.2 JVM、JDK、标准类库与操作系统的职责</h2>
+<h3 id="sec-1-2-1">1.2.1 启动器把控制交给虚拟机</h3>
+<p>编译器解决“源码是否满足语言规则、怎样生成产物”；启动器处理启动方式、选项与入口；虚拟机建立运行时并执行类文件语义；标准类库提供文件、集合、并发等契约及实现；操作系统提供线程调度、虚拟内存、文件等平台能力。通常一次 <code class="shiki-inline" data-shiki-version="4.6.0" data-code-id="code-006" data-code-language="text"><span>java</span></code> 启动进程承载一个 HotSpot 实例和许多类、线程，不是一份源文件对应一个进程。</p>
+<div class="table-wrap"><table><caption>锁定提交中的常规启动阅读路线</caption><thead><tr><th scope="col">阶段</th><th scope="col">实现入口</th><th scope="col">职责</th></tr></thead><tbody>
+<tr><td>本地启动器</td><td>launcher/main.c → JLI_Launch</td><td>整理启动参数，进入启动库</td></tr><tr><td>启动库</td><td>libjli/java.c：JavaMain → InitializeJVM</td><td>准备选项，通过调用接口创建虚拟机</td></tr><tr><td>HotSpot 创建</td><td>JNI_CreateJavaVM → Threads::create_vm</td><td>建立线程、内存和基础运行时状态</td></tr><tr><td>应用入口</td><td>LoadMainClass → 本例的 invokeStaticMainWithArgs</td><td>加载并选取适用入口，再调用应用</td></tr></tbody></table></div>
+<p>调用接口属于 Java 本地接口（Java Native Interface，JNI）。JDK 25 的启动库还具有实例入口和无参数入口选择分支；本例使用传统的 <code class="shiki-inline" data-shiki-version="4.6.0" data-code-id="code-007" data-code-language="text"><span>public static void main(String[])</span></code>。本章给出职责坐标，第 30 章再深入启动细节，不能用本例入口形态排除版本中其他合法形式。[<a href="#s03">S03</a>]</p>
+<h3 id="sec-1-2-2">1.2.2 本地边界不是“所有代码都变成系统调用”</h3>
+<p>读取文件时，本例的 <code class="shiki-inline" data-shiki-version="4.6.0" data-code-id="code-008" data-code-language="text"><span>Files.readString</span></code> 在锁定源码中调用 <code class="shiki-inline" data-shiki-version="4.6.0" data-code-id="code-009" data-code-language="text"><span>readAllBytes</span></code>，后者打开字节通道并负责关闭；默认 Unix 文件系统提供者创建文件通道。通道实现经本地分派最终使用 <code class="shiki-inline" data-shiki-version="4.6.0" data-code-id="code-010" data-code-language="text"><span>read</span></code> 等操作系统能力。自定义文件系统提供者可以采用其他实现，因此这条源码路线限定于本例默认文件系统。[<a href="#s04">S04</a>]</p>
+<p>启动平台线程时，<code class="shiki-inline" data-shiki-version="4.6.0" data-code-id="code-011" data-code-language="text"><span>Thread.start</span></code> 进入本地 <code class="shiki-inline" data-shiki-version="4.6.0" data-code-id="code-012" data-code-language="text"><span>start0</span></code>，关联到 HotSpot 的 <code class="shiki-inline" data-shiki-version="4.6.0" data-code-id="code-013" data-code-language="text"><span>JVM_StartThread</span></code>，再创建 <code class="shiki-inline" data-shiki-version="4.6.0" data-code-id="code-014" data-code-language="text"><span>JavaThread</span></code>；本次平台的 <code class="shiki-inline" data-shiki-version="4.6.0" data-code-id="code-015" data-code-language="cpp"><span style="color:#6F42C1">os</span><span style="color:#24292E">::create_thread</span></code> 使用 <code class="shiki-inline" data-shiki-version="4.6.0" data-code-id="code-016" data-code-language="text"><span>pthread_create</span></code>。对象分配则由运行时管理的堆支持，快路径可能只移动已有空间中的分配指针，不必每次向系统申请页面。不能把 Java 方法调用、本地函数调用和进入内核当作同一事件。</p></section>
+<section id="sec-1-3"><h2>1.3 虚拟机主要子系统</h2><h3 id="sec-1-3-1">1.3.1 运行时不是一块没有分工的内存</h3>
+<p>类加载与连接建立可被使用的类型信息；运行时内存承载对象、栈、元数据和代码；解释器、编译器与辅助函数共同执行行为；线程保存各自的执行上下文；垃圾收集器依据根与引用关系管理对象存活。这些概念的规范模型与 HotSpot 的具体区域并不逐项同名同形。例如规范的方法区不是要求实现必须有一个名字叫“方法区”的连续地址块。</p>
+<figure><div class="figure-scroll"><img src="figures/ch01-f02-subsystems.svg" alt="类型元数据、执行引擎、线程栈、堆与收集器依赖和访问关系" class="mermaid-diagram" style="--diagram-width:770.0px;--diagram-print-width:660.0px" width="770.0" height="500.8"></div><figcaption>CH01-F02：依赖与访问示意。箭头按标签解释，不代表所有结构在同一块区域，也不暗示它们只能单向协作。</figcaption></figure>
+<h3 id="sec-1-3-2">1.3.2 以 Payload 的创建和调用串联协作</h3>
+<p>执行 <code class="shiki-inline" data-shiki-version="4.6.0" data-code-id="code-017" data-code-language="text"><span>new Payload(text)</span></code> 需要知道目标类型：类型身份、字段和构造器信息必须能被找到并满足相应要求。分配获得对象所需空间，构造器建立字段状态，随后引用被保存并捕获到工作线程的任务中。线程开始后调用 <code class="shiki-inline" data-shiki-version="4.6.0" data-code-id="code-018" data-code-language="text"><span>payload.describe()</span></code>，又要依托接收者、方法信息与当前执行形态。</p>
+<p>这解释了为何“类文件只在启动时有用”“有了堆就能执行一切方法”都不成立。共享对象与各线程栈之间存在持有关系；编译代码也需要类型及其他运行时信息。回收器关注可达性而不是变量在源码中排列的位置，本例的线程捕获使 Payload 在使用期间仍可从执行上下文找到。具体持有图和元数据见第 8 章，分配与回收由第三、第五篇继续拆解。</p></section>
+<section id="sec-1-4"><h2>1.4 规范、实现与平台可移植性</h2><h3 id="sec-1-4-1">1.4.1 哪些必须一致，哪些可以选择</h3>
+<p>类文件结构、指令的可观察语义、类型与访问约束属于规范要求。对象头布局、解释器组织、编译启发式、回收算法及内存区域具体安排属于实现选择，只要满足相关规范约束。HotSpot 是一个实现对象，不能把它的内部类名或某版优化策略写成所有 JVM 的定义。[<a href="#s01">S01 §2.13</a>]</p>
+<p>本书因此区分三类语句：“规范要求某关系成立”要回到规范；“HotSpot 经某个函数处理”要定位锁定提交；“本次输出出现某阶段”要提供实际运行。源码阅读还需区分路径存在与本次必经路径：优化、替代提供者、启动选项和平台条件都可能选择别的路线。</p>
+<h3 id="sec-1-4-2">1.4.2 可移植性有条件</h3>
+<p>硬件无关的类文件使相同格式能被不同平台实现读取，但运行还需要合适的类文件版本和类库、可用的本地库、允许的模块访问及兼容的环境行为。文件路径、编码、权限、线程调度与资源上限不会因为使用 Java 就消失。</p>
+<p>本例明确指定文本编码、不依赖某个固定对象地址；运行说明仍要选择实际工具路径和输入文件。搬移项目后，页面内部链接继续使用相对路径，命令中的本机工具选择则按环境基线调整。“字节码可读”不能替代这些条件。</p></section>
+<section id="sec-1-5"><h2>1.5 从程序启动到退出</h2><h3 id="sec-1-5-1">1.5.1 一条运行主线及其证据</h3>
+<p>启动器先创建运行时并选择入口；应用进入后读取文件、创建对象、启动并协调线程；工作完成后，主线程等待工作线程终止并返回；本次正常关闭过程又执行了已登记的关闭钩子。<code class="shiki-inline" data-shiki-version="4.6.0" data-code-id="code-019" data-code-language="text"><span>main</span></code> 返回与“所有 Java 进程都必定立即退出”不是同义表达：仍存活的非守护线程等条件会影响关闭。[<a href="#s02">S02 §5.2、§5.7</a>；<a href="#s05">S05</a>]</p>
+<figure><div class="figure-scroll"><img src="figures/ch01-f03-lifecycle.svg" alt="启动器创建运行时，main 创建对象并启动工作线程，工作线程就绪，观察窗口结束后释放并等待其结束，main 返回后正常关闭" class="mermaid-diagram" style="--diagram-width:661.0px;--diagram-print-width:432.2px" width="661.0" height="933.0"></div><figcaption>CH01-F03：main 前依锁定源码，应用阶段依本次输出与程序同步关系。图中顺序不表示稳定吞吐或编译／回收的测量时间线。</figcaption></figure>
+<pre data-shiki-version="4.6.0" class="shiki github-light" style="background-color:#fff;color:#24292e" tabindex="0"><code data-code-id="code-003" data-code-language="text"><span class="line"><span>// CH01-E01，本次实际输出摘录，elapsed_ms 从本类初始化计时</span></span>
+<span class="line"><span>elapsed_ms=41 thread=main stage=main-enter</span></span>
+<span class="line"><span>elapsed_ms=44 thread=main stage=object-created</span></span>
+<span class="line"><span>elapsed_ms=46 thread=journey-worker stage=worker-enter</span></span>
+<span class="line"><span>elapsed_ms=47 thread=journey-worker stage=worker-ready</span></span>
+<span class="line"><span>pid=14223 observation_seconds=0</span></span>
+<span class="line"><span>elapsed_ms=52 thread=main stage=observation-window</span></span>
+<span class="line"><span>elapsed_ms=52 thread=journey-worker stage=worker-return</span></span>
+<span class="line"><span>elapsed_ms=52 thread=main stage=main-return</span></span>
+<span class="line"><span>elapsed_ms=53 thread=journey-shutdown stage=shutdown-hook</span></span></code></pre>
+<p>这些数字是本次记录，不是启动性能指标。相对时钟从本类初始化算起，类加载日志的虚拟机 uptime 又有另一计时原点，不能把二者直接相减得出“加载花了多久”。源码中的 ready 与 release 是两个不同的同步信号：先确认工作线程就绪，再在观察窗口到期时释放它，最后用 join 等待终止。线程 start 和成功观察其终止所建立的顺序依据语言规则，不来自日志恰好按某顺序显示。[<a href="#s06">S06</a>]</p>
+<h3 id="sec-1-5-2">1.5.2 哪些事件可能交错发生</h3>
+<p>类可以在后续需要时继续加载；线程可以并发执行或等待；对象不断被创建和使用；运行时可能按需编译或回收。它们不是“加载全部类 → 编译全部方法 → 运行 → 一次回收”的单行流水线。本次日志在 ProgramJourney 之后记录了 Payload 及任务相关生成类的加载，足以反驳把整个程序都压成单一启动动作的理解，不能证明所有类只能按这一顺序加载。</p>
+<p>关闭钩子也只属于特定关闭流程，本例观察到它不意味着任何外部终止、崩溃或强制结束都保证执行。后续章节分别追踪类的生命周期、内存与对象、方法执行、回收协作、线程语义和故障证据。</p></section>
+<section id="observations"><h2>运行与观察边界</h2><p>本轮使用 Maven 最小编译，1 个源文件成功；普通进程设置 <code class="shiki-inline" data-shiki-version="4.6.0" data-code-id="code-020" data-code-language="text"><span>-Xms32m -Xmx128m</span></code>，观察秒数为 0，正常退出 0；另用 <code class="shiki-inline" data-shiki-version="4.6.0" data-code-id="code-021" data-code-language="text"><span>javap</span></code> 反汇编。完整条件、源文件摘要、命令及原始输出见 <a href="README.html">运行说明</a>与<a href="evidence/runs/ch01-20261103-01/记录.md">本次记录</a>。程序的标准输出是教学数据，少量中文日志标明生命周期，不把打印开销当作待优化结论。</p>
+<p>第 2、3 章复用有界观察窗口采集进程、内存、线程及工具证据。一次普通运行不证明并发算法的所有交错，也不说明某次分配、编译或回收的成本。没有编写测试断言或为了结果“更明显”追加无界负载。</p></section>
+<section id="review"><h2>回顾与思考</h2><p>JVM 让硬件无关的表示获得可执行语义；JDK、类库、HotSpot 与操作系统分工协作。源码、类文件、执行引擎和本机指令之间的边界，决定了我们应该从哪类证据回答问题。</p><ol><li>为什么一个源文件里的 new 不能直接解释成一次操作系统内存申请？</li><li>解释执行时，处理器实际执行的是什么代码？</li><li>本例 main-return 与 shutdown-hook 之间的关系，哪些是本次观察，哪些需要规范依据？</li><li>为什么换一份本地库可能影响“同一个类文件”的可移植性？</li></ol><p>第 2 章补齐处理器与操作系统基础，第 3 章把本章的源码路线和工具证据变成可以复查的工作方法。</p></section>
+<section id="sources" class="sources"><h2>来源与证据</h2><ol>
+<li id="s01">S01：<a href="https://docs.oracle.com/javase/specs/jvms/se25/html/jvms-2.html">Java SE 25 虚拟机规范第 2 章</a>，§2.1、§2.5—2.6、§2.11—2.13。</li>
+<li id="s02">S02：<a href="https://docs.oracle.com/javase/specs/jvms/se25/html/jvms-5.html">虚拟机规范第 5 章</a>，启动、加载、连接、初始化与终止。</li>
+<li id="s03">S03：锁定提交中的 launcher/main.c、libjli/java.c、prims/jni.cpp 与 runtime/threads.cpp；精确符号与路径见<a href="evidence/索引.md">证据索引</a>。</li>
+<li id="s04">S04：同一提交中的 Files.java、UnixFileSystemProvider.java、FileChannelImpl.java、UnixFileDispatcherImpl.c；以及 Thread.java、JVM_StartThread、JavaThread 和 os_bsd.cpp。</li>
+<li id="s05">S05：<a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Thread.html">JDK 25 Thread 文档</a>，线程启动、等待、非守护线程与关闭条件。</li>
+<li id="s06">S06：<a href="https://docs.oracle.com/javase/specs/jls/se25/html/jls-17.html#jls-17.4.5">语言规范 §17.4.5</a>；本章只使用 start 与终止观察关系，完整并发推理归第 25 章。</li></ol><p>观察 O01：<a href="evidence/runs/ch01-20261103-01/program.txt">阶段输出</a>、<a href="evidence/runs/ch01-20261103-01/class-load.log">类加载记录</a>、<a href="evidence/runs/ch01-20261103-01/program.javap.txt">反汇编</a>。</p></section>
+<nav class="chapter-nav" aria-label="章节导航"><a href="../../index.html">返回全书目录</a><a href="../ch02-computer-basics/chapter.html">下一章：第 2 章</a></nav>
+</main></div></body></html>

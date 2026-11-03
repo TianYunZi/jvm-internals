@@ -1,0 +1,302 @@
+Compiled from "ProgramJourney.java"
+public final class org.example.jvminternals.ch01.ProgramJourney {
+  private static final java.lang.System$Logger LOGGER;
+
+  private static final long START_NANOS;
+
+  private org.example.jvminternals.ch01.ProgramJourney();
+    Code:
+         0: aload_0
+         1: invokespecial #1                  // Method java/lang/Object."<init>":()V
+         4: return
+
+  public static void main(java.lang.String[]) throws java.io.IOException, java.lang.InterruptedException;
+    Code:
+         0: aload_0
+         1: arraylength
+         2: iconst_2
+         3: if_icmpeq     16
+         6: new           #7                  // class java/lang/IllegalArgumentException
+         9: dup
+        10: ldc           #9                  // String 用法：ProgramJourney <文本文件> <观察秒数 0—60>
+        12: invokespecial #11                 // Method java/lang/IllegalArgumentException."<init>":(Ljava/lang/String;)V
+        15: athrow
+        16: aload_0
+        17: iconst_1
+        18: aaload
+        19: invokestatic  #14                 // Method java/lang/Integer.parseInt:(Ljava/lang/String;)I
+        22: istore_1
+        23: iload_1
+        24: iflt          33
+        27: iload_1
+        28: bipush        60
+        30: if_icmple     43
+        33: new           #7                  // class java/lang/IllegalArgumentException
+        36: dup
+        37: ldc           #20                 // String 观察秒数必须位于 0—60，避免教学进程长期占用资源
+        39: invokespecial #11                 // Method java/lang/IllegalArgumentException."<init>":(Ljava/lang/String;)V
+        42: athrow
+        43: getstatic     #22                 // Field LOGGER:Ljava/lang/System$Logger;
+        46: getstatic     #28                 // Field java/lang/System$Logger$Level.INFO:Ljava/lang/System$Logger$Level;
+        49: ldc           #34                 // String 贯穿程序启动，观察窗口为 {0} 秒
+        51: iconst_1
+        52: anewarray     #2                  // class java/lang/Object
+        55: dup
+        56: iconst_0
+        57: iload_1
+        58: invokestatic  #36                 // Method java/lang/Integer.valueOf:(I)Ljava/lang/Integer;
+        61: aastore
+        62: invokeinterface #40,  4           // InterfaceMethod java/lang/System$Logger.log:(Ljava/lang/System$Logger$Level;Ljava/lang/String;[Ljava/lang/Object;)V
+        67: invokestatic  #46                 // Method java/lang/Runtime.getRuntime:()Ljava/lang/Runtime;
+        70: invokestatic  #52                 // Method java/lang/Thread.ofPlatform:()Ljava/lang/Thread$Builder$OfPlatform;
+        73: ldc           #58                 // String journey-shutdown
+        75: invokeinterface #60,  2           // InterfaceMethod java/lang/Thread$Builder$OfPlatform.name:(Ljava/lang/String;)Ljava/lang/Thread$Builder$OfPlatform;
+        80: invokedynamic #66,  0             // InvokeDynamic #0:run:()Ljava/lang/Runnable;
+        85: invokeinterface #70,  2           // InterfaceMethod java/lang/Thread$Builder$OfPlatform.unstarted:(Ljava/lang/Runnable;)Ljava/lang/Thread;
+        90: invokevirtual #74                 // Method java/lang/Runtime.addShutdownHook:(Ljava/lang/Thread;)V
+        93: ldc           #78                 // String main-enter
+        95: invokestatic  #80                 // Method phase:(Ljava/lang/String;)V
+        98: aload_0
+        99: iconst_0
+       100: aaload
+       101: iconst_0
+       102: anewarray     #83                 // class java/lang/String
+       105: invokestatic  #85                 // InterfaceMethod java/nio/file/Path.of:(Ljava/lang/String;[Ljava/lang/String;)Ljava/nio/file/Path;
+       108: getstatic     #91                 // Field java/nio/charset/StandardCharsets.UTF_8:Ljava/nio/charset/Charset;
+       111: invokestatic  #97                 // Method java/nio/file/Files.readString:(Ljava/nio/file/Path;Ljava/nio/charset/Charset;)Ljava/lang/String;
+       114: astore_2
+       115: new           #103                // class org/example/jvminternals/ch01/ProgramJourney$Payload
+       118: dup
+       119: aload_2
+       120: invokespecial #105                // Method org/example/jvminternals/ch01/ProgramJourney$Payload."<init>":(Ljava/lang/String;)V
+       123: astore_3
+       124: ldc           #106                // String object-created
+       126: invokestatic  #80                 // Method phase:(Ljava/lang/String;)V
+       129: new           #108                // class java/util/concurrent/CountDownLatch
+       132: dup
+       133: iconst_1
+       134: invokespecial #110                // Method java/util/concurrent/CountDownLatch."<init>":(I)V
+       137: astore        4
+       139: new           #108                // class java/util/concurrent/CountDownLatch
+       142: dup
+       143: iconst_1
+       144: invokespecial #110                // Method java/util/concurrent/CountDownLatch."<init>":(I)V
+       147: astore        5
+       149: invokestatic  #52                 // Method java/lang/Thread.ofPlatform:()Ljava/lang/Thread$Builder$OfPlatform;
+       152: ldc           #113                // String journey-worker
+       154: invokeinterface #60,  2           // InterfaceMethod java/lang/Thread$Builder$OfPlatform.name:(Ljava/lang/String;)Ljava/lang/Thread$Builder$OfPlatform;
+       159: aload_3
+       160: aload         4
+       162: aload         5
+       164: iload_1
+       165: invokedynamic #115,  0            // InvokeDynamic #1:run:(Lorg/example/jvminternals/ch01/ProgramJourney$Payload;Ljava/util/concurrent/CountDownLatch;Ljava/util/concurrent/CountDownLatch;I)Ljava/lang/Runnable;
+       170: invokeinterface #70,  2           // InterfaceMethod java/lang/Thread$Builder$OfPlatform.unstarted:(Ljava/lang/Runnable;)Ljava/lang/Thread;
+       175: astore        6
+       177: aload         6
+       179: invokevirtual #118                // Method java/lang/Thread.start:()V
+       182: aload         4
+       184: ldc2_w        #121                // long 5l
+       187: getstatic     #123                // Field java/util/concurrent/TimeUnit.SECONDS:Ljava/util/concurrent/TimeUnit;
+       190: invokevirtual #129                // Method java/util/concurrent/CountDownLatch.await:(JLjava/util/concurrent/TimeUnit;)Z
+       193: ifne          206
+       196: new           #133                // class java/lang/IllegalStateException
+       199: dup
+       200: ldc           #135                // String 工作线程未在教学准备期限内就绪
+       202: invokespecial #137                // Method java/lang/IllegalStateException."<init>":(Ljava/lang/String;)V
+       205: athrow
+       206: getstatic     #138                // Field java/lang/System.out:Ljava/io/PrintStream;
+       209: ldc           #144                // String pid=%d observation_seconds=%d%n
+       211: iconst_2
+       212: anewarray     #2                  // class java/lang/Object
+       215: dup
+       216: iconst_0
+       217: invokestatic  #146                // InterfaceMethod java/lang/ProcessHandle.current:()Ljava/lang/ProcessHandle;
+       220: invokeinterface #152,  1          // InterfaceMethod java/lang/ProcessHandle.pid:()J
+       225: invokestatic  #156                // Method java/lang/Long.valueOf:(J)Ljava/lang/Long;
+       228: aastore
+       229: dup
+       230: iconst_1
+       231: iload_1
+       232: invokestatic  #36                 // Method java/lang/Integer.valueOf:(I)Ljava/lang/Integer;
+       235: aastore
+       236: invokevirtual #161                // Method java/io/PrintStream.printf:(Ljava/lang/String;[Ljava/lang/Object;)Ljava/io/PrintStream;
+       239: pop
+       240: ldc           #167                // String observation-window
+       242: invokestatic  #80                 // Method phase:(Ljava/lang/String;)V
+       245: aload         5
+       247: iload_1
+       248: i2l
+       249: getstatic     #123                // Field java/util/concurrent/TimeUnit.SECONDS:Ljava/util/concurrent/TimeUnit;
+       252: invokevirtual #129                // Method java/util/concurrent/CountDownLatch.await:(JLjava/util/concurrent/TimeUnit;)Z
+       255: pop
+       256: aload         5
+       258: invokevirtual #169                // Method java/util/concurrent/CountDownLatch.countDown:()V
+       261: aload         6
+       263: ldc2_w        #121                // long 5l
+       266: invokestatic  #172                // Method java/time/Duration.ofSeconds:(J)Ljava/time/Duration;
+       269: invokevirtual #178                // Method java/lang/Thread.join:(Ljava/time/Duration;)Z
+       272: ifne          336
+       275: aload         6
+       277: invokevirtual #182                // Method java/lang/Thread.interrupt:()V
+       280: aload         6
+       282: ldc2_w        #121                // long 5l
+       285: invokestatic  #172                // Method java/time/Duration.ofSeconds:(J)Ljava/time/Duration;
+       288: invokevirtual #178                // Method java/lang/Thread.join:(Ljava/time/Duration;)Z
+       291: pop
+       292: goto          336
+       295: astore        7
+       297: aload         5
+       299: invokevirtual #169                // Method java/util/concurrent/CountDownLatch.countDown:()V
+       302: aload         6
+       304: ldc2_w        #121                // long 5l
+       307: invokestatic  #172                // Method java/time/Duration.ofSeconds:(J)Ljava/time/Duration;
+       310: invokevirtual #178                // Method java/lang/Thread.join:(Ljava/time/Duration;)Z
+       313: ifne          333
+       316: aload         6
+       318: invokevirtual #182                // Method java/lang/Thread.interrupt:()V
+       321: aload         6
+       323: ldc2_w        #121                // long 5l
+       326: invokestatic  #172                // Method java/time/Duration.ofSeconds:(J)Ljava/time/Duration;
+       329: invokevirtual #178                // Method java/lang/Thread.join:(Ljava/time/Duration;)Z
+       332: pop
+       333: aload         7
+       335: athrow
+       336: ldc           #185                // String main-return
+       338: invokestatic  #80                 // Method phase:(Ljava/lang/String;)V
+       341: getstatic     #22                 // Field LOGGER:Ljava/lang/System$Logger;
+       344: getstatic     #28                 // Field java/lang/System$Logger$Level.INFO:Ljava/lang/System$Logger$Level;
+       347: ldc           #187                // String 贯穿程序结束，工作线程存活状态为 {0}
+       349: iconst_1
+       350: anewarray     #2                  // class java/lang/Object
+       353: dup
+       354: iconst_0
+       355: aload         6
+       357: invokevirtual #189                // Method java/lang/Thread.isAlive:()Z
+       360: invokestatic  #193                // Method java/lang/Boolean.valueOf:(Z)Ljava/lang/Boolean;
+       363: aastore
+       364: invokeinterface #40,  4           // InterfaceMethod java/lang/System$Logger.log:(Ljava/lang/System$Logger$Level;Ljava/lang/String;[Ljava/lang/Object;)V
+       369: return
+      Exception table:
+         from    to  target type
+           182   256   295   any
+           295   297   295   any
+
+  private static void process(org.example.jvminternals.ch01.ProgramJourney$Payload, java.util.concurrent.CountDownLatch, java.util.concurrent.CountDownLatch, int);
+    Code:
+         0: ldc           #198                // String worker-enter
+         2: invokestatic  #80                 // Method phase:(Ljava/lang/String;)V
+         5: getstatic     #138                // Field java/lang/System.out:Ljava/io/PrintStream;
+         8: aload_0
+         9: invokevirtual #200                // Method org/example/jvminternals/ch01/ProgramJourney$Payload.describe:()Ljava/lang/String;
+        12: invokedynamic #204,  0            // InvokeDynamic #2:makeConcatWithConstants:(Ljava/lang/String;)Ljava/lang/String;
+        17: invokevirtual #208                // Method java/io/PrintStream.println:(Ljava/lang/String;)V
+        20: ldc           #211                // String worker-ready
+        22: invokestatic  #80                 // Method phase:(Ljava/lang/String;)V
+        25: aload_1
+        26: invokevirtual #169                // Method java/util/concurrent/CountDownLatch.countDown:()V
+        29: aload_2
+        30: iload_3
+        31: i2l
+        32: ldc2_w        #121                // long 5l
+        35: ladd
+        36: getstatic     #123                // Field java/util/concurrent/TimeUnit.SECONDS:Ljava/util/concurrent/TimeUnit;
+        39: invokevirtual #129                // Method java/util/concurrent/CountDownLatch.await:(JLjava/util/concurrent/TimeUnit;)Z
+        42: pop
+        43: goto          67
+        46: astore        4
+        48: invokestatic  #215                // Method java/lang/Thread.currentThread:()Ljava/lang/Thread;
+        51: invokevirtual #182                // Method java/lang/Thread.interrupt:()V
+        54: getstatic     #22                 // Field LOGGER:Ljava/lang/System$Logger;
+        57: getstatic     #219                // Field java/lang/System$Logger$Level.WARNING:Ljava/lang/System$Logger$Level;
+        60: ldc           #222                // String 工作线程收到中断，结束观察等待
+        62: invokeinterface #224,  3          // InterfaceMethod java/lang/System$Logger.log:(Ljava/lang/System$Logger$Level;Ljava/lang/String;)V
+        67: ldc           #227                // String worker-return
+        69: invokestatic  #80                 // Method phase:(Ljava/lang/String;)V
+        72: return
+      Exception table:
+         from    to  target type
+            29    43    46   Class java/lang/InterruptedException
+
+  private static void phase(java.lang.String);
+    Code:
+         0: getstatic     #138                // Field java/lang/System.out:Ljava/io/PrintStream;
+         3: ldc           #229                // String elapsed_ms=%d thread=%s stage=%s%n
+         5: iconst_3
+         6: anewarray     #2                  // class java/lang/Object
+         9: dup
+        10: iconst_0
+        11: invokestatic  #231                // Method java/lang/System.nanoTime:()J
+        14: getstatic     #234                // Field START_NANOS:J
+        17: lsub
+        18: ldc2_w        #238                // long 1000000l
+        21: ldiv
+        22: invokestatic  #156                // Method java/lang/Long.valueOf:(J)Ljava/lang/Long;
+        25: aastore
+        26: dup
+        27: iconst_1
+        28: invokestatic  #215                // Method java/lang/Thread.currentThread:()Ljava/lang/Thread;
+        31: invokevirtual #240                // Method java/lang/Thread.getName:()Ljava/lang/String;
+        34: aastore
+        35: dup
+        36: iconst_2
+        37: aload_0
+        38: aastore
+        39: invokevirtual #161                // Method java/io/PrintStream.printf:(Ljava/lang/String;[Ljava/lang/Object;)Ljava/io/PrintStream;
+        42: pop
+        43: return
+
+  private static void lambda$main$1(org.example.jvminternals.ch01.ProgramJourney$Payload, java.util.concurrent.CountDownLatch, java.util.concurrent.CountDownLatch, int);
+    Code:
+         0: aload_0
+         1: aload_1
+         2: aload_2
+         3: iload_3
+         4: invokestatic  #243                // Method process:(Lorg/example/jvminternals/ch01/ProgramJourney$Payload;Ljava/util/concurrent/CountDownLatch;Ljava/util/concurrent/CountDownLatch;I)V
+         7: return
+
+  private static void lambda$main$0();
+    Code:
+         0: ldc           #247                // String shutdown-hook
+         2: invokestatic  #80                 // Method phase:(Ljava/lang/String;)V
+         5: return
+
+  static {};
+    Code:
+         0: ldc           #23                 // class org/example/jvminternals/ch01/ProgramJourney
+         2: invokevirtual #249                // Method java/lang/Class.getName:()Ljava/lang/String;
+         5: invokestatic  #252                // Method java/lang/System.getLogger:(Ljava/lang/String;)Ljava/lang/System$Logger;
+         8: putstatic     #22                 // Field LOGGER:Ljava/lang/System$Logger;
+        11: invokestatic  #231                // Method java/lang/System.nanoTime:()J
+        14: putstatic     #234                // Field START_NANOS:J
+        17: return
+}
+Compiled from "ProgramJourney.java"
+final class org.example.jvminternals.ch01.ProgramJourney$Payload {
+  private final java.lang.String text;
+
+  private final byte[] workspace;
+
+  private org.example.jvminternals.ch01.ProgramJourney$Payload(java.lang.String);
+    Code:
+         0: aload_0
+         1: invokespecial #1                  // Method java/lang/Object."<init>":()V
+         4: aload_0
+         5: sipush        1024
+         8: newarray       byte
+        10: putfield      #7                  // Field workspace:[B
+        13: aload_0
+        14: aload_1
+        15: putfield      #13                 // Field text:Ljava/lang/String;
+        18: return
+
+  private java.lang.String describe();
+    Code:
+         0: aload_0
+         1: getfield      #13                 // Field text:Ljava/lang/String;
+         4: invokevirtual #17                 // Method java/lang/String.strip:()Ljava/lang/String;
+         7: aload_0
+         8: getfield      #7                  // Field workspace:[B
+        11: arraylength
+        12: invokedynamic #23,  0             // InvokeDynamic #0:makeConcatWithConstants:(Ljava/lang/String;I)Ljava/lang/String;
+        17: areturn
+}

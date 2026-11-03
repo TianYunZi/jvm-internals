@@ -1,0 +1,37 @@
+第14章运行说明
+
+返回正文 · 源码阅读
+
+Java开发工具包（Java Development Kit，JDK）25.0.5.0.2、HotSpot、macOS AArch64；工具显式选用下列目录。源码为本章src/main/java，页面阅读副本为sources.html。
+
+示例与授权
+
+CH14-E01 DispatchJourney：普通四种调用与接收者分布观察；100000＋200000次，单线程、64兆二进制字节（mebibyte，MiB）堆，未计时、正常结束。
+
+用户“执行P05”授权普通教学源码与有界机制观察；不包含测试框架、断言、故障耗尽或性能基准。只打印阶段与必要结果，不在热点内打印。所有命令在项目根目录执行；编译不自动运行进程。
+
+完整命令
+export JAVA_HOME=/opt/homebrew/Cellar/openjdk@25/25.0.5.0.2/libexec/openjdk.jdk/Contents/Home
+export PATH="$JAVA_HOME/bin:/opt/homebrew/bin:$PATH"
+mvn -B -ntp -pl chapters/ch14-dispatch -am compile
+java -Xms16m -Xmx64m -Xbatch -XX:+UnlockDiagnosticVMOptions -XX:+LogCompilation -XX:LogFile=chapters/ch14-dispatch/evidence/runs/ch14-20261103-01/compilation.xml -XX:+PrintCompilation -XX:+PrintInlining '-XX:CompileCommand=dontinline,org.example.jvminternals.ch14.DispatchJourney::call' '-XX:CompileCommand=print,org.example.jvminternals.ch14.DispatchJourney::call' -cp chapters/ch14-dispatch/target/classes org.example.jvminternals.ch14.DispatchJourney
+javap -c -v -p -classpath chapters/ch14-dispatch/target/classes org.example.jvminternals.ch14.DispatchJourney 'org.example.jvminternals.ch14.DispatchJourney$First' 
+
+实际观察与边界
+
+call第3／4层编译，首次Server Compiler（C2）按First 5119／5119画像内联apply，四接收者阶段发生uncommon trap并重编译。阶段输出5000050000、25000450000；stdout.txt和compilation.xml保留完整事件。
+
+hsdis库加载失败，只有机器码字节／注释，未取得助记符反汇编。不是性能基准。四类预先加载，本例不能支持新类加载导致依赖失效的结论。CH18承接陷阱与恢复。
+
+原始文本及退出情况见evidence/runs/ch14-20261103-01/记录.md。观察是具体配置的结果，不提供性能排名或跨平台保证。正式正文、本章配图、源码与相应编号在正文对照。
+
+配图源与本地导出
+
+软件流程、交互、状态和协作图以figures中的Mermaid源文件维护，帧布局使用可缩放矢量图形（Scalable Vector Graphics，SVG）；逐节分类见TASK.md。当前本机Mermaid命令行接口（Command-Line Interface，CLI）工具为12.2.0。下面在项目根目录只重新导出当前章节图源，不启动教学进程或测试；需要可启动本地离屏渲染器的权限。
+
+for p05_diagram in chapters/ch14-dispatch/figures/*.mmd; do
+  mmdc -i "$p05_diagram" -o "${p05_diagram%.mmd}.svg" -c assets/mermaid.json -b '#f7fafc' -I "$(basename "${p05_diagram%.mmd}")" --no-font-embed
+done
+
+
+图源修订后必须重新导出；正文图片的自然宽度与打印宽度按新viewBox同步，相关尺寸记录见公共P05证据。截图只作验收证据，不替代绘制的图。

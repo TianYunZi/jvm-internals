@@ -1,0 +1,9 @@
+%% 新规则逐节配图：补足执行转换或关键处理链。
+flowchart TD
+  accTitle: 反射与本轮代理的关键调用链
+  P["代理对象上的greet调用"] --> H["InvocationHandler<br/>明确转交target而不是代理自身"]
+  H --> M["Method.invoke<br/>访问、参数处理与反射契约"]
+  R["直接反射调用<br/>同一个Method与Greeter目标"] --> M
+  M --> A["DirectMethodHandleAccessor<br/>以句柄转交实际方法"]
+  A --> T["Greeter.greet<br/>本轮输出你好，读者"]
+  N["这里只展示greet正常路径<br/>不作为完整代理框架，也不测调用性能"] -.解释边界.-> H

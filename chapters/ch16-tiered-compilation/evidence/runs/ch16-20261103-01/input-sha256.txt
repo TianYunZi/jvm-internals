@@ -1,0 +1,2 @@
+fef9e9e3620110d0ff5ca8364051792d961132992de67c4569931b3f759cbcf2  chapters/ch16-tiered-compilation/src/main/java/org/example/jvminternals/ch16/TieredJourney.java
+a4f0f0a23c7599ba9028a0c309170922eeebb373b699117938d2baf50d429868  chapters/ch16-tiered-compilation/target/classes/org/example/jvminternals/ch16/TieredJourney.class

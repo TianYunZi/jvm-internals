@@ -1,0 +1,6 @@
+11月 03, 2026 9:44:57 上午 org.example.jvminternals.ch04.transform.ClassfileWorkshop main
+INFO: 开始生成具有两个返回分支的类文件
+original=chapters/ch04-classfile/target/workshop-20261103-01/original/GeneratedNumber.class bytes=190
+transformed=chapters/ch04-classfile/target/workshop-20261103-01/transformed/GeneratedNumber.class bytes=190
+11月 03, 2026 9:44:57 上午 org.example.jvminternals.ch04.transform.ClassfileWorkshop main
+INFO: 生成与变换结束，产物未加载执行

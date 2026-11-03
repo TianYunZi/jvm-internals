@@ -1,0 +1,49 @@
+第6章运行说明
+
+返回正文
+
+正文见 chapter.html，完整正式文件的阅读副本见 sources.html。用户授权完整 P03，并明确授权有界双加载器转换失败和模块访问失败。本章无测试框架、断言、压力或性能基准。
+
+环境与编译边界
+
+本轮 Homebrew Java 开发工具包（Java Development Kit，JDK）25.0.5.0.2，Maven 3.10.0，macOS AArch64。下列命令从项目根目录执行。
+
+主构建只编译四份主源文件，复制 notes.txt。Plugin、提供者与两个模块位于 variants，不能并入同一个默认输出目录。
+
+CH06_JDK=/opt/homebrew/Cellar/openjdk@25/25.0.5.0.2/libexec/openjdk.jdk/Contents/Home
+JAVA_HOME="$CH06_JDK" mvn --offline --batch-mode --no-transfer-progress -pl chapters/ch06-classloaders-modules -am compile
+mkdir -p chapters/ch06-classloaders-modules/target/plugin chapters/ch06-classloaders-modules/target/service-provider chapters/ch06-classloaders-modules/target/modules
+"$CH06_JDK/bin/javac" --release 25 -g -parameters -d chapters/ch06-classloaders-modules/target/plugin chapters/ch06-classloaders-modules/variants/plugin/src/org/example/jvminternals/ch06/isolated/Plugin.java
+"$CH06_JDK/bin/javac" --release 25 -g -parameters -cp chapters/ch06-classloaders-modules/target/classes -d chapters/ch06-classloaders-modules/target/service-provider chapters/ch06-classloaders-modules/variants/service/src/org/example/jvminternals/ch06/provider/FriendlyGreeter.java
+cp -R chapters/ch06-classloaders-modules/variants/service/resources/. chapters/ch06-classloaders-modules/target/service-provider/
+"$CH06_JDK/bin/javac" --release 25 -g -parameters --module-source-path chapters/ch06-classloaders-modules/variants/modules/src -d chapters/ch06-classloaders-modules/target/modules -m lesson.library,lesson.client
+
+
+普通配置无需预览、无第三方运行依赖。本轮使用已有插件缓存；首次缺缓存时可去掉 --offline 取得固定插件版本。
+
+四组教学案例
+编号	入口	输入与观察
+CH06-E01	LoaderJourney.main	一份隔离 Plugin.class；两个定义者、self 类型参数、委派请求与已授权转换失败
+CH06-E02	ServiceJourney.main	隔离提供者目录；共享 Greeter 身份、发现、上下文恢复和资源关闭
+CH06-E03	ModuleAccessJourney.main	命名模块输出；三独立进程分别观察基线、导出和开放
+CH06-E04	LayerJourney.main	同一模块目录；创建子层，分别观察模块与加载器
+
+运行命令：
+
+"$CH06_JDK/bin/java" -Xmx128m -Xlog:class+load=info:file=chapters/ch06-classloaders-modules/evidence/runs/ch06-20261103-01/class-load.log:uptime,level,tags -cp chapters/ch06-classloaders-modules/target/classes org.example.jvminternals.ch06.LoaderJourney chapters/ch06-classloaders-modules/target/plugin/org/example/jvminternals/ch06/isolated/Plugin.class
+"$CH06_JDK/bin/java" -Xmx128m -cp chapters/ch06-classloaders-modules/target/classes org.example.jvminternals.ch06.ServiceJourney chapters/ch06-classloaders-modules/target/service-provider
+"$CH06_JDK/bin/java" -Xmx128m -cp chapters/ch06-classloaders-modules/target/classes org.example.jvminternals.ch06.LayerJourney chapters/ch06-classloaders-modules/target/modules
+"$CH06_JDK/bin/java" -Xmx128m --module-path chapters/ch06-classloaders-modules/target/modules -m lesson.client/org.example.jvminternals.ch06.client.ModuleAccessJourney
+"$CH06_JDK/bin/java" -Xmx128m --add-exports lesson.library/org.example.jvminternals.ch06.internal=lesson.client --module-path chapters/ch06-classloaders-modules/target/modules -m lesson.client/org.example.jvminternals.ch06.client.ModuleAccessJourney
+"$CH06_JDK/bin/java" -Xmx128m --add-opens lesson.library/org.example.jvminternals.ch06.internal=lesson.client --module-path chapters/ch06-classloaders-modules/target/modules -m lesson.client/org.example.jvminternals.ch06.client.ModuleAccessJourney
+
+
+本轮六个进程均退出 0。转换与模块访问异常在教学边界捕获并作为结果输出，不添加预期值断言；导出／开放参数只影响本次教学进程，没有修改源描述符或系统设置。再次留证应选择新日志目录，避免覆盖本轮输出。
+
+资源与解释范围
+
+输入固定为本章编译产物和一个提供者；无教学线程、网络、无限等待或压力循环。单进程堆上限 128 兆二进制字节（mebibyte，MiB），不代表进程总内存限额。提供者加载器按资源作用域关闭，线程上下文在 finally 中恢复；关闭不等于类卸载。
+
+原始结果在 ch06-20261103-01，包含身份、服务、子层、三模块配置与编译日志；实际输入摘要固定源码、资源和模块产物。source-sha256.txt 中有当时根构建快照，后续模块增加不改写旧输入。
+
+Plugin 的一次反汇编用 javap -s -p -classpath chapters/ch06-classloaders-modules/target/plugin org.example.jvminternals.ch06.isolated.Plugin，工具同为上方 JDK。它只有一份描述符文本，两种运行时参数类型的定义者由实际反射输出分别说明；本轮未制造加载约束冲突。精确源码与契约见证据索引。

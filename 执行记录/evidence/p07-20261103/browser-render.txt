@@ -1,0 +1,16 @@
+file:///opt/homebrew/lib/node_modules/@mermaid-js/mermaid-cli/node_modules/@puppeteer/browsers/lib/launch.js:346
+                reject(new Error([
+                       ^
+
+Error: Failed to launch the browser process:  Code: null
+
+stderr:
+
+
+TROUBLESHOOTING: https://pptr.dev/troubleshooting
+
+    at ChildProcess.onClose (file:///opt/homebrew/lib/node_modules/@mermaid-js/mermaid-cli/node_modules/@puppeteer/browsers/lib/launch.js:346:24)
+    at ChildProcess.emit (node:events:526:24)
+    at ChildProcess._handle.onexit (node:internal/child_process:323:12)
+
+Node.js v26.12.1

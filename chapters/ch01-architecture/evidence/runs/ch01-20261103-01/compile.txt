@@ -1,0 +1,35 @@
+[INFO] Scanning for projects...
+[INFO] ------------------------------------------------------------------------
+[INFO] Reactor Build Order:
+[INFO] 
+[INFO] Java 虚拟机原理书配套源码                                                    [pom]
+[INFO] 第 1 章：运行主线与贯穿程序                                                    [jar]
+[INFO] 
+[INFO] ---------------< org.example.jvminternals:jvm-internals >---------------
+[INFO] Building Java 虚拟机原理书配套源码 1.0-SNAPSHOT                              [1/2]
+[INFO]   from pom.xml
+[INFO] --------------------------------[ pom ]---------------------------------
+[INFO] 
+[INFO] -------------< org.example.jvminternals:ch01-architecture >-------------
+[INFO] Building 第 1 章：运行主线与贯穿程序 1.0-SNAPSHOT                              [2/2]
+[INFO]   from chapters/ch01-architecture/pom.xml
+[INFO] --------------------------------[ jar ]---------------------------------
+[INFO] Loaded 64 auto-discovered prefixes for remote repository apache.snapshots (prefixes-apache.snapshots.txt)
+[INFO] 
+[INFO] --- resources:3.3.1:resources (default-resources) @ ch01-architecture ---
+[INFO] Copying 1 resource from src/main/resources to target/classes
+[INFO] 
+[INFO] --- compiler:3.14.1:compile (default-compile) @ ch01-architecture ---
+[INFO] Recompiling the module because of changed source code.
+[INFO] Compiling 1 source file with javac [debug:lines,vars,source parameters release 25] to target/classes
+[INFO] ------------------------------------------------------------------------
+[INFO] Reactor Summary for Java 虚拟机原理书配套源码 1.0-SNAPSHOT:
+[INFO] 
+[INFO] Java 虚拟机原理书配套源码 .................................... SUCCESS [  0.002 s]
+[INFO] 第 1 章：运行主线与贯穿程序 .................................... SUCCESS [  0.623 s]
+[INFO] ------------------------------------------------------------------------
+[INFO] BUILD SUCCESS
+[INFO] ------------------------------------------------------------------------
+[INFO] Total time:  0.694 s
+[INFO] Finished at: 2026-11-03T10:24:31+08:00
+[INFO] ------------------------------------------------------------------------

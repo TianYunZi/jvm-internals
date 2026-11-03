@@ -1,0 +1,10 @@
+/Users/xiejinxin/Developer/OpenJDK/jdk25u-25.0.5.0.2/src/hotspot/share/prims/jni.cpp
+/Users/xiejinxin/Developer/OpenJDK/jdk25u-25.0.5.0.2/src/hotspot/share/runtime/jniHandles.cpp
+/Users/xiejinxin/Developer/OpenJDK/jdk25u-25.0.5.0.2/src/hotspot/share/runtime/interfaceSupport.inline.hpp
+/Users/xiejinxin/Developer/OpenJDK/jdk25u-25.0.5.0.2/src/hotspot/share/gc/g1/g1CollectedHeap.inline.hpp
+/Users/xiejinxin/Developer/OpenJDK/jdk25u-25.0.5.0.2/src/hotspot/share/gc/z/zCollectedHeap.cpp
+/Users/xiejinxin/Developer/OpenJDK/jdk25u-25.0.5.0.2/src/hotspot/share/gc/shenandoah/shenandoahHeap.cpp
+/Users/xiejinxin/Developer/OpenJDK/jdk25u-25.0.5.0.2/src/java.base/share/classes/jdk/internal/foreign/MemorySessionImpl.java
+/Users/xiejinxin/Developer/OpenJDK/jdk25u-25.0.5.0.2/src/java.base/share/classes/jdk/internal/foreign/AbstractMemorySegmentImpl.java
+/Users/xiejinxin/Developer/OpenJDK/jdk25u-25.0.5.0.2/src/java.base/share/classes/jdk/internal/foreign/ConfinedSession.java
+/Users/xiejinxin/Developer/OpenJDK/jdk25u-25.0.5.0.2/src/java.base/share/classes/jdk/internal/foreign/abi/AbstractLinker.java

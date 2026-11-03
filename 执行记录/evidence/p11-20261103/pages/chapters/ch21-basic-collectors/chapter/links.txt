@@ -1,0 +1,21 @@
+跳到正文	#main
+Java 虚拟机原理图文书	../../index.html
+21.1 Serial的回收流程	#sec-21-1
+21.2 Parallel的工作分配	#sec-21-2
+21.3 分配失败与自适应调整	#sec-21-3
+21.4 Epsilon的无回收设计	#sec-21-4
+21.5 基础收集器的比较方法	#sec-21-5
+观察与边界	#observe
+来源与回顾	#sources
+源码阅读	sources.html
+运行说明	README.html
+证据索引	evidence/索引.md
+DefNewGeneration::collect / copy_to_survivor_space	https://github.com/openjdk/jdk25u/blob/1775ea114f649f0314e4e43eb6c802ff16dfab7c/src/hotspot/share/gc/serial/defNewGeneration.cpp
+PSScavenge::invoke	https://github.com/openjdk/jdk25u/blob/1775ea114f649f0314e4e43eb6c802ff16dfab7c/src/hotspot/share/gc/parallel/psScavenge.cpp
+PSAdaptiveSizePolicy	https://github.com/openjdk/jdk25u/blob/1775ea114f649f0314e4e43eb6c802ff16dfab7c/src/hotspot/share/gc/parallel/psAdaptiveSizePolicy.cpp
+EpsilonHeap::allocate_work / collect	https://github.com/openjdk/jdk25u/blob/1775ea114f649f0314e4e43eb6c802ff16dfab7c/src/hotspot/share/gc/epsilon/epsilonHeap.cpp
+SerialFullGC	https://github.com/openjdk/jdk25u/blob/1775ea114f649f0314e4e43eb6c802ff16dfab7c/src/hotspot/share/gc/serial/serialFullGC.cpp
+PSPromotionManager	https://github.com/openjdk/jdk25u/blob/1775ea114f649f0314e4e43eb6c802ff16dfab7c/src/hotspot/share/gc/parallel/psPromotionManager.cpp
+上一章	../ch20-safepoints-barriers/chapter.html
+全书目录	../../index.html
+下一章	../ch22-g1/chapter.html

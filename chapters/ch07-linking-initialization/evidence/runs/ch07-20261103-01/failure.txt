@@ -1,0 +1,9 @@
+11月 03, 2026 12:06:53 下午 org.example.jvminternals.ch07.InitializationFailure main
+INFO: 开始两次有界失败访问
+discovered=org.example.jvminternals.ch07.InitializationFailure$Broken
+attempt=1 error=java.lang.ExceptionInInitializerError
+cause[1]=java.lang.IllegalStateException: 教学初始化失败
+attempt=2 error=java.lang.NoClassDefFoundError: Could not initialize class org.example.jvminternals.ch07.InitializationFailure$Broken
+cause[1]=java.lang.ExceptionInInitializerError: Exception java.lang.IllegalStateException: 教学初始化失败 [in thread "main"]
+11月 03, 2026 12:06:53 下午 org.example.jvminternals.ch07.InitializationFailure main
+INFO: 两次失败访问结束

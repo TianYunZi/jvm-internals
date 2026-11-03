@@ -1,0 +1,12 @@
+ef32b672bd4a2af6639f22ec114d4fab90f305a9fbd2175fe6b46e5fd44000dd  chapters/ch13-interpreter/src/main/java/org/example/jvminternals/ch13/ExceptionJourney.java
+e0801458eeaa8feb40b2a5ce2aab78d56a88f4b39f43adce0ba480e44cb83732  chapters/ch14-dispatch/src/main/java/org/example/jvminternals/ch14/DispatchJourney.java
+3709a5ff42c3bb6045981f62f427753dc83570b579f658846eaeb63456d042e6  chapters/ch15-dynamic-invocation/src/main/java/org/example/jvminternals/ch15/DynamicJourney.java
+fef9e9e3620110d0ff5ca8364051792d961132992de67c4569931b3f759cbcf2  chapters/ch16-tiered-compilation/src/main/java/org/example/jvminternals/ch16/TieredJourney.java
+fa880140df1097ebef6d18742eca2232c798f97c52d0f2e14a0eac25eb6eea44  chapters/ch17-compiler-optimizations/src/main/java/org/example/jvminternals/ch17/OptimizationJourney.java
+22b5a35913439e83d67ed8187b254108a631fbe05bb67b7d34cc51bdd290603b  chapters/ch18-deoptimization/src/main/java/org/example/jvminternals/ch18/RecoveryJourney.java
+ef32b672bd4a2af6639f22ec114d4fab90f305a9fbd2175fe6b46e5fd44000dd  artifacts/p05-code-copy/selected/chapters/ch13-interpreter/sources/code-002.txt
+e0801458eeaa8feb40b2a5ce2aab78d56a88f4b39f43adce0ba480e44cb83732  artifacts/p05-code-copy/selected/chapters/ch14-dispatch/sources/code-002.txt
+3709a5ff42c3bb6045981f62f427753dc83570b579f658846eaeb63456d042e6  artifacts/p05-code-copy/selected/chapters/ch15-dynamic-invocation/sources/code-002.txt
+fef9e9e3620110d0ff5ca8364051792d961132992de67c4569931b3f759cbcf2  artifacts/p05-code-copy/selected/chapters/ch16-tiered-compilation/sources/code-002.txt
+fa880140df1097ebef6d18742eca2232c798f97c52d0f2e14a0eac25eb6eea44  artifacts/p05-code-copy/selected/chapters/ch17-compiler-optimizations/sources/code-002.txt
+22b5a35913439e83d67ed8187b254108a631fbe05bb67b7d34cc51bdd290603b  artifacts/p05-code-copy/selected/chapters/ch18-deoptimization/sources/code-002.txt

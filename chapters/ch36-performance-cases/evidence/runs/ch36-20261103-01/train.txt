@@ -1,0 +1,13 @@
+CH31 入口 mode=add uptimeMs=104
+CH31 就绪 uptimeMs=125
+CH31 请求流结束 result=1800390000
+CH31 结束 uptimeMs=126
+Temporary AOTConfiguration recorded: chapters/ch36-performance-cases/target/startup.aot.config
+Launching child process /opt/homebrew/Cellar/openjdk@25/25.0.5.0.2/libexec/openjdk.jdk/Contents/Home/bin/java to assemble AOT cache chapters/ch36-performance-cases/target/startup.aot using configuration chapters/ch36-performance-cases/target/startup.aot.config
+Picked up JAVA_TOOL_OPTIONS: -Djava.class.path=chapters/ch31-aot-cache/target/cache.jar -Xmx64m -Xlog:aot=info:file=chapters/ch36-performance-cases/evidence/runs/ch36-20261103-01/train.log -XX:AOTCacheOutput=chapters/ch36-performance-cases/target/startup.aot -XX:AOTConfiguration=chapters/ch36-performance-cases/target/startup.aot.config -XX:AOTMode=create
+Reading AOTConfiguration chapters/ch36-performance-cases/target/startup.aot.config and writing AOTCache chapters/ch36-performance-cases/target/startup.aot
+AOTCache creation is complete: chapters/ch36-performance-cases/target/startup.aot 12058624 bytes
+Removed temporary AOT configuration file chapters/ch36-performance-cases/target/startup.aot.config
+real 0.59
+user 0.66
+sys 0.07

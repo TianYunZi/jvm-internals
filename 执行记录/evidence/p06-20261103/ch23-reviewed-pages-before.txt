@@ -1,0 +1,4 @@
+3c92dee67bc95d814fd09ed15c8c9ad0f15ac632c8748385b40cf7b528310a41  chapters/ch23-zgc/evidence/browser/print/final-page-1.png
+20f5261b6a34797c87ce9396621e14bfc50a0a05c9816bdfbf072b6f8389bee5  chapters/ch23-zgc/evidence/browser/print/final-page-3.png
+097a7965b3c893d9829b4cc88d4bece9a557c19a4eeb076f41df5a5a5d31397e  chapters/ch23-zgc/evidence/browser/print/final-page-4.png
+9a7fe53239744f89e54b561b40d3ecf0a74b6fa01f7453591608732860180a69  chapters/ch23-zgc/evidence/browser/print/final-page-5.png

@@ -1,0 +1,2 @@
+Configuration written successfully to:
+/Users/xiejinxin/Developer/Java/jvm-internals/chapters/ch27-monitors/evidence/runs/ch27-20261103-01/monitors.jfc

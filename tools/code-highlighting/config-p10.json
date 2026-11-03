@@ -1,0 +1,134 @@
+{
+  "stage": "p10",
+  "shikiVersion": "4.6.0",
+  "theme": "github-light",
+  "languages": [
+    "java",
+    "bash",
+    "xml",
+    "json",
+    "cpp",
+    "c",
+    "asm"
+  ],
+  "plainTextLanguage": "text",
+  "chapters": [],
+  "pages": [
+    {
+      "path": "chapters/ch01-architecture/chapter.html",
+      "folder": "ch01-architecture"
+    },
+    {
+      "path": "chapters/ch01-architecture/sources.html",
+      "folder": "ch01-architecture"
+    },
+    {
+      "path": "chapters/ch02-computer-basics/chapter.html",
+      "folder": "ch02-computer-basics"
+    },
+    {
+      "path": "chapters/ch03-source-environment/chapter.html",
+      "folder": "ch03-source-environment"
+    },
+    {
+      "path": "chapters/ch04-classfile/chapter.html",
+      "folder": "ch04-classfile"
+    },
+    {
+      "path": "chapters/ch04-classfile/sources.html",
+      "folder": "ch04-classfile"
+    },
+    {
+      "path": "chapters/ch05-bytecode-verification/chapter.html",
+      "folder": "ch05-bytecode-verification"
+    },
+    {
+      "path": "chapters/ch05-bytecode-verification/sources.html",
+      "folder": "ch05-bytecode-verification"
+    },
+    {
+      "path": "chapters/ch06-classloaders-modules/chapter.html",
+      "folder": "ch06-classloaders-modules"
+    },
+    {
+      "path": "chapters/ch06-classloaders-modules/sources.html",
+      "folder": "ch06-classloaders-modules"
+    },
+    {
+      "path": "chapters/ch07-linking-initialization/chapter.html",
+      "folder": "ch07-linking-initialization"
+    },
+    {
+      "path": "chapters/ch07-linking-initialization/sources.html",
+      "folder": "ch07-linking-initialization"
+    },
+    {
+      "path": "chapters/ch08-type-metadata/chapter.html",
+      "folder": "ch08-type-metadata"
+    },
+    {
+      "path": "chapters/ch08-type-metadata/sources.html",
+      "folder": "ch08-type-metadata"
+    },
+    {
+      "path": "chapters/ch09-runtime-memory/chapter.html",
+      "folder": "ch09-runtime-memory"
+    },
+    {
+      "path": "chapters/ch10-object-layout/chapter.html",
+      "folder": "ch10-object-layout"
+    },
+    {
+      "path": "chapters/ch10-object-layout/sources.html",
+      "folder": "ch10-object-layout"
+    },
+    {
+      "path": "chapters/ch11-allocation/chapter.html",
+      "folder": "ch11-allocation"
+    },
+    {
+      "path": "chapters/ch11-allocation/sources.html",
+      "folder": "ch11-allocation"
+    },
+    {
+      "path": "chapters/ch12-native-memory/chapter.html",
+      "folder": "ch12-native-memory"
+    },
+    {
+      "path": "chapters/ch12-native-memory/sources.html",
+      "folder": "ch12-native-memory"
+    },
+    {
+      "path": "appendices/a-terms/appendix.html"
+    },
+    {
+      "path": "appendices/b-bytecode/appendix.html"
+    },
+    {
+      "path": "appendices/c-commands/appendix.html"
+    },
+    {
+      "path": "appendices/d-source-map/appendix.html"
+    },
+    {
+      "path": "appendices/e-history/appendix.html"
+    },
+    {
+      "path": "appendices/f-environments/appendix.html"
+    }
+  ],
+  "readmes": [
+    "ch01-architecture",
+    "ch02-computer-basics",
+    "ch03-source-environment",
+    "ch04-classfile",
+    "ch05-bytecode-verification",
+    "ch06-classloaders-modules",
+    "ch07-linking-initialization",
+    "ch08-type-metadata",
+    "ch09-runtime-memory",
+    "ch10-object-layout",
+    "ch11-allocation",
+    "ch12-native-memory"
+  ]
+}

@@ -1,0 +1,22 @@
+跳到正文	#main
+Java 虚拟机原理图文书	../../index.html
+从现象开始	#problem
+14.1 调用指令分类	#sec-14-1
+14.2 解析、选择与目标	#sec-14-2
+14.3 方法表与调用点缓存	#sec-14-3
+14.4 接收者类型分布	#sec-14-4
+14.5 去虚化与内联	#sec-14-5
+证据与复做	#observe
+回顾与边界	#review
+来源	#sources
+CH14-F01	#fig-14-1
+CH14-F02	#fig-14-2
+CH14-F03	#fig-14-3
+运行说明	README.html
+源码阅读	sources.html
+证据索引	evidence/索引.md
+Java虚拟机规范（Java Virtual Machine Specification，JVMS）25 §5.4.3与§5.4.6	https://docs.oracle.com/javase/specs/jvms/se25/html/jvms-5.html#jvms-5.4.6
+语言规范§15.12	https://docs.oracle.com/javase/specs/jls/se25/html/jls-15.html#jls-15.12
+上一章	../ch13-interpreter/chapter.html
+下一章	../ch15-dynamic-invocation/chapter.html
+全书目录	../../index.html

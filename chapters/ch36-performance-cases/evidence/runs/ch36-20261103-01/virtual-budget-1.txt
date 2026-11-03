@@ -1,0 +1,5 @@
+案例 pid=84047 mode=virtual-budget time=2026-11-03T13:40:09.404885Z processors=8
+测量 count=64 wallNs=203474959 p50Ns=108117542 p99Ns=196589250 maxNs=196589250 completed=64
+real 0.28
+user 0.09
+sys 0.02

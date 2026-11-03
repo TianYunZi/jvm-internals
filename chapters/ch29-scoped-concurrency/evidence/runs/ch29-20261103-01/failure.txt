@@ -1,0 +1,9 @@
+子任务slow上下文=request-29
+子任务fast上下文=request-29
+子任务fast主动抛出教学异常
+子任务slow收到中断
+子任务slow finally退出
+拥有者即将close
+close完成后接收失败：java.lang.IllegalStateException: 教学故障：fast
+任务作用域已关闭
+绑定退出：isBound=false

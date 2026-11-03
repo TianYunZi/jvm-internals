@@ -1,0 +1,10 @@
+
+                                           Java Methods that Execute the Most
+
+Method                                                                                                  Samples Percent
+------------------------------------------------------------------------------------------------------- ------- -------
+java.io.ByteArrayOutputStream.ensureCapacity(int)                                                             1  20.00%
+java.lang.System$1.getCarrierThreadLocal(CarrierThreadLocal)                                                  1  20.00%
+jdk.internal.classfile.impl.ClassHierarchyImpl$CachedClassHierarchyResolver$1.<init>(...)                     1  20.00%
+jdk.internal.classfile.impl.ClassReaderImpl.flags()                                                           1  20.00%
+jdk.internal.classfile.impl.TransformImpl$$Lambda.0x00000800010744b8.run()                                    1  20.00%

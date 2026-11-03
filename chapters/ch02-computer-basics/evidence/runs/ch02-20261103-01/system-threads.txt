@@ -1,0 +1,22 @@
+USER        PID   TT   %CPU STAT PRI     STIME     UTIME COMMAND
+xiejinxin 15162   ??    0.0 S    31T   0:00.01   0:00.01 /opt/homebrew/Cellar/openjdk@25/25.0.5.0.2/libexec/openjdk.jdk/Contents/Home/bin/java -Xms32m -Xmx128m -XX:NativeMemoryTracking=detail -Xlog:os+thread=info:file=chapters/ch02-computer-basics/evidence/runs/ch02-20261103-01/os-threads.log:uptime,level,tags -cp chapters/ch01-architecture/target/classes org.example.jvminternals.ch01.ProgramJourney chapters/ch01-architecture/src/main/resources/message.txt 60
+          15162         0.0 S    31T   0:00.00   0:00.00 
+          15162         0.0 S    31T   0:00.01   0:00.06 
+          15162         0.0 S    31T   0:00.00   0:00.00 
+          15162         0.0 S    31T   0:00.00   0:00.00 
+          15162         0.0 S    31T   0:00.00   0:00.00 
+          15162         0.0 S    31T   0:00.00   0:00.00 
+          15162         0.0 S    31T   0:00.00   0:00.00 
+          15162         0.0 S    31T   0:00.00   0:00.00 
+          15162         0.0 S    31T   0:00.00   0:00.00 
+          15162         0.0 S    31T   0:00.00   0:00.00 
+          15162         0.0 S    31T   0:00.00   0:00.00 
+          15162         0.0 S    31T   0:00.00   0:00.00 
+          15162         0.0 S    31T   0:00.00   0:00.00 
+          15162         0.0 S    31T   0:00.00   0:00.00 
+          15162         0.0 S    31T   0:00.00   0:00.00 
+          15162         0.0 S    31T   0:00.00   0:00.01 
+          15162         0.0 S    31T   0:00.00   0:00.03 
+          15162         0.0 S    31T   0:00.00   0:00.00 
+          15162         0.0 S    31T   0:00.00   0:00.00 
+          15162         0.0 S    31T   0:00.00   0:00.00 

@@ -1,0 +1,214 @@
+[9ms][info][gc,init] CardTable entry size: 512
+[9ms][debug][gc,remset] Card Set container configuration: InlinePtr #cards 5 size 8 Array Of Cards #cards 10 size 36 Howl #buckets 4 coarsen threshold 1843 Howl Bitmap #cards 512 size 80 coarsen threshold 460 Card regions per heap region 1 cards per card region 2048
+[9ms][info ][gc       ] Using G1
+[10ms][info ][gc,init  ] Version: 25.0.5.0.2 (release)
+[10ms][info ][gc,init  ] CPUs: 8 total, 2 available
+[10ms][info ][gc,init  ] Memory: 16384M
+[10ms][info ][gc,init  ] Large Page Support: Disabled
+[10ms][info ][gc,init  ] NUMA Support: Disabled
+[10ms][info ][gc,init  ] Compressed Oops: Enabled (Zero based)
+[10ms][info ][gc,init  ] Heap Region Size: 1M
+[10ms][info ][gc,init  ] Heap Min Capacity: 128M
+[10ms][info ][gc,init  ] Heap Initial Capacity: 128M
+[10ms][info ][gc,init  ] Heap Max Capacity: 128M
+[10ms][info ][gc,init  ] Pre-touch: Disabled
+[10ms][info ][gc,init  ] Parallel Workers: 2
+[10ms][info ][gc,init  ] Concurrent Workers: 1
+[10ms][info ][gc,init  ] Concurrent Refinement Workers: 2
+[10ms][info ][gc,init  ] Periodic GC: Disabled
+[15ms][info ][gc,metaspace] CDS archive(s) mapped at: [0x0000200000000000-0x0000200000d98000-0x0000200000d98000), size 14254080, SharedBaseAddress: 0x0000200000000000, ArchiveRelocationMode: 1.
+[15ms][info ][gc,metaspace] Compressed class space mapped at: 0x0000200001000000-0x0000200041000000, reserved size: 1073741824
+[15ms][info ][gc,metaspace] UseCompressedClassPointers 1, UseCompactObjectHeaders 0
+[15ms][info ][gc,metaspace] Narrow klass pointer bits 32, Max shift 3
+[15ms][info ][gc,metaspace] Narrow klass base: 0x0000200000000000, Narrow klass shift: 0
+[15ms][info ][gc,metaspace] Encoding Range: [0x0000200000000000 - 0x0000200100000000), (4294967296 bytes)
+[15ms][info ][gc,metaspace] Klass Range:    [0x0000200000004000 - 0x0000200041000000), (1090502656 bytes)
+[15ms][info ][gc,metaspace] Klass ID Range:  [16384 - 1090519033) (1090502649)
+[15ms][info ][gc,metaspace] Protection zone: [0x0000200000000000 - 0x0000200000004000), (16384 bytes)
+[57ms][info ][gc,start    ] GC(0) Pause Young (Normal) (G1 Evacuation Pause)
+[57ms][info ][gc,task     ] GC(0) Using 2 workers of 2 for evacuation
+[57ms][trace][gc,ergo,cset] GC(0) Start choosing CSet. Pending cards: 425 target pause time: 200.00ms
+[57ms][trace][gc,ergo,cset] GC(0) Added young regions to CSet. Eden: 14 regions, Survivors: 0 regions, predicted eden time: 181.76ms, predicted base time: 14.25ms, target pause time: 200.00ms, remaining time: 3.99ms
+[58ms][debug][gc,ergo,cset] GC(0) No candidates to reclaim.
+[58ms][debug][gc,remset   ] GC(0) Visited cards 800 Total dirty 4096 (19.53%) Total old 61440 (1.30%)
+[62ms][info ][gc,phases   ] GC(0)   Pre Evacuate Collection Set: 0.50ms
+[62ms][info ][gc,phases   ] GC(0)   Merge Heap Roots: 0.08ms
+[63ms][info ][gc,phases   ] GC(0)   Evacuate Collection Set: 4.06ms
+[63ms][info ][gc,phases   ] GC(0)   Post Evacuate Collection Set: 0.23ms
+[63ms][info ][gc,phases   ] GC(0)   Other: 0.41ms
+[63ms][debug][gc,remset   ] GC(0) Coarsening (recent): Inline->AoC 0 (0) AoC->Howl 0 (0) Howl->Full 0 (0) Inline->AoC 0 (0) AoC->BitMap 0 (0) BitMap->Full 0 (0) 
+[63ms][debug][gc,remset   ] GC(0) Coarsening (all): Inline->AoC 0 (0) AoC->Howl 0 (0) Howl->Full 0 (0) Inline->AoC 0 (0) AoC->BitMap 0 (0) BitMap->Full 0 (0) 
+[63ms][info ][gc,heap     ] GC(0) Eden regions: 14->0(40)
+[63ms][info ][gc,heap     ] GC(0) Survivor regions: 0->2(2)
+[63ms][info ][gc,heap     ] GC(0) Old regions: 2->14
+[63ms][info ][gc,heap     ] GC(0) Humongous regions: 0->0
+[63ms][info ][gc,metaspace] GC(0) Metaspace: 275K(512K)->275K(512K) NonClass: 262K(384K)->262K(384K) Class: 13K(128K)->13K(128K)
+[63ms][info ][gc          ] GC(0) Pause Young (Normal) (G1 Evacuation Pause) 15M->14M(128M) 6.012ms
+[63ms][info ][gc,cpu      ] GC(0) User=0.01s Sys=0.01s Real=0.01s
+[233ms][info ][gc,start    ] GC(1) Pause Young (Normal) (G1 Evacuation Pause)
+[233ms][info ][gc,task     ] GC(1) Using 2 workers of 2 for evacuation
+[233ms][trace][gc,ergo,cset] GC(1) Start choosing CSet. Pending cards: 397 target pause time: 200.00ms
+[233ms][trace][gc,ergo,cset] GC(1) Added young regions to CSet. Eden: 40 regions, Survivors: 2 regions, predicted eden time: 21.06ms, predicted base time: 11.67ms, target pause time: 200.00ms, remaining time: 167.27ms
+[233ms][debug][gc,ergo,cset] GC(1) No candidates to reclaim.
+[233ms][debug][gc,remset   ] GC(1) Visited cards 992 Total dirty 4096 (24.22%) Total old 200704 (0.49%)
+[238ms][info ][gc,phases   ] GC(1)   Pre Evacuate Collection Set: 0.08ms
+[238ms][info ][gc,phases   ] GC(1)   Merge Heap Roots: 0.04ms
+[238ms][info ][gc,phases   ] GC(1)   Evacuate Collection Set: 4.48ms
+[238ms][info ][gc,phases   ] GC(1)   Post Evacuate Collection Set: 0.18ms
+[238ms][info ][gc,phases   ] GC(1)   Other: 0.06ms
+[238ms][debug][gc,remset   ] GC(1) Coarsening (recent): Inline->AoC 0 (0) AoC->Howl 0 (0) Howl->Full 0 (0) Inline->AoC 0 (0) AoC->BitMap 0 (0) BitMap->Full 0 (0) 
+[238ms][debug][gc,remset   ] GC(1) Coarsening (all): Inline->AoC 0 (0) AoC->Howl 0 (0) Howl->Full 0 (0) Inline->AoC 0 (0) AoC->BitMap 0 (0) BitMap->Full 0 (0) 
+[239ms][info ][gc,heap     ] GC(1) Eden regions: 40->0(34)
+[239ms][info ][gc,heap     ] GC(1) Survivor regions: 2->6(6)
+[239ms][info ][gc,heap     ] GC(1) Old regions: 14->31
+[239ms][info ][gc,heap     ] GC(1) Humongous regions: 0->0
+[239ms][info ][gc,metaspace] GC(1) Metaspace: 920K(1152K)->920K(1152K) NonClass: 839K(960K)->839K(960K) Class: 80K(192K)->80K(192K)
+[239ms][info ][gc          ] GC(1) Pause Young (Normal) (G1 Evacuation Pause) 54M->35M(128M) 5.821ms
+[239ms][info ][gc,cpu      ] GC(1) User=0.01s Sys=0.00s Real=0.00s
+[447ms][info ][gc,start    ] GC(2) Pause Young (Concurrent Start) (G1 Evacuation Pause)
+[447ms][info ][gc,task     ] GC(2) Using 2 workers of 2 for evacuation
+[447ms][trace][gc,ergo,cset] GC(2) Start choosing CSet. Pending cards: 321 target pause time: 200.00ms
+[447ms][trace][gc,ergo,cset] GC(2) Added young regions to CSet. Eden: 34 regions, Survivors: 6 regions, predicted eden time: 14.82ms, predicted base time: 10.39ms, target pause time: 200.00ms, remaining time: 174.79ms
+[447ms][debug][gc,ergo,cset] GC(2) No candidates to reclaim.
+[447ms][debug][gc,remset   ] GC(2) Visited cards 960 Total dirty 4096 (23.44%) Total old 227328 (0.42%)
+[450ms][info ][gc,phases   ] GC(2)   Pre Evacuate Collection Set: 0.11ms
+[450ms][info ][gc,phases   ] GC(2)   Merge Heap Roots: 0.03ms
+[450ms][info ][gc,phases   ] GC(2)   Evacuate Collection Set: 2.47ms
+[450ms][info ][gc,phases   ] GC(2)   Post Evacuate Collection Set: 0.24ms
+[450ms][info ][gc,phases   ] GC(2)   Other: 0.08ms
+[450ms][debug][gc,remset   ] GC(2) Coarsening (recent): Inline->AoC 0 (0) AoC->Howl 0 (0) Howl->Full 0 (0) Inline->AoC 0 (0) AoC->BitMap 0 (0) BitMap->Full 0 (0) 
+[450ms][debug][gc,remset   ] GC(2) Coarsening (all): Inline->AoC 0 (0) AoC->Howl 0 (0) Howl->Full 0 (0) Inline->AoC 0 (0) AoC->BitMap 0 (0) BitMap->Full 0 (0) 
+[450ms][info ][gc,heap     ] GC(2) Eden regions: 34->0(42)
+[450ms][info ][gc,heap     ] GC(2) Survivor regions: 6->1(5)
+[450ms][info ][gc,heap     ] GC(2) Old regions: 31->37
+[450ms][info ][gc,heap     ] GC(2) Humongous regions: 0->0
+[450ms][info ][gc,metaspace] GC(2) Metaspace: 920K(1152K)->920K(1152K) NonClass: 839K(960K)->839K(960K) Class: 80K(192K)->80K(192K)
+[451ms][info ][gc          ] GC(2) Pause Young (Concurrent Start) (G1 Evacuation Pause) 69M->35M(128M) 3.461ms
+[451ms][info ][gc,cpu      ] GC(2) User=0.00s Sys=0.01s Real=0.00s
+[451ms][info ][gc          ] GC(3) Concurrent Mark Cycle
+[451ms][info ][gc,marking  ] GC(3) Concurrent Scan Root Regions
+[456ms][info ][gc,marking  ] GC(3) Concurrent Scan Root Regions 5.212ms
+[456ms][info ][gc,marking  ] GC(3) Concurrent Mark
+[456ms][info ][gc,marking  ] GC(3) Concurrent Mark From Roots
+[456ms][info ][gc,task     ] GC(3) Using 1 workers of 1 for marking
+[459ms][info ][gc,marking  ] GC(3) Concurrent Mark From Roots 2.968ms
+[459ms][info ][gc,marking  ] GC(3) Concurrent Preclean
+[459ms][info ][gc,marking  ] GC(3) Concurrent Preclean 0.023ms
+[459ms][info ][gc,start    ] GC(3) Pause Remark
+[460ms][debug][gc,ergo,cset] GC(3) Finished creating 1 collection groups from 1 regions
+[460ms][info ][gc          ] GC(3) Pause Remark 36M->36M(128M) 1.082ms
+[460ms][info ][gc,cpu      ] GC(3) User=0.00s Sys=0.00s Real=0.00s
+[460ms][info ][gc,marking  ] GC(3) Concurrent Mark 4.322ms
+[460ms][info ][gc,marking  ] GC(3) Concurrent Rebuild Remembered Sets and Scrub Regions
+[464ms][info ][gc,marking  ] GC(3) Concurrent Rebuild Remembered Sets and Scrub Regions 3.226ms
+[464ms][info ][gc,start    ] GC(3) Pause Cleanup
+[464ms][trace][gc,ergo,cset] GC(3) Prediction for group 2 (1 regions): total_time 1.45ms card_rs_length 292 merge_scan_time 0.00ms code_root_scan_time_ms 0.00ms evac_time_ms 0.05ms other_time 1.40ms bytes_to_copy 123864
+[464ms][info ][gc          ] GC(3) Pause Cleanup 38M->38M(128M) 0.039ms
+[464ms][info ][gc,cpu      ] GC(3) User=0.00s Sys=0.00s Real=0.00s
+[465ms][info ][gc,marking  ] GC(3) Concurrent Clear Claimed Marks
+[466ms][info ][gc,marking  ] GC(3) Concurrent Clear Claimed Marks 1.084ms
+[466ms][info ][gc,marking  ] GC(3) Concurrent Cleanup for Next Mark
+[466ms][info ][gc,marking  ] GC(3) Concurrent Cleanup for Next Mark 0.461ms
+[466ms][info ][gc          ] GC(3) Concurrent Mark Cycle 15.579ms
+[538ms][info ][gc,start    ] GC(4) Pause Young (Concurrent Start) (System.gc())
+[538ms][info ][gc,task     ] GC(4) Using 2 workers of 2 for evacuation
+[538ms][trace][gc,ergo,cset] GC(4) Start choosing CSet. Pending cards: 2 target pause time: 200.00ms
+[538ms][trace][gc,ergo,cset] GC(4) Added young regions to CSet. Eden: 14 regions, Survivors: 1 regions, predicted eden time: 4.04ms, predicted base time: 3.22ms, target pause time: 200.00ms, remaining time: 192.74ms
+[538ms][debug][gc,ergo,cset] GC(4) No candidates to reclaim.
+[538ms][debug][gc,remset   ] GC(4) Visited cards 32 Total dirty 2048 (1.56%) Total old 137216 (0.02%)
+[538ms][info ][gc,phases   ] GC(4)   Pre Evacuate Collection Set: 0.13ms
+[539ms][info ][gc,phases   ] GC(4)   Merge Heap Roots: 0.13ms
+[539ms][info ][gc,phases   ] GC(4)   Evacuate Collection Set: 0.27ms
+[539ms][info ][gc,phases   ] GC(4)   Post Evacuate Collection Set: 0.07ms
+[539ms][info ][gc,phases   ] GC(4)   Other: 0.08ms
+[539ms][debug][gc,remset   ] GC(4) Coarsening (recent): Inline->AoC 1 (0) AoC->Howl 1 (0) Howl->Full 0 (0) Inline->AoC 2 (0) AoC->BitMap 2 (0) BitMap->Full 0 (0) 
+[539ms][debug][gc,remset   ] GC(4) Coarsening (all): Inline->AoC 1 (0) AoC->Howl 1 (0) Howl->Full 0 (0) Inline->AoC 2 (0) AoC->BitMap 2 (0) BitMap->Full 0 (0) 
+[539ms][info ][gc,heap     ] GC(4) Eden regions: 14->0(48)
+[539ms][info ][gc,heap     ] GC(4) Survivor regions: 1->1(6)
+[539ms][info ][gc,heap     ] GC(4) Old regions: 37->37
+[539ms][info ][gc,heap     ] GC(4) Humongous regions: 0->0
+[539ms][info ][gc,metaspace] GC(4) Metaspace: 920K(1152K)->920K(1152K) NonClass: 839K(960K)->839K(960K) Class: 80K(192K)->80K(192K)
+[539ms][info ][gc          ] GC(4) Pause Young (Concurrent Start) (System.gc()) 48M->35M(128M) 0.826ms
+[539ms][info ][gc,cpu      ] GC(4) User=0.00s Sys=0.00s Real=0.00s
+[539ms][info ][gc          ] GC(5) Concurrent Mark Cycle
+[539ms][info ][gc,marking  ] GC(5) Concurrent Scan Root Regions
+[539ms][info ][gc,marking  ] GC(5) Concurrent Scan Root Regions 0.375ms
+[539ms][info ][gc,marking  ] GC(5) Concurrent Mark
+[539ms][info ][gc,marking  ] GC(5) Concurrent Mark From Roots
+[539ms][info ][gc,task     ] GC(5) Using 1 workers of 1 for marking
+[542ms][info ][gc,marking  ] GC(5) Concurrent Mark From Roots 2.371ms
+[542ms][info ][gc,marking  ] GC(5) Concurrent Preclean
+[542ms][info ][gc,marking  ] GC(5) Concurrent Preclean 0.009ms
+[542ms][info ][gc,start    ] GC(5) Pause Remark
+[542ms][debug][gc,ergo,cset] GC(5) Pruned 12 regions out of 34, leaving 6288384 bytes waste (allowed 6710886)
+[542ms][debug][gc,ergo,cset] GC(5) Finished creating 5 collection groups from 22 regions
+[542ms][info ][gc          ] GC(5) Pause Remark 35M->35M(128M) 0.402ms
+[542ms][info ][gc,cpu      ] GC(5) User=0.00s Sys=0.00s Real=0.00s
+[542ms][info ][gc,marking  ] GC(5) Concurrent Mark 2.927ms
+[542ms][info ][gc,marking  ] GC(5) Concurrent Rebuild Remembered Sets and Scrub Regions
+[544ms][info ][gc,marking  ] GC(5) Concurrent Rebuild Remembered Sets and Scrub Regions 1.577ms
+[544ms][info ][gc,start    ] GC(5) Pause Cleanup
+[544ms][trace][gc,ergo,cset] GC(5) Prediction for group 2 (3 regions): total_time 4.47ms card_rs_length 294 merge_scan_time 0.00ms code_root_scan_time_ms 0.00ms evac_time_ms 0.27ms other_time 4.20ms bytes_to_copy 1107384
+[544ms][trace][gc,ergo,cset] GC(5) Prediction for group 3 (5 regions): total_time 7.61ms card_rs_length 7 merge_scan_time 0.00ms code_root_scan_time_ms 0.00ms evac_time_ms 0.61ms other_time 7.00ms bytes_to_copy 2458800
+[544ms][trace][gc,ergo,cset] GC(5) Prediction for group 4 (5 regions): total_time 7.61ms card_rs_length 4 merge_scan_time 0.00ms code_root_scan_time_ms 0.00ms evac_time_ms 0.61ms other_time 7.00ms bytes_to_copy 2458800
+[544ms][trace][gc,ergo,cset] GC(5) Prediction for group 5 (5 regions): total_time 7.61ms card_rs_length 40 merge_scan_time 0.00ms code_root_scan_time_ms 0.00ms evac_time_ms 0.61ms other_time 7.00ms bytes_to_copy 2471096
+[544ms][trace][gc,ergo,cset] GC(5) Prediction for group 6 (4 regions): total_time 6.12ms card_rs_length 5 merge_scan_time 0.00ms code_root_scan_time_ms 0.00ms evac_time_ms 0.52ms other_time 5.60ms bytes_to_copy 2098176
+[544ms][info ][gc          ] GC(5) Pause Cleanup 35M->35M(128M) 0.059ms
+[544ms][info ][gc,cpu      ] GC(5) User=0.00s Sys=0.00s Real=0.00s
+[544ms][info ][gc,marking  ] GC(5) Concurrent Clear Claimed Marks
+[544ms][info ][gc,marking  ] GC(5) Concurrent Clear Claimed Marks 0.009ms
+[544ms][info ][gc,marking  ] GC(5) Concurrent Cleanup for Next Mark
+[544ms][info ][gc,marking  ] GC(5) Concurrent Cleanup for Next Mark 0.146ms
+[544ms][info ][gc          ] GC(5) Concurrent Mark Cycle 5.494ms
+[935ms][info ][gc,start    ] GC(6) Pause Young (Prepare Mixed) (G1 Evacuation Pause)
+[935ms][info ][gc,task     ] GC(6) Using 2 workers of 2 for evacuation
+[935ms][trace][gc,ergo,cset] GC(6) Start choosing CSet. Pending cards: 28 target pause time: 200.00ms
+[935ms][trace][gc,ergo,cset] GC(6) Added young regions to CSet. Eden: 48 regions, Survivors: 1 regions, predicted eden time: 8.37ms, predicted base time: 2.81ms, target pause time: 200.00ms, remaining time: 188.82ms
+[935ms][debug][gc,ergo,cset] GC(6) Do not add marking candidates to collection set due to pause type.
+[935ms][debug][gc,remset   ] GC(6) Visited cards 224 Total dirty 2048 (10.94%) Total old 276480 (0.08%)
+[936ms][trace][gc,ergo,cset] GC(6) Prediction for group 2 (3 regions): total_time 4.50ms card_rs_length 294 merge_scan_time 0.00ms code_root_scan_time_ms 0.00ms evac_time_ms 0.30ms other_time 4.20ms bytes_to_copy 1107384
+[936ms][info ][gc,phases   ] GC(6)   Pre Evacuate Collection Set: 0.05ms
+[936ms][info ][gc,phases   ] GC(6)   Merge Heap Roots: 0.02ms
+[936ms][info ][gc,phases   ] GC(6)   Evacuate Collection Set: 0.09ms
+[936ms][info ][gc,phases   ] GC(6)   Post Evacuate Collection Set: 0.14ms
+[936ms][info ][gc,phases   ] GC(6)   Other: 0.09ms
+[936ms][debug][gc,remset   ] GC(6) Coarsening (recent): Inline->AoC 4 (0) AoC->Howl 3 (0) Howl->Full 0 (0) Inline->AoC 4 (0) AoC->BitMap 4 (0) BitMap->Full 0 (0) 
+[936ms][debug][gc,remset   ] GC(6) Coarsening (all): Inline->AoC 5 (0) AoC->Howl 4 (0) Howl->Full 0 (0) Inline->AoC 6 (0) AoC->BitMap 6 (0) BitMap->Full 0 (0) 
+[936ms][info ][gc,heap     ] GC(6) Eden regions: 48->0(64)
+[936ms][info ][gc,heap     ] GC(6) Survivor regions: 1->1(7)
+[936ms][info ][gc,heap     ] GC(6) Old regions: 36->36
+[936ms][info ][gc,heap     ] GC(6) Humongous regions: 1->0
+[936ms][info ][gc,metaspace] GC(6) Metaspace: 920K(1152K)->920K(1152K) NonClass: 839K(960K)->839K(960K) Class: 80K(192K)->80K(192K)
+[936ms][info ][gc          ] GC(6) Pause Young (Prepare Mixed) (G1 Evacuation Pause) 84M->35M(128M) 0.550ms
+[936ms][info ][gc,cpu      ] GC(6) User=0.00s Sys=0.00s Real=0.00s
+[1315ms][info ][gc,start    ] GC(7) Pause Young (Mixed) (G1 Evacuation Pause)
+[1315ms][info ][gc,task     ] GC(7) Using 2 workers of 2 for evacuation
+[1315ms][trace][gc,ergo,cset] GC(7) Start choosing CSet. Pending cards: 5 target pause time: 200.00ms
+[1316ms][trace][gc,ergo,cset] GC(7) Added young regions to CSet. Eden: 64 regions, Survivors: 1 regions, predicted eden time: 8.00ms, predicted base time: 2.07ms, target pause time: 200.00ms, remaining time: 189.93ms
+[1316ms][debug][gc,ergo,cset] GC(7) Start adding marking candidates to collection set. Min 3 regions, max 13 regions, available 22 regions (5 groups), time remaining 189.93ms, optional threshold 37.99ms
+[1316ms][trace][gc,ergo,cset] GC(7) Prediction for group 2 (3 regions): total_time 4.50ms card_rs_length 294 merge_scan_time 0.00ms code_root_scan_time_ms 0.00ms evac_time_ms 0.30ms other_time 4.20ms bytes_to_copy 1107384
+[1316ms][trace][gc,ergo,cset] GC(7) Prediction for group 3 (5 regions): total_time 7.67ms card_rs_length 7 merge_scan_time 0.00ms code_root_scan_time_ms 0.00ms evac_time_ms 0.67ms other_time 7.00ms bytes_to_copy 2458800
+[1316ms][trace][gc,ergo,cset] GC(7) Prediction for group 4 (5 regions): total_time 7.67ms card_rs_length 4 merge_scan_time 0.00ms code_root_scan_time_ms 0.00ms evac_time_ms 0.67ms other_time 7.00ms bytes_to_copy 2458800
+[1316ms][debug][gc,ergo,cset] GC(7) Finish adding marking candidates to collection set (Maximum number of regions reached).
+[1316ms][debug][gc,ergo,cset] GC(7) Finish adding marking candidates to collection set. Initial: 13 regions (3 groups), optional: 0 regions (0 groups), predicted initial time: 19.83ms, predicted optional time: 0.00ms, time remaining: 170.10ms
+[1316ms][debug][gc,remset   ] GC(7) Visited cards 544 Total dirty 4096 (13.28%) Total old 366592 (0.15%)
+[1317ms][trace][gc,ergo,cset] GC(7) Prediction for group 5 (5 regions): total_time 4.96ms card_rs_length 40 merge_scan_time 0.00ms code_root_scan_time_ms 0.00ms evac_time_ms 0.67ms other_time 4.30ms bytes_to_copy 2471096
+[1317ms][info ][gc,phases   ] GC(7)   Pre Evacuate Collection Set: 0.15ms
+[1317ms][info ][gc,phases   ] GC(7)   Merge Heap Roots: 0.04ms
+[1317ms][info ][gc,phases   ] GC(7)   Evacuate Collection Set: 0.92ms
+[1317ms][info ][gc,phases   ] GC(7)   Post Evacuate Collection Set: 0.11ms
+[1317ms][info ][gc,phases   ] GC(7)   Other: 0.08ms
+[1317ms][debug][gc,remset   ] GC(7) Coarsening (recent): Inline->AoC 0 (0) AoC->Howl 0 (0) Howl->Full 0 (0) Inline->AoC 0 (0) AoC->BitMap 0 (0) BitMap->Full 0 (0) 
+[1317ms][debug][gc,remset   ] GC(7) Coarsening (all): Inline->AoC 5 (0) AoC->Howl 4 (0) Howl->Full 0 (0) Inline->AoC 6 (0) AoC->BitMap 6 (0) BitMap->Full 0 (0) 
+[1317ms][info ][gc,heap     ] GC(7) Eden regions: 64->0(75)
+[1317ms][info ][gc,heap     ] GC(7) Survivor regions: 1->1(9)
+[1317ms][info ][gc,heap     ] GC(7) Old regions: 36->29
+[1317ms][info ][gc,heap     ] GC(7) Humongous regions: 0->0
+[1317ms][info ][gc,metaspace] GC(7) Metaspace: 920K(1152K)->920K(1152K) NonClass: 839K(960K)->839K(960K) Class: 80K(192K)->80K(192K)
+[1317ms][info ][gc          ] GC(7) Pause Young (Mixed) (G1 Evacuation Pause) 99M->28M(128M) 1.430ms
+[1317ms][info ][gc,cpu      ] GC(7) User=0.00s Sys=0.00s Real=0.00s
+[1444ms][info ][gc,exit     ] Heap
+[1444ms][info ][gc,exit     ]  garbage-first heap   total reserved 131072K, committed 131072K, used 51618K [0x0000000124800000, 0x000000012c800000)
+[1444ms][info ][gc,exit     ]   region size 1024K, 23 young (23552K), 1 survivors (1024K)
+[1444ms][info ][gc,exit     ]  Metaspace       used 1074K, committed 1280K, reserved 1114112K
+[1444ms][info ][gc,exit     ]   class space    used 94K, committed 192K, reserved 1048576K

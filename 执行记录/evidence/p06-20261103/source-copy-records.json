@@ -1,0 +1,42 @@
+[
+  {
+    "chapter": 19,
+    "sha256": "6edd8e6c1f50fadcd382b9ed7a261e131080e44930e531a9d2fa0a4811a4036d",
+    "characters": 2120
+  },
+  {
+    "chapter": 20,
+    "title": "第20章 安全点、线程握手与垃圾收集屏障",
+    "sha256": "4aa927315d3266c2d73f582d6c11a9f14cb36ed75a2b9c8f9dff03e59549f5d4",
+    "characters": 1683,
+    "tail": "\" }\\n}\\n\""
+  },
+  {
+    "chapter": 21,
+    "title": "第21章 Serial、Parallel 与 Epsilon",
+    "sha256": "88c83dc6ee2d2c867474bbeb7a245255ab1f0eba4284c70a47f1aea4adf30b9b",
+    "characters": 1003,
+    "tail": "\" }\\n}\\n\""
+  },
+  {
+    "chapter": 22,
+    "title": "第22章 Garbage-First（G1）的分区回收机制",
+    "sha256": "588cfca15a33e1e4d3113c516f4ba5e450b26dbb32cd0a9ee8c31d53daa37991",
+    "characters": 1608,
+    "tail": "\" }\\n}\\n\""
+  },
+  {
+    "chapter": 23,
+    "title": "第23章 Z 垃圾收集器的分代与低延迟设计",
+    "sha256": "69667a7a3de3e878a78a70c1d4a88e7c166d15b4cab537aab3692821dff87969",
+    "characters": 2061,
+    "tail": "\" }\\n}\\n\""
+  },
+  {
+    "chapter": 24,
+    "title": "第24章 Shenandoah 与分代演进",
+    "sha256": "69667a7a3de3e878a78a70c1d4a88e7c166d15b4cab537aab3692821dff87969",
+    "characters": 2061,
+    "tail": "\" }\\n}\\n\""
+  }
+]

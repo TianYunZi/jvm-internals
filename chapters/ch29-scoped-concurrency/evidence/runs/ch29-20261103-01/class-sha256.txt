@@ -1,0 +1,2 @@
+881d6e356b718da9596ef923546bb6902d1d2f625056bd8a097628f3b17c98cb  chapters/ch29-scoped-concurrency/target/classes/org/example/jvminternals/ch29/ContextJourney.class
+f442476700da8c2e7dd4a8fcb862cffaea67197cfc42a89a598b45b2f9138425  chapters/ch29-scoped-concurrency/preview/target/classes/org/example/jvminternals/ch29/StructuredJourney.class

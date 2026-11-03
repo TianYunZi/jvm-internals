@@ -1,0 +1,2 @@
+P09_JDK=/opt/homebrew/opt/openjdk@25
+JAVA_HOME="$P09_JDK" mvn -pl chapters/ch36-performance-cases -am compile

@@ -1,0 +1,262 @@
+[
+  {
+    "page": "chapters/ch19-gc-foundations/chapter.html",
+    "id": "code-001",
+    "sha256": "0a437b186d9131759e20592eca2da51f47cc379c826acf56054b445760fe0510"
+  },
+  {
+    "page": "chapters/ch19-gc-foundations/chapter.html",
+    "id": "code-002",
+    "sha256": "28e76801dd86581ab31bbff5ba9a4f24732a4051adf7b0fefbc4a168462ccca9"
+  },
+  {
+    "page": "chapters/ch19-gc-foundations/chapter.html",
+    "id": "code-003",
+    "sha256": "79f0b9d524eb2c79042dec49fec439dcb5d5a56d7f60b511779dbdd1d72840e3"
+  },
+  {
+    "page": "chapters/ch19-gc-foundations/chapter.html",
+    "id": "code-004",
+    "sha256": "75b704572c7fe35ad83e339b09ae04773ebdb135e36749a3b3e8f38f25ee7ffb"
+  },
+  {
+    "page": "chapters/ch19-gc-foundations/chapter.html",
+    "id": "code-005",
+    "sha256": "c298bcd33a750eb2d0008345fc74c220d8cbf40030606a2673ec241fcc96f23f"
+  },
+  {
+    "page": "chapters/ch19-gc-foundations/chapter.html",
+    "id": "code-006",
+    "sha256": "8fdf1a9b6d5e1d05196475325cc66df8936268e017ee7f55ed8ec6c3a9fce1e2"
+  },
+  {
+    "page": "chapters/ch19-gc-foundations/chapter.html",
+    "id": "code-007",
+    "sha256": "8fa98b2cc9fd19e7ee112e49926651afc9d4d94e68a1869e513706aa8484d749"
+  },
+  {
+    "page": "chapters/ch19-gc-foundations/sources.html",
+    "id": "code-001",
+    "sha256": "c4fb0786e97d45b73d06e65ad127cac7d451e091b1c303d2121c9049472f04f4"
+  },
+  {
+    "page": "chapters/ch19-gc-foundations/sources.html",
+    "id": "code-002",
+    "sha256": "6edd8e6c1f50fadcd382b9ed7a261e131080e44930e531a9d2fa0a4811a4036d"
+  },
+  {
+    "page": "chapters/ch19-gc-foundations/README.html",
+    "id": "code-001",
+    "sha256": "6c2dcaf91818d9f1bdb7f0204f3c57f256f3142384868d20190b15e7b8f939c7"
+  },
+  {
+    "page": "chapters/ch20-safepoints-barriers/chapter.html",
+    "id": "code-001",
+    "sha256": "d1bd47ad325605f7d8c3129e98d7623e52284990fa97398953562a532d92bb76"
+  },
+  {
+    "page": "chapters/ch20-safepoints-barriers/chapter.html",
+    "id": "code-002",
+    "sha256": "dfdd00bbde53b5c013b17aa3c88e189e705440276097a200913c518f928f0860"
+  },
+  {
+    "page": "chapters/ch20-safepoints-barriers/chapter.html",
+    "id": "code-003",
+    "sha256": "550dc8ac0dee12ef9bf60f6e36190a2cca22199c05fea0fcd3d24c89f1021fba"
+  },
+  {
+    "page": "chapters/ch20-safepoints-barriers/chapter.html",
+    "id": "code-004",
+    "sha256": "1d185ac713002109445d297a52caea06d2e1e3f3bc1d39c588a7b0d8ac108d2b"
+  },
+  {
+    "page": "chapters/ch20-safepoints-barriers/chapter.html",
+    "id": "code-005",
+    "sha256": "de3c5ca4e647fbfc0fc8dde9e1ccbf027d7a61461332496bc2d7ce9fbe778987"
+  },
+  {
+    "page": "chapters/ch20-safepoints-barriers/chapter.html",
+    "id": "code-006",
+    "sha256": "abfaf4e126dfc0f21630143862760d9fe2e7622f3cbccf023223b0502e1f1c63"
+  },
+  {
+    "page": "chapters/ch20-safepoints-barriers/sources.html",
+    "id": "code-001",
+    "sha256": "2187cc2041f9b47a07c2ad5e2238f3d0a4df3056f8b52c7b4d0eaa5598e454b3"
+  },
+  {
+    "page": "chapters/ch20-safepoints-barriers/sources.html",
+    "id": "code-002",
+    "sha256": "4aa927315d3266c2d73f582d6c11a9f14cb36ed75a2b9c8f9dff03e59549f5d4"
+  },
+  {
+    "page": "chapters/ch20-safepoints-barriers/README.html",
+    "id": "code-001",
+    "sha256": "6e2914d14ce56d0da6442649b368ed2b8138360ef99b72d4ee894e5ce54852ce"
+  },
+  {
+    "page": "chapters/ch21-basic-collectors/chapter.html",
+    "id": "code-001",
+    "sha256": "e4ab64fb4bfe5de9748e2a4e4d76f2a7249856653a1700477d22b5b8c06e03c4"
+  },
+  {
+    "page": "chapters/ch21-basic-collectors/chapter.html",
+    "id": "code-002",
+    "sha256": "6e001e3be40d17b467a943adb59ddae0d47ba77a1bd045c79ddae2a4a0d392a3"
+  },
+  {
+    "page": "chapters/ch21-basic-collectors/chapter.html",
+    "id": "code-003",
+    "sha256": "f8087f55576b947a6c4681c2a7c186dfe7338baee3821fcfc4addf4d3ac2bb0e"
+  },
+  {
+    "page": "chapters/ch21-basic-collectors/chapter.html",
+    "id": "code-004",
+    "sha256": "e47e1ac0efae80cb16afb13cc6507c6dee0d2b1ff46ef77da1f3d0dc7b3efbad"
+  },
+  {
+    "page": "chapters/ch21-basic-collectors/sources.html",
+    "id": "code-001",
+    "sha256": "c61f808d521aaff2ffd2a288154ba88629b79d02a91f58fe860dcffc82e06c72"
+  },
+  {
+    "page": "chapters/ch21-basic-collectors/sources.html",
+    "id": "code-002",
+    "sha256": "88c83dc6ee2d2c867474bbeb7a245255ab1f0eba4284c70a47f1aea4adf30b9b"
+  },
+  {
+    "page": "chapters/ch21-basic-collectors/README.html",
+    "id": "code-001",
+    "sha256": "5831da7569c89b1384428b00fc008610a94be7078c0719835d8573cec6a466c0"
+  },
+  {
+    "page": "chapters/ch22-g1/chapter.html",
+    "id": "code-001",
+    "sha256": "efa5b3506dbff86d5b7dbcbfb778cf0c4f1eaea58eb466e2d0bd2628e5749a2b"
+  },
+  {
+    "page": "chapters/ch22-g1/chapter.html",
+    "id": "code-002",
+    "sha256": "70fca17e11d603808f3d5c90db42d08d24c41290b8c4e354c85521eac3dd3c06"
+  },
+  {
+    "page": "chapters/ch22-g1/chapter.html",
+    "id": "code-003",
+    "sha256": "00b37c5bc98895458487b53bd3968ddaa9980b7dce39dee33035386d8bfa68c3"
+  },
+  {
+    "page": "chapters/ch22-g1/chapter.html",
+    "id": "code-004",
+    "sha256": "7fa48604718372b889c532f4c196c7c7857da2a36e0a96d834cf028ee8ec2901"
+  },
+  {
+    "page": "chapters/ch22-g1/sources.html",
+    "id": "code-001",
+    "sha256": "9172ac96c37373ef739102f8a00a7a9d19a92c0780c35aad962e5acb66e5a5db"
+  },
+  {
+    "page": "chapters/ch22-g1/sources.html",
+    "id": "code-002",
+    "sha256": "588cfca15a33e1e4d3113c516f4ba5e450b26dbb32cd0a9ee8c31d53daa37991"
+  },
+  {
+    "page": "chapters/ch22-g1/README.html",
+    "id": "code-001",
+    "sha256": "bd1c0694d862f786b3dda97560f0412b6d46ea765753ceec30cc69c917160497"
+  },
+  {
+    "page": "chapters/ch23-zgc/chapter.html",
+    "id": "code-001",
+    "sha256": "ec681d6c812fe3bddfb27405a4e537c62f2b97d349643b7e2387cab89425a51a"
+  },
+  {
+    "page": "chapters/ch23-zgc/chapter.html",
+    "id": "code-002",
+    "sha256": "04cadb271be03fcb4f1dd73641bf81856aeff33dd92db553093ce563769eddfd"
+  },
+  {
+    "page": "chapters/ch23-zgc/chapter.html",
+    "id": "code-003",
+    "sha256": "0f7aa29a813befe964c15fea54b8c6b2a6881153156ad51197ba4e49b8495ff0"
+  },
+  {
+    "page": "chapters/ch23-zgc/chapter.html",
+    "id": "code-004",
+    "sha256": "ccf7d41964267cb14e3755da0e4d001ce883e96aa937b65c1053655da1537dae"
+  },
+  {
+    "page": "chapters/ch23-zgc/chapter.html",
+    "id": "code-005",
+    "sha256": "289f7d69866d3bc2e144c14de00290db3ff73976eae32474daab4aa3b3dab43b"
+  },
+  {
+    "page": "chapters/ch23-zgc/sources.html",
+    "id": "code-001",
+    "sha256": "39f85b1fd10d4dd63b72cf9700ac44aa92b7513939ab85e9fb3bc8578f777658"
+  },
+  {
+    "page": "chapters/ch23-zgc/sources.html",
+    "id": "code-002",
+    "sha256": "69667a7a3de3e878a78a70c1d4a88e7c166d15b4cab537aab3692821dff87969"
+  },
+  {
+    "page": "chapters/ch23-zgc/README.html",
+    "id": "code-001",
+    "sha256": "8656552d5a0f399e93ba3d38022fbe4594707ca96a6feb6aae3afee452aacfd5"
+  },
+  {
+    "page": "chapters/ch24-shenandoah/chapter.html",
+    "id": "code-001",
+    "sha256": "06d0f7f430710b3cb8af7d703bceeb3cc9f5475fd04e3df0024613ed6353783f"
+  },
+  {
+    "page": "chapters/ch24-shenandoah/chapter.html",
+    "id": "code-002",
+    "sha256": "4113ef16a477f76e0ed4168f1b53c6d69d98d48a98fce5605666d37135fc2779"
+  },
+  {
+    "page": "chapters/ch24-shenandoah/chapter.html",
+    "id": "code-003",
+    "sha256": "bca91ca60e8d495250ac9314dafb91fca37d1a4bee241816c0920b39d45301ac"
+  },
+  {
+    "page": "chapters/ch24-shenandoah/chapter.html",
+    "id": "code-004",
+    "sha256": "f6061721f9108fcecece03070f700a0ff262f8d06a9d01dbbeecb36df3ffa67a"
+  },
+  {
+    "page": "chapters/ch24-shenandoah/chapter.html",
+    "id": "code-005",
+    "sha256": "928e3ac3e1262635b1a80961bb870df65110888084d4610ea225b3ba6c2941d1"
+  },
+  {
+    "page": "chapters/ch24-shenandoah/chapter.html",
+    "id": "code-006",
+    "sha256": "dec31ce833874862b15b1c752a0232611f30d842573619d960b7495f9e197cc0"
+  },
+  {
+    "page": "chapters/ch24-shenandoah/chapter.html",
+    "id": "code-007",
+    "sha256": "389c715f7e5938e768a0a06e0a2ea1c84babd09709e73cecf5fa73a9cff5bb8e"
+  },
+  {
+    "page": "chapters/ch24-shenandoah/chapter.html",
+    "id": "code-008",
+    "sha256": "227689788e8d09422b58f33a309c3c97cc9330b80dd9d80b353b19e263888cb1"
+  },
+  {
+    "page": "chapters/ch24-shenandoah/sources.html",
+    "id": "code-001",
+    "sha256": "305b041eb0c78ebc22fdb90d6500cf382d736a59773572cc27c1d53a5374c763"
+  },
+  {
+    "page": "chapters/ch24-shenandoah/sources.html",
+    "id": "code-002",
+    "sha256": "69667a7a3de3e878a78a70c1d4a88e7c166d15b4cab537aab3692821dff87969"
+  },
+  {
+    "page": "chapters/ch24-shenandoah/README.html",
+    "id": "code-001",
+    "sha256": "f4f7f1c61d3695ac1d626df5189ed890d66e86b596ba2979af1a10675b1cb652"
+  }
+]

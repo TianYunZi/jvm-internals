@@ -1,0 +1,5 @@
+案例 pid=84073 mode=locked time=2026-11-03T13:40:11.643807Z processors=8
+测量 count=64 wallNs=798168167 p50Ns=411467958 p99Ns=788145709 maxNs=788145709 completed=64
+real 0.93
+user 0.12
+sys 0.03

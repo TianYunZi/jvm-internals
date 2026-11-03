@@ -1,0 +1,43 @@
+# 第 5 章源码与运行说明
+
+正文见 [chapter.html](chapter.html)，完整教学源码见 [sources.html](sources.html)。正式编译输入在 `src/main/java/org/example/jvminternals/ch05/`。本章没有隐式依赖其他章节模块；第 4 章已有异常表只在文稿中明确引用。
+
+## 示例、性质与条件
+
+| 示例 | 文件／入口 | 目的与范围 |
+| --- | --- | --- |
+| CH05-E01 | BytecodeCases.java，main | 槽与栈、分支／数组／选择、调用、同步块与同步方法；只执行固定正常输入 |
+| CH05-E02 | FlexibleConstruction.java，main | 正常的前置计算、当前类字段赋值和父构造器调用；不启用预览 |
+
+用户授权执行 P03。两组均为教学源码和普通观察，不包含测试框架、断言、非法类文件或故障输入。编译采用 Java 开发工具包（Java Development Kit，JDK）25.0.5.0.2、Maven 3.10.0、macOS AArch64，完整调试信息及参数名，release 25；无第三方运行依赖。
+
+## 实际命令
+
+在项目根目录选择本轮工具，先编译：
+
+```sh
+CH05_JDK=/opt/homebrew/Cellar/openjdk@25/25.0.5.0.2/libexec/openjdk.jdk/Contents/Home
+JAVA_HOME="$CH05_JDK" mvn --offline --batch-mode --no-transfer-progress -pl chapters/ch05-bytecode-verification -am compile
+```
+
+本轮 2 个源文件编译成功。首次无本地缓存时可去掉 `--offline` 取得同一固定插件版本；本轮未重新下载插件。
+
+普通运行及验证日志：
+
+```sh
+"$CH05_JDK/bin/java" -Xmx128m -Xlog:verification=info:file=chapters/ch05-bytecode-verification/evidence/runs/ch05-20261103-01/verification.log:uptime,level,tags -cp chapters/ch05-bytecode-verification/target/classes org.example.jvminternals.ch05.BytecodeCases
+"$CH05_JDK/bin/java" -Xmx128m -Xlog:verification=info:file=chapters/ch05-bytecode-verification/evidence/runs/ch05-20261103-01/flexible-verification.log:uptime,level,tags -cp chapters/ch05-bytecode-verification/target/classes org.example.jvminternals.ch05.FlexibleConstruction
+```
+
+本轮原样输出保存在 cases.txt、flexible.txt；重放时应选新日志目录，避免覆盖本轮证据。程序有限方法调用和短数组循环，不创建教学线程、不等待输入，正常自然退出；堆上限不等于进程总内存上限。
+
+反汇编：
+
+```sh
+"$CH05_JDK/bin/javap" -v -p -classpath chapters/ch05-bytecode-verification/target/classes org.example.jvminternals.ch05.BytecodeCases 'org.example.jvminternals.ch05.BytecodeCases$MonitorCell' 'org.example.jvminternals.ch05.BytecodeCases$Increment'
+"$CH05_JDK/bin/javap" -v -p -classpath chapters/ch05-bytecode-verification/target/classes org.example.jvminternals.ch05.FlexibleConstruction 'org.example.jvminternals.ch05.FlexibleConstruction$Child' 'org.example.jvminternals.ch05.FlexibleConstruction$Base'
+```
+
+对应 cases.javap.txt、flexible.javap.txt。实际得到 widenAndAdd 的容量 4／7、槽 2 的不同区间复用、分支目标 11／14、tableswitch／lookupswitch、同步释放与方法标志、父构造器之前的字段写入。栈表和类型图是据这些产物及规范推演，不是逐条动态取值。
+
+完整环境、命令、退出情况和输入身份见[本轮记录](evidence/runs/ch05-20261103-01/记录.md)，规范及实现符号见[来源索引](evidence/索引.md)。源码阅读页从正式文件生成，后续变更需同步重建，不手工维护另一套程序。

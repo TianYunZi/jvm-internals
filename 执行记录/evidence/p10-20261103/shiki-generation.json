@@ -1,0 +1,3397 @@
+{
+  "version": "4.6.0",
+  "theme": "github-light",
+  "languages": [
+    "java",
+    "bash",
+    "xml",
+    "json",
+    "cpp",
+    "c",
+    "asm"
+  ],
+  "plainTextLanguage": "text",
+  "records": [
+    {
+      "page": "chapters/ch01-architecture/chapter.html",
+      "id": "code-001",
+      "language": "java",
+      "kind": "block",
+      "sha256": "34ae654500e3896de23760017391b65ae0d24c6a8d2f4392b551e3c09f468e74"
+    },
+    {
+      "page": "chapters/ch01-architecture/chapter.html",
+      "id": "code-002",
+      "language": "text",
+      "kind": "block",
+      "sha256": "a1ba7e76c168d7a715195bdf1da8212cdc82a1f83075f9807dd7d9076c688232"
+    },
+    {
+      "page": "chapters/ch01-architecture/chapter.html",
+      "id": "code-003",
+      "language": "text",
+      "kind": "block",
+      "sha256": "2ea5a50cf9292c7cbb7e3c77ef73bdfeed36f73136d3c5893deb3eda3d4566ff"
+    },
+    {
+      "page": "chapters/ch01-architecture/chapter.html",
+      "id": "code-004",
+      "language": "text",
+      "kind": "inline",
+      "sha256": "ee8a8e3c3d1cded54843e2b0d37ca37850d6fba4889acb1e5825e30a00d4b3d2"
+    },
+    {
+      "page": "chapters/ch01-architecture/chapter.html",
+      "id": "code-005",
+      "language": "text",
+      "kind": "inline",
+      "sha256": "11507a0e2f5e69d5dfa40a62a1bd7b6ee57e6bcd85c67c9b8431b36fff21c437"
+    },
+    {
+      "page": "chapters/ch01-architecture/chapter.html",
+      "id": "code-006",
+      "language": "text",
+      "kind": "inline",
+      "sha256": "38a0963a6364b09ad867aa9a66c6d009673c21e182015461da236ec361877f77"
+    },
+    {
+      "page": "chapters/ch01-architecture/chapter.html",
+      "id": "code-007",
+      "language": "text",
+      "kind": "inline",
+      "sha256": "ada20d364aa664ef77a7854018bb1503102cfd4dc381fb5258a65e6666833392"
+    },
+    {
+      "page": "chapters/ch01-architecture/chapter.html",
+      "id": "code-008",
+      "language": "text",
+      "kind": "inline",
+      "sha256": "075ac6b55282e24e94df8ac102e5bccf5a339bc2bd918f6de2c56b8a7442c3e6"
+    },
+    {
+      "page": "chapters/ch01-architecture/chapter.html",
+      "id": "code-009",
+      "language": "text",
+      "kind": "inline",
+      "sha256": "e0dd68cce18f76c1eed7dc7cae38345e4bd0bea473ab3da70c01f24807d3d5e3"
+    },
+    {
+      "page": "chapters/ch01-architecture/chapter.html",
+      "id": "code-010",
+      "language": "text",
+      "kind": "inline",
+      "sha256": "3316348dbadfb7b11c7c2ea235949419e23f9fa898ad2c198f999617912a9925"
+    },
+    {
+      "page": "chapters/ch01-architecture/chapter.html",
+      "id": "code-011",
+      "language": "text",
+      "kind": "inline",
+      "sha256": "36f3dcd7be0e929515a74fb49b158b881e754d762c708304c883f98fcdd749d5"
+    },
+    {
+      "page": "chapters/ch01-architecture/chapter.html",
+      "id": "code-012",
+      "language": "text",
+      "kind": "inline",
+      "sha256": "fce2a0efcffe0486aff07004af4da4db3b9b04f181187ede69b083192c9ae259"
+    },
+    {
+      "page": "chapters/ch01-architecture/chapter.html",
+      "id": "code-013",
+      "language": "text",
+      "kind": "inline",
+      "sha256": "5922b571fd8a8669cd5675e5ba529e2cba42e8323c7957696b25fff535146263"
+    },
+    {
+      "page": "chapters/ch01-architecture/chapter.html",
+      "id": "code-014",
+      "language": "text",
+      "kind": "inline",
+      "sha256": "4dda94ebc5ae3b157a38dc106789667c966ecdb6d14fc56e162aeb8f57547b7c"
+    },
+    {
+      "page": "chapters/ch01-architecture/chapter.html",
+      "id": "code-015",
+      "language": "cpp",
+      "kind": "inline",
+      "sha256": "2008545f545439a3b2cf32ae20248d5ba48e6803d6e1f4574ebe91c59eff76fc"
+    },
+    {
+      "page": "chapters/ch01-architecture/chapter.html",
+      "id": "code-016",
+      "language": "text",
+      "kind": "inline",
+      "sha256": "a723085c37c0f3d5273a9d98fd80a3bf993b3b482125a1f7c2c77cc9292d4627"
+    },
+    {
+      "page": "chapters/ch01-architecture/chapter.html",
+      "id": "code-017",
+      "language": "text",
+      "kind": "inline",
+      "sha256": "547b0bf423c0338550bd0ee0c59aea993e5b855ac2959cd19c0bab68692b47b7"
+    },
+    {
+      "page": "chapters/ch01-architecture/chapter.html",
+      "id": "code-018",
+      "language": "text",
+      "kind": "inline",
+      "sha256": "20df09b09804a5c4e6316714c7702cff78ded57c49cb6e8ce1375a761f914246"
+    },
+    {
+      "page": "chapters/ch01-architecture/chapter.html",
+      "id": "code-019",
+      "language": "text",
+      "kind": "inline",
+      "sha256": "0d6e4079e36703ebd37c00722f5891d28b0e2811dc114b129215123adcce3605"
+    },
+    {
+      "page": "chapters/ch01-architecture/chapter.html",
+      "id": "code-020",
+      "language": "text",
+      "kind": "inline",
+      "sha256": "0da2e3df77c53c40e186afd0090b5197d539a9ba66f985c78021639e56e738d5"
+    },
+    {
+      "page": "chapters/ch01-architecture/chapter.html",
+      "id": "code-021",
+      "language": "text",
+      "kind": "inline",
+      "sha256": "4c73e487e0db40c74ce7b04237ff941073c638389e48dc5c48ebe7b876d84b4e"
+    },
+    {
+      "page": "chapters/ch01-architecture/sources.html",
+      "id": "code-001",
+      "language": "java",
+      "kind": "block",
+      "sha256": "d15989f15fa893ae3706e8773f672990696fde07dc567b14680c6aa102438db9"
+    },
+    {
+      "page": "chapters/ch01-architecture/sources.html",
+      "id": "code-002",
+      "language": "text",
+      "kind": "inline",
+      "sha256": "e07b52bd80fd8b4d138b62fb41b41a252d7d68da861a81f6430fd4a15c111a94"
+    },
+    {
+      "page": "chapters/ch02-computer-basics/chapter.html",
+      "id": "code-001",
+      "language": "text",
+      "kind": "block",
+      "sha256": "af9f78d405169e41028a5aa271c6814d4ba6dee8c6c8b56dcc23567f60e38b06"
+    },
+    {
+      "page": "chapters/ch02-computer-basics/chapter.html",
+      "id": "code-002",
+      "language": "bash",
+      "kind": "block",
+      "sha256": "70d028c51154e25c5a2404b7514daf286f18a9255099712b191bb2d87004e117"
+    },
+    {
+      "page": "chapters/ch02-computer-basics/chapter.html",
+      "id": "code-003",
+      "language": "text",
+      "kind": "inline",
+      "sha256": "6527c9361a2f469c5275afcb5d06e53013367cd231995de13dc7218711388382"
+    },
+    {
+      "page": "chapters/ch02-computer-basics/chapter.html",
+      "id": "code-004",
+      "language": "text",
+      "kind": "inline",
+      "sha256": "cb67f4c5ae6d05fbf271482cf8d8b847fba12f4dbf8c2b789bca9b650e3cefb7"
+    },
+    {
+      "page": "chapters/ch02-computer-basics/chapter.html",
+      "id": "code-005",
+      "language": "text",
+      "kind": "inline",
+      "sha256": "ec3612f7532c97b43c8fdd095dcecd68dcbb27f5a8d129b8722c706a21fef1ed"
+    },
+    {
+      "page": "chapters/ch02-computer-basics/chapter.html",
+      "id": "code-006",
+      "language": "text",
+      "kind": "inline",
+      "sha256": "3760b58d893e2fc55e2f42d0130d7a89dce6970672050a79340868d474ca7d4a"
+    },
+    {
+      "page": "chapters/ch02-computer-basics/chapter.html",
+      "id": "code-007",
+      "language": "text",
+      "kind": "inline",
+      "sha256": "cf92d852bc748e22842bec35e78176645388884da2643a5fe1dcdd7f0718f95d"
+    },
+    {
+      "page": "chapters/ch02-computer-basics/chapter.html",
+      "id": "code-008",
+      "language": "text",
+      "kind": "inline",
+      "sha256": "9e725278aa9db8c65e110ed5157ebf41f010dabcc7b163aed696f3915a74322a"
+    },
+    {
+      "page": "chapters/ch02-computer-basics/chapter.html",
+      "id": "code-009",
+      "language": "text",
+      "kind": "inline",
+      "sha256": "c4c035571e2a96d4ce1c467c32a866d8e0e3226083e89bab72e3a09a7f07a201"
+    },
+    {
+      "page": "chapters/ch02-computer-basics/chapter.html",
+      "id": "code-010",
+      "language": "text",
+      "kind": "inline",
+      "sha256": "9a28cbfaf271bc2dcfc7142f739445d8dc755b1e465b399ad96ba02e87fc9927"
+    },
+    {
+      "page": "chapters/ch02-computer-basics/chapter.html",
+      "id": "code-011",
+      "language": "text",
+      "kind": "inline",
+      "sha256": "71062ce505b2ed82f8eb14a7b7cf60668cbb3ece0b8088bedd1d07c2ef5b15db"
+    },
+    {
+      "page": "chapters/ch02-computer-basics/chapter.html",
+      "id": "code-012",
+      "language": "text",
+      "kind": "inline",
+      "sha256": "ecbb986756df6945aa1f37ba6e481e698e8b16aa4dcd2e02f0cc26938d74bacf"
+    },
+    {
+      "page": "chapters/ch02-computer-basics/chapter.html",
+      "id": "code-013",
+      "language": "text",
+      "kind": "inline",
+      "sha256": "b1242a2af493ba085144a6dfa6969ffadd008dd204b7ff73f4e35a2792feb402"
+    },
+    {
+      "page": "chapters/ch02-computer-basics/chapter.html",
+      "id": "code-014",
+      "language": "text",
+      "kind": "inline",
+      "sha256": "6bc82bf0491a7a6a09c8871ca8e27442e74fc2b1bcd49075d9e77e0bd208a8fb"
+    },
+    {
+      "page": "chapters/ch02-computer-basics/chapter.html",
+      "id": "code-015",
+      "language": "text",
+      "kind": "inline",
+      "sha256": "d0789d9182650a006729b9e70dc5ad8c5ecac2ad32b2629eaf1a799f24a83205"
+    },
+    {
+      "page": "chapters/ch02-computer-basics/chapter.html",
+      "id": "code-016",
+      "language": "text",
+      "kind": "inline",
+      "sha256": "241c9ecbb7f35844da7c633b92977529c65a379f3609ce438ff568465007f71e"
+    },
+    {
+      "page": "chapters/ch02-computer-basics/chapter.html",
+      "id": "code-017",
+      "language": "text",
+      "kind": "inline",
+      "sha256": "52bc4cc8c09031b5da6e13cc715c49a452330e1201edbcf9eddb857e0311f1ce"
+    },
+    {
+      "page": "chapters/ch02-computer-basics/chapter.html",
+      "id": "code-018",
+      "language": "text",
+      "kind": "inline",
+      "sha256": "6527c9361a2f469c5275afcb5d06e53013367cd231995de13dc7218711388382"
+    },
+    {
+      "page": "chapters/ch02-computer-basics/chapter.html",
+      "id": "code-019",
+      "language": "text",
+      "kind": "inline",
+      "sha256": "9e725278aa9db8c65e110ed5157ebf41f010dabcc7b163aed696f3915a74322a"
+    },
+    {
+      "page": "chapters/ch02-computer-basics/chapter.html",
+      "id": "code-020",
+      "language": "text",
+      "kind": "inline",
+      "sha256": "ec3612f7532c97b43c8fdd095dcecd68dcbb27f5a8d129b8722c706a21fef1ed"
+    },
+    {
+      "page": "chapters/ch03-source-environment/chapter.html",
+      "id": "code-001",
+      "language": "text",
+      "kind": "block",
+      "sha256": "408697e6d5927d0aab45fb9cb28388dba5ed60e2104e5edb716d851093d3d371"
+    },
+    {
+      "page": "chapters/ch03-source-environment/chapter.html",
+      "id": "code-002",
+      "language": "bash",
+      "kind": "block",
+      "sha256": "716d6f7134aa72de37fbc9c8170a98eb3043d78c61cd6ffeba359e20159353eb"
+    },
+    {
+      "page": "chapters/ch03-source-environment/chapter.html",
+      "id": "code-003",
+      "language": "text",
+      "kind": "block",
+      "sha256": "3c1dc0aa506132a6503b40a42d2867392228bf9faba1d3c5907c8f349d779309"
+    },
+    {
+      "page": "chapters/ch03-source-environment/chapter.html",
+      "id": "code-004",
+      "language": "text",
+      "kind": "block",
+      "sha256": "5cdfc9f401b8c185d80fb4983776773be9c25011ef92caaeaa22c8a592e2067d"
+    },
+    {
+      "page": "chapters/ch03-source-environment/chapter.html",
+      "id": "code-005",
+      "language": "text",
+      "kind": "inline",
+      "sha256": "e51accdfa1af2799d4f98c5d6103b86a9688e5d2210089439095a61dd7270eb1"
+    },
+    {
+      "page": "chapters/ch03-source-environment/chapter.html",
+      "id": "code-006",
+      "language": "text",
+      "kind": "inline",
+      "sha256": "4eef033355495840b8f69011c28e6d61d43952da154ec996ca9709f087aa5021"
+    },
+    {
+      "page": "chapters/ch03-source-environment/chapter.html",
+      "id": "code-007",
+      "language": "text",
+      "kind": "inline",
+      "sha256": "2084da23fa22164d7a8dc22f3eb35e684776fcfa03931fc4fe229193b52a58f1"
+    },
+    {
+      "page": "chapters/ch03-source-environment/chapter.html",
+      "id": "code-008",
+      "language": "text",
+      "kind": "inline",
+      "sha256": "840a8dcfeae95966a870b0b5257997ce94cbc19dd979409d1671d2e93a9e0de6"
+    },
+    {
+      "page": "chapters/ch03-source-environment/chapter.html",
+      "id": "code-009",
+      "language": "text",
+      "kind": "inline",
+      "sha256": "68ab84f7c6d0f5781585eb1b5289499fb29081b918f71ebddb5f72021c9ef9c5"
+    },
+    {
+      "page": "chapters/ch03-source-environment/chapter.html",
+      "id": "code-010",
+      "language": "text",
+      "kind": "inline",
+      "sha256": "2ebc7b97b574bce862130ed0bef80481d86ca4ac7bd739314f204e6deefbe810"
+    },
+    {
+      "page": "chapters/ch03-source-environment/chapter.html",
+      "id": "code-011",
+      "language": "text",
+      "kind": "inline",
+      "sha256": "36f3dcd7be0e929515a74fb49b158b881e754d762c708304c883f98fcdd749d5"
+    },
+    {
+      "page": "chapters/ch03-source-environment/chapter.html",
+      "id": "code-012",
+      "language": "text",
+      "kind": "inline",
+      "sha256": "800d55386a367a627e72f4317e1f9adf29ac93708f25463483f81c973e2108df"
+    },
+    {
+      "page": "chapters/ch03-source-environment/chapter.html",
+      "id": "code-013",
+      "language": "text",
+      "kind": "inline",
+      "sha256": "7a25c11d623046e4eaee0d30b0709268f49784fc3ef76bee707481c0d9f4723c"
+    },
+    {
+      "page": "chapters/ch03-source-environment/chapter.html",
+      "id": "code-014",
+      "language": "text",
+      "kind": "inline",
+      "sha256": "cb3c206a26c5d5ebfc23af441cbf4a1d7106c344a7665aae9d95559226a1f3dd"
+    },
+    {
+      "page": "chapters/ch03-source-environment/chapter.html",
+      "id": "code-015",
+      "language": "text",
+      "kind": "inline",
+      "sha256": "38a0963a6364b09ad867aa9a66c6d009673c21e182015461da236ec361877f77"
+    },
+    {
+      "page": "chapters/ch03-source-environment/chapter.html",
+      "id": "code-016",
+      "language": "text",
+      "kind": "inline",
+      "sha256": "ee8a8e3c3d1cded54843e2b0d37ca37850d6fba4889acb1e5825e30a00d4b3d2"
+    },
+    {
+      "page": "chapters/ch03-source-environment/chapter.html",
+      "id": "code-017",
+      "language": "text",
+      "kind": "inline",
+      "sha256": "842a2bfd31289a70343257f91754c2f5521fe1b2301a0973650b9a3ef8779aca"
+    },
+    {
+      "page": "chapters/ch03-source-environment/chapter.html",
+      "id": "code-018",
+      "language": "text",
+      "kind": "inline",
+      "sha256": "c1520734aecece8f4d6db70e08702c11bc1120b56f6866db29e1c1f1f5b63ee8"
+    },
+    {
+      "page": "chapters/ch03-source-environment/chapter.html",
+      "id": "code-019",
+      "language": "text",
+      "kind": "inline",
+      "sha256": "1238bdc6047ed161bd7b498fb593215530ffe94ad2113922655ad4f304d1e0ba"
+    },
+    {
+      "page": "chapters/ch03-source-environment/chapter.html",
+      "id": "code-020",
+      "language": "text",
+      "kind": "inline",
+      "sha256": "cac035b119f6acebb6eed53a95904279a075799efaab65a3293453d551b53957"
+    },
+    {
+      "page": "chapters/ch03-source-environment/chapter.html",
+      "id": "code-021",
+      "language": "text",
+      "kind": "inline",
+      "sha256": "1f000ef795a73b846d5b23824502c95156d6c219ccbc1c3c582102ab6dc576dc"
+    },
+    {
+      "page": "chapters/ch03-source-environment/chapter.html",
+      "id": "code-022",
+      "language": "cpp",
+      "kind": "inline",
+      "sha256": "e86e0761abcf821cf5b4c343805a11c5accece5401835f1a7d0c9116adf2ff94"
+    },
+    {
+      "page": "chapters/ch03-source-environment/chapter.html",
+      "id": "code-023",
+      "language": "text",
+      "kind": "inline",
+      "sha256": "37a8eec1ce19687d132fe29051dca629d164e2c4958ba141d5f4133a33f0688f"
+    },
+    {
+      "page": "chapters/ch03-source-environment/chapter.html",
+      "id": "code-024",
+      "language": "text",
+      "kind": "inline",
+      "sha256": "6781f6535c8de50c3c6b0de6c3dcea658048937e167730181843a027969a156f"
+    },
+    {
+      "page": "chapters/ch03-source-environment/chapter.html",
+      "id": "code-025",
+      "language": "text",
+      "kind": "inline",
+      "sha256": "57d82648e267fb96799ec22795ecefdc16950be536a54fc4e16bb81d4ebe1f4d"
+    },
+    {
+      "page": "chapters/ch03-source-environment/chapter.html",
+      "id": "code-026",
+      "language": "text",
+      "kind": "inline",
+      "sha256": "b1e3a2f7155108b0e5a54e9362bd1c55933e06a2596401478483b5e26ba3231f"
+    },
+    {
+      "page": "chapters/ch03-source-environment/chapter.html",
+      "id": "code-027",
+      "language": "text",
+      "kind": "inline",
+      "sha256": "4c73e487e0db40c74ce7b04237ff941073c638389e48dc5c48ebe7b876d84b4e"
+    },
+    {
+      "page": "chapters/ch03-source-environment/chapter.html",
+      "id": "code-028",
+      "language": "text",
+      "kind": "inline",
+      "sha256": "842a2bfd31289a70343257f91754c2f5521fe1b2301a0973650b9a3ef8779aca"
+    },
+    {
+      "page": "chapters/ch03-source-environment/chapter.html",
+      "id": "code-029",
+      "language": "text",
+      "kind": "inline",
+      "sha256": "1f7b1da46a9590c502df96343cb1ceb72098d94d1b9bf1f084f0d80d22d4a3ee"
+    },
+    {
+      "page": "chapters/ch03-source-environment/chapter.html",
+      "id": "code-030",
+      "language": "text",
+      "kind": "inline",
+      "sha256": "a4cc23fb9e18013141f2cbe9dc396adc1f54f24b7a3f246fc11205473bcbc630"
+    },
+    {
+      "page": "chapters/ch03-source-environment/chapter.html",
+      "id": "code-031",
+      "language": "text",
+      "kind": "inline",
+      "sha256": "46658a33d617b68536d3f49de0b448ea657bf3d80f29ca0bfab846105c8cfd76"
+    },
+    {
+      "page": "chapters/ch03-source-environment/chapter.html",
+      "id": "code-032",
+      "language": "cpp",
+      "kind": "inline",
+      "sha256": "564e7a4d360f655c2eb2e2bf9fa348a31e0a6093dfdc4b1a1032a07163dfdd64"
+    },
+    {
+      "page": "chapters/ch03-source-environment/chapter.html",
+      "id": "code-033",
+      "language": "cpp",
+      "kind": "inline",
+      "sha256": "23d2af1794317075441fcbffc87d62126873128ebbb9ef3a56ebe98d74ea8410"
+    },
+    {
+      "page": "chapters/ch03-source-environment/chapter.html",
+      "id": "code-034",
+      "language": "text",
+      "kind": "inline",
+      "sha256": "a03fea2899a109419b275e3c0517563c4b077db04a2fabcdc171fc77876af93e"
+    },
+    {
+      "page": "chapters/ch03-source-environment/chapter.html",
+      "id": "code-035",
+      "language": "text",
+      "kind": "inline",
+      "sha256": "3ee4bd8d1f03aa9b700511b889fccf3afffb37ecee3b388f1152842b501f12a4"
+    },
+    {
+      "page": "chapters/ch03-source-environment/chapter.html",
+      "id": "code-036",
+      "language": "text",
+      "kind": "inline",
+      "sha256": "6ada43a1a345d52e22c204d84851116ae0a8318bb3078802fadd1fc4e272503e"
+    },
+    {
+      "page": "chapters/ch03-source-environment/chapter.html",
+      "id": "code-037",
+      "language": "cpp",
+      "kind": "inline",
+      "sha256": "c4225ed303b71d00731dfdfe52d62aafca68618ef393363a97f2f94231285173"
+    },
+    {
+      "page": "chapters/ch03-source-environment/chapter.html",
+      "id": "code-038",
+      "language": "cpp",
+      "kind": "inline",
+      "sha256": "23d2af1794317075441fcbffc87d62126873128ebbb9ef3a56ebe98d74ea8410"
+    },
+    {
+      "page": "chapters/ch03-source-environment/chapter.html",
+      "id": "code-039",
+      "language": "cpp",
+      "kind": "inline",
+      "sha256": "2e4b40115086237aa61d6a4bb1d431b2a734b51d4766d033f92f04984a77cd6a"
+    },
+    {
+      "page": "chapters/ch03-source-environment/chapter.html",
+      "id": "code-040",
+      "language": "cpp",
+      "kind": "inline",
+      "sha256": "23d2af1794317075441fcbffc87d62126873128ebbb9ef3a56ebe98d74ea8410"
+    },
+    {
+      "page": "chapters/ch03-source-environment/chapter.html",
+      "id": "code-041",
+      "language": "text",
+      "kind": "inline",
+      "sha256": "11507a0e2f5e69d5dfa40a62a1bd7b6ee57e6bcd85c67c9b8431b36fff21c437"
+    },
+    {
+      "page": "chapters/ch04-classfile/chapter.html",
+      "id": "code-001",
+      "language": "java",
+      "kind": "block",
+      "sha256": "435fe5bb46c0708627e79f23b097ed1808baf94de8de197aaabe875d516f2c89"
+    },
+    {
+      "page": "chapters/ch04-classfile/chapter.html",
+      "id": "code-002",
+      "language": "text",
+      "kind": "block",
+      "sha256": "6761c6f05473cb0ddb6fdcc28d2f8496272ef7ef6d9e05bbb7c40eb3921caace"
+    },
+    {
+      "page": "chapters/ch04-classfile/chapter.html",
+      "id": "code-003",
+      "language": "text",
+      "kind": "block",
+      "sha256": "652c76cdf5ad8784a4af19e0fafddc81075dcc0d0d7165a6f95991ca377f8dab"
+    },
+    {
+      "page": "chapters/ch04-classfile/chapter.html",
+      "id": "code-004",
+      "language": "java",
+      "kind": "block",
+      "sha256": "ecb6f8d4361bfa75a1b4227e682d9701c386dd4258a7372d1c0317598909d168"
+    },
+    {
+      "page": "chapters/ch04-classfile/chapter.html",
+      "id": "code-005",
+      "language": "text",
+      "kind": "block",
+      "sha256": "2ea3cfb88e1ce60ceceec7482955fb5c37616f37b598ff58e18adbdddbce3301"
+    },
+    {
+      "page": "chapters/ch04-classfile/chapter.html",
+      "id": "code-006",
+      "language": "text",
+      "kind": "block",
+      "sha256": "3a94246ff2bb4259051531432af4cb25bd7d563f2e3de4ce7e9d8470861bc88e"
+    },
+    {
+      "page": "chapters/ch04-classfile/chapter.html",
+      "id": "code-007",
+      "language": "java",
+      "kind": "block",
+      "sha256": "523f771d5336e096c0e93e53acfbb0b8a2402e3b39ba7d68b551ea535bd43dd4"
+    },
+    {
+      "page": "chapters/ch04-classfile/chapter.html",
+      "id": "code-008",
+      "language": "java",
+      "kind": "block",
+      "sha256": "eb5a009af85ab968cf3912cbcac1b0c7ab486257ec20d241dec8cccdda8573f3"
+    },
+    {
+      "page": "chapters/ch04-classfile/chapter.html",
+      "id": "code-009",
+      "language": "bash",
+      "kind": "block",
+      "sha256": "a143966ed3fdf57f8f1678c4dba84c4f9b8937253ee6af994c845b6a6d89d487"
+    },
+    {
+      "page": "chapters/ch04-classfile/chapter.html",
+      "id": "code-010",
+      "language": "text",
+      "kind": "inline",
+      "sha256": "4c73e487e0db40c74ce7b04237ff941073c638389e48dc5c48ebe7b876d84b4e"
+    },
+    {
+      "page": "chapters/ch04-classfile/chapter.html",
+      "id": "code-011",
+      "language": "text",
+      "kind": "inline",
+      "sha256": "dd6402c044a93980a96ca7c36b2ae10e8cb94c1ad0e7a9818f98e9a7eb6bf3e6"
+    },
+    {
+      "page": "chapters/ch04-classfile/chapter.html",
+      "id": "code-012",
+      "language": "text",
+      "kind": "inline",
+      "sha256": "cb3c206a26c5d5ebfc23af441cbf4a1d7106c344a7665aae9d95559226a1f3dd"
+    },
+    {
+      "page": "chapters/ch04-classfile/chapter.html",
+      "id": "code-013",
+      "language": "text",
+      "kind": "inline",
+      "sha256": "79eb1d4d2892120df5e5e2224475443de3c8b0da6381181a06c41d87af6fef52"
+    },
+    {
+      "page": "chapters/ch04-classfile/chapter.html",
+      "id": "code-014",
+      "language": "text",
+      "kind": "inline",
+      "sha256": "e632b7095b0bf32c260fa4c539e9fd7b852d0de454e9be26f24d0d6f91d069d3"
+    },
+    {
+      "page": "chapters/ch04-classfile/chapter.html",
+      "id": "code-015",
+      "language": "text",
+      "kind": "inline",
+      "sha256": "bd82cf16699be29ec05cbb763199c12f0dced428dde8381dbdd31c1d5dd0e8d4"
+    },
+    {
+      "page": "chapters/ch04-classfile/chapter.html",
+      "id": "code-016",
+      "language": "text",
+      "kind": "inline",
+      "sha256": "e632b7095b0bf32c260fa4c539e9fd7b852d0de454e9be26f24d0d6f91d069d3"
+    },
+    {
+      "page": "chapters/ch04-classfile/chapter.html",
+      "id": "code-017",
+      "language": "text",
+      "kind": "inline",
+      "sha256": "f1a73e2204a114077f988c9da98d7f8b604ab250496f25aeb3cbd153f5369c83"
+    },
+    {
+      "page": "chapters/ch04-classfile/chapter.html",
+      "id": "code-018",
+      "language": "text",
+      "kind": "inline",
+      "sha256": "340f463033e0fd5ddeabb922df4d4f1b5747494d0f5ed9894f13b6e13ca831f5"
+    },
+    {
+      "page": "chapters/ch04-classfile/chapter.html",
+      "id": "code-019",
+      "language": "text",
+      "kind": "inline",
+      "sha256": "bb82030dbc2bcaba32a90bf2e207a84a856fc5f033b77c480836ab6f77f40f19"
+    },
+    {
+      "page": "chapters/ch04-classfile/chapter.html",
+      "id": "code-020",
+      "language": "text",
+      "kind": "inline",
+      "sha256": "6ca202c88e549dff68c09bfafbfc60b2fac074debc1e6777e9ba4b6c703ed114"
+    },
+    {
+      "page": "chapters/ch04-classfile/chapter.html",
+      "id": "code-021",
+      "language": "text",
+      "kind": "inline",
+      "sha256": "e9c981a479986215bab0bf6c32efefa14852534b138c3509d8369edd510363da"
+    },
+    {
+      "page": "chapters/ch04-classfile/chapter.html",
+      "id": "code-022",
+      "language": "text",
+      "kind": "inline",
+      "sha256": "3be7a505483c0050243c5cbad4700da13925aa4137a55e9e33efd8bc4d05850f"
+    },
+    {
+      "page": "chapters/ch04-classfile/chapter.html",
+      "id": "code-023",
+      "language": "text",
+      "kind": "inline",
+      "sha256": "9a069651e33c537efdc091dc8ef242ba2d569340755c4082ac217543c77eaf4b"
+    },
+    {
+      "page": "chapters/ch04-classfile/chapter.html",
+      "id": "code-024",
+      "language": "text",
+      "kind": "inline",
+      "sha256": "797d5b9022fd9095e2dbe13b0524b78a76ff3e1db41f8e8d53a7cfe3df19477e"
+    },
+    {
+      "page": "chapters/ch04-classfile/chapter.html",
+      "id": "code-025",
+      "language": "text",
+      "kind": "inline",
+      "sha256": "5031a215b6f8523552b9f00d8e993a9c8de38ce3d14d0ac39fe7ea06a65beec6"
+    },
+    {
+      "page": "chapters/ch04-classfile/chapter.html",
+      "id": "code-026",
+      "language": "text",
+      "kind": "inline",
+      "sha256": "abab9a97529ef40561d1363e4b406f76f6831d9dc1f706f1971b38ecae533ffa"
+    },
+    {
+      "page": "chapters/ch04-classfile/chapter.html",
+      "id": "code-027",
+      "language": "text",
+      "kind": "inline",
+      "sha256": "abab9a97529ef40561d1363e4b406f76f6831d9dc1f706f1971b38ecae533ffa"
+    },
+    {
+      "page": "chapters/ch04-classfile/chapter.html",
+      "id": "code-028",
+      "language": "text",
+      "kind": "inline",
+      "sha256": "e7ca6c1d088129ed0f2153160eecdf019630707d9ff2412b791d91d088680194"
+    },
+    {
+      "page": "chapters/ch04-classfile/chapter.html",
+      "id": "code-029",
+      "language": "text",
+      "kind": "inline",
+      "sha256": "340f463033e0fd5ddeabb922df4d4f1b5747494d0f5ed9894f13b6e13ca831f5"
+    },
+    {
+      "page": "chapters/ch04-classfile/chapter.html",
+      "id": "code-030",
+      "language": "text",
+      "kind": "inline",
+      "sha256": "b2d7da50ce9ad432c1ac5febf709d834a84db529b7acf0fa69d7d3f8ae6b7e81"
+    },
+    {
+      "page": "chapters/ch04-classfile/chapter.html",
+      "id": "code-031",
+      "language": "text",
+      "kind": "inline",
+      "sha256": "d411e0359eba8b3ca75c07e90b27c383dc5d675ebd60de804af3c090de2c39bf"
+    },
+    {
+      "page": "chapters/ch04-classfile/chapter.html",
+      "id": "code-032",
+      "language": "text",
+      "kind": "inline",
+      "sha256": "a6987bbe2f9d67ee8631699c5d2781c7805fac255a3a8c7458914b5dbfc489fb"
+    },
+    {
+      "page": "chapters/ch04-classfile/chapter.html",
+      "id": "code-033",
+      "language": "text",
+      "kind": "inline",
+      "sha256": "9484a8f90e94f0993d7b6214fce51d676bc5771bda754018d8d2d565594dcc22"
+    },
+    {
+      "page": "chapters/ch04-classfile/chapter.html",
+      "id": "code-034",
+      "language": "text",
+      "kind": "inline",
+      "sha256": "953d1c3999b96c234f0d3ef0071d761e6af4d27163c42b870faef7590c90683b"
+    },
+    {
+      "page": "chapters/ch04-classfile/chapter.html",
+      "id": "code-035",
+      "language": "cpp",
+      "kind": "inline",
+      "sha256": "d534ec2cf3b7e76f4993baeee308402df5f95a10e07af52a31fbf9082e87f23d"
+    },
+    {
+      "page": "chapters/ch04-classfile/chapter.html",
+      "id": "code-036",
+      "language": "text",
+      "kind": "inline",
+      "sha256": "4c2029f3f4e7368d8188f98bd8f0f3316e0b367194654e1095d367e7aab2e783"
+    },
+    {
+      "page": "chapters/ch04-classfile/chapter.html",
+      "id": "code-037",
+      "language": "text",
+      "kind": "inline",
+      "sha256": "27d6c9467f2237b3c572c9b6d78b1273efcb74d77c7bb9a6660d2722a6e47696"
+    },
+    {
+      "page": "chapters/ch04-classfile/chapter.html",
+      "id": "code-038",
+      "language": "text",
+      "kind": "inline",
+      "sha256": "dd6402c044a93980a96ca7c36b2ae10e8cb94c1ad0e7a9818f98e9a7eb6bf3e6"
+    },
+    {
+      "page": "chapters/ch04-classfile/chapter.html",
+      "id": "code-039",
+      "language": "text",
+      "kind": "inline",
+      "sha256": "4f3a9bd003974a5ed8c9ad65d4aeda3b8a0db6fd903e36e83a3a950624b09bbd"
+    },
+    {
+      "page": "chapters/ch04-classfile/chapter.html",
+      "id": "code-040",
+      "language": "text",
+      "kind": "inline",
+      "sha256": "3ab5d2f222a5de63fba45616251d98a290c2d8e8119f364345e1462a4395324b"
+    },
+    {
+      "page": "chapters/ch04-classfile/chapter.html",
+      "id": "code-041",
+      "language": "text",
+      "kind": "inline",
+      "sha256": "f784b17d3b69abfb33ad07ae39323368e41359c69991c3d96504f119ee087901"
+    },
+    {
+      "page": "chapters/ch04-classfile/chapter.html",
+      "id": "code-042",
+      "language": "text",
+      "kind": "inline",
+      "sha256": "62a6da8735c18e2d66fe5de3dc5440252a1da49e3cbaa7c1d2d5068ad73ffba0"
+    },
+    {
+      "page": "chapters/ch04-classfile/chapter.html",
+      "id": "code-043",
+      "language": "text",
+      "kind": "inline",
+      "sha256": "fc66f021c67d064c1490a12b5a4d4d2f5167ca692a16ca12f1f3a4cda29a6fa9"
+    },
+    {
+      "page": "chapters/ch04-classfile/chapter.html",
+      "id": "code-044",
+      "language": "text",
+      "kind": "inline",
+      "sha256": "2ce06a9e7f8c3e6bf85a6067d0b220fb0ad03de983053942a90c43e73ec76f89"
+    },
+    {
+      "page": "chapters/ch04-classfile/chapter.html",
+      "id": "code-045",
+      "language": "text",
+      "kind": "inline",
+      "sha256": "dd06fdaff38dc9bc9f356866e1b162607208d8e67048e328ebf0cb32b2043c27"
+    },
+    {
+      "page": "chapters/ch04-classfile/chapter.html",
+      "id": "code-046",
+      "language": "text",
+      "kind": "inline",
+      "sha256": "ccc73f58fe138e100a2b73d881fe5cd9948ce21fa61a4798b3d29e297f60b514"
+    },
+    {
+      "page": "chapters/ch04-classfile/chapter.html",
+      "id": "code-047",
+      "language": "text",
+      "kind": "inline",
+      "sha256": "b2ef230e7f4f315a28cdcc863028da31f7110f3209feb76e76fed0f37b3d8580"
+    },
+    {
+      "page": "chapters/ch04-classfile/chapter.html",
+      "id": "code-048",
+      "language": "text",
+      "kind": "inline",
+      "sha256": "3c37c181a52bb3900c24197432b63ed68be85016043a6b379beb7a718b59e610"
+    },
+    {
+      "page": "chapters/ch04-classfile/chapter.html",
+      "id": "code-049",
+      "language": "text",
+      "kind": "inline",
+      "sha256": "9da7bac016db63662f56b5e949a0078010ee954f3f4a076a2c22ae5817207877"
+    },
+    {
+      "page": "chapters/ch04-classfile/chapter.html",
+      "id": "code-050",
+      "language": "text",
+      "kind": "inline",
+      "sha256": "28f5b604679c72b793138929ca08b35cf1d8cfb41ccd147aa146872bfe64e3ba"
+    },
+    {
+      "page": "chapters/ch04-classfile/chapter.html",
+      "id": "code-051",
+      "language": "text",
+      "kind": "inline",
+      "sha256": "c92118c1f27ac5b17c75bce50e71823af564f891d2625ee49b455fcdd1b9115b"
+    },
+    {
+      "page": "chapters/ch04-classfile/chapter.html",
+      "id": "code-052",
+      "language": "text",
+      "kind": "inline",
+      "sha256": "2f485d5ba3ab9e7dafecc4534e1eb4fdd6a7914e9702519f1912dd51383ec593"
+    },
+    {
+      "page": "chapters/ch04-classfile/chapter.html",
+      "id": "code-053",
+      "language": "text",
+      "kind": "inline",
+      "sha256": "da8c82d5d4030588e2a67b1a25ad09d678e03e02b7d22a6f7b214e880ccb0c1c"
+    },
+    {
+      "page": "chapters/ch04-classfile/chapter.html",
+      "id": "code-054",
+      "language": "text",
+      "kind": "inline",
+      "sha256": "cd42404d52ad55ccfa9aca4adc828aa5800ad9d385a0671fbcbf724118320619"
+    },
+    {
+      "page": "chapters/ch04-classfile/chapter.html",
+      "id": "code-055",
+      "language": "text",
+      "kind": "inline",
+      "sha256": "9da7bac016db63662f56b5e949a0078010ee954f3f4a076a2c22ae5817207877"
+    },
+    {
+      "page": "chapters/ch04-classfile/chapter.html",
+      "id": "code-056",
+      "language": "text",
+      "kind": "inline",
+      "sha256": "f1a73e2204a114077f988c9da98d7f8b604ab250496f25aeb3cbd153f5369c83"
+    },
+    {
+      "page": "chapters/ch04-classfile/chapter.html",
+      "id": "code-057",
+      "language": "text",
+      "kind": "inline",
+      "sha256": "cf71de672b6550f0fe2077b1e5b666ca53431e681c534728659679f20ea55892"
+    },
+    {
+      "page": "chapters/ch04-classfile/chapter.html",
+      "id": "code-058",
+      "language": "text",
+      "kind": "inline",
+      "sha256": "81ed26c2726c021ad5aed13e42a9b9f7727c14ff804e3dbf2205d5c626b23e93"
+    },
+    {
+      "page": "chapters/ch04-classfile/chapter.html",
+      "id": "code-059",
+      "language": "text",
+      "kind": "inline",
+      "sha256": "81e9491e1444a67173721a07e68dc87ccf2e521bd4acf424b7399b0a7fa215e8"
+    },
+    {
+      "page": "chapters/ch04-classfile/chapter.html",
+      "id": "code-060",
+      "language": "text",
+      "kind": "inline",
+      "sha256": "38119c94db9f31c1d590cec845f8a76b25cf28e6f3788b88fbfb362b58f638f5"
+    },
+    {
+      "page": "chapters/ch04-classfile/chapter.html",
+      "id": "code-061",
+      "language": "text",
+      "kind": "inline",
+      "sha256": "f1a73e2204a114077f988c9da98d7f8b604ab250496f25aeb3cbd153f5369c83"
+    },
+    {
+      "page": "chapters/ch04-classfile/chapter.html",
+      "id": "code-062",
+      "language": "text",
+      "kind": "inline",
+      "sha256": "e632b7095b0bf32c260fa4c539e9fd7b852d0de454e9be26f24d0d6f91d069d3"
+    },
+    {
+      "page": "chapters/ch04-classfile/chapter.html",
+      "id": "code-063",
+      "language": "text",
+      "kind": "inline",
+      "sha256": "0d6fda019c2504de9240206f3a7936e49a1190354fb65f8e1c171683b476d2cf"
+    },
+    {
+      "page": "chapters/ch04-classfile/chapter.html",
+      "id": "code-064",
+      "language": "text",
+      "kind": "inline",
+      "sha256": "e3304a5e2a3dce5ca0ae54b95c1836191da74b9fd0bccfc067dc86a252dad10c"
+    },
+    {
+      "page": "chapters/ch04-classfile/chapter.html",
+      "id": "code-065",
+      "language": "text",
+      "kind": "inline",
+      "sha256": "340f463033e0fd5ddeabb922df4d4f1b5747494d0f5ed9894f13b6e13ca831f5"
+    },
+    {
+      "page": "chapters/ch04-classfile/chapter.html",
+      "id": "code-066",
+      "language": "text",
+      "kind": "inline",
+      "sha256": "ac724ac949c7f09e945dddd0d22321990511972dddbe8afeb7c3403e03846024"
+    },
+    {
+      "page": "chapters/ch04-classfile/chapter.html",
+      "id": "code-067",
+      "language": "text",
+      "kind": "inline",
+      "sha256": "fc8c37d1850638cdf7ad86c747b43d1815cd0e52008d1286545f250f7e2749fb"
+    },
+    {
+      "page": "chapters/ch04-classfile/chapter.html",
+      "id": "code-068",
+      "language": "text",
+      "kind": "inline",
+      "sha256": "fc66f021c67d064c1490a12b5a4d4d2f5167ca692a16ca12f1f3a4cda29a6fa9"
+    },
+    {
+      "page": "chapters/ch04-classfile/chapter.html",
+      "id": "code-069",
+      "language": "text",
+      "kind": "inline",
+      "sha256": "2ce06a9e7f8c3e6bf85a6067d0b220fb0ad03de983053942a90c43e73ec76f89"
+    },
+    {
+      "page": "chapters/ch04-classfile/chapter.html",
+      "id": "code-070",
+      "language": "text",
+      "kind": "inline",
+      "sha256": "340f463033e0fd5ddeabb922df4d4f1b5747494d0f5ed9894f13b6e13ca831f5"
+    },
+    {
+      "page": "chapters/ch04-classfile/chapter.html",
+      "id": "code-071",
+      "language": "text",
+      "kind": "inline",
+      "sha256": "a2df87f8c7a0093ca5197b420d39fc8f8711b943f82c891b76ac25a94aed80f3"
+    },
+    {
+      "page": "chapters/ch04-classfile/chapter.html",
+      "id": "code-072",
+      "language": "text",
+      "kind": "inline",
+      "sha256": "1eb79602411ef02cf6fe117897015fff89f80face4eccd50425c45149b148408"
+    },
+    {
+      "page": "chapters/ch04-classfile/chapter.html",
+      "id": "code-073",
+      "language": "text",
+      "kind": "inline",
+      "sha256": "e08f33d18f222dd4fe59241f5ed2426f52379897262be459a157b6901aefb111"
+    },
+    {
+      "page": "chapters/ch04-classfile/chapter.html",
+      "id": "code-074",
+      "language": "text",
+      "kind": "inline",
+      "sha256": "d5eacdb9fc41ee0cf800e6c3dcefed9f0b7b4769e20f057f4f2541f88f66bbc9"
+    },
+    {
+      "page": "chapters/ch04-classfile/chapter.html",
+      "id": "code-075",
+      "language": "text",
+      "kind": "inline",
+      "sha256": "c466f17a4d036bd0e9a86c1477330db0c34020285b5c6c08e5b14a0b7f9bc68e"
+    },
+    {
+      "page": "chapters/ch04-classfile/chapter.html",
+      "id": "code-076",
+      "language": "text",
+      "kind": "inline",
+      "sha256": "9f925cdc4feedda4d9ae06f2e1b476680f4781ac2e0fb95fcc819be70328453d"
+    },
+    {
+      "page": "chapters/ch04-classfile/chapter.html",
+      "id": "code-077",
+      "language": "text",
+      "kind": "inline",
+      "sha256": "09e1c4efb1b844b30a2d8d7697d021bfcabbabd06d8a7bc9b38e53ef65807910"
+    },
+    {
+      "page": "chapters/ch04-classfile/chapter.html",
+      "id": "code-078",
+      "language": "text",
+      "kind": "inline",
+      "sha256": "dcad552bb3e59d039b464cc8f5d5d1cfaf7e75d00110bf29b67be9483a2a8755"
+    },
+    {
+      "page": "chapters/ch04-classfile/chapter.html",
+      "id": "code-079",
+      "language": "text",
+      "kind": "inline",
+      "sha256": "dc7081b5856032e4f1076f3fe4ca6b830f0a6ee9d58d9151bcea4e269a12089f"
+    },
+    {
+      "page": "chapters/ch04-classfile/chapter.html",
+      "id": "code-080",
+      "language": "text",
+      "kind": "inline",
+      "sha256": "d99e628320b85eba54116be257e8940ac9c4a9e79ead61136ee3233fb5cdeb29"
+    },
+    {
+      "page": "chapters/ch04-classfile/chapter.html",
+      "id": "code-081",
+      "language": "text",
+      "kind": "inline",
+      "sha256": "f1730b3113de1be9e06804fb45aae2a76921b6bc9e2dca8da448c3cebf0fa0a7"
+    },
+    {
+      "page": "chapters/ch04-classfile/chapter.html",
+      "id": "code-082",
+      "language": "text",
+      "kind": "inline",
+      "sha256": "ce1ee090b5d931a6d242b9afb2bde73f570603408206a1d149d910fc502cde52"
+    },
+    {
+      "page": "chapters/ch04-classfile/chapter.html",
+      "id": "code-083",
+      "language": "text",
+      "kind": "inline",
+      "sha256": "23a2f52d5bdd85976c24e277d17fb92352c5c5cc1d1ceb8cb657e77a45819b71"
+    },
+    {
+      "page": "chapters/ch04-classfile/chapter.html",
+      "id": "code-084",
+      "language": "text",
+      "kind": "inline",
+      "sha256": "493ffe9e4446e0cae407f96b0af0ef7a6517b52fd5d122b7f2c8da3e920f24ff"
+    },
+    {
+      "page": "chapters/ch04-classfile/chapter.html",
+      "id": "code-085",
+      "language": "text",
+      "kind": "inline",
+      "sha256": "c901a9f8c760b70fa68e57d40ec2770cf58a5ddec532d781b2856edabb9dc7db"
+    },
+    {
+      "page": "chapters/ch04-classfile/chapter.html",
+      "id": "code-086",
+      "language": "text",
+      "kind": "inline",
+      "sha256": "ecc85270e302ed7e08119122b0cd2b96829a0345169bafd2f8f82e8d00e0640d"
+    },
+    {
+      "page": "chapters/ch04-classfile/chapter.html",
+      "id": "code-087",
+      "language": "text",
+      "kind": "inline",
+      "sha256": "09fc96082d34c2dfc1295d92073b5ea1dc8ef8da95f14dfded011ffb96d3e54b"
+    },
+    {
+      "page": "chapters/ch04-classfile/chapter.html",
+      "id": "code-088",
+      "language": "text",
+      "kind": "inline",
+      "sha256": "bfdd510698ef3ccbf17f2c67fc47790e1ba72894fb74fe284bbc136b47ef73e6"
+    },
+    {
+      "page": "chapters/ch04-classfile/chapter.html",
+      "id": "code-089",
+      "language": "text",
+      "kind": "inline",
+      "sha256": "d3d101b7b17a747f7dd39c601dc9658f5404924e774110be02c7b8f6bce6e0d0"
+    },
+    {
+      "page": "chapters/ch04-classfile/chapter.html",
+      "id": "code-090",
+      "language": "text",
+      "kind": "inline",
+      "sha256": "ee8a8e3c3d1cded54843e2b0d37ca37850d6fba4889acb1e5825e30a00d4b3d2"
+    },
+    {
+      "page": "chapters/ch04-classfile/chapter.html",
+      "id": "code-091",
+      "language": "text",
+      "kind": "inline",
+      "sha256": "d1912e0813a33cc8aaf109895e512b97d7cd74d883c856207fa695c20e807af1"
+    },
+    {
+      "page": "chapters/ch04-classfile/chapter.html",
+      "id": "code-092",
+      "language": "text",
+      "kind": "inline",
+      "sha256": "4c73e487e0db40c74ce7b04237ff941073c638389e48dc5c48ebe7b876d84b4e"
+    },
+    {
+      "page": "chapters/ch04-classfile/chapter.html",
+      "id": "code-093",
+      "language": "text",
+      "kind": "inline",
+      "sha256": "4a9f2924e53651c9333eb481fcc7beb33983ebce9df5d6ba09a9707e9e25d895"
+    },
+    {
+      "page": "chapters/ch04-classfile/chapter.html",
+      "id": "code-094",
+      "language": "text",
+      "kind": "inline",
+      "sha256": "e27e9564a9aef619a94a60fac853d3c778948ee8f5d135b6f42a769a62fc5364"
+    },
+    {
+      "page": "chapters/ch04-classfile/chapter.html",
+      "id": "code-095",
+      "language": "text",
+      "kind": "inline",
+      "sha256": "16d530752906a95f5764582239f6d2df020c6445bd82c60a4b0bd57a06189993"
+    },
+    {
+      "page": "chapters/ch04-classfile/chapter.html",
+      "id": "code-096",
+      "language": "text",
+      "kind": "inline",
+      "sha256": "bed527081ba69081a27c1e7c85f3d157bf49881697c7ba3f137f1618244bd1a5"
+    },
+    {
+      "page": "chapters/ch04-classfile/chapter.html",
+      "id": "code-097",
+      "language": "text",
+      "kind": "inline",
+      "sha256": "9f65506204bbbb05f0a033f20565a903ba71d34444a151e07e71c37e0590b272"
+    },
+    {
+      "page": "chapters/ch04-classfile/chapter.html",
+      "id": "code-098",
+      "language": "text",
+      "kind": "inline",
+      "sha256": "e8229d2240838187d54b024ee95db0822b464fd37af1ee7c21210b7604b5edcb"
+    },
+    {
+      "page": "chapters/ch04-classfile/chapter.html",
+      "id": "code-099",
+      "language": "text",
+      "kind": "inline",
+      "sha256": "30c471f6aafbca7085640653eeef555e85eb0df1602c98a662814c27767d1188"
+    },
+    {
+      "page": "chapters/ch04-classfile/chapter.html",
+      "id": "code-100",
+      "language": "text",
+      "kind": "inline",
+      "sha256": "04ac3f8b896f1849688c3b160a2c5d45de767ee5a44bfc23515226ce1e2fe9ff"
+    },
+    {
+      "page": "chapters/ch04-classfile/chapter.html",
+      "id": "code-101",
+      "language": "text",
+      "kind": "inline",
+      "sha256": "30c471f6aafbca7085640653eeef555e85eb0df1602c98a662814c27767d1188"
+    },
+    {
+      "page": "chapters/ch04-classfile/chapter.html",
+      "id": "code-102",
+      "language": "text",
+      "kind": "inline",
+      "sha256": "00d7071fac19ee40588e14185304241ad7b68814263cd130b4d6c08331bc0ae3"
+    },
+    {
+      "page": "chapters/ch04-classfile/chapter.html",
+      "id": "code-103",
+      "language": "text",
+      "kind": "inline",
+      "sha256": "2a1575ccde51b48c7c4bb0c611908022f418dfb5e0730a374530c1d967435909"
+    },
+    {
+      "page": "chapters/ch04-classfile/chapter.html",
+      "id": "code-104",
+      "language": "text",
+      "kind": "inline",
+      "sha256": "105981d60ce38d456d06701c1313a2d943c2096eaac2ca1efa1bbc6951d15709"
+    },
+    {
+      "page": "chapters/ch04-classfile/chapter.html",
+      "id": "code-105",
+      "language": "text",
+      "kind": "inline",
+      "sha256": "71719292a4dcbe7e67a5e4d318fdf01894d4036e7b560040844523ff1fc39dc1"
+    },
+    {
+      "page": "chapters/ch04-classfile/chapter.html",
+      "id": "code-106",
+      "language": "text",
+      "kind": "inline",
+      "sha256": "9db9cf298cfae83f39d64095174184b7c2bdb36e3ae80ac1d2db168c0c55618b"
+    },
+    {
+      "page": "chapters/ch04-classfile/chapter.html",
+      "id": "code-107",
+      "language": "text",
+      "kind": "inline",
+      "sha256": "ae879dc4b264dbd6815dfdae561aae44d90edc503b28dcca958c02a557e34f73"
+    },
+    {
+      "page": "chapters/ch04-classfile/chapter.html",
+      "id": "code-108",
+      "language": "text",
+      "kind": "inline",
+      "sha256": "8f33c32b4b06ec6880bf3f0267f797a9d90f53a53648b5c4237bd2ee34ed1a2e"
+    },
+    {
+      "page": "chapters/ch04-classfile/chapter.html",
+      "id": "code-109",
+      "language": "text",
+      "kind": "inline",
+      "sha256": "b83a08fdaa780471d037860c2290ca8285d91d70afd780bbabc24827913f1e12"
+    },
+    {
+      "page": "chapters/ch04-classfile/chapter.html",
+      "id": "code-110",
+      "language": "text",
+      "kind": "inline",
+      "sha256": "cd0c5a41560d72caacc200f5a9c46f70cec01ddb104e511901c54648b43e5750"
+    },
+    {
+      "page": "chapters/ch04-classfile/chapter.html",
+      "id": "code-111",
+      "language": "text",
+      "kind": "inline",
+      "sha256": "d8e48bef2ab4b1bec993bf951d24050a1c85ed1378d123fdf5f820a8f8292b98"
+    },
+    {
+      "page": "chapters/ch04-classfile/chapter.html",
+      "id": "code-112",
+      "language": "text",
+      "kind": "inline",
+      "sha256": "68d57b9da4e7578adb6b906300d282b2b552374753588fd94eccc582741f0c69"
+    },
+    {
+      "page": "chapters/ch04-classfile/chapter.html",
+      "id": "code-113",
+      "language": "text",
+      "kind": "inline",
+      "sha256": "4988dec7dcd99eebb454b08e23860468a5ad98cfbd4bd012298d2af92b5f204c"
+    },
+    {
+      "page": "chapters/ch04-classfile/chapter.html",
+      "id": "code-114",
+      "language": "text",
+      "kind": "inline",
+      "sha256": "42584bbc91bc362d06d0a40a417920bc31cb36ec8bedf2fa14fb2565cc409489"
+    },
+    {
+      "page": "chapters/ch04-classfile/chapter.html",
+      "id": "code-115",
+      "language": "text",
+      "kind": "inline",
+      "sha256": "4c73e487e0db40c74ce7b04237ff941073c638389e48dc5c48ebe7b876d84b4e"
+    },
+    {
+      "page": "chapters/ch04-classfile/chapter.html",
+      "id": "code-116",
+      "language": "text",
+      "kind": "inline",
+      "sha256": "04ac3f8b896f1849688c3b160a2c5d45de767ee5a44bfc23515226ce1e2fe9ff"
+    },
+    {
+      "page": "chapters/ch04-classfile/chapter.html",
+      "id": "code-117",
+      "language": "text",
+      "kind": "inline",
+      "sha256": "225d39b9053853a32e2a1fe3561985e597923baeafb153e16f8b64d2e0d08436"
+    },
+    {
+      "page": "chapters/ch04-classfile/chapter.html",
+      "id": "code-118",
+      "language": "cpp",
+      "kind": "inline",
+      "sha256": "564e7a4d360f655c2eb2e2bf9fa348a31e0a6093dfdc4b1a1032a07163dfdd64"
+    },
+    {
+      "page": "chapters/ch04-classfile/chapter.html",
+      "id": "code-119",
+      "language": "text",
+      "kind": "inline",
+      "sha256": "3da623d8220fe568e1273d395478060b29e8d3c57921dafcb2b1efc8f0cda185"
+    },
+    {
+      "page": "chapters/ch04-classfile/chapter.html",
+      "id": "code-120",
+      "language": "text",
+      "kind": "inline",
+      "sha256": "cc14b4df310f28f5011c94acf29012444200acef79134ac81b960de5d5bf4ac9"
+    },
+    {
+      "page": "chapters/ch04-classfile/chapter.html",
+      "id": "code-121",
+      "language": "text",
+      "kind": "inline",
+      "sha256": "a5074276bca12c199dfc26731add2a376e4b617f3ffe07933a8a53e1113bfc7b"
+    },
+    {
+      "page": "chapters/ch04-classfile/chapter.html",
+      "id": "code-122",
+      "language": "text",
+      "kind": "inline",
+      "sha256": "4c73e487e0db40c74ce7b04237ff941073c638389e48dc5c48ebe7b876d84b4e"
+    },
+    {
+      "page": "chapters/ch04-classfile/chapter.html",
+      "id": "code-123",
+      "language": "text",
+      "kind": "inline",
+      "sha256": "aff7d00b56394f5a96dca22be6856e0950b37524abb5b2ef434d27981a0586f1"
+    },
+    {
+      "page": "chapters/ch04-classfile/chapter.html",
+      "id": "code-124",
+      "language": "text",
+      "kind": "inline",
+      "sha256": "81cd63cfa733db27763c5f25d61452940976a1c5b74c630fbe8c1df559aa5905"
+    },
+    {
+      "page": "chapters/ch04-classfile/chapter.html",
+      "id": "code-125",
+      "language": "text",
+      "kind": "inline",
+      "sha256": "81ed26c2726c021ad5aed13e42a9b9f7727c14ff804e3dbf2205d5c626b23e93"
+    },
+    {
+      "page": "chapters/ch04-classfile/sources.html",
+      "id": "code-001",
+      "language": "java",
+      "kind": "block",
+      "sha256": "227ed6001a66e4b67678d3f387fd5bf93f3af03cdf3533c86dbe8a7445f33ae2"
+    },
+    {
+      "page": "chapters/ch04-classfile/sources.html",
+      "id": "code-002",
+      "language": "java",
+      "kind": "block",
+      "sha256": "35268aea96d3ab658e2d3a27a0a0b7b850a7b250b6e911abb76ab08da67a0eb7"
+    },
+    {
+      "page": "chapters/ch04-classfile/sources.html",
+      "id": "code-003",
+      "language": "java",
+      "kind": "block",
+      "sha256": "93a20771f56d0e154b6c25c7b4579bdeaac08c6aa6f2c295c071146a9d7a5cdb"
+    },
+    {
+      "page": "chapters/ch04-classfile/sources.html",
+      "id": "code-004",
+      "language": "java",
+      "kind": "block",
+      "sha256": "6ea9a4ae1d920e7cd9744cc8227430751a80a3a2268197d474810a39b23291b3"
+    },
+    {
+      "page": "chapters/ch04-classfile/sources.html",
+      "id": "code-005",
+      "language": "text",
+      "kind": "inline",
+      "sha256": "9e46fc515518e8597a76d22b80ff4bcbe0f96941dbb0e4e8c23c386fa2ac97a5"
+    },
+    {
+      "page": "chapters/ch04-classfile/sources.html",
+      "id": "code-006",
+      "language": "text",
+      "kind": "inline",
+      "sha256": "9d41bb8293b74065f7bf08ae8b9781dca1ef8aa00141826043a615578c2e3bae"
+    },
+    {
+      "page": "chapters/ch04-classfile/sources.html",
+      "id": "code-007",
+      "language": "text",
+      "kind": "inline",
+      "sha256": "04357dfe2b893934be998e098292d85b1457a1a1c99ad41d3c7c37a96ae1d00c"
+    },
+    {
+      "page": "chapters/ch04-classfile/sources.html",
+      "id": "code-008",
+      "language": "text",
+      "kind": "inline",
+      "sha256": "264093325a50ed63fbf37943c7ee537c3783ef9c92ef7afd83d585aad5ca8298"
+    },
+    {
+      "page": "chapters/ch04-classfile/sources.html",
+      "id": "code-009",
+      "language": "text",
+      "kind": "inline",
+      "sha256": "f18575070c15cc2ddac3e12e9681b6de6b4624251a2263a841ebbe19037fe392"
+    },
+    {
+      "page": "chapters/ch05-bytecode-verification/chapter.html",
+      "id": "code-001",
+      "language": "java",
+      "kind": "block",
+      "sha256": "5ca7e3d44bcc6a187d03f42ea80823a2dc26eccc2909d50845a6f3dbea35a36c"
+    },
+    {
+      "page": "chapters/ch05-bytecode-verification/chapter.html",
+      "id": "code-002",
+      "language": "text",
+      "kind": "block",
+      "sha256": "b613ad248baa876ab5e0889c5e19f39decb9fa7e0b32aab46c262b3c708a7bdc"
+    },
+    {
+      "page": "chapters/ch05-bytecode-verification/chapter.html",
+      "id": "code-003",
+      "language": "java",
+      "kind": "block",
+      "sha256": "0765eaefd0759ebfd9e70a5bc740423ab5b476f2e75574823d5e58a1afb69ae3"
+    },
+    {
+      "page": "chapters/ch05-bytecode-verification/chapter.html",
+      "id": "code-004",
+      "language": "text",
+      "kind": "inline",
+      "sha256": "a86c434bd2c84a69eb54ec106cb0e84d1cf30919fbf45ebe4571c59ad99ba1ee"
+    },
+    {
+      "page": "chapters/ch05-bytecode-verification/chapter.html",
+      "id": "code-005",
+      "language": "text",
+      "kind": "inline",
+      "sha256": "1d8d063dd99de0346bf47bca2fa87b3f1ffb1c0db7c308f98c0759b4ba2b5d58"
+    },
+    {
+      "page": "chapters/ch05-bytecode-verification/chapter.html",
+      "id": "code-006",
+      "language": "text",
+      "kind": "inline",
+      "sha256": "44fbad69936dba76e18bdf947e6bb56e9a1b44fbe52acea957840fdc94e38137"
+    },
+    {
+      "page": "chapters/ch05-bytecode-verification/chapter.html",
+      "id": "code-007",
+      "language": "text",
+      "kind": "inline",
+      "sha256": "52740479a3f769a27ea664ad39717de65f41794549767d935eacf04147c1e19d"
+    },
+    {
+      "page": "chapters/ch05-bytecode-verification/chapter.html",
+      "id": "code-008",
+      "language": "text",
+      "kind": "inline",
+      "sha256": "ddc04f520579b4ef425ba818db572302e694ed50f890e1a3f60ce4dfa1317ae2"
+    },
+    {
+      "page": "chapters/ch05-bytecode-verification/chapter.html",
+      "id": "code-009",
+      "language": "text",
+      "kind": "inline",
+      "sha256": "dce31f10513a1858de7338bb765443364e8bd8739ee312119175c262479ee39b"
+    },
+    {
+      "page": "chapters/ch05-bytecode-verification/chapter.html",
+      "id": "code-010",
+      "language": "text",
+      "kind": "inline",
+      "sha256": "669f3592779beefc91f3becea4b86d0f08e763a86e2ac2f9e33654823b704378"
+    },
+    {
+      "page": "chapters/ch05-bytecode-verification/chapter.html",
+      "id": "code-011",
+      "language": "text",
+      "kind": "inline",
+      "sha256": "eeabc98e681631e321560fc4e9178693922ab129125d58f24da32122e6525398"
+    },
+    {
+      "page": "chapters/ch05-bytecode-verification/chapter.html",
+      "id": "code-012",
+      "language": "text",
+      "kind": "inline",
+      "sha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945"
+    },
+    {
+      "page": "chapters/ch05-bytecode-verification/chapter.html",
+      "id": "code-013",
+      "language": "text",
+      "kind": "inline",
+      "sha256": "eeabc98e681631e321560fc4e9178693922ab129125d58f24da32122e6525398"
+    },
+    {
+      "page": "chapters/ch05-bytecode-verification/chapter.html",
+      "id": "code-014",
+      "language": "text",
+      "kind": "inline",
+      "sha256": "7b339d5ef76948726a350a934f27940ec0d9b3d0fc64c8586f72c7d5bb895344"
+    },
+    {
+      "page": "chapters/ch05-bytecode-verification/chapter.html",
+      "id": "code-015",
+      "language": "text",
+      "kind": "inline",
+      "sha256": "a9d38b13b2e53734ec9a497b02eefd0fa21ad24a1c93e0755d2e0872798ce2dc"
+    },
+    {
+      "page": "chapters/ch05-bytecode-verification/chapter.html",
+      "id": "code-016",
+      "language": "text",
+      "kind": "inline",
+      "sha256": "094bd49575505dd2e47087ebc156ed132462eb2ce905fa6d706c24fc4a6b5047"
+    },
+    {
+      "page": "chapters/ch05-bytecode-verification/chapter.html",
+      "id": "code-017",
+      "language": "text",
+      "kind": "inline",
+      "sha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945"
+    },
+    {
+      "page": "chapters/ch05-bytecode-verification/chapter.html",
+      "id": "code-018",
+      "language": "text",
+      "kind": "inline",
+      "sha256": "9eb6203435cb3e0033f544e3bf6f1b74b138c765fc489a38a092e8f7adbd9638"
+    },
+    {
+      "page": "chapters/ch05-bytecode-verification/chapter.html",
+      "id": "code-019",
+      "language": "text",
+      "kind": "inline",
+      "sha256": "84489d2635878b0693aea6bbaed974367a5d85cc93ad22b30f9fd48e066e3f53"
+    },
+    {
+      "page": "chapters/ch05-bytecode-verification/chapter.html",
+      "id": "code-020",
+      "language": "text",
+      "kind": "inline",
+      "sha256": "a3a72157eaa34bc1c37fd78323b5e952bd2920153bb471399b77fde203ba9280"
+    },
+    {
+      "page": "chapters/ch05-bytecode-verification/chapter.html",
+      "id": "code-021",
+      "language": "text",
+      "kind": "inline",
+      "sha256": "ff8d53dba562e6501dc8fff1c2a7422ca64a4f1151bff27e94e45ea2fe7a645e"
+    },
+    {
+      "page": "chapters/ch05-bytecode-verification/chapter.html",
+      "id": "code-022",
+      "language": "text",
+      "kind": "inline",
+      "sha256": "3e77e41e3251540e6c2f26987b764eaa5370ba2a7ae6866151731bab7b19eb2a"
+    },
+    {
+      "page": "chapters/ch05-bytecode-verification/chapter.html",
+      "id": "code-023",
+      "language": "text",
+      "kind": "inline",
+      "sha256": "2152fd169b8caef6667429d224a119046b3e01f09656a657f2134e2da5ee735f"
+    },
+    {
+      "page": "chapters/ch05-bytecode-verification/chapter.html",
+      "id": "code-024",
+      "language": "text",
+      "kind": "inline",
+      "sha256": "ed4c9e3d9ed970bd7832d1baffcd54224dd5b37c9091120dc261a6fbf6f06990"
+    },
+    {
+      "page": "chapters/ch05-bytecode-verification/chapter.html",
+      "id": "code-025",
+      "language": "text",
+      "kind": "inline",
+      "sha256": "52a011a66a73087276ab4dab633a51d0670bd6c5f8ce9c1fb06aecaf171567e4"
+    },
+    {
+      "page": "chapters/ch05-bytecode-verification/chapter.html",
+      "id": "code-026",
+      "language": "text",
+      "kind": "inline",
+      "sha256": "1a85a5a1a513a5e8cc591a42c087e4dfdbe0fc9be9bf0b57026f0ff68d199354"
+    },
+    {
+      "page": "chapters/ch05-bytecode-verification/chapter.html",
+      "id": "code-027",
+      "language": "text",
+      "kind": "inline",
+      "sha256": "f93af7235bfae200c2d8c69f8c3747d21cd6df41556728a468cd8f642ef5d7d5"
+    },
+    {
+      "page": "chapters/ch05-bytecode-verification/chapter.html",
+      "id": "code-028",
+      "language": "text",
+      "kind": "inline",
+      "sha256": "9759d5fd88da2b4a3da1d93935437e670c75c1b5538a3d76c22e99fa38f56e13"
+    },
+    {
+      "page": "chapters/ch05-bytecode-verification/chapter.html",
+      "id": "code-029",
+      "language": "text",
+      "kind": "inline",
+      "sha256": "b46dd2689f8c886178ef37c629bf7d2d8f2f9c0cb1a5c4f8603edce5f7ed5629"
+    },
+    {
+      "page": "chapters/ch05-bytecode-verification/chapter.html",
+      "id": "code-030",
+      "language": "text",
+      "kind": "inline",
+      "sha256": "403aca0f7cdede8ea19e2f3395278e00e6d00bbe6731861912f77a5477b05c7e"
+    },
+    {
+      "page": "chapters/ch05-bytecode-verification/chapter.html",
+      "id": "code-031",
+      "language": "text",
+      "kind": "inline",
+      "sha256": "8db0faa3c7d2bc7d30cab5073c2e3f673eb49ae3c2666672bc33664a1383495c"
+    },
+    {
+      "page": "chapters/ch05-bytecode-verification/chapter.html",
+      "id": "code-032",
+      "language": "text",
+      "kind": "inline",
+      "sha256": "546b83e73b357fec1c60a80e229f88a090a2abee04d76d9e29b1ceb225d462cf"
+    },
+    {
+      "page": "chapters/ch05-bytecode-verification/chapter.html",
+      "id": "code-033",
+      "language": "text",
+      "kind": "inline",
+      "sha256": "f7c997454dfd4cec6387be64eb97d410827304767444f60487ec1865310c162b"
+    },
+    {
+      "page": "chapters/ch05-bytecode-verification/chapter.html",
+      "id": "code-034",
+      "language": "text",
+      "kind": "inline",
+      "sha256": "fcde94cebb38e4611fd525d4e11b07b78c64fd64bd673a536af6309246b21f6f"
+    },
+    {
+      "page": "chapters/ch05-bytecode-verification/chapter.html",
+      "id": "code-035",
+      "language": "text",
+      "kind": "inline",
+      "sha256": "69529c3046dff22874792d0ac28c234638a3c33c8201f1c4d52d169cb0e4b348"
+    },
+    {
+      "page": "chapters/ch05-bytecode-verification/chapter.html",
+      "id": "code-036",
+      "language": "text",
+      "kind": "inline",
+      "sha256": "2684eff4d84d1948f7887c855ac6d37a550302b3857f6898fbc5e08524207da6"
+    },
+    {
+      "page": "chapters/ch05-bytecode-verification/sources.html",
+      "id": "code-001",
+      "language": "java",
+      "kind": "block",
+      "sha256": "f221aba03a2dc3c51b1becdc9de50200904a45b6d4ea8ee770630a1c03a4a873"
+    },
+    {
+      "page": "chapters/ch05-bytecode-verification/sources.html",
+      "id": "code-002",
+      "language": "java",
+      "kind": "block",
+      "sha256": "aa0f52bf046fcf08df19d49ca771866340d3c31729ab64cb91529a2ad1beebcc"
+    },
+    {
+      "page": "chapters/ch05-bytecode-verification/sources.html",
+      "id": "code-003",
+      "language": "text",
+      "kind": "inline",
+      "sha256": "ecf61180b191ccdcb163e78bdc7ac18bd3293451f8e2c32dd54b34fd288fe46e"
+    },
+    {
+      "page": "chapters/ch05-bytecode-verification/sources.html",
+      "id": "code-004",
+      "language": "text",
+      "kind": "inline",
+      "sha256": "0637ca84f84185ffd76665863b7c3e90084e9b77610e80a7c586a8fd225dc248"
+    },
+    {
+      "page": "chapters/ch06-classloaders-modules/chapter.html",
+      "id": "code-001",
+      "language": "text",
+      "kind": "block",
+      "sha256": "ff14b5d5c288fa0c47e1ff16fd02a2851c76d2ecb0d5b786b3ba5d869003b149"
+    },
+    {
+      "page": "chapters/ch06-classloaders-modules/chapter.html",
+      "id": "code-002",
+      "language": "java",
+      "kind": "block",
+      "sha256": "8b06f9c215a35643081b308a710cdbe25bdded1562841aa3de3ccaa852404f49"
+    },
+    {
+      "page": "chapters/ch06-classloaders-modules/chapter.html",
+      "id": "code-003",
+      "language": "text",
+      "kind": "block",
+      "sha256": "831154f46fc6349be637a1f96de9d527abd53190521aa913610ab700058a8660"
+    },
+    {
+      "page": "chapters/ch06-classloaders-modules/chapter.html",
+      "id": "code-004",
+      "language": "java",
+      "kind": "block",
+      "sha256": "0f319c906c8bb5e31ce507cc948008e9a3785d81011ba88e48e74bae9bdd3138"
+    },
+    {
+      "page": "chapters/ch06-classloaders-modules/chapter.html",
+      "id": "code-005",
+      "language": "text",
+      "kind": "inline",
+      "sha256": "54d92766d588bfdf28106ec19ebffca43347962ed88e0be2188dac716843a314"
+    },
+    {
+      "page": "chapters/ch06-classloaders-modules/chapter.html",
+      "id": "code-006",
+      "language": "text",
+      "kind": "inline",
+      "sha256": "d294fcce0cc88587843099d85dd805aeef1b09a63b0db1dd3e4dc62a343c1db5"
+    },
+    {
+      "page": "chapters/ch06-classloaders-modules/chapter.html",
+      "id": "code-007",
+      "language": "text",
+      "kind": "inline",
+      "sha256": "a172cedcae47474b615c54d510a5d84a8dea3032e958587430b413538be3f333"
+    },
+    {
+      "page": "chapters/ch06-classloaders-modules/chapter.html",
+      "id": "code-008",
+      "language": "text",
+      "kind": "inline",
+      "sha256": "98cb31e3675511910b0b38d8cc8bf8e63722e2282452b630b40cba80bfed205e"
+    },
+    {
+      "page": "chapters/ch06-classloaders-modules/chapter.html",
+      "id": "code-009",
+      "language": "text",
+      "kind": "inline",
+      "sha256": "1ccda41684917aa1a91b627c747fd8ac9dc1e89eea08c6add0fbf157fbc0d1f8"
+    },
+    {
+      "page": "chapters/ch06-classloaders-modules/sources.html",
+      "id": "code-001",
+      "language": "java",
+      "kind": "block",
+      "sha256": "99d53b1e62b5f6739f7d60fec67bfbea8f94d38c0fb73c8ac204eec256169271"
+    },
+    {
+      "page": "chapters/ch06-classloaders-modules/sources.html",
+      "id": "code-002",
+      "language": "java",
+      "kind": "block",
+      "sha256": "09b2848e7450588aeb8ade5fe2f7aa01eaf8adca748082454c57b398b8e716f1"
+    },
+    {
+      "page": "chapters/ch06-classloaders-modules/sources.html",
+      "id": "code-003",
+      "language": "java",
+      "kind": "block",
+      "sha256": "3bb968648003ec7e81f50d49abaf0e17c1364b6cc93f2c27fc2731c67a077335"
+    },
+    {
+      "page": "chapters/ch06-classloaders-modules/sources.html",
+      "id": "code-004",
+      "language": "java",
+      "kind": "block",
+      "sha256": "1959e339f39e2581d5a5b61eb2d4a50ab6768dd2a0383d3145c73cb329acb431"
+    },
+    {
+      "page": "chapters/ch06-classloaders-modules/sources.html",
+      "id": "code-005",
+      "language": "java",
+      "kind": "block",
+      "sha256": "c5df76f14340c84febfd52fcc8fd89dd3e01c3491badd493d7d76fd7aebcf25a"
+    },
+    {
+      "page": "chapters/ch06-classloaders-modules/sources.html",
+      "id": "code-006",
+      "language": "text",
+      "kind": "block",
+      "sha256": "bdd110c3a488f4e932b468c23fa58fec1ceeb4d5db2ffef34290f58e21eae89e"
+    },
+    {
+      "page": "chapters/ch06-classloaders-modules/sources.html",
+      "id": "code-007",
+      "language": "java",
+      "kind": "block",
+      "sha256": "35e8dec16bd0bd771feb454b9e96bd4913a77f572f3abe4d503bcbd13cc6d797"
+    },
+    {
+      "page": "chapters/ch06-classloaders-modules/sources.html",
+      "id": "code-008",
+      "language": "java",
+      "kind": "block",
+      "sha256": "96bf97d44cc459951ba4732c38977a7a804ddcda918c7de26c3522bb45bdaa18"
+    },
+    {
+      "page": "chapters/ch06-classloaders-modules/sources.html",
+      "id": "code-009",
+      "language": "java",
+      "kind": "block",
+      "sha256": "dacea6bcb9227d20fc34d97503d747c3cc2fdd024daf8d95310974c8e614894e"
+    },
+    {
+      "page": "chapters/ch06-classloaders-modules/sources.html",
+      "id": "code-010",
+      "language": "java",
+      "kind": "block",
+      "sha256": "462f8e6d9a5a576203b8b48c6f560bba44bcaec0d4c3b17fcc3088aff8e6bbd8"
+    },
+    {
+      "page": "chapters/ch06-classloaders-modules/sources.html",
+      "id": "code-011",
+      "language": "java",
+      "kind": "block",
+      "sha256": "7300db05a094661a67509fe24cfaf1dd8e3dc19f5d4813ebb79686c059aaf9cd"
+    },
+    {
+      "page": "chapters/ch06-classloaders-modules/sources.html",
+      "id": "code-012",
+      "language": "java",
+      "kind": "block",
+      "sha256": "f22e9cfcb126a3be7c587e51fb884dec7136e0fc491d1a9a91f6fdc72dc289b4"
+    },
+    {
+      "page": "chapters/ch06-classloaders-modules/sources.html",
+      "id": "code-013",
+      "language": "text",
+      "kind": "inline",
+      "sha256": "44ff7404f6b9deace0eb8a20ae42dc1af81d57192d75106bfa2fabbfb55078c6"
+    },
+    {
+      "page": "chapters/ch06-classloaders-modules/sources.html",
+      "id": "code-014",
+      "language": "text",
+      "kind": "inline",
+      "sha256": "8b95c09718ac0846015ea5bc5bb7152a8b8258d0cf0cd2676e0fddd2b28aba3b"
+    },
+    {
+      "page": "chapters/ch06-classloaders-modules/sources.html",
+      "id": "code-015",
+      "language": "text",
+      "kind": "inline",
+      "sha256": "53ec007e98797851d733023fc75e301690cbc4c8bdbf859e8c7bbcc9904ad20a"
+    },
+    {
+      "page": "chapters/ch06-classloaders-modules/sources.html",
+      "id": "code-016",
+      "language": "text",
+      "kind": "inline",
+      "sha256": "f46795d4527d2e3ac49121a4d42b8ff0eceaf7a1bf0b2c375c72f92b8e2d845a"
+    },
+    {
+      "page": "chapters/ch06-classloaders-modules/sources.html",
+      "id": "code-017",
+      "language": "text",
+      "kind": "inline",
+      "sha256": "27accec4ed8a2b0e92cf071d39fb634e968d994769dad329580562d0ab78c1fd"
+    },
+    {
+      "page": "chapters/ch06-classloaders-modules/sources.html",
+      "id": "code-018",
+      "language": "text",
+      "kind": "inline",
+      "sha256": "5dd3e1ce61c5dcfc0d6618851d2280b5dbe799817d9b34e152bb82d95037b33c"
+    },
+    {
+      "page": "chapters/ch06-classloaders-modules/sources.html",
+      "id": "code-019",
+      "language": "text",
+      "kind": "inline",
+      "sha256": "157a5eb3cce263e1ecff04ea49c952297e81ede947b4d597598c5910c39234ea"
+    },
+    {
+      "page": "chapters/ch06-classloaders-modules/sources.html",
+      "id": "code-020",
+      "language": "text",
+      "kind": "inline",
+      "sha256": "285eee2d16245c357c811a42c736af168ba9ef25945e65e43ea72f02874ce0d8"
+    },
+    {
+      "page": "chapters/ch06-classloaders-modules/sources.html",
+      "id": "code-021",
+      "language": "text",
+      "kind": "inline",
+      "sha256": "256c9ff5c51b4c090af198747939745b4b0473275a959f3e5999ec5b5ac8338c"
+    },
+    {
+      "page": "chapters/ch06-classloaders-modules/sources.html",
+      "id": "code-022",
+      "language": "text",
+      "kind": "inline",
+      "sha256": "8f2b0dfb3a29bfefe6ef9d4edf888224ce360f3acafe2334e696d06af8960809"
+    },
+    {
+      "page": "chapters/ch06-classloaders-modules/sources.html",
+      "id": "code-023",
+      "language": "text",
+      "kind": "inline",
+      "sha256": "3b857c5dceadc32b035f67a779adc99562e31adfc02ca4baa7b94c05bfb348b5"
+    },
+    {
+      "page": "chapters/ch06-classloaders-modules/sources.html",
+      "id": "code-024",
+      "language": "text",
+      "kind": "inline",
+      "sha256": "a6f35f900bbed6ec95064ffae65e2d201eb94e18cc972fd5fcc4a01f15214d56"
+    },
+    {
+      "page": "chapters/ch07-linking-initialization/chapter.html",
+      "id": "code-001",
+      "language": "text",
+      "kind": "block",
+      "sha256": "08fbceb040d149d5509dc1947eb7a9e49b2fa1462ea917013b5b45283b9b2669"
+    },
+    {
+      "page": "chapters/ch07-linking-initialization/chapter.html",
+      "id": "code-002",
+      "language": "text",
+      "kind": "block",
+      "sha256": "e3e92ef8f0f671da749afdba3c56b2636888685a4a22944b4f4829fe3a476110"
+    },
+    {
+      "page": "chapters/ch07-linking-initialization/sources.html",
+      "id": "code-001",
+      "language": "java",
+      "kind": "block",
+      "sha256": "ef4ba170ad24e36d1de3c6fc68644cebfb23aae9082b548e8fa3b3a2aad8b624"
+    },
+    {
+      "page": "chapters/ch07-linking-initialization/sources.html",
+      "id": "code-002",
+      "language": "java",
+      "kind": "block",
+      "sha256": "cff3c7d18d7fa70b40a712946c2f77a39b08e0bade1b2669f3a7564eade1f658"
+    },
+    {
+      "page": "chapters/ch07-linking-initialization/sources.html",
+      "id": "code-003",
+      "language": "java",
+      "kind": "block",
+      "sha256": "240d12c09a10f5d3228cac8950a770e9ac0e4dad0ce21fd439a9f39455ed96f0"
+    },
+    {
+      "page": "chapters/ch07-linking-initialization/sources.html",
+      "id": "code-004",
+      "language": "java",
+      "kind": "block",
+      "sha256": "fb94fa63fb6d54acc648b5478766d68c20eaa5d69af34377061a8078cb929130"
+    },
+    {
+      "page": "chapters/ch07-linking-initialization/sources.html",
+      "id": "code-005",
+      "language": "java",
+      "kind": "block",
+      "sha256": "600042a02fa720468b1f191c7368d548cae51874a9fbc1f1b84032c26a800505"
+    },
+    {
+      "page": "chapters/ch07-linking-initialization/sources.html",
+      "id": "code-006",
+      "language": "java",
+      "kind": "block",
+      "sha256": "185abb0c41058c380ee714e7464747daaf2b7cc0c1584880f5dc4b818f0abcc4"
+    },
+    {
+      "page": "chapters/ch07-linking-initialization/sources.html",
+      "id": "code-007",
+      "language": "java",
+      "kind": "block",
+      "sha256": "ea2b2d41b7664c34b3292296a436e0984e95b13c7111863b1e85f630ac3f15a0"
+    },
+    {
+      "page": "chapters/ch07-linking-initialization/sources.html",
+      "id": "code-008",
+      "language": "java",
+      "kind": "block",
+      "sha256": "dd8260b36fbe74e36bbd24e2ef9f4f2f130a575f0572c5421c01e0b1966cc0f4"
+    },
+    {
+      "page": "chapters/ch07-linking-initialization/sources.html",
+      "id": "code-009",
+      "language": "text",
+      "kind": "inline",
+      "sha256": "f43b4f3332e5e78af772778da5d301ecbd4705a14c045d134bdaf1458d7e95aa"
+    },
+    {
+      "page": "chapters/ch07-linking-initialization/sources.html",
+      "id": "code-010",
+      "language": "text",
+      "kind": "inline",
+      "sha256": "b943f8d5f6df919052b957d2ccbfee372cea39783a761a134135b795c235be18"
+    },
+    {
+      "page": "chapters/ch07-linking-initialization/sources.html",
+      "id": "code-011",
+      "language": "text",
+      "kind": "inline",
+      "sha256": "ed1a89bbaae2ea234c28cbceb62203cd961be1c070ec656b9cb7c7dae49b7305"
+    },
+    {
+      "page": "chapters/ch07-linking-initialization/sources.html",
+      "id": "code-012",
+      "language": "text",
+      "kind": "inline",
+      "sha256": "c451bd9d8f4815c3c21648b356e8487334a95253454aae3a7bcc8dfb8477105d"
+    },
+    {
+      "page": "chapters/ch07-linking-initialization/sources.html",
+      "id": "code-013",
+      "language": "text",
+      "kind": "inline",
+      "sha256": "38ecc55689a33c168fbc84244865bf96527803582d93cf34db33fbf314f84220"
+    },
+    {
+      "page": "chapters/ch07-linking-initialization/sources.html",
+      "id": "code-014",
+      "language": "text",
+      "kind": "inline",
+      "sha256": "023d01d978cc17ff375ec3b1ca1e524ee04c5a5c281338fb3cde2c2b258f0f9f"
+    },
+    {
+      "page": "chapters/ch07-linking-initialization/sources.html",
+      "id": "code-015",
+      "language": "text",
+      "kind": "inline",
+      "sha256": "1fd820ab77196a6caa5990ac373608787d0b2821f12f19756549d3be863b8074"
+    },
+    {
+      "page": "chapters/ch07-linking-initialization/sources.html",
+      "id": "code-016",
+      "language": "text",
+      "kind": "inline",
+      "sha256": "eabef84e2f33e7292566dbabdfc0ebe009c240616ca287635a33a13ace18e64b"
+    },
+    {
+      "page": "chapters/ch08-type-metadata/chapter.html",
+      "id": "code-001",
+      "language": "java",
+      "kind": "block",
+      "sha256": "6947804780a2ea33ca2ceb6b5ef81b2c0ac8f4e2490363a2b3f7e011a2723134"
+    },
+    {
+      "page": "chapters/ch08-type-metadata/sources.html",
+      "id": "code-001",
+      "language": "java",
+      "kind": "block",
+      "sha256": "213b06a9d92f4b62be9e9f4c57ba2c3452fe43e006c281c0e859c059cb2bc83a"
+    },
+    {
+      "page": "chapters/ch08-type-metadata/sources.html",
+      "id": "code-002",
+      "language": "java",
+      "kind": "block",
+      "sha256": "bcb2b7dad1e197cd617c7c83f3449fa4dad42a19bbfc58eb41c81f1ad083e72a"
+    },
+    {
+      "page": "chapters/ch08-type-metadata/sources.html",
+      "id": "code-003",
+      "language": "java",
+      "kind": "block",
+      "sha256": "13bf2781257ad35cd866659575def9d72ae6413c348d18a0dc3ff57e18a06cbb"
+    },
+    {
+      "page": "chapters/ch08-type-metadata/sources.html",
+      "id": "code-004",
+      "language": "java",
+      "kind": "block",
+      "sha256": "c6f6160dbe93084113604030dd834ff0a79864c8b0dd407262e88a4a042cc3a3"
+    },
+    {
+      "page": "chapters/ch08-type-metadata/sources.html",
+      "id": "code-005",
+      "language": "text",
+      "kind": "inline",
+      "sha256": "b362198a3eca8c998f67febcac2c22c17716691c42162a811b5b33325041b450"
+    },
+    {
+      "page": "chapters/ch08-type-metadata/sources.html",
+      "id": "code-006",
+      "language": "text",
+      "kind": "inline",
+      "sha256": "05280671048a1a113f6c4f715222b808cc176a2d047cdf324b753f68d58cf35d"
+    },
+    {
+      "page": "chapters/ch08-type-metadata/sources.html",
+      "id": "code-007",
+      "language": "text",
+      "kind": "inline",
+      "sha256": "f87096bc5de62cef482a75f596ad90217a6eafee5346b3f5bea8cb87d252be5e"
+    },
+    {
+      "page": "chapters/ch08-type-metadata/sources.html",
+      "id": "code-008",
+      "language": "text",
+      "kind": "inline",
+      "sha256": "9fde400a69dc9cda7d2b64ba09b0b56c8f30725e5634321daa805d3594ee7bec"
+    },
+    {
+      "page": "chapters/ch10-object-layout/sources.html",
+      "id": "code-001",
+      "language": "java",
+      "kind": "block",
+      "sha256": "13523bd415b52d46f085004ff319be6db261e384ad7d858fd0cd7f93e9437bf2"
+    },
+    {
+      "page": "chapters/ch11-allocation/chapter.html",
+      "id": "code-001",
+      "language": "java",
+      "kind": "block",
+      "sha256": "17197d70501715ccc6991c8fb53ebfde4d4aaeee9565bb4b3a0fed69ef9f963d"
+    },
+    {
+      "page": "chapters/ch11-allocation/sources.html",
+      "id": "code-001",
+      "language": "java",
+      "kind": "block",
+      "sha256": "a26639e11d9af8373872b003c3a78ba27bf4fa47e24736d6cf4f5ee0e9d336df"
+    },
+    {
+      "page": "chapters/ch11-allocation/sources.html",
+      "id": "code-002",
+      "language": "java",
+      "kind": "block",
+      "sha256": "679137927cc6f7d76f7d1ed6e44e9a79fbf211ceed936eb8bdd235c4f741da87"
+    },
+    {
+      "page": "chapters/ch12-native-memory/sources.html",
+      "id": "code-001",
+      "language": "java",
+      "kind": "block",
+      "sha256": "9d09d0fa5ff8831fda8955f5044cb3fcaded753d951aa8bd508a235d7fb3ba8e"
+    },
+    {
+      "page": "chapters/ch12-native-memory/sources.html",
+      "id": "code-002",
+      "language": "java",
+      "kind": "block",
+      "sha256": "c6f6160dbe93084113604030dd834ff0a79864c8b0dd407262e88a4a042cc3a3"
+    },
+    {
+      "page": "appendices/b-bytecode/appendix.html",
+      "id": "code-001",
+      "language": "text",
+      "kind": "inline",
+      "sha256": "ffa8f58defd48713c69af30cf4f5f8649a300281175e09037b3235c13c4f09d2"
+    },
+    {
+      "page": "appendices/b-bytecode/appendix.html",
+      "id": "code-002",
+      "language": "text",
+      "kind": "inline",
+      "sha256": "388008bbb2baeb7b62219dc37786f989c75a487955b5aa0b5759ab038475a402"
+    },
+    {
+      "page": "appendices/b-bytecode/appendix.html",
+      "id": "code-003",
+      "language": "text",
+      "kind": "inline",
+      "sha256": "ac9163dc1b51ac1065eb8482354aa6f290b0635bb49c1d4f43aed9245e7a3731"
+    },
+    {
+      "page": "appendices/b-bytecode/appendix.html",
+      "id": "code-004",
+      "language": "text",
+      "kind": "inline",
+      "sha256": "2f485d5ba3ab9e7dafecc4534e1eb4fdd6a7914e9702519f1912dd51383ec593"
+    },
+    {
+      "page": "appendices/b-bytecode/appendix.html",
+      "id": "code-005",
+      "language": "text",
+      "kind": "inline",
+      "sha256": "da8c82d5d4030588e2a67b1a25ad09d678e03e02b7d22a6f7b214e880ccb0c1c"
+    },
+    {
+      "page": "appendices/b-bytecode/appendix.html",
+      "id": "code-006",
+      "language": "text",
+      "kind": "inline",
+      "sha256": "c204a0da7d86e1f303877fdcc7d912f71f60e45ff5edc93b7fbdd1767c5685fc"
+    },
+    {
+      "page": "appendices/b-bytecode/appendix.html",
+      "id": "code-007",
+      "language": "text",
+      "kind": "inline",
+      "sha256": "47680b8d8e7e66364153658f4b3b6cf3c40ebdc7286fb504cb050fde6adc8fa0"
+    },
+    {
+      "page": "appendices/b-bytecode/appendix.html",
+      "id": "code-008",
+      "language": "text",
+      "kind": "inline",
+      "sha256": "bef7b89f91d42b686248dd99f2281ccf1ff834bffdce6204d736b119b09258f3"
+    },
+    {
+      "page": "appendices/b-bytecode/appendix.html",
+      "id": "code-009",
+      "language": "text",
+      "kind": "inline",
+      "sha256": "84b12cc99e37f4cf3d89dcbbc9c2740504d375a72b77a05084d13b67b1a453d8"
+    },
+    {
+      "page": "appendices/b-bytecode/appendix.html",
+      "id": "code-010",
+      "language": "text",
+      "kind": "inline",
+      "sha256": "4b4a5ce076eb3ca0fa232130ad71838b27b43e6080525207cabbf58403b6a9ca"
+    },
+    {
+      "page": "appendices/b-bytecode/appendix.html",
+      "id": "code-011",
+      "language": "text",
+      "kind": "inline",
+      "sha256": "40f08122cc8e77e9f0466e1e7848bd044c3626504db7ee26136613f3af02066d"
+    },
+    {
+      "page": "appendices/b-bytecode/appendix.html",
+      "id": "code-012",
+      "language": "text",
+      "kind": "inline",
+      "sha256": "3dca6edd3ead2a6a193d30158b1515e1a0abe4f2c08a2e9a1ff908ae587f30aa"
+    },
+    {
+      "page": "appendices/b-bytecode/appendix.html",
+      "id": "code-013",
+      "language": "text",
+      "kind": "inline",
+      "sha256": "acabdfa660e4af2d9b27a99ad99c14fb03d2491b74b37d1c8288ffccbf090c92"
+    },
+    {
+      "page": "appendices/b-bytecode/appendix.html",
+      "id": "code-014",
+      "language": "text",
+      "kind": "inline",
+      "sha256": "15b1c0703fddd5ee85e5336c1963ceaf5334ea1b056ff5e270f3591d29d4ba6b"
+    },
+    {
+      "page": "appendices/b-bytecode/appendix.html",
+      "id": "code-015",
+      "language": "text",
+      "kind": "inline",
+      "sha256": "58e9d19ef33f39c400f84e9728c0f2a0916fbbd813b4c27025771151dc00ae55"
+    },
+    {
+      "page": "appendices/b-bytecode/appendix.html",
+      "id": "code-016",
+      "language": "text",
+      "kind": "inline",
+      "sha256": "ec59789e5b8728508af1918e7c4ca001d0648ff4415d052c6e8964e122e2cc1a"
+    },
+    {
+      "page": "appendices/b-bytecode/appendix.html",
+      "id": "code-017",
+      "language": "text",
+      "kind": "inline",
+      "sha256": "7f6cd0a8b713518e60bc95c7ec18f5c9ab3f0675f4d53aa22834310d3682786b"
+    },
+    {
+      "page": "appendices/b-bytecode/appendix.html",
+      "id": "code-018",
+      "language": "text",
+      "kind": "inline",
+      "sha256": "86b956b055bac10e9f49703c0fb9c7b47328cd5778a252f1c7b0e93b46fa6161"
+    },
+    {
+      "page": "appendices/b-bytecode/appendix.html",
+      "id": "code-019",
+      "language": "text",
+      "kind": "inline",
+      "sha256": "af7f0afdc6d9a223a509101242bd81b104d0624d61ff14bcea33d96988971cc4"
+    },
+    {
+      "page": "appendices/b-bytecode/appendix.html",
+      "id": "code-020",
+      "language": "text",
+      "kind": "inline",
+      "sha256": "9839965f387311bb3fba7827c707780559f1b2812993db42762c754faf7b6830"
+    },
+    {
+      "page": "appendices/c-commands/appendix.html",
+      "id": "code-001",
+      "language": "text",
+      "kind": "inline",
+      "sha256": "2c89d1cd2cc3a4a0746568c1fd91f6114429e5f448c70cb7cbedc78cd52e31c1"
+    },
+    {
+      "page": "appendices/c-commands/appendix.html",
+      "id": "code-002",
+      "language": "text",
+      "kind": "inline",
+      "sha256": "633c7d68a9b8ac20ffc2fb9004ff8e08cce5c71a02efb0d13712ff8a6f8c28bc"
+    },
+    {
+      "page": "appendices/c-commands/appendix.html",
+      "id": "code-003",
+      "language": "text",
+      "kind": "inline",
+      "sha256": "7ef6a15c4bed0c6d786ff50e2f5ec2db47556ad47dd96cd44f7f1b30f85b4e3b"
+    },
+    {
+      "page": "appendices/c-commands/appendix.html",
+      "id": "code-004",
+      "language": "text",
+      "kind": "inline",
+      "sha256": "f60e91b15be943af7c10d3b158563d94249699672885326c033ee6b0dff6c348"
+    },
+    {
+      "page": "appendices/c-commands/appendix.html",
+      "id": "code-005",
+      "language": "text",
+      "kind": "inline",
+      "sha256": "ce12af36847550902c8639e30f52d43598ec3ea81fe4201c8c1c9c7ae82a8520"
+    },
+    {
+      "page": "appendices/c-commands/appendix.html",
+      "id": "code-006",
+      "language": "text",
+      "kind": "inline",
+      "sha256": "693837c7733ad0085181f03676a0a388d5beba0b53c657321bfeff52e2ee3da6"
+    },
+    {
+      "page": "appendices/c-commands/appendix.html",
+      "id": "code-007",
+      "language": "text",
+      "kind": "inline",
+      "sha256": "676c3f043f9121010ccb9432e44d8501d4c268d2c4f2c73f5376b52d3aa96706"
+    },
+    {
+      "page": "appendices/c-commands/appendix.html",
+      "id": "code-008",
+      "language": "text",
+      "kind": "inline",
+      "sha256": "0e0a2873c94f1318f0d3567ac9ae70146cefed854a3074f70f63a36bbf1a2c8f"
+    },
+    {
+      "page": "appendices/c-commands/appendix.html",
+      "id": "code-009",
+      "language": "text",
+      "kind": "inline",
+      "sha256": "9ef4fde9c131687fbb55dd00858fcd7ff0f551004fa1bc11a6fae24ed6ad7f44"
+    },
+    {
+      "page": "appendices/c-commands/appendix.html",
+      "id": "code-010",
+      "language": "text",
+      "kind": "inline",
+      "sha256": "b0d6f99407163886e74f2b6a311fca58789f158848e1f6a5d9999d07a8bfec03"
+    },
+    {
+      "page": "appendices/c-commands/appendix.html",
+      "id": "code-011",
+      "language": "text",
+      "kind": "inline",
+      "sha256": "54ed29e9491f137fbf7e3b517005128dec7faafceb5ad7cf144faf1bba73fca4"
+    },
+    {
+      "page": "appendices/c-commands/appendix.html",
+      "id": "code-012",
+      "language": "text",
+      "kind": "inline",
+      "sha256": "014af7c9123addf1fa4605124c3ff52db987604a73d065488227aeee062e09d4"
+    },
+    {
+      "page": "appendices/c-commands/appendix.html",
+      "id": "code-013",
+      "language": "text",
+      "kind": "inline",
+      "sha256": "b32e5ceddbcbe28d2785ec77bcee3f2233a52f4ad6f1dcb45bf3b87e95127c3a"
+    },
+    {
+      "page": "appendices/c-commands/appendix.html",
+      "id": "code-014",
+      "language": "text",
+      "kind": "inline",
+      "sha256": "7c087ec92741a8c812df710e8e3c6106f3bc085e9d9b61a37788378865bf89e8"
+    },
+    {
+      "page": "appendices/c-commands/appendix.html",
+      "id": "code-015",
+      "language": "text",
+      "kind": "inline",
+      "sha256": "6f3cfb8a6d549f1898b092ac11e1869d4132ad105b52f9ed92f41f0a5d5967cb"
+    },
+    {
+      "page": "appendices/c-commands/appendix.html",
+      "id": "code-016",
+      "language": "text",
+      "kind": "inline",
+      "sha256": "63e7bff53648bb562154c497199782b2d9b380fc6e20a213a25b5ac15789fdac"
+    },
+    {
+      "page": "appendices/c-commands/appendix.html",
+      "id": "code-017",
+      "language": "text",
+      "kind": "inline",
+      "sha256": "054677419d977af70e0fcff452183e0b8b32c8940c708feb8a1c545a4cace702"
+    },
+    {
+      "page": "appendices/c-commands/appendix.html",
+      "id": "code-018",
+      "language": "text",
+      "kind": "inline",
+      "sha256": "09bb2d3b7fb64ad701a90d176a101b75f73fd20a3f11795785250432c76320f0"
+    },
+    {
+      "page": "appendices/c-commands/appendix.html",
+      "id": "code-019",
+      "language": "text",
+      "kind": "inline",
+      "sha256": "d9ce1789ed0327653e25fe6ac867105068c6072b6170ee30b090f2bb2ad005c5"
+    },
+    {
+      "page": "appendices/c-commands/appendix.html",
+      "id": "code-020",
+      "language": "text",
+      "kind": "inline",
+      "sha256": "52bab22c34b77dd4c39aac24056a18111a3ad28e8290a8fafe900b4d777baa4a"
+    },
+    {
+      "page": "appendices/c-commands/appendix.html",
+      "id": "code-021",
+      "language": "text",
+      "kind": "inline",
+      "sha256": "2bd8b1682946bef9923f7f57025a8ff74357b7e8a61ce5f8b9c8c680e4963e3e"
+    },
+    {
+      "page": "appendices/c-commands/appendix.html",
+      "id": "code-022",
+      "language": "text",
+      "kind": "inline",
+      "sha256": "817131e167db42b08c4967720cb4a416b2b96c83ae5dac51ad701f57078cedf2"
+    },
+    {
+      "page": "appendices/c-commands/appendix.html",
+      "id": "code-023",
+      "language": "text",
+      "kind": "inline",
+      "sha256": "44e6214985ee4c1a832137695d28ec81df69c147bfa7a56dd8cdb949e4df3958"
+    },
+    {
+      "page": "appendices/c-commands/appendix.html",
+      "id": "code-024",
+      "language": "text",
+      "kind": "inline",
+      "sha256": "76bf1c7332be4a6e90a1c2930a393a20561960c7151bf04310431258dfe02569"
+    },
+    {
+      "page": "appendices/c-commands/appendix.html",
+      "id": "code-025",
+      "language": "text",
+      "kind": "inline",
+      "sha256": "7e5db989c130f72468831521b8d3ebacf4785a7c294cee3a02f1a9952a7ec086"
+    },
+    {
+      "page": "appendices/c-commands/appendix.html",
+      "id": "code-026",
+      "language": "text",
+      "kind": "inline",
+      "sha256": "bac91c5288cdf869db3d0c19cb3297d0f19ca76b6b4fe28d8fe6c70abd0e9c6f"
+    },
+    {
+      "page": "appendices/c-commands/appendix.html",
+      "id": "code-027",
+      "language": "text",
+      "kind": "inline",
+      "sha256": "31960afb91483624e60ce0730e3e3242e753d06c7bd020e13405744702a16894"
+    },
+    {
+      "page": "appendices/d-source-map/appendix.html",
+      "id": "code-001",
+      "language": "text",
+      "kind": "inline",
+      "sha256": "cb3c206a26c5d5ebfc23af441cbf4a1d7106c344a7665aae9d95559226a1f3dd"
+    },
+    {
+      "page": "appendices/d-source-map/appendix.html",
+      "id": "code-002",
+      "language": "text",
+      "kind": "inline",
+      "sha256": "19ce0065139d234d70069b8782f29aa0bbbe5988ba60095c3f1243f8ad229ad8"
+    },
+    {
+      "page": "appendices/d-source-map/appendix.html",
+      "id": "code-003",
+      "language": "cpp",
+      "kind": "inline",
+      "sha256": "564e7a4d360f655c2eb2e2bf9fa348a31e0a6093dfdc4b1a1032a07163dfdd64"
+    },
+    {
+      "page": "appendices/d-source-map/appendix.html",
+      "id": "code-004",
+      "language": "text",
+      "kind": "inline",
+      "sha256": "431ae2ca4052e192cf72432392d0e5d9e799583dcc44daeca0a47959f4db44af"
+    },
+    {
+      "page": "appendices/d-source-map/appendix.html",
+      "id": "code-005",
+      "language": "cpp",
+      "kind": "inline",
+      "sha256": "879790bac5d6deba12424bdb5dbda0d5206999cd5a2d192894d500ebeb2d58ea"
+    },
+    {
+      "page": "appendices/d-source-map/appendix.html",
+      "id": "code-006",
+      "language": "text",
+      "kind": "inline",
+      "sha256": "8802ad4c68451870e153c92e5c147cb6074d9a9f48b78b80f5c4d5b3a6db4d3b"
+    },
+    {
+      "page": "appendices/d-source-map/appendix.html",
+      "id": "code-007",
+      "language": "cpp",
+      "kind": "inline",
+      "sha256": "f7115f98abb2b2d196a258b8ee4337e0cbedda592cafae864e42e27d3179cadd"
+    },
+    {
+      "page": "appendices/d-source-map/appendix.html",
+      "id": "code-008",
+      "language": "text",
+      "kind": "inline",
+      "sha256": "89b28ccc5ecbdf56a7238a2d8b4b2d3d1ebb390303e71f644e987cba5e6f0cfd"
+    },
+    {
+      "page": "appendices/d-source-map/appendix.html",
+      "id": "code-009",
+      "language": "text",
+      "kind": "inline",
+      "sha256": "22067089ccb5a8dde4e3bd4ee4e3a471f6e05d95c07354d616f57f04a7252740"
+    },
+    {
+      "page": "appendices/d-source-map/appendix.html",
+      "id": "code-010",
+      "language": "text",
+      "kind": "inline",
+      "sha256": "3436329d962f41027094a5c1e55e82b806e6fbac11048dfaa030bba4ec9147da"
+    },
+    {
+      "page": "appendices/d-source-map/appendix.html",
+      "id": "code-011",
+      "language": "cpp",
+      "kind": "inline",
+      "sha256": "b367dd99b1aa6eb970abdc83354f9ea61a6580efaf10768c5b443109168d08f7"
+    },
+    {
+      "page": "appendices/d-source-map/appendix.html",
+      "id": "code-012",
+      "language": "text",
+      "kind": "inline",
+      "sha256": "403b937e9337e2c909df597141c78cf5b50864cf4c142ff1d75e4a78233c5fb6"
+    },
+    {
+      "page": "appendices/d-source-map/appendix.html",
+      "id": "code-013",
+      "language": "text",
+      "kind": "inline",
+      "sha256": "94f3e0559678aca3d936707ac1f77e0b29acbe44c64c2bec873be25c669ce537"
+    },
+    {
+      "page": "appendices/d-source-map/appendix.html",
+      "id": "code-014",
+      "language": "text",
+      "kind": "inline",
+      "sha256": "eb82d3f06309114c7ec6c7a1dfd97e06ea18ae31643dcfe859932dfaf8b248be"
+    },
+    {
+      "page": "appendices/d-source-map/appendix.html",
+      "id": "code-015",
+      "language": "cpp",
+      "kind": "inline",
+      "sha256": "23d2af1794317075441fcbffc87d62126873128ebbb9ef3a56ebe98d74ea8410"
+    },
+    {
+      "page": "appendices/d-source-map/appendix.html",
+      "id": "code-016",
+      "language": "text",
+      "kind": "inline",
+      "sha256": "47a04917ee3e7910ef04a92ff591bd13a4fe1b37d9c386b9acd2d35281f5ca03"
+    },
+    {
+      "page": "appendices/d-source-map/appendix.html",
+      "id": "code-017",
+      "language": "text",
+      "kind": "inline",
+      "sha256": "7935a02178d7ce625f7de12f5efac9c5e072f6cdf47767dd68fb60afd40396ab"
+    },
+    {
+      "page": "appendices/d-source-map/appendix.html",
+      "id": "code-018",
+      "language": "text",
+      "kind": "inline",
+      "sha256": "61e5ea4a1005ac734363813040f72b1d8cacabec5003c330d676e9152acf4268"
+    },
+    {
+      "page": "appendices/d-source-map/appendix.html",
+      "id": "code-019",
+      "language": "text",
+      "kind": "inline",
+      "sha256": "be983611e6ae1ce2bc124c03611d78cb6da24bb4c1d4410af7fc3f64ab008a50"
+    },
+    {
+      "page": "appendices/d-source-map/appendix.html",
+      "id": "code-020",
+      "language": "text",
+      "kind": "inline",
+      "sha256": "2faebd05d08f9115f8d9ef771644cf05087a6986c2f9013d7163c6aa720169c3"
+    },
+    {
+      "page": "appendices/d-source-map/appendix.html",
+      "id": "code-021",
+      "language": "text",
+      "kind": "inline",
+      "sha256": "5a807d2d385450a3f69f3e201d09f5a635bec550ca1539710ef315df44c1a60c"
+    },
+    {
+      "page": "appendices/d-source-map/appendix.html",
+      "id": "code-022",
+      "language": "text",
+      "kind": "inline",
+      "sha256": "ee8337800ed1d1b84e3e49a2481809a6affac5d70ca23934a44497c9c758092f"
+    },
+    {
+      "page": "appendices/d-source-map/appendix.html",
+      "id": "code-023",
+      "language": "cpp",
+      "kind": "inline",
+      "sha256": "953f40c208588ed1b6d9a05c06dc9d5f3d80fb07bf7f8df951fe4bc466f6fa88"
+    },
+    {
+      "page": "appendices/d-source-map/appendix.html",
+      "id": "code-024",
+      "language": "text",
+      "kind": "inline",
+      "sha256": "d61020d12394708828d066d097d823180c01b74d35d4c3e369aead062abc11ef"
+    },
+    {
+      "page": "appendices/d-source-map/appendix.html",
+      "id": "code-025",
+      "language": "cpp",
+      "kind": "inline",
+      "sha256": "2ec3e0390b9af967a625f38a005965dc3d8dcebea3bb16e5e8e5d50971341825"
+    },
+    {
+      "page": "appendices/d-source-map/appendix.html",
+      "id": "code-026",
+      "language": "text",
+      "kind": "inline",
+      "sha256": "bd77dfe2aede2412846d1b73545c4aebed82cb9735439340eaefe141e5ecc11d"
+    },
+    {
+      "page": "appendices/d-source-map/appendix.html",
+      "id": "code-027",
+      "language": "cpp",
+      "kind": "inline",
+      "sha256": "eebccf849621156f80a73e2d5c11e3a1abdb4603d40e78e15f4911159c9ade68"
+    },
+    {
+      "page": "appendices/d-source-map/appendix.html",
+      "id": "code-028",
+      "language": "text",
+      "kind": "inline",
+      "sha256": "bc4589e1fc04acabae9273aea6542c3b05e8ef714d8229a581c8da24296f3d3f"
+    },
+    {
+      "page": "appendices/d-source-map/appendix.html",
+      "id": "code-029",
+      "language": "text",
+      "kind": "inline",
+      "sha256": "5b3b0eaab434d688da1fc4793f4dd94617930a246b15968eaf784441047cfdf4"
+    },
+    {
+      "page": "appendices/d-source-map/appendix.html",
+      "id": "code-030",
+      "language": "text",
+      "kind": "inline",
+      "sha256": "96cc2eb92bafb2644a40797649542102bd9b85d561babbd3520c0283dec9b079"
+    },
+    {
+      "page": "appendices/d-source-map/appendix.html",
+      "id": "code-031",
+      "language": "cpp",
+      "kind": "inline",
+      "sha256": "11d2611245146ed8c7f894f6892bb9e09643eea59f1a44055b11a2125673b572"
+    },
+    {
+      "page": "appendices/d-source-map/appendix.html",
+      "id": "code-032",
+      "language": "text",
+      "kind": "inline",
+      "sha256": "04c5197988a551b4bd0aa02e53b3d1e904f805eaf221c5216c1c2733b9d27661"
+    },
+    {
+      "page": "appendices/d-source-map/appendix.html",
+      "id": "code-033",
+      "language": "cpp",
+      "kind": "inline",
+      "sha256": "1b00ba6407885de20b33f9ca4a7ad99d173b6c250605ab55ae616114e847cf23"
+    },
+    {
+      "page": "appendices/d-source-map/appendix.html",
+      "id": "code-034",
+      "language": "text",
+      "kind": "inline",
+      "sha256": "aa60410eaca94047b7cd1a298e2adcff5a223fcab65478c809ce1d9c38855821"
+    },
+    {
+      "page": "appendices/d-source-map/appendix.html",
+      "id": "code-035",
+      "language": "text",
+      "kind": "inline",
+      "sha256": "9fb7629faf279f52b07a058c930a2a7ae032fca578f3903c360bc43a60ea515c"
+    },
+    {
+      "page": "appendices/d-source-map/appendix.html",
+      "id": "code-036",
+      "language": "text",
+      "kind": "inline",
+      "sha256": "2a0a81e61d3ef5424912c90e5f23d60e2294a17b67a84360ef788fd9daa1f7b2"
+    },
+    {
+      "page": "appendices/d-source-map/appendix.html",
+      "id": "code-037",
+      "language": "text",
+      "kind": "inline",
+      "sha256": "f5fe6ae535cdd79a31a7b999f82e02bdcf58d14506311130aaacc02e11a4455a"
+    },
+    {
+      "page": "appendices/d-source-map/appendix.html",
+      "id": "code-038",
+      "language": "text",
+      "kind": "inline",
+      "sha256": "c3caaf3e347b1a477e2b7278cb6a35da04a597de5632c13351a6e4e5a2924d21"
+    },
+    {
+      "page": "appendices/d-source-map/appendix.html",
+      "id": "code-039",
+      "language": "text",
+      "kind": "inline",
+      "sha256": "b73838f16005c011c33098158512bc693a88bd479b3a816ddde49ea75884ccb8"
+    },
+    {
+      "page": "appendices/d-source-map/appendix.html",
+      "id": "code-040",
+      "language": "text",
+      "kind": "inline",
+      "sha256": "539a0ad6892ba9e2d9eb22bee20897552b706b48a9db43287187979f00dbd934"
+    },
+    {
+      "page": "appendices/d-source-map/appendix.html",
+      "id": "code-041",
+      "language": "cpp",
+      "kind": "inline",
+      "sha256": "330b7b092bfa096b0d312daa1a55ee1d401ca45cfc09f5438bb4961fb7ee7e89"
+    },
+    {
+      "page": "appendices/d-source-map/appendix.html",
+      "id": "code-042",
+      "language": "text",
+      "kind": "inline",
+      "sha256": "d8195c4232bd5df920d99eb6cd5a4b1dfa581cd7cd10f838a72273639d42e219"
+    },
+    {
+      "page": "appendices/d-source-map/appendix.html",
+      "id": "code-043",
+      "language": "text",
+      "kind": "inline",
+      "sha256": "a566fc9ad11297d7ce5084ecc8ef78219c14547c1c099da2935d24cdecc5dd81"
+    },
+    {
+      "page": "appendices/d-source-map/appendix.html",
+      "id": "code-044",
+      "language": "text",
+      "kind": "inline",
+      "sha256": "74eed04496ee500452c95c5d07b41ad3bd0e7d9d566f7fe90fffe445e2c91c90"
+    },
+    {
+      "page": "appendices/d-source-map/appendix.html",
+      "id": "code-045",
+      "language": "text",
+      "kind": "inline",
+      "sha256": "76186d8f137afe0e16efc735a9834e664c2328fb64cd558404aad99ad8d45c14"
+    },
+    {
+      "page": "appendices/d-source-map/appendix.html",
+      "id": "code-046",
+      "language": "text",
+      "kind": "inline",
+      "sha256": "75c2f4b9601a4dd769232844dc1a65082187049bcee904256ce8fa3d19fd88ee"
+    },
+    {
+      "page": "appendices/d-source-map/appendix.html",
+      "id": "code-047",
+      "language": "cpp",
+      "kind": "inline",
+      "sha256": "a2e8fabb62d4eff24c6267cc2cb43ea4014052f9f97ee240f543c99da022967c"
+    },
+    {
+      "page": "appendices/d-source-map/appendix.html",
+      "id": "code-048",
+      "language": "text",
+      "kind": "inline",
+      "sha256": "1238fc8035aa043386e5587ddd37e8200b4116a1441f0183f0698298b9cc4a23"
+    },
+    {
+      "page": "appendices/d-source-map/appendix.html",
+      "id": "code-049",
+      "language": "cpp",
+      "kind": "inline",
+      "sha256": "9cb28addc6cd92e28bbbafba9603d8a31f6c43382d6bc91ff944aeb51ce9eea5"
+    },
+    {
+      "page": "appendices/f-environments/appendix.html",
+      "id": "code-001",
+      "language": "text",
+      "kind": "inline",
+      "sha256": "cb3c206a26c5d5ebfc23af441cbf4a1d7106c344a7665aae9d95559226a1f3dd"
+    },
+    {
+      "page": "chapters/ch01-architecture/README.html",
+      "id": "code-001",
+      "language": "text",
+      "kind": "inline",
+      "sha256": "e07b52bd80fd8b4d138b62fb41b41a252d7d68da861a81f6430fd4a15c111a94"
+    },
+    {
+      "page": "chapters/ch01-architecture/README.html",
+      "id": "code-002",
+      "language": "text",
+      "kind": "inline",
+      "sha256": "b1e3a2f7155108b0e5a54e9362bd1c55933e06a2596401478483b5e26ba3231f"
+    },
+    {
+      "page": "chapters/ch01-architecture/README.html",
+      "id": "code-003",
+      "language": "bash",
+      "kind": "block",
+      "sha256": "7e1ed9fbf45d20a9665920d8b87a87a6a772197c82485df4b937931966a70c12"
+    },
+    {
+      "page": "chapters/ch01-architecture/README.html",
+      "id": "code-004",
+      "language": "text",
+      "kind": "inline",
+      "sha256": "7f023b807bd5f4fffc33832ecaee147185bd44ae1804d9de75037e4cb3d928db"
+    },
+    {
+      "page": "chapters/ch01-architecture/README.html",
+      "id": "code-005",
+      "language": "text",
+      "kind": "inline",
+      "sha256": "6c8709fec23f91a4f7a437cdc4ce98892a1d0e08a802a5a24cccd5f74be99c25"
+    },
+    {
+      "page": "chapters/ch01-architecture/README.html",
+      "id": "code-006",
+      "language": "text",
+      "kind": "inline",
+      "sha256": "aff7d00b56394f5a96dca22be6856e0950b37524abb5b2ef434d27981a0586f1"
+    },
+    {
+      "page": "chapters/ch02-computer-basics/README.html",
+      "id": "code-001",
+      "language": "bash",
+      "kind": "block",
+      "sha256": "3ce9892cfcab3f955eb3355c517d9b62c1057a9d64cf0eacbcce1f0335cb2035"
+    },
+    {
+      "page": "chapters/ch02-computer-basics/README.html",
+      "id": "code-002",
+      "language": "bash",
+      "kind": "block",
+      "sha256": "e963f8f87eb2b4c92b358040932b257089806fed06383043fe2845de887a8876"
+    },
+    {
+      "page": "chapters/ch02-computer-basics/README.html",
+      "id": "code-003",
+      "language": "bash",
+      "kind": "block",
+      "sha256": "30072bdcf3cd7d20fd224c813d56545dcc2d29b083bac22ef167a535e205a4c7"
+    },
+    {
+      "page": "chapters/ch03-source-environment/README.html",
+      "id": "code-001",
+      "language": "bash",
+      "kind": "block",
+      "sha256": "b36647a6ba1787dc5443d06bb376117a9f14d2708384c7e2dbcab0d6063d3eff"
+    },
+    {
+      "page": "chapters/ch03-source-environment/README.html",
+      "id": "code-002",
+      "language": "bash",
+      "kind": "block",
+      "sha256": "b81435f5836a020fbfc7c975de014b12477e00a2c48196d9ee64ed79d4003bf3"
+    },
+    {
+      "page": "chapters/ch03-source-environment/README.html",
+      "id": "code-003",
+      "language": "text",
+      "kind": "inline",
+      "sha256": "87d820047f71d2f100b51c39e7f0118ae1d7635559385b94d1c49fb88e9474ec"
+    },
+    {
+      "page": "chapters/ch03-source-environment/README.html",
+      "id": "code-004",
+      "language": "text",
+      "kind": "inline",
+      "sha256": "106a5842fc5fce6f663176285ed1516dbb1e3d15c05abab12fdca46d60b539b7"
+    },
+    {
+      "page": "chapters/ch03-source-environment/README.html",
+      "id": "code-005",
+      "language": "text",
+      "kind": "inline",
+      "sha256": "87b4ff72193ca25aed4e0d735b2409146082702072e54d36d8bbc66d331f902a"
+    },
+    {
+      "page": "chapters/ch03-source-environment/README.html",
+      "id": "code-006",
+      "language": "bash",
+      "kind": "block",
+      "sha256": "3f5787e6888591acdf1d8493a5b6ac4f1098abc016eb4e2b7568e2ff508a6a95"
+    },
+    {
+      "page": "chapters/ch04-classfile/README.html",
+      "id": "code-001",
+      "language": "text",
+      "kind": "inline",
+      "sha256": "9e46fc515518e8597a76d22b80ff4bcbe0f96941dbb0e4e8c23c386fa2ac97a5"
+    },
+    {
+      "page": "chapters/ch04-classfile/README.html",
+      "id": "code-002",
+      "language": "bash",
+      "kind": "block",
+      "sha256": "84f26c63415496d686d6858b856e1567bcbe35477c6fb77d62f7c860281f39a9"
+    },
+    {
+      "page": "chapters/ch04-classfile/README.html",
+      "id": "code-003",
+      "language": "text",
+      "kind": "inline",
+      "sha256": "94928cb2475c4607d0224896fa80debf0831693ae087387ab128d17b784473d6"
+    },
+    {
+      "page": "chapters/ch04-classfile/README.html",
+      "id": "code-004",
+      "language": "text",
+      "kind": "inline",
+      "sha256": "1f0bfda9162beb5e1997c87eb60ddb5a14d1058eaf6ebaf5bb835069653e844d"
+    },
+    {
+      "page": "chapters/ch04-classfile/README.html",
+      "id": "code-005",
+      "language": "text",
+      "kind": "inline",
+      "sha256": "0d6e4079e36703ebd37c00722f5891d28b0e2811dc114b129215123adcce3605"
+    },
+    {
+      "page": "chapters/ch04-classfile/README.html",
+      "id": "code-006",
+      "language": "text",
+      "kind": "inline",
+      "sha256": "0d6e4079e36703ebd37c00722f5891d28b0e2811dc114b129215123adcce3605"
+    },
+    {
+      "page": "chapters/ch04-classfile/README.html",
+      "id": "code-007",
+      "language": "text",
+      "kind": "inline",
+      "sha256": "0d6e4079e36703ebd37c00722f5891d28b0e2811dc114b129215123adcce3605"
+    },
+    {
+      "page": "chapters/ch04-classfile/README.html",
+      "id": "code-008",
+      "language": "text",
+      "kind": "inline",
+      "sha256": "83cffa68bcc8179ac683eae5b0474735ef490e8f2feeb871330c0eef690044bd"
+    },
+    {
+      "page": "chapters/ch04-classfile/README.html",
+      "id": "code-009",
+      "language": "text",
+      "kind": "inline",
+      "sha256": "dd6402c044a93980a96ca7c36b2ae10e8cb94c1ad0e7a9818f98e9a7eb6bf3e6"
+    },
+    {
+      "page": "chapters/ch04-classfile/README.html",
+      "id": "code-010",
+      "language": "text",
+      "kind": "inline",
+      "sha256": "3e934bfb3b301facdb1c3409ee65237dc0447fbcdd9ba9d1cc94c11d954774bb"
+    },
+    {
+      "page": "chapters/ch04-classfile/README.html",
+      "id": "code-011",
+      "language": "text",
+      "kind": "inline",
+      "sha256": "c901a9f8c760b70fa68e57d40ec2770cf58a5ddec532d781b2856edabb9dc7db"
+    },
+    {
+      "page": "chapters/ch04-classfile/README.html",
+      "id": "code-012",
+      "language": "bash",
+      "kind": "block",
+      "sha256": "7e851316aad9562271467e2a3d016e5bf345c4a30d614a1c6b93ed9b7dab447f"
+    },
+    {
+      "page": "chapters/ch04-classfile/README.html",
+      "id": "code-013",
+      "language": "text",
+      "kind": "inline",
+      "sha256": "cf3b68e6df67bcc46a38b494c37484e562229d4550c29bca57322f92d76f57cf"
+    },
+    {
+      "page": "chapters/ch04-classfile/README.html",
+      "id": "code-014",
+      "language": "bash",
+      "kind": "block",
+      "sha256": "4761e95b9772c040eaaf311fe1335fbb51b2b326378811728c014ae6e859e699"
+    },
+    {
+      "page": "chapters/ch04-classfile/README.html",
+      "id": "code-015",
+      "language": "bash",
+      "kind": "block",
+      "sha256": "98a907d944c720935c2ea973ef44fdc3ab51c388cd427b45a0041c33d08cc71e"
+    },
+    {
+      "page": "chapters/ch04-classfile/README.html",
+      "id": "code-016",
+      "language": "text",
+      "kind": "inline",
+      "sha256": "bd82cf16699be29ec05cbb763199c12f0dced428dde8381dbdd31c1d5dd0e8d4"
+    },
+    {
+      "page": "chapters/ch04-classfile/README.html",
+      "id": "code-017",
+      "language": "text",
+      "kind": "inline",
+      "sha256": "cf71de672b6550f0fe2077b1e5b666ca53431e681c534728659679f20ea55892"
+    },
+    {
+      "page": "chapters/ch04-classfile/README.html",
+      "id": "code-018",
+      "language": "text",
+      "kind": "inline",
+      "sha256": "d9ec8f79ecbd3d9118995aa3f01628b702c8a1a35763e791748816f1e46fa7c9"
+    },
+    {
+      "page": "chapters/ch04-classfile/README.html",
+      "id": "code-019",
+      "language": "text",
+      "kind": "inline",
+      "sha256": "46949335dadfdc7161213d24595d50b3d83bf93b9dbb372d687e8f4051b922e4"
+    },
+    {
+      "page": "chapters/ch04-classfile/README.html",
+      "id": "code-020",
+      "language": "text",
+      "kind": "inline",
+      "sha256": "6085de00ba6367072839d602b1e031b6367ef1f402b161857ebe1a97675989ad"
+    },
+    {
+      "page": "chapters/ch04-classfile/README.html",
+      "id": "code-021",
+      "language": "text",
+      "kind": "inline",
+      "sha256": "c05c3b2165fb57ed0536dc886fa3743235707954345a7f437cb1a1de4c96866c"
+    },
+    {
+      "page": "chapters/ch04-classfile/README.html",
+      "id": "code-022",
+      "language": "bash",
+      "kind": "block",
+      "sha256": "d2de2caa291b64760293b62615ac7d685aeea6bfa0b5a6bbcd60173da8d88412"
+    },
+    {
+      "page": "chapters/ch04-classfile/README.html",
+      "id": "code-023",
+      "language": "text",
+      "kind": "inline",
+      "sha256": "91e32e7c7446da0e17ef5bc0a3a783065c4476613ea4a7c24dee14aa889c6ddd"
+    },
+    {
+      "page": "chapters/ch04-classfile/README.html",
+      "id": "code-024",
+      "language": "text",
+      "kind": "inline",
+      "sha256": "b1e3a2f7155108b0e5a54e9362bd1c55933e06a2596401478483b5e26ba3231f"
+    },
+    {
+      "page": "chapters/ch05-bytecode-verification/README.html",
+      "id": "code-001",
+      "language": "text",
+      "kind": "inline",
+      "sha256": "e2c7aee63872ecb83d4852b371044b18a123315606f7b7ce9d1339d25cd97eee"
+    },
+    {
+      "page": "chapters/ch05-bytecode-verification/README.html",
+      "id": "code-002",
+      "language": "bash",
+      "kind": "block",
+      "sha256": "c7e5aa2a75ec4c2f7b3f22dc80d13aeca3f83b8f537e63f5f767b69b3b6ca93b"
+    },
+    {
+      "page": "chapters/ch05-bytecode-verification/README.html",
+      "id": "code-003",
+      "language": "text",
+      "kind": "inline",
+      "sha256": "aff7d00b56394f5a96dca22be6856e0950b37524abb5b2ef434d27981a0586f1"
+    },
+    {
+      "page": "chapters/ch05-bytecode-verification/README.html",
+      "id": "code-004",
+      "language": "bash",
+      "kind": "block",
+      "sha256": "d957d36384ff7fb88487824a432f34bc455e44935500eecc085cae2e29c7fc1d"
+    },
+    {
+      "page": "chapters/ch05-bytecode-verification/README.html",
+      "id": "code-005",
+      "language": "bash",
+      "kind": "block",
+      "sha256": "bcd6b07fb08cfbb880cce38bd1293996b8ed37ba09bfb7e79b17e960f95b4afc"
+    },
+    {
+      "page": "chapters/ch06-classloaders-modules/README.html",
+      "id": "code-001",
+      "language": "bash",
+      "kind": "block",
+      "sha256": "8128a7908d2a35872e75de3d78f210033618f74d7e04db7b2191d211eceda4ac"
+    },
+    {
+      "page": "chapters/ch06-classloaders-modules/README.html",
+      "id": "code-002",
+      "language": "bash",
+      "kind": "block",
+      "sha256": "53f07911e7fe914f724ade7b6f0c52b6670befa5c2a76ead8294ba70ec63747e"
+    },
+    {
+      "page": "chapters/ch06-classloaders-modules/README.html",
+      "id": "code-003",
+      "language": "text",
+      "kind": "inline",
+      "sha256": "e4229c8e0bc93595e5518c839938a938d3834a61a5ac860558cca0e9c9723cc8"
+    },
+    {
+      "page": "chapters/ch07-linking-initialization/README.html",
+      "id": "code-001",
+      "language": "bash",
+      "kind": "block",
+      "sha256": "e94e2f23798bb756b63142b9a44b361765df072d96aea1183ba75dd58b64830c"
+    },
+    {
+      "page": "chapters/ch07-linking-initialization/README.html",
+      "id": "code-002",
+      "language": "text",
+      "kind": "inline",
+      "sha256": "4bcc1c6eafa8ad42c0395e54c8a8f7812e1bde4ad4d6f7b915870d987001ffb5"
+    },
+    {
+      "page": "chapters/ch07-linking-initialization/README.html",
+      "id": "code-003",
+      "language": "bash",
+      "kind": "block",
+      "sha256": "801ef4e572613af2c0df0731fa24b4117dc005932019efdee23c4f2834a14e36"
+    },
+    {
+      "page": "chapters/ch07-linking-initialization/README.html",
+      "id": "code-004",
+      "language": "bash",
+      "kind": "block",
+      "sha256": "d8a5246b03868196b86a8fee6d02b43697e5e5bacbb7aff9889e90bd0cefe173"
+    },
+    {
+      "page": "chapters/ch08-type-metadata/README.html",
+      "id": "code-001",
+      "language": "bash",
+      "kind": "block",
+      "sha256": "df5b11bf91e3ed6e17ce7bd76a19d80ad7436892bbd05d924667fdebb9abfe67"
+    },
+    {
+      "page": "chapters/ch09-runtime-memory/README.html",
+      "id": "code-001",
+      "language": "text",
+      "kind": "inline",
+      "sha256": "c830d5e6164e4e9f4f8a30d7fa33c73ba4b5e76036e1db008b37f7bac4d56463"
+    },
+    {
+      "page": "chapters/ch09-runtime-memory/README.html",
+      "id": "code-002",
+      "language": "bash",
+      "kind": "block",
+      "sha256": "2e757d7c2755817148d4941cbd3aeaa1b83e2ac5ded5d6b5d3762dbc6fa51644"
+    },
+    {
+      "page": "chapters/ch10-object-layout/README.html",
+      "id": "code-001",
+      "language": "bash",
+      "kind": "block",
+      "sha256": "1fb9ebc9732d34572f598696a2ff48cf78b13293c1ac69682657cfca21928d27"
+    },
+    {
+      "page": "chapters/ch10-object-layout/README.html",
+      "id": "code-002",
+      "language": "bash",
+      "kind": "block",
+      "sha256": "7d9889c7b5e5d8eeb430023b6b6471ffe0af8c0da776fd5ad30094ce932255c7"
+    },
+    {
+      "page": "chapters/ch11-allocation/README.html",
+      "id": "code-001",
+      "language": "bash",
+      "kind": "block",
+      "sha256": "c6f605af92a4c2e0504832c6d2bd7505abfcc44e6fddea7fc78c880c370026c9"
+    },
+    {
+      "page": "chapters/ch11-allocation/README.html",
+      "id": "code-002",
+      "language": "bash",
+      "kind": "block",
+      "sha256": "40f1d20c18ec91d3105f10e55354c47bb99a7e5b16381e3862db6eb124e30ce5"
+    },
+    {
+      "page": "chapters/ch12-native-memory/README.html",
+      "id": "code-001",
+      "language": "bash",
+      "kind": "block",
+      "sha256": "ab8b7efc42fcb6a75910ba863886393f0c2edbab87100619680ea5d3f84fc284"
+    },
+    {
+      "page": "chapters/ch12-native-memory/README.html",
+      "id": "code-002",
+      "language": "bash",
+      "kind": "block",
+      "sha256": "7aa2b8b3275b3e12713f536b78fa1a4a8e25c32ac24f452e042ced30b468242e"
+    },
+    {
+      "page": "chapters/ch12-native-memory/README.html",
+      "id": "code-003",
+      "language": "bash",
+      "kind": "block",
+      "sha256": "810df326e875bf038541f4a999387726acac6ac5c443ffca0acefad864e149ac"
+    },
+    {
+      "page": "chapters/ch12-native-memory/README.html",
+      "id": "code-004",
+      "language": "text",
+      "kind": "inline",
+      "sha256": "2cba6d23711b9db44983bbce749421360d838930f5bcda9d3232d0210a3f109d"
+    }
+  ]
+}

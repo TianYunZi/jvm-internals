@@ -1,0 +1,10 @@
+执行记录/evidence/p11-20261103/pages/chapters/ch01-architecture/chapter/print.pdf Pages:           8
+执行记录/evidence/p11-20261103/pages/chapters/ch02-computer-basics/chapter/print.pdf Pages:           8
+执行记录/evidence/p11-20261103/pages/chapters/ch03-source-environment/chapter/print.pdf Pages:           9
+执行记录/evidence/p11-20261103/pages/chapters/ch05-bytecode-verification/chapter/print.pdf Pages:           10
+执行记录/evidence/p11-20261103/pages/chapters/ch06-classloaders-modules/chapter/print.pdf Pages:           9
+执行记录/evidence/p11-20261103/pages/chapters/ch07-linking-initialization/chapter/print.pdf Pages:           9
+执行记录/evidence/p11-20261103/pages/chapters/ch08-type-metadata/chapter/print.pdf Pages:           9
+执行记录/evidence/p11-20261103/pages/chapters/ch09-runtime-memory/chapter/print.pdf Pages:           7
+执行记录/evidence/p11-20261103/pages/chapters/ch11-allocation/chapter/print.pdf Pages:           9
+执行记录/evidence/p11-20261103/pages/chapters/ch12-native-memory/chapter/print.pdf Pages:           8

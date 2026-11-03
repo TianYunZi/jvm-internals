@@ -1,0 +1,4 @@
+adb96eb202a97a96c6ea44c7e1b7b131b875173647924f42bb4f748cdc088a8e  chapters/ch30-startup-sharing/target/startup.jar
+495675d48ca9524e1005a1a0cbed1a44438c7baec016b1e0122bc99c3857044d  chapters/ch30-startup-sharing/target/startup.jsa
+8250ddbb9f226e5b57455e0e380d49b8776ab5eaf6d9607d41cc1975f72ea7ef  chapters/ch30-startup-sharing/target/static.jsa
+1e2a25102c0435669e05cead55e2b6fdc9bc8f505b71bc7425f0dd37b20d3c04  chapters/ch30-startup-sharing/target/startup.classlist

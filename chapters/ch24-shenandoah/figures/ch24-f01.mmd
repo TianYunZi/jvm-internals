@@ -1,0 +1,9 @@
+flowchart TD
+ I["Init Mark短暂停"] --> M["并发根处理及标记"]
+ M --> F["Final Mark短暂停；选转移集合"]
+ F --> E["并发转移"]
+ E --> U["引用更新起点；并发Update Refs"]
+ U --> R["Final Update Refs短暂停及空间回收"]
+ A["应用加载引用"] --> B["加载屏障：解析转发／必要时协作转移"]
+ B --> E
+ A -. "应用可继续执行" .-> U

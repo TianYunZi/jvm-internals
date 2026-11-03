@@ -1,0 +1,11 @@
+82321:
+GC.class_histogram
+Provide statistics about the Java heap usage.
+
+Impact: High: Depends on Java heap size and content.
+
+Syntax : GC.class_histogram [options]
+
+Options: (options must be specified using the <key> or <key>=<value> syntax)
+	-all : [optional] Inspect all objects, including unreachable objects (BOOLEAN, false)
+	-parallel : [optional] Number of parallel threads to use for heap inspection. 0 (the default) means let the VM determine the number of threads to use. 1 means use one thread (disable parallelism). For any other value the VM will try to use the specified number of threads, but might use fewer. (INT, 0)

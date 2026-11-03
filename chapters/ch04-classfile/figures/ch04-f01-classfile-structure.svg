@@ -1,0 +1,29 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="900" height="620" viewBox="0 0 900 620" role="img" aria-labelledby="title desc">
+<title id="title">CH04-F01 类文件的读取顺序与属性层级</title>
+<desc id="desc">左列按文件顺序排列头部、常量池、类型关系、字段、方法与类属性；右列区分字段属性和方法 Code 内的属性。数值来自 CH04-E01。</desc>
+<defs><marker id="arrow" markerWidth="8" markerHeight="8" refX="7" refY="4" orient="auto"><path d="M0 0L8 4L0 8" fill="#526271"/></marker></defs>
+<rect width="900" height="620" fill="#fff"/>
+<g font-family="-apple-system, PingFang SC, sans-serif" font-size="18" fill="#24313c">
+<text x="32" y="36" font-size="23" font-weight="600">CH04-F01 · 一份字节流，多个信息层级</text>
+<text x="32" y="66" fill="#526271">CH04-E01，类文件版本 69.0；矩形高度不代表字节大小</text>
+<g fill="#edf1f3" stroke="#b5c3cc">
+<rect x="45" y="94" width="370" height="57" rx="5"/><rect x="45" y="171" width="370" height="57" rx="5"/>
+<rect x="45" y="248" width="370" height="63" rx="5"/><rect x="45" y="331" width="370" height="57" rx="5"/>
+<rect x="45" y="408" width="370" height="57" rx="5"/><rect x="45" y="485" width="370" height="57" rx="5"/>
+<rect x="490" y="314" width="365" height="74" rx="5"/><rect x="490" y="408" width="365" height="134" rx="5"/>
+</g>
+<text x="61" y="130">魔数 → minor=0 → major=69</text>
+<text x="61" y="207">常量池计数 54 → 常量池表</text>
+<text x="61" y="274">标志 → this_class → super_class</text><text x="61" y="300">→ 接口计数与接口索引表</text>
+<text x="61" y="367">字段计数 2 → 字段表</text><text x="61" y="444">方法计数 3 → 方法表</text>
+<text x="61" y="521">类属性：Signature、SourceFile</text>
+<text x="507" y="343">字段的 attributes</text><text x="507" y="374">ConstantValue 或 Signature 等</text>
+<text x="507" y="438">方法的 attributes → Code</text><text x="507" y="469">容量、指令数组、异常表</text>
+<text x="507" y="499">Code 内部的 attributes：</text><text x="507" y="529">栈映射、行号、局部变量信息</text>
+<g stroke="#526271" stroke-width="2" marker-end="url(#arrow)" fill="none">
+<path d="M230 151V168"/><path d="M230 228V245"/><path d="M230 311V328"/><path d="M230 388V405"/><path d="M230 465V482"/>
+<path d="M415 359H484"/><path d="M415 437H484"/>
+</g>
+<text x="45" y="580" fill="#91421f">读取顺序回答“在哪里”；属性所在层级回答“描述谁”。</text>
+<text x="45" y="608" font-size="15" fill="#526271">依据：来源 S01 的虚拟机规范 §4.1、§4.5—4.7；本章实际反汇编。</text>
+</g></svg>

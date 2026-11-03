@@ -1,0 +1,8 @@
+11月 03, 2026 12:13:48 下午 org.example.jvminternals.ch08.HiddenJourney main
+INFO: 开始生成并定义一个隐藏类
+name=org.example.jvminternals.ch08.HiddenValue/0x00003e0001043c00 hidden=true
+loader=app nest.host=org.example.jvminternals.ch08.HiddenJourney
+nominal.descriptor.present=false
+value=42
+11月 03, 2026 12:13:48 下午 org.example.jvminternals.ch08.HiddenJourney main
+INFO: 隐藏类观察结束

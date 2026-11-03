@@ -1,0 +1,64 @@
+[INFO] Scanning for projects...
+[INFO] ------------------------------------------------------------------------
+[INFO] Reactor Build Order:
+[INFO] 
+[INFO] Java 虚拟机原理书配套源码                                                    [pom]
+[INFO] ch30-startup-sharing                                               [jar]
+[INFO] ch31-aot-cache                                                     [jar]
+[INFO] ch32-native-interop                                                [jar]
+[INFO] 
+[INFO] ---------------< org.example.jvminternals:jvm-internals >---------------
+[INFO] Building Java 虚拟机原理书配套源码 1.0-SNAPSHOT                              [1/4]
+[INFO]   from pom.xml
+[INFO] --------------------------------[ pom ]---------------------------------
+[INFO] 
+[INFO] -----------< org.example.jvminternals:ch30-startup-sharing >------------
+[INFO] Building ch30-startup-sharing 1.0-SNAPSHOT                         [2/4]
+[INFO]   from chapters/ch30-startup-sharing/pom.xml
+[INFO] --------------------------------[ jar ]---------------------------------
+[INFO] Loaded 64 auto-discovered prefixes for remote repository apache.snapshots (prefixes-apache.snapshots.txt)
+[INFO] 
+[INFO] --- resources:3.3.1:resources (default-resources) @ ch30-startup-sharing ---
+[INFO] skip non existing resourceDirectory /Users/xiejinxin/Developer/Java/jvm-internals/chapters/ch30-startup-sharing/src/main/resources
+[INFO] 
+[INFO] --- compiler:3.14.1:compile (default-compile) @ ch30-startup-sharing ---
+[INFO] Recompiling the module because of added or removed source files.
+[INFO] Compiling 2 source files with javac [debug:lines,vars,source parameters release 25] to target/classes
+[INFO] 
+[INFO] --------------< org.example.jvminternals:ch31-aot-cache >---------------
+[INFO] Building ch31-aot-cache 1.0-SNAPSHOT                               [3/4]
+[INFO]   from chapters/ch31-aot-cache/pom.xml
+[INFO] --------------------------------[ jar ]---------------------------------
+[INFO] 
+[INFO] --- resources:3.3.1:resources (default-resources) @ ch31-aot-cache ---
+[INFO] skip non existing resourceDirectory /Users/xiejinxin/Developer/Java/jvm-internals/chapters/ch31-aot-cache/src/main/resources
+[INFO] 
+[INFO] --- compiler:3.14.1:compile (default-compile) @ ch31-aot-cache ---
+[INFO] Recompiling the module because of added or removed source files.
+[INFO] Compiling 1 source file with javac [debug:lines,vars,source parameters release 25] to target/classes
+[INFO] 
+[INFO] ------------< org.example.jvminternals:ch32-native-interop >------------
+[INFO] Building ch32-native-interop 1.0-SNAPSHOT                          [4/4]
+[INFO]   from chapters/ch32-native-interop/pom.xml
+[INFO] --------------------------------[ jar ]---------------------------------
+[INFO] 
+[INFO] --- resources:3.3.1:resources (default-resources) @ ch32-native-interop ---
+[INFO] skip non existing resourceDirectory /Users/xiejinxin/Developer/Java/jvm-internals/chapters/ch32-native-interop/src/main/resources
+[INFO] 
+[INFO] --- compiler:3.14.1:compile (default-compile) @ ch32-native-interop ---
+[INFO] Recompiling the module because of added or removed source files.
+[INFO] Compiling 2 source files with javac [debug:lines,vars,source parameters release 25] to target/classes
+[INFO] ------------------------------------------------------------------------
+[INFO] Reactor Summary for Java 虚拟机原理书配套源码 1.0-SNAPSHOT:
+[INFO] 
+[INFO] Java 虚拟机原理书配套源码 .................................... SUCCESS [  0.002 s]
+[INFO] ch30-startup-sharing ............................... SUCCESS [  0.648 s]
+[INFO] ch31-aot-cache ..................................... SUCCESS [  0.066 s]
+[INFO] ch32-native-interop ................................ SUCCESS [  0.065 s]
+[INFO] ------------------------------------------------------------------------
+[INFO] BUILD SUCCESS
+[INFO] ------------------------------------------------------------------------
+[INFO] Total time:  0.900 s
+[INFO] Finished at: 2026-11-03T19:56:55+08:00
+[INFO] ------------------------------------------------------------------------
+exit=0

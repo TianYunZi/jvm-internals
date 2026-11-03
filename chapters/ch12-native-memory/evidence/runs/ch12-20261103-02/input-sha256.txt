@@ -1,0 +1,6 @@
+9d09d0fa5ff8831fda8955f5044cb3fcaded753d951aa8bd508a235d7fb3ba8e  chapters/ch12-native-memory/src/main/java/org/example/jvminternals/ch12/NativeJourney.java
+a502df271b9e0563de021b7f6601baca4bcc58d32fe6d117d8f4ec351ed4f0ec  chapters/ch12-native-memory/pom.xml
+c6f6160dbe93084113604030dd834ff0a79864c8b0dd407262e88a4a042cc3a3  chapters/ch08-type-metadata/variants/disposable/org/example/jvminternals/ch08/disposable/Disposable.java
+5755d8a720f8e7751a8ef7b068b10c531c19d10db62dccc01071a9e5e65743e4  chapters/ch12-native-memory/target/classes/org/example/jvminternals/ch12/NativeJourney$Resources.class
+2e9d6f48ddbac9cbe4e4f9e464c11aaa981d48b79b1bf9ad41efd15abd80dea4  chapters/ch12-native-memory/target/classes/org/example/jvminternals/ch12/NativeJourney.class
+a76dea82d2993022dae6dede36f1270ccfb081d2875f5092e89fba51c617614e  chapters/ch12-native-memory/target/disposable/org/example/jvminternals/ch08/disposable/Disposable.class

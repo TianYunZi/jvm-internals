@@ -1,0 +1,76 @@
+Display event values in a recording file (.jfr) in predefined views
+
+ jfr view [--verbose]
+          [--width <integer>]
+          [--truncate <mode>]
+          [--cell-height <integer>]
+          <view>
+          <file>
+
+  --verbose               Displays the query that makes up the view
+
+  --width <integer>       The width of the view in characters. Default value depends on the view
+
+  --truncate <mode>       How to truncate content that exceeds space in a table cell.
+                          Mode can be 'beginning' or 'end'. Default value is 'end'
+
+  --cell-height <integer> Maximum number of rows in a table cell. Default value depends on the view
+
+  <view>                  Name of the view or event type to display. See list below for
+                          available views
+
+  <file>                  Location of the recording file (.jfr)
+
+Java virtual machine views:
+ blocked-by-system-gc      gc-concurrent-phases jvm-information        
+ class-modifications       gc-configuration     longest-compilations   
+ compiler-configuration    gc-cpu-time          native-memory-committed
+ compiler-phases           gc-parallel-phases   native-memory-reserved 
+ compiler-statistics       gc-pause-phases      safepoints             
+ deoptimizations-by-reason gc-pauses            tlabs                  
+ deoptimizations-by-site   gc-references        vm-operations          
+ gc                        heap-configuration  
+
+Environment views:
+ active-recordings        cpu-load              native-library-failures
+ active-settings          cpu-load-samples      network-utilization    
+ container-configuration  cpu-tsc               recording              
+ container-cpu-throttling environment-variables system-information     
+ container-cpu-usage      events-by-count       system-processes       
+ container-io-usage       events-by-name        system-properties      
+ container-memory-usage   jvm-flags            
+
+Application views:
+ allocation-by-class            exception-by-site     method-timing        
+ allocation-by-site             exception-by-type     modules              
+ allocation-by-thread           exception-count       monitor-inflation    
+ class-loaders                  file-reads-by-path    native-methods       
+ contention-by-address          file-writes-by-path   object-statistics    
+ contention-by-class            finalizers            pinned-threads       
+ contention-by-site             hot-methods           socket-reads-by-host 
+ contention-by-thread           latencies-by-type     socket-writes-by-host
+ cpu-time-hot-methods           longest-class-loading thread-allocation    
+ cpu-time-statistics            memory-leaks-by-class thread-count         
+ deprecated-methods-for-removal memory-leaks-by-site  thread-cpu-load      
+ exception-by-message           method-calls          thread-start         
+
+ The <view> parameter can be an event type name. Use the 'jfr view types <file>'
+ to see a list. To display all views, use 'jfr view all-views <file>'. To display
+ all events, use 'jfr view all-events <file>'.
+
+Example usage:
+
+ jfr view gc recording.jfr
+
+ jfr view --width 160 hot-methods recording.jfr
+
+ jfr view --verbose allocation-by-class recording.jfr
+
+ jfr view contention-by-site recording.jfr
+
+ jfr view jdk.GarbageCollection recording.jfr
+
+ jfr view --cell-height 10 ThreadStart recording.jfr
+
+ jfr view --truncate beginning SystemProcess recording.jfr
+

@@ -1,0 +1,12 @@
+%% CH12-F03：问题到统计接口的关系，不表示可相加集合面积。
+flowchart TB
+  Q["先固定阶段、单位与统计问题"]
+  A["对象与管理接口<br/>堆used、直接池、类、Java线程<br/>逻辑计数不含任意第三方本地分配"]
+  B["本地内存跟踪<br/>Native Memory Tracking，NMT<br/>reserved、committed、baseline差异<br/>用途跟踪不覆盖全部本地库"]
+  C["操作系统页面账<br/>ps的驻留集大小<br/>Resident Set Size，RSS<br/>映射与vmmap footprint"]
+  Q --> A
+  Q --> B
+  Q --> C
+  N["Other不全是直接池<br/>释放申请不保证驻留同步下降<br/>三类读数不能直接相加或相减"]
+  B --- N
+  C --- N

@@ -1,0 +1,18 @@
+%% CH05-F03：验证类型转换；不是逐步运行采样或业务不变量保证。
+flowchart TB
+  subgraph M[FlexibleConstruction.main]
+    A["13:new Child；16:dup<br/>两别名均为uninitialized(13)"]
+    B["19:invokespecial Child初始化方法<br/>消费一个接收者与int参数"]
+    C["Child正常返回<br/>剩余别名成为Child；22:astore_1"]
+    A --> B
+  end
+  subgraph I[Child构造器内部]
+    D["初始local 0为uninitializedThis<br/>用参数和静态方法计算normalized"]
+    E["8:putfield original:I<br/>受限写入当前类自己声明字段"]
+    F["13:invokespecial Base初始化方法<br/>正常返回后local 0可按Child使用"]
+    G["仍可有构造器后置代码<br/>本例16:return"]
+    D --> E --> F --> G
+  end
+  B -->|调用| D
+  G -->|正常返回| C
+  C --- N["验证类型转换不等于全部业务不变量成立<br/>两个方法各自的偏移13不属于同一坐标"]

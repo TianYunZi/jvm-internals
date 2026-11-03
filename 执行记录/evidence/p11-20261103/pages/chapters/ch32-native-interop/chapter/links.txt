@@ -1,0 +1,24 @@
+跳到正文	#main
+Java 虚拟机原理图文书	../../index.html
+32.1 本地调用边界	#sec-32-1
+32.2 引用、句柄与可达性	#sec-32-2
+32.3 本地临界区与对象移动	#sec-32-3
+32.4 外部函数与内存接口	#sec-32-4
+32.5 调用约定、适配与访问控制	#sec-32-5
+32.6 泄漏、越界与崩溃线索	#sec-32-6
+观察与边界	#observe
+回顾与思考	#review
+来源与实现入口	#sources
+教学源码	sources.html
+运行说明	README.html
+证据索引	evidence/索引.md
+运行记录	evidence/runs/ch32-20261103-01/记录.md
+25版JNI设计	https://docs.oracle.com/en/java/javase/25/docs/specs/jni/design.html
+调用接口	https://docs.oracle.com/en/java/javase/25/docs/specs/jni/invocation.html
+JNI临界数组接口	https://docs.oracle.com/en/java/javase/25/docs/specs/jni/functions.html#getprimitivearraycritical-releaseprimitivearraycritical
+MemorySegment	https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/foreign/MemorySegment.html
+Arena	https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/foreign/Arena.html
+Linker	https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/foreign/Linker.html
+上一章：第31章	../ch31-aot-cache/chapter.html
+下一章：第33章	../ch33-observability/chapter.html
+返回全书目录	../../index.html#part-7

@@ -1,0 +1,73 @@
+package org.example.jvminternals.ch26;
+
+import java.util.concurrent.CountDownLatch;
+import java.util.concurrent.TimeUnit;
+import java.util.concurrent.locks.LockSupport;
+
+/** 展示许可、条件等待、中断与退出；外部工具在有界窗口内采样。 */
+public final class PlatformJourney {
+    private final Object monitor = new Object();
+    private final CountDownLatch entered = new CountDownLatch(2);
+    private volatile boolean proceed;
+    private boolean released;
+
+    private PlatformJourney() { }
+
+    /** 以固定线程和固定窗口运行，正常路径等待所有线程终止。 */
+    public static void main(String[] args) throws InterruptedException {
+        new PlatformJourney().runJourney();
+    }
+
+    private void runJourney() throws InterruptedException {
+        Thread parker = Thread.ofPlatform().name("platform-parker").unstarted(this::parkJourney);
+        Thread waiter = Thread.ofPlatform().name("platform-waiter").unstarted(this::waitJourney);
+        System.out.printf("创建：state=%s pid=%d%n", parker.getState(), ProcessHandle.current().pid());
+        parker.start();
+        waiter.start();
+        entered.await(2, TimeUnit.SECONDS);
+        try {
+            System.out.println("观察窗口：12秒，允许采集两份转储与系统线程信息");
+            Thread.sleep(12_000L);
+        } finally {
+            proceed = true;
+            LockSupport.unpark(parker);
+            synchronized (monitor) {
+                released = true;
+                monitor.notifyAll();
+            }
+            // 第二次park由中断结束，park不会自行清除中断状态。
+            parker.interrupt();
+            parker.join();
+            waiter.join();
+        }
+        System.out.printf("终止：parker=%s waiter=%s%n", parker.getState(), waiter.getState());
+    }
+
+    private void parkJourney() {
+        LockSupport.unpark(Thread.currentThread());
+        LockSupport.park(this);
+        System.out.println("许可：先unpark后park完成，许可最多保留一个");
+        entered.countDown();
+        long deadline = System.nanoTime() + 16_000_000_000L;
+        while (!proceed && !Thread.currentThread().isInterrupted() && System.nanoTime() < deadline) {
+            LockSupport.parkNanos(this, 1_000_000_000L);
+        }
+        System.out.printf("park退出：proceed=%s interrupted=%s%n", proceed, Thread.currentThread().isInterrupted());
+    }
+
+    private void waitJourney() {
+        synchronized (monitor) {
+            entered.countDown();
+            long deadline = System.nanoTime() + 16_000_000_000L;
+            try {
+                while (!released && System.nanoTime() < deadline) {
+                    monitor.wait(1_000L);
+                }
+                System.out.printf("wait返回并已重获锁：released=%s%n", released);
+            } catch (InterruptedException interrupted) {
+                Thread.currentThread().interrupt();
+                System.out.println("wait被中断，恢复标记并退出");
+            }
+        }
+    }
+}

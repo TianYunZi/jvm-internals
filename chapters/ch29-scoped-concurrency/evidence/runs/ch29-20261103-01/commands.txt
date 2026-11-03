@@ -1,0 +1,6 @@
+export JAVA_HOME=/opt/homebrew/Cellar/openjdk@25/25.0.5.0.2/libexec/openjdk.jdk/Contents/Home
+export PATH="$JAVA_HOME/bin:/opt/homebrew/bin:$PATH"
+java -Xmx128m -cp chapters/ch29-scoped-concurrency/target/classes org.example.jvminternals.ch29.ContextJourney
+mvn -B -ntp -f chapters/ch29-scoped-concurrency/preview/pom.xml compile
+java --enable-preview -Xmx128m -cp chapters/ch29-scoped-concurrency/preview/target/classes org.example.jvminternals.ch29.StructuredJourney
+java --enable-preview -Xmx128m -cp chapters/ch29-scoped-concurrency/preview/target/classes org.example.jvminternals.ch29.StructuredJourney fail

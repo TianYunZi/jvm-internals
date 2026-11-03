@@ -1,0 +1,11 @@
+11月 03, 2026 11:43:12 上午 org.example.jvminternals.ch06.client.ModuleAccessJourney main
+INFO: 开始观察命名模块的访问边界
+api=公开包调用成功
+class.found=org.example.jvminternals.ch06.internal.Secret
+caller.reads.library=true
+package.exported=false
+package.open=false
+public.invoke=IllegalAccessException
+private.accessible=false
+11月 03, 2026 11:43:12 上午 org.example.jvminternals.ch06.client.ModuleAccessJourney main
+INFO: 命名模块访问观察结束

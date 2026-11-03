@@ -1,0 +1,9 @@
+flowchart LR
+ R["活跃线程／运行时根"] --> H["强持有 retained"]
+ H --> O["目标 byte 数组"]
+ R --> W["WeakReference 包装器"]
+ R --> P["PhantomReference 包装器"]
+ W -. "不构成强持有" .-> O
+ P -. "生命周期通知" .-> O
+ A["不可达对象 A"] --> B["不可达对象 B"]
+ B --> A

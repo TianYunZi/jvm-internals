@@ -1,0 +1,15 @@
+-startup
+../Eclipse/plugins/org.eclipse.equinox.launcher_1.7.0.v20250519-0528.jar
+--launcher.library
+../Eclipse/plugins/org.eclipse.equinox.launcher.cocoa.macosx.aarch64_1.2.1300.v20250331-1702
+--launcher.appendVmargs
+-ws
+cocoa
+-vm
+/opt/homebrew/opt/openjdk@25/libexec/openjdk.jdk/Contents/Home/bin
+-vmargs
+-XX:CompileCommand=exclude org.eclipse.jdt.internal.core.dom.rewrite.ASTRewriteAnalyzer::getExtendedRange
+-XX:+IgnoreUnrecognizedVMOptions
+-XX:+UnlockDiagnosticVMOptions
+-XX:+DebugNonSafepoints
+-XX:FlightRecorderOptions=stackdepth=128

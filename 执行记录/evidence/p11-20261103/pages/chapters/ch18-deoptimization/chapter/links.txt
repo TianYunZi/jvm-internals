@@ -1,0 +1,21 @@
+跳到正文	#main
+Java 虚拟机原理图文书	../../index.html
+从现象开始	#problem
+18.1 优化假设及其依赖	#sec-18-1
+18.2 罕见陷阱与去优化触发	#sec-18-2
+18.3 恢复解释执行状态	#sec-18-3
+18.4 长循环与执行方式切换	#sec-18-4
+18.5 编译代码的生命周期	#sec-18-5
+证据与复做	#observe
+回顾与边界	#review
+来源	#sources
+CH18-F01	#fig-18-1
+CH18-F02	#fig-18-2
+CH18-F04	#fig-18-4
+CH18-F03	#fig-18-3
+运行说明	README.html
+源码阅读	sources.html
+证据索引	evidence/索引.md
+上一章	../ch17-compiler-optimizations/chapter.html
+全书目录	../../index.html
+下一章	../ch19-gc-foundations/chapter.html

@@ -1,0 +1,35 @@
+跳到正文	#main
+Java 虚拟机原理图文书	../../index.html
+创建表达式之后	#problem
+11.1 快慢路径	#sec-11-1
+11.2 本地缓冲区	#sec-11-2
+11.3 初始化与发布	#sec-11-3
+11.4 访问与字符串	#sec-11-4
+11.5 消除与物化	#sec-11-5
+观察与证据	#observe
+回顾与思考	#review
+来源	#sources
+第10章	../ch10-object-layout/chapter.html
+第5章	../ch05-bytecode-verification/chapter.html#sec-5-5
+第7章	../ch07-linking-initialization/chapter.html
+S01	#s01
+S02	#s02
+S07	#s07
+S03	#s03
+S03	#s03
+S04	#s04
+S05	#s05
+S06	#s06
+阅读页	sources.html
+运行说明	README.html
+本轮记录	evidence/runs/ch11-20261103-01/记录.md
+S07	#s07
+来源索引	evidence/索引.md
+语言规范25 §12.5	https://docs.oracle.com/javase/specs/jls/se25/html/jls-12.html#jls-12.5
+§17.4.5	https://docs.oracle.com/javase/specs/jls/se25/html/jls-17.html#jls-17.4.5
+§17.5	https://docs.oracle.com/javase/specs/jls/se25/html/jls-17.html#jls-17.5
+String接口契约	https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/String.html
+线程分配管理接口	https://docs.oracle.com/en/java/javase/25/docs/api/jdk.management/com/sun/management/ThreadMXBean.html
+上一章：第10章	../ch10-object-layout/chapter.html
+返回全书目录	../../index.html
+下一章：第12章	../ch12-native-memory/chapter.html

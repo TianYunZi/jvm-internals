@@ -1,0 +1,6 @@
+diff -r artifacts/p10-code-copy/input/chapters/ch06-classloaders-modules/sources/code-006.txt artifacts/p10-code-copy/selected/chapters/ch06-classloaders-modules/sources/code-006.txt
+1c1
+< org.example.jvminternals.ch06.provider.FriendlyGreeter
+---
+> org.example.jvminternals.ch06.provider.FriendlyGreeter
+\ No newline at end of file

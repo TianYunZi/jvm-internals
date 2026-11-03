@@ -1,0 +1,7 @@
+P09_PID=实际输出的进程号
+"$P09_JDK/bin/jcmd" "$P09_PID" help
+"$P09_JDK/bin/jcmd" "$P09_PID" Thread.print -l
+"$P09_JDK/bin/jcmd" "$P09_PID" Thread.dump_to_file -format=json chapters/ch33-observability/target/threads.json
+"$P09_JDK/bin/jcmd" "$P09_PID" VM.native_memory summary
+"$P09_JDK/bin/jcmd" "$P09_PID" PerfCounter.print
+"$P09_JDK/bin/jcmd" "$P09_PID" VM.log what=gc=info

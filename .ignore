@@ -1,0 +1,6 @@
+# 即使项目尚未初始化版本库，默认文本检索也排除这些产物。
+.DS_Store
+**/target/
+**/node_modules/
+/artifacts/
+/交付/
