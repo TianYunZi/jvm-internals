@@ -4,7 +4,7 @@ Java开发工具包（Java Development Kit，JDK）25.0.5.0.2，HotSpot、macOS 
 
 ## 示例、性质与边界
 
-CH29-E01：ContextJourney，包org.example.jvminternals.ch29。正式源码在src/main/java，阅读副本从正式文件生成；用户“执行P07”授权普通教学源码与有界观察，无测试、断言、并发压力或性能基准。
+CH29-E01：ContextJourney，包org.example.jvminternals.ch29。正式源码在code/chapters/ch29-scoped-concurrency/src/main/java，阅读副本从正式文件生成；用户“执行P07”授权普通教学源码与有界观察，无测试、断言、并发压力或性能基准。
 
 普通示例当前线程执行。预览案例最多2个子任务，成功睡眠100毫秒，失败路径可中断睡眠3秒，作用域超时5秒，close等待全部终止。普通例为正式作用域值；结构化并发应用程序编程接口（Application Programming Interface，API）是第五次预览。失败代码与运行另获用户明确授权，不含测试框架或断言。
 
@@ -15,11 +15,11 @@ CH29-E01：ContextJourney，包org.example.jvminternals.ch29。正式源码在sr
 ```bash
 export JAVA_HOME=/opt/homebrew/Cellar/openjdk@25/25.0.5.0.2/libexec/openjdk.jdk/Contents/Home
 export PATH="$JAVA_HOME/bin:/opt/homebrew/bin:$PATH"
-mvn -B -ntp -pl chapters/ch29-scoped-concurrency -am compile
-java -Xmx128m -cp chapters/ch29-scoped-concurrency/target/classes org.example.jvminternals.ch29.ContextJourney
-mvn -B -ntp -f chapters/ch29-scoped-concurrency/preview/pom.xml compile
-java --enable-preview -Xmx128m -cp chapters/ch29-scoped-concurrency/preview/target/classes org.example.jvminternals.ch29.StructuredJourney
-java --enable-preview -Xmx128m -cp chapters/ch29-scoped-concurrency/preview/target/classes org.example.jvminternals.ch29.StructuredJourney fail
+mvn -f code/pom.xml -B -ntp -pl :ch29-scoped-concurrency -am compile
+java -Xmx128m -cp code/chapters/ch29-scoped-concurrency/target/classes org.example.jvminternals.ch29.ContextJourney
+mvn -B -ntp -f code/chapters/ch29-scoped-concurrency/preview/pom.xml compile
+java --enable-preview -Xmx128m -cp code/chapters/ch29-scoped-concurrency/preview/target/classes org.example.jvminternals.ch29.StructuredJourney
+java --enable-preview -Xmx128m -cp code/chapters/ch29-scoped-concurrency/preview/target/classes org.example.jvminternals.ch29.StructuredJourney fail
 ```
 
 ## 实际观察和清理

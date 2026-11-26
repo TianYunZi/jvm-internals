@@ -11,8 +11,8 @@ Java开发工具包（Java Development Kit，JDK）25.0.5.0.2，HotSpot、macOS 
 ```sh
 export JAVA_HOME=/opt/homebrew/Cellar/openjdk@25/25.0.5.0.2/libexec/openjdk.jdk/Contents/Home
 export PATH="$JAVA_HOME/bin:/opt/homebrew/bin:$PATH"
-mvn -B -ntp -pl chapters/ch22-g1 -am compile
-java -Xms128m -Xmx128m -XX:ActiveProcessorCount=2 -XX:+UseG1GC -XX:G1HeapRegionSize=1m -XX:InitiatingHeapOccupancyPercent=20 -XX:-G1UseAdaptiveIHOP -XX:+ExplicitGCInvokesConcurrent '-Xlog:gc*,gc+ergo+cset=trace,gc+remset=debug:file=chapters/ch22-g1/evidence/runs/ch22-20261103-01/g1.log:uptimemillis,level,tags' -cp chapters/ch22-g1/target/classes org.example.jvminternals.ch22.RegionJourney
+mvn -f code/pom.xml -B -ntp -pl :ch22-g1 -am compile
+java -Xms128m -Xmx128m -XX:ActiveProcessorCount=2 -XX:+UseG1GC -XX:G1HeapRegionSize=1m -XX:InitiatingHeapOccupancyPercent=20 -XX:-G1UseAdaptiveIHOP -XX:+ExplicitGCInvokesConcurrent '-Xlog:gc*,gc+ergo+cset=trace,gc+remset=debug:file=chapters/ch22-g1/evidence/runs/ch22-20261103-01/g1.log:uptimemillis,level,tags' -cp code/chapters/ch22-g1/target/classes org.example.jvminternals.ch22.RegionJourney
 ```
 
 ## 实际记录与边界

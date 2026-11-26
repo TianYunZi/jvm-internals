@@ -1,5 +1,5 @@
 <!doctype html><html lang="zh-CN"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><title>第 6 章教学源码</title><link rel="stylesheet" href="../../assets/book.css"></head><body><header class="book-header"><a href="chapter.html">返回第 6 章</a></header><main class="home"><h1>第 6 章教学源码与变体</h1><p>以下由正式文件生成。主程序、同名类型、服务与命名模块的输出目录分开，完整命令见运行说明。</p>
-<section id="ch06-e01"><h2>CH06-E01 · 加载器主程序</h2><p><code class="shiki-inline" data-shiki-version="4.6.0" data-code-id="code-013" data-code-language="text"><span>src/main/java/org/example/jvminternals/ch06/LoaderJourney.java</span></code></p><pre data-shiki-version="4.6.0" class="shiki github-light" style="background-color:#fff;color:#24292e" tabindex="0"><code data-code-id="code-001" data-code-language="java"><span class="line"><span style="color:#D73A49">package</span><span style="color:#24292E"> org.example.jvminternals.ch06;</span></span>
+<section id="ch06-e01"><h2>CH06-E01 · 加载器主程序</h2><p><code class="shiki-inline" data-shiki-version="4.6.0" data-code-id="code-013" data-code-language="text"><span>code/chapters/ch06-classloaders-modules/src/main/java/org/example/jvminternals/ch06/LoaderJourney.java</span></code></p><pre data-shiki-version="4.6.0" class="shiki github-light" style="background-color:#fff;color:#24292e" tabindex="0"><code data-code-id="code-001" data-code-language="java"><span class="line"><span style="color:#D73A49">package</span><span style="color:#24292E"> org.example.jvminternals.ch06;</span></span>
 <span class="line"></span>
 <span class="line"><span style="color:#D73A49">import</span><span style="color:#24292E"> java.io.IOException;</span></span>
 <span class="line"><span style="color:#D73A49">import</span><span style="color:#24292E"> java.nio.file.Files;</span></span>
@@ -94,7 +94,7 @@
 <span class="line"><span style="color:#24292E">    }</span></span>
 <span class="line"><span style="color:#24292E">}</span></span>
 <span class="line"></span></code></pre></section>
-<section id="ch06-e02"><h2>CH06-E02 · 服务发现</h2><p><code class="shiki-inline" data-shiki-version="4.6.0" data-code-id="code-015" data-code-language="text"><span>src/main/java/org/example/jvminternals/ch06/ServiceJourney.java</span></code></p><pre data-shiki-version="4.6.0" class="shiki github-light" style="background-color:#fff;color:#24292e" tabindex="0"><code data-code-id="code-003" data-code-language="java"><span class="line"><span style="color:#D73A49">package</span><span style="color:#24292E"> org.example.jvminternals.ch06;</span></span>
+<section id="ch06-e02"><h2>CH06-E02 · 服务发现</h2><p><code class="shiki-inline" data-shiki-version="4.6.0" data-code-id="code-015" data-code-language="text"><span>code/chapters/ch06-classloaders-modules/src/main/java/org/example/jvminternals/ch06/ServiceJourney.java</span></code></p><pre data-shiki-version="4.6.0" class="shiki github-light" style="background-color:#fff;color:#24292e" tabindex="0"><code data-code-id="code-003" data-code-language="java"><span class="line"><span style="color:#D73A49">package</span><span style="color:#24292E"> org.example.jvminternals.ch06;</span></span>
 <span class="line"></span>
 <span class="line"><span style="color:#D73A49">import</span><span style="color:#24292E"> java.io.IOException;</span></span>
 <span class="line"><span style="color:#D73A49">import</span><span style="color:#24292E"> java.net.URL;</span></span>
@@ -137,7 +137,7 @@
 <span class="line"><span style="color:#24292E">    }</span></span>
 <span class="line"><span style="color:#24292E">}</span></span>
 <span class="line"></span></code></pre></section>
-<section id="greeter"><h2>共享服务接口</h2><p><code class="shiki-inline" data-shiki-version="4.6.0" data-code-id="code-016" data-code-language="text"><span>src/main/java/org/example/jvminternals/ch06/Greeter.java</span></code></p><pre data-shiki-version="4.6.0" class="shiki github-light" style="background-color:#fff;color:#24292e" tabindex="0"><code data-code-id="code-004" data-code-language="java"><span class="line"><span style="color:#D73A49">package</span><span style="color:#24292E"> org.example.jvminternals.ch06;</span></span>
+<section id="greeter"><h2>共享服务接口</h2><p><code class="shiki-inline" data-shiki-version="4.6.0" data-code-id="code-016" data-code-language="text"><span>code/chapters/ch06-classloaders-modules/src/main/java/org/example/jvminternals/ch06/Greeter.java</span></code></p><pre data-shiki-version="4.6.0" class="shiki github-light" style="background-color:#fff;color:#24292e" tabindex="0"><code data-code-id="code-004" data-code-language="java"><span class="line"><span style="color:#D73A49">package</span><span style="color:#24292E"> org.example.jvminternals.ch06;</span></span>
 <span class="line"></span>
 <span class="line"><span style="color:#6A737D">/** CH06-E02：由父加载器共享的服务类型，提供者在隔离输出中实现。 */</span></span>
 <span class="line"><span style="color:#D73A49">public</span><span style="color:#D73A49"> interface</span><span style="color:#6F42C1"> Greeter</span><span style="color:#24292E"> {</span></span>
@@ -240,7 +240,7 @@
 <span class="line"><span style="color:#24292E">    }</span></span>
 <span class="line"><span style="color:#24292E">}</span></span>
 <span class="line"></span></code></pre></section>
-<section id="ch06-e04"><h2>CH06-E04 · 子模块层</h2><p><code class="shiki-inline" data-shiki-version="4.6.0" data-code-id="code-024" data-code-language="text"><span>src/main/java/org/example/jvminternals/ch06/LayerJourney.java</span></code></p><pre data-shiki-version="4.6.0" class="shiki github-light" style="background-color:#fff;color:#24292e" tabindex="0"><code data-code-id="code-012" data-code-language="java"><span class="line"><span style="color:#D73A49">package</span><span style="color:#24292E"> org.example.jvminternals.ch06;</span></span>
+<section id="ch06-e04"><h2>CH06-E04 · 子模块层</h2><p><code class="shiki-inline" data-shiki-version="4.6.0" data-code-id="code-024" data-code-language="text"><span>code/chapters/ch06-classloaders-modules/src/main/java/org/example/jvminternals/ch06/LayerJourney.java</span></code></p><pre data-shiki-version="4.6.0" class="shiki github-light" style="background-color:#fff;color:#24292e" tabindex="0"><code data-code-id="code-012" data-code-language="java"><span class="line"><span style="color:#D73A49">package</span><span style="color:#24292E"> org.example.jvminternals.ch06;</span></span>
 <span class="line"></span>
 <span class="line"><span style="color:#D73A49">import</span><span style="color:#24292E"> java.lang.module.Configuration;</span></span>
 <span class="line"><span style="color:#D73A49">import</span><span style="color:#24292E"> java.lang.module.ModuleFinder;</span></span>

@@ -1,6 +1,6 @@
 # 第16章 即时编译与分层执行：源码与运行
 
-Java开发工具包（Java Development Kit，JDK）25.0.5.0.2、HotSpot、macOS AArch64；工具显式选用下列目录。源码为本章src/main/java，页面阅读副本为[sources.html](sources.html)。
+Java开发工具包（Java Development Kit，JDK）25.0.5.0.2、HotSpot、macOS AArch64；工具显式选用下列目录。源码位于 code/chapters/ch16-tiered-compilation/src/main/java，页面阅读副本为[sources.html](sources.html)。
 
 ## 示例与授权
 
@@ -13,8 +13,8 @@ CH16-E01 TieredJourney：100／200000／200000次，单线程、64兆二进制�
 ```sh
 export JAVA_HOME=/opt/homebrew/Cellar/openjdk@25/25.0.5.0.2/libexec/openjdk.jdk/Contents/Home
 export PATH="$JAVA_HOME/bin:/opt/homebrew/bin:$PATH"
-mvn -B -ntp -pl chapters/ch16-tiered-compilation -am compile
-java -Xms16m -Xmx64m -XX:+StartAttachListener -XX:+UnlockDiagnosticVMOptions -XX:+LogCompilation -XX:LogFile=chapters/ch16-tiered-compilation/evidence/runs/ch16-20261103-02/compilation.xml -XX:+PrintCompilation -XX:+PrintInlining '-XX:CompileCommand=dontinline,org.example.jvminternals.ch16.TieredJourney::hot' -cp chapters/ch16-tiered-compilation/target/classes org.example.jvminternals.ch16.TieredJourney > chapters/ch16-tiered-compilation/evidence/runs/ch16-20261103-02/stdout.txt 2>&1 &
+mvn -f code/pom.xml -B -ntp -pl :ch16-tiered-compilation -am compile
+java -Xms16m -Xmx64m -XX:+StartAttachListener -XX:+UnlockDiagnosticVMOptions -XX:+LogCompilation -XX:LogFile=chapters/ch16-tiered-compilation/evidence/runs/ch16-20261103-02/compilation.xml -XX:+PrintCompilation -XX:+PrintInlining '-XX:CompileCommand=dontinline,org.example.jvminternals.ch16.TieredJourney::hot' -cp code/chapters/ch16-tiered-compilation/target/classes org.example.jvminternals.ch16.TieredJourney > chapters/ch16-tiered-compilation/evidence/runs/ch16-20261103-02/stdout.txt 2>&1 &
 p05_ch16_pid=$!
 printf '%s\n' "$p05_ch16_pid" > chapters/ch16-tiered-compilation/evidence/runs/ch16-20261103-02/pid.txt
 sleep 1

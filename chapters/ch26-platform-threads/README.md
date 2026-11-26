@@ -4,7 +4,7 @@ Java开发工具包（Java Development Kit，JDK）25.0.5.0.2，HotSpot、macOS 
 
 ## 示例、性质与边界
 
-CH26-E01：PlatformJourney，包org.example.jvminternals.ch26。正式源码在src/main/java，阅读副本从正式文件生成；用户“执行P07”授权普通教学源码与有界观察，无测试、断言、并发压力或性能基准。
+CH26-E01：PlatformJourney，包org.example.jvminternals.ch26。正式源码在code/chapters/ch26-platform-threads/src/main/java，阅读副本从正式文件生成；用户“执行P07”授权普通教学源码与有界观察，无测试、断言、并发压力或性能基准。
 
 2个子线程，主窗口12秒，子线程循环16秒截止；finally发布结束并join。外部附加是否成功不决定结束。parker先自发许可并消费，随后条件循环接受unpark与interrupt。
 
@@ -15,8 +15,8 @@ CH26-E01：PlatformJourney，包org.example.jvminternals.ch26。正式源码在s
 ```bash
 export JAVA_HOME=/opt/homebrew/Cellar/openjdk@25/25.0.5.0.2/libexec/openjdk.jdk/Contents/Home
 export PATH="$JAVA_HOME/bin:/opt/homebrew/bin:$PATH"
-mvn -B -ntp -pl chapters/ch26-platform-threads -am compile
-java -Xmx128m -XX:+StartAttachListener -cp chapters/ch26-platform-threads/target/classes org.example.jvminternals.ch26.PlatformJourney
+mvn -f code/pom.xml -B -ntp -pl :ch26-platform-threads -am compile
+java -Xmx128m -XX:+StartAttachListener -cp code/chapters/ch26-platform-threads/target/classes org.example.jvminternals.ch26.PlatformJourney
 ```
 
 在第二个终端同样设置上述工具环境，按提示输入刚打印的进程号；历史进程号不能复用。

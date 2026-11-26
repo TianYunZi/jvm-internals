@@ -1,6 +1,6 @@
 # 第14章 方法调用与动态分派：源码与运行
 
-Java开发工具包（Java Development Kit，JDK）25.0.5.0.2、HotSpot、macOS AArch64；工具显式选用下列目录。源码为本章src/main/java，页面阅读副本为[sources.html](sources.html)。
+Java开发工具包（Java Development Kit，JDK）25.0.5.0.2、HotSpot、macOS AArch64；工具显式选用下列目录。源码位于 code/chapters/ch14-dispatch/src/main/java，页面阅读副本为[sources.html](sources.html)。
 
 ## 示例与授权
 
@@ -13,9 +13,9 @@ CH14-E01 DispatchJourney：普通四种调用与接收者分布观察；100000�
 ```sh
 export JAVA_HOME=/opt/homebrew/Cellar/openjdk@25/25.0.5.0.2/libexec/openjdk.jdk/Contents/Home
 export PATH="$JAVA_HOME/bin:/opt/homebrew/bin:$PATH"
-mvn -B -ntp -pl chapters/ch14-dispatch -am compile
-java -Xms16m -Xmx64m -Xbatch -XX:+UnlockDiagnosticVMOptions -XX:+LogCompilation -XX:LogFile=chapters/ch14-dispatch/evidence/runs/ch14-20261103-01/compilation.xml -XX:+PrintCompilation -XX:+PrintInlining '-XX:CompileCommand=dontinline,org.example.jvminternals.ch14.DispatchJourney::call' '-XX:CompileCommand=print,org.example.jvminternals.ch14.DispatchJourney::call' -cp chapters/ch14-dispatch/target/classes org.example.jvminternals.ch14.DispatchJourney
-javap -c -v -p -classpath chapters/ch14-dispatch/target/classes org.example.jvminternals.ch14.DispatchJourney 'org.example.jvminternals.ch14.DispatchJourney$First' 
+mvn -f code/pom.xml -B -ntp -pl :ch14-dispatch -am compile
+java -Xms16m -Xmx64m -Xbatch -XX:+UnlockDiagnosticVMOptions -XX:+LogCompilation -XX:LogFile=chapters/ch14-dispatch/evidence/runs/ch14-20261103-01/compilation.xml -XX:+PrintCompilation -XX:+PrintInlining '-XX:CompileCommand=dontinline,org.example.jvminternals.ch14.DispatchJourney::call' '-XX:CompileCommand=print,org.example.jvminternals.ch14.DispatchJourney::call' -cp code/chapters/ch14-dispatch/target/classes org.example.jvminternals.ch14.DispatchJourney
+javap -c -v -p -classpath code/chapters/ch14-dispatch/target/classes org.example.jvminternals.ch14.DispatchJourney 'org.example.jvminternals.ch14.DispatchJourney$First'
 ```
 
 ## 实际观察与边界

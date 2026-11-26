@@ -1,0 +1,11 @@
+# OpenIDEA 工程索引、用户配置与本地输出。
+.idea/
+.openidea/
+*.iml
+*.ipr
+*.iws
+out/
+
+# Maven 编译产物与高亮工具的本地依赖。
+target/
+node_modules/

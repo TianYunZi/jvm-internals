@@ -11,8 +11,8 @@ Java开发工具包（Java Development Kit，JDK）25.0.5.0.2，HotSpot、macOS 
 ```sh
 export JAVA_HOME=/opt/homebrew/Cellar/openjdk@25/25.0.5.0.2/libexec/openjdk.jdk/Contents/Home
 export PATH="$JAVA_HOME/bin:/opt/homebrew/bin:$PATH"
-mvn -B -ntp -pl chapters/ch23-zgc -am compile
-java -Xms128m -Xmx128m -XX:ActiveProcessorCount=2 -XX:ParallelGCThreads=2 -XX:ConcGCThreads=1 -XX:+UseZGC '-Xlog:gc*:file=chapters/ch23-zgc/evidence/runs/ch23-20261103-01/zgc.log:uptimemillis,level,tags' -cp chapters/ch23-zgc/target/classes org.example.jvminternals.ch23.ConcurrentCycleJourney
+mvn -f code/pom.xml -B -ntp -pl :ch23-zgc -am compile
+java -Xms128m -Xmx128m -XX:ActiveProcessorCount=2 -XX:ParallelGCThreads=2 -XX:ConcGCThreads=1 -XX:+UseZGC '-Xlog:gc*:file=chapters/ch23-zgc/evidence/runs/ch23-20261103-01/zgc.log:uptimemillis,level,tags' -cp code/chapters/ch23-zgc/target/classes org.example.jvminternals.ch23.ConcurrentCycleJourney
 ```
 
 ## 实际记录与边界

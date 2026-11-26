@@ -20,7 +20,7 @@ npm run generate:p05
 P06复用同一精确依赖与主题，不改变P05输入清单。项目根目录执行：
 
 ```sh
-node tools/code-highlighting/render.mjs config-p06.json
+node code/tools/code-highlighting/render.mjs config-p06.json
 ```
 
 生成记录和原始片段分别进入执行记录/evidence/p06-20261103与artifacts/p06-code-copy/input。第24章源码阅读直接读取第23章正式源，不复制维护同一Java文件。此为静态页面生成器，不运行教学程序或测试。
@@ -31,14 +31,14 @@ node tools/code-highlighting/render.mjs config-p06.json
 
 ## P08 输入
 
-项目根目录执行 `node tools/code-highlighting/render.mjs config-p08.json`，只生成第30—32章。沿用Shiki 4.6.0、github-light与既有语言，明确加入第30章独立紧凑源文件及第32章本地C源；共7个完整源文件。报告归公共P08，原始输入和选区文本用于既有diff命令的只读核对；本阶段不重新生成历史章节。
+项目根目录执行 `node code/tools/code-highlighting/render.mjs config-p08.json`，只生成第30—32章。沿用Shiki 4.6.0、github-light与既有语言，明确加入第30章独立紧凑源文件及第32章本地C源；共7个完整源文件。报告归公共P08，原始输入和选区文本用于既有diff命令的只读核对；本阶段不重新生成历史章节。
 
 ## P09 输入
 
-项目根执行 `node tools/code-highlighting/render.mjs config-p09.json`，仅生成第33—36章；8份完整Java阅读源含第36章独立基准与第31章明确复用源，不复制维护。沿用精确版本和主题，报告归公共P09；35节点的输入、浏览器文本和真实选区无差异，小型文本同时保留到各章browser/code-text。生成器不运行教学进程或基准，不生成测试。
+项目根执行 `node code/tools/code-highlighting/render.mjs config-p09.json`，仅生成第33—36章；8份完整Java阅读源含第36章独立基准与第31章明确复用源，不复制维护。沿用精确版本和主题，报告归公共P09；35节点的输入、浏览器文本和真实选区无差异，小型文本同时保留到各章browser/code-text。生成器不运行教学进程或基准，不生成测试。
 
 ## P10 全书展示整合
 
-项目根执行 `node tools/code-highlighting/render.mjs config-p10.json`。只转换第1—12章正文、现有9个源码页、12份运行说明及六附录；观察型章不生成空源码页。旧源码页保留示例锚点与特殊变体，正文HTML仍为维护源。新增pages和readmes配置入口不改变旧阶段清单。
+项目根执行 `node code/tools/code-highlighting/render.mjs config-p10.json`。只转换第1—12章正文、现有9个源码页、12份运行说明及六附录；观察型章不生成空源码页。旧源码页保留示例锚点与特殊变体，正文HTML仍为维护源。新增pages和readmes配置入口不改变旧阶段清单。
 
 纯文本单行末尾的空词元统一为空行容器，复用共用样式保留真实末尾换行选区；不是向源码补字符。运行说明的Markdown表格沿用Marked渲染并包入既有table-wrap，窄屏只在局部滚动。没有新增依赖或改变主题、共用样式和教学源码。实际483节点、浏览器文本与真实选区用既有diff核对一致，详见公共P10证据。

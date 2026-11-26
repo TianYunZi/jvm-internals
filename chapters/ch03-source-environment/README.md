@@ -17,7 +17,7 @@ CH03_JDK=/opt/homebrew/Cellar/openjdk@25/25.0.5.0.2/libexec/openjdk.jdk/Contents
 本轮在项目根目录执行：
 
 ```sh
-"$CH03_JDK/bin/java" -Xint -XX:-UseTLAB -Xms32m -Xmx128m -Xlog:class+load=info:file=chapters/ch03-source-environment/evidence/runs/ch03-20261103-01/class-load.log:uptime,level,tags -cp chapters/ch01-architecture/target/classes org.example.jvminternals.ch01.ProgramJourney chapters/ch01-architecture/src/main/resources/message.txt 0
+"$CH03_JDK/bin/java" -Xint -XX:-UseTLAB -Xms32m -Xmx128m -Xlog:class+load=info:file=chapters/ch03-source-environment/evidence/runs/ch03-20261103-01/class-load.log:uptime,level,tags -cp code/chapters/ch01-architecture/target/classes org.example.jvminternals.ch01.ProgramJourney code/chapters/ch01-architecture/src/main/resources/message.txt 0
 "$CH03_JDK/bin/java" -XX:+PrintFlagsFinal -version
 "$CH03_JDK/bin/java" -XX:+UnlockDiagnosticVMOptions -XX:+UnlockExperimentalVMOptions -XX:+PrintFlagsFinal -version
 "$CH03_JDK/bin/java" -Xlog:help
@@ -41,9 +41,9 @@ lldb --batch --no-lldbinit \
   -o 'breakpoint set --name InterpreterRuntime::_new' -o continue -o 'bt 6' \
   -o 'breakpoint disable 3' -o continue \
   -- "$CH03_JDK/bin/java" -Xint -XX:-UseTLAB -Xms32m -Xmx128m \
-  -cp chapters/ch01-architecture/target/classes \
+  -cp code/chapters/ch01-architecture/target/classes \
   org.example.jvminternals.ch01.ProgramJourney \
-  chapters/ch01-architecture/src/main/resources/message.txt 0
+  code/chapters/ch01-architecture/src/main/resources/message.txt 0
 ```
 
 实际已命中 libjvm.dylib 中的三个入口，解析与分配命中均在应用 main-enter 之前；没有记录断点参数中的具体类名，不能把它们说成 Payload 的指定事件。原始结果在 [lldb.txt](evidence/runs/ch03-20261103-01/lldb.txt)。首次创建断点有同名模块位置，实际停靠模块需对照输出。

@@ -1,6 +1,6 @@
 # 第17章 编译器如何优化Java程序：源码与运行
 
-Java开发工具包（Java Development Kit，JDK）25.0.5.0.2、HotSpot、macOS AArch64；工具显式选用下列目录。源码为本章src/main/java，页面阅读副本为[sources.html](sources.html)。
+Java开发工具包（Java Development Kit，JDK）25.0.5.0.2、HotSpot、macOS AArch64；工具显式选用下列目录。源码位于 code/chapters/ch17-compiler-optimizations/src/main/java，页面阅读副本为[sources.html](sources.html)。
 
 ## 示例与授权
 
@@ -13,9 +13,9 @@ CH17-E01 OptimizationJourney：常量／内联、局部／发布对象、局部�
 ```sh
 export JAVA_HOME=/opt/homebrew/Cellar/openjdk@25/25.0.5.0.2/libexec/openjdk.jdk/Contents/Home
 export PATH="$JAVA_HOME/bin:/opt/homebrew/bin:$PATH"
-mvn -B -ntp -pl chapters/ch17-compiler-optimizations -am compile
-java -Xms16m -Xmx64m -Xbatch -XX:+UnlockDiagnosticVMOptions -XX:+LogCompilation -XX:LogFile=chapters/ch17-compiler-optimizations/evidence/runs/ch17-20261103-01/compilation.xml -XX:+PrintCompilation -XX:+PrintInlining '-XX:CompileCommand=dontinline,org.example.jvminternals.ch17.OptimizationJourney::folded' '-XX:CompileCommand=dontinline,org.example.jvminternals.ch17.OptimizationJourney::local' '-XX:CompileCommand=dontinline,org.example.jvminternals.ch17.OptimizationJourney::escaped' '-XX:CompileCommand=dontinline,org.example.jvminternals.ch17.OptimizationJourney::locked' '-XX:CompileCommand=dontinline,org.example.jvminternals.ch17.OptimizationJourney::transform' '-XX:CompileCommand=print,org.example.jvminternals.ch17.OptimizationJourney::*' -cp chapters/ch17-compiler-optimizations/target/classes org.example.jvminternals.ch17.OptimizationJourney
-javap -c -p -classpath chapters/ch17-compiler-optimizations/target/classes org.example.jvminternals.ch17.OptimizationJourney
+mvn -f code/pom.xml -B -ntp -pl :ch17-compiler-optimizations -am compile
+java -Xms16m -Xmx64m -Xbatch -XX:+UnlockDiagnosticVMOptions -XX:+LogCompilation -XX:LogFile=chapters/ch17-compiler-optimizations/evidence/runs/ch17-20261103-01/compilation.xml -XX:+PrintCompilation -XX:+PrintInlining '-XX:CompileCommand=dontinline,org.example.jvminternals.ch17.OptimizationJourney::folded' '-XX:CompileCommand=dontinline,org.example.jvminternals.ch17.OptimizationJourney::local' '-XX:CompileCommand=dontinline,org.example.jvminternals.ch17.OptimizationJourney::escaped' '-XX:CompileCommand=dontinline,org.example.jvminternals.ch17.OptimizationJourney::locked' '-XX:CompileCommand=dontinline,org.example.jvminternals.ch17.OptimizationJourney::transform' '-XX:CompileCommand=print,org.example.jvminternals.ch17.OptimizationJourney::*' -cp code/chapters/ch17-compiler-optimizations/target/classes org.example.jvminternals.ch17.OptimizationJourney
+javap -c -p -classpath code/chapters/ch17-compiler-optimizations/target/classes org.example.jvminternals.ch17.OptimizationJourney
 ```
 
 ## 实际观察与边界

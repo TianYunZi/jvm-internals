@@ -6,7 +6,7 @@
   "plainTextLanguage":"text",
   "chapters":["ch30-startup-sharing","ch31-aot-cache","ch32-native-interop"],
   "extraSourceFiles":{
-    "ch30-startup-sharing":[{"path":"chapters/ch30-startup-sharing/compact/CompactEntry.java","language":"java"}],
-    "ch32-native-interop":[{"path":"chapters/ch32-native-interop/native/interop.c","language":"c"}]
+    "ch30-startup-sharing":[{"path":"code/chapters/ch30-startup-sharing/compact/CompactEntry.java","language":"java"}],
+    "ch32-native-interop":[{"path":"code/chapters/ch32-native-interop/native/interop.c","language":"c"}]
   }
 }

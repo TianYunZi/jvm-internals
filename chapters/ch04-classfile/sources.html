@@ -4,11 +4,11 @@
 <a class="skip-link" href="#sources">跳到教学源码</a>
 <header class="book-header"><a href="chapter.html">返回第 4 章：类文件结构与信息表达</a></header>
 <main class="home" id="sources"><h1>第 4 章 · 教学源码</h1>
-<p>四组示例的完整代码。正式源文件位于本章 <code class="shiki-inline" data-shiki-version="4.6.0" data-code-id="code-005" data-code-language="text"><span>src/main/java/</span></code>，本页由这些文件生成，便于浏览器直接阅读；编译与运行方法见 <a href="README.html">运行说明</a>。</p>
+<p>四组示例的完整代码。正式源文件位于本章 <code class="shiki-inline" data-shiki-version="4.6.0" data-code-id="code-005" data-code-language="text"><span>code/chapters/ch04-classfile/src/main/java/</span></code>，本页由这些文件生成，便于浏览器直接阅读；编译与运行方法见 <a href="README.html">运行说明</a>。</p>
 <nav aria-label="示例导航"><p>
 <a href="#ch04-e01">CH04-E01</a> · <a href="#ch04-e02">CH04-E02</a> · <a href="#ch04-e03">CH04-E03</a> · <a href="#ch04-e04">CH04-E04</a>
 </p></nav>
-<section id="ch04-e01"><h2>CH04-E01 · 泛型、成员与异常处理</h2><p>源文件：<code class="shiki-inline" data-shiki-version="4.6.0" data-code-id="code-006" data-code-language="text"><span>src/main/java/org/example/jvminternals/ch04/structure/ClassfileSubject.java</span></code></p><pre data-shiki-version="4.6.0" class="shiki github-light" style="background-color:#fff;color:#24292e" tabindex="0"><code data-code-id="code-001" data-code-language="java"><span class="line"><span style="color:#D73A49">package</span><span style="color:#24292E"> org.example.jvminternals.ch04.structure;</span></span>
+<section id="ch04-e01"><h2>CH04-E01 · 泛型、成员与异常处理</h2><p>源文件：<code class="shiki-inline" data-shiki-version="4.6.0" data-code-id="code-006" data-code-language="text"><span>code/chapters/ch04-classfile/src/main/java/org/example/jvminternals/ch04/structure/ClassfileSubject.java</span></code></p><pre data-shiki-version="4.6.0" class="shiki github-light" style="background-color:#fff;color:#24292e" tabindex="0"><code data-code-id="code-001" data-code-language="java"><span class="line"><span style="color:#D73A49">package</span><span style="color:#24292E"> org.example.jvminternals.ch04.structure;</span></span>
 <span class="line"></span>
 <span class="line"><span style="color:#6A737D">/**</span></span>
 <span class="line"><span style="color:#6A737D"> * CH04-E01：供反汇编阅读的泛型类；不承担校验或故障复现职责。</span></span>
@@ -47,7 +47,7 @@
 <span class="line"><span style="color:#24292E">    }</span></span>
 <span class="line"><span style="color:#24292E">}</span></span>
 <span class="line"></span></code></pre></section>
-<section id="ch04-e02"><h2>CH04-E02 · 现代声明与反射</h2><p>源文件：<code class="shiki-inline" data-shiki-version="4.6.0" data-code-id="code-007" data-code-language="text"><span>src/main/java/org/example/jvminternals/ch04/modern/ModernShapes.java</span></code></p><pre data-shiki-version="4.6.0" class="shiki github-light" style="background-color:#fff;color:#24292e" tabindex="0"><code data-code-id="code-002" data-code-language="java"><span class="line"><span style="color:#D73A49">package</span><span style="color:#24292E"> org.example.jvminternals.ch04.modern;</span></span>
+<section id="ch04-e02"><h2>CH04-E02 · 现代声明与反射</h2><p>源文件：<code class="shiki-inline" data-shiki-version="4.6.0" data-code-id="code-007" data-code-language="text"><span>code/chapters/ch04-classfile/src/main/java/org/example/jvminternals/ch04/modern/ModernShapes.java</span></code></p><pre data-shiki-version="4.6.0" class="shiki github-light" style="background-color:#fff;color:#24292e" tabindex="0"><code data-code-id="code-002" data-code-language="java"><span class="line"><span style="color:#D73A49">package</span><span style="color:#24292E"> org.example.jvminternals.ch04.modern;</span></span>
 <span class="line"></span>
 <span class="line"><span style="color:#D73A49">import</span><span style="color:#24292E"> java.lang.annotation.Retention;</span></span>
 <span class="line"><span style="color:#D73A49">import</span><span style="color:#24292E"> java.lang.annotation.RetentionPolicy;</span></span>
@@ -108,7 +108,7 @@
 <span class="line"><span style="color:#24292E">    }</span></span>
 <span class="line"><span style="color:#24292E">}</span></span>
 <span class="line"></span></code></pre></section>
-<section id="ch04-e03"><h2>CH04-E03 · 类文件模型读取</h2><p>源文件：<code class="shiki-inline" data-shiki-version="4.6.0" data-code-id="code-008" data-code-language="text"><span>src/main/java/org/example/jvminternals/ch04/model/ClassfileExplorer.java</span></code></p><pre data-shiki-version="4.6.0" class="shiki github-light" style="background-color:#fff;color:#24292e" tabindex="0"><code data-code-id="code-003" data-code-language="java"><span class="line"><span style="color:#D73A49">package</span><span style="color:#24292E"> org.example.jvminternals.ch04.model;</span></span>
+<section id="ch04-e03"><h2>CH04-E03 · 类文件模型读取</h2><p>源文件：<code class="shiki-inline" data-shiki-version="4.6.0" data-code-id="code-008" data-code-language="text"><span>code/chapters/ch04-classfile/src/main/java/org/example/jvminternals/ch04/model/ClassfileExplorer.java</span></code></p><pre data-shiki-version="4.6.0" class="shiki github-light" style="background-color:#fff;color:#24292e" tabindex="0"><code data-code-id="code-003" data-code-language="java"><span class="line"><span style="color:#D73A49">package</span><span style="color:#24292E"> org.example.jvminternals.ch04.model;</span></span>
 <span class="line"></span>
 <span class="line"><span style="color:#D73A49">import</span><span style="color:#24292E"> java.io.IOException;</span></span>
 <span class="line"><span style="color:#D73A49">import</span><span style="color:#24292E"> java.lang.classfile.ClassFile;</span></span>
@@ -154,7 +154,7 @@
 <span class="line"><span style="color:#24292E">    }</span></span>
 <span class="line"><span style="color:#24292E">}</span></span>
 <span class="line"></span></code></pre></section>
-<section id="ch04-e04"><h2>CH04-E04 · 生成与变换</h2><p>源文件：<code class="shiki-inline" data-shiki-version="4.6.0" data-code-id="code-009" data-code-language="text"><span>src/main/java/org/example/jvminternals/ch04/transform/ClassfileWorkshop.java</span></code></p><pre data-shiki-version="4.6.0" class="shiki github-light" style="background-color:#fff;color:#24292e" tabindex="0"><code data-code-id="code-004" data-code-language="java"><span class="line"><span style="color:#D73A49">package</span><span style="color:#24292E"> org.example.jvminternals.ch04.transform;</span></span>
+<section id="ch04-e04"><h2>CH04-E04 · 生成与变换</h2><p>源文件：<code class="shiki-inline" data-shiki-version="4.6.0" data-code-id="code-009" data-code-language="text"><span>code/chapters/ch04-classfile/src/main/java/org/example/jvminternals/ch04/transform/ClassfileWorkshop.java</span></code></p><pre data-shiki-version="4.6.0" class="shiki github-light" style="background-color:#fff;color:#24292e" tabindex="0"><code data-code-id="code-004" data-code-language="java"><span class="line"><span style="color:#D73A49">package</span><span style="color:#24292E"> org.example.jvminternals.ch04.transform;</span></span>
 <span class="line"></span>
 <span class="line"><span style="color:#D73A49">import</span><span style="color:#24292E"> java.io.IOException;</span></span>
 <span class="line"><span style="color:#D73A49">import</span><span style="color:#24292E"> java.lang.classfile.ClassFile;</span></span>

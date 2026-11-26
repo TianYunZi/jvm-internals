@@ -11,8 +11,8 @@ Java开发工具包（Java Development Kit，JDK）25.0.5.0.2，HotSpot、macOS 
 ```sh
 export JAVA_HOME=/opt/homebrew/Cellar/openjdk@25/25.0.5.0.2/libexec/openjdk.jdk/Contents/Home
 export PATH="$JAVA_HOME/bin:/opt/homebrew/bin:$PATH"
-mvn -B -ntp -pl chapters/ch19-gc-foundations -am compile
-java -Xms16m -Xmx64m -XX:+UseSerialGC '-Xlog:gc*,gc+ref=debug:file=chapters/ch19-gc-foundations/evidence/runs/ch19-20261103-01/gc.log:uptime,level,tags' -cp chapters/ch19-gc-foundations/target/classes org.example.jvminternals.ch19.ReferenceJourney
+mvn -f code/pom.xml -B -ntp -pl :ch19-gc-foundations -am compile
+java -Xms16m -Xmx64m -XX:+UseSerialGC '-Xlog:gc*,gc+ref=debug:file=chapters/ch19-gc-foundations/evidence/runs/ch19-20261103-01/gc.log:uptime,level,tags' -cp code/chapters/ch19-gc-foundations/target/classes org.example.jvminternals.ch19.ReferenceJourney
 ```
 
 ## 实际记录与边界

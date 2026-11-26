@@ -11,10 +11,10 @@ Java开发工具包（Java Development Kit，JDK）25.0.5.0.2，HotSpot、macOS 
 ```sh
 export JAVA_HOME=/opt/homebrew/Cellar/openjdk@25/25.0.5.0.2/libexec/openjdk.jdk/Contents/Home
 export PATH="$JAVA_HOME/bin:/opt/homebrew/bin:$PATH"
-mvn -B -ntp -pl chapters/ch21-basic-collectors -am compile
-java -Xms128m -Xmx128m -XX:ActiveProcessorCount=2 -XX:+UseSerialGC '-Xlog:gc*,gc+age=trace,gc+ergo=trace:file=chapters/ch21-basic-collectors/evidence/runs/ch21-20261103-01/Serial.log:uptime,level,tags' -cp chapters/ch21-basic-collectors/target/classes org.example.jvminternals.ch21.AllocationJourney
-java -Xms128m -Xmx128m -XX:ActiveProcessorCount=2 -XX:+UseParallelGC '-Xlog:gc*,gc+age=trace,gc+ergo=trace:file=chapters/ch21-basic-collectors/evidence/runs/ch21-20261103-01/Parallel.log:uptime,level,tags' -cp chapters/ch21-basic-collectors/target/classes org.example.jvminternals.ch21.AllocationJourney
-java -Xms128m -Xmx128m -XX:ActiveProcessorCount=2 -XX:+UnlockExperimentalVMOptions -XX:+UseEpsilonGC '-Xlog:gc*,gc+age=trace,gc+ergo=trace:file=chapters/ch21-basic-collectors/evidence/runs/ch21-20261103-01/Epsilon.log:uptime,level,tags' -cp chapters/ch21-basic-collectors/target/classes org.example.jvminternals.ch21.AllocationJourney
+mvn -f code/pom.xml -B -ntp -pl :ch21-basic-collectors -am compile
+java -Xms128m -Xmx128m -XX:ActiveProcessorCount=2 -XX:+UseSerialGC '-Xlog:gc*,gc+age=trace,gc+ergo=trace:file=chapters/ch21-basic-collectors/evidence/runs/ch21-20261103-01/Serial.log:uptime,level,tags' -cp code/chapters/ch21-basic-collectors/target/classes org.example.jvminternals.ch21.AllocationJourney
+java -Xms128m -Xmx128m -XX:ActiveProcessorCount=2 -XX:+UseParallelGC '-Xlog:gc*,gc+age=trace,gc+ergo=trace:file=chapters/ch21-basic-collectors/evidence/runs/ch21-20261103-01/Parallel.log:uptime,level,tags' -cp code/chapters/ch21-basic-collectors/target/classes org.example.jvminternals.ch21.AllocationJourney
+java -Xms128m -Xmx128m -XX:ActiveProcessorCount=2 -XX:+UnlockExperimentalVMOptions -XX:+UseEpsilonGC '-Xlog:gc*,gc+age=trace,gc+ergo=trace:file=chapters/ch21-basic-collectors/evidence/runs/ch21-20261103-01/Epsilon.log:uptime,level,tags' -cp code/chapters/ch21-basic-collectors/target/classes org.example.jvminternals.ch21.AllocationJourney
 ```
 
 ## 实际记录与边界

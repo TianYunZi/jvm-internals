@@ -244,8 +244,8 @@
 <p>本章唯一一组正式观察记录为 <a href="evidence/runs/ch04-20261103-01/记录.md">ch04-20261103-01</a>。最小构建编译了 4 个源文件，工具命令和 3 个教学进程均正常结束。没有为追逐预期输出而反复改变负载，也没有运行性能或故障案例。</p>
 <p>在项目根目录选择已核对的 JDK 后，用 Maven 编译本章，再用同一套 <code class="shiki-inline" data-shiki-version="4.6.0" data-code-id="code-122" data-code-language="text"><span>javap</span></code> 阅读产物。下方为本轮实际使用的编译形式；源码路径、所有观察命令、输出目录及再次生成时的目录隔离见<a href="README.html">运行说明</a>。</p>
 <pre data-shiki-version="4.6.0" class="shiki github-light" style="background-color:#fff;color:#24292e" tabindex="0"><code data-code-id="code-009" data-code-language="bash"><span class="line"><span style="color:#24292E">JAVA_HOME</span><span style="color:#D73A49">=</span><span style="color:#032F62">/opt/homebrew/Cellar/openjdk@25/25.0.5.0.2/libexec/openjdk.jdk/Contents/Home</span><span style="color:#6F42C1"> \</span></span>
-<span class="line"><span style="color:#032F62">  mvn</span><span style="color:#005CC5"> --offline</span><span style="color:#005CC5"> --batch-mode</span><span style="color:#005CC5"> --no-transfer-progress</span><span style="color:#005CC5"> \</span></span>
-<span class="line"><span style="color:#005CC5">  -pl</span><span style="color:#032F62"> chapters/ch04-classfile</span><span style="color:#005CC5"> -am</span><span style="color:#032F62"> compile</span></span></code></pre>
+<span class="line"><span style="color:#032F62">  mvn</span><span style="color:#005CC5"> -f</span><span style="color:#032F62"> code/pom.xml</span><span style="color:#005CC5"> --offline</span><span style="color:#005CC5"> --batch-mode</span><span style="color:#005CC5"> --no-transfer-progress</span><span style="color:#005CC5"> \</span></span>
+<span class="line"><span style="color:#005CC5">  -pl</span><span style="color:#032F62"> :ch04-classfile</span><span style="color:#005CC5"> -am</span><span style="color:#032F62"> compile</span></span></code></pre>
 <p><code class="shiki-inline" data-shiki-version="4.6.0" data-code-id="code-123" data-code-language="text"><span>--offline</span></code> 只适用于本机已有插件缓存的情况；首次在线构建及目录迁移方法均在运行说明中区分。书内链接采用相对位置，必要图与代码片段不依赖在线渲染。</p>
 <ul>
 <li><strong>“泛型被擦除，所以类文件没有泛型信息。”</strong>描述符擦除与 Signature 保存声明信息可以同时成立。</li>
