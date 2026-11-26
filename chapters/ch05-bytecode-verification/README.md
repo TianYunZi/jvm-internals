@@ -1,6 +1,6 @@
 # 第 5 章源码与运行说明
 
-正文见 [chapter.html](chapter.html)，完整教学源码见 [sources.html](sources.html)。正式编译输入在 `src/main/java/org/example/jvminternals/ch05/`。本章没有隐式依赖其他章节模块；第 4 章已有异常表只在文稿中明确引用。
+正文见 [chapter.html](chapter.html)，完整教学源码见 [sources.html](sources.html)。正式编译输入在 `code/chapters/ch05-bytecode-verification/src/main/java/org/example/jvminternals/ch05/`。本章没有隐式依赖其他章节模块；第 4 章已有异常表只在文稿中明确引用。
 
 ## 示例、性质与条件
 
@@ -17,7 +17,7 @@
 
 ```sh
 CH05_JDK=/opt/homebrew/Cellar/openjdk@25/25.0.5.0.2/libexec/openjdk.jdk/Contents/Home
-JAVA_HOME="$CH05_JDK" mvn --offline --batch-mode --no-transfer-progress -pl chapters/ch05-bytecode-verification -am compile
+JAVA_HOME="$CH05_JDK" mvn -f code/pom.xml --offline --batch-mode --no-transfer-progress -pl :ch05-bytecode-verification -am compile
 ```
 
 本轮 2 个源文件编译成功。首次无本地缓存时可去掉 `--offline` 取得同一固定插件版本；本轮未重新下载插件。
@@ -25,8 +25,8 @@ JAVA_HOME="$CH05_JDK" mvn --offline --batch-mode --no-transfer-progress -pl chap
 普通运行及验证日志：
 
 ```sh
-"$CH05_JDK/bin/java" -Xmx128m -Xlog:verification=info:file=chapters/ch05-bytecode-verification/evidence/runs/ch05-20261103-01/verification.log:uptime,level,tags -cp chapters/ch05-bytecode-verification/target/classes org.example.jvminternals.ch05.BytecodeCases
-"$CH05_JDK/bin/java" -Xmx128m -Xlog:verification=info:file=chapters/ch05-bytecode-verification/evidence/runs/ch05-20261103-01/flexible-verification.log:uptime,level,tags -cp chapters/ch05-bytecode-verification/target/classes org.example.jvminternals.ch05.FlexibleConstruction
+"$CH05_JDK/bin/java" -Xmx128m -Xlog:verification=info:file=chapters/ch05-bytecode-verification/evidence/runs/ch05-20261103-01/verification.log:uptime,level,tags -cp code/chapters/ch05-bytecode-verification/target/classes org.example.jvminternals.ch05.BytecodeCases
+"$CH05_JDK/bin/java" -Xmx128m -Xlog:verification=info:file=chapters/ch05-bytecode-verification/evidence/runs/ch05-20261103-01/flexible-verification.log:uptime,level,tags -cp code/chapters/ch05-bytecode-verification/target/classes org.example.jvminternals.ch05.FlexibleConstruction
 ```
 
 本轮原样输出保存在 cases.txt、flexible.txt；重放时应选新日志目录，避免覆盖本轮证据。程序有限方法调用和短数组循环，不创建教学线程、不等待输入，正常自然退出；堆上限不等于进程总内存上限。
@@ -34,8 +34,8 @@ JAVA_HOME="$CH05_JDK" mvn --offline --batch-mode --no-transfer-progress -pl chap
 反汇编：
 
 ```sh
-"$CH05_JDK/bin/javap" -v -p -classpath chapters/ch05-bytecode-verification/target/classes org.example.jvminternals.ch05.BytecodeCases 'org.example.jvminternals.ch05.BytecodeCases$MonitorCell' 'org.example.jvminternals.ch05.BytecodeCases$Increment'
-"$CH05_JDK/bin/javap" -v -p -classpath chapters/ch05-bytecode-verification/target/classes org.example.jvminternals.ch05.FlexibleConstruction 'org.example.jvminternals.ch05.FlexibleConstruction$Child' 'org.example.jvminternals.ch05.FlexibleConstruction$Base'
+"$CH05_JDK/bin/javap" -v -p -classpath code/chapters/ch05-bytecode-verification/target/classes org.example.jvminternals.ch05.BytecodeCases 'org.example.jvminternals.ch05.BytecodeCases$MonitorCell' 'org.example.jvminternals.ch05.BytecodeCases$Increment'
+"$CH05_JDK/bin/javap" -v -p -classpath code/chapters/ch05-bytecode-verification/target/classes org.example.jvminternals.ch05.FlexibleConstruction 'org.example.jvminternals.ch05.FlexibleConstruction$Child' 'org.example.jvminternals.ch05.FlexibleConstruction$Base'
 ```
 
 对应 cases.javap.txt、flexible.javap.txt。实际得到 widenAndAdd 的容量 4／7、槽 2 的不同区间复用、分支目标 11／14、tableswitch／lookupswitch、同步释放与方法标志、父构造器之前的字段写入。栈表和类型图是据这些产物及规范推演，不是逐条动态取值。

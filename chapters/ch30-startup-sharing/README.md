@@ -11,21 +11,21 @@ P08_JDK=/opt/homebrew/opt/openjdk@25
 CH30-E01为StartupJourney；CH30-E02为InstanceEntry；CH30-E03为独立紧凑源文件CompactEntry。前两个纳入普通Maven编译，紧凑源文件单独编译，无需预览。普通Java源与源码阅读页均随章节保留。
 
 ```bash
-JAVA_HOME="$P08_JDK" /opt/homebrew/bin/mvn -pl chapters/ch30-startup-sharing -am compile
-"$P08_JDK/bin/jar" --create --file chapters/ch30-startup-sharing/target/startup.jar --main-class org.example.jvminternals.ch30.StartupJourney -C chapters/ch30-startup-sharing/target/classes .
-"$P08_JDK/bin/javac" -d chapters/ch30-startup-sharing/target/compact chapters/ch30-startup-sharing/compact/CompactEntry.java
+JAVA_HOME="$P08_JDK" /opt/homebrew/bin/mvn -f code/pom.xml -pl :ch30-startup-sharing -am compile
+"$P08_JDK/bin/jar" --create --file code/chapters/ch30-startup-sharing/target/startup.jar --main-class org.example.jvminternals.ch30.StartupJourney -C code/chapters/ch30-startup-sharing/target/classes .
+"$P08_JDK/bin/javac" -d code/chapters/ch30-startup-sharing/target/compact code/chapters/ch30-startup-sharing/compact/CompactEntry.java
 ```
 
 ## 启动形式
 
 ```bash
-"$P08_JDK/bin/java" -Xmx64m -cp chapters/ch30-startup-sharing/target/startup.jar org.example.jvminternals.ch30.StartupJourney
-"$P08_JDK/bin/java" -Xmx64m -jar chapters/ch30-startup-sharing/target/startup.jar archive-entry
-"$P08_JDK/bin/java" -Xmx64m --module-path chapters/ch30-startup-sharing/target/startup.jar --module startup/org.example.jvminternals.ch30.StartupJourney module-entry
-"$P08_JDK/bin/java" -Xmx64m -cp chapters/ch30-startup-sharing/target/startup.jar org.example.jvminternals.ch30.InstanceEntry chapter30
-"$P08_JDK/bin/java" -Xmx64m chapters/ch30-startup-sharing/compact/CompactEntry.java
-"$P08_JDK/bin/java" -Xmx64m -cp chapters/ch30-startup-sharing/target/compact CompactEntry
-"$P08_JDK/bin/javap" -p -c chapters/ch30-startup-sharing/target/compact/CompactEntry.class
+"$P08_JDK/bin/java" -Xmx64m -cp code/chapters/ch30-startup-sharing/target/startup.jar org.example.jvminternals.ch30.StartupJourney
+"$P08_JDK/bin/java" -Xmx64m -jar code/chapters/ch30-startup-sharing/target/startup.jar archive-entry
+"$P08_JDK/bin/java" -Xmx64m --module-path code/chapters/ch30-startup-sharing/target/startup.jar --module startup/org.example.jvminternals.ch30.StartupJourney module-entry
+"$P08_JDK/bin/java" -Xmx64m -cp code/chapters/ch30-startup-sharing/target/startup.jar org.example.jvminternals.ch30.InstanceEntry chapter30
+"$P08_JDK/bin/java" -Xmx64m code/chapters/ch30-startup-sharing/compact/CompactEntry.java
+"$P08_JDK/bin/java" -Xmx64m -cp code/chapters/ch30-startup-sharing/target/compact CompactEntry
+"$P08_JDK/bin/javap" -p -c code/chapters/ch30-startup-sharing/target/compact/CompactEntry.class
 ```
 
 实例入口先构造，再调用带参数候选。普通入口的工作线程仅等待100毫秒后结束；没有其他常驻线程。模块例使用文件名startup.jar派生的自动模块，未声称构建显式模块图。Java归档（Java Archive，JAR）启动与源码启动的准备工作不同。
@@ -35,17 +35,17 @@ JAVA_HOME="$P08_JDK" /opt/homebrew/bin/mvn -pl chapters/ch30-startup-sharing -am
 以下为动态增量生成、明确使用及关闭共享对照。观察文件输出路径已有父目录。
 
 ```bash
-"$P08_JDK/bin/java" -Xmx64m -XX:ArchiveClassesAtExit=chapters/ch30-startup-sharing/target/startup.jsa -Xlog:class+load=info,cds=info:file=chapters/ch30-startup-sharing/evidence/runs/ch30-20261103-01/dynamic-create.log -cp chapters/ch30-startup-sharing/target/startup.jar org.example.jvminternals.ch30.StartupJourney
-"$P08_JDK/bin/java" -Xmx64m -Xshare:on -XX:SharedArchiveFile=chapters/ch30-startup-sharing/target/startup.jsa -Xlog:class+load=info,cds=info:file=chapters/ch30-startup-sharing/evidence/runs/ch30-20261103-01/dynamic-use.log -cp chapters/ch30-startup-sharing/target/startup.jar org.example.jvminternals.ch30.StartupJourney
-"$P08_JDK/bin/java" -Xmx64m -Xshare:off -Xlog:class+load=info:file=chapters/ch30-startup-sharing/evidence/runs/ch30-20261103-01/sharing-off.log -cp chapters/ch30-startup-sharing/target/startup.jar org.example.jvminternals.ch30.StartupJourney
+"$P08_JDK/bin/java" -Xmx64m -XX:ArchiveClassesAtExit=code/chapters/ch30-startup-sharing/target/startup.jsa -Xlog:class+load=info,cds=info:file=chapters/ch30-startup-sharing/evidence/runs/ch30-20261103-01/dynamic-create.log -cp code/chapters/ch30-startup-sharing/target/startup.jar org.example.jvminternals.ch30.StartupJourney
+"$P08_JDK/bin/java" -Xmx64m -Xshare:on -XX:SharedArchiveFile=code/chapters/ch30-startup-sharing/target/startup.jsa -Xlog:class+load=info,cds=info:file=chapters/ch30-startup-sharing/evidence/runs/ch30-20261103-01/dynamic-use.log -cp code/chapters/ch30-startup-sharing/target/startup.jar org.example.jvminternals.ch30.StartupJourney
+"$P08_JDK/bin/java" -Xmx64m -Xshare:off -Xlog:class+load=info:file=chapters/ch30-startup-sharing/evidence/runs/ch30-20261103-01/sharing-off.log -cp code/chapters/ch30-startup-sharing/target/startup.jar org.example.jvminternals.ch30.StartupJourney
 ```
 
 静态应用归档把类列表收集与装配分开：
 
 ```bash
-"$P08_JDK/bin/java" -Xmx64m -Xshare:off -XX:DumpLoadedClassList=chapters/ch30-startup-sharing/target/startup.classlist -cp chapters/ch30-startup-sharing/target/startup.jar org.example.jvminternals.ch30.StartupJourney
-"$P08_JDK/bin/java" -Xmx64m -Xshare:dump -XX:SharedClassListFile=chapters/ch30-startup-sharing/target/startup.classlist -XX:SharedArchiveFile=chapters/ch30-startup-sharing/target/static.jsa -cp chapters/ch30-startup-sharing/target/startup.jar
-"$P08_JDK/bin/java" -Xmx64m -Xshare:on -XX:SharedArchiveFile=chapters/ch30-startup-sharing/target/static.jsa -Xlog:class+load=info:file=chapters/ch30-startup-sharing/evidence/runs/ch30-20261103-01/static-use.log -cp chapters/ch30-startup-sharing/target/startup.jar org.example.jvminternals.ch30.StartupJourney
+"$P08_JDK/bin/java" -Xmx64m -Xshare:off -XX:DumpLoadedClassList=code/chapters/ch30-startup-sharing/target/startup.classlist -cp code/chapters/ch30-startup-sharing/target/startup.jar org.example.jvminternals.ch30.StartupJourney
+"$P08_JDK/bin/java" -Xmx64m -Xshare:dump -XX:SharedClassListFile=code/chapters/ch30-startup-sharing/target/startup.classlist -XX:SharedArchiveFile=code/chapters/ch30-startup-sharing/target/static.jsa -cp code/chapters/ch30-startup-sharing/target/startup.jar
+"$P08_JDK/bin/java" -Xmx64m -Xshare:on -XX:SharedArchiveFile=code/chapters/ch30-startup-sharing/target/static.jsa -Xlog:class+load=info:file=chapters/ch30-startup-sharing/evidence/runs/ch30-20261103-01/static-use.log -cp code/chapters/ch30-startup-sharing/target/startup.jar org.example.jvminternals.ch30.StartupJourney
 ```
 
 动态应用类命中top层，静态应用类命中共享文件；关闭共享来自应用归档。装配跳过事件类的警告保留在原记录。每次仍执行类初始化、工作线程和正常钩子。本轮未控制文件页缓存冷热，未执行立即停止、系统强制终止或崩溃。详见[evidence运行记录](evidence/runs/ch30-20261103-01/记录.md)。

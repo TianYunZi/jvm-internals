@@ -16,13 +16,13 @@ Java 开发工具包（Java Development Kit，JDK）25.0.5.0.2、Maven 3.10.0，
 
 ```sh
 task_jdk=/opt/homebrew/Cellar/openjdk@25/25.0.5.0.2/libexec/openjdk.jdk/Contents/Home
-JAVA_HOME="$task_jdk" mvn -B -ntp -pl chapters/ch08-type-metadata -am compile
-"$task_jdk/bin/javac" --release 25 -g -parameters -d chapters/ch08-type-metadata/target/disposable chapters/ch08-type-metadata/variants/disposable/org/example/jvminternals/ch08/disposable/Disposable.java
-"$task_jdk/bin/java" -Xms32m -Xmx128m -cp chapters/ch08-type-metadata/target/classes org.example.jvminternals.ch08.TypeJourney
-"$task_jdk/bin/java" -Xms32m -Xmx128m -Xlog:class+load=info:file=chapters/ch08-type-metadata/evidence/runs/ch08-20261103-01/hidden-class.log -cp chapters/ch08-type-metadata/target/classes org.example.jvminternals.ch08.HiddenJourney chapters/ch08-type-metadata/evidence/runs/ch08-20261103-01/HiddenValue.class
-"$task_jdk/bin/java" -Xms32m -Xmx128m -Xlog:class+load=info,class+unload=info,gc=info,gc+metaspace=info:file=chapters/ch08-type-metadata/evidence/runs/ch08-20261103-01/unloading.log -cp chapters/ch08-type-metadata/target/classes org.example.jvminternals.ch08.UnloadingJourney chapters/ch08-type-metadata/target/disposable
+JAVA_HOME="$task_jdk" mvn -f code/pom.xml -B -ntp -pl :ch08-type-metadata -am compile
+"$task_jdk/bin/javac" --release 25 -g -parameters -d code/chapters/ch08-type-metadata/target/disposable code/chapters/ch08-type-metadata/variants/disposable/org/example/jvminternals/ch08/disposable/Disposable.java
+"$task_jdk/bin/java" -Xms32m -Xmx128m -cp code/chapters/ch08-type-metadata/target/classes org.example.jvminternals.ch08.TypeJourney
+"$task_jdk/bin/java" -Xms32m -Xmx128m -Xlog:class+load=info:file=chapters/ch08-type-metadata/evidence/runs/ch08-20261103-01/hidden-class.log -cp code/chapters/ch08-type-metadata/target/classes org.example.jvminternals.ch08.HiddenJourney chapters/ch08-type-metadata/evidence/runs/ch08-20261103-01/HiddenValue.class
+"$task_jdk/bin/java" -Xms32m -Xmx128m -Xlog:class+load=info,class+unload=info,gc=info,gc+metaspace=info:file=chapters/ch08-type-metadata/evidence/runs/ch08-20261103-01/unloading.log -cp code/chapters/ch08-type-metadata/target/classes org.example.jvminternals.ch08.UnloadingJourney code/chapters/ch08-type-metadata/target/disposable
 "$task_jdk/bin/javap" -v -p -c chapters/ch08-type-metadata/evidence/runs/ch08-20261103-01/HiddenValue.class
-"$task_jdk/bin/javap" -v -p -c -classpath chapters/ch08-type-metadata/target/classes 'org.example.jvminternals.ch08.TypeJourney$Item'
+"$task_jdk/bin/javap" -v -p -c -classpath code/chapters/ch08-type-metadata/target/classes 'org.example.jvminternals.ch08.TypeJourney$Item'
 ```
 
 Disposable 不在主输出，主程序仅用字符串请求子加载器定义。若把变体加入主路径或保留其他强引用，就改变了观察条件。隐藏类保存的是定义前输入，文件名和运行时隐藏名称分别解释；生成字节使用类文件应用程序编程接口（Application Programming Interface，API），没有手工伪造私有布局。

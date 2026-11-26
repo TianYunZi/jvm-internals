@@ -4,7 +4,7 @@ Java开发工具包（Java Development Kit，JDK）25.0.5.0.2，HotSpot、macOS 
 
 ## 示例、性质与边界
 
-CH28-E01：VirtualJourney，包org.example.jvminternals.ch28。正式源码在src/main/java，阅读副本从正式文件生成；用户“执行P07”授权普通教学源码与有界观察，无测试、断言、并发压力或性能基准。
+CH28-E01：VirtualJourney，包org.example.jvminternals.ch28。正式源码在code/chapters/ch28-virtual-threads/src/main/java，阅读副本从正式文件生成；用户“执行P07”授权普通教学源码与有界观察，无测试、断言、并发压力或性能基准。
 
 2个虚拟线程，单载体；monitor睡眠6秒、native回调4秒。Java本地接口（Java Native Interface，JNI）本地C源只回调有界sleep，不创建本地线程、不故意崩溃。JDK飞行记录器（JDK Flight Recorder，JFR）事件与载体活动共同解释。Mac动态库后缀与include/darwin专属本平台，其他平台需改对应本地构建。
 
@@ -15,13 +15,13 @@ CH28-E01：VirtualJourney，包org.example.jvminternals.ch28。正式源码在sr
 ```bash
 export JAVA_HOME=/opt/homebrew/Cellar/openjdk@25/25.0.5.0.2/libexec/openjdk.jdk/Contents/Home
 export PATH="$JAVA_HOME/bin:/opt/homebrew/bin:$PATH"
-mvn -B -ntp -pl chapters/ch28-virtual-threads -am compile
-javac -h chapters/ch28-virtual-threads/target -d chapters/ch28-virtual-threads/target/classes chapters/ch28-virtual-threads/src/main/java/org/example/jvminternals/ch28/VirtualJourney.java
-/usr/bin/clang -dynamiclib -I "$JAVA_HOME/include" -I "$JAVA_HOME/include/darwin" -o chapters/ch28-virtual-threads/target/libcarrierjourney.dylib chapters/ch28-virtual-threads/native/carrierjourney.c
-jfr configure --input profile --output chapters/ch28-virtual-threads/target/virtual.jfc 'jdk.VirtualThreadPinned#enabled=true' 'jdk.VirtualThreadPinned#threshold=0ms' 'jdk.VirtualThreadStart#enabled=true' 'jdk.VirtualThreadEnd#enabled=true'
-java -Xmx128m --enable-native-access=ALL-UNNAMED -XX:+StartAttachListener -Djdk.virtualThreadScheduler.parallelism=1 -Djdk.virtualThreadScheduler.maxPoolSize=1 -Djava.library.path=chapters/ch28-virtual-threads/target -XX:StartFlightRecording=settings=chapters/ch28-virtual-threads/target/virtual.jfc,filename=chapters/ch28-virtual-threads/target/monitor.jfr,dumponexit=true -cp chapters/ch28-virtual-threads/target/classes org.example.jvminternals.ch28.VirtualJourney monitor
-java -Xmx128m --enable-native-access=ALL-UNNAMED -XX:+StartAttachListener -Djdk.virtualThreadScheduler.parallelism=1 -Djdk.virtualThreadScheduler.maxPoolSize=1 -Djava.library.path=chapters/ch28-virtual-threads/target -XX:StartFlightRecording=settings=chapters/ch28-virtual-threads/target/virtual.jfc,filename=chapters/ch28-virtual-threads/target/native.jfr,dumponexit=true -cp chapters/ch28-virtual-threads/target/classes org.example.jvminternals.ch28.VirtualJourney native
-jfr print --events jdk.VirtualThreadPinned,jdk.VirtualThreadStart,jdk.VirtualThreadEnd chapters/ch28-virtual-threads/target/native.jfr
+mvn -f code/pom.xml -B -ntp -pl :ch28-virtual-threads -am compile
+javac -h code/chapters/ch28-virtual-threads/target -d code/chapters/ch28-virtual-threads/target/classes code/chapters/ch28-virtual-threads/src/main/java/org/example/jvminternals/ch28/VirtualJourney.java
+/usr/bin/clang -dynamiclib -I "$JAVA_HOME/include" -I "$JAVA_HOME/include/darwin" -o code/chapters/ch28-virtual-threads/target/libcarrierjourney.dylib code/chapters/ch28-virtual-threads/native/carrierjourney.c
+jfr configure --input profile --output code/chapters/ch28-virtual-threads/target/virtual.jfc 'jdk.VirtualThreadPinned#enabled=true' 'jdk.VirtualThreadPinned#threshold=0ms' 'jdk.VirtualThreadStart#enabled=true' 'jdk.VirtualThreadEnd#enabled=true'
+java -Xmx128m --enable-native-access=ALL-UNNAMED -XX:+StartAttachListener -Djdk.virtualThreadScheduler.parallelism=1 -Djdk.virtualThreadScheduler.maxPoolSize=1 -Djava.library.path=code/chapters/ch28-virtual-threads/target -XX:StartFlightRecording=settings=code/chapters/ch28-virtual-threads/target/virtual.jfc,filename=code/chapters/ch28-virtual-threads/target/monitor.jfr,dumponexit=true -cp code/chapters/ch28-virtual-threads/target/classes org.example.jvminternals.ch28.VirtualJourney monitor
+java -Xmx128m --enable-native-access=ALL-UNNAMED -XX:+StartAttachListener -Djdk.virtualThreadScheduler.parallelism=1 -Djdk.virtualThreadScheduler.maxPoolSize=1 -Djava.library.path=code/chapters/ch28-virtual-threads/target -XX:StartFlightRecording=settings=code/chapters/ch28-virtual-threads/target/virtual.jfc,filename=code/chapters/ch28-virtual-threads/target/native.jfr,dumponexit=true -cp code/chapters/ch28-virtual-threads/target/classes org.example.jvminternals.ch28.VirtualJourney native
+jfr print --events jdk.VirtualThreadPinned,jdk.VirtualThreadStart,jdk.VirtualThreadEnd code/chapters/ch28-virtual-threads/target/native.jfr
 ```
 
 在第二个终端同样设置上述工具环境，按提示输入刚打印的进程号；历史进程号不能复用。
@@ -30,7 +30,7 @@ jfr print --events jdk.VirtualThreadPinned,jdk.VirtualThreadStart,jdk.VirtualThr
 # 在教学进程的观察窗口内，从其输出取得本次pid。
 read task_pid
 jcmd "$task_pid" Thread.print -l
-jcmd "$task_pid" Thread.dump_to_file -format=json "$PWD/chapters/ch28-virtual-threads/target/threads.json"
+jcmd "$task_pid" Thread.dump_to_file -format=json "$PWD/code/chapters/ch28-virtual-threads/target/threads.json"
 ```
 
 ## 实际观察和清理

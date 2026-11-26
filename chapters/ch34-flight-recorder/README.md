@@ -11,12 +11,12 @@ P09_JDK=/opt/homebrew/opt/openjdk@25
 LatencyJourney是正式教学源；记录上限16兆字节，三次请求，持锁休眠180毫秒。JDK飞行记录器（JDK Flight Recorder，JFR）在程序内显式开始、停止并关闭，不依赖持续后台进程。方法插桩仅匹配service。
 
 ```bash
-JAVA_HOME="$P09_JDK" mvn -pl chapters/ch34-flight-recorder -am compile
-"$P09_JDK/bin/java" -Xmx64m -cp chapters/ch34-flight-recorder/target/classes org.example.jvminternals.ch34.LatencyJourney chapters/ch34-flight-recorder/target/latency.jfr
-"$P09_JDK/bin/jfr" summary chapters/ch34-flight-recorder/target/latency.jfr
-"$P09_JDK/bin/jfr" metadata --events 'book.*,jdk.MethodTrace,jdk.MethodTiming,jdk.CPUTimeSample' chapters/ch34-flight-recorder/target/latency.jfr
-"$P09_JDK/bin/jfr" print --events 'book.*,jdk.JavaMonitorEnter,jdk.MethodTrace,jdk.MethodTiming' chapters/ch34-flight-recorder/target/latency.jfr
-"$P09_JDK/bin/jfr" view hot-methods chapters/ch34-flight-recorder/target/latency.jfr
+JAVA_HOME="$P09_JDK" mvn -f code/pom.xml -pl :ch34-flight-recorder -am compile
+"$P09_JDK/bin/java" -Xmx64m -cp code/chapters/ch34-flight-recorder/target/classes org.example.jvminternals.ch34.LatencyJourney code/chapters/ch34-flight-recorder/target/latency.jfr
+"$P09_JDK/bin/jfr" summary code/chapters/ch34-flight-recorder/target/latency.jfr
+"$P09_JDK/bin/jfr" metadata --events 'book.*,jdk.MethodTrace,jdk.MethodTiming,jdk.CPUTimeSample' code/chapters/ch34-flight-recorder/target/latency.jfr
+"$P09_JDK/bin/jfr" print --events 'book.*,jdk.JavaMonitorEnter,jdk.MethodTrace,jdk.MethodTiming' code/chapters/ch34-flight-recorder/target/latency.jfr
+"$P09_JDK/bin/jfr" view hot-methods code/chapters/ch34-flight-recorder/target/latency.jfr
 ```
 
 首次方法追踪包含初始化成本；自定义事件边界在方法内部，不要求两者时间一致。处理器时间画像使用中央处理器（Central Processing Unit，CPU）时间；25版该实验特性限Linux，macOS普通执行采样不冒充它。

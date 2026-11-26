@@ -13,7 +13,7 @@
 - 按目标学习：[附录 F：实验环境与阅读路线](appendices/f-environments/appendix.html#sec-f-3)，提供原理入门、源码进阶和故障分析三条路线。
 - 查找术语、指令、命令和源码入口：[六个附录](index.html#appendices)。
 
-章内的 `sources.html` 用于阅读完整源码，`README.html` 用于阅读运行命令；可编辑源码和 `README.md` 保存在同章目录。正式正文以 `chapter.html` 为维护源，附录以 `appendix.html` 为维护源。
+章内的 `sources.html` 用于阅读完整源码，`README.html` 用于阅读运行命令，`README.md` 是运行说明维护源。可编辑源码集中于 `code/chapters/`，模块目录名与书稿章节目录名一致。正式正文以 `chapter.html` 为维护源，附录以 `appendix.html` 为维护源。
 
 ## 全书内容
 
@@ -32,20 +32,20 @@
 
 ## 编译与运行示例
 
-阅读书稿不需要开发环境。编译普通教学源码需要 JDK 25 和 Maven；既有观察使用 Homebrew OpenJDK `25.0.5.0.2`、Maven `3.10.0` 与 macOS AArch64。版本、发行版差异及锁定源码提交见[基线与约定](执行记录/基线与约定.md)。
+在 OpenIDEA 中打开 [`code/`](code/)，以 [`code/pom.xml`](code/pom.xml) 作为 Maven 工程入口，选择 JDK 25。既有观察使用 Homebrew OpenJDK `25.0.5.0.2`、Maven `3.10.0` 与 macOS AArch64。版本、发行版差异及锁定源码提交见[基线与约定](执行记录/基线与约定.md)。
 
 以第 4 章为例，在项目根目录执行以下命令，只编译该章及其所需模块：
 
 ```sh
-mvn --batch-mode --no-transfer-progress -pl chapters/ch04-classfile -am compile
+mvn -f code/pom.xml --batch-mode --no-transfer-progress -pl :ch04-classfile -am compile
 ```
 
-执行前应确认 Maven 使用 JDK 25。既有环境存在系统默认工具选择差异；明确指定工具目录的命令、示例输入及运行步骤见[第 4 章运行说明](chapters/ch04-classfile/README.md)。编译输出位于本章 `target/`。
+执行前应确认 Maven 使用 JDK 25。章内命令若列出历史安装路径，运行时请改用本机的 JDK 25 路径。示例输入及运行步骤见[第 4 章运行说明](chapters/ch04-classfile/README.md)。编译输出位于 `code/chapters/ch04-classfile/target/`。
 
-根 `pom.xml` 聚合普通教学模块，编译阶段不会自动启动教学程序。需要编译全部普通模块时，先按[第 10 章运行说明](chapters/ch10-object-layout/README.md)安装随书固定对象布局工具，再在项目根目录执行：
+`code/pom.xml` 聚合普通教学模块，编译阶段不会自动启动教学程序。编译全部普通模块前，先按[第 10 章运行说明](chapters/ch10-object-layout/README.md)安装随书固定对象布局工具，再在项目根目录执行以下命令。
 
 ```sh
-mvn --batch-mode --no-transfer-progress compile
+mvn -f code/pom.xml --batch-mode --no-transfer-progress compile
 ```
 
 预览特性、本地库和微基准采用独立构建或命令，分别按所属章节说明选择。运行示例前阅读本章的输入、资源限制与停止方式；具体观察结果及适用边界以该章证据为准。
@@ -55,11 +55,11 @@ mvn --batch-mode --no-transfer-progress compile
 | 路径 | 职责 |
 | --- | --- |
 | [index.html](index.html) | 全书阅读入口与连续章节导航 |
-| `chapters/` | 36 章正文、运行说明、教学源码、图源、证据与任务单 |
+| `chapters/` | 36 章正文、源码阅读页、运行说明、图源、证据与任务单 |
 | `appendices/` | 六个附录正文及其任务和来源材料 |
 | `assets/` | 共用屏幕与打印样式、绘图配置 |
-| [pom.xml](pom.xml) | 普通教学源码的聚合构建 |
-| [tools/code-highlighting/](tools/code-highlighting/README.md) | 静态代码高亮生成器、分阶段配置及精确依赖锁 |
+| [`code/`](code/) | OpenIDEA 工程目录，含 Maven 聚合构建、章节源码与独立实验 |
+| [`code/tools/code-highlighting/`](code/tools/code-highlighting/README.md) | 静态代码高亮生成器、分阶段配置及精确依赖锁 |
 | [大纲.md](大纲.md)、`分篇大纲/` | 全书章、节编号和写作要点 |
 | [执行计划.md](执行计划.md)、`执行计划/` | 执行规则、分章任务定义与任务模板 |
 | `执行记录/` | 公共基线、术语、阶段记录与全书验收证据 |
@@ -79,11 +79,13 @@ mvn --batch-mode --no-transfer-progress compile
 开始修改前阅读[项目规则](AGENTS.md)和[公共任务记录](执行记录/公共任务.md)，再按[执行总计划](执行计划.md)、[分章任务清单](执行计划/分章任务清单.md)、对应分纲及本章 `TASK.md` 确定范围。
 
 - 章节进度只在本章 `TASK.md` 维护；全书入口、共用资源与根配置的改动记入公共任务记录。
-- 修改教学源码或代码展示后，按[高亮工具说明](tools/code-highlighting/README.md)选择对应生成配置，同步阅读页面；修改 Mermaid 图后从图源重新导出显示图。
+- 修改教学源码或代码展示后，按[高亮工具说明](code/tools/code-highlighting/README.md)选择对应生成配置，同步阅读页面；修改 Mermaid 图后从图源重新导出显示图。
 - 保留规范、实现、实测与推断的区别，未核查环境继续标注边界。既有记录不因文档整理而追溯改写。
 - 遵守最小改动与最小验证原则；新增或修改测试代码须有用户明确授权。
 
 [.gitignore](.gitignore) 排除本机元数据、编辑器配置、各级 `target/`、`node_modules/`、大型产物和本地交付副本；`artifacts/.gitkeep` 保留目录占位。正文、静态高亮页、图源与显示图、依赖锁及 `evidence/` 中的正式证据均应保留，不按日志、类文件或归档后缀一概忽略。[.ignore](.ignore) 为默认文本检索提供产物排除规则。
+
+工程目录的[忽略规则](code/.gitignore)覆盖 OpenIDEA 本机配置、模块编译输出和工具依赖。此前的实验记录与交付快照使用采集时的路径。
 
 公共材料入口：[基线与约定](执行记录/基线与约定.md) · [术语表](执行记录/术语表.md) · [公共任务](执行记录/公共任务.md) · [全书验收](执行记录/全书验收.md)。
 

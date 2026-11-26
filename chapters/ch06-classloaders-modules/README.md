@@ -10,12 +10,12 @@
 
 ```sh
 CH06_JDK=/opt/homebrew/Cellar/openjdk@25/25.0.5.0.2/libexec/openjdk.jdk/Contents/Home
-JAVA_HOME="$CH06_JDK" mvn --offline --batch-mode --no-transfer-progress -pl chapters/ch06-classloaders-modules -am compile
-mkdir -p chapters/ch06-classloaders-modules/target/plugin chapters/ch06-classloaders-modules/target/service-provider chapters/ch06-classloaders-modules/target/modules
-"$CH06_JDK/bin/javac" --release 25 -g -parameters -d chapters/ch06-classloaders-modules/target/plugin chapters/ch06-classloaders-modules/variants/plugin/src/org/example/jvminternals/ch06/isolated/Plugin.java
-"$CH06_JDK/bin/javac" --release 25 -g -parameters -cp chapters/ch06-classloaders-modules/target/classes -d chapters/ch06-classloaders-modules/target/service-provider chapters/ch06-classloaders-modules/variants/service/src/org/example/jvminternals/ch06/provider/FriendlyGreeter.java
-cp -R chapters/ch06-classloaders-modules/variants/service/resources/. chapters/ch06-classloaders-modules/target/service-provider/
-"$CH06_JDK/bin/javac" --release 25 -g -parameters --module-source-path chapters/ch06-classloaders-modules/variants/modules/src -d chapters/ch06-classloaders-modules/target/modules -m lesson.library,lesson.client
+JAVA_HOME="$CH06_JDK" mvn -f code/pom.xml --offline --batch-mode --no-transfer-progress -pl :ch06-classloaders-modules -am compile
+mkdir -p code/chapters/ch06-classloaders-modules/target/plugin code/chapters/ch06-classloaders-modules/target/service-provider code/chapters/ch06-classloaders-modules/target/modules
+"$CH06_JDK/bin/javac" --release 25 -g -parameters -d code/chapters/ch06-classloaders-modules/target/plugin code/chapters/ch06-classloaders-modules/variants/plugin/src/org/example/jvminternals/ch06/isolated/Plugin.java
+"$CH06_JDK/bin/javac" --release 25 -g -parameters -cp code/chapters/ch06-classloaders-modules/target/classes -d code/chapters/ch06-classloaders-modules/target/service-provider code/chapters/ch06-classloaders-modules/variants/service/src/org/example/jvminternals/ch06/provider/FriendlyGreeter.java
+cp -R code/chapters/ch06-classloaders-modules/variants/service/resources/. code/chapters/ch06-classloaders-modules/target/service-provider/
+"$CH06_JDK/bin/javac" --release 25 -g -parameters --module-source-path code/chapters/ch06-classloaders-modules/variants/modules/src -d code/chapters/ch06-classloaders-modules/target/modules -m lesson.library,lesson.client
 ```
 
 普通配置无需预览、无第三方运行依赖。本轮使用已有插件缓存；首次缺缓存时可去掉 --offline 取得固定插件版本。
@@ -32,12 +32,12 @@ cp -R chapters/ch06-classloaders-modules/variants/service/resources/. chapters/c
 运行命令：
 
 ```sh
-"$CH06_JDK/bin/java" -Xmx128m -Xlog:class+load=info:file=chapters/ch06-classloaders-modules/evidence/runs/ch06-20261103-01/class-load.log:uptime,level,tags -cp chapters/ch06-classloaders-modules/target/classes org.example.jvminternals.ch06.LoaderJourney chapters/ch06-classloaders-modules/target/plugin/org/example/jvminternals/ch06/isolated/Plugin.class
-"$CH06_JDK/bin/java" -Xmx128m -cp chapters/ch06-classloaders-modules/target/classes org.example.jvminternals.ch06.ServiceJourney chapters/ch06-classloaders-modules/target/service-provider
-"$CH06_JDK/bin/java" -Xmx128m -cp chapters/ch06-classloaders-modules/target/classes org.example.jvminternals.ch06.LayerJourney chapters/ch06-classloaders-modules/target/modules
-"$CH06_JDK/bin/java" -Xmx128m --module-path chapters/ch06-classloaders-modules/target/modules -m lesson.client/org.example.jvminternals.ch06.client.ModuleAccessJourney
-"$CH06_JDK/bin/java" -Xmx128m --add-exports lesson.library/org.example.jvminternals.ch06.internal=lesson.client --module-path chapters/ch06-classloaders-modules/target/modules -m lesson.client/org.example.jvminternals.ch06.client.ModuleAccessJourney
-"$CH06_JDK/bin/java" -Xmx128m --add-opens lesson.library/org.example.jvminternals.ch06.internal=lesson.client --module-path chapters/ch06-classloaders-modules/target/modules -m lesson.client/org.example.jvminternals.ch06.client.ModuleAccessJourney
+"$CH06_JDK/bin/java" -Xmx128m -Xlog:class+load=info:file=chapters/ch06-classloaders-modules/evidence/runs/ch06-20261103-01/class-load.log:uptime,level,tags -cp code/chapters/ch06-classloaders-modules/target/classes org.example.jvminternals.ch06.LoaderJourney code/chapters/ch06-classloaders-modules/target/plugin/org/example/jvminternals/ch06/isolated/Plugin.class
+"$CH06_JDK/bin/java" -Xmx128m -cp code/chapters/ch06-classloaders-modules/target/classes org.example.jvminternals.ch06.ServiceJourney code/chapters/ch06-classloaders-modules/target/service-provider
+"$CH06_JDK/bin/java" -Xmx128m -cp code/chapters/ch06-classloaders-modules/target/classes org.example.jvminternals.ch06.LayerJourney code/chapters/ch06-classloaders-modules/target/modules
+"$CH06_JDK/bin/java" -Xmx128m --module-path code/chapters/ch06-classloaders-modules/target/modules -m lesson.client/org.example.jvminternals.ch06.client.ModuleAccessJourney
+"$CH06_JDK/bin/java" -Xmx128m --add-exports lesson.library/org.example.jvminternals.ch06.internal=lesson.client --module-path code/chapters/ch06-classloaders-modules/target/modules -m lesson.client/org.example.jvminternals.ch06.client.ModuleAccessJourney
+"$CH06_JDK/bin/java" -Xmx128m --add-opens lesson.library/org.example.jvminternals.ch06.internal=lesson.client --module-path code/chapters/ch06-classloaders-modules/target/modules -m lesson.client/org.example.jvminternals.ch06.client.ModuleAccessJourney
 ```
 
 本轮六个进程均退出 0。转换与模块访问异常在教学边界捕获并作为结果输出，不添加预期值断言；导出／开放参数只影响本次教学进程，没有修改源描述符或系统设置。再次留证应选择新日志目录，避免覆盖本轮输出。
@@ -48,4 +48,4 @@ cp -R chapters/ch06-classloaders-modules/variants/service/resources/. chapters/c
 
 原始结果在 [ch06-20261103-01](evidence/runs/ch06-20261103-01/记录.md)，包含身份、服务、子层、三模块配置与编译日志；实际输入摘要固定源码、资源和模块产物。source-sha256.txt 中有当时根构建快照，后续模块增加不改写旧输入。
 
-Plugin 的一次反汇编用 `javap -s -p -classpath chapters/ch06-classloaders-modules/target/plugin org.example.jvminternals.ch06.isolated.Plugin`，工具同为上方 JDK。它只有一份描述符文本，两种运行时参数类型的定义者由实际反射输出分别说明；本轮未制造加载约束冲突。精确源码与契约见[证据索引](evidence/索引.md)。
+Plugin 的一次反汇编用 `javap -s -p -classpath code/chapters/ch06-classloaders-modules/target/plugin org.example.jvminternals.ch06.isolated.Plugin`，工具同为上方 JDK。它只有一份描述符文本，两种运行时参数类型的定义者由实际反射输出分别说明；本轮未制造加载约束冲突。精确源码与契约见[证据索引](evidence/索引.md)。

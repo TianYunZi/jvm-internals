@@ -4,7 +4,7 @@ Java开发工具包（Java Development Kit，JDK）25.0.5.0.2，HotSpot、macOS 
 
 ## 示例、性质与边界
 
-CH27-E01：MonitorJourney，包org.example.jvminternals.ch27。正式源码在src/main/java，阅读副本从正式文件生成；用户“执行P07”授权普通教学源码与有界观察，无测试、断言、并发压力或性能基准。
+CH27-E01：MonitorJourney，包org.example.jvminternals.ch27。正式源码在code/chapters/ch27-monitors/src/main/java，阅读副本从正式文件生成；用户“执行P07”授权普通教学源码与有界观察，无测试、断言、并发压力或性能基准。
 
 3个子线程；持锁6秒、wait循环12秒截止；重入两层，类库锁finally按层数释放。JDK飞行记录器（JDK Flight Recorder，JFR）与trace日志会改变观察开销，本例不用于计时排名。
 
@@ -15,11 +15,11 @@ CH27-E01：MonitorJourney，包org.example.jvminternals.ch27。正式源码在sr
 ```bash
 export JAVA_HOME=/opt/homebrew/Cellar/openjdk@25/25.0.5.0.2/libexec/openjdk.jdk/Contents/Home
 export PATH="$JAVA_HOME/bin:/opt/homebrew/bin:$PATH"
-mvn -B -ntp -pl chapters/ch27-monitors -am compile
-jfr configure --input profile --output chapters/ch27-monitors/target/monitors.jfc 'jdk.JavaMonitorEnter#enabled=true' 'jdk.JavaMonitorEnter#threshold=0ms' 'jdk.JavaMonitorWait#enabled=true' 'jdk.JavaMonitorWait#threshold=0ms' 'jdk.JavaMonitorInflate#enabled=true'
-java -Xmx128m -XX:+StartAttachListener -XX:StartFlightRecording=settings=chapters/ch27-monitors/target/monitors.jfc,filename=chapters/ch27-monitors/target/monitors.jfr,dumponexit=true '-Xlog:monitorinflation=trace:file=chapters/ch27-monitors/target/monitorinflation.log:uptimemillis,level,tags' -cp chapters/ch27-monitors/target/classes org.example.jvminternals.ch27.MonitorJourney
-jfr print --events jdk.JavaMonitorEnter,jdk.JavaMonitorWait,jdk.JavaMonitorInflate chapters/ch27-monitors/target/monitors.jfr
-javap -c -p -classpath chapters/ch27-monitors/target/classes org.example.jvminternals.ch27.MonitorJourney
+mvn -f code/pom.xml -B -ntp -pl :ch27-monitors -am compile
+jfr configure --input profile --output code/chapters/ch27-monitors/target/monitors.jfc 'jdk.JavaMonitorEnter#enabled=true' 'jdk.JavaMonitorEnter#threshold=0ms' 'jdk.JavaMonitorWait#enabled=true' 'jdk.JavaMonitorWait#threshold=0ms' 'jdk.JavaMonitorInflate#enabled=true'
+java -Xmx128m -XX:+StartAttachListener -XX:StartFlightRecording=settings=code/chapters/ch27-monitors/target/monitors.jfc,filename=code/chapters/ch27-monitors/target/monitors.jfr,dumponexit=true '-Xlog:monitorinflation=trace:file=code/chapters/ch27-monitors/target/monitorinflation.log:uptimemillis,level,tags' -cp code/chapters/ch27-monitors/target/classes org.example.jvminternals.ch27.MonitorJourney
+jfr print --events jdk.JavaMonitorEnter,jdk.JavaMonitorWait,jdk.JavaMonitorInflate code/chapters/ch27-monitors/target/monitors.jfr
+javap -c -p -classpath code/chapters/ch27-monitors/target/classes org.example.jvminternals.ch27.MonitorJourney
 java -Xmx128m -XX:+UnlockDiagnosticVMOptions -XX:+PrintFlagsFinal -version
 java -Xmx128m -XX:+UnlockDiagnosticVMOptions -XX:+UseCompactObjectHeaders -XX:+PrintFlagsFinal -version
 ```

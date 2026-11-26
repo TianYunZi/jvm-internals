@@ -6,7 +6,7 @@ Java 开发工具包（Java Development Kit，JDK）25.0.5.0.2、Maven 3.10.0、
 | --- | --- | --- |
 | CH10-E01 LayoutJourney | 普通布局观察，随“执行P04”授权；10.1—10.5；没有断言、故障或性能基准 | 九种固定样本、三对象共享图、哈希前后；堆32—128兆二进制字节（mebibyte，MiB）；不创建教学工作线程或网络，有限输出后退出 |
 
-源码为 src/main/java/org/example/jvminternals/ch10/LayoutJourney.java；字段由工具反射读取，继承字段重排是教学内容，不依赖源码声明顺序。提前停止只中断自己启动的教学进程。
+源码为 code/chapters/ch10-object-layout/src/main/java/org/example/jvminternals/ch10/LayoutJourney.java；字段由工具反射读取，继承字段重排是教学内容，不依赖源码声明顺序。提前停止只中断自己启动的教学进程。
 
 ## 固定工具与构建
 
@@ -16,10 +16,10 @@ Java Object Layout（JOL）使用官方提交 db2cc744485031c8149991a004ab02f2ea
 
 ```sh
 task_jdk=/opt/homebrew/Cellar/openjdk@25/25.0.5.0.2/libexec/openjdk.jdk/Contents/Home
-JAVA_HOME="$task_jdk" mvn -B -ntp -N org.apache.maven.plugins:maven-install-plugin:3.2.0:install-file -Dfile=chapters/ch10-object-layout/evidence/tools/jol-core-db2cc744.jar -DgroupId=org.openjdk.jol -DartifactId=jol-core -Dversion=0.18-db2cc744 -Dpackaging=jar -DgeneratePom=true
-JAVA_HOME="$task_jdk" mvn -B -ntp -pl chapters/ch10-object-layout -am compile
-"$task_jdk/bin/java" -Xms32m -Xmx128m -javaagent:chapters/ch10-object-layout/evidence/tools/jol-core-db2cc744.jar -Djol.skipHotspotSAAttach=true -XX:+PrintFlagsFinal -Xlog:gc+heap+coops=debug -cp chapters/ch10-object-layout/target/classes:chapters/ch10-object-layout/evidence/tools/jol-core-db2cc744.jar org.example.jvminternals.ch10.LayoutJourney
-"$task_jdk/bin/java" -Xms32m -Xmx128m -XX:+UseCompactObjectHeaders -javaagent:chapters/ch10-object-layout/evidence/tools/jol-core-db2cc744.jar -Djol.skipHotspotSAAttach=true -XX:+PrintFlagsFinal -Xlog:gc+heap+coops=debug -cp chapters/ch10-object-layout/target/classes:chapters/ch10-object-layout/evidence/tools/jol-core-db2cc744.jar org.example.jvminternals.ch10.LayoutJourney
+JAVA_HOME="$task_jdk" mvn -f code/pom.xml -B -ntp -N org.apache.maven.plugins:maven-install-plugin:3.2.0:install-file -Dfile="$PWD/chapters/ch10-object-layout/evidence/tools/jol-core-db2cc744.jar" -DgroupId=org.openjdk.jol -DartifactId=jol-core -Dversion=0.18-db2cc744 -Dpackaging=jar -DgeneratePom=true
+JAVA_HOME="$task_jdk" mvn -f code/pom.xml -B -ntp -pl :ch10-object-layout -am compile
+"$task_jdk/bin/java" -Xms32m -Xmx128m -javaagent:chapters/ch10-object-layout/evidence/tools/jol-core-db2cc744.jar -Djol.skipHotspotSAAttach=true -XX:+PrintFlagsFinal -Xlog:gc+heap+coops=debug -cp code/chapters/ch10-object-layout/target/classes:chapters/ch10-object-layout/evidence/tools/jol-core-db2cc744.jar org.example.jvminternals.ch10.LayoutJourney
+"$task_jdk/bin/java" -Xms32m -Xmx128m -XX:+UseCompactObjectHeaders -javaagent:chapters/ch10-object-layout/evidence/tools/jol-core-db2cc744.jar -Djol.skipHotspotSAAttach=true -XX:+PrintFlagsFinal -Xlog:gc+heap+coops=debug -cp code/chapters/ch10-object-layout/target/classes:chapters/ch10-object-layout/evidence/tools/jol-core-db2cc744.jar org.example.jvminternals.ch10.LayoutJourney
 ```
 
 本轮输出依次保存 default.txt、compact.txt。工具自身的启动代理用于对象大小支持，不是本书编写的测试代理。跳过 HotSpot 服务性代理（Serviceability Agent，SA）附加后，猜测的地址／基址／位移不可当实测。JOL 的状态文本仍含旧规则，只用原始头字节、字段偏移、数组偏移和大小；当前位图由锁定 HotSpot 源码解释，产品状态由官方设计和实际参数判断。

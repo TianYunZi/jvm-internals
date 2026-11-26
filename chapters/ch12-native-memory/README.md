@@ -4,7 +4,7 @@ Java开发工具包（Java Development Kit，JDK）25.0.5.0.2、Maven3.10.0、ma
 
 | 示例 | 源码／对应节／观察目的 | 资源和结束 |
 | --- | --- | --- |
-| CH12-E01 NativeJourney | src/main/java/org/example/jvminternals/ch12/NativeJourney.java；12.1—12.5；基线、持有与释放的用途账本 | 每阶段45秒，约135秒自然退出；4工作线程在主流程停止后join，自身最多等待90秒；8MiB直接缓冲区、256KiB外部块、24加载器；最多两次回收请求 |
+| CH12-E01 NativeJourney | code/chapters/ch12-native-memory/src/main/java/org/example/jvminternals/ch12/NativeJourney.java；12.1—12.5；基线、持有与释放的用途账本 | 每阶段45秒，约135秒自然退出；4工作线程在主流程停止后join，自身最多等待90秒；8MiB直接缓冲区、256KiB外部块、24加载器；最多两次回收请求 |
 
 MiB为兆二进制字节（mebibyte），KiB为千二进制字节（kibibyte）。堆32—128MiB，每教学平台线程栈512KiB，直接池容量上限16MiB。只保留一个容量1的直接切片；Arena显式关闭，直接池清理与类卸载依赖回收协作。不访问失效内存，不创建网络连接。提前停止只中断自己的新进程；最终系统会回收进程资源，但这不代替长进程及时关闭。
 
@@ -14,9 +14,9 @@ MiB为兆二进制字节（mebibyte），KiB为千二进制字节（kibibyte）�
 
 ```sh
 task_jdk=/opt/homebrew/Cellar/openjdk@25/25.0.5.0.2/libexec/openjdk.jdk/Contents/Home
-JAVA_HOME="$task_jdk" mvn -B -ntp -pl chapters/ch12-native-memory -am compile
-"$task_jdk/bin/javac" --release 25 -g -parameters -d chapters/ch12-native-memory/target/disposable chapters/ch08-type-metadata/variants/disposable/org/example/jvminternals/ch08/disposable/Disposable.java
-"$task_jdk/bin/java" -Xms32m -Xmx128m -Xss512k -XX:MaxDirectMemorySize=16m -XX:NativeMemoryTracking=summary -Xlog:class+unload=info,gc+metaspace=info,gc=info:file=chapters/ch12-native-memory/evidence/runs/ch12-20261103-02/lifecycle.log -cp chapters/ch12-native-memory/target/classes org.example.jvminternals.ch12.NativeJourney chapters/ch12-native-memory/target/disposable 2>&1 | tee chapters/ch12-native-memory/evidence/runs/ch12-20261103-02/program.txt
+JAVA_HOME="$task_jdk" mvn -f code/pom.xml -B -ntp -pl :ch12-native-memory -am compile
+"$task_jdk/bin/javac" --release 25 -g -parameters -d code/chapters/ch12-native-memory/target/disposable code/chapters/ch08-type-metadata/variants/disposable/org/example/jvminternals/ch08/disposable/Disposable.java
+"$task_jdk/bin/java" -Xms32m -Xmx128m -Xss512k -XX:MaxDirectMemorySize=16m -XX:NativeMemoryTracking=summary -Xlog:class+unload=info,gc+metaspace=info,gc=info:file=chapters/ch12-native-memory/evidence/runs/ch12-20261103-02/lifecycle.log -cp code/chapters/ch12-native-memory/target/classes org.example.jvminternals.ch12.NativeJourney code/chapters/ch12-native-memory/target/disposable 2>&1 | tee chapters/ch12-native-memory/evidence/runs/ch12-20261103-02/program.txt
 ```
 
 本地内存跟踪（Native Memory Tracking，NMT）必须从启动启用，附加需本机诊断权限。观察需另一个终端；先从程序输出取得新进程号，不重用本轮历史编号23682。文件名在重放时选择新运行目录，不覆盖本轮证据。

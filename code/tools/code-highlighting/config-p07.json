@@ -6,7 +6,7 @@
   "plainTextLanguage":"text",
   "chapters":["ch25-memory-model","ch26-platform-threads","ch27-monitors","ch28-virtual-threads","ch29-scoped-concurrency"],
   "extraSourceFiles":{
-    "ch28-virtual-threads":[{"path":"chapters/ch28-virtual-threads/native/carrierjourney.c","language":"c"}],
-    "ch29-scoped-concurrency":[{"path":"chapters/ch29-scoped-concurrency/preview/src/main/java/org/example/jvminternals/ch29/StructuredJourney.java","language":"java"}]
+    "ch28-virtual-threads":[{"path":"code/chapters/ch28-virtual-threads/native/carrierjourney.c","language":"c"}],
+    "ch29-scoped-concurrency":[{"path":"code/chapters/ch29-scoped-concurrency/preview/src/main/java/org/example/jvminternals/ch29/StructuredJourney.java","language":"java"}]
   }
 }

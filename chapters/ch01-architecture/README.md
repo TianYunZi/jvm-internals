@@ -1,6 +1,6 @@
 # 第 1 章贯穿程序与运行说明
 
-正文为[第 1 章](chapter.html)，浏览器可阅读[完整源码](sources.html#ch01-e01)。正式编译输入是 `src/main/java/org/example/jvminternals/ch01/ProgramJourney.java`；阅读副本从它生成，不手工维护另一套程序。
+正文为[第 1 章](chapter.html)，浏览器可阅读[完整源码](sources.html#ch01-e01)。正式编译输入是 `code/chapters/ch01-architecture/src/main/java/org/example/jvminternals/ch01/ProgramJourney.java`；阅读副本从它生成，不手工维护另一套程序。
 
 ## 身份、范围与资源
 
@@ -16,9 +16,9 @@ CH01-E01 对应 1.1—1.5：读取小文本、创建普通对象、调用方法�
 
 ```sh
 CH01_JDK=/opt/homebrew/Cellar/openjdk@25/25.0.5.0.2/libexec/openjdk.jdk/Contents/Home
-JAVA_HOME="$CH01_JDK" mvn --offline --batch-mode --no-transfer-progress -pl chapters/ch01-architecture -am compile
-"$CH01_JDK/bin/java" -Xms32m -Xmx128m -Xlog:class+load=info:file=chapters/ch01-architecture/evidence/runs/ch01-20261103-01/class-load.log:uptime,level,tags -cp chapters/ch01-architecture/target/classes org.example.jvminternals.ch01.ProgramJourney chapters/ch01-architecture/src/main/resources/message.txt 0
-"$CH01_JDK/bin/javap" -c -p -classpath chapters/ch01-architecture/target/classes org.example.jvminternals.ch01.ProgramJourney 'org.example.jvminternals.ch01.ProgramJourney$Payload'
+JAVA_HOME="$CH01_JDK" mvn -f code/pom.xml --offline --batch-mode --no-transfer-progress -pl :ch01-architecture -am compile
+"$CH01_JDK/bin/java" -Xms32m -Xmx128m -Xlog:class+load=info:file=chapters/ch01-architecture/evidence/runs/ch01-20261103-01/class-load.log:uptime,level,tags -cp code/chapters/ch01-architecture/target/classes org.example.jvminternals.ch01.ProgramJourney code/chapters/ch01-architecture/src/main/resources/message.txt 0
+"$CH01_JDK/bin/javap" -c -p -classpath code/chapters/ch01-architecture/target/classes org.example.jvminternals.ch01.ProgramJourney 'org.example.jvminternals.ch01.ProgramJourney$Payload'
 ```
 
 上述为本次实际命令的同参数形式；实际程序标准输出和错误合并保存于 `program.txt`，反汇编保存于 `program.javap.txt`。重复命令会重写同名日志，另行留证时先选择新的记录目录，不覆盖本轮正式证据。首次无插件缓存可去掉 `--offline` 联网取得相同固定版本插件；本轮没有重新下载插件。

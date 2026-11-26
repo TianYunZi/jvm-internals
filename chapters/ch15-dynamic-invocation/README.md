@@ -1,6 +1,6 @@
 # 第15章 动态调用、反射与运行时生成：源码与运行
 
-Java开发工具包（Java Development Kit，JDK）25.0.5.0.2、HotSpot、macOS AArch64；工具显式选用下列目录。源码为本章src/main/java，页面阅读副本为[sources.html](sources.html)。
+Java开发工具包（Java Development Kit，JDK）25.0.5.0.2、HotSpot、macOS AArch64；工具显式选用下列目录。源码位于 code/chapters/ch15-dynamic-invocation/src/main/java，页面阅读副本为[sources.html](sources.html)。
 
 ## 示例与授权
 
@@ -13,10 +13,10 @@ CH15-E01 DynamicJourney包含句柄、Lambda／拼接及反射／代理；CH15-E
 ```sh
 export JAVA_HOME=/opt/homebrew/Cellar/openjdk@25/25.0.5.0.2/libexec/openjdk.jdk/Contents/Home
 export PATH="$JAVA_HOME/bin:/opt/homebrew/bin:$PATH"
-mvn -B -ntp -pl chapters/ch15-dynamic-invocation -am compile
-java -Xms16m -Xmx128m -Xlog:class+load=info:file=chapters/ch15-dynamic-invocation/evidence/runs/ch15-20261103-01/classes.log:uptime,level,tags -cp chapters/ch15-dynamic-invocation/target/classes org.example.jvminternals.ch15.DynamicJourney
-javap -c -v -p chapters/ch15-dynamic-invocation/target/generated/GeneratedLinkage.class
-javap -c -v -p -classpath chapters/ch15-dynamic-invocation/target/classes org.example.jvminternals.ch15.DynamicJourney
+mvn -f code/pom.xml -B -ntp -pl :ch15-dynamic-invocation -am compile
+(cd code && java -Xms16m -Xmx128m -Xlog:class+load=info:file=../chapters/ch15-dynamic-invocation/evidence/runs/ch15-20261103-01/classes.log:uptime,level,tags -cp chapters/ch15-dynamic-invocation/target/classes org.example.jvminternals.ch15.DynamicJourney)
+javap -c -v -p code/chapters/ch15-dynamic-invocation/target/generated/GeneratedLinkage.class
+javap -c -v -p -classpath code/chapters/ch15-dynamic-invocation/target/classes org.example.jvminternals.ch15.DynamicJourney
 ```
 
 ## 实际观察与边界

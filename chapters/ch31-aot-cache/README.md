@@ -11,8 +11,8 @@ P08_JDK=/opt/homebrew/opt/openjdk@25
 CH31-E01 CacheJourney固定60,000次小请求，add和multiply是两条正常路径；无吞吐计算、断言和稳定期判据。训练与部署使用同一个Java归档（Java Archive，JAR），参数改变不重打包。
 
 ```bash
-JAVA_HOME="$P08_JDK" /opt/homebrew/bin/mvn -pl chapters/ch31-aot-cache -am compile
-"$P08_JDK/bin/jar" --create --file chapters/ch31-aot-cache/target/cache.jar --main-class org.example.jvminternals.ch31.CacheJourney -C chapters/ch31-aot-cache/target/classes .
+JAVA_HOME="$P08_JDK" /opt/homebrew/bin/mvn -f code/pom.xml -pl :ch31-aot-cache -am compile
+"$P08_JDK/bin/jar" --create --file code/chapters/ch31-aot-cache/target/cache.jar --main-class org.example.jvminternals.ch31.CacheJourney -C code/chapters/ch31-aot-cache/target/classes .
 ```
 
 ## 提前处理（Ahead-of-Time，AOT）三阶段
@@ -20,23 +20,23 @@ JAVA_HOME="$P08_JDK" /opt/homebrew/bin/mvn -pl chapters/ch31-aot-cache -am compi
 星号选项必须引用，避免zsh先作文件名展开。下面每个程序都有限结束，训练／装配可能比普通部署慢。记录中的time是真实单次进程口径，不能据此下统计性能结论。
 
 ```bash
-/usr/bin/time -p "$P08_JDK/bin/java" -Xmx64m -XX:AOTMode=record -XX:AOTConfiguration=chapters/ch31-aot-cache/target/training.aotconfig '-Xlog:aot*=debug,jit+compilation=debug:file=chapters/ch31-aot-cache/evidence/runs/ch31-20261103-01/training.log' -cp chapters/ch31-aot-cache/target/cache.jar org.example.jvminternals.ch31.CacheJourney add
-/usr/bin/time -p "$P08_JDK/bin/java" -Xmx64m -XX:AOTMode=create -XX:AOTConfiguration=chapters/ch31-aot-cache/target/training.aotconfig -XX:AOTCache=chapters/ch31-aot-cache/target/cache.aot '-Xlog:aot*=debug:file=chapters/ch31-aot-cache/evidence/runs/ch31-20261103-01/assembly.log' -cp chapters/ch31-aot-cache/target/cache.jar
-/usr/bin/time -p "$P08_JDK/bin/java" -Xmx64m -XX:AOTMode=on -XX:AOTCache=chapters/ch31-aot-cache/target/cache.aot '-Xlog:aot*=debug,class+load=info,jit+compilation=debug:file=chapters/ch31-aot-cache/evidence/runs/ch31-20261103-01/deploy.log' -cp chapters/ch31-aot-cache/target/cache.jar org.example.jvminternals.ch31.CacheJourney add
+/usr/bin/time -p "$P08_JDK/bin/java" -Xmx64m -XX:AOTMode=record -XX:AOTConfiguration=code/chapters/ch31-aot-cache/target/training.aotconfig '-Xlog:aot*=debug,jit+compilation=debug:file=chapters/ch31-aot-cache/evidence/runs/ch31-20261103-01/training.log' -cp code/chapters/ch31-aot-cache/target/cache.jar org.example.jvminternals.ch31.CacheJourney add
+/usr/bin/time -p "$P08_JDK/bin/java" -Xmx64m -XX:AOTMode=create -XX:AOTConfiguration=code/chapters/ch31-aot-cache/target/training.aotconfig -XX:AOTCache=code/chapters/ch31-aot-cache/target/cache.aot '-Xlog:aot*=debug:file=chapters/ch31-aot-cache/evidence/runs/ch31-20261103-01/assembly.log' -cp code/chapters/ch31-aot-cache/target/cache.jar
+/usr/bin/time -p "$P08_JDK/bin/java" -Xmx64m -XX:AOTMode=on -XX:AOTCache=code/chapters/ch31-aot-cache/target/cache.aot '-Xlog:aot*=debug,class+load=info,jit+compilation=debug:file=chapters/ch31-aot-cache/evidence/runs/ch31-20261103-01/deploy.log' -cp code/chapters/ch31-aot-cache/target/cache.jar org.example.jvminternals.ch31.CacheJourney add
 ```
 
 25版的简化流程保留训练结束后自动启动装配子进程：
 
 ```bash
-"$P08_JDK/bin/java" -Xmx64m -XX:AOTCacheOutput=chapters/ch31-aot-cache/target/simple.aot -Xlog:aot=info:file=chapters/ch31-aot-cache/evidence/runs/ch31-20261103-01/simple.log -cp chapters/ch31-aot-cache/target/cache.jar org.example.jvminternals.ch31.CacheJourney add
+"$P08_JDK/bin/java" -Xmx64m -XX:AOTCacheOutput=code/chapters/ch31-aot-cache/target/simple.aot -Xlog:aot=info:file=chapters/ch31-aot-cache/evidence/runs/ch31-20261103-01/simple.log -cp code/chapters/ch31-aot-cache/target/cache.jar org.example.jvminternals.ch31.CacheJourney add
 ```
 
 ## 普通对照、训练外路径与画像重放
 
 ```bash
-/usr/bin/time -p "$P08_JDK/bin/java" -Xmx64m -XX:AOTMode=off '-Xlog:class+load=info,jit+compilation=debug:file=chapters/ch31-aot-cache/evidence/runs/ch31-20261103-01/off.log' -cp chapters/ch31-aot-cache/target/cache.jar org.example.jvminternals.ch31.CacheJourney add
-/usr/bin/time -p "$P08_JDK/bin/java" -Xmx64m -XX:AOTMode=on -XX:AOTCache=chapters/ch31-aot-cache/target/cache.aot '-Xlog:aot*=debug,class+load=info,jit+compilation=debug:file=chapters/ch31-aot-cache/evidence/runs/ch31-20261103-01/changed.log' -cp chapters/ch31-aot-cache/target/cache.jar org.example.jvminternals.ch31.CacheJourney multiply
-"$P08_JDK/bin/java" -Xmx64m -XX:AOTMode=on -XX:AOTCache=chapters/ch31-aot-cache/target/cache.aot '-Xlog:training=debug,aot+training=debug,jit+compilation=debug:file=chapters/ch31-aot-cache/evidence/runs/ch31-20261103-01/profile-replay.log' -cp chapters/ch31-aot-cache/target/cache.jar org.example.jvminternals.ch31.CacheJourney add
+/usr/bin/time -p "$P08_JDK/bin/java" -Xmx64m -XX:AOTMode=off '-Xlog:class+load=info,jit+compilation=debug:file=chapters/ch31-aot-cache/evidence/runs/ch31-20261103-01/off.log' -cp code/chapters/ch31-aot-cache/target/cache.jar org.example.jvminternals.ch31.CacheJourney add
+/usr/bin/time -p "$P08_JDK/bin/java" -Xmx64m -XX:AOTMode=on -XX:AOTCache=code/chapters/ch31-aot-cache/target/cache.aot '-Xlog:aot*=debug,class+load=info,jit+compilation=debug:file=chapters/ch31-aot-cache/evidence/runs/ch31-20261103-01/changed.log' -cp code/chapters/ch31-aot-cache/target/cache.jar org.example.jvminternals.ch31.CacheJourney multiply
+"$P08_JDK/bin/java" -Xmx64m -XX:AOTMode=on -XX:AOTCache=code/chapters/ch31-aot-cache/target/cache.aot '-Xlog:training=debug,aot+training=debug,jit+compilation=debug:file=chapters/ch31-aot-cache/evidence/runs/ch31-20261103-01/profile-replay.log' -cp code/chapters/ch31-aot-cache/target/cache.jar org.example.jvminternals.ch31.CacheJourney add
 ```
 
 即时编译（Just-in-Time Compilation，JIT）与业务标记分开到日志，避免原先PrintCompilation与格式化输出交错。画像重放与当前编译均出现；Multiply训练外类仍从应用文件加载。缓存文件12,058,624字节，不能直接代表驻留内存或预热收益。完整日志的位置及摘要见[运行记录](evidence/runs/ch31-20261103-01/记录.md)。
