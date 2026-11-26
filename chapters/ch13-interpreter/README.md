@@ -1,6 +1,6 @@
 # 第13章 解释器、栈帧与异常执行：源码与运行
 
-Java开发工具包（Java Development Kit，JDK）25.0.5.0.2、HotSpot、macOS AArch64；工具显式选用下列目录。源码为本章src/main/java，页面阅读副本为[sources.html](sources.html)。
+Java开发工具包（Java Development Kit，JDK）25.0.5.0.2、HotSpot、macOS AArch64；工具显式选用下列目录。源码位于 code/chapters/ch13-interpreter/src/main/java，页面阅读副本为[sources.html](sources.html)。
 
 ## 示例与授权
 
@@ -13,9 +13,9 @@ CH13-E01 ExceptionJourney：两个已捕获异常，固定2次、单线程、堆
 ```sh
 export JAVA_HOME=/opt/homebrew/Cellar/openjdk@25/25.0.5.0.2/libexec/openjdk.jdk/Contents/Home
 export PATH="$JAVA_HOME/bin:/opt/homebrew/bin:$PATH"
-mvn -B -ntp -pl chapters/ch13-interpreter -am compile
-java -Xint -Xms16m -Xmx64m -Xlog:exceptions=info:file=chapters/ch13-interpreter/evidence/runs/ch13-20261103-01/exceptions.log:uptime,level,tags -cp chapters/ch13-interpreter/target/classes org.example.jvminternals.ch13.ExceptionJourney
-javap -c -v -p -classpath chapters/ch13-interpreter/target/classes org.example.jvminternals.ch13.ExceptionJourney
+mvn -f code/pom.xml -B -ntp -pl :ch13-interpreter -am compile
+java -Xint -Xms16m -Xmx64m -Xlog:exceptions=info:file=chapters/ch13-interpreter/evidence/runs/ch13-20261103-01/exceptions.log:uptime,level,tags -cp code/chapters/ch13-interpreter/target/classes org.example.jvminternals.ch13.ExceptionJourney
+javap -c -v -p -classpath code/chapters/ch13-interpreter/target/classes org.example.jvminternals.ch13.ExceptionJourney
 ```
 
 ## 实际观察与边界

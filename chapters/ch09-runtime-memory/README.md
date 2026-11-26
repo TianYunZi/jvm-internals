@@ -6,14 +6,14 @@
 | --- | --- | --- |
 | CH09-O01 | 普通对象、线程、类活动的进程账本观察；随用户“执行P04”授权复用；无新代码或新运行 | CH01-E01 ProgramJourney、message.txt；CH02-O02 同窗口采集 |
 
-源文件入口为 `../ch01-architecture/src/main/java/org/example/jvminternals/ch01/ProgramJourney.java`，阅读页为 [CH01 源码](../ch01-architecture/sources.html)。没有变更。原编译为 CH01-O01，当前源与类文件摘要复核见本章 evidence/runs/ch09-20261103-01/。复用既有编译和观测，不用一次重新编译来冒充旧进程的输入。
+源文件入口为 `../../code/chapters/ch01-architecture/src/main/java/org/example/jvminternals/ch01/ProgramJourney.java`，阅读页为 [CH01 源码](../ch01-architecture/sources.html)。没有变更。原编译为 CH01-O01，当前源与类文件摘要复核见本章 evidence/runs/ch09-20261103-01/。复用既有编译和观测，不用一次重新编译来冒充旧进程的输入。
 
 原进程堆初始 32、上限 128 兆二进制字节（mebibyte，MiB），只增加一个教学工作线程，观察窗口 60 秒后自然退出。命令工作目录为项目根目录：
 
 ```sh
 task_jdk=/opt/homebrew/Cellar/openjdk@25/25.0.5.0.2/libexec/openjdk.jdk/Contents/Home
-JAVA_HOME="$task_jdk" mvn -B -ntp -pl chapters/ch01-architecture -am compile
-"$task_jdk/bin/java" -Xms32m -Xmx128m -XX:NativeMemoryTracking=detail -cp chapters/ch01-architecture/target/classes org.example.jvminternals.ch01.ProgramJourney chapters/ch01-architecture/src/main/resources/message.txt 60
+JAVA_HOME="$task_jdk" mvn -f code/pom.xml -B -ntp -pl :ch01-architecture -am compile
+"$task_jdk/bin/java" -Xms32m -Xmx128m -XX:NativeMemoryTracking=detail -cp code/chapters/ch01-architecture/target/classes org.example.jvminternals.ch01.ProgramJourney code/chapters/ch01-architecture/src/main/resources/message.txt 60
 # 从上述程序的阶段输出取得实际进程号，用它替换 TASK_PID；不要重用历史 15216。
 ps -p TASK_PID -o pid,ppid,%cpu,rss,vsz,etime,command
 vmmap -summary TASK_PID

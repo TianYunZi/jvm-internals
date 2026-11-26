@@ -6,7 +6,9 @@ import {dirname, join, relative} from 'node:path';
 import {fileURLToPath} from 'node:url';
 
 const toolDir=dirname(fileURLToPath(import.meta.url));
-const root=join(toolDir,'../..');
+// 源码归工程目录，阅读页和证据仍从书稿根目录定位。
+const projectDir=join(toolDir,'../..');
+const root=dirname(projectDir);
 // 各阶段选择自己的输入清单，保留既有P05生成范围和历史记录。
 const config=JSON.parse(await readFile(join(toolDir,process.argv[2]??'config.json'),'utf8'));
 const stage=config.stage??'p05';
@@ -94,8 +96,7 @@ function chapterHtml(html,folder){
 
 /** 源码阅读副本始终从正式Java文件生成，不以既有展示HTML反推源文件。 */
 async function sourcePage(folder){
-  const base=join(root,'chapters',folder);
-  const sourceDir=join(root,'chapters',config.sourceFolders?.[folder]??folder,'src/main/java');
+  const sourceDir=join(projectDir,'chapters',config.sourceFolders?.[folder]??folder,'src/main/java');
   const pieces=[];
   async function visit(dir){
     const children=await readdir(dir,{withFileTypes:true});
@@ -104,8 +105,8 @@ async function sourcePage(folder){
       const path=join(dir,child.name);
       if(child.isDirectory())await visit(path);
       else if(child.name.endsWith('.java')){
-        const sourceFile=relative(root,path);const title=relative(base,path);
-        pieces.push(`<h2>${inline(title,'text')}</h2>`+block(await readFile(path,'utf8'),'java',sourceFile));
+        const sourceFile=relative(root,path);
+        pieces.push(`<h2>${inline(sourceFile,'text')}</h2>`+block(await readFile(path,'utf8'),'java',sourceFile));
       }
     }
   }
@@ -113,7 +114,7 @@ async function sourcePage(folder){
   // 预览Java与本地C源属于独立构建；仅在明确清单中加入阅读页。
   for(const extra of config.extraSourceFiles?.[folder]??[]){
     const path=join(root,extra.path);
-    pieces.push(`<h2>${inline(relative(base,path),'text')}</h2>`+block(await readFile(path,'utf8'),extra.language,extra.path));
+    pieces.push(`<h2>${inline(extra.path,'text')}</h2>`+block(await readFile(path,'utf8'),extra.language,extra.path));
   }
   return document(folder,'源码阅读',`<p>由正式源文件生成的静态阅读副本。<a href="chapter.html">返回正文</a> · <a href="README.html">运行说明</a></p>`+pieces.join('\n'));
 }

@@ -11,8 +11,8 @@ Java开发工具包（Java Development Kit，JDK）25.0.5.0.2，HotSpot、macOS 
 ```sh
 export JAVA_HOME=/opt/homebrew/Cellar/openjdk@25/25.0.5.0.2/libexec/openjdk.jdk/Contents/Home
 export PATH="$JAVA_HOME/bin:/opt/homebrew/bin:$PATH"
-mvn -B -ntp -pl chapters/ch20-safepoints-barriers -am compile
-java -Xms16m -Xmx64m -XX:+UseG1GC '-Xlog:gc*,safepoint=debug,handshake=debug:file=chapters/ch20-safepoints-barriers/evidence/runs/ch20-20261103-01/runtime.log:uptimemillis,level,tags' -cp chapters/ch20-safepoints-barriers/target/classes org.example.jvminternals.ch20.SafepointJourney
+mvn -f code/pom.xml -B -ntp -pl :ch20-safepoints-barriers -am compile
+java -Xms16m -Xmx64m -XX:+UseG1GC '-Xlog:gc*,safepoint=debug,handshake=debug:file=chapters/ch20-safepoints-barriers/evidence/runs/ch20-20261103-01/runtime.log:uptimemillis,level,tags' -cp code/chapters/ch20-safepoints-barriers/target/classes org.example.jvminternals.ch20.SafepointJourney
 ```
 
 ## 实际记录与边界

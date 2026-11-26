@@ -7,7 +7,7 @@ Java 开发工具包（Java Development Kit，JDK）25.0.5.0.2、Maven3.10.0、m
 | CH11-E01 AllocationJourney | 11.1—11.3、11.5；观察局部与逃逸对象、分配字节、编译与缓冲区 | 两入口各2万预备调用，随后各20万调用，单主线程，只保留最后一个Pair，最后请求一次回收并退出 |
 | CH11-E02 StringJourney | 11.4；只读观察内容共享、驻留与去重 | 4000个128字符字符串，最多两次回收请求、每次等待500毫秒后观察，1秒观察窗口后退出 |
 
-源码在 src/main/java/org/example/jvminternals/ch11，正文和真实源阅读页为 [chapter.html](chapter.html)、[sources.html](sources.html)。堆初始32、上限128兆二进制字节（mebibyte，MiB）。不创建教学工作线程或网络，不持续增加输入。提前停止只中断自己的教学进程。
+源码在 code/chapters/ch11-allocation/src/main/java/org/example/jvminternals/ch11，正文和真实源阅读页为 [chapter.html](chapter.html)、[sources.html](sources.html)。堆初始32、上限128兆二进制字节（mebibyte，MiB）。不创建教学工作线程或网络，不持续增加输入。提前停止只中断自己的教学进程。
 
 ## 编译与分配观察
 
@@ -15,12 +15,12 @@ Java 开发工具包（Java Development Kit，JDK）25.0.5.0.2、Maven3.10.0、m
 
 ```sh
 task_jdk=/opt/homebrew/Cellar/openjdk@25/25.0.5.0.2/libexec/openjdk.jdk/Contents/Home
-JAVA_HOME="$task_jdk" mvn -B -ntp -pl chapters/ch11-allocation -am compile
+JAVA_HOME="$task_jdk" mvn -f code/pom.xml -B -ntp -pl :ch11-allocation -am compile
 "$task_jdk/bin/jfr" configure --input profile.jfc +jdk.ObjectAllocationInNewTLAB#enabled=true +jdk.ObjectAllocationOutsideTLAB#enabled=true --output chapters/ch11-allocation/evidence/runs/ch11-20261103-01/allocation.jfc
-"$task_jdk/bin/java" -Xms32m -Xmx128m -XX:-TieredCompilation -Xbatch -XX:CompileThreshold=5000 -XX:CompileCommand=dontinline,org.example.jvminternals.ch11.AllocationJourney::localSum -XX:CompileCommand=dontinline,org.example.jvminternals.ch11.AllocationJourney::escapedSum -XX:+UnlockDiagnosticVMOptions -XX:+LogCompilation -XX:LogFile=artifacts/ch11/ch11-20261103-01/compilation.xml -XX:StartFlightRecording=settings=chapters/ch11-allocation/evidence/runs/ch11-20261103-01/allocation.jfc,filename=artifacts/ch11/ch11-20261103-01/allocation.jfr -Xlog:gc+tlab=trace,gc=info:file=chapters/ch11-allocation/evidence/runs/ch11-20261103-01/tlab.log -cp chapters/ch11-allocation/target/classes org.example.jvminternals.ch11.AllocationJourney
-"$task_jdk/bin/java" -Xms32m -Xmx128m -XX:-TieredCompilation -Xbatch -XX:CompileThreshold=5000 -XX:-DoEscapeAnalysis -XX:CompileCommand=dontinline,org.example.jvminternals.ch11.AllocationJourney::localSum -XX:CompileCommand=dontinline,org.example.jvminternals.ch11.AllocationJourney::escapedSum -XX:+UnlockDiagnosticVMOptions -XX:+LogCompilation -XX:LogFile=artifacts/ch11/ch11-20261103-01/no-ea-compilation.xml -Xlog:gc+tlab=debug,gc=info:file=chapters/ch11-allocation/evidence/runs/ch11-20261103-01/no-ea-tlab.log -cp chapters/ch11-allocation/target/classes org.example.jvminternals.ch11.AllocationJourney
+"$task_jdk/bin/java" -Xms32m -Xmx128m -XX:-TieredCompilation -Xbatch -XX:CompileThreshold=5000 -XX:CompileCommand=dontinline,org.example.jvminternals.ch11.AllocationJourney::localSum -XX:CompileCommand=dontinline,org.example.jvminternals.ch11.AllocationJourney::escapedSum -XX:+UnlockDiagnosticVMOptions -XX:+LogCompilation -XX:LogFile=artifacts/ch11/ch11-20261103-01/compilation.xml -XX:StartFlightRecording=settings=chapters/ch11-allocation/evidence/runs/ch11-20261103-01/allocation.jfc,filename=artifacts/ch11/ch11-20261103-01/allocation.jfr -Xlog:gc+tlab=trace,gc=info:file=chapters/ch11-allocation/evidence/runs/ch11-20261103-01/tlab.log -cp code/chapters/ch11-allocation/target/classes org.example.jvminternals.ch11.AllocationJourney
+"$task_jdk/bin/java" -Xms32m -Xmx128m -XX:-TieredCompilation -Xbatch -XX:CompileThreshold=5000 -XX:-DoEscapeAnalysis -XX:CompileCommand=dontinline,org.example.jvminternals.ch11.AllocationJourney::localSum -XX:CompileCommand=dontinline,org.example.jvminternals.ch11.AllocationJourney::escapedSum -XX:+UnlockDiagnosticVMOptions -XX:+LogCompilation -XX:LogFile=artifacts/ch11/ch11-20261103-01/no-ea-compilation.xml -Xlog:gc+tlab=debug,gc=info:file=chapters/ch11-allocation/evidence/runs/ch11-20261103-01/no-ea-tlab.log -cp code/chapters/ch11-allocation/target/classes org.example.jvminternals.ch11.AllocationJourney
 "$task_jdk/bin/jfr" print --events jdk.ObjectAllocationInNewTLAB,jdk.ObjectAllocationOutsideTLAB,jdk.ObjectAllocationSample --stack-depth 12 artifacts/ch11/ch11-20261103-01/allocation.jfr
-"$task_jdk/bin/javap" -p -c -classpath chapters/ch11-allocation/target/classes org.example.jvminternals.ch11.AllocationJourney
+"$task_jdk/bin/javap" -p -c -classpath code/chapters/ch11-allocation/target/classes org.example.jvminternals.ch11.AllocationJourney
 ```
 
 飞行记录器（JDK Flight Recorder，JFR）记录的线程本地分配缓冲区（Thread-Local Allocation Buffer，TLAB）事件不是每次对象分配的全量追踪。线程分配接口是近似计数；编译入口可能经历不同形态。预期要关联阶段、转换记录和分配数据，不预设所有版本都为零。两配置观测设置不同，不用于计时或吞吐比较。
@@ -28,8 +28,8 @@ JAVA_HOME="$task_jdk" mvn -B -ntp -pl chapters/ch11-allocation -am compile
 ## 字符串观察
 
 ```sh
-"$task_jdk/bin/java" -Xms32m -Xmx128m --add-opens java.base/java.lang=ALL-UNNAMED -XX:-UseStringDeduplication '-Xlog:stringdedup*=debug,gc=info:file=chapters/ch11-allocation/evidence/runs/ch11-20261103-01/string-no-dedup.log' -cp chapters/ch11-allocation/target/classes org.example.jvminternals.ch11.StringJourney
-"$task_jdk/bin/java" -Xms32m -Xmx128m --add-opens java.base/java.lang=ALL-UNNAMED -XX:+UseStringDeduplication -XX:StringDeduplicationAgeThreshold=1 '-Xlog:stringdedup*=debug,gc=info:file=chapters/ch11-allocation/evidence/runs/ch11-20261103-01/string-dedup.log' -cp chapters/ch11-allocation/target/classes org.example.jvminternals.ch11.StringJourney
+"$task_jdk/bin/java" -Xms32m -Xmx128m --add-opens java.base/java.lang=ALL-UNNAMED -XX:-UseStringDeduplication '-Xlog:stringdedup*=debug,gc=info:file=chapters/ch11-allocation/evidence/runs/ch11-20261103-01/string-no-dedup.log' -cp code/chapters/ch11-allocation/target/classes org.example.jvminternals.ch11.StringJourney
+"$task_jdk/bin/java" -Xms32m -Xmx128m --add-opens java.base/java.lang=ALL-UNNAMED -XX:+UseStringDeduplication -XX:StringDeduplicationAgeThreshold=1 '-Xlog:stringdedup*=debug,gc=info:file=chapters/ch11-allocation/evidence/runs/ch11-20261103-01/string-dedup.log' -cp code/chapters/ch11-allocation/target/classes org.example.jvminternals.ch11.StringJourney
 ```
 
 引号避免zsh把星号当作文件匹配。开放java.lang只为此进程的只读教学反射；不修改String内部字段。去重是异步操作，两次请求后未出现也应记录实际结果，不能循环施压追求预设现象。字符串包装身份与内容数组共享分别观察。

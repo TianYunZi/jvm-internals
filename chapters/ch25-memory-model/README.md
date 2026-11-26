@@ -4,7 +4,7 @@ Java开发工具包（Java Development Kit，JDK）25.0.5.0.2，HotSpot、macOS 
 
 ## 示例、性质与边界
 
-CH25-E01：PublicationJourney，包org.example.jvminternals.ch25。正式源码在src/main/java，阅读副本从正式文件生成；用户“执行P07”授权普通教学源码与有界观察，无测试、断言、并发压力或性能基准。
+CH25-E01：PublicationJourney，包org.example.jvminternals.ch25。正式源码在code/chapters/ch25-memory-model/src/main/java，阅读副本从正式文件生成；用户“执行P07”授权普通教学源码与有界观察，无测试、断言、并发压力或性能基准。
 
 2个子线程；发布等待上限2秒；正常join全部线程。代码片段直接对应发布者；javap不是机器码。
 
@@ -15,9 +15,9 @@ CH25-E01：PublicationJourney，包org.example.jvminternals.ch25。正式源码�
 ```bash
 export JAVA_HOME=/opt/homebrew/Cellar/openjdk@25/25.0.5.0.2/libexec/openjdk.jdk/Contents/Home
 export PATH="$JAVA_HOME/bin:/opt/homebrew/bin:$PATH"
-mvn -B -ntp -pl chapters/ch25-memory-model -am compile
-java -Xmx128m -cp chapters/ch25-memory-model/target/classes org.example.jvminternals.ch25.PublicationJourney
-javap -c -p -classpath chapters/ch25-memory-model/target/classes org.example.jvminternals.ch25.PublicationJourney
+mvn -f code/pom.xml -B -ntp -pl :ch25-memory-model -am compile
+java -Xmx128m -cp code/chapters/ch25-memory-model/target/classes org.example.jvminternals.ch25.PublicationJourney
+javap -c -p -classpath code/chapters/ch25-memory-model/target/classes org.example.jvminternals.ch25.PublicationJourney
 ```
 
 ## 实际观察和清理

@@ -21,11 +21,11 @@
   "extraSourceFiles": {
     "ch36-performance-cases": [
       {
-        "path": "chapters/ch36-performance-cases/benchmarks/src/main/java/org/example/jvminternals/ch36/WorkBenchmark.java",
+        "path": "code/chapters/ch36-performance-cases/benchmarks/src/main/java/org/example/jvminternals/ch36/WorkBenchmark.java",
         "language": "java"
       },
       {
-        "path": "chapters/ch31-aot-cache/src/main/java/org/example/jvminternals/ch31/CacheJourney.java",
+        "path": "code/chapters/ch31-aot-cache/src/main/java/org/example/jvminternals/ch31/CacheJourney.java",
         "language": "java"
       }
     ]

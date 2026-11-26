@@ -1,6 +1,6 @@
 # 第18章 推测优化、去优化与代码生命周期：源码与运行
 
-Java开发工具包（Java Development Kit，JDK）25.0.5.0.2、HotSpot、macOS AArch64；工具显式选用下列目录。源码为本章src/main/java，页面阅读副本为[sources.html](sources.html)。
+Java开发工具包（Java Development Kit，JDK）25.0.5.0.2、HotSpot、macOS AArch64；工具显式选用下列目录。源码位于 code/chapters/ch18-deoptimization/src/main/java，页面阅读副本为[sources.html](sources.html)。
 
 ## 示例与授权
 
@@ -13,10 +13,10 @@ CH18-E01 RecoveryJourney.evaluate：100000次局部接收者后50000次发布接
 ```sh
 export JAVA_HOME=/opt/homebrew/Cellar/openjdk@25/25.0.5.0.2/libexec/openjdk.jdk/Contents/Home
 export PATH="$JAVA_HOME/bin:/opt/homebrew/bin:$PATH"
-mvn -B -ntp -pl chapters/ch18-deoptimization -am compile
-java -Xms16m -Xmx64m -Xbatch -XX:+UnlockDiagnosticVMOptions -XX:+LogCompilation -XX:LogFile=chapters/ch18-deoptimization/evidence/runs/ch18-20261103-01/compilation.xml -XX:+PrintCompilation -XX:+PrintInlining '-XX:CompileCommand=dontinline,org.example.jvminternals.ch18.RecoveryJourney::evaluate' '-XX:CompileCommand=dontinline,org.example.jvminternals.ch18.RecoveryJourney::longLoop' -XX:StartFlightRecording=filename=chapters/ch18-deoptimization/evidence/runs/ch18-20261103-01/recovery.jfr,settings=profile,dumponexit=true -cp chapters/ch18-deoptimization/target/classes org.example.jvminternals.ch18.RecoveryJourney
+mvn -f code/pom.xml -B -ntp -pl :ch18-deoptimization -am compile
+java -Xms16m -Xmx64m -Xbatch -XX:+UnlockDiagnosticVMOptions -XX:+LogCompilation -XX:LogFile=chapters/ch18-deoptimization/evidence/runs/ch18-20261103-01/compilation.xml -XX:+PrintCompilation -XX:+PrintInlining '-XX:CompileCommand=dontinline,org.example.jvminternals.ch18.RecoveryJourney::evaluate' '-XX:CompileCommand=dontinline,org.example.jvminternals.ch18.RecoveryJourney::longLoop' -XX:StartFlightRecording=filename=chapters/ch18-deoptimization/evidence/runs/ch18-20261103-01/recovery.jfr,settings=profile,dumponexit=true -cp code/chapters/ch18-deoptimization/target/classes org.example.jvminternals.ch18.RecoveryJourney
 jfr print --events jdk.Deoptimization chapters/ch18-deoptimization/evidence/runs/ch18-20261103-01/recovery.jfr
-javap -c -v -p -classpath chapters/ch18-deoptimization/target/classes org.example.jvminternals.ch18.RecoveryJourney
+javap -c -v -p -classpath code/chapters/ch18-deoptimization/target/classes org.example.jvminternals.ch18.RecoveryJourney
 ```
 
 ## 实际观察与边界

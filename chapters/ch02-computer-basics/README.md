@@ -13,7 +13,7 @@ CH02_JDK=/opt/homebrew/Cellar/openjdk@25/25.0.5.0.2/libexec/openjdk.jdk/Contents
 在允许诊断本进程的终端 A 中启动 60 秒窗口：
 
 ```sh
-"$CH02_JDK/bin/java" -Xms32m -Xmx128m -XX:NativeMemoryTracking=detail -cp chapters/ch01-architecture/target/classes org.example.jvminternals.ch01.ProgramJourney chapters/ch01-architecture/src/main/resources/message.txt 60
+"$CH02_JDK/bin/java" -Xms32m -Xmx128m -XX:NativeMemoryTracking=detail -cp code/chapters/ch01-architecture/target/classes org.example.jvminternals.ch01.ProgramJourney code/chapters/ch01-architecture/src/main/resources/message.txt 60
 ```
 
 程序打印实际进程号。另一个终端在相同项目根目录和工具选择下，把本轮示例值替换为**当前实际进程号**，例如：

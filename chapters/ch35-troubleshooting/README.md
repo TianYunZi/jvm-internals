@@ -11,10 +11,10 @@ P09_JDK=/opt/homebrew/opt/openjdk@25
 BoundedSymptoms按memory、cpu、locks独立进程运行。memory最多保留6兆字节且十二秒退出；cpu五秒计算后退出；locks两线程以四秒tryLock超时打破环。本章不主动内存耗尽、本地崩溃或容器终止。
 
 ```bash
-JAVA_HOME="$P09_JDK" mvn -pl chapters/ch35-troubleshooting -am compile
-"$P09_JDK/bin/java" -Xmx64m -XX:+StartAttachListener -XX:NativeMemoryTracking=summary '-Xlog:gc*=info:file=chapters/ch35-troubleshooting/target/memory-gc.log' -cp chapters/ch35-troubleshooting/target/classes org.example.jvminternals.ch35.BoundedSymptoms memory
-"$P09_JDK/bin/java" -Xmx64m -XX:+StartAttachListener -XX:StartFlightRecording=settings=profile,filename=chapters/ch35-troubleshooting/target/cpu.jfr -cp chapters/ch35-troubleshooting/target/classes org.example.jvminternals.ch35.BoundedSymptoms cpu
-"$P09_JDK/bin/java" -Xmx64m -XX:+StartAttachListener -cp chapters/ch35-troubleshooting/target/classes org.example.jvminternals.ch35.BoundedSymptoms locks
+JAVA_HOME="$P09_JDK" mvn -f code/pom.xml -pl :ch35-troubleshooting -am compile
+"$P09_JDK/bin/java" -Xmx64m -XX:+StartAttachListener -XX:NativeMemoryTracking=summary '-Xlog:gc*=info:file=code/chapters/ch35-troubleshooting/target/memory-gc.log' -cp code/chapters/ch35-troubleshooting/target/classes org.example.jvminternals.ch35.BoundedSymptoms memory
+"$P09_JDK/bin/java" -Xmx64m -XX:+StartAttachListener -XX:StartFlightRecording=settings=profile,filename=code/chapters/ch35-troubleshooting/target/cpu.jfr -cp code/chapters/ch35-troubleshooting/target/classes org.example.jvminternals.ch35.BoundedSymptoms cpu
+"$P09_JDK/bin/java" -Xmx64m -XX:+StartAttachListener -cp code/chapters/ch35-troubleshooting/target/classes org.example.jvminternals.ch35.BoundedSymptoms locks
 ```
 
 在相应进程窗口中，以实际输出的进程号为目标。内存案例约三秒时采集持有快照，约八秒时采集释放后快照；类直方图会请求回收，不能当成无干扰观测。处理器案例在计算窗口连续采集两次，锁案例在四秒超时前采集。
@@ -25,7 +25,7 @@ P09_PID=当前案例输出的进程号
 "$P09_JDK/bin/jcmd" "$P09_PID" VM.native_memory summary
 ps -o pid,rss,vsz,%cpu,etime -p "$P09_PID"
 "$P09_JDK/bin/jcmd" "$P09_PID" Thread.print -l
-"$P09_JDK/bin/jfr" view hot-methods chapters/ch35-troubleshooting/target/cpu.jfr
+"$P09_JDK/bin/jfr" view hot-methods code/chapters/ch35-troubleshooting/target/cpu.jfr
 ```
 
 本地内存跟踪（Native Memory Tracking，NMT）和系统驻留统计不等价。中央处理器（Central Processing Unit，CPU）时间另按采样口径解释。没有测试／断言；有界故障代码已获用户明确授权。容器与崩溃按用户同意以官方历史案例和锁定实现完成方法分析，真实环境复核仍为补充项。已有内存、去优化、安全点和本地固定证据的精确入口见索引。

@@ -4,7 +4,7 @@ Java开发工具包（Java Development Kit，JDK）25.0.5.0.2、macOS AArch64。
 
 ```bash
 P09_JDK=/opt/homebrew/opt/openjdk@25
-JAVA_HOME="$P09_JDK" mvn -pl chapters/ch36-performance-cases -am compile
+JAVA_HOME="$P09_JDK" mvn -f code/pom.xml -pl :ch36-performance-cases -am compile
 ```
 
 ## CH36-E01 启动与预热
@@ -12,9 +12,9 @@ JAVA_HOME="$P09_JDK" mvn -pl chapters/ch36-performance-cases -am compile
 直接复用第31章CacheJourney的正式源和固定归档，先按该章说明构建target/cache.jar；没有复制修改它的源码。提前处理（Ahead-of-Time，AOT）训练与自动装配的总实时间单独保留；当前部署仍有编译，不把运行结束当成稳定期。
 
 ```bash
-/usr/bin/time -p "$P09_JDK/bin/java" -Xmx64m -XX:AOTCacheOutput=chapters/ch36-performance-cases/target/startup.aot '-Xlog:aot=info:file=chapters/ch36-performance-cases/target/train.log' -cp chapters/ch31-aot-cache/target/cache.jar org.example.jvminternals.ch31.CacheJourney add
-/usr/bin/time -p "$P09_JDK/bin/java" -Xmx64m -XX:AOTMode=off -XX:AOTCache=chapters/ch36-performance-cases/target/startup.aot '-Xlog:aot=info,jit+compilation=debug:file=chapters/ch36-performance-cases/target/startup-off.log' -cp chapters/ch31-aot-cache/target/cache.jar org.example.jvminternals.ch31.CacheJourney add
-/usr/bin/time -p "$P09_JDK/bin/java" -Xmx64m -XX:AOTMode=on -XX:AOTCache=chapters/ch36-performance-cases/target/startup.aot '-Xlog:aot=info,jit+compilation=debug:file=chapters/ch36-performance-cases/target/startup-on.log' -cp chapters/ch31-aot-cache/target/cache.jar org.example.jvminternals.ch31.CacheJourney add
+/usr/bin/time -p "$P09_JDK/bin/java" -Xmx64m -XX:AOTCacheOutput=code/chapters/ch36-performance-cases/target/startup.aot '-Xlog:aot=info:file=code/chapters/ch36-performance-cases/target/train.log' -cp code/chapters/ch31-aot-cache/target/cache.jar org.example.jvminternals.ch31.CacheJourney add
+/usr/bin/time -p "$P09_JDK/bin/java" -Xmx64m -XX:AOTMode=off -XX:AOTCache=code/chapters/ch36-performance-cases/target/startup.aot '-Xlog:aot=info,jit+compilation=debug:file=code/chapters/ch36-performance-cases/target/startup-off.log' -cp code/chapters/ch31-aot-cache/target/cache.jar org.example.jvminternals.ch31.CacheJourney add
+/usr/bin/time -p "$P09_JDK/bin/java" -Xmx64m -XX:AOTMode=on -XX:AOTCache=code/chapters/ch36-performance-cases/target/startup.aot '-Xlog:aot=info,jit+compilation=debug:file=code/chapters/ch36-performance-cases/target/startup-on.log' -cp code/chapters/ch31-aot-cache/target/cache.jar org.example.jvminternals.ch31.CacheJourney add
 ```
 
 实际三轮顺序off/on、on/off、off/on；每组日志独立，未清系统文件缓存。原始重复数据在evidence/runs/ch36-20261103-01。
@@ -24,8 +24,8 @@ JAVA_HOME="$P09_JDK" mvn -pl chapters/ch36-performance-cases -am compile
 CaseWorkload固定10,000次预热和40,000次测量。allocate每次新建4096字节数组，reuse复用当前线程数组；同一索引写入和volatile逃逸。计时向量及计时调用也有成本，分配统计包含结果向量。
 
 ```bash
-/usr/bin/time -p "$P09_JDK/bin/java" -Xms32m -Xmx32m -XX:+UseG1GC '-Xlog:gc*=info:file=chapters/ch36-performance-cases/target/allocate.log' -cp chapters/ch36-performance-cases/target/classes org.example.jvminternals.ch36.CaseWorkload allocate
-/usr/bin/time -p "$P09_JDK/bin/java" -Xms32m -Xmx32m -XX:+UseG1GC '-Xlog:gc*=info:file=chapters/ch36-performance-cases/target/reuse.log' -cp chapters/ch36-performance-cases/target/classes org.example.jvminternals.ch36.CaseWorkload reuse
+/usr/bin/time -p "$P09_JDK/bin/java" -Xms32m -Xmx32m -XX:+UseG1GC '-Xlog:gc*=info:file=code/chapters/ch36-performance-cases/target/allocate.log' -cp code/chapters/ch36-performance-cases/target/classes org.example.jvminternals.ch36.CaseWorkload allocate
+/usr/bin/time -p "$P09_JDK/bin/java" -Xms32m -Xmx32m -XX:+UseG1GC '-Xlog:gc*=info:file=code/chapters/ch36-performance-cases/target/reuse.log' -cp code/chapters/ch36-performance-cases/target/classes org.example.jvminternals.ch36.CaseWorkload reuse
 ```
 
 Garbage-First（G1）日志的11次年轻代暂停统计包含热身；不能宣称都发生于测量窗口。三轮按allocate/reuse、reuse/allocate、allocate/reuse运行。复用仅在消费者不持有旧数组的本例语义下成立。
@@ -36,7 +36,7 @@ Garbage-First（G1）日志的11次年轻代暂停统计包含热身；不能宣
 
 ```bash
 for P09_MODE in locked narrow platform-budget virtual-budget; do
-  /usr/bin/time -p "$P09_JDK/bin/java" -Xms32m -Xmx32m -Djdk.virtualThreadScheduler.parallelism=2 -Djdk.virtualThreadScheduler.maxPoolSize=2 -cp chapters/ch36-performance-cases/target/classes org.example.jvminternals.ch36.CaseWorkload "$P09_MODE"
+  /usr/bin/time -p "$P09_JDK/bin/java" -Xms32m -Xmx32m -Djdk.virtualThreadScheduler.parallelism=2 -Djdk.virtualThreadScheduler.maxPoolSize=2 -cp code/chapters/ch36-performance-cases/target/classes org.example.jvminternals.ch36.CaseWorkload "$P09_MODE"
 done
 ```
 
@@ -47,8 +47,8 @@ done
 每组均请求并触及32块256千字节内存；retained在一个Arena保留到窗口结束，scoped逐任务关闭。外部函数与内存（Foreign Function & Memory，FFM）作用域退出后不得继续使用内存段。每进程八秒正常退出。
 
 ```bash
-"$P09_JDK/bin/java" -Xms32m -Xmx32m -XX:+StartAttachListener -XX:NativeMemoryTracking=summary -cp chapters/ch36-performance-cases/target/classes org.example.jvminternals.ch36.CaseWorkload retained
-"$P09_JDK/bin/java" -Xms32m -Xmx32m -XX:+StartAttachListener -XX:NativeMemoryTracking=summary -cp chapters/ch36-performance-cases/target/classes org.example.jvminternals.ch36.CaseWorkload scoped
+"$P09_JDK/bin/java" -Xms32m -Xmx32m -XX:+StartAttachListener -XX:NativeMemoryTracking=summary -cp code/chapters/ch36-performance-cases/target/classes org.example.jvminternals.ch36.CaseWorkload retained
+"$P09_JDK/bin/java" -Xms32m -Xmx32m -XX:+StartAttachListener -XX:NativeMemoryTracking=summary -cp code/chapters/ch36-performance-cases/target/classes org.example.jvminternals.ch36.CaseWorkload scoped
 ```
 
 约两秒时在另一终端采集基线／持有快照，约六秒时采集关闭后差异；目标使用当前输出的进程号。本地内存跟踪（Native Memory Tracking，NMT）不同于系统驻留集大小（Resident Set Size，RSS）。
@@ -68,9 +68,9 @@ Linux容器的真实配额与终止记录按用户同意保留补充环境复核
 固定JMH1.37与注解处理器1.37；不进入普通根模块。两个独立进程，每进程2次200毫秒预热、3次200毫秒测量；计时路径不打印日志。构建插件版本固定，不全局安装基准工具。
 
 ```bash
-JAVA_HOME="$P09_JDK" mvn -f chapters/ch36-performance-cases/benchmarks/pom.xml compile org.apache.maven.plugins:maven-dependency-plugin:3.8.1:build-classpath -Dmdep.outputFile=target/classpath.txt
-P09_JMH_CP="chapters/ch36-performance-cases/benchmarks/target/classes:$(cat chapters/ch36-performance-cases/benchmarks/target/classpath.txt)"
-"$P09_JDK/bin/java" -Xmx64m -Djmh.bindAddress=127.0.0.1 -cp "$P09_JMH_CP" org.openjdk.jmh.Main WorkBenchmark -rf json -rff chapters/ch36-performance-cases/target/jmh.json
+JAVA_HOME="$P09_JDK" mvn -f code/chapters/ch36-performance-cases/benchmarks/pom.xml compile org.apache.maven.plugins:maven-dependency-plugin:3.8.1:build-classpath -Dmdep.outputFile=target/classpath.txt
+P09_JMH_CP="code/chapters/ch36-performance-cases/benchmarks/target/classes:$(cat code/chapters/ch36-performance-cases/benchmarks/target/classpath.txt)"
+"$P09_JDK/bin/java" -Xmx64m -Djmh.bindAddress=127.0.0.1 -cp "$P09_JMH_CP" org.openjdk.jmh.Main WorkBenchmark -rf json -rff code/chapters/ch36-performance-cases/target/jmh.json
 ```
 
 JavaScript对象表示法（JavaScript Object Notation，JSON）结果与完整工具输出并存；JMH需要本机子进程通信，绑定回环。首次沙箱失败与获准后的成功分别保留。已弃用Unsafe与实验性编译器Blackhole告警未隐藏；本轮短运行不作为业务性能承诺。

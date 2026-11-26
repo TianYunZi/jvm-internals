@@ -23,7 +23,7 @@
 
 ## 实际文件边界与产物
 
-- 本章正文：[chapter.html](chapter.html)；配套：[README.md](README.md)、[pom.xml](pom.xml)及从正式源文件生成的 [sources.html](sources.html)。
+- 本章正文：[chapter.html](chapter.html)；配套：[README.md](README.md)、[pom.xml](../../code/chapters/ch04-classfile/pom.xml)及从正式源文件生成的 [sources.html](sources.html)。
 - 四份 Java 源文件：`src/main/java/org/example/jvminternals/ch04/` 下 structure、modern、model、transform 四个包；本轮未引入第三方运行依赖。
 - 三幅可编辑矢量图：`figures/ch04-f01-classfile-structure.svg`、`ch04-f02-constant-pool.svg`、`ch04-f03-code-attributes.svg`，直接作为本地显示图。
 - [来源与图解索引](evidence/索引.md)、[编译与观察记录](evidence/runs/ch04-20261103-01/记录.md)、原始输出、源码和类文件摘要、精选类文件。
